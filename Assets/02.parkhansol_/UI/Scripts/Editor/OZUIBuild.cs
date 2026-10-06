@@ -8,7 +8,7 @@ namespace OZ.UI.EditorTools
     /// <summary>UIRoot 빌더용 uGUI 생성 헬퍼 (논리 640×360 좌표, 에셋 1px = 1 단위)</summary>
     internal static class UIB
     {
-        public static TMP_FontAsset Body, Small, Title;
+        public static TMP_FontAsset Body, Small, Title, Bold;
 
         public static readonly Color TextColor = new Color(0.93f, 0.95f, 1f);
         public static readonly Color Dim = new Color(0.65f, 0.7f, 0.82f);
@@ -22,6 +22,8 @@ namespace OZ.UI.EditorTools
             if (Body == null) Body = TMP_Settings.defaultFontAsset;
             if (Small == null) Small = Body;
             if (Title == null) Title = Body;
+            Bold = OZFontBuilder.Load("Galmuri11 Bold");
+            if (Bold == null) Bold = Body;
         }
 
         // ── 스프라이트 ──
@@ -35,6 +37,14 @@ namespace OZ.UI.EditorTools
 
         public static Sprite Art(string name) =>
             AssetDatabase.LoadAssetAtPath<Sprite>($"{OZPaths.UI}/Art/Icons/{name}.png");
+
+        /// <summary>UI/Art/HUD (에셋을 가공해 만든 HUD 전용 스프라이트)</summary>
+        public static Sprite HudArt(string name) =>
+            AssetDatabase.LoadAssetAtPath<Sprite>($"{OZPaths.UI}/Art/HUD/{name}.png");
+
+        /// <summary>ThirdParty/SciFiPixelUI (체력바만 사용)</summary>
+        public static Sprite Sf(string rel) =>
+            AssetDatabase.LoadAssetAtPath<Sprite>($"{OZPaths.SciFi}/{rel}.png");
 
         public static Sprite White => Art("UI_White");
 

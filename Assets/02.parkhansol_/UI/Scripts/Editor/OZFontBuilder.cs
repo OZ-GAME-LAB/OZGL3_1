@@ -19,11 +19,19 @@ namespace OZ.UI.EditorTools
             ("Galmuri11.ttf", "Galmuri11", 12),
             ("Galmuri9.ttf", "Galmuri9", 10),
             ("Galmuri14.ttf", "Galmuri14", 15),
+            ("Galmuri11-Bold.ttf", "Galmuri11 Bold", 12), // 약점 피해 숫자 (두꺼운 글자)
         };
 
         public static string PathOf(string name) => $"{OZPaths.Fonts}/{name} Pixel.asset";
 
-        public static bool IsDone => File.Exists(Path.GetFullPath(PathOf("Galmuri11")));
+        public static bool IsDone
+        {
+            get
+            {
+                foreach (var f in Fonts) if (!File.Exists(Path.GetFullPath(PathOf(f.name)))) return false;
+                return true;
+            }
+        }
 
         public static TMP_FontAsset Load(string name) => AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(PathOf(name));
 

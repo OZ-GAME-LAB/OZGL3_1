@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using OZ.UI.Contracts;
 using TMPro;
@@ -20,6 +21,12 @@ namespace OZ.UI
         [SerializeField] internal SkillBarView skills;
         [SerializeField] internal ItemBarView items;
         [SerializeField] internal BuffTrayView buffs;
+        [SerializeField] internal HudBannerView banner;
+
+        [Header("Portrait")]
+        [Tooltip("HP 바 옆 초상화 칸 안의 이미지")]
+        [SerializeField] internal Image portrait;
+        [SerializeField] internal Sprite defaultPortrait;
 
         [Header("Guide / Flash")]
         [SerializeField] internal CanvasGroup guideGroup;
@@ -54,6 +61,7 @@ namespace OZ.UI
             if (skills != null) skills.Bind(UISources.Skills);
             if (items != null) items.Bind(UISources.Items);
             if (buffs != null) buffs.Bind(UISources.Items);
+            if (banner != null) banner.Bind(UISources.Gate);
         }
 
         // 메뉴가 열리면 HUD를 살짝 흐리게
@@ -96,6 +104,20 @@ namespace OZ.UI
             if (guideGroup == null) return;
             _guideTween?.Kill();
             _guideTween = guideGroup.FadeOut();
+        }
+
+        public void ShowBanner(string title, string subtitle = null, float holdSeconds = 2f, Action onFinished = null)
+        {
+            if (banner == null) { onFinished?.Invoke(); return; }
+            banner.Show(title, subtitle, holdSeconds, onFinished);
+        }
+
+        public void SetPortrait(Sprite sprite)
+        {
+            if (portrait == null) return;
+            portrait.sprite = sprite != null ? sprite : defaultPortrait;
+            portrait.enabled = portrait.sprite != null;
+            if (portrait.sprite != null) portrait.SetNativeSize(); // 픽셀 1:1 유지
         }
 
         public void Flash(Color color, float duration = 0.15f)

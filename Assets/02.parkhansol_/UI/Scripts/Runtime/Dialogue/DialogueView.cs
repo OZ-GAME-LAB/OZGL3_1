@@ -170,13 +170,17 @@ namespace OZ.UI
             nextIndicator.DOFade(0.2f, 0.4f).SetLoops(-1, LoopType.Yoyo).SetUpdate(true).SetLink(nextIndicator.gameObject);
         }
 
+        readonly System.Collections.Generic.Dictionary<Image, Tween> _scaleTweens = new System.Collections.Generic.Dictionary<Image, Tween>();
+
         void Highlight(Image portrait, bool speaking)
         {
             if (portrait == null || !portrait.enabled) return;
-            portrait.DOKill();
-            portrait.rectTransform.DOKill();
+            portrait.DOKill(); // 색 트윈만 (Image 대상)
+            // 위치(SlideIn)는 건드리지 않고 크기 트윈만 교체 — 예전엔 rectTransform.DOKill()이 등장 슬라이드를
+            // 중간에 끊어서 대화할수록 초상화가 좌우로 밀렸음
+            if (_scaleTweens.TryGetValue(portrait, out var old)) old?.Kill();
             portrait.DOColor(speaking ? Color.white : listenerTint, UITweenStyle.Fast).SetUpdate(true).SetLink(portrait.gameObject);
-            portrait.rectTransform.DOScale(speaking ? 1f : listenerScale, UITweenStyle.Fast).SetUpdate(true).SetLink(portrait.gameObject);
+            _scaleTweens[portrait] = portrait.rectTransform.DOScale(speaking ? 1f : listenerScale, UITweenStyle.Fast).SetUpdate(true).SetLink(portrait.gameObject);
         }
 
         static void SetPortrait(Image img, Sprite sprite)

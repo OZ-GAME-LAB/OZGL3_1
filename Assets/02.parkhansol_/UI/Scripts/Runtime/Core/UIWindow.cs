@@ -58,7 +58,7 @@ namespace OZ.UI
             SetVisible(false);
         }
 
-        /// <summary>UIManager.Open 경유로 호출. args는 창별 데이터 (StageClearArgs 등)</summary>
+        /// <summary>UIManager.Open 경유로 호출. args는 창별 데이터 (TitleArgs 등)</summary>
         internal void OpenInternal(object args)
         {
             OnSetup(args);

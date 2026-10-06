@@ -28,6 +28,22 @@ namespace OZ.UI.Contracts
         public void ShowGuide(string message, float duration = 3f) => NullLog.Once("HUD.ShowGuide");
         public void HideGuide() { }
         public void Flash(Color color, float duration = 0.15f) => NullLog.Once("HUD.Flash");
+        public void ShowBanner(string title, string subtitle = null, float holdSeconds = 2f, Action onFinished = null)
+        {
+            NullLog.Once("HUD.ShowBanner");
+            onFinished?.Invoke();
+        }
+        public void SetPortrait(Sprite portrait) { }
+    }
+
+    internal sealed class NullDamageFxApi : IDamageFxApi
+    {
+        public static readonly NullDamageFxApi Instance = new NullDamageFxApi();
+        public void Show(Vector3 worldPosition, float amount, DamageKind kind = DamageKind.Normal) => NullLog.Once("Damage.Show");
+        public void ShowText(Vector3 worldPosition, string text, DamageKind kind = DamageKind.Miss) => NullLog.Once("Damage.ShowText");
+        public void Spark(Vector3 worldPosition, bool critical = false) { }
+        public void TrackEnemy(IEnemyHealthSource enemy) => NullLog.Once("Damage.TrackEnemy");
+        public void UntrackEnemy(IEnemyHealthSource enemy) { }
     }
 
     internal sealed class NullBossApi : IBossApi
@@ -54,7 +70,11 @@ namespace OZ.UI.Contracts
         public void ShowTitle(bool canContinue) => NullLog.Once("Screens.ShowTitle");
         public void ShowClassSelect(IReadOnlyList<ClassData> classes) => NullLog.Once("Screens.ShowClassSelect");
         public void ShowDeath() => NullLog.Once("Screens.ShowDeath");
-        public void ShowStageClear(int stageNumber, HunterRank newRank) => NullLog.Once("Screens.ShowStageClear");
+        public void ShowStageClear(int stageNumber, HunterRank newRank)
+        {
+            NullLog.Once("Screens.ShowStageClear");
+            UIRequests.RaiseNextStage(); // UI가 없어도 흐름이 멈추지 않게
+        }
         public void ShowDemoEnd() => NullLog.Once("Screens.ShowDemoEnd");
     }
 

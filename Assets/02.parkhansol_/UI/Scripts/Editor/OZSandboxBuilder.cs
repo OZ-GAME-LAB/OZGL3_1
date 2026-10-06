@@ -24,7 +24,9 @@ namespace OZ.UI.EditorTools
             "<color=#FFD966>게이트</color> G 봉쇄  O 열기   P 다음 방\n" +
             "<color=#FFD966>보스</color> B 등장  N 피격  V 큰 피격\n" +
             "<color=#FFD966>창</color> K 스킬  I 인벤  Tab 지도  T 대화  ESC\n" +
-            "<color=#FFD966>화면</color> F2 사망  F3 클리어  F4 끝  F5 타이틀";
+            "<color=#FFD966>화면</color> F2 사망  F3 게이트파괴  F4 끝  F5 타이틀\n" +
+            "<color=#FFD966>전투</color> Z 공격 C 치명 W 약점 L 연타\n" +
+            "       D 장판(지속) Y 빗나감  적 클릭";
 
         public static void Run()
         {
@@ -81,10 +83,73 @@ namespace OZ.UI.EditorTools
 
             if (mapCtrl != null) mapCtrl.startMap = null; // 지도는 Director가 지정
 
+            // 가상의 플레이어 모습 + 적 3마리 (일반 2 + 엘리트 1) — 바닥 윗면 y = -3
+            var avatar = Actor("Player (Avatar)", UIB.Px("Portraits/PlayerLarge"), new Vector2(-5.5f, -3f), 4f, false, out var head);
+            var flashMat = FlashMaterial();
+            AddFlash(avatar, flashMat);
+            var combat = sandbox.AddComponent<SandboxCombat>();
+            combat.feel = sandbox.AddComponent<SandboxFeel>();
+            combat.player = player;
+            combat.playerAvatar = avatar.transform;
+            combat.playerHead = head;
+            var enemySprite = UIB.Px("Portraits/EnemyLarge");
+            var specs = new (string name, float x, float scale, float hp, bool elite)[]
+            {
+                ("Enemy_A", 0.5f, 4f, 120f, false), ("Enemy_B", 2.5f, 4f, 120f, false), ("Enemy_Elite", 5.2f, 6f, 400f, true),
+            };
+            foreach (var sp in specs)
+            {
+                var go = Actor(sp.name, enemySprite, new Vector2(sp.x, -3f), sp.scale, true, out var anchor);
+                var e = go.AddComponent<DummyEnemy>();
+                e.body = go.GetComponent<SpriteRenderer>();
+                e.barAnchor = anchor;
+                e.flash = AddFlash(go, flashMat);
+                e.maxHP = sp.hp;
+                e.elite = sp.elite;
+                combat.enemies.Add(e);
+            }
+
             BuildHelpOverlay();
 
             EditorSceneManager.SaveScene(scene, OZPaths.SandboxScene);
             Debug.Log("[OZ UI] UI_Sandbox 씬 생성 → " + OZPaths.SandboxScene + "  (Play 후 화면 왼쪽 아래 도움말 참고)");
+        }
+
+        /// <summary>피격 흰색 번쩍임용 머티리얼 (OZ/Sprite Flash 셰이더)</summary>
+        static Material FlashMaterial()
+        {
+            string path = OZPaths.UI + "/Art/FX/OZ_SpriteFlash.mat";
+            var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+            if (mat != null) return mat;
+            var shader = Shader.Find("OZ/Sprite Flash");
+            if (shader == null) { Debug.LogWarning("[OZ UI] OZ/Sprite Flash 셰이더를 찾지 못해 번쩍임 없이 진행합니다."); return null; }
+            mat = new Material(shader) { name = "OZ_SpriteFlash" };
+            AssetDatabase.CreateAsset(mat, path);
+            return mat;
+        }
+
+        static HitFlash AddFlash(GameObject go, Material mat)
+        {
+            var sr = go.GetComponent<SpriteRenderer>();
+            if (sr != null && mat != null) sr.sharedMaterial = mat;
+            return go.AddComponent<HitFlash>();
+        }
+
+        /// <summary>발이 바닥(footY)에 닿게 놓은 스프라이트 + 머리 위 기준점</summary>
+        static GameObject Actor(string name, Sprite sprite, Vector2 foot, float scale, bool faceLeft, out Transform head)
+        {
+            var go = new GameObject(name, typeof(SpriteRenderer));
+            var sr = go.GetComponent<SpriteRenderer>();
+            sr.sprite = sprite;
+            sr.flipX = faceLeft;
+            go.transform.localScale = new Vector3(scale, scale, 1f);
+            float h = sprite != null ? sprite.bounds.size.y : 0.35f;
+            go.transform.position = new Vector3(foot.x, foot.y + h * scale * 0.5f, 0f);
+            var anchor = new GameObject("Head").transform;
+            anchor.SetParent(go.transform, false);
+            anchor.localPosition = new Vector3(0f, h * 0.5f + 0.02f, 0f);
+            head = anchor;
+            return go;
         }
 
         static void BuildHelpOverlay()
@@ -98,7 +163,7 @@ namespace OZ.UI.EditorTools
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
 
             var bg = UIB.Solid("Background", go.transform, new Color(0, 0, 0, 0.55f));
-            bg.rectTransform.Place(1, 1, -8, -84, 206, 90);
+            bg.rectTransform.Place(1, 1, -8, -84, 206, 112);
             var t = UIB.Small10("Text", bg.transform, HelpText, TextAlignmentOptions.TopLeft, Color.white);
             t.richText = true;
             t.rectTransform.Stretch(6, 6, 4, 4);

@@ -17,10 +17,4 @@ namespace OZ.UI
         public ClassSelectArgs(IReadOnlyList<ClassData> classes) { Classes = classes; }
     }
 
-    public sealed class StageClearArgs
-    {
-        public readonly int StageNumber;
-        public readonly HunterRank NewRank;
-        public StageClearArgs(int stageNumber, HunterRank newRank) { StageNumber = stageNumber; NewRank = newRank; }
-    }
 }

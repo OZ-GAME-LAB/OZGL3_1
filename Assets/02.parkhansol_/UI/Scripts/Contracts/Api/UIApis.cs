@@ -13,6 +13,13 @@ namespace OZ.UI.Contracts
         void HideGuide();
         /// <summary>화면 전체 색 플래시 (큰 피격, 페이즈 전환 등)</summary>
         void Flash(Color color, float duration = 0.15f);
+        /// <summary>
+        /// 화면 가운데 큰 띠 문구 (예: "게이트 파괴"). holdSeconds 동안 떠 있다가 사라진다. 게임은 멈추지 않음.
+        /// 게이트 봉쇄(IGateSource.GateSealed) 시에는 UI가 자동으로 "게이트 파괴"를 띄우므로 따로 부를 필요 없음.
+        /// </summary>
+        void ShowBanner(string title, string subtitle = null, float holdSeconds = 2f, Action onFinished = null);
+        /// <summary>HP 바 옆 초상화 칸 이미지 (null이면 기본 초상화)</summary>
+        void SetPortrait(Sprite portrait);
     }
 
     /// <summary>보스 체력바 + 등장/페이즈/처치 연출</summary>
@@ -35,8 +42,27 @@ namespace OZ.UI.Contracts
         void ShowTitle(bool canContinue);
         void ShowClassSelect(IReadOnlyList<ClassData> classes);
         void ShowDeath();
+        /// <summary>
+        /// 스테이지 클리어 → 창 없이 "게이트 파괴" 띠를 잠깐 띄운 뒤 UIRequests.NextStage를 보낸다 (게임 안 멈춤).
+        /// </summary>
         void ShowStageClear(int stageNumber, HunterRank newRank);
         void ShowDemoEnd();
+    }
+
+    /// <summary>
+    /// 피해 숫자 + 타격 이펙트 + 적 머리 위 체력바.
+    ///   GameUI.Damage.Show(hitPoint, 37, isCrit ? DamageKind.Critical : DamageKind.Normal);
+    /// 위치는 월드 좌표 (UI가 화면 좌표로 바꿔 따라감). 옵션의 '피해 숫자 표시'가 꺼져 있으면 숫자만 생략.
+    /// </summary>
+    public interface IDamageFxApi
+    {
+        void Show(Vector3 worldPosition, float amount, DamageKind kind = DamageKind.Normal);
+        /// <summary>숫자 대신 글자 (예: "MISS", "면역")</summary>
+        void ShowText(Vector3 worldPosition, string text, DamageKind kind = DamageKind.Miss);
+        /// <summary>타격 이펙트만 (숫자 없이)</summary>
+        void Spark(Vector3 worldPosition, bool critical = false);
+        void TrackEnemy(IEnemyHealthSource enemy);
+        void UntrackEnemy(IEnemyHealthSource enemy);
     }
 
     /// <summary>짧은 알림 (아이템 획득, 게이트 봉쇄 등)</summary>

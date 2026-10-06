@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace OZ.UI
 {
     /// <summary>
-    /// 체력 통(Flask) + 수치 + 가로 바.
+    /// HP 바(Sci-Fi Hud_Lifebar B) + 수치 + 초상화 칸 반응. (flaskFill은 선택 — 비워 두면 안 씀)
     ///   피격: 흔들림 + 빨강 플래시 / 회복: 초록 플래시 / 25% 이하: 맥박
     /// </summary>
     [AddComponentMenu("OZ/UI/HUD/Health View")]

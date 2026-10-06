@@ -8,6 +8,7 @@ namespace OZ.UI.EditorTools
         public const string ImportZip = Root + "/_Import~/PixelUIHUD_UnityDemo.zip";
         public const string ThirdParty = Root + "/ThirdParty";
         public const string PixelUI = ThirdParty + "/PixelUIHUD";
+        public const string SciFi = ThirdParty + "/SciFiPixelUI";
         public const string TextMeshPro = ThirdParty + "/TextMesh Pro";
         public const string Galmuri = ThirdParty + "/Fonts/Galmuri";
 

@@ -28,8 +28,8 @@ namespace OZ.UI
         [Tooltip("이 화면들이 열려 있을 땐 스킬 창/일시정지 단축키 무시 (타이틀, 사망 등)")]
         [SerializeField] internal ScreenId[] hotkeyBlockingScreens =
         {
-            ScreenId.Title, ScreenId.ClassSelect, ScreenId.Death, ScreenId.StageClear, ScreenId.DemoEnd,
-            ScreenId.Dialogue,
+            ScreenId.Title, ScreenId.ClassSelect, ScreenId.Death, ScreenId.DemoEnd,
+            ScreenId.Dialogue, ScreenId.Options,
         };
 
         InputAction _back;

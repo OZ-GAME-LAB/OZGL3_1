@@ -68,6 +68,9 @@ namespace OZ.UI.EditorTools
                 await Suite("지도", Map);
                 await Suite("대화", Dialogue);
                 await Suite("화면·입력 차단·일시정지", Screens);
+                await Suite("옵션 창", Options);
+                await Suite("피해 숫자·타격 이펙트·적 체력바", Damage);
+                await Suite("대화 반복 시 초상화 위치 고정", DialogueDrift);
             }
             catch (Exception e)
             {
@@ -179,11 +182,11 @@ namespace OZ.UI.EditorTools
             await ToCombat();
             var h = Hud.health;
             Eq("시작 100/100", h.valueText.text, "100/100");
-            Near("시작 Flask 1.0", h.flaskFill.fillAmount, 1f);
+            Near("시작 체력 바 1.0", h.bar.fill.fillAmount, 1f);
+            Check("초상화 칸에 기본 초상화", Hud.portrait != null && Hud.portrait.sprite != null);
 
             P.ChangeHP(-30); await Wait(1.0f);
             Eq("피격 -30 → 70/100", h.valueText.text, "70/100");
-            Near("Flask 0.7", h.flaskFill.fillAmount, 0.7f);
             Near("체력 바 0.7", h.bar.fill.fillAmount, 0.7f);
             Near("잔상(trail)도 0.7까지 내려옴", h.bar.trail.fillAmount, 0.7f);
             Check("25% 초과에선 맥박 없음", !Get<bool>(h, "_low"));
@@ -194,7 +197,7 @@ namespace OZ.UI.EditorTools
 
             P.ChangeHP(-999); await Wait(1.0f);
             Eq("0 아래로 안 내려감 → 0/100", h.valueText.text, "0/100");
-            Near("Flask 0", h.flaskFill.fillAmount, 0f);
+            Near("체력 바 0", h.bar.fill.fillAmount, 0f);
             Check("0일 때 맥박 OFF", !Get<bool>(h, "_low"));
 
             P.ChangeHP(40); await Wait(0.15f);
@@ -205,7 +208,9 @@ namespace OZ.UI.EditorTools
 
             P.ChangeHP(9999); await Wait(1.0f);
             Eq("최대 초과 회복 → 100/100", h.valueText.text, "100/100");
-            Near("Flask 1.0 복귀", h.flaskFill.fillAmount, 1f);
+            Near("체력 바 1.0 복귀", h.bar.fill.fillAmount, 1f);
+            GameUI.HUD.SetPortrait(null);
+            Check("SetPortrait(null) → 기본 초상화", Hud.portrait.sprite == Hud.defaultPortrait);
         }
 
         static async Task Progression()
@@ -213,7 +218,7 @@ namespace OZ.UI.EditorTools
             await ToCombat();
             var v = Hud.progression;
             Eq("시작 Lv.1", v.levelText.text, "Lv.1");
-            Check("시작 SP 표시 없음", !v.pointsHint.activeSelf);
+            Check("HUD에 SP 표시 없음 (삭제됨)", v.pointsHint == null && v.pointsText == null);
 
             P.AddExp(40); await Wait(1.0f);
             Near("경험치 40/100 → 바 0.4", v.expBar.fill.fillAmount, 0.4f);
@@ -221,13 +226,10 @@ namespace OZ.UI.EditorTools
             P.AddExp(70); await Wait(1.0f);
             Eq("110 누적 → Lv.2", v.levelText.text, "Lv.2");
             Near("남은 경험치 10 → 바 0.1", v.expBar.Value, 0.1f);
-            Check("SP 1 표시", v.pointsHint.activeSelf);
-            Eq("SP 문구", v.pointsText.text, "SP 1  [K]");
 
             P.AddExp(10000); await Wait(1.0f);
             Eq("상한 Lv.7에서 멈춤", v.levelText.text, "Lv.7");
             Near("최대 레벨 → 바 가득", v.expBar.Value, 1f);
-            Eq("SP 6", v.pointsText.text, "SP 6  [K]");
             P.AddExp(100); await Wait(0.3f);
             Eq("Lv.7 이후 경험치 무시", v.levelText.text, "Lv.7");
 
@@ -423,8 +425,14 @@ namespace OZ.UI.EditorTools
             var g = Hud.gate;
             Eq("시작 0/3", g.countText.text, "게이트 0/3");
             Eq("게이트 활성", g.stateText.text, "게이트 활성");
-            P.SealGate(); await Wait(0.2f);
+            var banner = Hud.banner;
+            P.SealGate(); await Wait(0.4f);
             Eq("봉쇄 → 1/3", g.countText.text, "게이트 1/3");
+            Check("봉쇄 → '게이트 파괴' 띠 표시", banner.IsShowing && banner.group.alpha > 0.5f);
+            Eq("띠 제목", banner.titleText.text, "게이트 파괴");
+            Eq("띠 부제", banner.subtitleText.text, "1 / 3");
+            await Wait(banner.fadeIn + banner.gateHold + banner.fadeOut + 0.3f);
+            Check("일정 시간 뒤 띠 사라짐", !banner.IsShowing && banner.group.alpha < 0.01f);
             Eq("다음 게이트 탐색", g.stateText.text, "다음 게이트 탐색");
             P.SealGate(); await Wait(0.1f);
             Eq("비활성 상태 봉쇄 무시(중복 반영 X)", g.countText.text, "게이트 1/3");
@@ -432,6 +440,7 @@ namespace OZ.UI.EditorTools
             Eq("3/3", g.countText.text, "게이트 3/3");
             Check("보스 구역 개방 표시", g.bossReady.activeSelf);
             Eq("상태 문구", g.stateText.text, "보스 구역 개방");
+            Eq("마지막 게이트 → 띠 부제에 보스 구역 개방", banner.subtitleText.text, "3 / 3  ·  보스 구역 개방");
             P.OpenGate(); P.SealGate(); await Wait(0.1f);
             Eq("목표 달성 후 추가 봉쇄 없음", g.countText.text, "게이트 3/3");
             P.ResetAll(); await Wait(0.3f);
@@ -560,10 +569,279 @@ namespace OZ.UI.EditorTools
             ui.CloseAll(); await Wait(0.3f);
             Check("CloseAll → 입력 차단 해제", !UIState.IsGameplayInputBlocked && Time.timeScale == 1f);
 
+            bool next = false; Action onNext = () => next = true;
+            UIRequests.NextStage += onNext;
             GameUI.Screens.ShowStageClear(1, HunterRank.E); await Wait(0.2f);
-            Eq("클리어 화면 스테이지", Find<StageClearScreen>().stageText.text, "STAGE 1 CLEAR");
-            Eq("클리어 화면 랭크", Find<StageClearScreen>().rankText.text, "헌터 랭크  E급");
+            var bn = Hud.banner;
+            Eq("클리어 → '게이트 파괴' 띠", bn.titleText.text, "게이트 파괴");
+            Eq("클리어 띠 부제", bn.subtitleText.text, "STAGE 1 클리어  ·  헌터 랭크 E급");
+            Check("클리어해도 게임 안 멈춤", Time.timeScale == 1f && !UIState.IsGameplayInputBlocked);
+            Check("띠가 떠 있는 동안 NextStage 아직 안 보냄", !next);
+            await Wait(bn.fadeIn + 2.5f + bn.fadeOut + 0.3f);
+            UIRequests.NextStage -= onNext;
+            Check("띠 사라진 뒤 UIRequests.NextStage", next);
             ui.CloseAll();
+        }
+
+        static async Task Options()
+        {
+            var ui = UIManager.Instance;
+            var router = Find<UIInputRouter>();
+            ui.CloseAll(); await Wait(0.2f);
+            float m0 = UISettings.MasterVolume; bool s0 = UISettings.ScreenShake; var r0 = UISettings.Resolution;
+
+            ui.Open(ScreenId.Title); await Wait(0.2f);
+            Find<TitleScreen>().settingsButton.onClick.Invoke(); await Wait(0.3f);
+            Check("타이틀 '설정' → 옵션 창", ui.IsOpen(ScreenId.Options));
+            Check("타이틀은 뒤에 그대로", ui.IsOpen(ScreenId.Title));
+            var o = Find<OptionsWindow>();
+            Check("첫 탭 = 사운드", o.CurrentTab == 0 && o.pages[0].activeSelf && !o.pages[1].activeSelf);
+
+            o.master.slider.value = 0.35f; await Wait(0.05f);
+            Near("마스터 볼륨 → UISettings", UISettings.MasterVolume, 0.35f);
+            Near("AudioListener 볼륨 바로 적용", AudioListener.volume, 0.35f);
+            Eq("퍼센트 표시", o.master.valueText.text, "35");
+            o.bgm.slider.value = 0.52f; await Wait(0.05f);
+            Near("5% 단위로 맞춤 (0.52 → 0.5)", UISettings.BgmVolume, 0.5f);
+
+            o.ShowTab(2); await Wait(0.05f);
+            Check("탭 전환 → 게임", o.CurrentTab == 2 && o.pages[2].activeSelf && !o.pages[0].activeSelf);
+            o.ShowTab(3); await Wait(0.05f);
+            Check("마지막 탭 다음 → 첫 탭으로 순환", o.CurrentTab == 0);
+            o.screenShake.toggle.isOn = !s0; await Wait(0.05f);
+            Check("화면 흔들림 토글 → UISettings", UISettings.ScreenShake == !s0);
+            Eq("켜짐/꺼짐 글자", o.screenShake.stateText.text, !s0 ? "켜짐" : "꺼짐");
+
+            if (o.resolution.Count > 1)
+            {
+                int before = o.resolution.Index;
+                o.resolution.Step(1); await Wait(0.05f);
+                Check("해상도 ▶ → 다음 항목", o.resolution.Index != before);
+                Check("해상도 값 저장 대상에 반영", UISettings.Resolution.x > 0);
+            }
+
+            Call(router, "ToggleMenu", ScreenId.SkillWindow); await Wait(0.1f);
+            Check("옵션 열린 동안 메뉴 단축키 무시", !ui.IsOpen(ScreenId.SkillWindow));
+
+            o.defaultsButton.onClick.Invoke(); await Wait(0.05f);
+            Near("기본값 → 마스터 100%", UISettings.MasterVolume, 1f);
+            Eq("기본값이 화면에도 반영", o.master.valueText.text, "100");
+            Check("기본값 → 화면 흔들림 켜짐", UISettings.ScreenShake && o.screenShake.toggle.isOn);
+
+            Check("ESC(Back) → 옵션만 닫힘", ui.Back() && !ui.IsOpen(ScreenId.Options) && ui.IsOpen(ScreenId.Title));
+            ui.CloseAll(); await Wait(0.2f);
+
+            await ToCombat();
+            ui.Open(ScreenId.Pause); await Wait(0.2f);
+            Find<PauseWindow>().optionsButton.onClick.Invoke(); await Wait(0.3f);
+            Check("일시정지 '옵션' → 옵션 창", ui.IsOpen(ScreenId.Options) && ui.IsOpen(ScreenId.Pause));
+            Check("옵션 중에도 게임 정지 유지", Time.timeScale == 0f);
+            ui.Back(); await Wait(0.2f);
+            Check("ESC → 일시정지로 돌아감", ui.IsOpen(ScreenId.Pause) && !ui.IsOpen(ScreenId.Options));
+            ui.Back(); await Wait(0.3f);
+            Check("한 번 더 ESC → 게임 재개", !ui.IsOpen(ScreenId.Pause) && Time.timeScale == 1f);
+
+            UISettings.MasterVolume = m0; UISettings.ScreenShake = s0; UISettings.Resolution = r0; UISettings.Save();
+            ui.CloseAll();
+        }
+
+        static async Task Damage()
+        {
+            await ToCombat();
+            var fx = Find<DamageFxController>();
+            Check("DamageFx 연결됨", fx != null && ReferenceEquals(GameUI.Damage, fx));
+            var enemies = new List<DummyEnemy>(UnityEngine.Object.FindObjectsByType<DummyEnemy>(FindObjectsSortMode.None));
+            Check("가상의 적 3마리 배치", enemies.Count == 3);
+            DummyEnemy normal = null, elite = null;
+            foreach (var e in enemies) { if (e.IsElite) elite = e; else if (normal == null) normal = e; }
+            foreach (var e in enemies) e.ResetHP();
+            await Wait(0.2f);
+            Check("적 3마리 체력바 추적", fx.TrackedEnemyCount == 3);
+            Check("일반 적 체력바: 안 맞았으면 숨김", Get<Dictionary<IEnemyHealthSource, EnemyHealthBarView>>(fx, "_bars")[normal].group.alpha < 0.01f);
+            Check("엘리트 체력바: 항상 표시", Get<Dictionary<IEnemyHealthSource, EnemyHealthBarView>>(fx, "_bars")[elite].group.alpha > 0.99f);
+
+            bool prevSetting = UISettings.ShowDamageNumbers;
+            UISettings.ShowDamageNumbers = true;
+
+            normal.TakeHit(23, false); await Wait(0.05f);
+            var nums = Get<List<DamageNumberView>>(fx, "_numbers");
+            DamageNumberView last = Newest(nums);
+            Check("일반 피해 → 숫자 1개", fx.ActiveNumberCount == 1 && last != null);
+            Eq("일반 숫자 = 23", last.text.text, "23");
+            Check("일반 숫자: 흰색, 12px, 라벨 없음", last.text.color == Color.white && Mathf.Approximately(last.text.fontSize, 12f) && !last.label.gameObject.activeSelf);
+            Check("타격 이펙트 재생", Get<List<HitSparkView>>(fx, "_sparks").Exists(s => s.active));
+            var bar = Get<Dictionary<IEnemyHealthSource, EnemyHealthBarView>>(fx, "_bars")[normal];
+            await Wait(0.15f);
+            Check("맞으면 일반 적 체력바 나타남", bar.group.alpha > 0.9f);
+            await Wait(1.0f);
+            Near("체력바 120 중 23 → 0.81", bar.bar.fill.fillAmount, 97f / 120f);
+            Check("숫자는 시간이 지나면 사라짐", fx.ActiveNumberCount == 0);
+
+            normal.TakeHit(50, true);
+            last = Newest(nums);
+            Check("치명타: 시작 크기가 크게 튐 (2배 이상)", last.Rect.localScale.x >= 2f);
+            await Wait(0.05f);
+            Eq("치명타 숫자 = 50", last.text.text, "50");
+            Check("치명타: 15px + '치명타' 라벨", Mathf.Approximately(last.text.fontSize, 15f) && last.label.gameObject.activeSelf && last.label.text == "치명타");
+            await Wait(0.3f);
+            Check("치명타: 노란색으로 정착", last.text.color.b < 0.5f && last.text.color.r > 0.9f);
+
+            await Wait(1.0f);
+            normal.TakeHit(5, false); normal.TakeHit(6, false); normal.TakeHit(7, false); await Wait(0.05f);
+            var ys = new List<float>();
+            foreach (var n in nums) if (n.active) ys.Add(n.offset.y);
+            ys.Sort();
+            Check("연타 3번 → 숫자 3개가 위로 쌓임(겹침 없음)", ys.Count == 3 && ys[1] - ys[0] >= 8f && ys[2] - ys[1] >= 8f);
+
+            UISettings.ShowDamageNumbers = false;
+            int before = fx.ActiveNumberCount;
+            normal.TakeHit(4, false); await Wait(0.05f);
+            Check("옵션 '피해 숫자' 끄면 숫자 안 뜸", fx.ActiveNumberCount == before);
+            Check("…타격 이펙트는 그대로", Get<List<HitSparkView>>(fx, "_sparks").Exists(s => s.active));
+            UISettings.ShowDamageNumbers = true;
+
+            await Wait(bar.hideDelay + 0.6f);
+            Check("한동안 안 맞으면 체력바 다시 숨김", bar.group.alpha < 0.05f);
+
+            normal.TakeHit(9999, true); await Wait(0.9f);
+            Check("처치 → 적 사망 상태", normal.IsDead);
+            Check("처치 → 체력바 사라짐", bar.group.alpha < 0.05f);
+            normal.Miss(); await Wait(0.05f);
+            await Wait(normal.respawnDelay + 0.6f);
+            Check("부활 → 체력 가득", !normal.IsDead && Mathf.Approximately(normal.HP, normal.MaxHP));
+
+            elite.TakeHit(10, false); normal.ResetHP(); await Wait(0.05f);
+            GameUI.Damage.ShowText(elite.HitPoint(), "MISS");
+            await Wait(0.05f);
+            last = Newest(nums);
+            Eq("ShowText → 글자 그대로", last.text.text, "MISS");
+
+            P.ChangeHP(-15); await Wait(0.05f);
+            last = Newest(nums);
+            Eq("플레이어 피격 → 숫자 15", last.text.text, "15");
+            Check("플레이어 피격 숫자는 빨강", last.text.color.r > 0.9f && last.text.color.g < 0.5f);
+            P.ChangeHP(15); await Wait(0.05f);
+            last = Newest(nums);
+            Eq("회복 → +15", last.text.text, "+15");
+
+            for (int i = 0; i < 80; i++) GameUI.Damage.Show(elite.HitPoint(), i, DamageKind.Normal);
+            await Wait(0.05f);
+            Check("80개 연속 → 최대 개수(40) 안에서 재사용", nums.Count <= fx.maxNumbers);
+
+            await Wait(1.3f);
+
+            // ── 자료 조사 반영분 ──
+            int prevSize = UISettings.DamageNumberSize; bool prevCompact = UISettings.CompactNumbers;
+            UISettings.DamageNumberSize = 1; UISettings.CompactNumbers = true;
+
+            normal.TakeHit(5, false); await Wait(0.02f); normal.TakeHit(5, false); await Wait(0.02f);
+            var act = new List<DamageNumberView>(); foreach (var n in nums) if (n.active) act.Add(n);
+            Check("연타 숫자 좌우 번갈아 (한쪽으로 몰리지 않음)", act.Count == 2 && Mathf.Sign(act[0].offset.x) != Mathf.Sign(act[1].offset.x),
+                act.Count == 2 ? $"{act[0].offset.x} / {act[1].offset.x}" : act.Count.ToString());
+            normal.TakeHit(30, true); await Wait(0.02f);
+            var critN = Newest(nums);
+            float normalMaxY = float.MinValue; foreach (var n in act) normalMaxY = Mathf.Max(normalMaxY, n.offset.y);
+            Check("치명타는 위쪽 별도 줄 (일반 숫자보다 높게 시작)", critN.critLane && critN.offset.y > normalMaxY - 1f);
+            await Wait(1.3f);
+
+            elite.TakeHit(4, DamageKind.DamageOverTime); await Wait(0.1f);
+            elite.TakeHit(5, DamageKind.DamageOverTime); await Wait(0.1f);
+            elite.TakeHit(6, DamageKind.DamageOverTime); await Wait(0.05f);
+            int dotCount = 0; DamageNumberView dotN = null;
+            foreach (var n in nums) if (n.active && n.kind == DamageKind.DamageOverTime) { dotCount++; dotN = n; }
+            Check("지속 피해 3틱 → 숫자 1개로 합침", dotCount == 1);
+            if (dotN != null)
+            {
+                Eq("합친 값 = 15", dotN.text.text, "15");
+                Check("지속 피해는 작게(10px) + 맞은 지점 아래", Mathf.Approximately(dotN.text.fontSize, 10f) && dotN.offset.y < 0f);
+            }
+            Check("지속 피해는 타격 이펙트 없음", !Get<List<HitSparkView>>(fx, "_sparks").Exists(sp => sp.active));
+            await Wait(1.0f);
+
+            elite.TakeHit(40, DamageKind.Weakness); await Wait(0.12f); // 등장 순간 흰 번쩍(0.04초) 뒤 색 확인
+            var wk = Newest(nums);
+            Check("약점: 글자 없음, 주황", !wk.label.gameObject.activeSelf && wk.text.color.r > 0.9f && wk.text.color.g < 0.7f && wk.text.color.b < 0.3f);
+            Check("약점: 굵은 글꼴 24px (2배)", Mathf.Approximately(wk.text.fontSize, 24f) && wk.text.font != null && wk.text.font.name.Contains("Bold"),
+                wk.text.font != null ? wk.text.font.name : "null");
+            await Wait(0.4f);
+            normal.TakeHit(9999, DamageKind.Normal); await Wait(0.3f);
+            var fin = Newest(nums);
+            Check("마지막 일격 → 자동 처치 숫자 (빨강, 글자 없음)", fin.kind == DamageKind.Finisher && !fin.label.gameObject.activeSelf && fin.text.color.g < 0.4f);
+            Check("처치: 가장 큰 30px + 그림자 2px", Mathf.Approximately(fin.text.fontSize, 30f) && fin.shadow.rectTransform.anchoredPosition.x >= 2f);
+            await Wait(normal.respawnDelay + 0.8f);
+
+            UISettings.DamageNumberSize = 2;
+            elite.TakeHit(7, false); await Wait(0.02f);
+            Check("옵션 '크게' → 숫자 크기 정확히 2배(24px)", Mathf.Approximately(Newest(nums).text.fontSize, 24f));
+            UISettings.DamageNumberSize = 1;
+            Eq("줄여 쓰기: 9,999는 그대로", DamageFxController.FormatAmount(9999), "9,999");
+            Eq("줄여 쓰기: 12,345 → 12.3k", DamageFxController.FormatAmount(12345), "12.3k");
+            Eq("줄여 쓰기: 2,500,000 → 2.5M", DamageFxController.FormatAmount(2500000), "2.5M");
+            UISettings.CompactNumbers = false;
+            Eq("줄여 쓰기 끄면 12,345", DamageFxController.FormatAmount(12345), "12,345");
+
+            // 흰색 번쩍임 + 히트스톱 + 화면 흔들림
+            var combat = Find<SandboxCombat>();
+            await Wait(1.0f);
+            Check("적에 HitFlash 연결", elite.flash != null);
+            combat.Attack(elite, DamageKind.Critical);
+            Check("치명타 → 적 흰색 번쩍임", elite.flash.CurrentAmount > 0.99f);
+            Check("치명타 → 히트스톱(시간 정지)", Time.timeScale == 0f);
+            await Wait(0.25f);
+            Check("히트스톱 후 시간 복구", Time.timeScale == 1f);
+            Check("번쩍임 끝나면 원래 색", elite.flash.CurrentAmount < 0.01f);
+            var cam = Camera.main; Vector3 camPos = cam.transform.position;
+            UISettings.ScreenShake = false;
+            combat.Attack(elite, DamageKind.Critical); await Wait(0.02f);
+            Check("옵션 '화면 흔들림' 끄면 카메라 그대로", cam.transform.position == camPos);
+            UISettings.ScreenShake = true;
+            await Wait(0.4f);
+            Check("흔들림 후 카메라 제자리", cam.transform.position == camPos);
+
+            UISettings.DamageNumberSize = prevSize; UISettings.CompactNumbers = prevCompact;
+            UISettings.ShowDamageNumbers = prevSetting;
+            foreach (var e in enemies) e.ResetHP();
+            await Wait(1.2f);
+        }
+
+
+        static DamageNumberView Newest(List<DamageNumberView> list)
+        {
+            DamageNumberView best = null;
+            foreach (var n in list) if (n.active && (best == null || n.spawnTime >= best.spawnTime)) best = n;
+            return best;
+        }
+
+        static async Task DialogueDrift()
+        {
+            await ToCombat();
+            var dv = Find<DialogueView>();
+            var data = Find<SandboxDirector>().introDialogue;
+            Vector2 l0 = dv.leftPortrait.rectTransform.anchoredPosition;
+            Vector2 r0 = dv.rightPortrait.rectTransform.anchoredPosition;
+            Vector2 b0 = dv.box.anchoredPosition;
+            // 슬라이드 도중에 빠르게 넘기기·중단을 반복 (예전엔 매번 조금씩 밀렸음)
+            for (int k = 0; k < 6; k++)
+            {
+                GameUI.Dialogue.Play(data);
+                for (int i = 0; i < data.lines.Count * 2; i++) { Call(dv, "Advance"); await Wait(0.03f); }
+                GameUI.Dialogue.Stop();
+                await Wait(0.02f);
+            }
+            GameUI.Dialogue.Play(data); await Wait(0.6f);
+            for (int i = 0; i < data.lines.Count * 2 && dv.IsPlaying; i++) { Call(dv, "Advance"); await Wait(0.4f); }
+            await Wait(0.3f);
+            Check("왼쪽 초상화 제자리", (dv.leftPortrait.rectTransform.anchoredPosition - l0).magnitude < 0.5f,
+                $"{l0} → {dv.leftPortrait.rectTransform.anchoredPosition}");
+            Check("오른쪽 초상화 제자리", (dv.rightPortrait.rectTransform.anchoredPosition - r0).magnitude < 0.5f,
+                $"{r0} → {dv.rightPortrait.rectTransform.anchoredPosition}");
+            Check("대화창 제자리", (dv.box.anchoredPosition - b0).magnitude < 0.5f, $"{b0} → {dv.box.anchoredPosition}");
+
+            var guide = Hud.guideText.rectTransform;
+            Vector2 g0 = guide.anchoredPosition;
+            for (int k = 0; k < 8; k++) { GameUI.HUD.ShowGuide("안내 " + k, 0.2f); await Wait(0.04f); }
+            await Wait(1.2f);
+            Check("안내 문구 연타 후 제자리", (guide.anchoredPosition - g0).magnitude < 0.5f, $"{g0} → {guide.anchoredPosition}");
         }
     }
 }

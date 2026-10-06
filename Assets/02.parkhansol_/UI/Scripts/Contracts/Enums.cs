@@ -36,11 +36,33 @@ namespace OZ.UI.Contracts
         SkillWindow = 3,
         Pause = 4,
         Death = 5,
-        StageClear = 6,
+        [System.Obsolete("스테이지 클리어 창은 없어짐 — GameUI.HUD.ShowBanner(\"게이트 파괴\") 띠로 대체")] StageClear = 6,
         DemoEnd = 7,
         Inventory = 8,
         Map = 9,
         Dialogue = 10,
+        Options = 11,
+    }
+
+    /// <summary>피해 숫자 종류 (GameUI.Damage.Show)</summary>
+    public enum DamageKind
+    {
+        /// <summary>적이 받은 일반 피해 — 흰 숫자</summary>
+        Normal = 0,
+        /// <summary>적이 받은 치명타 — 큰 노란 숫자 + "치명타" + 큰 타격 이펙트</summary>
+        Critical = 1,
+        /// <summary>플레이어가 받은 피해 — 빨간 숫자</summary>
+        PlayerHurt = 2,
+        /// <summary>회복 — 초록 +숫자</summary>
+        Heal = 3,
+        /// <summary>빗나감/무효 — 회색 글자 (ShowText와 함께)</summary>
+        Miss = 4,
+        /// <summary>지속 피해(장판·독 등) — 작은 보라 숫자, 맞은 지점 아래, 0.4초 안의 피해는 합쳐서 하나로</summary>
+        DamageOverTime = 5,
+        /// <summary>약점 치명타 — 주황, 치명타보다 한 단계 강조</summary>
+        Weakness = 6,
+        /// <summary>처치타(마지막 일격) — 빨강, 가장 크게</summary>
+        Finisher = 7,
     }
 
     public enum ToastType

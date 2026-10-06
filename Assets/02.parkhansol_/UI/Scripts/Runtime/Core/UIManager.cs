@@ -58,6 +58,7 @@ namespace OZ.UI
                 RegisterWindow(w);
 
             EnsureEventSystem();
+            UISettingsApplier.Hook(); // 저장된 볼륨·화면 설정 적용
             GameUI.Register((IScreenApi)this);
         }
 
@@ -199,7 +200,8 @@ namespace OZ.UI
         public void ShowTitle(bool canContinue) => Open(ScreenId.Title, new TitleArgs(canContinue));
         public void ShowClassSelect(IReadOnlyList<ClassData> classes) => Open(ScreenId.ClassSelect, new ClassSelectArgs(classes));
         public void ShowDeath() => Open(ScreenId.Death);
-        public void ShowStageClear(int stageNumber, HunterRank newRank) => Open(ScreenId.StageClear, new StageClearArgs(stageNumber, newRank));
+        public void ShowStageClear(int stageNumber, HunterRank newRank) =>
+            GameUI.HUD.ShowBanner("게이트 파괴", $"STAGE {stageNumber} 클리어  ·  헌터 랭크 {newRank.ToDisplay()}", 2.5f, UIRequests.RaiseNextStage);
         public void ShowDemoEnd() => Open(ScreenId.DemoEnd);
 
         // ───────────── 상태 ─────────────
@@ -223,7 +225,8 @@ namespace OZ.UI
 
             if (pause && !_pausedTimeScale)
             {
-                _timeScaleBeforePause = Time.timeScale;
+                // 히트스톱(0) 도중에 열려도 닫을 때 게임이 멈춘 채로 남지 않게
+                _timeScaleBeforePause = Time.timeScale > 0f ? Time.timeScale : 1f;
                 Time.timeScale = 0f;
                 _pausedTimeScale = true;
             }

@@ -42,7 +42,7 @@ public class Player : MonoBehaviour, IHealthSource, ISkillSource, IItemSource
 
 | 인터페이스 | 담당(예상) | HUD에 보이는 것 |
 |---|---|---|
-| `IHealthSource` | 플레이어 | 체력 통(Flask) + 체력 바 + 피격/회복 연출 |
+| `IHealthSource` | 플레이어 | 초상화 칸 + HP 바 + 피격/회복 연출 |
 | `IProgressionSource` | 플레이어/코어 | 레벨 · 경험치 · 헌터 랭크 · 남은 스킬 포인트 |
 | `ISkillSource` | 플레이어 | Q/E/R 아이콘 · 쿨타임 · 완료 연출 · 잠금 / 스킬 창 투자 |
 | `IItemSource` | 플레이어/코어 | 1~4 아이템 수량 · 사용 연출 · 버프 타이머 |
@@ -57,12 +57,40 @@ public class Player : MonoBehaviour, IHealthSource, ISkillSource, IItemSource
 ```csharp
 GameUI.Boss.Show(this, () => StartPattern());   // 보스 등장 연출 후 콜백
 GameUI.Screens.ShowDeath();                      // 사망 화면
-GameUI.Screens.ShowStageClear(1, HunterRank.E);  // 클리어 + 승급
+GameUI.Screens.ShowStageClear(1, HunterRank.E);  // "게이트 파괴" 띠 → 끝나면 UIRequests.NextStage
+GameUI.HUD.ShowBanner("게이트 파괴", "1 / 3");     // 가운데 큰 띠 (게이트 봉쇄 시엔 자동)
+GameUI.HUD.SetPortrait(playerPortraitSprite);    // HP 바 옆 초상화 칸
 GameUI.Map.SetPlayerRoom("S1_03");               // 방 트리거
 GameUI.Dialogue.Play(dialogueData, OnTalkEnd);   // 대화
 GameUI.Notify.Toast("게이트를 봉쇄했다", ToastType.Success);
 GameUI.HUD.ShowGuide("보스 구역이 열렸다");
 ```
+
+### 2-1) 피해 숫자 · 타격 이펙트 · 적 체력바 (전투 · 적 담당)
+
+```csharp
+// 적이 맞았을 때 (위치는 월드 좌표 — UI가 따라감)
+GameUI.Damage.Show(hitPoint, damage, isCrit ? DamageKind.Critical : DamageKind.Normal);
+GameUI.Damage.ShowText(hitPoint, "MISS");                 // 빗나감·면역 등 글자
+GameUI.Damage.Show(playerHead, 12, DamageKind.PlayerHurt); // 플레이어 피격 (빨강), Heal = 초록 +숫자
+
+// 적 머리 위 체력바: IEnemyHealthSource 구현 후 등록 (맞을 때만 뜨고 2.5초 뒤 숨김, 엘리트는 항상 표시)
+void Start()     => GameUI.Damage.TrackEnemy(this);
+void OnDestroy() => GameUI.Damage.UntrackEnemy(this);
+```
+
+| 종류 | 모양 |
+|---|---|
+| Normal | 흰 숫자 12px, 살짝 튀며 위로 18px, 0.65초 + 작은 하늘색 타격 이펙트 |
+| Critical | 노란 숫자 15px + "치명타", 크게 튀고 좌우 흔들림, 0.95초 + 큰 금색 폭발 이펙트 |
+| Weakness / Finisher | 글자 없이 색·크기·두께로: 주황 굵은 24px / 빨강 30px (마지막 일격) |
+| DamageOverTime | 보라 10px, 맞은 지점 아래, 0.4초 안의 틱은 합산 |
+| PlayerHurt / Heal / Miss | 빨강 / 초록 + / 회색 글자 |
+
+피격 흰 번쩍임은 `HitFlash` 컴포넌트 + `UI/Art/FX/OZ_SpriteFlash.mat`. 히트스톱·흔들림 수치표: `Docs/CombatFeedback.md`
+
+같은 자리에 연타가 들어오면 숫자가 위로 쌓여 겹치지 않습니다. 옵션의 '피해 숫자 표시'를 끄면 숫자만 사라지고 이펙트는 남습니다.
+참고 구현: `UI/Scripts/Samples/DummyEnemy.cs`
 
 ### 3) UI → 게임 요청 받기 (코어)
 
@@ -73,6 +101,20 @@ UIRequests.Retry         += RestartStage;         // 사망 화면 '재도전'
 UIRequests.NextStage     += LoadNextStage;
 UIRequests.ReturnToTitle += GoTitle;
 ```
+
+### 3-1) 옵션 값 읽기 (사운드 · 카메라 · 전투)
+
+시작 화면 **설정**, 일시정지 **옵션**에서 같은 옵션 창이 열립니다. 값은 `UISettings`(Contracts)에 있고 자동 저장됩니다.
+
+```csharp
+bgm.volume = UISettings.BgmVolume;            // 0~1 (마스터 볼륨은 UI가 AudioListener로 이미 적용)
+sfx.volume = UISettings.SfxVolume;
+UISettings.Changed += ApplyVolume;            // 옵션에서 바꾸면 즉시 호출
+if (UISettings.ScreenShake) cameraShake.Play();
+if (UISettings.ShowDamageNumbers) SpawnDamageText(dmg);
+```
+
+전체 화면 · 해상도 · 수직 동기화는 UI가 직접 적용합니다.
 
 ### 4) 입력 막기
 
@@ -93,6 +135,7 @@ if (UIState.IsGameplayInputBlocked) return;   // 스킬 창/인벤토리/대화 
 | I / 패드 Y | 인벤토리 |
 | Tab · M / 패드 ↑ | 지도 |
 | ESC / 패드 Start | 닫기 → 없으면 일시정지 |
+| Q / E · 패드 LB/RB | 옵션 창 탭 전환 |
 | Space·Enter·클릭 / 패드 A | 대화 진행 |
 
 Q/E/R, 1~4 는 **플레이어 담당이 입력 처리** → UI는 이벤트만 받습니다. 공용 `InputSystem_Actions`는 수정하지 않았습니다.

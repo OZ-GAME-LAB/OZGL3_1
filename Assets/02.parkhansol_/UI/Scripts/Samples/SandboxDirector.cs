@@ -9,7 +9,7 @@ namespace OZ.UI.Samples
     ///   타이틀 → 새 게임 → 계열 선택 → 대화 → 전투 HUD → (사망/재도전, 보스, 클리어, 데모 종료)
     ///
     /// 디버그 키
-    ///   T 대화 / P 다음 방(지도) / F2 사망 / F3 스테이지 클리어 / F4 데모 종료 / F5 타이틀
+    ///   T 대화 / P 다음 방(지도) / F2 사망 / F3 스테이지 클리어(게이트 파괴 띠) / F4 데모 종료 / F5 타이틀
     /// </summary>
     [AddComponentMenu("OZ/UI/Samples/Sandbox Director")]
     public class SandboxDirector : MonoBehaviour

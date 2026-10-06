@@ -66,18 +66,50 @@ namespace OZ.UI
         }
 
         /// <summary>from 방향에서 원래 위치로 미끄러져 들어온다. from 예: Vector2.down</summary>
-        public static Tween SlideIn(this RectTransform rt, Vector2 from, float distance = 40f, float duration = UITweenStyle.Normal)
+        // 위치 연출(SlideIn/SlideOut/Shake)이 중간에 끊기면(다른 코드가 DOKill, 시퀀스 Kill 등)
+        // 끊긴 자리가 다음 연출의 "제자리"가 되어 점점 밀리는 문제가 있었다 (대화 초상화 좌우 밀림).
+        // → 연출 시작 전 제자리를 기억해 두고, 끝나거나 끊기면 제자리로 되돌린다.
+        //    콜백 없이 끊겨도 다음 연출 시작 때 기억해 둔 제자리로 먼저 복구한다.
+        sealed class PosState { public bool active; public Vector2 rest; }
+        static readonly System.Runtime.CompilerServices.ConditionalWeakTable<RectTransform, PosState> _pos =
+            new System.Runtime.CompilerServices.ConditionalWeakTable<RectTransform, PosState>();
+
+        /// <summary>위치 연출 시작: 이전 연출이 끊겨 있었다면 그 제자리로 복구 후, 현재 위치를 제자리로 기록</summary>
+        static PosState BeginPos(RectTransform rt)
         {
             rt.DOKill(true);
-            Vector2 target = rt.anchoredPosition;
+            var st = _pos.GetValue(rt, _ => new PosState());
+            if (st.active) rt.anchoredPosition = st.rest; // 콜백 없이 끊긴 이전 연출 정리
+            st.rest = rt.anchoredPosition;
+            st.active = true;
+            return st;
+        }
+
+        static T EndPos<T>(this T t, RectTransform rt, PosState st, Vector2 finalPos) where T : Tween
+        {
+            System.Action end = () =>
+            {
+                if (!st.active) return;
+                st.active = false;
+                if (rt != null) rt.anchoredPosition = finalPos;
+            };
+            t.OnComplete(() => end()).OnKill(() => end());
+            return t;
+        }
+
+        public static Tween SlideIn(this RectTransform rt, Vector2 from, float distance = 40f, float duration = UITweenStyle.Normal)
+        {
+            var st = BeginPos(rt);
+            Vector2 target = st.rest;
             rt.anchoredPosition = target + from.normalized * distance;
-            return rt.DOAnchorPos(target, duration).SetEase(Ease.OutCubic).Ui(rt);
+            return rt.DOAnchorPos(target, duration).SetEase(Ease.OutCubic).Ui(rt).EndPos(rt, st, target);
         }
 
         public static Tween SlideOut(this RectTransform rt, Vector2 to, float distance = 40f, float duration = UITweenStyle.Fast)
         {
-            rt.DOKill(true);
-            Vector2 target = rt.anchoredPosition + to.normalized * distance;
+            var st = BeginPos(rt);
+            Vector2 target = st.rest + to.normalized * distance;
+            // active를 켜 둔 채로 둠 → 다음 SlideIn/Shake 때 원래 제자리(rest)로 먼저 복구됨
             return rt.DOAnchorPos(target, duration).SetEase(Ease.InCubic).Ui(rt);
         }
 
@@ -92,18 +124,34 @@ namespace OZ.UI
         /// <summary>좌우 흔들림 (사용 불가, 피격). strength는 UI 좌표(px/배율) 기준</summary>
         public static Tween Shake(this RectTransform rt, float strength = 3f, float duration = 0.2f)
         {
-            rt.DOKill(true);
-            return rt.DOShakeAnchorPos(duration, new Vector2(strength, 0f), 20, 0f, true, true).Ui(rt);
+            var st = BeginPos(rt);
+            return rt.DOShakeAnchorPos(duration, new Vector2(strength, 0f), 20, 0f, true, true).Ui(rt).EndPos(rt, st, st.rest);
         }
 
-        /// <summary>그래픽을 color로 번쩍였다가 원래 색으로</summary>
+        sealed class FlashState { public Color baseColor; public Sequence seq; }
+        static readonly System.Runtime.CompilerServices.ConditionalWeakTable<Graphic, FlashState> _flash =
+            new System.Runtime.CompilerServices.ConditionalWeakTable<Graphic, FlashState>();
+
+        /// <summary>
+        /// 색 플래시 후 원래 색으로 복귀. 연속으로 불러도 "원래 색"은 첫 플래시 전 색으로 고정
+        /// (빠른 연타 피격 시 빨간색이 남는 문제 방지).
+        /// </summary>
         public static Sequence FlashColor(this Graphic g, Color color, float duration = UITweenStyle.Fast)
         {
-            g.DOKill(true);
-            Color original = g.color;
+            var st = _flash.GetValue(g, _ => new FlashState());
+            if (st.seq != null && st.seq.IsActive())
+            {
+                st.seq.Kill();
+                g.color = st.baseColor;
+            }
+            else st.baseColor = g.color;
+
+            Color original = st.baseColor;
             var seq = DOTween.Sequence();
             seq.Append(g.DOColor(color, duration * 0.3f));
             seq.Append(g.DOColor(original, duration * 0.7f));
+            seq.OnKill(() => { if (g != null && st.seq == seq) { g.color = original; st.seq = null; } });
+            st.seq = seq;
             return seq.Ui(g);
         }
 
