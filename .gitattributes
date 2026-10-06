@@ -1,0 +1,14 @@
+# Normalize text in Git and keep Unity source files consistent across platforms.
+* text=auto
+*.cs text eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
+*.hlsl text eol=lf
+*.json text eol=lf
+*.meta text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text=auto eol=lf
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

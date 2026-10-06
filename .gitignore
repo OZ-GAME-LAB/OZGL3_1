@@ -1,4 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
+# The repository root is also the Unity project root.
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
@@ -104,3 +104,24 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Local operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+
+# Local assistant configuration and working files
+.codex/
+.claude/
+.cursor/
+.mcp.json
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.cursorrules
+.cursorignore
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+.vscode/mcp.json
