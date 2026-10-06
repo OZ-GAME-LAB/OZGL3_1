@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637e49918d8371644b333ba218f76814, type: 3}
+  m_Name: Skill_Magic_R
+  m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.SkillData
+  id: magic_r
+  displayName: "\uAD11\uC5ED \uC5F0\uC18D \uACF5\uACA9"
+  description: "\uB113\uC740 \uBAA9\uD45C \uAD6C\uC5ED\uC5D0 \uBC94\uC704 \uACF5\uACA9\uC744
+    \uC21C\uCC28\uC801\uC73C\uB85C \uBC1C\uC0DD."
+  icon: {fileID: 21300000, guid: ee9fa036fe3917e4cb3cc31ef1236a85, type: 3}
+  playerClass: 1
+  slot: 2
+  learnLevel: 4
+  startsLearned: 0
+  maxRank: 3
+  costPerRank: 1
+  ranks:
+  - cooldown: 20
+    summary: "6\uD68C \uB099\uD558"
+  - cooldown: 18
+    summary: "8\uD68C \uB099\uD558"
+  - cooldown: 16
+    summary: "10\uD68C \uB099\uD558"

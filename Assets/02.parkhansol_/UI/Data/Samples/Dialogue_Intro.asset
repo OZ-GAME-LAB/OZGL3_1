@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2208153cdd1fcd841a50d5535f61aeb4, type: 3}
+  m_Name: Dialogue_Intro
+  m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.DialogueData
+  id: intro
+  lines:
+  - speaker: {fileID: 11400000, guid: 0cf85e1da5ad5664ab22309495ac4741, type: 2}
+    side: 1
+    expression: -1
+    text: "F\uAE09 \uAC01\uC131\uC790, \uB9DE\uC9C0? \uC11C\uC6B8 \uB3C4\uC2EC\uC5D0
+      \uAC8C\uC774\uD2B8\uAC00 \uC5F4\uB838\uB2E4."
+    charsPerSecond: 0
+  - speaker: {fileID: 11400000, guid: 5f1f59564e79f3c41b066b523fdc4363, type: 2}
+    side: 0
+    expression: -1
+    text: "\uAC8C\uC774\uD2B8\uB97C \uBA87 \uAC1C\uB098 \uB2EB\uC73C\uBA74 \uB418\uC8E0?"
+    charsPerSecond: 0
+  - speaker: {fileID: 11400000, guid: 0cf85e1da5ad5664ab22309495ac4741, type: 2}
+    side: 1
+    expression: -1
+    text: "\uC138 \uACF3. \uC804\uBD80 \uBD09\uC1C4\uD558\uBA74 \uBCF4\uC2A4 \uAD6C\uC5ED
+      \uCD9C\uC785\uC744 \uD5C8\uAC00\uD558\uC9C0."
+    charsPerSecond: 0
+  - speaker: {fileID: 11400000, guid: 5f1f59564e79f3c41b066b523fdc4363, type: 2}
+    side: 0
+    expression: -1
+    text: "\uC54C\uACA0\uC2B5\uB2C8\uB2E4. \uBC14\uB85C \uCD9C\uBC1C\uD560\uAC8C\uC694."
+    charsPerSecond: 0
+  pauseGame: 1

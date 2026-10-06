@@ -1,0 +1,303 @@
+<title>UI 파트 설계안 · 박한솔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 레이아웃: 회의용 단일 문서 — 왼쪽 정렬 본문 + 넓은 다이어그램 패널 */
+:root {
+  --bg: #f5f6f9; --surface: #ffffff; --fg: #1b2030; --muted: #5b6478; --line: #d9dde7;
+  --accent: #2f5bd3; --accent-soft: #e6ecfb; --ok: #1f8a5b; --warn: #b86a12;
+  --display: "IBM Plex Sans KR", "Noto Sans KR", system-ui, sans-serif;
+  --body: "IBM Plex Sans KR", "Noto Sans KR", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12151d; --surface: #1a1f2b; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2c3344;
+  --accent: #7d9cff; --accent-soft: #232c45; --ok: #4cc28c; --warn: #e3a14d; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #12151d; --surface: #1a1f2b; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2c3344;
+  --accent: #7d9cff; --accent-soft: #232c45; --ok: #4cc28c; --warn: #e3a14d; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.7 var(--body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 20px 80px; }
+header { border-bottom: 2px solid var(--fg); padding-bottom: 18px; margin-bottom: 28px; }
+.eyebrow { font: 500 12px var(--mono); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+h1 { font: 700 30px/1.25 var(--display); margin: 6px 0 8px; text-wrap: balance; }
+h2 { font: 700 20px/1.3 var(--display); margin: 44px 0 12px; display: flex; gap: 10px; align-items: baseline; }
+h2 .no { font: 500 14px var(--mono); color: var(--accent); }
+h3 { font: 600 16px var(--display); margin: 26px 0 8px; }
+p, li { max-width: 72ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 13px; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 8px 0; }
+.summary div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.summary b { display: block; font-size: 13px; color: var(--accent); margin-bottom: 4px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; overflow-x: auto; }
+.panel pre.mermaid { margin: 0; background: transparent; text-align: center; }
+.cap { font-size: 13px; color: var(--muted); margin: 8px 2px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.tbl { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: .03em; background: var(--accent-soft); }
+tr:last-child td { border-bottom: 0; }
+code { font: 13px var(--mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.pill { display: inline-block; font: 500 12px var(--mono); padding: 1px 8px; border-radius: 99px; white-space: nowrap; }
+.pill.ok { color: var(--ok); border: 1px solid var(--ok); }
+.pill.warn { color: var(--warn); border: 1px solid var(--warn); }
+ol.decide li { margin-bottom: 6px; }
+.keys { font: 13px var(--mono); }
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">OZGL3_1 · Project M · 개발 · UI</div>
+  <h1>UI 파트 클래스 다이어그램 · 플로우차트</h1>
+  <div class="meta"><span>박한솔</span><span>기획서 v0.2 기준</span><span>2026-10-07 회의</span><span>Unity 6.3 · uGUI + TMP · DOTween(무료)</span></div>
+</header>
+
+<div class="summary">
+  <div><b>담당 범위</b>전투 HUD, 스킬 창, 인벤토리, 지도, 대화창, 보스 체력바·연출, 시작/계열선택/사망/클리어 화면</div>
+  <div><b>연동 원칙</b>팀원은 <code>OZ.UI.Contracts</code>만 참조. 인터페이스 구현 + 한 줄 호출로 연결, UI가 없는 씬에서도 에러 없음</div>
+  <div><b>현재 상태</b><code>UI_Sandbox</code> 씬에서 더미 데이터로 전 화면 실작동 확인. 컴파일 에러 0</div>
+</div>
+
+<h2><span class="no">1</span>화면 구성</h2>
+<div class="tbl"><table>
+<tr><th>화면</th><th>보여주는 것</th><th>기획서 근거</th><th>상태</th></tr>
+<tr><td>전투 HUD</td><td>체력 통 · Lv/EXP · 헌터 랭크 · 게이트 봉쇄 n/목표 · 보스 구역 개방 · Q/E/R 쿨타임 · 1~4 아이템 수량 · 버프 타이머 · 미니맵 · 알림</td><td>5장 필수 화면, 2장 스킬 자원</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>스킬 창 (K)</td><td>보유 포인트 · 습득/강화 단계(최대 3) · 현재·다음 효과 · 비용 · 습득 레벨 제한</td><td>3장 스킬 투자</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>인벤토리 (I)</td><td>1×1 슬롯 그리드 · 집기/놓기 · 우클릭 사용 · 아이템 정보창</td><td>추가 요청 (데모 범위 확장)</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>지도 (Tab · M)</td><td>방 단위 미니맵 + 전체 지도 · 발견/방문/현재 방 · 아이콘</td><td>추가 요청</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>대화창</td><td>좌/우 초상화 · 화자 강조 · 타이핑 · 진행 표시</td><td>추가 요청</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>보스 HUD</td><td>등장 연출(레터박스·배너·바 채움) · 페이즈 눈금 · 큰 피격 플래시 · 격파</td><td>5장 보스와 결과</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>시작 · 계열 선택 · 일시정지 · 사망 · 클리어 · 데모 종료</td><td>버튼은 UI, 실제 처리는 코어가 <code>UIRequests</code> 구독</td><td>5장 필수 화면, 1장 사망과 재도전</td><td><span class="pill ok">구현</span></td></tr>
+<tr><td>아이콘 · 초상화 아트</td><td>임시 픽셀 아이콘 사용 중</td><td>—</td><td><span class="pill warn">아트 교체 필요</span></td></tr>
+</table></div>
+
+<h2><span class="no">2</span>클래스 다이어그램</h2>
+<h3>2-1. 전체 구조 — 팀원 코드와 UI의 경계</h3>
+<div class="panel"><pre class="mermaid">flowchart LR
+  subgraph G[&quot;팀원 코드&quot;]
+    direction TB
+    P[&quot;Player · 정명진&quot;]
+    C[&quot;GameManager / StageManager · 이광호&quot;]
+    B[&quot;Boss · NPC · 방 트리거&quot;]
+  end
+  subgraph K[&quot;OZ.UI.Contracts — 팀원이 참조하는 유일한 UI 어셈블리&quot;]
+    direction TB
+    SRC[&quot;Source 인터페이스&lt;br/&gt;체력 · 스킬 · 아이템 · 레벨/랭크&lt;br/&gt;게이트 · 인벤토리 · 보스&quot;]
+    GUI[&quot;GameUI 정적 창구&lt;br/&gt;HUD · Boss · Screens · Map · Dialogue · Notify&quot;]
+    REQ[&quot;UIRequests&lt;br/&gt;NewGame · ClassSelected · Retry · NextStage&quot;]
+    ST[&quot;UIState&lt;br/&gt;IsGameplayInputBlocked&quot;]
+  end
+  subgraph U[&quot;OZ.UI — 박한솔 구현&quot;]
+    direction TB
+    HUD[&quot;HUD 뷰들&quot;]
+    SCR[&quot;UIManager + 창들&quot;]
+    ETC[&quot;보스바 · 지도 · 대화 · 토스트&quot;]
+  end
+  P -- &quot;구현 + Bind&quot; --&gt; SRC
+  C -- &quot;구현 + Bind&quot; --&gt; SRC
+  B -- &quot;한 줄 호출&quot; --&gt; GUI
+  C -- &quot;구독&quot; --&gt; REQ
+  P -. &quot;입력 전 확인&quot; .-&gt; ST
+  SRC -- &quot;이벤트&quot; --&gt; HUD
+  GUI -- &quot;등록된 구현으로 전달&quot; --&gt; SCR
+  GUI --&gt; ETC
+  SCR -- &quot;버튼&quot; --&gt; REQ
+  SCR -- &quot;창 열림/닫힘&quot; --&gt; ST
+</pre></div>
+<p class="cap">UI는 게임플레이 코드를 직접 참조하지 않는다. 팀원도 UI 프리팹 내부를 몰라도 된다.</p>
+
+<h3>2-2. 팀원이 쓰는 클래스 (OZ.UI.Contracts)</h3>
+<div class="panel"><pre class="mermaid">classDiagram
+  direction LR
+  class GameUI {
+    &lt;&lt;static&gt;&gt;
+    HUD · Boss · Screens
+    Map · Dialogue · Notify
+    +Bind(source)
+    +Unbind(source)
+  }
+  class UISources {
+    &lt;&lt;static&gt;&gt;
+    Health · Skills · Items
+    Progression · Gate · Inventory
+    +event Changed
+  }
+  class UIRequests {
+    &lt;&lt;static events&gt;&gt;
+    NewGame · Continue · QuitGame
+    ClassSelected · Retry
+    NextStage · ReturnToTitle
+  }
+  class UIState {
+    &lt;&lt;static&gt;&gt;
+    +IsGameplayInputBlocked
+    +IsPausedByUI
+  }
+  class IHealthSource {
+    &lt;&lt;interface&gt;&gt;
+    HP · MaxHP
+    event HealthChanged
+  }
+  class ISkillSource {
+    &lt;&lt;interface&gt;&gt;
+    GetSkill · GetRank · 쿨타임
+    CanInvest · TryInvest
+    event CooldownStarted
+  }
+  class IItemSource {
+    &lt;&lt;interface&gt;&gt;
+    1~4 슬롯 · 수량
+    event ItemUsed · BuffApplied
+  }
+  class IProgressionSource {
+    &lt;&lt;interface&gt;&gt;
+    Level · Exp · SkillPoints · Rank
+    event LevelUp · RankUp
+  }
+  class IGateSource {
+    &lt;&lt;interface&gt;&gt;
+    Sealed / Target · BossUnlocked
+    event GateSealed
+  }
+  class IInventorySource {
+    &lt;&lt;interface&gt;&gt;
+    Capacity · GetSlot
+    TryMove · TryUse
+  }
+  class IBossSource {
+    &lt;&lt;interface&gt;&gt;
+    Data · HP · Phase
+    event HPChanged · Defeated
+  }
+  GameUI ..&gt; UISources : Bind
+  UISources o-- IHealthSource
+  UISources o-- ISkillSource
+  UISources o-- IItemSource
+  UISources o-- IProgressionSource
+  UISources o-- IGateSource
+  UISources o-- IInventorySource
+  GameUI ..&gt; IBossSource : Boss.Show
+</pre></div>
+<p class="cap">플레이어는 <code>GameUI.Bind(this)</code> 한 줄로 등록하거나, 오브젝트에 <code>UISourceBinder</code> 컴포넌트만 붙이면 된다.</p>
+
+<h3>2-3. UI 내부 구조 (OZ.UI)</h3>
+<div class="panel"><pre class="mermaid">classDiagram
+  direction TB
+  class UIManager {
+    레이어 캔버스 · 창 스택
+    +Open(ScreenId)
+    +Close(ScreenId)
+    +Back()
+  }
+  class UIWindow {
+    &lt;&lt;abstract&gt;&gt;
+    ScreenId · Layer
+    PausesGame · BlocksInput
+    #OnSetup · OnOpened · OnClosed
+  }
+  class UIInputRouter {
+    K 스킬 · I 인벤 · Tab 지도 · ESC
+  }
+  class HudView {
+    +ShowGuide · Flash
+  }
+  class HUD_자식 {
+    HealthView · ProgressionView
+    GateStatusView · SkillBarView
+    ItemBarView · BuffTrayView
+  }
+  class BossHudView {
+    +Show(boss, onIntro)
+  }
+  class MapController {
+    +SetMap · SetPlayerRoom
+  }
+  class DialogueView {
+    +Play(data, onDone)
+  }
+  class ToastView {
+    +Toast(msg)
+  }
+  class 창들 {
+    Title · ClassSelect · Skill
+    Inventory · Map · Pause
+    Death · StageClear · DemoEnd
+  }
+  class 공용_위젯 {
+    TweenFillBar · CooldownRadial
+    UITween(DOTween 프리셋)
+    PixelCanvasScaler(정수배)
+  }
+  UIInputRouter ..&gt; UIManager
+  UIManager o-- UIWindow
+  UIWindow &lt;|-- 창들
+  UIWindow &lt;|-- DialogueView
+  HudView *-- HUD_자식
+  HUD_자식 ..&gt; 공용_위젯
+  BossHudView ..&gt; 공용_위젯
+  창들 ..&gt; MapController : MapWindow
+</pre></div>
+
+<h2><span class="no">3</span>플로우차트</h2>
+<h3>3-1. 화면 흐름</h3>
+<div class="panel"><pre class="mermaid">flowchart TD
+  T[&quot;타이틀&lt;br/&gt;새 게임 · 이어하기 · 종료&quot;] --&gt;|새 게임| CS[&quot;계열 선택&lt;br/&gt;검술 / 마법&quot;]
+  T --&gt;|이어하기| HUD
+  CS --&gt;|&quot;UIRequests.ClassSelected&quot;| D[&quot;대화&lt;br/&gt;초상화 · 타이핑&quot;]
+  D --&gt; HUD[&quot;전투 HUD&lt;br/&gt;체력 · Lv/EXP · 랭크 · 게이트 · Q/E/R · 1~4&quot;]
+  HUD --&gt;|&quot;K · I · Tab (시간 정지)&quot;| MENU[&quot;스킬 창 · 인벤토리 · 지도&quot;]
+  MENU --&gt;|&quot;닫기&quot;| HUD
+  HUD --&gt;|&quot;ESC&quot;| PAUSE[&quot;일시정지&quot;]
+  PAUSE --&gt; HUD
+  PAUSE --&gt;|타이틀로| T
+  HUD --&gt;|&quot;게이트 봉쇄 n/목표&quot;| GATE{&quot;목표 달성?&quot;}
+  GATE --&gt;|아니오| HUD
+  GATE --&gt;|예| OPEN[&quot;보스 구역 개방 안내&quot;]
+  OPEN --&gt; BI[&quot;보스 등장 연출&lt;br/&gt;레터박스 → 배너 → 바 채움&quot;]
+  BI --&gt; BF[&quot;보스전&lt;br/&gt;체력바 · 페이즈 · 큰 피격 플래시&quot;]
+  BF --&gt;|처치| SC[&quot;스테이지 클리어&lt;br/&gt;헌터 랭크 승급&quot;]
+  SC --&gt;|&quot;2스테이지 전&quot;| HUD
+  SC --&gt;|&quot;2스테이지 클리어&quot;| END[&quot;데모 종료&quot;]
+  END --&gt; T
+  HUD --&gt;|&quot;체력 0&quot;| DEATH[&quot;사망&lt;br/&gt;스테이지 시작 상태로 복구 안내&quot;]
+  BF --&gt;|&quot;체력 0&quot;| DEATH
+  DEATH --&gt;|&quot;재도전 (UIRequests.Retry)&quot;| HUD
+  DEATH --&gt;|타이틀로| T
+</pre></div>
+<h3>3-2. 데이터 흐름 예시</h3>
+<div class="panel"><pre class="mermaid">flowchart TB
+  subgraph A[&quot;① 피격 → HUD (이벤트 방식)&quot;]
+    direction LR
+    a1[&quot;Player.TakeDamage()&quot;] --&gt; a2[&quot;HealthChanged&lt;br/&gt;(이전, 현재, 최대)&quot;] --&gt; a3[&quot;HealthView&quot;] --&gt; a4[&quot;Flask·체력바 트윈&lt;br/&gt;흔들림 · 25%↓ 맥박&quot;]
+  end
+  subgraph B[&quot;② 메뉴 열기 (UI 단독 처리)&quot;]
+    direction LR
+    b1[&quot;K 키&quot;] --&gt; b2[&quot;UIInputRouter&quot;] --&gt; b3[&quot;UIManager.Open&lt;br/&gt;(SkillWindow)&quot;] --&gt; b4[&quot;입력 차단&lt;br/&gt;timeScale 0&quot;]
+    b3 --&gt; b5[&quot;투자 클릭 →&lt;br/&gt;ISkillSource.TryInvest()&quot;]
+  end
+  subgraph C[&quot;③ UI → 게임 요청&quot;]
+    direction LR
+    c1[&quot;사망 화면 &#x27;재도전&#x27;&quot;] --&gt; c2[&quot;UIRequests.Retry&quot;] --&gt; c3[&quot;StageManager&lt;br/&gt;.RestartStage()&quot;] --&gt; c4[&quot;값 복구 → Source 이벤트&lt;br/&gt;→ HUD 자동 갱신&quot;]
+  end
+  A ~~~ B ~~~ C
+</pre></div>
+
+<h2><span class="no">4</span>팀원별 연동 체크리스트</h2>
+<div class="tbl"><table>
+<tr><th>담당</th><th>구현할 인터페이스</th><th>호출 / 구독</th></tr>
+<tr><td>정명진 · 플레이어</td><td><code>IHealthSource</code> <code>ISkillSource</code> <code>IItemSource</code> (+ <code>IProgressionSource</code>)</td><td><code>GameUI.Bind(this)</code> · 입력 처리 앞 <code>UIState.IsGameplayInputBlocked</code> 확인</td></tr>
+<tr><td>이광호 · 코어</td><td><code>IGateSource</code> <code>IInventorySource</code> (+ <code>IProgressionSource</code>)</td><td><code>UIRequests</code> 구독(새 게임·계열 선택·재도전·다음 스테이지) · <code>GameUI.Screens.ShowDeath()</code> 등</td></tr>
+<tr><td>보스 담당</td><td><code>IBossSource</code></td><td><code>GameUI.Boss.Show(this, 전투시작)</code></td></tr>
+<tr><td>이의찬 · 기획/레벨</td><td>—</td><td>데이터 에셋 입력: Skill · Item · Boss · Map(방 좌표) · Dialogue. 방 트리거 <code>GameUI.Map.SetPlayerRoom(id)</code></td></tr>
+</table></div>
+<p class="cap">참고 구현: <code>UI/Scripts/Samples/DummyPlayer.cs</code> · <code>DummyBoss.cs</code> · <code>SandboxDirector.cs</code></p>
+
+<h2><span class="no">5</span>회의에서 정할 것</h2>
+<ol class="decide">
+<li><b>메뉴 열 때 시간 정지</b> — 기획서 기본안은 스킬 창 정지. 현재 스킬 창·인벤토리·지도·일시정지 모두 정지로 구현. 인벤/지도도 정지할지?</li>
+<li><b>입력 분담</b> — Q/E/R · 1~4는 플레이어 담당이 입력 처리, UI는 이벤트만 받음. UI 키는 <span class="keys">K 스킬 · I 인벤토리 · Tab/M 지도 · ESC 일시정지</span>. 공용 <code>InputSystem_Actions</code>는 수정하지 않음.</li>
+<li><b>세이브 범위</b> — 지도 발견 상태도 스테이지 입장 저장에 포함할지 (사망 시 초기화 규칙과 같이).</li>
+<li><b>카메라 픽셀 기준</b> — UI는 640×360 × 정수 3배(1920×1080). 월드는 3D 로우폴리라 Pixel Perfect Camera는 필수 아님.</li>
+<li><b>공지</b> — TMP 기본 리소스는 <code>02.parkhansol_/ThirdParty/TextMesh Pro</code>에 있음. TMP Essentials 재설치 금지.</li>
+<li><b>아트</b> — 스킬·아이템 아이콘, 초상화 교체 담당과 일정.</li>
+</ol>
+</div>

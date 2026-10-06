@@ -1,0 +1,70 @@
+classDiagram
+  direction LR
+  class GameUI {
+    <<static>>
+    HUD · Boss · Screens
+    Map · Dialogue · Notify
+    +Bind(source)
+    +Unbind(source)
+  }
+  class UISources {
+    <<static>>
+    Health · Skills · Items
+    Progression · Gate · Inventory
+    +event Changed
+  }
+  class UIRequests {
+    <<static events>>
+    NewGame · Continue · QuitGame
+    ClassSelected · Retry
+    NextStage · ReturnToTitle
+  }
+  class UIState {
+    <<static>>
+    +IsGameplayInputBlocked
+    +IsPausedByUI
+  }
+  class IHealthSource {
+    <<interface>>
+    HP · MaxHP
+    event HealthChanged
+  }
+  class ISkillSource {
+    <<interface>>
+    GetSkill · GetRank · 쿨타임
+    CanInvest · TryInvest
+    event CooldownStarted
+  }
+  class IItemSource {
+    <<interface>>
+    1~4 슬롯 · 수량
+    event ItemUsed · BuffApplied
+  }
+  class IProgressionSource {
+    <<interface>>
+    Level · Exp · SkillPoints · Rank
+    event LevelUp · RankUp
+  }
+  class IGateSource {
+    <<interface>>
+    Sealed / Target · BossUnlocked
+    event GateSealed
+  }
+  class IInventorySource {
+    <<interface>>
+    Capacity · GetSlot
+    TryMove · TryUse
+  }
+  class IBossSource {
+    <<interface>>
+    Data · HP · Phase
+    event HPChanged · Defeated
+  }
+  GameUI ..> UISources : Bind
+  UISources o-- IHealthSource
+  UISources o-- ISkillSource
+  UISources o-- IItemSource
+  UISources o-- IProgressionSource
+  UISources o-- IGateSource
+  UISources o-- IInventorySource
+  GameUI ..> IBossSource : Boss.Show

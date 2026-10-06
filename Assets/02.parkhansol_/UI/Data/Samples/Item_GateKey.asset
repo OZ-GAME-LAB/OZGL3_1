@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24dd270ed5d3214293e2e344782e959, type: 3}
+  m_Name: Item_GateKey
+  m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.ItemData
+  id: item_gatekey
+  displayName: "\uAC8C\uC774\uD2B8 \uC778\uC2DD\uD45C"
+  description: "\uBD09\uC1C4\uD55C \uAC8C\uC774\uD2B8\uC5D0\uC11C \uD68C\uC218\uD55C
+    \uC778\uC2DD\uD45C. (\uC778\uBCA4\uD1A0\uB9AC \uD45C\uC2DC \uC608\uC2DC)"
+  icon: {fileID: 21300000, guid: ae8733c32889bfc4b88401578fe0ae76, type: 3}
+  slotIndex: -1
+  maxStack: 1
+  effectType: 4
+  effectPercent: 0
+  buffDuration: 0
+  fxColor: {r: 1, g: 0.85, b: 0.35, a: 1}

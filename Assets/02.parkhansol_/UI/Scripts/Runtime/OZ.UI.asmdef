@@ -1,0 +1,20 @@
+{
+    "name": "OZ.UI",
+    "rootNamespace": "OZ.UI",
+    "references": [
+        "OZ.UI.Contracts",
+        "DOTween.Modules",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

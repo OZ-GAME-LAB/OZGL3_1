@@ -1,0 +1,23 @@
+{
+    "name": "OZ.UI.Editor",
+    "rootNamespace": "OZ.UI.EditorTools",
+    "references": [
+        "OZ.UI.Contracts",
+        "OZ.UI",
+        "OZ.UI.Samples",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,23 @@
+flowchart TD
+  T["타이틀<br/>새 게임 · 이어하기 · 종료"] -->|새 게임| CS["계열 선택<br/>검술 / 마법"]
+  T -->|이어하기| HUD
+  CS -->|"UIRequests.ClassSelected"| D["대화<br/>초상화 · 타이핑"]
+  D --> HUD["전투 HUD<br/>체력 · Lv/EXP · 랭크 · 게이트 · Q/E/R · 1~4"]
+  HUD -->|"K · I · Tab (시간 정지)"| MENU["스킬 창 · 인벤토리 · 지도"]
+  MENU -->|"닫기"| HUD
+  HUD -->|"ESC"| PAUSE["일시정지"]
+  PAUSE --> HUD
+  PAUSE -->|타이틀로| T
+  HUD -->|"게이트 봉쇄 n/목표"| GATE{"목표 달성?"}
+  GATE -->|아니오| HUD
+  GATE -->|예| OPEN["보스 구역 개방 안내"]
+  OPEN --> BI["보스 등장 연출<br/>레터박스 → 배너 → 바 채움"]
+  BI --> BF["보스전<br/>체력바 · 페이즈 · 큰 피격 플래시"]
+  BF -->|처치| SC["스테이지 클리어<br/>헌터 랭크 승급"]
+  SC -->|"2스테이지 전"| HUD
+  SC -->|"2스테이지 클리어"| END["데모 종료"]
+  END --> T
+  HUD -->|"체력 0"| DEATH["사망<br/>스테이지 시작 상태로 복구 안내"]
+  BF -->|"체력 0"| DEATH
+  DEATH -->|"재도전 (UIRequests.Retry)"| HUD
+  DEATH -->|타이틀로| T

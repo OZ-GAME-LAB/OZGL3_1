@@ -1,0 +1,55 @@
+classDiagram
+  direction TB
+  class UIManager {
+    레이어 캔버스 · 창 스택
+    +Open(ScreenId)
+    +Close(ScreenId)
+    +Back()
+  }
+  class UIWindow {
+    <<abstract>>
+    ScreenId · Layer
+    PausesGame · BlocksInput
+    #OnSetup · OnOpened · OnClosed
+  }
+  class UIInputRouter {
+    K 스킬 · I 인벤 · Tab 지도 · ESC
+  }
+  class HudView {
+    +ShowGuide · Flash
+  }
+  class HUD_자식 {
+    HealthView · ProgressionView
+    GateStatusView · SkillBarView
+    ItemBarView · BuffTrayView
+  }
+  class BossHudView {
+    +Show(boss, onIntro)
+  }
+  class MapController {
+    +SetMap · SetPlayerRoom
+  }
+  class DialogueView {
+    +Play(data, onDone)
+  }
+  class ToastView {
+    +Toast(msg)
+  }
+  class 창들 {
+    Title · ClassSelect · Skill
+    Inventory · Map · Pause
+    Death · StageClear · DemoEnd
+  }
+  class 공용_위젯 {
+    TweenFillBar · CooldownRadial
+    UITween(DOTween 프리셋)
+    PixelCanvasScaler(정수배)
+  }
+  UIInputRouter ..> UIManager
+  UIManager o-- UIWindow
+  UIWindow <|-- 창들
+  UIWindow <|-- DialogueView
+  HudView *-- HUD_자식
+  HUD_자식 ..> 공용_위젯
+  BossHudView ..> 공용_위젯
+  창들 ..> MapController : MapWindow
