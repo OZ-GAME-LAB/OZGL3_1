@@ -49,6 +49,22 @@ namespace OZ.UI
             HideImmediate();
         }
 
+        [Header("Layer")]
+        [Tooltip("켜면 상시 체력바를 HUD 레이어로 옮긴다. 인벤토리·스킬·지도 창(Screen 레이어)이 열리면 창 아래로 가려진다. 등장 레터박스·배너는 Cinematic 레이어에 그대로 둔다.")]
+        [SerializeField] internal bool barOnHudLayer = true;
+
+        void Start() => MoveBarToHudLayer();
+
+        /// <summary>BossHUD 오브젝트는 Cinematic(30) 레이어에 있어 Screen(10) 창 위에 그려진다 → 상시 바만 HUD(0) 레이어로 분리.</summary>
+        void MoveBarToHudLayer()
+        {
+            if (!barOnHudLayer || barRoot == null || UIManager.Instance == null) return;
+            Canvas hud = UIManager.Instance.GetLayer(UILayer.HUD);
+            if (hud == null || barRoot.parent == hud.transform) return;
+            barRoot.SetParent(hud.transform, false);
+            barRoot.SetAsLastSibling();
+        }
+
         void OnEnable() => GameUI.Register((IBossApi)this);
         void OnDisable() { GameUI.Unregister(this); Unsubscribe(); }
 

@@ -61,6 +61,11 @@ namespace OZ.UI.EditorTools
                 foreach (var l in m.links)
                     if (!roomIds.Contains(l.fromRoom) || !roomIds.Contains(l.toRoom)) Err(m, $"{m.name}: 연결 {l.fromRoom}→{l.toRoom} 방 없음");
             }
+            foreach (var t in All<SkillTreeData>())
+            {
+                foreach (var e in t.Validate()) Err(t, $"{t.name}: {e}");
+                Debug.Log($"[OZ Validate] {t.name}: 노드 {t.nodes.Count}개, 전부 찍는 데 {t.MaxSpendablePoints()}P (시작 스킬 포함)", t);
+            }
             foreach (var d in All<DialogueData>())
                 for (int i = 0; i < d.lines.Count; i++)
                     if (d.lines[i].speaker == null) Warn(d, $"{d.name}: {i + 1}번째 줄 화자 없음");

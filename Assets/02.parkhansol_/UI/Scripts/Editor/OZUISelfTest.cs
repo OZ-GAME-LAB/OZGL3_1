@@ -228,10 +228,11 @@ namespace OZ.UI.EditorTools
             Near("남은 경험치 10 → 바 0.1", v.expBar.Value, 0.1f);
 
             P.AddExp(10000); await Wait(1.0f);
-            Eq("상한 Lv.7에서 멈춤", v.levelText.text, "Lv.7");
+            Eq("상한 Lv.15에서 멈춤", v.levelText.text, "Lv.15");
             Near("최대 레벨 → 바 가득", v.expBar.Value, 1f);
+            Check("Lv.15까지 스킬 포인트 14", P.SkillPoints == 14, "SP " + P.SkillPoints);
             P.AddExp(100); await Wait(0.3f);
-            Eq("Lv.7 이후 경험치 무시", v.levelText.text, "Lv.7");
+            Eq("Lv.15 이후 경험치 무시", v.levelText.text, "Lv.15");
 
             Eq("랭크 F급", v.rankText.text, "F급");
             P.PromoteRank(); await Wait(0.3f);
@@ -274,34 +275,56 @@ namespace OZ.UI.EditorTools
             // 스킬 창 / 투자 규칙
             string reason;
             Check("Lv.1에서 E 투자 불가(포인트 없음 또는 레벨)", !P.CanInvest(SkillSlot.E, out reason));
-            P.AddExp(150); await Wait(0.2f); // Lv.2, SP 1
+            P.AddExp(150); await Wait(0.2f); // Lv.2, SP 1 (ISkillSource 호환 규칙 = 트리의 다음 노드)
             Check("Lv.2·SP1 → E 습득 가능", P.CanInvest(SkillSlot.E, out _));
             Check("Lv.2 → R은 레벨 부족", !P.CanInvest(SkillSlot.R, out reason) && reason == "Lv.4 필요", "사유: " + reason);
 
+            // 스킬 트리 창 (K) — 노드 해금 · 택1 · 초기화
             GameUI.Screens.Open(ScreenId.SkillWindow); await Wait(0.4f);
-            var win = Find<SkillWindow>();
-            SkillCardView ce = win.cards[1], cr = win.cards[2];
-            Eq("스킬 창 포인트 1", win.pointsText.text, "스킬 포인트  1");
-            Eq("E 카드: 미습득", ce.rankText.text, "미습득");
-            Eq("E 버튼: 습득", ce.investLabel.text, "습득");
-            Eq("R 버튼: Lv.4 필요", cr.investLabel.text, "Lv.4 필요");
-            Check("R 버튼 비활성", !cr.investButton.interactable);
+            var win = Find<SkillTreeWindow>();
+            var tree = P.Tree;
+            SkillNodeView V(string id) { foreach (var nv in win.Views) if (nv.Node.id == id) return nv; return null; }
+            Eq("트리 창 포인트 1", win.pointsText.text, "스킬 포인트  1");
+            Check("노드 전부 생성", win.Views.Count == tree.nodes.Count, $"{win.Views.Count} / {tree.nodes.Count}");
+            Check("데이터 오류 없음", tree.Validate().Count == 0, string.Join(", ", tree.Validate()));
+            Check("시작 Q(검술) 해금 상태", V("sword_q").State == SkillNodeState.Unlocked);
+            Check("Q 마법은 택1로 막힘", V("magic_q").State == SkillNodeState.Blocked);
+            Check("E 검술/마법 둘 다 해금 가능", V("sword_e").State == SkillNodeState.Available && V("magic_e").State == SkillNodeState.Available);
+            Check("R은 Lv.4 전까지 잠김", V("sword_r").State == SkillNodeState.Locked);
 
-            ce.investButton.onClick.Invoke(); await Wait(0.3f);
-            Eq("E 습득 → 1/3단계", ce.rankText.text, "1/3단계");
+            V("magic_e").button.onClick.Invoke(); await Wait(0.3f);
+            Check("E 마법 선택 → 해금", P.IsUnlocked("magic_e"));
             Eq("포인트 0", win.pointsText.text, "스킬 포인트  0");
-            Eq("포인트 없음 → 포인트 부족", ce.investLabel.text, "포인트 부족");
+            Check("E 검술은 막힘", V("sword_e").State == SkillNodeState.Blocked);
+            Check("HUD E = 마법 스킬 아이콘", e.icon.sprite == P.GetSkill(SkillSlot.E).icon && P.GetSkill(SkillSlot.E).playerClass == PlayerClass.Magic);
             Check("HUD E 잠금 해제", !e.lockOverlay.activeSelf);
             Eq("HUD E 단계 점 1개", e.rankText.text, "·");
 
-            P.AddExp(10000); await Wait(0.3f); // Lv.7, SP 5
-            ce.investButton.onClick.Invoke(); await Wait(0.1f);
-            ce.investButton.onClick.Invoke(); await Wait(0.3f);
-            Eq("E 3/3단계", ce.rankText.text, "3/3단계");
-            Eq("다음 효과: 최대 단계", ce.nextText.text, "최대 단계");
-            Check("최대 단계 → 버튼 비활성", !ce.investButton.interactable);
-            Check("최대 단계 투자 시도 → 거부", !P.TryInvest(SkillSlot.E));
+            V("magic_e_2").button.onClick.Invoke(); await Wait(0.3f);
+            Check("레벨 부족 노드 → 거부", !P.IsUnlocked("magic_e_2"));
+            Eq("거부 사유 표시", win.detailStatus.text, "Lv.3 필요");
+
+            P.AddExp(10000); await Wait(0.3f); // Lv.15, SP 13
+            Eq("Lv.15 (최대) 표시", win.levelText.text, "Lv.15  (최대)");
+            Eq("포인트 13", win.pointsText.text, "스킬 포인트  13");
+            V("magic_e_2").button.onClick.Invoke(); await Wait(0.1f);
+            V("magic_e_3").button.onClick.Invoke(); await Wait(0.3f);
+            Check("E 3단계", P.GetRank(SkillSlot.E) == 3);
             Eq("HUD E 단계 점 3개", e.rankText.text, "···");
+            Check("ISkillSource 호환: 최대 단계 투자 거부", !P.TryInvest(SkillSlot.E));
+            V("p_cdr").button.onClick.Invoke(); await Wait(0.1f);
+            Check("선행 패시브 없이 거부", !P.IsUnlocked("p_cdr"));
+
+            win.resetButton.onClick.Invoke(); await Wait(0.1f);
+            Check("초기화 첫 클릭은 확인 대기 (아무것도 안 지움)", P.IsUnlocked("magic_e"));
+            Eq("초기화 버튼: 한 번 더", win.resetLabel.text, "한 번 더: 초기화");
+            win.resetButton.onClick.Invoke(); await Wait(0.3f);
+            Check("초기화 → E 해제", !P.IsUnlocked("magic_e") && !P.IsUnlocked("magic_e_3"));
+            Check("초기화해도 시작 Q 유지", P.IsUnlocked("sword_q"));
+            Eq("포인트 환급 → 14", win.pointsText.text, "스킬 포인트  14");
+            Check("초기화 후 E 검술 다시 선택 가능", V("sword_e").State == SkillNodeState.Available);
+            Check("HUD E 다시 잠금", e.lockOverlay.activeSelf);
+            Check("찍은 게 없으면 초기화 버튼 비활성", !win.resetButton.interactable);
             GameUI.Screens.Close(ScreenId.SkillWindow);
 
             // 데이터 에셋 수치 변경 → UI 반영
@@ -682,7 +705,7 @@ namespace OZ.UI.EditorTools
             Check("치명타: 시작 크기가 크게 튐 (2배 이상)", last.Rect.localScale.x >= 2f);
             await Wait(0.05f);
             Eq("치명타 숫자 = 50", last.text.text, "50");
-            Check("치명타: 15px + '치명타' 라벨", Mathf.Approximately(last.text.fontSize, 15f) && last.label.gameObject.activeSelf && last.label.text == "치명타");
+            Check("치명타: 24px, 글자 없음 (효과로만 표시)", Mathf.Approximately(last.text.fontSize, 24f) && !last.label.gameObject.activeSelf);
             await Wait(0.3f);
             Check("치명타: 노란색으로 정착", last.text.color.b < 0.5f && last.text.color.r > 0.9f);
 

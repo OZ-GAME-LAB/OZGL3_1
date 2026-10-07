@@ -45,7 +45,7 @@ namespace OZ.UI.EditorTools
 
                 BuildTitle(fullLayer);
                 BuildClassSelect(fullLayer);
-                BuildSkillWindow(screenLayer);
+                BuildSkillTreeWindow(screenLayer); // v0.4: 카드형 SkillWindow → 노드형 스킬 트리
                 BuildInventory(screenLayer);
                 var fullMap = BuildMapWindow(screenLayer, mapCtrl);
                 BuildPause(screenLayer);
@@ -336,16 +336,20 @@ namespace OZ.UI.EditorTools
             mmFrame.rectTransform.Place(1, 1, -8, -8, 104, 70);
             var minimap = MapView(mmFrame.transform, 6f, true, 4);
 
-            // ── 좌하단: Q/E/R + 1~4 + 버프 ──
-            var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 220, 40);
+            // ── 좌하단: Q/E/R + 1~4 (v0.4: 칸 22 → 36px, 아이콘 16px 2배) + 버프(단축키 줄 위) ──
+            //  [버프 20px …]                        ← y 80 (키 글자 위로 띄움, 겹침 없음)
+            //   Q    E    R      1    2    3    4   ← 키 글자
+            //  [36] [36] [36]   [36] [36] [36] [36]  ← y 20
+            //   ·    ·    ·                         ← 스킬 단계 점
+            var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 300, 62);
             var skillBar = bottom.gameObject.AddComponent<SkillBarView>();
-            for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottom, (SkillSlot)i, i * 25f);
+            for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottom, (SkillSlot)i, i * 40f);
 
-            var itemsRt = UIB.Rect("Items", bottom).Place(0, 0, 84, 0, 100, 22);
+            var itemsRt = UIB.Rect("Items", bottom).Place(0, 0, 130, 0, 160, 62);
             var itemBar = itemsRt.gameObject.AddComponent<ItemBarView>();
-            for (int i = 0; i < 4; i++) itemBar.slots[i] = ItemSlot(itemsRt, i, i * 23f);
+            for (int i = 0; i < 4; i++) itemBar.slots[i] = ItemSlot(itemsRt, i, i * 39f);
 
-            var buffRt = UIB.Rect("Buffs", hudRt).Place(0, 0, 8, 38, 120, 16);
+            var buffRt = UIB.Rect("Buffs", hudRt).Place(0, 0, 8, 80, 200, 20);
             var hl = buffRt.gameObject.AddComponent<HorizontalLayoutGroup>();
             hl.spacing = 2; hl.childAlignment = TextAnchor.LowerLeft;
             hl.childControlWidth = hl.childControlHeight = false;
@@ -353,12 +357,12 @@ namespace OZ.UI.EditorTools
             var buffs = buffRt.gameObject.AddComponent<BuffTrayView>();
             var tplImg = UIB.Panel("BuffTemplate", buffRt, "Panels/Blue/Panel");
             tplImg.raycastTarget = false;
-            tplImg.rectTransform.sizeDelta = new Vector2(16, 16);
+            tplImg.rectTransform.sizeDelta = new Vector2(20, 20);
             var tplIcon = UIB.Img("Icon", tplImg.transform, null);
-            tplIcon.rectTransform.Place(0.5f, 0.5f, 0, 0, 12, 12);
+            tplIcon.rectTransform.Place(0.5f, 0.5f, 0, 0, 16, 16);
             var buffIcon = tplImg.gameObject.AddComponent<BuffIconView>();
             buffIcon.icon = tplIcon;
-            buffIcon.timer = Radial(tplImg.transform, null, null, 14, false);
+            buffIcon.timer = Radial(tplImg.transform, null, null, 18, false);
             buffs.template = buffIcon;
 
             hud.health = health;
@@ -380,21 +384,22 @@ namespace OZ.UI.EditorTools
         {
             var frame = UIB.Panel("Skill_" + slot, parent, "Panels/Blue/Panel");
             frame.raycastTarget = false;
-            frame.rectTransform.Place(0, 0, x, 8, 22, 22);
+            frame.rectTransform.Place(0, 0, x, 20, 36, 36);
             var view = frame.gameObject.AddComponent<SkillSlotView>();
             view.slot = slot;
             var icon = UIB.Img("Icon", frame.transform, null);
-            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 16, 16);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             view.icon = icon;
             var lockImg = UIB.Solid("Locked", frame.transform, new Color(0, 0, 0, 0.55f));
-            lockImg.rectTransform.Place(0.5f, 0.5f, 0, 0, 16, 16);
+            lockImg.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             view.lockOverlay = lockImg.gameObject;
-            view.cooldown = Radial(frame.transform, icon.rectTransform, frame, 17);
-            var key = UIB.Small10("Key", frame.transform, slot.ToString(), TextAlignmentOptions.Center, UIB.Accent);
-            key.rectTransform.Place(0.5f, 1, 0, 11, 22, 10);
+            view.cooldown = Radial(frame.transform, icon.rectTransform, frame, 32);
+            view.cooldown.label.fontSize = 12; view.cooldown.label.font = UIB.Body;
+            var key = UIB.Body12("Key", frame.transform, slot.ToString(), TextAlignmentOptions.Center, UIB.Accent);
+            key.rectTransform.Place(0.5f, 1, 0, 13, 36, 12);
             view.keyLabel = key;
             var rank = UIB.Small10("Rank", frame.transform, "", TextAlignmentOptions.Center, UIB.Accent);
-            rank.rectTransform.Place(0.5f, 0, 0, -9, 21, 10);
+            rank.rectTransform.Place(0.5f, 0, 0, -10, 36, 10);
             view.rankText = rank;
             view.shakeTarget = frame.rectTransform;
             view.tintTarget = frame;
@@ -405,21 +410,24 @@ namespace OZ.UI.EditorTools
         {
             var frame = UIB.Panel("Item_" + (index + 1), parent, "Panels/Blue/Panel");
             frame.raycastTarget = false;
-            frame.rectTransform.Place(0, 0, x, 8, 22, 22);
+            frame.rectTransform.Place(0, 0, x, 20, 36, 36);
             var view = frame.gameObject.AddComponent<ItemSlotView>();
             view.slotIndex = index;
             var fx = UIB.Img("UseFx", frame.transform, UIB.Art("Map_Marker"));
-            fx.rectTransform.Place(0.5f, 0.5f, 0, 0, 20, 20);
+            fx.rectTransform.Place(0.5f, 0.5f, 0, 0, 34, 34);
             fx.gameObject.SetActive(false);
             view.useFx = fx;
             var icon = UIB.Img("Icon", frame.transform, null);
-            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 16, 16);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             view.icon = icon;
+            var countSh = UIB.Small10("CountShadow", frame.transform, "", TextAlignmentOptions.BottomRight, new Color(0, 0, 0, 0.9f));
+            countSh.rectTransform.Place(1, 0, -2, 1, 30, 10);
             var count = UIB.Small10("Count", frame.transform, "0", TextAlignmentOptions.BottomRight, Color.white);
-            count.rectTransform.Place(1, 0, -2, 1, 20, 10);
+            count.rectTransform.Place(1, 0, -3, 2, 30, 10);
             view.countText = count;
-            var key = UIB.Small10("Key", frame.transform, (index + 1).ToString(), TextAlignmentOptions.Center, UIB.Accent);
-            key.rectTransform.Place(0.5f, 1, 0, 11, 21, 10);
+            view.countShadow = countSh;
+            var key = UIB.Body12("Key", frame.transform, (index + 1).ToString(), TextAlignmentOptions.Center, UIB.Accent);
+            key.rectTransform.Place(0.5f, 1, 0, 13, 36, 12);
             view.keyLabel = key;
             view.punchTarget = frame.rectTransform;
             return view;
@@ -599,6 +607,115 @@ namespace OZ.UI.EditorTools
             close.rectTransform.Place(1, 0, -10, 6, 160, 12);
         }
 
+        // ───────────────────────────── 스킬 트리 (K) ─────────────────────────────
+        static void BuildSkillTreeWindow(Transform layer)
+        {
+            var w = Window<SkillTreeWindow>("SkillTreeWindow", layer, ScreenId.SkillWindow, UILayer.Screen, true, dim: DimColor);
+            var c = Content(w, 600, 300);
+
+            var title = UIB.Title15("Title", c, "스킬 트리", TextAlignmentOptions.Left, UIB.Accent);
+            title.rectTransform.Place(0, 1, 12, -8, 120, 18);
+            w.titleText = title;
+            var lv = UIB.Small10("Level", c, "Lv.1", TextAlignmentOptions.Left, UIB.Dim);
+            lv.rectTransform.Place(0, 1, 100, -12, 120, 12);
+            w.levelText = lv;
+            var pts = UIB.Panel("Points", c, "Panels/Blue/Panel");
+            pts.raycastTarget = false;
+            pts.rectTransform.Place(1, 1, -10, -6, 110, 18);
+            var ptsText = UIB.Body12("Text", pts.transform, "스킬 포인트  0", TextAlignmentOptions.Center, UIB.Accent);
+            ptsText.rectTransform.Stretch();
+            w.pointsText = ptsText;
+            w.pointsBadge = pts.rectTransform;
+
+            // 트리 영역 (왼쪽)
+            var areaBg = UIB.Solid("TreeArea", c, new Color(0.02f, 0.03f, 0.08f, 0.55f));
+            areaBg.rectTransform.Place(0, 1, 10, -30, 404, 248);
+            var area = areaBg.rectTransform;
+            w.treeArea = area;
+
+            var empty = UIB.Small10("Empty", area, "스킬 트리 소스가 연결되지 않았습니다\n(ISkillTreeSource)", TextAlignmentOptions.Center, UIB.Dim);
+            empty.rectTransform.Place(0.5f, 0.5f, 0, 0, 300, 30);
+            empty.gameObject.SetActive(false);
+            w.emptyText = empty;
+
+            var link = UIB.Solid("LinkTemplate", area, Color.white);
+            link.rectTransform.Place(0.5f, 0.5f, 0, 0, 10, 2);
+            w.linkTemplate = link;
+
+            var label = UIB.Body12("LabelTemplate", area, "Q", TextAlignmentOptions.Center, UIB.Accent);
+            label.rectTransform.Place(0.5f, 0.5f, 0, 0, 60, 13);
+            label.textWrappingMode = TextWrappingModes.NoWrap;
+            w.labelTemplate = label;
+
+            // 노드 템플릿: 배경(45° 사각) → 아이콘 → 테두리 → 선택 표시 → 단계 숫자
+            var nodeRt = UIB.Rect("NodeTemplate", area).Place(0.5f, 0.5f, 0, 0, 28, 28);
+            var hit = nodeRt.gameObject.AddComponent<Image>();
+            hit.sprite = UIB.White; hit.color = new Color(0, 0, 0, 0); hit.raycastTarget = true;
+            var node = nodeRt.gameObject.AddComponent<SkillNodeView>();
+            var btn = nodeRt.gameObject.AddComponent<Button>();
+            btn.targetGraphic = hit;
+            btn.transition = Selectable.Transition.None;
+            node.button = btn;
+            var bg = UIB.Solid("Bg", nodeRt, new Color(0.05f, 0.07f, 0.14f, 0.95f));
+            bg.rectTransform.Place(0.5f, 0.5f, 0, 0, 18, 18);
+            bg.rectTransform.localRotation = Quaternion.Euler(0, 0, 45);
+            node.background = bg;
+            var icon = UIB.Img("Icon", nodeRt, null);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 16, 16);
+            node.icon = icon;
+            var frame = UIB.Img("Frame", nodeRt, UIB.Px("SkillTree/Grey/SkillSlotLarge"));
+            frame.rectTransform.Stretch();
+            node.frame = frame;
+            var sel = UIB.Img("Selector", nodeRt, UIB.Px("SkillTree/White/SelectorLarge"));
+            sel.rectTransform.Stretch(-3, -3, -3, -3);
+            node.selector = sel;
+            var rank = UIB.Body12("Rank", nodeRt, "", TextAlignmentOptions.Center);
+            rank.rectTransform.Stretch();
+            node.rankText = rank;
+            w.nodeTemplate = node;
+
+            string[] colors = { "Grey", "Blue", "Yellow", "Red" }; // SkillNodeState 순서
+            w.skillFrames = new Sprite[4]; w.upgradeFrames = new Sprite[4]; w.passiveFrames = new Sprite[4];
+            for (int i = 0; i < 4; i++)
+            {
+                w.skillFrames[i] = UIB.Px($"SkillTree/{colors[i]}/SkillSlotLarge");
+                w.upgradeFrames[i] = UIB.Px($"SkillTree/{colors[i]}/SkillSlotSharp");
+                w.passiveFrames[i] = UIB.Px($"SkillTree/{colors[i]}/SkillSlotRound");
+            }
+            w.skillSelector = UIB.Px("SkillTree/White/SelectorLarge");
+            w.upgradeSelector = UIB.Px("SkillTree/White/SelectorSharp");
+            w.passiveSelector = UIB.Px("SkillTree/White/Selector");
+
+            // 설명 칸 (오른쪽)
+            var detail = UIB.Panel("Detail", c, "Panels/Blue/Panel");
+            detail.raycastTarget = false;
+            detail.rectTransform.Place(1, 1, -10, -30, 166, 248);
+            var dIconFrame = UIB.Img("IconFrame", detail.transform, UIB.Px("SkillTree/Blue/SkillSlotLarge") ?? UIB.Fallback);
+            dIconFrame.rectTransform.Place(0, 1, 8, -8, 28, 28);
+            var dIcon = UIB.Img("Icon", dIconFrame.transform, null);
+            dIcon.rectTransform.Place(0.5f, 0.5f, 0, 0, 16, 16);
+            w.detailIcon = dIcon;
+            var dName = UIB.Body12("Name", detail.transform, "", TextAlignmentOptions.Left, UIB.Accent);
+            dName.rectTransform.Place(0, 1, 42, -9, 118, 13);
+            w.detailName = dName;
+            var dKind = UIB.Small10("Kind", detail.transform, "", TextAlignmentOptions.Left, UIB.Dim);
+            dKind.rectTransform.Place(0, 1, 42, -23, 118, 11);
+            w.detailKind = dKind;
+            var dDesc = UIB.Small10("Desc", detail.transform, "", TextAlignmentOptions.TopLeft);
+            dDesc.rectTransform.Place(0, 1, 8, -44, 150, 120);
+            w.detailDesc = dDesc;
+            var dStatus = UIB.Small10("Status", detail.transform, "", TextAlignmentOptions.TopLeft, UIB.Accent);
+            dStatus.rectTransform.Place(0, 0, 8, 34, 150, 24);
+            w.detailStatus = dStatus;
+            var reset = UIB.Button("Reset", detail.transform, "초기화", out var resetLabel);
+            ((RectTransform)reset.transform).Place(0.5f, 0, 0, 8, 120, 20);
+            w.resetButton = reset;
+            w.resetLabel = resetLabel;
+
+            var hint = UIB.Small10("Hint", c, "클릭: 해금   ·   [K] / [ESC] 닫기", TextAlignmentOptions.Left, UIB.Dim);
+            hint.rectTransform.Place(0, 0, 12, 6, 300, 12);
+        }
+
         static SkillCardView SkillCard(Transform parent, SkillSlot slot, float x)
         {
             var bg = UIB.Panel("Card_" + slot, parent, "Panels/Blue/Panel");
@@ -646,13 +763,24 @@ namespace OZ.UI.EditorTools
         static void BuildInventory(Transform layer)
         {
             var w = Window<InventoryWindow>("Inventory", layer, ScreenId.Inventory, UILayer.Screen, true, dim: DimColor);
-            var c = Content(w, 480, 236);
+            var c = Content(w, 500, 252);
             var title = UIB.Title15("Title", c, "인벤토리", TextAlignmentOptions.Left, UIB.Accent);
             title.rectTransform.Place(0, 1, 12, -8, 120, 18);
 
             // 칸 36px (아이템 아이콘 16px을 정확히 2배 = 32px로 표시)
             const float Cell = 36f, Gap = 3f;
-            var gridRt = UIB.Rect("Grid", c).Place(0, 1, 12, -32, 6 * Cell + 5 * Gap, 4 * Cell + 3 * Gap);
+            float gridW = 6 * Cell + 5 * Gap, gridH = 4 * Cell + 3 * Gap;
+
+            var cap = UIB.Small10("Capacity", c, "0 / 24", TextAlignmentOptions.Right, UIB.Dim);
+            cap.rectTransform.Place(0, 1, 12 + gridW - 80, -13, 80, 11);
+            w.capacityText = cap;
+            var line = UIB.Solid("TitleLine", c, new Color(0.25f, 0.75f, 1f, 0.45f));
+            line.rectTransform.Place(0, 1, 12, -27, gridW, 1);
+
+            // 그리드 뒤 어두운 판 (칸이 떠 보이지 않게)
+            var well = UIB.Solid("GridWell", c, new Color(0.01f, 0.02f, 0.06f, 0.75f));
+            well.rectTransform.Place(0, 1, 8, -31, gridW + 8, gridH + 8);
+            var gridRt = UIB.Rect("Grid", c).Place(0, 1, 12, -35, gridW, gridH);
             var grid = gridRt.gameObject.AddComponent<GridLayoutGroup>();
             grid.cellSize = new Vector2(Cell, Cell);
             grid.spacing = new Vector2(Gap, Gap);
@@ -660,60 +788,80 @@ namespace OZ.UI.EditorTools
             grid.constraintCount = 6;
             w.grid = gridRt;
 
-            var slotBg = UIB.Img("SlotTemplate", gridRt, UIB.Px("Panels/Blue/GridPanel") ?? UIB.Fallback, null, true);
+            var slotBg = UIB.Img("SlotTemplate", gridRt, UIB.Px("Panels/Blue/GridPanelIndent") ?? UIB.Px("Panels/Blue/GridPanel") ?? UIB.Fallback, null, true);
+            slotBg.type = Image.Type.Sliced;
             var slot = slotBg.gameObject.AddComponent<InventorySlotView>();
+            slot.background = slotBg;
             var sel = slotBg.gameObject.AddComponent<Button>();
             sel.targetGraphic = slotBg;
-            var colors = sel.colors; colors.normalColor = new Color(0.38f, 0.44f, 0.58f); colors.highlightedColor = new Color(0.65f, 0.75f, 0.9f); colors.selectedColor = new Color(0.95f, 0.85f, 0.55f); colors.pressedColor = new Color(0.8f, 0.8f, 0.8f); colors.colorMultiplier = 1f; sel.colors = colors;
+            sel.transition = Selectable.Transition.None; // 강조는 Highlight 테두리로만
             var icon = UIB.Img("Icon", slotBg.transform, null);
             icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             icon.preserveAspect = true;
             slot.icon = icon;
+            var quick = UIB.Small10("Quick", slotBg.transform, "", TextAlignmentOptions.TopLeft, UIB.Accent);
+            quick.rectTransform.Place(0, 1, 3, -1, 12, 10);
+            slot.quickText = quick;
+            var cntSh = UIB.Small10("CountShadow", slotBg.transform, "", TextAlignmentOptions.BottomRight, new Color(0, 0, 0, 0.9f));
+            cntSh.rectTransform.Place(1, 0, -2, 0, 30, 11);
+            slot.countShadow = cntSh;
             var cnt = UIB.Small10("Count", slotBg.transform, "", TextAlignmentOptions.BottomRight, Color.white);
-            cnt.rectTransform.Place(1, 0, -2, 0, 30, 11);
+            cnt.rectTransform.Place(1, 0, -3, 1, 30, 11);
             slot.countText = cnt;
-            var hi = UIB.Img("Highlight", slotBg.transform, UIB.Px("Grid/Blue/SelectorA") ?? UIB.White);
-            hi.rectTransform.Stretch(-2, -2, -2, -2);
+            var hi = UIB.Img("Highlight", slotBg.transform, UIB.Px("Grid/Blue/SelectorThin_Focus") ?? UIB.Px("Grid/Blue/SelectorA") ?? UIB.White);
+            hi.rectTransform.Place(0.5f, 0.5f, 0, 0, Cell + 4, Cell + 4);
             hi.enabled = false;
             slot.highlight = hi;
-            var held = UIB.Solid("Held", slotBg.transform, new Color(1f, 0.85f, 0.3f, 0.35f));
-            held.rectTransform.Stretch();
+            var held = UIB.Solid("Held", slotBg.transform, new Color(1f, 0.85f, 0.3f, 0.25f));
+            held.rectTransform.Stretch(2, 2, 2, 2);
             held.enabled = false;
             slot.heldMark = held;
             w.slotTemplate = slot;
+            w.hoverColor = new Color(0.55f, 0.85f, 1f, 1f);
+            w.dropOkColor = new Color(0.5f, 1f, 0.6f, 1f);
 
             var empty = UIB.Small10("Empty", c, "인벤토리 소스가 연결되지 않았습니다\n(IInventorySource)", TextAlignmentOptions.Center, UIB.Dim);
-            empty.rectTransform.Place(0, 1, 12, -90, 231, 30);
+            empty.rectTransform.Place(0, 1, 12, -90, gridW, 30);
             w.emptyText = empty;
 
-            // 툴팁 (오른쪽 고정 패널)
+            // 툴팁 (오른쪽 고정 패널): 색 띠 · 아이콘 칸 · 이름/종류 · 구분선 · 효과 · 설명 · 보유/조작
             var tipBg = UIB.Panel("Tooltip", c, "Panels/Blue/Panel");
             tipBg.raycastTarget = false;
-            tipBg.rectTransform.Place(1, 1, -10, -32, 210, 170);
+            tipBg.rectTransform.Place(1, 1, -10, -31, 226, gridH + 8);
             var tip = tipBg.gameObject.AddComponent<ItemTooltipView>();
             tip.group = UIB.Group(tipBg.gameObject);
-            var tIcon = UIB.Img("Icon", tipBg.transform, null);
-            tIcon.rectTransform.Place(0, 1, 8, -8, 32, 32);
+            var accent = UIB.Solid("Accent", tipBg.transform, Color.white);
+            accent.rectTransform.Place(0, 1, 4, -4, 218, 2);
+            tip.accent = accent;
+            var iconWell = UIB.Img("IconWell", tipBg.transform, UIB.Px("Panels/Blue/GridPanelIndent") ?? UIB.Fallback);
+            iconWell.type = Image.Type.Sliced;
+            iconWell.rectTransform.Place(0, 1, 8, -10, 38, 38);
+            var tIcon = UIB.Img("Icon", iconWell.transform, null);
+            tIcon.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             tip.icon = tIcon;
             var tName = UIB.Body12("Name", tipBg.transform, "", TextAlignmentOptions.Left);
-            tName.rectTransform.Place(0, 1, 46, -10, 156, 14);
+            tName.rectTransform.Place(0, 1, 52, -14, 166, 14);
             tip.nameText = tName;
             var tType = UIB.Small10("Type", tipBg.transform, "", TextAlignmentOptions.Left, UIB.Dim);
-            tType.rectTransform.Place(0, 1, 46, -26, 156, 11);
+            tType.rectTransform.Place(0, 1, 52, -31, 166, 11);
             tip.typeText = tType;
+            var tLine = UIB.Solid("Divider", tipBg.transform, new Color(0.25f, 0.75f, 1f, 0.35f));
+            tLine.rectTransform.Place(0, 1, 8, -54, 210, 1);
             var tEff = UIB.Small10("Effect", tipBg.transform, "", TextAlignmentOptions.TopLeft, new Color(0.6f, 1f, 0.7f));
-            tEff.rectTransform.Place(0, 1, 8, -48, 194, 24);
+            tEff.rectTransform.Place(0, 1, 8, -60, 210, 24);
             tip.effectText = tEff;
-            var tDesc = UIB.Small10("Desc", tipBg.transform, "", TextAlignmentOptions.TopLeft);
-            tDesc.rectTransform.Place(0, 1, 8, -76, 194, 56);
+            var tDesc = UIB.Small10("Desc", tipBg.transform, "", TextAlignmentOptions.TopLeft, new Color(0.82f, 0.86f, 0.95f));
+            tDesc.rectTransform.Place(0, 1, 8, -86, 210, 50);
             tip.descriptionText = tDesc;
+            var fLine = UIB.Solid("FooterLine", tipBg.transform, new Color(0.25f, 0.75f, 1f, 0.25f));
+            fLine.rectTransform.Place(0, 0, 8, 20, 210, 1);
             var tFoot = UIB.Small10("Footer", tipBg.transform, "", TextAlignmentOptions.Left, UIB.Accent);
-            tFoot.rectTransform.Place(0, 0, 8, 6, 194, 11);
+            tFoot.rectTransform.Place(0, 0, 8, 6, 210, 11);
             tip.footerText = tFoot;
             w.tooltip = tip;
 
-            var hint = UIB.Small10("Hint", c, "[좌클릭] 집기/놓기  [우클릭] 사용  [I]/[ESC] 닫기", TextAlignmentOptions.Left, UIB.Dim);
-            hint.rectTransform.Place(0, 0, 12, 6, 300, 12);
+            var hint = UIB.Small10("Hint", c, "[좌클릭] 집기/놓기   [우클릭] 사용   [I] / [ESC] 닫기", TextAlignmentOptions.Left, UIB.Dim);
+            hint.rectTransform.Place(0, 0, 12, 7, 320, 12);
 
             var cursor = UIB.Img("HeldCursor", w.transform, null);
             cursor.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);

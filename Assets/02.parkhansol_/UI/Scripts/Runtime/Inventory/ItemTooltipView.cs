@@ -17,6 +17,8 @@ namespace OZ.UI
         [SerializeField] internal TMP_Text effectText;
         [SerializeField] internal TMP_Text descriptionText;
         [SerializeField] internal TMP_Text footerText;
+        [Tooltip("아이템 색 띠 (선택)")]
+        [SerializeField] internal Image accent;
         [SerializeField] internal float showDelay = 0.1f;
 
         ItemData _current;
@@ -32,6 +34,7 @@ namespace OZ.UI
 
             if (icon != null) { icon.sprite = item.icon; icon.enabled = item.icon != null; }
             if (nameText != null) { nameText.text = item.displayName; nameText.color = item.fxColor; }
+            if (accent != null) accent.color = item.fxColor;
             if (typeText != null) typeText.text = UIText.ItemType(item.effectType)
                 + (item.slotIndex >= 0 ? $"  ·  퀵슬롯 {item.slotIndex + 1}" : "");
             if (effectText != null) effectText.text = UIText.ItemEffect(item);

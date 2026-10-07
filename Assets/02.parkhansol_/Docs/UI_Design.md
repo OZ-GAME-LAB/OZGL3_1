@@ -1,48 +1,58 @@
-# OZGL3_1 (Project M) — UI/UX 설계 v0.3
+# OZGL3_1 (Project M) — UI/UX 설계 v0.4
 
 작성: 박한솔 (UI/UX) · 2026-10-07 · 공유 문서: https://claude.ai/code/artifact/f8497896-e61f-4266-a194-7db47a969bdb
 기준: 기획서 v0.2 · Unity 6000.3 · URP 17.3 · uGUI 2.0(TMP) · Input System 1.20 · DOTween 무료판
 
-UI 화면 14종 구현, 자동 점검 232/232 통과. 브랜치 `parkhansol_ui_261006` (커밋 `d84410d`).
+UI 화면 14종 + 노드형 스킬 트리, 자동 점검 247/247 통과. 브랜치 `parkhansol_ui_261007`.
 
 ## 1. 범위
 | 화면 | 내용 | 상태 |
 |---|---|---|
-| 전투 HUD | 초상화 칸 + HP 바(Sci-Fi Hud_Lifebar B), Lv·EXP, 헌터 랭크(초상화 아래), 게이트 n/목표, Q/E/R 쿨타임, 1~4 아이템, 버프, 미니맵, 토스트, 안내 문구 | 구현 |
-| 게이트 파괴 띠 | 게이트 봉쇄 시 "게이트 파괴 n/목표" 2초 표시 후 사라짐. 스테이지 클리어 창 대체 | v0.3 신규 |
-| 피해 숫자·타격 이펙트·적 체력바 | 일반·치명타·약점·처치·지속 피해·플레이어 피격·회복·빗나감 | v0.3 신규 |
-| 설정 창 | 시작 화면 '설정', 일시정지 '옵션'. 사운드·화면·게임 탭 | v0.3 신규 |
-| 스킬 창 (K) | 포인트, 단계 1~3, 현재/다음 효과 | 구현 |
-| 인벤토리 (I) | 칸 36px(아이콘 2배), 집기/놓기, 우클릭 사용 | v0.3 확대 |
+| 전투 HUD | 초상화 칸 + HP 바(Sci-Fi Hud_Lifebar B), Lv·EXP, 헌터 랭크, 게이트 n/목표, Q/E/R 쿨타임, 1~4 아이템, 버프, 미니맵, 토스트, 안내 문구 | v0.4 단축키 확대 |
+| 게이트 파괴 띠 | 게이트 봉쇄 시 "게이트 파괴 n/목표" 2초 표시. 스테이지 클리어 창 대체 | 구현 |
+| 피해 숫자·타격 이펙트·적 체력바 | 일반·치명타·약점·처치·지속 피해·플레이어 피격·회복·빗나감 | v0.4 치명타 글자 제거 |
+| 설정 창 | 시작 화면 '설정', 일시정지 '옵션'. 사운드·화면·게임 탭 | 구현 |
+| 스킬 트리 (K) | 노드형. Q/E/R 버튼마다 검술·마법 택1 → 2·3단계, 공용 패시브 4개, 초기화 | v0.4 신규 (카드형 스킬 창 대체) |
+| 인벤토리 (I) | 6×4 칸 36px(아이콘 2배), 집기/놓기, 우클릭 사용, 사용 칸 수, 퀵슬롯 번호 | v0.4 품질 개선 |
 | 지도 (Tab·M) | 방 단위 미니맵·전체 지도 | 구현 |
-| 대화창 | 좌우 초상화, 화자 강조, 타이핑 | 밀림 버그 수정 |
-| 보스 HUD | 등장 연출, 페이즈 눈금, 격파 | 구현 |
+| 대화창 | 좌우 초상화, 화자 강조, 타이핑 | 구현 |
+| 보스 HUD | 등장 연출, 페이즈 눈금, 격파. 상시 체력바는 HUD 레이어(창 아래) | v0.4 레이어 수정 |
 | 시작·계열 선택·일시정지·사망·데모 종료 | 버튼 → `UIRequests` | 구현 |
 
-`ShowStageClear` → "게이트 파괴" 띠 → 사라질 때 `UIRequests.NextStage`. 장비 창은 범위 밖(기획서에 장비 없음).
-
 ## 2. 구조
-- `OZ.UI.Contracts` — 팀원이 참조하는 유일한 어셈블리. `GameUI` 창구(HUD·Damage·Boss·Screens·Map·Dialogue·Notify), Source 인터페이스 8종(+`IEnemyHealthSource`), `UIRequests`, `UIState`, `UISettings`, `HitFlash`, 데이터 SO
-- `OZ.UI` — 구현: `UIManager`, HUD(`HudBannerView` 포함), `DamageFxController`, 설정 창(`OptionsWindow`), 대화·지도·보스
-- `OZ.UI.Editor` — `OZ > UI > Setup`(에셋·폰트·데이터·UIRoot·샌드박스), Self Test
-- `OZ.UI.Samples` — 가상 플레이어·적·보스, `SandboxCombat`, `SandboxFeel`(히트스톱·흔들림 참고 구현)
+- `OZ.UI.Contracts` — 팀원이 참조하는 유일한 어셈블리. `GameUI` 창구, Source 인터페이스 9종(+`IEnemyHealthSource`), `UIRequests`, `UIState`, `UISettings`, `HitFlash`, 데이터 SO, `SkillTreeState`(규칙 계산기)
+- `OZ.UI` — 구현: `UIManager`, HUD, `DamageFxController`, 설정 창, 대화·지도·보스, `SkillTreeWindow`
+- `OZ.UI.Editor` — `OZ > UI > Setup - Run All`(데이터·UIRoot·샌드박스·쇼케이스), Self Test, Git Push(오늘 브랜치 자동)
+- `OZ.UI.Samples` — 가상 플레이어·적·보스, `SandboxCombat`, `SandboxFeel`, 지하철역 쇼케이스(`Showcase*`)
 
-## 3. v0.3 변경
+## 3. 스킬 트리 (v0.4)
+| 항목 | 값 |
+|---|---|
+| 최대 레벨 · 포인트 | Lv.15 (임시) · 레벨당 1P → 14P |
+| 구성 | Q/E/R 버튼마다 검술·마법 Skill 노드 택1(`exclusiveGroup`) → Upgrade 2단계(배우는 Lv+1) → 3단계(배우는 Lv+4). 공용 패시브 4개(체력 +10% / 치명타 +5% / 대기시간 -8% / 이동 +8%) |
+| 시작 | 계열 선택 = 그 계열 Q 노드 무료(초기화해도 유지). E·R은 트리에서 선택 |
+| 총 비용 | 시작 Q 제외 14P = Lv.15에서 한쪽 빌드 완성 |
+| 초기화 | 두 번 눌러 확정, 쓴 포인트 전부 환급 |
+| 데이터 | `SkillTree_Main` 에셋 하나 (노드 위치·선행·비용·필요 레벨). `OZ > UI > Validate Data`로 검사 |
+
+팀원 연동: `ISkillTreeSource` 구현 (규칙은 `SkillTreeState`를 그대로 감싸면 됨 — `Samples/DummyPlayer` 참고). 기존 `ISkillSource`(아이콘·쿨타임·단계)는 그대로이고, 단계 값은 트리에서 계산. 패시브 수치는 `SkillTreeState.GetStat("max_hp_pct")` 등으로 읽음.
+
+## 4. v0.4 변경
 | 영역 | 바뀐 점 | 팀원 코드 |
 |---|---|---|
-| HUD 체력 | Flask → Sci-Fi Hud_Lifebar B (Sci-Fi 에셋은 체력바만) | `IHealthSource` |
-| 초상화 칸 | 34×34 팔각, 피격 흔들림·저체력 맥박 | `GameUI.HUD.SetPortrait(sprite)` |
-| 랭크·SP | 랭크 배지 초상화 아래, HUD SP 표시 삭제 | — |
-| 게이트 파괴 띠 | `GateSealed` 시 자동 | `GameUI.HUD.ShowBanner(제목, 부제, 초)` |
-| 인벤토리 | 칸 22 → 36px, 창 480×236 | — |
-| 설정 창 | 볼륨 3종, 전체 화면·해상도·수직 동기화, 흔들림·피해 숫자·크기·줄여 쓰기 | `UISettings.*`, `UISettings.Changed` |
-| 버그 | 대화 반복 시 초상화 밀림, 안내 문구 밀림, 연타 시 체력바 붉게 남음 | — |
+| 단축키 | Q/E/R·1~4 칸 22 → 36px, 아이콘 16px 2배, 키 글자 12px, 수량 그림자 | — |
+| 버프 | 단축키 줄 위(y 80)로 이동 — 키 글자와 안 겹침, 아이콘 20px | — |
+| 좌상단 HUD | 반투명 바탕 추가 (밝은 배경 위에서도 체력바가 읽히게) | — |
+| 치명타 | "치명타" 글자 제거 → 노랑 24px + 큰 튐 + 흔들림 + 2배 금색 타격 이펙트, 일반 숫자보다 위 줄 | — |
+| 인벤토리 | 어두운 칸(GridPanelIndent) + 강조 테두리, 사용 칸 수, 퀵슬롯 번호, 설명 칸 색 띠·아이콘 칸·구분선 | — |
+| 보스 체력바 | Cinematic → HUD 레이어 (인벤토리·스킬·지도 창 아래로) | — |
+| 스킬 창 | 카드형 → 노드형 스킬 트리 | `ISkillTreeSource` 추가 |
 
-## 4. 피해 숫자·타격감 기준
+## 5. 피해 숫자·타격감 기준
 | 종류 | 피해 숫자 | 히트스톱 | 흔들림(UI px) | 흰 번쩍임 | 이펙트 |
 |---|---|---|---|---|---|
 | Normal | 흰 12px | 0.03초 | 1px | 0.05초 | 작은 하늘색 |
-| Critical | 노랑 15px + "치명타" | 0.07초 | 3px | 0.07초 | 큰 금색 |
+| Critical | 노랑 24px, 글자 없음, 위 줄 | 0.07초 | 3px | 0.07초 | 금색 2배 |
 | Weakness | 주황 굵은 24px, 그림자 2px | 0.08초 | 3px | 0.08초 | 큰 주황 |
 | Finisher | 빨강 30px, 그림자 2px (마지막 일격 자동) | 0.12초 | 4px | 0.10초 | 큰 빨강 |
 | DamageOverTime | 보라 10px, 아래, 0.4초 합산 | — | — | 0.03초 | — |
@@ -50,8 +60,13 @@ UI 화면 14종 구현, 자동 점검 232/232 통과. 브랜치 `parkhansol_ui_2
 
 상세: `Docs/CombatFeedback.md`
 
-## 5. 입력·화면
-K 스킬 · I 인벤토리 · Tab/M 지도 · ESC 닫기/일시정지 · Q/E 설정 탭 · Space 대화. 640×360 × 정수배. 레이어 HUD 0 · Screen 10 · Popup 20 · Cinematic 30 · Fullscreen 40 · Modal 45 · Toast 50 · Overlay 100. 글꼴 Galmuri 11·9·14·11 Bold.
+## 6. 확인용 씬
+- `UI_Sandbox` — 2D 더미로 모든 UI를 키로 띄워 보는 씬 (도움말 F1)
+- `UI_Showcase_Subway` — 로우폴리 지하철역 임시 맵 + 블록 인형 플레이어·적. A/D 이동 · Space 2단 점프 · Z/마우스 3타 · Q/E/R 스킬 · B 보스. UI 크기·위치를 2.5D 게임 화면에서 확인하는 용도 (실제 맵·캐릭터 나오면 폐기)
 
-## 6. 남은 결정
-- 장비 화면 포함 여부 · 노드형 스킬 트리 전환 · 히트스톱·흔들림 수치 채택(전투·카메라) · 볼륨 연결(사운드) · 인벤토리·지도 시간 정지 · 지도 세이브 · 아트 교체 담당
+## 7. 입력·화면
+K 스킬 트리 · I 인벤토리 · Tab/M 지도 · ESC 닫기/일시정지 · Space 대화. 640×360 × 정수배. 레이어 HUD 0 · Screen 10 · Popup 20 · Cinematic 30 · Fullscreen 40 · Modal 45 · Toast 50 · Overlay 100. 글꼴 Galmuri 11·9·14·11 Bold.
+
+## 8. 남은 결정
+- 최대 레벨 확정(현재 15) · 계열 선택 화면 유지 여부(Q도 트리에서 고를지) · 패시브 종류·수치
+- 장비 화면 포함 여부 · 히트스톱·흔들림 수치 채택(전투·카메라) · 볼륨 연결(사운드) · 인벤토리·지도 시간 정지 · 지도 세이브 · 아트 교체 담당

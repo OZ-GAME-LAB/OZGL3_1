@@ -40,6 +40,8 @@ namespace OZ.UI
         [SerializeField] internal Sprite[] normalSparkFrames = new Sprite[0];
         [SerializeField] internal Sprite[] critSparkFrames = new Sprite[0];
         [SerializeField] internal float sparkFps = 24f;
+        [Tooltip("치명타 계열 타격 이펙트 배율 (정수 = 픽셀 유지)")]
+        [SerializeField] internal int critSparkScale = 2;
 
         [Header("적 체력바")]
         [Tooltip("BarAnchor 위로 띄우는 높이 (UI px)")]
@@ -126,6 +128,7 @@ namespace OZ.UI
             s.transform.SetAsLastSibling();
             s.image.color = tint;
             s.Play(frames, sparkFps, 90f * Random.Range(0, 4), done => _freeSparks.Push(done));
+            s.transform.localScale = Vector3.one * (critical ? Mathf.Max(1, critSparkScale) : 1);
             Place(s.transform as RectTransform, worldPosition, Vector2.zero);
         }
 

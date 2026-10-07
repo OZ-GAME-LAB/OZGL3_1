@@ -16,7 +16,9 @@ namespace OZ.UI.EditorTools
     /// </summary>
     internal static class OZGitPush
     {
-        const string DefaultMessage = "parkhansol_UI기반세팅_HUD창지도대화_자동점검";
+        const string DefaultMessage = "parkhansol_스킬트리노드형_HUD단축키확대_치명타효과_인벤토리개선_지하철역쇼케이스";
+        /// <summary>프로젝트 규칙: 하루 작업 = 브랜치 parkhansol_ui_yyMMdd (없으면 현재 브랜치에서 새로 만듦)</summary>
+        const string BranchPrefix = "parkhansol_ui_";
         static bool _running;
 
         [MenuItem("OZ/UI/Git Push (02.parkhansol_ only)", priority = 40)]
@@ -52,6 +54,17 @@ namespace OZ.UI.EditorTools
 
                 Exec(git, "rev-parse --abbrev-ref HEAD", root, sb, out string branch);
                 branch = branch.Trim();
+                string today = BranchPrefix + DateTime.Now.ToString("yyMMdd");
+                if (branch != today)
+                {
+                    bool exists = Exec(git, $"rev-parse --verify --quiet refs/heads/{today}", root, sb, out _) == 0;
+                    if (Exec(git, exists ? $"switch {today}" : $"switch -c {today}", root, sb, out _) != 0)
+                    {
+                        sb.AppendLine("!! 오늘 브랜치로 전환 실패 → 중단");
+                        return false;
+                    }
+                    branch = today;
+                }
                 Exec(git, "config user.name", root, sb, out string user);
                 if (string.IsNullOrWhiteSpace(user)) { sb.AppendLine("!! git user.name 미설정 → 중단"); return false; }
 
@@ -74,17 +87,18 @@ namespace OZ.UI.EditorTools
                     string msgFile = Path.Combine(Path.GetTempPath(), "oz_commit_msg.txt");
                     File.WriteAllText(msgFile, message + "\n\n" +
                         "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n" +
-                        "Claude-Session: https://claude.ai/code/session_0169M9VqZ6KuRRJuVCFkj3Uh\n", new UTF8Encoding(false));
+                        "Claude-Session: https://claude.ai/code/session_01HKTSP2Z3k6rBxArBjzpmMV\n", new UTF8Encoding(false));
                     if (Exec(git, $"commit -F \"{msgFile}\"", root, sb, out _) != 0) return false;
                 }
 
-                if (Exec(git, $"pull --rebase --autostash origin {branch}", root, sb, out _) != 0)
+                bool remoteHas = Exec(git, $"ls-remote --exit-code --heads origin {branch}", root, sb, out _) == 0;
+                if (remoteHas && Exec(git, $"pull --rebase --autostash origin {branch}", root, sb, out _) != 0)
                 {
                     sb.AppendLine("!! pull --rebase 실패 → 충돌 가능. rebase 중단 후 종료");
                     Exec(git, "rebase --abort", root, sb, out _);
                     return false;
                 }
-                if (Exec(git, $"push origin {branch}", root, sb, out _, timeoutMs: 600000) != 0) return false;
+                if (Exec(git, $"push -u origin {branch}", root, sb, out _, timeoutMs: 600000) != 0) return false;
                 Exec(git, "log --oneline -3", root, sb, out _);
                 Exec(git, "status --short -- Assets/02.parkhansol_", root, sb, out _);
                 ok = true;

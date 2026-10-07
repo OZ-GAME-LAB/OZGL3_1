@@ -5,7 +5,7 @@ namespace OZ.UI.Contracts
     /// <summary>
     /// 코드 없이 연결하는 방법: 플레이어(또는 스테이지 매니저) 오브젝트에 이 컴포넌트를 붙이면
     /// 같은 오브젝트의 컴포넌트 중 IHealthSource / IProgressionSource / ISkillSource /
-    /// IItemSource / IGateSource / IInventorySource 를 구현한 것을 찾아 활성화 시 등록, 비활성화 시 해제한다.
+    /// IItemSource / IGateSource / IInventorySource / ISkillTreeSource 를 구현한 것을 찾아 활성화 시 등록, 비활성화 시 해제한다.
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("OZ/UI/UI Source Binder")]

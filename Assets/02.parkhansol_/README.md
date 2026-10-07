@@ -11,7 +11,8 @@ OZGL3_1 데모의 UI 전부가 이 폴더 안에 있습니다. **팀원 폴더·
    4. `UI/Prefabs/UIRoot.prefab` 생성
    5. `UI/Scenes/UI_Sandbox.unity` 생성
 2. **OZ > UI > Open UI Sandbox** → Play → 화면 오른쪽 위 도움말의 키로 전체 UI 확인
-3. **OZ > UI > Run Self Test** → 수치 변화 150개 항목 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
+   - **OZ > UI > Open Subway Showcase** → 로우폴리 지하철역 임시 맵에서 이동·점프·공격·스킬로 UI 크기·위치 확인
+3. **OZ > UI > Run Self Test** → 수치 변화 247개 항목 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
 
 > 팀원은 1번을 할 필요가 없습니다. 생성된 결과물이 깃에 같이 올라갑니다.
 
@@ -45,12 +46,27 @@ public class Player : MonoBehaviour, IHealthSource, ISkillSource, IItemSource
 | `IHealthSource` | 플레이어 | 초상화 칸 + HP 바 + 피격/회복 연출 |
 | `IProgressionSource` | 플레이어/코어 | 레벨 · 경험치 · 헌터 랭크 · 남은 스킬 포인트 |
 | `ISkillSource` | 플레이어 | Q/E/R 아이콘 · 쿨타임 · 완료 연출 · 잠금 / 스킬 창 투자 |
+| `ISkillTreeSource` | 플레이어 | K 스킬 트리 (노드 해금·택1·초기화) — 규칙은 `SkillTreeState` 그대로 사용 |
 | `IItemSource` | 플레이어/코어 | 1~4 아이템 수량 · 사용 연출 · 버프 타이머 |
 | `IInventorySource` | 코어 | 인벤토리 창 (1×1 슬롯, 이동/사용) |
 | `IGateSource` | 코어 | 게이트 봉쇄 n/목표 · 보스 구역 개방 표시 |
 | `IBossSource` | 보스 담당 | 보스 체력바 · 페이즈 · 처치 연출 |
 
 전체 구현 예시: `UI/Scripts/Samples/DummyPlayer.cs`, `DummyBoss.cs`
+
+### 1-1) 스킬 트리 (플레이어 담당)
+
+규칙 계산은 `SkillTreeState`에 다 들어 있어서 감싸기만 하면 됩니다 (`Samples/DummyPlayer.cs` 참고).
+
+```csharp
+var tree = new SkillTreeState(skillTreeData);           // SkillTree_Main 에셋
+tree.Unlock("sword_q", free: true);                      // 계열 시작 스킬 (초기화해도 남음)
+if (tree.CanUnlock(id, level, points, out var why)) { points -= skillTreeData.Find(id).cost; tree.Unlock(id); }
+points += tree.Reset();                                  // 초기화 → 포인트 환급
+SkillData q = tree.GetSkill(SkillSlot.Q); int rank = tree.GetRank(SkillSlot.Q);   // ISkillSource에 그대로
+float hp = tree.GetStat("max_hp_pct");                   // 패시브 수치
+```
+최대 레벨 15(임시), 레벨당 1P. Q/E/R 버튼마다 검술·마법 택1 → 2·3단계, 공용 패시브 4개.
 
 ### 2) 한 줄 호출 (GameUI)
 

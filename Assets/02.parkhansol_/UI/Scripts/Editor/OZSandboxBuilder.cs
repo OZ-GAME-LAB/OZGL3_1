@@ -19,11 +19,11 @@ namespace OZ.UI.EditorTools
 
         public const string HelpText =
             "<b>UI SANDBOX</b>  (F1 숨기기)\n" +
-            "<color=#FFD966>HUD</color> H 피격  J 회복  X 경험치\n" +
+            "<color=#FFD966>HUD</color> H 피격  J 회복  X 경험치  = 레벨업\n" +
             "<color=#FFD966>사용</color> Q/E/R 스킬  1~4 아이템  U 회복제+1\n" +
             "<color=#FFD966>게이트</color> G 봉쇄  O 열기   P 다음 방\n" +
             "<color=#FFD966>보스</color> B 등장  N 피격  V 큰 피격\n" +
-            "<color=#FFD966>창</color> K 스킬  I 인벤  Tab 지도  T 대화  ESC\n" +
+            "<color=#FFD966>창</color> K 스킬트리  I 인벤  Tab 지도  T 대화  ESC\n" +
             "<color=#FFD966>화면</color> F2 사망  F3 게이트파괴  F4 끝  F5 타이틀\n" +
             "<color=#FFD966>전투</color> Z 공격 C 치명 W 약점 L 연타\n" +
             "       D 장판(지속) Y 빗나감  적 클릭";
@@ -64,6 +64,7 @@ namespace OZ.UI.EditorTools
             var sandbox = new GameObject("Sandbox (Dummy Gameplay)");
             var player = sandbox.AddComponent<DummyPlayer>();
             player.classData = OZSampleData.Load<ClassData>("Class_Sword");
+            player.skillTree = OZSampleData.Load<SkillTreeData>("SkillTree_Main");
             player.quickItems = new[]
             {
                 OZSampleData.Load<ItemData>("Item_Heal"), OZSampleData.Load<ItemData>("Item_Attack"),

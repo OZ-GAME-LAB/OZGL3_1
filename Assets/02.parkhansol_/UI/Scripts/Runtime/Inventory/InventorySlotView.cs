@@ -18,6 +18,14 @@ namespace OZ.UI
         [SerializeField] internal TMP_Text countText;
         [SerializeField] internal Image highlight;
         [SerializeField] internal Image heldMark;
+        [Tooltip("칸 배경 (빈 칸은 어둡게)")]
+        [SerializeField] internal Image background;
+        [SerializeField] internal Color filledColor = Color.white;
+        [SerializeField] internal Color emptyColor = new Color(0.55f, 0.6f, 0.72f, 0.75f);
+        [Tooltip("수량 그림자 (선택)")]
+        [SerializeField] internal TMP_Text countShadow;
+        [Tooltip("퀵슬롯에 연결된 아이템이면 왼쪽 위에 1~4 표시 (선택)")]
+        [SerializeField] internal TMP_Text quickText;
 
         internal int Index { get; set; }
         internal event Action<InventorySlotView> Clicked;
@@ -34,7 +42,11 @@ namespace OZ.UI
                 icon.enabled = has && icon.sprite != null;
                 icon.color = held ? new Color(1f, 1f, 1f, 0.35f) : Color.white;
             }
-            if (countText != null) countText.text = has && stack.Count > 1 ? stack.Count.ToString() : "";
+            string count = has && stack.Count > 1 ? stack.Count.ToString() : "";
+            if (countText != null) countText.text = count;
+            if (countShadow != null) countShadow.text = count;
+            if (quickText != null) quickText.text = has && stack.Item.slotIndex >= 0 ? (stack.Item.slotIndex + 1).ToString() : "";
+            if (background != null) background.color = has ? filledColor : emptyColor;
             if (heldMark != null) heldMark.enabled = held;
         }
 

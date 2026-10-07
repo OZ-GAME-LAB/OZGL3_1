@@ -13,6 +13,8 @@ namespace OZ.UI
         [SerializeField, Range(0, 3)] internal int slotIndex;
         [SerializeField] internal Image icon;
         [SerializeField] internal TMP_Text countText;
+        [Tooltip("수량 그림자 (선택)")]
+        [SerializeField] internal TMP_Text countShadow;
         [SerializeField] internal TMP_Text keyLabel;
         [SerializeField] internal RectTransform punchTarget;
         [SerializeField] internal Image useFx;
@@ -32,6 +34,7 @@ namespace OZ.UI
                 icon.color = count > 0 ? Color.white : new Color(1f, 1f, 1f, 0.35f);
             }
             if (countText != null) countText.text = src == null ? "" : count.ToString();
+            if (countShadow != null) countShadow.text = countText != null ? countText.text : "";
         }
 
         internal void PlayUsed(ItemData item)

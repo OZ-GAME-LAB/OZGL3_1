@@ -49,8 +49,9 @@ namespace OZ.UI
         {
             new DamageNumberStyle { kind = DamageKind.Normal, color = new Color(1f, 1f, 1f), fontSize = 12, popScale = 1.5f, rise = 18, duration = 0.65f,
                                     spark = DamageSpark.Normal },
-            new DamageNumberStyle { kind = DamageKind.Critical, color = new Color(1f, 0.84f, 0.25f), fontSize = 15, popScale = 2.2f, rise = 26, duration = 0.95f, jitterX = 4, shake = 2f,
-                                    label = "치명타", labelColor = new Color(1f, 0.62f, 0.2f), lane = 10f, spark = DamageSpark.Critical },
+            // v0.4: 치명타는 글자 없이 효과로만 — 노란 24px(Galmuri11 2배) + 큰 튐 + 흔들림 + 2배 크기 금색 타격 이펙트
+            new DamageNumberStyle { kind = DamageKind.Critical, color = new Color(1f, 0.84f, 0.25f), fontSize = 24, popScale = 2.0f, rise = 24, duration = 0.95f, jitterX = 4, shake = 3f,
+                                    shadowOffset = 2, lane = 14f, spark = DamageSpark.Critical },
             // 약점·처치는 글자 없이 색·크기·두께로 구분: 약점 = 주황 굵은 글꼴 24px(2배), 처치 = 빨강 30px(2배) + 굵은 그림자
             new DamageNumberStyle { kind = DamageKind.Weakness, color = new Color(1f, 0.55f, 0.15f), fontSize = 24, popScale = 1.8f, rise = 26, duration = 1.0f, jitterX = 4, shake = 2.5f,
                                     shadowOffset = 2, lane = 10f, spark = DamageSpark.Critical, sparkTint = new Color(1f, 0.6f, 0.35f) },

@@ -21,6 +21,8 @@ namespace OZ.UI
         [Tooltip("집은 아이템을 커서에 붙여 보여줄 아이콘")]
         [SerializeField] internal Image cursorIcon;
         [SerializeField] internal TMP_Text emptyText;
+        [Tooltip("'사용 칸 / 전체 칸' 표시 (선택)")]
+        [SerializeField] internal TMP_Text capacityText;
         [SerializeField] internal Color hoverColor = new Color(1f, 1f, 1f, 0.35f);
         [SerializeField] internal Color dropOkColor = new Color(0.4f, 1f, 0.5f, 0.5f);
 
@@ -84,6 +86,12 @@ namespace OZ.UI
 
         void Refresh()
         {
+            if (capacityText != null)
+            {
+                int used = 0, cap = _source?.Capacity ?? 0;
+                for (int i = 0; i < cap; i++) if (!_source.GetSlot(i).IsEmpty) used++;
+                capacityText.text = _source != null ? $"{used} / {cap}" : "";
+            }
             for (int i = 0; i < _slots.Count; i++)
             {
                 var stack = _source != null && i < _source.Capacity ? _source.GetSlot(i) : ItemStack.Empty;

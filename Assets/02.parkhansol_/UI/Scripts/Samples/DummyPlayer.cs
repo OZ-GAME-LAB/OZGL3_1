@@ -12,14 +12,20 @@ namespace OZ.UI.Samples
     /// 디버그 키 (Sandbox 전용)
     ///   H 피격 -15 / J 회복 +20 / X 경험치 +40
     ///   Q E R 스킬 사용 / 1 2 3 4 아이템 사용 / U 회복제 +1
-    ///   G 게이트 봉쇄 / O 게이트 열기
+    ///   G 게이트 봉쇄 / O 게이트 열기 / = 레벨업
+    ///
+    /// 스킬 트리(v0.4): 규칙은 SkillTreeState가 계산하고, 여기서는 포인트 차감·이벤트만 한다.
+    ///   계열 선택 = 그 계열의 Q 스킬 노드를 무료로 찍어 둠 (초기화해도 남음).
+    ///   E·R은 트리에서 검술/마법 중 하나를 골라 찍는다.
     /// </summary>
     [AddComponentMenu("OZ/UI/Samples/Dummy Player")]
     public class DummyPlayer : MonoBehaviour,
-        IHealthSource, IProgressionSource, ISkillSource, IItemSource, IGateSource, IInventorySource
+        IHealthSource, IProgressionSource, ISkillSource, ISkillTreeSource, IItemSource, IGateSource, IInventorySource
     {
         [Header("Data (선택 — 비우면 이름 없는 슬롯으로 표시)")]
         [SerializeField] internal ClassData classData;
+        [Tooltip("노드형 스킬 트리. 비우면 예전 방식(Q/E/R 단계만)으로 동작")]
+        [SerializeField] internal SkillTreeData skillTree;
         [Tooltip("1~4 퀵슬롯 아이템 (slotIndex 0~3)")]
         [SerializeField] internal ItemData[] quickItems = new ItemData[4];
         [Tooltip("인벤토리에만 들어가는 아이템 (열쇠 등)")]
@@ -27,6 +33,8 @@ namespace OZ.UI.Samples
 
         [Header("Start Values")]
         [SerializeField] internal float maxHP = 100f;
+        [Tooltip("최대 레벨 (레벨당 스킬 포인트 1)")]
+        [SerializeField] internal int maxLevel = 15;
         [SerializeField] internal int[] startItemCounts = { 3, 1, 1, 1 };
         [SerializeField] internal int inventoryCapacity = 24;
         [SerializeField] internal int gateTarget = 3;
@@ -38,7 +46,8 @@ namespace OZ.UI.Samples
         float _exp;
         int _points;
         HunterRank _rank = HunterRank.F;
-        readonly int[] _skillRanks = new int[3];
+        readonly int[] _skillRanks = new int[3]; // skillTree 없을 때만 사용
+        SkillTreeState _tree;
         readonly float[] _cooldownEnd = new float[3];
         readonly float[] _cooldownDur = new float[3];
         ItemStack[] _inv;
@@ -53,6 +62,7 @@ namespace OZ.UI.Samples
         public event Action<SkillSlot, float> CooldownStarted;
         public event Action<SkillSlot> SkillChanged;
         public event Action<SkillSlot, SkillUseFailReason> SkillUseFailed;
+        public event Action TreeChanged;
         public event Action<int, int> CountChanged;
         public event Action<int> ItemUsed;
         public event Action<int> ItemUseFailed;
@@ -66,6 +76,27 @@ namespace OZ.UI.Samples
 
         void Awake() => ResetAll();
 
+        SkillTreeState TreeState
+        {
+            get
+            {
+                if (skillTree == null) return null;
+                if (_tree == null || _tree.Tree != skillTree)
+                {
+                    if (_tree != null) _tree.Changed -= OnTreeStateChanged;
+                    _tree = new SkillTreeState(skillTree);
+                    _tree.Changed += OnTreeStateChanged;
+                }
+                return _tree;
+            }
+        }
+
+        void OnTreeStateChanged()
+        {
+            TreeChanged?.Invoke();
+            for (int i = 0; i < 3; i++) SkillChanged?.Invoke((SkillSlot)i);
+        }
+
         // 바인딩은 UISourceBinder 컴포넌트가 해도 되고, 이렇게 직접 해도 된다.
         void OnEnable() => GameUI.Bind(this);
         void OnDisable() => GameUI.Unbind(this);
@@ -75,10 +106,18 @@ namespace OZ.UI.Samples
         {
             _hp = maxHP;
             _level = 1; _exp = 0f; _points = 0;
+            var tree = TreeState;
+            tree?.Clear();
             for (int i = 0; i < 3; i++)
             {
-                var s = GetSkill((SkillSlot)i);
-                _skillRanks[i] = s != null ? (s.startsLearned ? 1 : 0) : (i == 0 ? 1 : 0);
+                var start = classData != null ? classData.GetSkill((SkillSlot)i) : null;
+                if (tree != null)
+                {
+                    // 계열의 시작 스킬(검증값: Q)은 무료로 찍어 둔다
+                    var node = start != null && start.startsLearned ? skillTree.FindSkillNode(start) : null;
+                    if (node != null) tree.Unlock(node.id, free: true);
+                }
+                else _skillRanks[i] = start != null ? (start.startsLearned ? 1 : 0) : (i == 0 ? 1 : 0);
                 _cooldownEnd[i] = 0f; _cooldownDur[i] = 0f;
             }
 
@@ -126,7 +165,7 @@ namespace OZ.UI.Samples
         public PlayerClass Class => classData != null ? classData.playerClass : PlayerClass.Sword;
         public int Level => _level;
         public float Exp => _exp;
-        public float ExpToNextLevel => _level >= 7 ? 0f : 100f; // 데모 목표 상한 레벨 7
+        public float ExpToNextLevel => _level >= maxLevel ? 0f : 100f;
         public int SkillPoints => _points;
         public HunterRank Rank => _rank;
 
@@ -153,15 +192,40 @@ namespace OZ.UI.Samples
             ProgressionChanged?.Invoke();
         }
 
-        // ── ISkillSource ──
-        public SkillData GetSkill(SkillSlot slot) => classData != null ? classData.GetSkill(slot) : null;
-        public int GetRank(SkillSlot slot) => _skillRanks[(int)slot];
+        /// <summary>디버그: 다음 레벨까지 바로 올림</summary>
+        public void LevelUpNow()
+        {
+            if (ExpToNextLevel > 0f) AddExp(ExpToNextLevel - _exp);
+        }
+
+        // ── ISkillSource (Q/E/R 아이콘·쿨타임·단계 — 트리가 있으면 트리에서 계산) ──
+        public SkillData GetSkill(SkillSlot slot)
+        {
+            var tree = TreeState;
+            if (tree != null) return tree.GetSkill(slot);
+            return classData != null ? classData.GetSkill(slot) : null;
+        }
+
+        public int GetRank(SkillSlot slot)
+        {
+            var tree = TreeState;
+            return tree != null ? tree.GetRank(slot) : _skillRanks[(int)slot];
+        }
 
         public float GetCooldownRemaining(SkillSlot slot) => Mathf.Max(0f, _cooldownEnd[(int)slot] - Time.time);
         public float GetCooldownDuration(SkillSlot slot) => _cooldownDur[(int)slot];
 
+        /// <summary>예전 카드형 스킬 창 호환: 트리에서는 그 버튼의 '다음 노드'를 찍는다 (미배정이면 계열 스킬).</summary>
         public bool CanInvest(SkillSlot slot, out string reason)
         {
+            var tree = TreeState;
+            if (tree != null)
+            {
+                var next = tree.NextNodeFor(slot, classData != null ? classData.GetSkill(slot) : null);
+                if (next == null) { reason = tree.GetRank(slot) > 0 ? "최대 단계" : "트리에서 선택"; return false; }
+                return CanUnlock(next.id, out reason);
+            }
+
             var data = GetSkill(slot);
             int rank = GetRank(slot);
             int maxRank = data != null ? data.maxRank : 3;
@@ -178,6 +242,9 @@ namespace OZ.UI.Samples
         public bool TryInvest(SkillSlot slot)
         {
             if (!CanInvest(slot, out _)) return false;
+            var tree = TreeState;
+            if (tree != null) return TryUnlock(tree.NextNodeFor(slot, classData != null ? classData.GetSkill(slot) : null).id);
+
             var data = GetSkill(slot);
             _points -= data != null ? data.costPerRank : 1;
             _skillRanks[(int)slot]++;
@@ -189,14 +256,57 @@ namespace OZ.UI.Samples
         public void UseSkill(SkillSlot slot)
         {
             int i = (int)slot;
-            if (_skillRanks[i] <= 0) { SkillUseFailed?.Invoke(slot, SkillUseFailReason.NotLearned); return; }
+            int rank = GetRank(slot);
+            if (rank <= 0) { SkillUseFailed?.Invoke(slot, SkillUseFailReason.NotLearned); return; }
             if (GetCooldownRemaining(slot) > 0f) { SkillUseFailed?.Invoke(slot, SkillUseFailReason.Cooldown); return; }
 
             var data = GetSkill(slot);
-            float cd = data != null ? data.GetCooldown(_skillRanks[i]) : 5f + 3f * i;
+            float cd = data != null ? data.GetCooldown(rank) : 5f + 3f * i;
+            var tree = TreeState;
+            if (tree != null) cd *= Mathf.Max(0.1f, 1f + tree.GetStat("cooldown_pct") / 100f); // 패시브 '집중'
             _cooldownDur[i] = cd;
             _cooldownEnd[i] = Time.time + cd;
             CooldownStarted?.Invoke(slot, cd);
+        }
+
+        // ── ISkillTreeSource ──
+        public SkillTreeData Tree => skillTree;
+        public bool IsUnlocked(string nodeId) => TreeState != null && TreeState.IsUnlocked(nodeId);
+
+        public bool CanUnlock(string nodeId, out string reason)
+        {
+            var tree = TreeState;
+            if (tree == null) { reason = "트리 없음"; return false; }
+            return tree.CanUnlock(nodeId, _level, _points, out reason);
+        }
+
+        public bool TryUnlock(string nodeId)
+        {
+            if (!CanUnlock(nodeId, out _)) return false;
+            _points -= skillTree.Find(nodeId).cost;
+            TreeState.Unlock(nodeId); // → TreeChanged, SkillChanged
+            ProgressionChanged?.Invoke();
+            return true;
+        }
+
+        public bool CanResetTree(out string reason)
+        {
+            var tree = TreeState;
+            if (tree == null) { reason = "트리 없음"; return false; }
+            if (tree.SpentPoints <= 0) { reason = "찍은 노드 없음"; return false; }
+            reason = null;
+            return true;
+        }
+
+        public bool TryResetTree()
+        {
+            if (!CanResetTree(out _)) return false;
+            _points += TreeState.Reset();
+            for (int i = 0; i < 3; i++) { _cooldownEnd[i] = 0f; _cooldownDur[i] = 0f; } // 스킬이 바뀔 수 있으니 쿨타임 비움
+            for (int i = 0; i < 3; i++) SkillChanged?.Invoke((SkillSlot)i);
+            ProgressionChanged?.Invoke();
+            GameUI.Notify.Toast("스킬 트리 초기화 — 포인트를 돌려받았다", ToastType.Info);
+            return true;
         }
 
         // ── IItemSource (1~4 퀵슬롯 = 인벤토리 안 같은 아이템 합계) ──
@@ -352,6 +462,7 @@ namespace OZ.UI.Samples
             if (kb.uKey.wasPressedThisFrame) AddItem(0);
             if (kb.gKey.wasPressedThisFrame) SealGate();
             if (kb.oKey.wasPressedThisFrame) OpenGate();
+            if (kb.equalsKey.wasPressedThisFrame) LevelUpNow();
         }
     }
 }

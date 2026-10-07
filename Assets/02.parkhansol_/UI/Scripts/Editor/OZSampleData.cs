@@ -56,6 +56,45 @@ namespace OZ.UI.EditorTools
             Make<ClassData>("Class_Sword", c => { c.playerClass = PlayerClass.Sword; c.displayName = "검술"; c.description = "짧고 좁은 범위에 높은 피해를 집중한다.\n적에게 접근할 기회와 빠져나올 위치를 판단."; c.icon = Icon("Skill_SwordQ"); c.skills = new[] { sq, se, sr }; });
             Make<ClassData>("Class_Magic", c => { c.playerClass = PlayerClass.Magic; c.displayName = "마법"; c.description = "넓은 범위 공격과 지속 피해 장판.\n적이 모이는 위치와 경로를 예상해 공격."; c.icon = Icon("Skill_MagicQ"); c.skills = new[] { mq, me, mr }; });
 
+            // ── 스킬 트리 (v0.4 노드형) — Q/E/R 버튼마다 검술·마법 택1 → 2·3단계 강화, 아래 줄은 공용 패시브 ──
+            // 포인트: 레벨당 1 (최대 Lv.15 → 14P). 시작 스킬(계열 선택한 Q) 무료 + 나머지 전부 = 14P.
+            Make<SkillTreeData>("SkillTree_Main", t =>
+            {
+                t.treeId = "main";
+                t.displayName = "스킬 트리";
+                t.nodes = new List<SkillTreeNode>();
+                void Branch(SkillData sk, int x, string group)
+                {
+                    string b = sk.id; // sword_q …
+                    int lv = sk.learnLevel;
+                    t.nodes.Add(new SkillTreeNode { id = b, kind = SkillNodeKind.Skill, slot = sk.slot, skill = sk, grantsRank = 1, gridPos = new Vector2Int(x, 0), exclusiveGroup = group, cost = 1, requiredLevel = lv });
+                    t.nodes.Add(new SkillTreeNode { id = b + "_2", kind = SkillNodeKind.Upgrade, slot = sk.slot, skill = sk, grantsRank = 2, gridPos = new Vector2Int(x, 1), requires = new List<string> { b }, cost = 1, requiredLevel = lv + 1 });
+                    t.nodes.Add(new SkillTreeNode { id = b + "_3", kind = SkillNodeKind.Upgrade, slot = sk.slot, skill = sk, grantsRank = 3, gridPos = new Vector2Int(x, 2), requires = new List<string> { b + "_2" }, cost = 1, requiredLevel = lv + 4 });
+                }
+                Branch(sq, 0, "slot_q"); Branch(mq, 2, "slot_q");
+                Branch(se, 4, "slot_e"); Branch(me, 6, "slot_e");
+                Branch(sr, 8, "slot_r"); Branch(mr, 10, "slot_r");
+
+                SkillTreeNode Passive(string id, string name, string desc, string icon, int x, string req, int cost, int lv, string key, float value) =>
+                    new SkillTreeNode { id = id, kind = SkillNodeKind.Passive, displayName = name, description = desc, icon = Icon(icon), gridPos = new Vector2Int(x, 4),
+                        requires = req != null ? new List<string> { req } : new List<string>(), cost = cost, requiredLevel = lv, statKey = key, statValue = value };
+                t.nodes.Add(Passive("p_hp", "강인함", "최대 체력 +10%", "Item_Heal", 2, null, 1, 3, "max_hp_pct", 10f));
+                t.nodes.Add(Passive("p_crit", "예리함", "치명타 확률 +5%", "Item_Attack", 4, "p_hp", 1, 5, "crit_pct", 5f));
+                t.nodes.Add(Passive("p_cdr", "집중", "모든 스킬 대기시간 -8%", "Item_Defense", 6, "p_crit", 2, 8, "cooldown_pct", -8f));
+                t.nodes.Add(Passive("p_move", "질주", "이동 속도 +8%", "Item_Speed", 8, "p_cdr", 2, 11, "move_pct", 8f));
+
+                t.labels = new List<SkillTreeLabel>
+                {
+                    new SkillTreeLabel { text = "Q", gridPos = new Vector2(1, -0.9f) },
+                    new SkillTreeLabel { text = "E", gridPos = new Vector2(5, -0.9f) },
+                    new SkillTreeLabel { text = "R", gridPos = new Vector2(9, -0.9f) },
+                    new SkillTreeLabel { text = "택1", gridPos = new Vector2(1, 0), small = true },
+                    new SkillTreeLabel { text = "택1", gridPos = new Vector2(5, 0), small = true },
+                    new SkillTreeLabel { text = "택1", gridPos = new Vector2(9, 0), small = true },
+                    new SkillTreeLabel { text = "패시브", gridPos = new Vector2(0.4f, 4), small = true },
+                };
+            });
+
             // ── 아이템 (기획서 5장) ──
             Make<ItemData>("Item_Heal", i => { i.id = "item_heal"; i.displayName = "응급 회복제"; i.description = "최대 체력을 초과하지 않는다."; i.icon = Icon("Item_Heal"); i.slotIndex = 0; i.effectType = ItemEffectType.Heal; i.effectPercent = 30; i.buffDuration = 0; i.fxColor = new Color(1f, 0.4f, 0.45f); });
             Make<ItemData>("Item_Attack", i => { i.id = "item_attack"; i.displayName = "공격 강화제"; i.description = "기본 공격과 스킬 피해 증가. 중첩 없이 시간 갱신."; i.icon = Icon("Item_Attack"); i.slotIndex = 1; i.effectType = ItemEffectType.AttackBuff; i.effectPercent = 20; i.buffDuration = 10; i.fxColor = new Color(1f, 0.6f, 0.25f); });
