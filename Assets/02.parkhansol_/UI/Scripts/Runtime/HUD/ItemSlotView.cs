@@ -40,6 +40,7 @@ namespace OZ.UI
         internal void PlayUsed(ItemData item)
         {
             if (punchTarget != null) punchTarget.Punch(0.3f, 0.3f);
+            UISfx.Play(UISound.ItemUse);
             if (useFx == null) return;
 
             // 사용 효과: 아이템 색 링이 커지며 사라짐

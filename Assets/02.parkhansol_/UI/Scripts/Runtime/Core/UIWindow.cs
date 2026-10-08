@@ -29,6 +29,9 @@ namespace OZ.UI
         [SerializeField] internal bool blocksGameplayInput = true;
         [Tooltip("열려 있는 동안 Time.timeScale = 0 (기획서: 스킬 창 기본안)")]
         [SerializeField] internal bool pausesGame;
+        [Tooltip("열릴 때 / 닫힐 때 소리 (None이면 무음)")]
+        [SerializeField] internal UISound openSound = UISound.Open;
+        [SerializeField] internal UISound closeSound = UISound.Close;
         [Tooltip("ESC/B 버튼으로 닫기 가능")]
         [SerializeField] internal bool closeOnBack = true;
         [SerializeField] internal WindowTransition transition = WindowTransition.PopIn;

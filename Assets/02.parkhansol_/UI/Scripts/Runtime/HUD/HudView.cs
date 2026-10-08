@@ -17,7 +17,10 @@ namespace OZ.UI
         [SerializeField] internal CanvasGroup group;
         [SerializeField] internal HealthView health;
         [SerializeField] internal ProgressionView progression;
+        [Tooltip("v0.6부터 비움 — 게이트 진행은 퀘스트 목록(quests)이 표시")]
         [SerializeField] internal GateStatusView gate;
+        [SerializeField] internal QuestListView quests;
+        [SerializeField] internal SystemAlarmView systemAlarm;
         [SerializeField] internal SkillBarView skills;
         [SerializeField] internal ItemBarView items;
         [SerializeField] internal BuffTrayView buffs;
@@ -58,6 +61,7 @@ namespace OZ.UI
             if (health != null) health.Bind(UISources.Health);
             if (progression != null) progression.Bind(UISources.Progression);
             if (gate != null) gate.Bind(UISources.Gate);
+            if (quests != null) quests.BindGate(UISources.Gate);
             if (skills != null) skills.Bind(UISources.Skills);
             if (items != null) items.Bind(UISources.Items);
             if (buffs != null) buffs.Bind(UISources.Items);

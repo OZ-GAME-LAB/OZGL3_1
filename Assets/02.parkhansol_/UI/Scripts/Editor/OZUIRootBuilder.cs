@@ -26,6 +26,8 @@ namespace OZ.UI.EditorTools
             {
                 var manager = root.AddComponent<UIManager>();
                 root.AddComponent<UIInputRouter>();
+                var sfx = root.AddComponent<UISoundPlayer>(); // v0.6 UI 효과음
+                sfx.soundSet = AssetDatabase.LoadAssetAtPath<UISoundSet>(OZUISoundSetup.SetPath) ?? OZUISoundSetup.Run();
                 var mapCtrl = root.AddComponent<MapController>();
 
                 // UIManager.Awake가 레이어를 만들지만, 프리팹 안에서 미리 배치하려고 직접 생성
@@ -56,6 +58,7 @@ namespace OZ.UI.EditorTools
                 BuildFlow(overlayLayer); // v0.5: 로딩·페이드·스테이지 시작 띠 (맨 위)
 
                 mapCtrl.renderers = new[] { minimap, fullMap };
+                AssignSelectableSounds(root);
 
                 var prefab = PrefabUtility.SaveAsPrefabAsset(root, PrefabPath);
                 Debug.Log("[OZ UI] UIRoot 프리팹 생성 → " + PrefabPath, prefab);
@@ -296,22 +299,12 @@ namespace OZ.UI.EditorTools
             prog.expBar = exp;
             // SP 표시는 HUD에서 뺌 (스킬 창에서만 표시)
 
-            // ── 상단 중앙: 게이트 현황 + 안내 문구 ──
-            var gateRt = UIB.Panel("GateStatus", hudRt, "Panels/Blue/Panel");
-            gateRt.raycastTarget = false;
-            gateRt.rectTransform.Place(0.5f, 1, 0, -6, 124, 30);
-            var gate = gateRt.gameObject.AddComponent<GateStatusView>();
-            var gc = UIB.Body12("Count", gateRt.transform, "게이트 0/3", TextAlignmentOptions.Center);
-            gc.rectTransform.Place(0.5f, 1, 0, -2, 120, 13);
-            var gs = UIB.Small10("State", gateRt.transform, "게이트 활성", TextAlignmentOptions.Center, UIB.Dim);
-            gs.rectTransform.Place(0.5f, 1, 0, -15, 120, 11);
-            gate.countText = gc;
-            gate.stateText = gs;
-            gate.punchTarget = gateRt.rectTransform;
-            var ready = UIB.Body12("BossReady", hudRt, "▶ 보스 구역 개방", TextAlignmentOptions.Center, new Color(1f, 0.45f, 0.45f));
-            ready.rectTransform.Place(0.5f, 1, 0, -38, 160, 13);
-            ready.gameObject.SetActive(false);
-            gate.bossReady = ready.gameObject;
+            // ── 좌상단 체력 블록 아래: 퀘스트 목록 (v0.6: 상단 가운데 게이트 패널 대체) ──
+            //  ▌퀘스트                Tab 지도
+            //  □ 게이트 봉쇄             1 / 2
+            //    ▬▬▬▬▬▬▬────────────
+            //  □ 보스 처치            게이트 후
+            hud.quests = BuildQuestList(hudRt);
 
             var guide = UIB.Rect("Guide", hudRt).Place(0.5f, 1, 0, -64, 400, 20);
             hud.guideGroup = UIB.Group(guide.gameObject);
@@ -341,19 +334,21 @@ namespace OZ.UI.EditorTools
             mmFrame.raycastTarget = false;
             mmFrame.rectTransform.Place(1, 1, -8, -8, 104, 70);
             var minimap = MapView(mmFrame.transform, 6f, true, 4);
+            hud.systemAlarm = BuildSystemAlarm(hudRt);
+            _systemAlarm = hud.systemAlarm;
 
-            // ── 좌하단: Q/E/R + 1~4 (v0.4: 칸 22 → 36px, 아이콘 16px 2배) + 버프(단축키 줄 위) ──
-            //  [버프 20px …]                        ← y 80 (키 글자 위로 띄움, 겹침 없음)
-            //   Q    E    R      1    2    3    4   ← 키 글자
-            //  [36] [36] [36]   [36] [36] [36] [36]  ← y 20
-            //   ·    ·    ·                         ← 스킬 단계 점
-            var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 300, 62);
-            var skillBar = bottom.gameObject.AddComponent<SkillBarView>();
-            for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottom, (SkillSlot)i, i * 40f);
-
-            var itemsRt = UIB.Rect("Items", bottom).Place(0, 0, 130, 0, 160, 62);
+            // ── 하단 양손 분리 (v0.6) ──
+            //  [버프 20px …]                                          ← 좌하단 y 80
+            //   1    2    3    4                          Q    E    R
+            //  [36] [36] [36] [36]  (아이템, 좌하단)       [36] [36] [36]  (스킬, 우하단)
+            var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 160, 62);
+            var itemsRt = UIB.Rect("Items", bottom).Place(0, 0, 0, 0, 160, 62);
             var itemBar = itemsRt.gameObject.AddComponent<ItemBarView>();
             for (int i = 0; i < 4; i++) itemBar.slots[i] = ItemSlot(itemsRt, i, i * 39f);
+
+            var bottomRight = UIB.Rect("BottomRight", hudRt).Place(1, 0, -8, 8, 116, 62);
+            var skillBar = bottomRight.gameObject.AddComponent<SkillBarView>();
+            for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottomRight, (SkillSlot)i, i * 40f);
 
             var buffRt = UIB.Rect("Buffs", hudRt).Place(0, 0, 8, 80, 200, 20);
             var hl = buffRt.gameObject.AddComponent<HorizontalLayoutGroup>();
@@ -373,7 +368,7 @@ namespace OZ.UI.EditorTools
 
             hud.health = health;
             hud.progression = prog;
-            hud.gate = gate;
+            hud.gate = null; // v0.6: 게이트는 퀘스트 목록으로
             hud.skills = skillBar;
             hud.items = itemBar;
             hud.buffs = buffs;
@@ -384,6 +379,115 @@ namespace OZ.UI.EditorTools
             hud.flashOverlay = flash;
 
             return minimap;
+        }
+
+        static SystemAlarmView _systemAlarm;
+
+        // 모든 버튼·토글·슬라이더에 소리. 직접 소리를 내는 칸(스킬 노드·인벤토리 칸)은 클릭 소리 없음
+        static void AssignSelectableSounds(GameObject root)
+        {
+            foreach (var sel in root.GetComponentsInChildren<Selectable>(true))
+            {
+                var s = sel.gameObject.GetComponent<UISelectableSound>() ?? sel.gameObject.AddComponent<UISelectableSound>();
+                string n = sel.name.ToLowerInvariant();
+                if (sel is Slider) { s.click = UISound.None; s.valueChange = UISound.Slider; }
+                else if (sel is Toggle) { s.click = UISound.None; s.valueChange = UISound.Tab; }
+                else if (sel.GetComponent<SkillNodeView>() != null || sel.GetComponent<InventorySlotView>() != null) s.click = UISound.None;
+                else if (n.Contains("close") || n.Contains("back") || n.Contains("title") || n.Contains("cancel")) s.click = UISound.Back;
+                else if (n.Contains("tab") || n.Contains("arrow")) s.click = UISound.Tab;
+                else if (n.Contains("choose") || n.Contains("새 게임") || n.Contains("재도전") || n.Contains("계속하기")) s.click = UISound.Confirm;
+                else if (n.Contains("타이틀로") || n.Contains("닫기")) s.click = UISound.Back;
+                else s.click = UISound.Click;
+            }
+            // 창 소리: 타이틀·대화는 무음 (흐름 연출·대화 넘김 소리가 따로 있음)
+            foreach (var w in root.GetComponentsInChildren<UIWindow>(true))
+            {
+                if (w.screenId == ScreenId.Title || w.screenId == ScreenId.Dialogue) { w.openSound = UISound.None; w.closeSound = UISound.None; }
+                if (w.screenId == ScreenId.Death) w.closeSound = UISound.None;
+            }
+        }
+        static readonly Color HudBack = new Color(0.02f, 0.03f, 0.07f, 0.45f);
+
+        static QuestListView BuildQuestList(Transform hudRt)
+        {
+            var root = UIB.Rect("Quests", hudRt).Place(0, 1, 4, -66, 170, 80);
+            var view = root.gameObject.AddComponent<QuestListView>();
+            view.group = UIB.Group(root.gameObject);
+            view.group.blocksRaycasts = false;
+            var back = UIB.Solid("Backdrop", root, HudBack);
+            back.rectTransform.Place(0, 1, 0, 0, 166, 50);
+            view.backdrop = back;
+            var accent = UIB.Accent;
+            var bar = UIB.Solid("HeaderMark", root, accent);
+            bar.rectTransform.Place(0, 1, 4, -3, 2, 9);
+            var head = UIB.Small10("Header", root, "퀘스트", TextAlignmentOptions.Left, accent);
+            head.rectTransform.Place(0, 1, 9, -1, 60, 12);
+            var hint = UIB.Small10("Hint", root, "Tab 지도", TextAlignmentOptions.Right, new Color(0.45f, 0.5f, 0.62f));
+            hint.rectTransform.Place(1, 1, -8, -1, 60, 12);
+            view.rowsRoot = root;
+            view.headerHeight = 14f;
+            view.rowHeight = 17f;
+
+            // 줄 템플릿
+            var row = UIB.Rect("RowTemplate", root).Place(0, 1, 4, -14, 158, 17);
+            var rv = row.gameObject.AddComponent<QuestRowView>();
+            rv.group = UIB.Group(row.gameObject);
+            var box = UIB.Solid("Box", row, new Color(0.32f, 0.86f, 1f));
+            box.rectTransform.Place(0, 1, 1, -4, 7, 7);
+            var inner = UIB.Solid("Inner", box.transform, new Color(0.03f, 0.05f, 0.1f));
+            inner.rectTransform.Place(0.5f, 0.5f, 0, 0, 5, 5);
+            var check = UIB.Solid("Check", box.transform, Color.white);
+            check.rectTransform.Place(0.5f, 0.5f, 0, 0, 3, 3);
+            rv.box = box;
+            rv.check = check;
+            var title = UIB.Body12("Title", row, "게이트 봉쇄", TextAlignmentOptions.Left);
+            title.rectTransform.Place(0, 1, 12, -1, 104, 13);
+            title.textWrappingMode = TextWrappingModes.NoWrap;
+            title.overflowMode = TextOverflowModes.Overflow; // Ellipsis는 줄 높이(13px 칸 초과) 때문에 글자를 통째로 숨김
+            rv.title = title;
+            var right = UIB.Body12("Right", row, "0 / 2", TextAlignmentOptions.Right);
+            right.rectTransform.Place(1, 1, 0, -1, 56, 13);
+            right.textWrappingMode = TextWrappingModes.NoWrap;
+            rv.right = right;
+            var barBack = UIB.Solid("Bar", row, new Color(1f, 1f, 1f, 0.1f));
+            barBack.rectTransform.Place(0, 1, 12, -14, 146, 2);
+            var fill = UIB.Solid("Fill", barBack.transform, new Color(0.32f, 0.86f, 1f)).Filled(Image.FillMethod.Horizontal);
+            fill.rectTransform.Stretch();
+            fill.fillAmount = 0f;
+            rv.barBack = barBack;
+            rv.barFill = fill;
+            view.rowTemplate = rv;
+            return view;
+        }
+
+        // 지도(우상단 104×70) 바로 아래. RectMask2D로 위쪽을 잘라 "지도 밑에서 내려오는" 모양
+        static SystemAlarmView BuildSystemAlarm(Transform hudRt)
+        {
+            var root = UIB.Rect("SystemAlarm", hudRt).Place(1, 1, -8, -82, 104, 140);
+            root.gameObject.AddComponent<RectMask2D>();
+            var view = root.gameObject.AddComponent<SystemAlarmView>();
+
+            var card = UIB.Solid("CardTemplate", root, new Color(0.024f, 0.078f, 0.19f, 0.94f));
+            card.rectTransform.Place(0, 1, 0, 0, 104, 40);
+            UIB.Group(card.gameObject).blocksRaycasts = false;
+            var edge = new Color(0.35f, 0.67f, 1f);
+            UIB.Solid("EdgeL", card.transform, edge).rectTransform.Place(0, 1, 0, 0, 1, 40);
+            UIB.Solid("EdgeR", card.transform, edge).rectTransform.Place(1, 1, 0, 0, 1, 40);
+            UIB.Solid("EdgeB", card.transform, edge).rectTransform.Place(0, 0, 0, 0, 104, 1);
+            var header = UIB.Solid("Header", card.transform, new Color(0.12f, 0.31f, 0.63f));
+            header.rectTransform.Place(0, 1, 0, 0, 104, 11);
+            var sys = UIB.Small10("System", header.transform, "SYSTEM", TextAlignmentOptions.Left, new Color(0.8f, 0.9f, 1f));
+            sys.rectTransform.Place(0, 1, 4, 0, 50, 11);
+            var kind = UIB.Small10("Kind", header.transform, "레벨 업", TextAlignmentOptions.Right, UIB.Accent);
+            kind.rectTransform.Place(1, 1, -4, 0, 60, 11);
+            var main = UIB.Body12("Main", card.transform, "Lv.3 → Lv.6", TextAlignmentOptions.Center, Color.white);
+            main.rectTransform.Place(0.5f, 1, 0, -13, 100, 13);
+            main.textWrappingMode = TextWrappingModes.NoWrap;
+            var sub = UIB.Small10("Sub", card.transform, "스킬 포인트 +4", TextAlignmentOptions.Center, new Color(0.6f, 0.86f, 1f));
+            sub.rectTransform.Place(0.5f, 1, 0, -27, 100, 11);
+            sub.textWrappingMode = TextWrappingModes.NoWrap;
+            view.cardTemplate = card.rectTransform;
+            return view;
         }
 
         static SkillSlotView SkillSlot(Transform parent, SkillSlot slot, float x)
@@ -401,6 +505,7 @@ namespace OZ.UI.EditorTools
             view.lockOverlay = lockImg.gameObject;
             view.cooldown = Radial(frame.transform, icon.rectTransform, frame, 32);
             view.cooldown.label.fontSize = 12; view.cooldown.label.font = UIB.Body;
+            view.cooldown.completeSound = UISound.SkillReady;
             var key = UIB.Body12("Key", frame.transform, slot.ToString(), TextAlignmentOptions.Center, UIB.Accent);
             key.rectTransform.Place(0.5f, 1, 0, 13, 36, 12);
             view.keyLabel = key;
@@ -492,7 +597,7 @@ namespace OZ.UI.EditorTools
             bt.rectTransform.Place(0.5f, 0, 0, -14, 280, 12);
             boss.bannerTitle = bt;
 
-            var barRoot = UIB.Rect("BossBar", rt).Place(0.5f, 1, 0, -88, 260, 22);
+            var barRoot = UIB.Rect("BossBar", rt).Place(0.5f, 1, 0, -10, 260, 22); // v0.6: 상단 가운데가 비어 맨 위로
             boss.barRoot = barRoot;
             boss.barGroup = UIB.Group(barRoot.gameObject);
             boss.barGroup.alpha = 0f;
@@ -514,7 +619,7 @@ namespace OZ.UI.EditorTools
 
         static void BuildToast(Transform layer)
         {
-            var rt = UIB.Rect("Toasts", layer).Place(1, 0, -8, 48, 200, 120);
+            var rt = UIB.Rect("Toasts", layer).Place(1, 0, -8, 76, 200, 120); // v0.6: 우하단 스킬 칸 위
             var vl = rt.gameObject.AddComponent<VerticalLayoutGroup>();
             vl.childAlignment = TextAnchor.LowerRight;
             vl.spacing = 2;
@@ -522,6 +627,7 @@ namespace OZ.UI.EditorTools
             vl.childForceExpandWidth = false;
             vl.childForceExpandHeight = false;
             var toast = rt.gameObject.AddComponent<ToastView>();
+            toast.systemAlarm = _systemAlarm;
 
             var item = UIB.Panel("ToastTemplate", rt, "Panels/Blue/Panel");
             item.raycastTarget = false;

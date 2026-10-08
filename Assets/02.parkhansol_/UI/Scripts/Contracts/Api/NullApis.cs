@@ -83,6 +83,19 @@ namespace OZ.UI.Contracts
     {
         public static readonly NullNotifyApi Instance = new NullNotifyApi();
         public void Toast(string message, ToastType type = ToastType.Info) => NullLog.Once("Notify.Toast");
+        public void System(string kind, string main, string sub = null, string mergeKey = null) => NullLog.Once("Notify.System");
+    }
+
+    internal sealed class NullQuestApi : IQuestApi
+    {
+        public static readonly NullQuestApi Instance = new NullQuestApi();
+        public void Set(string id, string title, int progress = 0, int target = 0, QuestState state = QuestState.Active, string hint = null, int order = 0) => NullLog.Once("Quest.Set");
+        public void SetProgress(string id, int progress, int target = -1) { }
+        public void SetState(string id, QuestState state, string hint = null) { }
+        public void Complete(string id) { }
+        public void Remove(string id) { }
+        public void Clear() { }
+        public bool TryGet(string id, out QuestInfo info) { info = default; return false; }
     }
 
     internal sealed class NullMapApi : IMapApi
@@ -139,5 +152,12 @@ namespace OZ.UI.Contracts
         public Task FadeOutAsync(float duration = 0.35f) => Task.CompletedTask;
         public Task FadeInAsync(float duration = 0.35f) => Task.CompletedTask;
         public Task TransitionAsync(Func<Task> whileBlack, float duration = 0.35f) => whileBlack != null ? whileBlack() : Task.CompletedTask;
+    }
+
+    internal sealed class NullUISoundApi : IUISoundApi
+    {
+        public static readonly NullUISoundApi Instance = new NullUISoundApi();
+        public void Play(UISound sound, float volumeScale = 1f) { }
+        public bool Muted { get => true; set { } }
     }
 }

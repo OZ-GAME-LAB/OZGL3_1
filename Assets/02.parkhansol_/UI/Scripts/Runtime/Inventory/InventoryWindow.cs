@@ -115,15 +115,18 @@ namespace OZ.UI
             {
                 if (_source.GetSlot(slot.Index).IsEmpty) return;
                 _held = slot.Index; // 집기
+                UISfx.Play(UISound.ItemPick);
             }
             else
             {
                 if (slot.Index != _held && !_source.TryMove(_held, slot.Index))
                 {
                     ((RectTransform)slot.transform).Shake();
+                    UISfx.Play(UISound.Error);
                     return;
                 }
                 ((RectTransform)slot.transform).Punch(0.15f);
+                UISfx.Play(UISound.ItemPlace);
                 _held = -1; // 놓기
             }
             Refresh();
@@ -136,9 +139,11 @@ namespace OZ.UI
             if (stack.IsEmpty || !stack.Item.IsUsable || !_source.TryUse(slot.Index))
             {
                 ((RectTransform)slot.transform).Shake();
+                UISfx.Play(UISound.Error);
                 return;
             }
             ((RectTransform)slot.transform).Punch(0.25f);
+            UISfx.Play(UISound.ItemUse);
             if (_held == slot.Index && _source.GetSlot(slot.Index).IsEmpty) _held = -1;
             Refresh();
         }

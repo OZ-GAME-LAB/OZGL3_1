@@ -74,9 +74,13 @@ namespace OZ.UI
                 : Mathf.CeilToInt(v).ToString();
         }
 
+        [Tooltip("완료 소리 (스킬 칸: SkillReady, 버프 타이머: None)")]
+        [SerializeField] internal OZ.UI.Contracts.UISound completeSound = OZ.UI.Contracts.UISound.None;
+
         void Finish()
         {
             Clear();
+            UISfx.Play(completeSound);
             if (punchTarget != null) punchTarget.Punch(0.25f);
             if (flashTarget != null) flashTarget.FlashColor(flashColor, 0.2f);
             Completed?.Invoke();

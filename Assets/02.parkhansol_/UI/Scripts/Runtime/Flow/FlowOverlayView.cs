@@ -140,6 +140,7 @@ namespace OZ.UI
         {
             _hidingLoading = false;
             _closingLoading = true;
+            UISfx.Play(UISound.LoadDone);
             _loadingTween?.Kill();
             _loadingTween = loadingGroup.DOFade(0f, 0.3f).SetDelay(0.12f).SetUpdate(true).SetLink(gameObject)
                 .OnComplete(() =>
@@ -307,6 +308,7 @@ namespace OZ.UI
         {
             FlushIntro();
             _introPending = onFinished;
+            UISfx.Play(UISound.StageIntro);
             if (introStage != null) introStage.text = stageNumber > 0 ? $"STAGE {stageNumber}" : "";
             if (introTitle != null) introTitle.text = title ?? "";
             if (introSubtitle != null)

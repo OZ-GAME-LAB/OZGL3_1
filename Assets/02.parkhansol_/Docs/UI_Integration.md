@@ -1,4 +1,4 @@
-# UI 연결 가이드 (팀원용) — v0.5
+# UI 연결 가이드 (팀원용) — v0.6
 
 작성: 박한솔 (UI/UX) · 2026-10-08
 대상: 팀 설계 `GameManager → StageManager / SpawnManager / PoolManager`, `StageManager → GateManager → Gate → GateSpawner → SpawnManager`
@@ -111,6 +111,14 @@ if (UIState.IsGameplayInputBlocked) return;   // 입력 처리 맨 앞 (창·로
 ```
 스킬(Q/E/R) · 아이템 · 인벤토리 · 스킬 트리는 `ISkillSource` · `IItemSource` · `IInventorySource` · `ISkillTreeSource` 구현 → `GameUI.Bind(this)`
 (예시: `Assets/02.parkhansol_/UI/Scripts/Samples/DummyPlayer.cs`)
+
+## 1-1. v0.6 추가
+```csharp
+GameUI.Quest.Set("kill", "감염체 처치", 0, 20);      // 좌상단 퀘스트 목록에 한 줄 (게이트 봉쇄·보스 처치 줄은 GateUILink가 자동)
+GameUI.Quest.SetProgress("kill", 7);                  // 목표 도달 시 자동 완료(체크)
+GameUI.Notify.System("획득", "게이트 키");             // 지도 아래 SYSTEM 알림 (레벨업·랭크 승급은 자동)
+GameUI.Sound.Play(UISound.Confirm);                   // UI 효과음 — 버튼·창·알림 소리는 UI가 자동으로 냄
+```
 
 ## 2. 한눈에 보기
 

@@ -24,7 +24,7 @@ namespace OZ.UI
         protected override void OnOpened()
         {
             if (titleRoot != null) titleRoot.SlideIn(Vector2.up, 20f, UITweenStyle.Slow);
-            if (messageText != null) messageText.text = "현재 스테이지를 처음부터 다시 시작합니다.\n레벨·스킬·아이템은 스테이지 입장 시점으로 돌아갑니다.";
+            if (messageText != null) { messageText.text = ""; messageText.gameObject.SetActive(false); } // 안내 문구 없음 (버튼만)
         }
     }
 }

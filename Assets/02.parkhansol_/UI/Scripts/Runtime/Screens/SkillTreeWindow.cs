@@ -323,6 +323,7 @@ namespace OZ.UI
             {
                 Refresh(); // 이벤트가 없는 소스도 갱신
                 v.PlayUnlocked();
+                UISfx.Play(UISound.Unlock);
                 if (pointsBadge != null) pointsBadge.Punch(0.2f);
             }
             else
@@ -331,6 +332,7 @@ namespace OZ.UI
                 _deniedReason = reason ?? "해금할 수 없음";
                 RefreshDetail();
                 v.PlayDenied();
+                UISfx.Play(UISound.Error);
             }
         }
 
@@ -340,12 +342,14 @@ namespace OZ.UI
             if (_resetArmedUntil < 0f)
             {
                 _resetArmedUntil = Time.unscaledTime + resetConfirmSeconds;
+                UISfx.Play(UISound.ToastWarning);
                 RefreshReset();
                 return;
             }
             _resetArmedUntil = -1f;
             if (_src.TryResetTree())
             {
+                UISfx.Play(UISound.Reset);
                 Refresh();
                 if (pointsBadge != null) pointsBadge.Punch(0.25f);
                 foreach (var v in _views) if (v.State != SkillNodeState.Unlocked) v.Rect.Punch(0.1f);

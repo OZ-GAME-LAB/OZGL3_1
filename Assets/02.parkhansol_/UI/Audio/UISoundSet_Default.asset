@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03ce62df4b848047a169528378c13b9, type: 3}
+  m_Name: UISoundSet_Default
+  m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.UISoundSet
+  entries:
+  - sound: 1
+    clips:
+    - {fileID: 8300000, guid: 796dffcddd4b0d041ad103a5646747b9, type: 3}
+    volume: 0.42
+    pitchJitter: 0.04
+    cooldown: 0.06
+    note: Kenney Interface Sounds (CC0) / select_001
+  - sound: 2
+    clips:
+    - {fileID: 8300000, guid: de7de6799abc93846816866f00e62df7, type: 3}
+    volume: 0.62
+    pitchJitter: 0.04
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / click_003
+  - sound: 3
+    clips:
+    - {fileID: 8300000, guid: 051509874abcce740876583276a7776d, type: 3}
+    volume: 0.53
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / confirmation_003
+  - sound: 4
+    clips:
+    - {fileID: 8300000, guid: ed13846dfb3539040ba2babb5dfebc06, type: 3}
+    volume: 0.51
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / back_002
+  - sound: 5
+    clips:
+    - {fileID: 8300000, guid: 30cb84266c5759440be27e572bf8fc35, type: 3}
+    volume: 0.41
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / toggle_004
+  - sound: 6
+    clips:
+    - {fileID: 8300000, guid: 2204a55463be6384bbeac105c5bfc5ef, type: 3}
+    volume: 0.24
+    pitchJitter: 0.06
+    cooldown: 0.05
+    note: Kenney Interface Sounds (CC0) / tick_004
+  - sound: 7
+    clips:
+    - {fileID: 8300000, guid: d1480ca9cd22a6d47823de027e8bf854, type: 3}
+    volume: 0.51
+    pitchJitter: 0
+    cooldown: 0.12
+    note: Kenney Interface Sounds (CC0) / error_004
+  - sound: 10
+    clips:
+    - {fileID: 8300000, guid: 5e3dfebc75930054abed12ba7a8e2904, type: 3}
+    volume: 0.35
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / maximize_007
+  - sound: 11
+    clips:
+    - {fileID: 8300000, guid: c36be26d50b2dce4cb606c69397d696e, type: 3}
+    volume: 0.31
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / minimize_007
+  - sound: 20
+    clips:
+    - {fileID: 8300000, guid: 7300b5fdaa888c44b94b021a8738e6d0, type: 3}
+    volume: 1.08
+    pitchJitter: 0
+    cooldown: 0.25
+    note: Kenney Interface Sounds (CC0) / glass_001
+  - sound: 21
+    clips:
+    - {fileID: 8300000, guid: e1456c298b4663545a48df6e51234198, type: 3}
+    volume: 0.63
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / confirmation_002
+  - sound: 22
+    clips:
+    - {fileID: 8300000, guid: 5dad3a60cb660e246bae3e4201400930, type: 3}
+    volume: 0.76
+    pitchJitter: 0.03
+    cooldown: 0.15
+    note: Kenney Interface Sounds (CC0) / glass_005
+  - sound: 23
+    clips:
+    - {fileID: 8300000, guid: 7ed5cc173af479e48933cbd31fd20a66, type: 3}
+    volume: 0.38
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / confirmation_004
+  - sound: 24
+    clips:
+    - {fileID: 8300000, guid: 67be608b3ecd3b34193a8fd3bbbb0846, type: 3}
+    volume: 0.74
+    pitchJitter: 0.03
+    cooldown: 0.1
+    note: Kenney Interface Sounds (CC0) / drop_001
+  - sound: 25
+    clips:
+    - {fileID: 8300000, guid: b7be8b96e56c47a4fb1407f974a88b4c, type: 3}
+    volume: 0.25
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / question_003
+  - sound: 30
+    clips:
+    - {fileID: 8300000, guid: ced2fdec09d85254bb086a9c753b64dc, type: 3}
+    volume: 0.36
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / maximize_009
+  - sound: 31
+    clips:
+    - {fileID: 8300000, guid: d2d076e8d7fd6684b8f06970673f1267, type: 3}
+    volume: 0.54
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / maximize_006
+  - sound: 32
+    clips:
+    - {fileID: 8300000, guid: d8114f05b55a549439c4349437dabebd, type: 3}
+    volume: 0.73
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / glass_006
+  - sound: 33
+    clips:
+    - {fileID: 8300000, guid: 4f4a7e5f812857e43afafa0098819f9c, type: 3}
+    volume: 0.53
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / maximize_008
+  - sound: 34
+    clips:
+    - {fileID: 8300000, guid: 03be7aff5f3bcc341859ddec41ddedcb, type: 3}
+    volume: 0.79
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / bong_001
+  - sound: 35
+    clips:
+    - {fileID: 8300000, guid: 8306da47492092c4cac9beedf972372e, type: 3}
+    volume: 0.47
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / minimize_008
+  - sound: 40
+    clips:
+    - {fileID: 8300000, guid: f429fa470ef2244478a685cd02a095df, type: 3}
+    volume: 0.89
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / select_004
+  - sound: 41
+    clips:
+    - {fileID: 8300000, guid: 89416304a6e3626469fb0ea50c97114d, type: 3}
+    volume: 0.93
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / drop_004
+  - sound: 42
+    clips:
+    - {fileID: 8300000, guid: 22d9f66b6b3ebf54b8f3c7dc7993ec3c, type: 3}
+    volume: 0.5
+    pitchJitter: 0.04
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / select_002
+  - sound: 43
+    clips:
+    - {fileID: 8300000, guid: 9b6ca2a99d70afb429ea4205f0337413, type: 3}
+    volume: 0.72
+    pitchJitter: 0.04
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / drop_002
+  - sound: 44
+    clips:
+    - {fileID: 8300000, guid: 8a156fbb9a1b8ce4fa456f916ea32b92, type: 3}
+    volume: 0.71
+    pitchJitter: 0
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / glass_002
+  - sound: 45
+    clips:
+    - {fileID: 8300000, guid: 8d7de4e8418a4144ca06e537ed9a050f, type: 3}
+    volume: 0.26
+    pitchJitter: 0
+    cooldown: 0.1
+    note: Kenney Interface Sounds (CC0) / glass_003
+  - sound: 46
+    clips:
+    - {fileID: 8300000, guid: f7db0b3a90573b242a88fdc28d0a375f, type: 3}
+    volume: 0.32
+    pitchJitter: 0.04
+    cooldown: 0.04
+    note: Kenney Interface Sounds (CC0) / click_005

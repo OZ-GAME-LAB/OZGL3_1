@@ -77,6 +77,7 @@ namespace OZ.UI
             _boss.PhaseChanged += OnPhaseChanged;
             _boss.Defeated += OnDefeated;
             _lastHP = boss.HP;
+            UISfx.Play(UISound.BossAppear);
 
             BossData data = boss.Data;
             string displayName = data != null ? data.displayName : "BOSS";
@@ -176,6 +177,7 @@ namespace OZ.UI
 
         void OnDefeated()
         {
+            UISfx.Play(UISound.BossDefeat);
             var boss = _boss;
             Unsubscribe();
             if (barFlashTarget != null) barFlashTarget.FlashColor(Color.white, 0.3f);

@@ -152,6 +152,7 @@ namespace OZ.UI
             _stack.Remove(w);
             _stack.Add(w);
             RefreshState();
+            UISfx.Play(w.screenId == ScreenId.Death ? UISound.Death : w.openSound);
             WindowOpened?.Invoke(w);
         }
 
@@ -167,6 +168,7 @@ namespace OZ.UI
             w.CloseInternal();
             _stack.Remove(w);
             RefreshState();
+            UISfx.Play(w.closeSound);
             WindowClosed?.Invoke(w);
         }
 

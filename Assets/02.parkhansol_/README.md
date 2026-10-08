@@ -13,7 +13,7 @@ OZGL3_1 데모의 UI 전부가 이 폴더 안에 있습니다. **팀원 폴더·
 2. **OZ > UI > Open UI Sandbox** → Play → 화면 오른쪽 위 도움말의 키로 전체 UI 확인
    - **OZ > UI > Open Subway Showcase** → 로우폴리 지하철역 임시 맵. 팀 설계(GameManager→Stage→Gate→Spawn→Pool) 모양 샘플이 로딩→스테이지 띠→게이트→보스→클리어→다음 스테이지 흐름을 돌림
    - **OZ > UI > Install UI → SampleScene** → 팀 공용 `Assets/Scenes/SampleScene`에 UIRoot + 연결용 Link 오브젝트 설치
-3. **OZ > UI > Run Self Test** → 수치 변화 300개 항목 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
+3. **OZ > UI > Run Self Test** → 수치 변화·배치·효과음 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
 
 > 팀원은 1번을 할 필요가 없습니다. 생성된 결과물이 깃에 같이 올라갑니다.
 
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour, IHealthSource, ISkillSource, IItemSource
 | `ISkillTreeSource` | 플레이어 | K 스킬 트리 (노드 해금·택1·초기화) — 규칙은 `SkillTreeState` 그대로 사용 |
 | `IItemSource` | 플레이어/코어 | 1~4 아이템 수량 · 사용 연출 · 버프 타이머 |
 | `IInventorySource` | 코어 | 인벤토리 창 (1×1 슬롯, 이동/사용) |
-| `IGateSource` | 코어 | 게이트 봉쇄 n/목표 · 보스 구역 개방 표시 |
+| `IGateSource` | 코어 | 퀘스트 목록 '게이트 봉쇄 n/목표' · '보스 처치' 자동 · 게이트 파괴 띠 |
 | `IBossSource` | 보스 담당 | 보스 체력바 · 페이즈 · 처치 연출 |
 
 전체 구현 예시: `UI/Scripts/Samples/DummyPlayer.cs`, `DummyBoss.cs`
@@ -91,6 +91,9 @@ GameUI.Screens.ShowDeath();                      // 사망 화면
 GameUI.Flow.ShowLoading("불러오는 중");           // 로딩 화면 (SetLoadingProgress 0~1 → HideLoading)
 GameUI.Flow.Transition(() => LoadStage(2));      // 페이드 아웃 → 교체 → 페이드 인
 GameUI.Flow.StageIntro(1, "지하철역 승강장");      // "STAGE 1" 띠
+GameUI.Quest.Set("kill", "감염체 처치", 0, 20);   // 좌상단 퀘스트 목록 (게이트·보스 줄은 자동)
+GameUI.Notify.System("랭크 승급", "F급 → E급");    // 지도 아래 SYSTEM 알림
+GameUI.Sound.Play(UISound.Confirm);              // UI 효과음 (UI 쪽 소리는 자동)
 GameUI.Screens.ShowStageClear(1, HunterRank.E);  // "게이트 파괴" 띠 → 끝나면 UIRequests.NextStage
 GameUI.HUD.ShowBanner("게이트 파괴", "1 / 3");     // 가운데 큰 띠 (게이트 봉쇄 시엔 자동)
 GameUI.HUD.SetPortrait(playerPortraitSprite);    // HP 바 옆 초상화 칸
@@ -200,3 +203,7 @@ Q/E/R, 1~4 는 **플레이어 담당이 입력 처리** → UI는 이벤트만 �
 
 - **TextMesh Pro 기본 리소스는 `02.parkhansol_/ThirdParty/TextMesh Pro`에 있습니다.** TMP Essentials를 다시 Import 하지 마세요 (중복 생성됨).
 - 일시정지: 스킬 창·인벤토리·지도·일시정지는 열리면 `Time.timeScale = 0` (기획서 기본안). UI 연출은 시간 정지와 무관하게 동작.
+
+
+## 효과음 출처
+`UI/Audio/KenneyInterface/` — Kenney "Interface Sounds" (CC0 1.0, www.kenney.nl). 라이선스 파일 동봉. 표기 의무 없음.

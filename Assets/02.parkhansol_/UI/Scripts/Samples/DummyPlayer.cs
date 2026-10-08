@@ -305,7 +305,6 @@ namespace OZ.UI.Samples
             for (int i = 0; i < 3; i++) { _cooldownEnd[i] = 0f; _cooldownDur[i] = 0f; } // 스킬이 바뀔 수 있으니 쿨타임 비움
             for (int i = 0; i < 3; i++) SkillChanged?.Invoke((SkillSlot)i);
             ProgressionChanged?.Invoke();
-            GameUI.Notify.Toast("스킬 트리 초기화 — 포인트를 돌려받았다", ToastType.Info);
             return true;
         }
 

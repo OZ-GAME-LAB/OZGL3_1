@@ -109,6 +109,7 @@ namespace OZ.UI
                 _typing.Complete(); // 즉시 완성
                 return;
             }
+            UISfx.Play(UISound.DialogueNext);
             Next();
         }
 

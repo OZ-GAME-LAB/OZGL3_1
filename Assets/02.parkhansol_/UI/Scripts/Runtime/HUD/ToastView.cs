@@ -19,6 +19,8 @@ namespace OZ.UI
         [SerializeField] internal Color infoColor = Color.white;
         [SerializeField] internal Color successColor = new Color(0.55f, 1f, 0.6f);
         [SerializeField] internal Color warningColor = new Color(1f, 0.75f, 0.35f);
+        [Tooltip("GameUI.Notify.System → 지도 아래 SYSTEM 알림")]
+        [SerializeField] internal SystemAlarmView systemAlarm;
 
         readonly List<RectTransform> _live = new List<RectTransform>();
 
@@ -35,6 +37,7 @@ namespace OZ.UI
             if (template == null) { Debug.Log("[Toast] " + message); return; }
 
             while (_live.Count >= maxCount) Remove(_live[0]);
+            UISfx.Play(type == ToastType.Warning ? UISound.ToastWarning : UISound.Toast);
 
             var item = Instantiate(template, template.parent);
             item.gameObject.SetActive(true);
@@ -62,6 +65,13 @@ namespace OZ.UI
                 .Append(cg.DOFade(0f, UITweenStyle.Slow))
                 .OnComplete(() => Remove(item))
                 .SetUpdate(true).SetLink(item.gameObject);
+        }
+
+        public void System(string kind, string main, string sub = null, string mergeKey = null)
+        {
+            UISfx.Play(mergeKey == "rankup" ? UISound.RankUp : UISound.SystemAlarm);
+            if (systemAlarm != null) systemAlarm.Show(kind, main, sub, mergeKey);
+            else Toast($"{kind}  {main}  {sub}", ToastType.Success);
         }
 
         void Remove(RectTransform item)

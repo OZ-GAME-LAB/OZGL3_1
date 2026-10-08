@@ -68,7 +68,15 @@ namespace OZ.UI.Contracts
     /// <summary>짧은 알림 (아이템 획득, 게이트 봉쇄 등)</summary>
     public interface INotifyApi
     {
+        /// <summary>오른쪽 아래 한 줄 알림 (아이템 획득·경고 등)</summary>
         void Toast(string message, ToastType type = ToastType.Info);
+        /// <summary>
+        /// 지도 바로 아래에서 내려오는 "SYSTEM" 알림 (지도와 같은 폭, 최대 3장 쌓임, 2.5초 뒤 지도 뒤로 올라감).
+        ///   GameUI.Notify.System("랭크 승급", "F급 → E급", "새 스킬 해금");
+        /// mergeKey가 같은 알림이 떠 있으면 새로 쌓지 않고 그 카드 내용만 바꾼다 (레벨업 연속 → "Lv.3 → Lv.6" 한 장).
+        /// 레벨업·랭크 승급은 IProgressionSource가 연결돼 있으면 UI가 자동으로 띄운다.
+        /// </summary>
+        void System(string kind, string main, string sub = null, string mergeKey = null);
     }
 }
 

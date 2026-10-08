@@ -63,7 +63,10 @@ namespace OZ.UI.EditorTools
                 await Suite("스킬 슬롯·스킬 창", Skills);
                 await Suite("아이템·버프", Items);
                 await Suite("인벤토리", Inventory);
-                await Suite("게이트", Gate);
+                await Suite("게이트 → 퀘스트 목록 (v0.6)", Gate);
+                await Suite("HUD 배치: 양손 분리·지도 아래 알림·보스 바 (v0.6)", HudLayout);
+                await Suite("시스템 알림 (v0.6)", SystemAlarm);
+                await Suite("UI 효과음 (v0.6)", Sounds);
                 await Suite("보스", Boss);
                 await Suite("지도", Map);
                 await Suite("대화", Dialogue);
@@ -295,16 +298,15 @@ namespace OZ.UI.EditorTools
             try
             {
                 go.SetActive(true); await Wait(0.2f);
-                var g = Hud.gate;
                 gate.BeginStage(1, 2); await Wait(0.2f);
-                Eq("GateUILink.BeginStage → 0/2", g.countText.text, "게이트 0/2");
+                Eq("GateUILink.BeginStage → 퀘스트 0 / 2", QRight("gate"), "0 / 2");
                 gate.GateOpened(); await Wait(0.1f);
-                Eq("GateUILink.GateOpened → 게이트 활성", g.stateText.text, "게이트 활성");
+                Check("GateUILink.GateOpened → 게이트 줄 진행 중", QRow("gate").Info.State == QuestState.Active);
                 gate.GateSealed(); await Wait(0.2f);
-                Eq("GateUILink.GateSealed → 1/2", g.countText.text, "게이트 1/2");
+                Eq("GateUILink.GateSealed → 1 / 2", QRight("gate"), "1 / 2");
                 Check("GateUILink.GateSealed → '게이트 파괴' 띠", Hud.banner.IsShowing);
                 gate.GateOpened(); gate.GateSealed(); await Wait(0.2f);
-                Check("GateUILink 목표 달성 → 보스 구역 개방", g.bossReady.activeSelf && gate.IsBossAreaUnlocked);
+                Check("GateUILink 목표 달성 → 보스 처치 활성", QRow("boss").Info.State == QuestState.Active && gate.IsBossAreaUnlocked);
                 Hud.banner.Hide();
 
                 player.SetHP(40f, 80f); await Wait(1.0f);
@@ -628,33 +630,156 @@ namespace OZ.UI.EditorTools
             return sb.ToString();
         }
 
+        static QuestRowView QRow(string id)
+        {
+            foreach (var r in Hud.quests.Rows) if (r.Id == id) return r;
+            return null;
+        }
+
+        static string QRight(string id) { var r = QRow(id); return r != null ? r.right.text : "(없음)"; }
+
         static async Task Gate()
         {
             await ToCombat();
-            var g = Hud.gate;
-            Eq("시작 0/3", g.countText.text, "게이트 0/3");
-            Eq("게이트 활성", g.stateText.text, "게이트 활성");
+            Check("게이트 패널 대신 퀘스트 목록 (v0.6)", Hud.quests != null && Hud.gate == null);
+            var g = QRow(QuestListView.GateId);
+            Check("퀘스트: '게이트 봉쇄' 줄", g != null && g.title.text == "게이트 봉쇄");
+            Check("퀘스트 제목이 실제로 그려짐 (글자 수 > 0)", g != null && g.title.textInfo.characterCount > 0 && g.title.textInfo.lineInfo[0].visibleCharacterCount > 0);
+            Eq("시작 0 / 3", QRight("gate"), "0 / 3");
+            var b = QRow(QuestListView.BossId);
+            Check("퀘스트: '보스 처치' 잠김 + '게이트 후'", b != null && b.Info.State == QuestState.Locked && b.right.text == "게이트 후");
+            Check("목록 순서: 게이트 → 보스", Hud.quests.Rows.Count >= 2 && Hud.quests.Rows[0].Id == "gate" && Hud.quests.Rows[1].Id == "boss");
             var banner = Hud.banner;
             P.SealGate(); await Wait(0.4f);
-            Eq("봉쇄 → 1/3", g.countText.text, "게이트 1/3");
+            Eq("봉쇄 → 1 / 3", QRight("gate"), "1 / 3");
+            Near("진행 막대 1/3", QRow("gate").barFill.fillAmount, 1f / 3f, 0.03f);
             Check("봉쇄 → '게이트 파괴' 띠 표시", banner.IsShowing && banner.group.alpha > 0.5f);
             Eq("띠 제목", banner.titleText.text, "게이트 파괴");
             Eq("띠 부제", banner.subtitleText.text, "1 / 3");
             await Wait(banner.fadeIn + banner.gateHold + banner.fadeOut + 0.3f);
             Check("일정 시간 뒤 띠 사라짐", !banner.IsShowing && banner.group.alpha < 0.01f);
-            Eq("다음 게이트 탐색", g.stateText.text, "다음 게이트 탐색");
             P.SealGate(); await Wait(0.1f);
-            Eq("비활성 상태 봉쇄 무시(중복 반영 X)", g.countText.text, "게이트 1/3");
+            Eq("비활성 상태 봉쇄 무시(중복 반영 X)", QRight("gate"), "1 / 3");
             P.OpenGate(); P.SealGate(); P.OpenGate(); P.SealGate(); await Wait(0.3f);
-            Eq("3/3", g.countText.text, "게이트 3/3");
-            Check("보스 구역 개방 표시", g.bossReady.activeSelf);
-            Eq("상태 문구", g.stateText.text, "보스 구역 개방");
+            Check("3/3 → 게이트 줄 완료(체크)", QRow("gate").Info.State == QuestState.Done && QRow("gate").check.gameObject.activeSelf);
+            Check("보스 처치 줄 활성", QRow("boss").Info.State == QuestState.Active);
             Eq("마지막 게이트 → 띠 부제에 보스 구역 개방", banner.subtitleText.text, "3 / 3  ·  보스 구역 개방");
             P.OpenGate(); P.SealGate(); await Wait(0.1f);
-            Eq("목표 달성 후 추가 봉쇄 없음", g.countText.text, "게이트 3/3");
+            Eq("목표 달성 후 추가 봉쇄 없음", QRight("gate"), "3 / 3");
+            await Wait(Hud.quests.doneLinger + 0.6f);
+            Check("완료 줄은 잠시 뒤 목록에서 빠짐", QRow("gate") == null && QRow("boss") != null);
             P.ResetAll(); await Wait(0.3f);
-            Eq("재도전 → 0/3 복구", g.countText.text, "게이트 0/3");
-            Check("보스 개방 표시 꺼짐", !g.bossReady.activeSelf);
+            Eq("재도전 → 0 / 3 복구", QRight("gate"), "0 / 3");
+            Check("보스 처치 다시 잠김", QRow("boss").Info.State == QuestState.Locked);
+
+            // 팀원 퀘스트 API
+            GameUI.Quest.Set("kill", "감염체 처치", 0, 5, order: 5); await Wait(0.3f);
+            Eq("Quest.Set → 0 / 5", QRight("kill"), "0 / 5");
+            GameUI.Quest.SetProgress("kill", 5); await Wait(0.2f);
+            Check("목표 도달 → 자동 완료", QRow("kill").Info.State == QuestState.Done);
+            GameUI.Quest.Set("talk", "역무원과 대화"); await Wait(0.2f);
+            Eq("진행 숫자 없는 줄", QRight("talk"), "");
+            GameUI.Quest.Set("a", "A"); GameUI.Quest.Set("b", "B"); GameUI.Quest.Set("c", "C"); await Wait(0.3f);
+            int visible = 0; foreach (var r in Hud.quests.Rows) if (r.gameObject.activeSelf) visible++;
+            Check("최대 4줄까지만 표시", visible == Hud.quests.maxRows, "보이는 줄 " + visible);
+            foreach (var id in new[] { "kill", "talk", "a", "b", "c" }) GameUI.Quest.Remove(id);
+            await Wait(0.3f);
+            Check("Remove → 게이트·보스 2줄만 남음", Hud.quests.Rows.Count == 2);
+        }
+
+        static async Task HudLayout()
+        {
+            await ToCombat();
+            var canvas = Hud.GetComponentInParent<Canvas>().rootCanvas;
+            var crt = (RectTransform)canvas.transform;
+            float W = crt.rect.width;
+            float X(RectTransform rt) => crt.InverseTransformPoint(rt.TransformPoint(rt.rect.center)).x + W * 0.5f;
+            Check("스킬 Q/E/R은 화면 오른쪽 (양손 분리)", X((RectTransform)Hud.skills.slots[0].transform) > W * 0.7f, "Q x " + X((RectTransform)Hud.skills.slots[0].transform));
+            Check("아이템 1~4는 화면 왼쪽", X((RectTransform)Hud.items.slots[3].transform) < W * 0.35f);
+            Check("스킬·아이템 칸 36px 유지 (아이콘 2배 픽셀)", Mathf.Approximately(((RectTransform)Hud.items.slots[0].transform).rect.width, 36f));
+            var mm = Hud.transform.Find("Minimap") as RectTransform;
+            var sa = Hud.systemAlarm.GetComponent<RectTransform>();
+            Check("시스템 알림 폭 = 지도 폭", mm != null && Mathf.Approximately(mm.rect.width, sa.rect.width));
+            Check("시스템 알림은 지도 바로 아래", mm != null && Mathf.Abs((mm.anchoredPosition.y - mm.rect.height) - sa.anchoredPosition.y) <= 6f);
+            var boss = Find<BossHudView>();
+            Check("보스 바 맨 위 (y ≥ -12)", boss.barRoot.anchoredPosition.y >= -12f, "y " + boss.barRoot.anchoredPosition.y);
+        }
+
+        static async Task Sounds()
+        {
+            await ToCombat();
+            var sp = Find<UISoundPlayer>();
+            Check("UISoundPlayer 있음 + GameUI.Sound 등록", sp != null && ReferenceEquals(GameUI.Sound, sp));
+            if (sp == null) return;
+            int missing = 0;
+            foreach (UISound u in Enum.GetValues(typeof(UISound)))
+            {
+                if (u == UISound.None) continue;
+                var e = sp.soundSet != null ? sp.soundSet.Find(u) : null;
+                if (e == null || e.clips == null || e.clips.Length == 0 || e.clips[0] == null) { missing++; Log("    소리 없음: " + u); }
+            }
+            Check("모든 UISound에 소리 배정", missing == 0, missing + "개 비어 있음");
+            int sel = 0, withSound = 0;
+            foreach (var s in UIManager.Instance.GetComponentsInChildren<UnityEngine.UI.Selectable>(true)) { sel++; if (s.GetComponent<UISelectableSound>() != null) withSound++; }
+            Check("모든 버튼·토글·슬라이더에 소리 컴포넌트", sel > 0 && sel == withSound, $"{withSound}/{sel}");
+
+            async Task Expect(string name, UISound want, Action act)
+            {
+                int n = sp.PlayCount;
+                act();
+                await Wait(0.3f);
+                Check(name, sp.PlayCount > n && sp.LastPlayed == want, $"마지막 소리 {sp.LastPlayed}");
+            }
+            await Expect("인벤토리 열기 → Open", UISound.Open, () => GameUI.Screens.Open(ScreenId.Inventory));
+            await Expect("닫기 → Close", UISound.Close, () => GameUI.Screens.Close(ScreenId.Inventory));
+            await Expect("토스트 → Toast", UISound.Toast, () => GameUI.Notify.Toast("테스트"));
+            await Expect("경고 토스트 → ToastWarning", UISound.ToastWarning, () => GameUI.Notify.Toast("경고", ToastType.Warning));
+            await Expect("시스템 알림 → SystemAlarm", UISound.SystemAlarm, () => GameUI.Notify.System("테스트", "알림"));
+            GameUI.Quest.Set("snd", "소리 테스트", 0, 3); await Wait(0.2f);
+            await Expect("퀘스트 진행 → QuestUpdate", UISound.QuestUpdate, () => GameUI.Quest.SetProgress("snd", 1));
+            await Expect("퀘스트 완료 → QuestComplete", UISound.QuestComplete, () => GameUI.Quest.SetProgress("snd", 3));
+            GameUI.Quest.Remove("snd");
+            await Expect("게이트 파괴 띠 → GateSealed", UISound.GateSealed, () => GameUI.HUD.ShowBanner("게이트 파괴", "1 / 3", 0.2f));
+            var btn = Find<PauseWindow>();
+            GameUI.Screens.Open(ScreenId.Pause); await Wait(0.3f);
+            var resume = btn != null ? btn.resumeButton : null;
+            if (resume != null)
+            {
+                int n = sp.PlayCount;
+                UnityEngine.EventSystems.ExecuteEvents.Execute(resume.gameObject, new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current) { button = UnityEngine.EventSystems.PointerEventData.InputButton.Left }, UnityEngine.EventSystems.ExecuteEvents.pointerClickHandler);
+                await Wait(0.3f);
+                Check("버튼 클릭 → 소리 (계속하기 = Confirm 후 창 닫힘)", sp.PlayCount > n);
+            }
+            UIManager.Instance.CloseAll();
+            float vol = UISettings.SfxVolume;
+            UISettings.SfxVolume = 0f;
+            int c0 = sp.PlayCount; GameUI.Sound.Play(UISound.Confirm);
+            Check("SFX 볼륨 0이어도 에러 없음", sp.PlayCount == c0 + 1);
+            UISettings.SfxVolume = vol;
+            await Wait(0.3f);
+        }
+
+        static async Task SystemAlarm()
+        {
+            await ToCombat();
+            var sa = Hud.systemAlarm;
+            sa.ClearAll();
+            P.AddExp(600); await Wait(0.5f);
+            Check("연속 레벨업 → 알림 1장", sa.VisibleCount == 1, "장 수 " + sa.VisibleCount);
+            var card = sa.Cards[0];
+            Check("'레벨 업' + 'Lv.a → Lv.b' 형식", card.kind.text == "레벨 업" && card.main.text.Contains("→"), card.main.text);
+            Check("스킬 포인트 합산 표시", card.sub.text.StartsWith("스킬 포인트 +"));
+            Near("카드가 마스크 안 첫 자리(y 0)", card.rt.anchoredPosition.y, 0f, 1f);
+            GameUI.Notify.System("랭크 승급", "F급 → E급", "새 스킬 해금"); await Wait(0.4f);
+            GameUI.Notify.System("획득", "게이트 키", null); await Wait(0.4f);
+            Check("다른 알림은 아래로 쌓임 (3장)", sa.VisibleCount == 3);
+            Near("두 번째 카드 위치", sa.Cards[1].rt.anchoredPosition.y, -(sa.cardHeight + sa.gap), 1f);
+            GameUI.Notify.System("테스트", "4번째", null); await Wait(0.6f);
+            Check("최대 3장 유지", sa.VisibleCount <= 3);
+            await Wait(sa.holdSeconds * 3 + 2f);
+            Check("시간이 지나면 모두 지도 뒤로 사라짐", sa.VisibleCount == 0);
+            Check("토스트(우하단)엔 레벨업이 안 쌓임", !ToastTexts().Contains("레벨 업"));
+            P.ResetAll(); await Wait(0.3f);
         }
 
         static async Task Boss()

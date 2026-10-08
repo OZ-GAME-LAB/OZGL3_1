@@ -28,6 +28,7 @@ namespace OZ.UI
         [Header("연출 시간")]
         [SerializeField, Min(0f)] internal float fadeIn = 0.25f;
         [SerializeField, Min(0f)] internal float fadeOut = 0.45f;
+        [SerializeField] internal UISound sound = UISound.GateSealed;
 
         IGateSource _gate;
         Sequence _seq;
@@ -73,6 +74,7 @@ namespace OZ.UI
             Cache();
             FlushPending();
             _pending = onFinished;
+            UISfx.Play(sound);
 
             if (titleText != null) titleText.text = title ?? "";
             if (subtitleText != null)

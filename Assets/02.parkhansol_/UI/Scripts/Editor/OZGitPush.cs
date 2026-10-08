@@ -20,8 +20,8 @@ namespace OZ.UI.EditorTools
     /// </summary>
     internal static class OZGitPush
     {
-        const string DefaultMessage = "parkhansol_게임흐름UI_로딩페이드스테이지띠_팀원연결Link_풀대응적체력바";
-        const string MainMessage = "parkhansol_게임흐름UI_로딩페이드스테이지띠_팀원연결Link_풀대응적체력바_샘플씬UI세팅";
+        const string DefaultMessage = "parkhansol_HUD양손분리_퀘스트목록_지도아래시스템알림_UI효과음_안내문구정리";
+        const string MainMessage = DefaultMessage;
         const string SampleScene = "Assets/Scenes/SampleScene.unity";
         /// <summary>프로젝트 규칙: 하루 작업 = 브랜치 parkhansol_ui_yyMMdd (없으면 현재 브랜치에서 새로 만듦)</summary>
         const string BranchPrefix = "parkhansol_ui_";
@@ -31,9 +31,14 @@ namespace OZ.UI.EditorTools
         static void Push() => Push(false);
 
         [MenuItem("OZ/UI/Git Push + main (SampleScene 포함)", priority = 41)]
-        static void PushMain() => Push(true);
+        static void PushMain() => Push(true, "main");
 
-        static void Push(bool toMain)
+        [MenuItem("OZ/UI/Git Push + develop (SampleScene 포함)", priority = 42)]
+        static void PushDevelop() => Push(true, "develop");
+
+        static void Push(bool toMain) => Push(toMain, "main");
+
+        static void Push(bool toMain, string shared)
         {
             if (_running) { Debug.LogWarning("[OZ Git] 이미 실행 중입니다."); return; }
             AssetDatabase.SaveAssets();
@@ -41,7 +46,7 @@ namespace OZ.UI.EditorTools
             string log = Path.Combine(root, "Logs", "OZ_GitPush.txt");
             _running = true;
             Debug.Log("[OZ Git] 푸시 시작… (결과: Logs/OZ_GitPush.txt)");
-            Task.Run(() => Run(root, log, toMain ? MainMessage : DefaultMessage, toMain)).ContinueWith(t =>
+            Task.Run(() => Run(root, log, toMain ? MainMessage : DefaultMessage, toMain, shared)).ContinueWith(t =>
             {
                 _running = false;
                 bool ok = t.Status == TaskStatus.RanToCompletion && t.Result;
@@ -53,7 +58,7 @@ namespace OZ.UI.EditorTools
             });
         }
 
-        static bool Run(string root, string logPath, string message, bool toMain)
+        static bool Run(string root, string logPath, string message, bool toMain, string shared)
         {
             var sb = new StringBuilder();
             sb.AppendLine("OZ Git Push — " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -113,13 +118,13 @@ namespace OZ.UI.EditorTools
                 if (Exec(git, $"push -u origin {branch}", root, sb, out _, timeoutMs: 600000) != 0) return false;
                 if (toMain)
                 {
-                    if (Exec(git, "fetch origin main", root, sb, out _, timeoutMs: 300000) != 0) return false;
-                    if (Exec(git, "merge-base --is-ancestor origin/main HEAD", root, sb, out _) != 0)
+                    if (Exec(git, $"fetch origin {shared}", root, sb, out _, timeoutMs: 300000) != 0) return false;
+                    if (Exec(git, $"merge-base --is-ancestor origin/{shared} HEAD", root, sb, out _) != 0)
                     {
-                        sb.AppendLine("!! origin/main에 내 브랜치에 없는 커밋이 있음 (팀원 푸시) → main 푸시 중단. 브랜치는 올라감 → PR로 합칠 것");
+                        sb.AppendLine($"!! origin/{shared}에 내 브랜치에 없는 커밋이 있음 (팀원 푸시) → {shared} 푸시 중단. 브랜치는 올라감 → PR로 합칠 것");
                         return false;
                     }
-                    if (Exec(git, "push origin HEAD:main", root, sb, out _, timeoutMs: 600000) != 0) return false;
+                    if (Exec(git, $"push origin HEAD:{shared}", root, sb, out _, timeoutMs: 600000) != 0) return false;
                 }
                 Exec(git, "log --oneline -3", root, sb, out _);
                 Exec(git, "status --short -- Assets/02.parkhansol_", root, sb, out _);

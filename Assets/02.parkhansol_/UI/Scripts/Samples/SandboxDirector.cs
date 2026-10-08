@@ -81,7 +81,6 @@ namespace OZ.UI.Samples
             if (player != null) player.ResetAll();
             GameUI.Boss.Hide();
             if (map != null) { GameUI.Map.SetMap(map); EnterRoom(0); }
-            GameUI.HUD.ShowGuide("스테이지를 처음부터 다시 시작합니다", 2f);
         }
 
         void OnNextStage()

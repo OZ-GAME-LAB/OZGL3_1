@@ -70,6 +70,7 @@ namespace OZ.UI.EditorTools
             if (!OZPixelUIImporter.IsDone) OZPixelUIImporter.Run();
             if (!OZFontBuilder.IsDone) OZFontBuilder.Run();
             OZSampleData.Run(); // 이미 있는 에셋은 건드리지 않고, 새로 추가된 샘플(스킬 트리 등)만 만든다
+            OZUISoundSetup.Run(); // v0.6 UI 효과음 (비어 있는 항목만)
             OZUIRootBuilder.Run();
             OZSandboxBuilder.Run();
             OZShowcaseBuilder.Run(); // 지하철역 쇼케이스 (UI를 게임 화면 느낌에서 확인)

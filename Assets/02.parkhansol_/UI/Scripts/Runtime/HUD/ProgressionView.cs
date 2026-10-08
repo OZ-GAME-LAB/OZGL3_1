@@ -45,16 +45,32 @@ namespace OZ.UI
 
         void OnChanged() => Refresh(true);
 
+        // 연속 레벨업은 한 장으로 합침: "Lv.3 → Lv.6 · 스킬 포인트 +4" (지도 아래 SYSTEM 알림)
+        const float LevelMergeWindow = 2.5f;
+        int _lvFrom, _lvCount;
+        float _lvLast = -99f;
+        HunterRank _rankFrom;
+        float _rankLast = -99f;
+
         void OnLevelUp(int level)
         {
             if (levelText != null) levelText.rectTransform.Punch(0.4f, 0.4f);
-            GameUI.Notify.Toast($"레벨 업! Lv.{level}  스킬 포인트 +1", ToastType.Success);
+            float now = Time.unscaledTime;
+            if (now - _lvLast > LevelMergeWindow || _lvCount == 0) { _lvFrom = level - 1; _lvCount = 0; }
+            _lvLast = now;
+            _lvCount++;
+            string main = _lvCount == 1 ? $"Lv.{level}" : $"Lv.{_lvFrom} → Lv.{level}";
+            if (_lvCount == 1 && _lvFrom > 0) main = $"Lv.{_lvFrom} → Lv.{level}";
+            GameUI.Notify.System("레벨 업", main, $"스킬 포인트 +{_lvCount}", "levelup");
         }
 
         void OnRankUp(HunterRank rank)
         {
             if (rankBadge != null) rankBadge.Punch(0.5f, 0.5f);
-            GameUI.Notify.Toast($"헌터 랭크 승급: {rank.ToDisplay()}", ToastType.Success);
+            float now = Time.unscaledTime;
+            if (now - _rankLast > LevelMergeWindow) _rankFrom = rank > HunterRank.F ? rank - 1 : rank;
+            _rankLast = now;
+            GameUI.Notify.System("랭크 승급", $"{_rankFrom.ToDisplay()} → {rank.ToDisplay()}", "헌터 랭크", "rankup");
         }
 
         void Refresh(bool animate)

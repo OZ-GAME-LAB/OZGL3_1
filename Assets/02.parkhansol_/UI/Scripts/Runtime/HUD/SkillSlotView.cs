@@ -55,6 +55,7 @@ namespace OZ.UI
         internal void OnUseFailed(SkillUseFailReason reason)
         {
             if (shakeTarget != null) shakeTarget.Shake(2f, 0.18f);
+            UISfx.Play(UISound.Error, 0.7f);
             if (tintTarget != null) tintTarget.FlashColor(failColor, 0.15f);
         }
     }

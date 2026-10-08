@@ -9,6 +9,8 @@ namespace OZ.UI.Contracts
     ///   GameUI.Boss.Show(this, () => StartFight()); // 보스: 등장 연출 + 체력바
     ///   GameUI.Screens.ShowDeath();                 // 코어: 사망 화면
     ///   GameUI.Notify.Toast("게이트를 봉쇄했다");
+    ///   GameUI.Notify.System("랭크 승급", "F급 → E급");  // 지도 아래 SYSTEM 알림
+    ///   GameUI.Quest.Set("kill", "감염체 처치", 0, 20);    // 좌상단 퀘스트 목록
     ///   GameUI.Map.SetPlayerRoom("A_03");          // 레벨: 방 트리거
     ///   GameUI.Dialogue.Play(dialogueData, next);  // NPC/연출: 대화
     ///   GameUI.Damage.Show(hitPos, 37, DamageKind.Critical); // 전투: 피해 숫자 + 타격 이펙트
@@ -26,6 +28,8 @@ namespace OZ.UI.Contracts
         static IDialogueApi _dialogue;
         static IDamageFxApi _damage;
         static IFlowApi _flow;
+        static IQuestApi _quest;
+        static IUISoundApi _sound;
 
         public static IHudApi HUD => _hud ?? NullHudApi.Instance;
         public static IBossApi Boss => _boss ?? NullBossApi.Instance;
@@ -36,6 +40,10 @@ namespace OZ.UI.Contracts
         public static IDamageFxApi Damage => _damage ?? NullDamageFxApi.Instance;
         /// <summary>로딩 화면 · 페이드 · 스테이지 시작 띠 (GameManager / StageManager용)</summary>
         public static IFlowApi Flow => _flow ?? NullFlowApi.Instance;
+        /// <summary>좌상단 퀘스트 목록 (게이트 봉쇄·보스 처치는 자동)</summary>
+        public static IQuestApi Quest => _quest ?? NullQuestApi.Instance;
+        /// <summary>UI 효과음 (SFX 볼륨 적용). UI 쪽 소리는 자동 — 게임 쪽 특별한 순간에만 호출</summary>
+        public static IUISoundApi Sound => _sound ?? NullUISoundApi.Instance;
 
         /// <summary>UI가 씬에 올라와 있는지</summary>
         public static bool IsReady => _screens != null;
@@ -53,6 +61,8 @@ namespace OZ.UI.Contracts
         internal static void Register(IDialogueApi api) => _dialogue = api;
         internal static void Register(IDamageFxApi api) => _damage = api;
         internal static void Register(IFlowApi api) => _flow = api;
+        internal static void Register(IQuestApi api) => _quest = api;
+        internal static void Register(IUISoundApi api) => _sound = api;
 
         internal static void Unregister(object api)
         {
@@ -64,12 +74,14 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(_dialogue, api)) _dialogue = null;
             if (ReferenceEquals(_damage, api)) _damage = null;
             if (ReferenceEquals(_flow, api)) _flow = null;
+            if (ReferenceEquals(_quest, api)) _quest = null;
+            if (ReferenceEquals(_sound, api)) _sound = null;
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
-            _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null; _flow = null;
+            _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null; _flow = null; _quest = null; _sound = null;
         }
     }
 }
