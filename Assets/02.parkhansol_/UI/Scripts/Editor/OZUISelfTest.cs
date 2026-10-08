@@ -71,6 +71,9 @@ namespace OZ.UI.EditorTools
                 await Suite("옵션 창", Options);
                 await Suite("피해 숫자·타격 이펙트·적 체력바", Damage);
                 await Suite("대화 반복 시 초상화 위치 고정", DialogueDrift);
+                await Suite("게임 흐름: 로딩·페이드·스테이지 띠 (v0.5)", Flow);
+                await Suite("풀에서 꺼내는 적 체력바 (v0.5)", PooledEnemyBar);
+                await Suite("팀원 연결용 Link 컴포넌트 (v0.5)", Links);
             }
             catch (Exception e)
             {
@@ -161,6 +164,189 @@ namespace OZ.UI.EditorTools
             UIManager.Instance.CloseAll();
             Time.timeScale = 1f;
             await Wait(0.6f);
+        }
+
+        // ───────────────────────────── v0.5 게임 흐름 ─────────────────────────────
+        static async Task Flow()
+        {
+            await ToCombat();
+            var flow = Find<FlowOverlayView>();
+            Check("FlowOverlayView 있음 + GameUI.Flow 등록", flow != null && ReferenceEquals(GameUI.Flow, flow));
+            if (flow == null) return;
+            flow.ResetAll();
+
+            // 로딩
+            GameUI.Flow.ShowLoading("데이터 불러오는 중"); await Wait(0.35f);
+            Check("로딩: 표시됨", flow.IsLoading && flow.loadingGroup.alpha > 0.99f);
+            Check("로딩: 입력 차단", UIState.IsGameplayInputBlocked);
+            Eq("로딩: 문구", flow.loadingMessage.text, "데이터 불러오는 중");
+            Eq("로딩: 0%", flow.loadingPercent.text, "0%");
+            Check("로딩: TIP 표시", flow.loadingTip.text.StartsWith("TIP"));
+            GameUI.Flow.SetLoadingProgress(0.5f, "풀 준비"); await Wait(0.6f);
+            Near("로딩: 진행 막대 50%", flow.loadingFill.fillAmount, 0.5f);
+            Eq("로딩: 50%", flow.loadingPercent.text, "50%");
+            Eq("로딩: 문구 바뀜", flow.loadingMessage.text, "풀 준비");
+            GameUI.Flow.SetLoadingProgress(0.2f); await Wait(0.2f);
+            Near("로딩: 진행률은 뒤로 가지 않음", flow.loadingFill.fillAmount, 0.5f);
+            bool hidden = false;
+            GameUI.Flow.HideLoading(() => hidden = true); await Wait(0.2f);
+            Check("로딩: 숨기기 전에 100%까지 채움", flow.ShownProgress > 0.5f);
+            await Wait(1.0f);
+            Check("로딩: 사라짐 + 콜백", hidden && !flow.IsLoading && flow.loadingGroup.alpha < 0.01f);
+            Check("로딩 끝: 입력 차단 풀림", !UIState.IsGameplayInputBlocked);
+
+            // 페이드 + 스테이지 띠 대기열
+            bool black = false;
+            GameUI.Flow.FadeOut(0.2f, () => black = true); await Wait(0.08f);
+            Check("페이드 중: 입력 차단", UIState.IsGameplayInputBlocked);
+            await Wait(0.3f);
+            Check("페이드 아웃: 검은 화면 + 콜백", black && flow.IsFaded && flow.fadeGroup.alpha > 0.99f);
+            bool introDone = false;
+            GameUI.Flow.StageIntro(2, "지하철역 환승통로", "게이트 3곳을 봉쇄하라", () => introDone = true); await Wait(0.3f);
+            Check("검은 화면 동안 스테이지 띠는 대기", flow.introGroup.alpha < 0.01f && !flow.IsIntroPlaying);
+            bool clear = false;
+            GameUI.Flow.FadeIn(0.2f, () => clear = true); await Wait(0.6f);
+            Check("페이드 인: 걷힘 + 콜백", clear && !flow.IsFaded);
+            Check("페이드 인 끝: 입력 차단 풀림", !UIState.IsGameplayInputBlocked);
+            Check("걷힌 뒤 스테이지 띠 재생", flow.IsIntroPlaying && flow.introGroup.alpha > 0.9f);
+            Eq("스테이지 띠: STAGE 2", flow.introStage.text, "STAGE 2");
+            Eq("스테이지 띠: 제목", flow.introTitle.text, "지하철역 환승통로");
+            Check("스테이지 띠: 부제 표시", flow.introSubtitle.gameObject.activeSelf && flow.introSubtitle.text.Contains("3곳"));
+            Check("스테이지 띠: 게임 입력 막지 않음", !UIState.IsGameplayInputBlocked);
+            await Wait(flow.introHold + 0.8f);
+            Check("스테이지 띠: 끝 + 콜백", introDone && flow.introGroup.alpha < 0.01f);
+
+            // Transition
+            var order = new List<string>();
+            float alphaAtSwap = -1f;
+            GameUI.Flow.Transition(() => { alphaAtSwap = flow.fadeGroup.alpha; order.Add("swap"); }, 0.2f, () => order.Add("done"));
+            await Wait(0.8f);
+            Check("Transition: 검은 화면일 때 교체 실행", alphaAtSwap > 0.99f, $"교체 시 알파 {alphaAtSwap:0.##}");
+            Eq("Transition: 순서", string.Join(",", order), "swap,done");
+            Check("Transition 끝: 화면 걷힘 + 입력 풀림", !flow.IsFaded && !UIState.IsGameplayInputBlocked);
+
+            // 페이드 도중 다른 페이드: 앞 콜백도 빠짐없이 실행
+            int calls = 0;
+            GameUI.Flow.FadeOut(0.3f, () => calls++); await Wait(0.1f);
+            GameUI.Flow.FadeIn(0.2f, () => calls++); await Wait(0.5f);
+            Check("끊긴 페이드 콜백도 실행 (교체 작업 누락 없음)", calls == 2, $"콜백 {calls}회");
+
+            // async
+            float alphaInside = -1f;
+            await GameUI.Flow.TransitionAsync(async () => { alphaInside = flow.fadeGroup.alpha; await Task.Yield(); }, 0.15f);
+            Check("TransitionAsync: 안쪽은 검은 화면", alphaInside > 0.99f);
+            Check("TransitionAsync: 끝나면 걷힘", !flow.IsFaded);
+            flow.ResetAll();
+        }
+
+        static async Task PooledEnemyBar()
+        {
+            await ToCombat();
+            var fx = Find<DamageFxController>();
+            int baseCount = fx.TrackedEnemyCount;
+            var go = new GameObject("SelfTest_PooledEnemy");
+            go.SetActive(false);
+            var e = go.AddComponent<ShowcaseEnemy>();
+            e.trackHealthBar = false;
+            e.respawn = false;
+            go.AddComponent<EnemyHealthBarTracker>();
+            go.transform.position = new Vector3(0f, -100f, 0f);
+            try
+            {
+                go.SetActive(true); await Wait(0.1f);
+                Check("풀에서 꺼냄 → 체력바 등록", fx.TrackedEnemyCount == baseCount + 1);
+                go.SetActive(false); await Wait(0.1f);
+                Check("풀에 넣음 → 체력바 해제", fx.TrackedEnemyCount == baseCount);
+                go.SetActive(true); await Wait(0.1f);
+                Check("다시 꺼냄 → 다시 등록 (중복 없음)", fx.TrackedEnemyCount == baseCount + 1);
+                e.ResetForSpawn(new Vector3(0f, -100f, 0f));
+                Near("꺼낼 때 체력 초기화", e.HP, e.MaxHP, 0.01f);
+
+                // 트래커 없이 직접 TrackEnemy 한 적이 풀에 들어가도 체력바가 화면에 남지 않음
+                go.GetComponent<EnemyHealthBarTracker>().enabled = false;
+                GameUI.Damage.TrackEnemy(e);
+                go.SetActive(false); await Wait(0.1f);
+                var bar = Get<Dictionary<IEnemyHealthSource, EnemyHealthBarView>>(fx, "_bars");
+                Check("비활성 적 체력바는 화면 밖으로", bar.TryGetValue(e, out var v) && v.Rect.anchoredPosition.x < -5000f);
+                GameUI.Damage.UntrackEnemy(e);
+            }
+            finally
+            {
+                UnityEngine.Object.Destroy(go);
+            }
+            await Wait(0.1f);
+            Check("정리 후 추적 수 원래대로", fx.TrackedEnemyCount == baseCount);
+        }
+
+        static async Task Links()
+        {
+            await ToCombat();
+            var go = new GameObject("SelfTest_Links");
+            go.SetActive(false);
+            var gate = go.AddComponent<GateUILink>();
+            var player = go.AddComponent<PlayerUILink>();
+            var boss = go.AddComponent<BossUILink>();
+            boss.SetData(Find<DummyBoss>().Data);
+            var enemyGo = new GameObject("SelfTest_EnemyLink");
+            enemyGo.SetActive(false);
+            var enemy = enemyGo.AddComponent<EnemyUILink>();
+            var fx = Find<DamageFxController>();
+            int baseBars = fx.TrackedEnemyCount;
+            try
+            {
+                go.SetActive(true); await Wait(0.2f);
+                var g = Hud.gate;
+                gate.BeginStage(1, 2); await Wait(0.2f);
+                Eq("GateUILink.BeginStage → 0/2", g.countText.text, "게이트 0/2");
+                gate.GateOpened(); await Wait(0.1f);
+                Eq("GateUILink.GateOpened → 게이트 활성", g.stateText.text, "게이트 활성");
+                gate.GateSealed(); await Wait(0.2f);
+                Eq("GateUILink.GateSealed → 1/2", g.countText.text, "게이트 1/2");
+                Check("GateUILink.GateSealed → '게이트 파괴' 띠", Hud.banner.IsShowing);
+                gate.GateOpened(); gate.GateSealed(); await Wait(0.2f);
+                Check("GateUILink 목표 달성 → 보스 구역 개방", g.bossReady.activeSelf && gate.IsBossAreaUnlocked);
+                Hud.banner.Hide();
+
+                player.SetHP(40f, 80f); await Wait(1.0f);
+                Eq("PlayerUILink.SetHP → 40/80", Hud.health.valueText.text, "40/80");
+                player.SetLevel(3); player.SetExp(20f, 100f); await Wait(0.3f);
+                Check("PlayerUILink.SetLevel → Lv.3", UISources.Progression == (IProgressionSource)player && player.Level == 3);
+
+                bool intro = false;
+                boss.Begin(500f, () => intro = true); await Wait(3.6f);
+                Check("BossUILink.Begin → 연출 후 콜백", intro && GameUI.Boss.IsShowing);
+                var bv = Find<BossHudView>();
+                boss.SetHP(250f); await Wait(1.2f);
+                Near("BossUILink.SetHP 250/500 → 바 0.5", bv.bar.fill.fillAmount, 0.5f);
+                Check("BossUILink 페이즈 자동 (구간 지남)", boss.Phase >= 1);
+                boss.Damage(9999f); await Wait(0.3f);
+                Check("BossUILink 체력 0 → 격파", boss.HP <= 0f);
+                await Wait(2.0f);
+                boss.Hide();
+
+                enemyGo.transform.position = new Vector3(0f, 0f, 0f);
+                enemyGo.SetActive(true); await Wait(0.1f);
+                Check("EnemyUILink 활성 → 체력바 등록", fx.TrackedEnemyCount == baseBars + 1);
+                enemy.Init(100f);
+                bool dead = enemy.Hit(30f, true);
+                Check("EnemyUILink.Hit → 체력 70, 안 죽음", !dead && Mathf.Approximately(enemy.HP, 70f));
+                dead = enemy.Hit(999f);
+                Check("EnemyUILink.Hit 마지막 일격 → 죽음", dead && enemy.HP <= 0f);
+                enemyGo.SetActive(false); await Wait(0.1f);
+                Check("EnemyUILink 비활성(풀 반납) → 체력바 해제", fx.TrackedEnemyCount == baseBars);
+                enemyGo.SetActive(true); enemy.Init(); await Wait(0.1f);
+                Check("EnemyUILink 재사용 → 다시 등록 + 체력 가득", fx.TrackedEnemyCount == baseBars + 1 && Mathf.Approximately(enemy.HP, enemy.MaxHP));
+            }
+            finally
+            {
+                UnityEngine.Object.Destroy(enemyGo);
+                UnityEngine.Object.Destroy(go);
+            }
+            await Wait(0.2f);
+            GameUI.Bind(P); // 샌드박스 더미 플레이어로 되돌림
+            P.ResetAll();
+            await Wait(0.3f);
+            Check("정리 후 HUD 소스 원래대로", ReferenceEquals(UISources.Health, P) && ReferenceEquals(UISources.Gate, P));
         }
 
         // ───────────────────────────── 스위트 ─────────────────────────────

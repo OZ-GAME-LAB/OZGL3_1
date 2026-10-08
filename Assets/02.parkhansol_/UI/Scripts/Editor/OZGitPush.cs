@@ -13,16 +13,27 @@ namespace OZ.UI.EditorTools
     /// OZ > UI > Git Push (02.parkhansol_ 만)
     /// 규칙: 02.parkhansol_ 폴더만 커밋 (팀원 폴더·ProjectSettings 제외), 메시지 "parkhansol_내용".
     /// 순서: add → commit → pull --rebase --autostash → push. 로그: 프로젝트/Logs/OZ_GitPush.txt
+    ///
+    /// OZ > UI > Git Push + main (SampleScene 포함): 위 + Assets/Scenes/SampleScene.unity 도 커밋하고,
+    ///   origin/main이 내 브랜치의 조상일 때만(fast-forward) main에도 올린다. 브랜치 전환 없음 → 열린 Unity 파일이 바뀌지 않음.
+    ///   팀원이 main에 먼저 올린 게 있으면 main 푸시는 멈추고(브랜치만 올라감) 로그에 남긴다.
     /// </summary>
     internal static class OZGitPush
     {
-        const string DefaultMessage = "parkhansol_스킬트리노드형_HUD단축키확대_치명타효과_인벤토리개선_지하철역쇼케이스";
+        const string DefaultMessage = "parkhansol_게임흐름UI_로딩페이드스테이지띠_팀원연결Link_풀대응적체력바";
+        const string MainMessage = "parkhansol_게임흐름UI_로딩페이드스테이지띠_팀원연결Link_풀대응적체력바_샘플씬UI세팅";
+        const string SampleScene = "Assets/Scenes/SampleScene.unity";
         /// <summary>프로젝트 규칙: 하루 작업 = 브랜치 parkhansol_ui_yyMMdd (없으면 현재 브랜치에서 새로 만듦)</summary>
         const string BranchPrefix = "parkhansol_ui_";
         static bool _running;
 
         [MenuItem("OZ/UI/Git Push (02.parkhansol_ only)", priority = 40)]
-        static void Push()
+        static void Push() => Push(false);
+
+        [MenuItem("OZ/UI/Git Push + main (SampleScene 포함)", priority = 41)]
+        static void PushMain() => Push(true);
+
+        static void Push(bool toMain)
         {
             if (_running) { Debug.LogWarning("[OZ Git] 이미 실행 중입니다."); return; }
             AssetDatabase.SaveAssets();
@@ -30,7 +41,7 @@ namespace OZ.UI.EditorTools
             string log = Path.Combine(root, "Logs", "OZ_GitPush.txt");
             _running = true;
             Debug.Log("[OZ Git] 푸시 시작… (결과: Logs/OZ_GitPush.txt)");
-            Task.Run(() => Run(root, log, DefaultMessage)).ContinueWith(t =>
+            Task.Run(() => Run(root, log, toMain ? MainMessage : DefaultMessage, toMain)).ContinueWith(t =>
             {
                 _running = false;
                 bool ok = t.Status == TaskStatus.RanToCompletion && t.Result;
@@ -42,7 +53,7 @@ namespace OZ.UI.EditorTools
             });
         }
 
-        static bool Run(string root, string logPath, string message)
+        static bool Run(string root, string logPath, string message, bool toMain)
         {
             var sb = new StringBuilder();
             sb.AppendLine("OZ Git Push — " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -69,12 +80,13 @@ namespace OZ.UI.EditorTools
                 if (string.IsNullOrWhiteSpace(user)) { sb.AppendLine("!! git user.name 미설정 → 중단"); return false; }
 
                 if (Exec(git, "add -- \"Assets/02.parkhansol_\" \"Assets/02.parkhansol_.meta\"", root, sb, out _) != 0) return false;
+                if (toMain && Exec(git, $"add -- \"{SampleScene}\"", root, sb, out _) != 0) return false;
                 Exec(git, "diff --cached --stat", root, sb, out string staged);
                 Exec(git, "diff --cached --name-only", root, sb, out string names, echo: false);
                 foreach (var line in names.Split('\n'))
                 {
                     var p = line.Trim();
-                    if (p.Length > 0 && !p.StartsWith("Assets/02.parkhansol_"))
+                    if (p.Length > 0 && !p.StartsWith("Assets/02.parkhansol_") && !(toMain && p == SampleScene))
                     {
                         sb.AppendLine("!! 02.parkhansol_ 밖의 파일이 스테이징됨 → 중단: " + p);
                         return false;
@@ -99,6 +111,16 @@ namespace OZ.UI.EditorTools
                     return false;
                 }
                 if (Exec(git, $"push -u origin {branch}", root, sb, out _, timeoutMs: 600000) != 0) return false;
+                if (toMain)
+                {
+                    if (Exec(git, "fetch origin main", root, sb, out _, timeoutMs: 300000) != 0) return false;
+                    if (Exec(git, "merge-base --is-ancestor origin/main HEAD", root, sb, out _) != 0)
+                    {
+                        sb.AppendLine("!! origin/main에 내 브랜치에 없는 커밋이 있음 (팀원 푸시) → main 푸시 중단. 브랜치는 올라감 → PR로 합칠 것");
+                        return false;
+                    }
+                    if (Exec(git, "push origin HEAD:main", root, sb, out _, timeoutMs: 600000) != 0) return false;
+                }
                 Exec(git, "log --oneline -3", root, sb, out _);
                 Exec(git, "status --short -- Assets/02.parkhansol_", root, sb, out _);
                 ok = true;

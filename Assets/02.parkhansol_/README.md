@@ -11,12 +11,27 @@ OZGL3_1 데모의 UI 전부가 이 폴더 안에 있습니다. **팀원 폴더·
    4. `UI/Prefabs/UIRoot.prefab` 생성
    5. `UI/Scenes/UI_Sandbox.unity` 생성
 2. **OZ > UI > Open UI Sandbox** → Play → 화면 오른쪽 위 도움말의 키로 전체 UI 확인
-   - **OZ > UI > Open Subway Showcase** → 로우폴리 지하철역 임시 맵에서 이동·점프·공격·스킬로 UI 크기·위치 확인
-3. **OZ > UI > Run Self Test** → 수치 변화 247개 항목 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
+   - **OZ > UI > Open Subway Showcase** → 로우폴리 지하철역 임시 맵. 팀 설계(GameManager→Stage→Gate→Spawn→Pool) 모양 샘플이 로딩→스테이지 띠→게이트→보스→클리어→다음 스테이지 흐름을 돌림
+   - **OZ > UI > Install UI → SampleScene** → 팀 공용 `Assets/Scenes/SampleScene`에 UIRoot + 연결용 Link 오브젝트 설치
+3. **OZ > UI > Run Self Test** → 수치 변화 300개 항목 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
 
 > 팀원은 1번을 할 필요가 없습니다. 생성된 결과물이 깃에 같이 올라갑니다.
 
 ## 팀원 연동 — 이것만 알면 됩니다
+
+### 0) 가장 쉬운 방법 (v0.5) — 메서드만 부르기
+
+`Assets/Scenes/SampleScene`의 **UI Links (팀원 연결용)** 오브젝트에 연결 컴포넌트가 들어 있습니다. 매니저에 드래그해서 메서드만 부르면 됩니다 (인터페이스 구현 불필요).
+
+| 팀 설계 | 부를 것 |
+|---|---|
+| GameManager | `GameUI.Flow.ShowLoading / SetLoadingProgress / HideLoading`, `GameUI.Flow.Transition(() => 교체)` · 버튼 요청은 `UIRequestEvents` 인스펙터 |
+| StageManager | `GameUI.Flow.StageIntro(n, 이름)` · `BossUILink.Begin / SetHP` · `GameUI.Screens.ShowStageClear` |
+| GateManager | `GateUILink.BeginStage / GateOpened / GateSealed` |
+| 적 프리팹 (Spawn·Pool) | `EnemyUILink` 컴포넌트 → `Init(maxHP)` · `Hit(피해, 치명타)` (풀 꺼냄·반납 자동) |
+| 플레이어 | `PlayerUILink.SetHP / SetExp / SetLevel / SetRank` |
+
+자세한 예시: **`Docs/UI_Integration.md`** · 동작 예시: `UI/Scripts/Samples/Flow/` (`// [UI]` 표시 줄)
 
 팀원 코드는 `OZ.UI.Contracts`만 씁니다 (`using OZ.UI.Contracts;`). 자동 참조라 asmdef 설정이 필요 없습니다.
 UI가 없는 씬에서 호출해도 **에러가 나지 않습니다** (로그 한 줄만 남김).
@@ -73,6 +88,9 @@ float hp = tree.GetStat("max_hp_pct");                   // 패시브 수치
 ```csharp
 GameUI.Boss.Show(this, () => StartPattern());   // 보스 등장 연출 후 콜백
 GameUI.Screens.ShowDeath();                      // 사망 화면
+GameUI.Flow.ShowLoading("불러오는 중");           // 로딩 화면 (SetLoadingProgress 0~1 → HideLoading)
+GameUI.Flow.Transition(() => LoadStage(2));      // 페이드 아웃 → 교체 → 페이드 인
+GameUI.Flow.StageIntro(1, "지하철역 승강장");      // "STAGE 1" 띠
 GameUI.Screens.ShowStageClear(1, HunterRank.E);  // "게이트 파괴" 띠 → 끝나면 UIRequests.NextStage
 GameUI.HUD.ShowBanner("게이트 파괴", "1 / 3");     // 가운데 큰 띠 (게이트 봉쇄 시엔 자동)
 GameUI.HUD.SetPortrait(playerPortraitSprite);    // HP 바 옆 초상화 칸

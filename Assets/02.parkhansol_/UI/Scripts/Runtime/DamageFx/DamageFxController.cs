@@ -247,6 +247,7 @@ namespace OZ.UI
             {
                 var anchor = kv.Key.BarAnchor;
                 if (anchor == null) { (dead ??= new List<IEnemyHealthSource>()).Add(kv.Key); continue; } // 적 오브젝트가 파괴됨
+                if (!anchor.gameObject.activeInHierarchy) { kv.Value.Rect.anchoredPosition = new Vector2(-9999, -9999); continue; } // 풀에 들어간 적: 숨김
                 Place(kv.Value.Rect, anchor.position, new Vector2(0f, barLift));
             }
             if (dead != null) foreach (var d in dead) UntrackEnemy(d);

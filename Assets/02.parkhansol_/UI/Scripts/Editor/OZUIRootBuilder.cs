@@ -53,6 +53,7 @@ namespace OZ.UI.EditorTools
                 BuildDeath(fullLayer);
                 BuildDemoEnd(fullLayer);
                 BuildOptions(modalLayer);
+                BuildFlow(overlayLayer); // v0.5: 로딩·페이드·스테이지 시작 띠 (맨 위)
 
                 mapCtrl.renderers = new[] { minimap, fullMap };
 
@@ -238,6 +239,11 @@ namespace OZ.UI.EditorTools
             //                 ▬▬▬▬▬▬ EXP
             var tl = UIB.Rect("TopLeft", hudRt).Place(0, 1, 8, -8, 200, 52);
             var health = tl.gameObject.AddComponent<HealthView>();
+            // v0.4: 밝은 배경(역 간판·조명)이 뒤로 지나가도 읽히게 반투명 바탕 (오른쪽으로 갈수록 옅게 보이도록 2단)
+            var tlBack = UIB.Solid("Backdrop", tl, new Color(0.02f, 0.03f, 0.07f, 0.45f));
+            tlBack.rectTransform.Place(0, 1, -4, 4, 196, 58);
+            var tlBackFade = UIB.Solid("BackdropFade", tl, new Color(0.02f, 0.03f, 0.07f, 0.2f));
+            tlBackFade.rectTransform.Place(0, 1, 192, 4, 16, 58);
 
             var pFrameSprite = UIB.HudArt("PortraitFrame");
             var pFrame = UIB.Img("PortraitFrame", tl, pFrameSprite ?? UIB.Fallback, pFrameSprite != null ? Color.white : new Color(0f, 0.14f, 0.17f));
@@ -943,6 +949,96 @@ namespace OZ.UI.EditorTools
             w.retryButton = MenuButton(w.transform, "재도전", -24);
             w.titleButton = MenuButton(w.transform, "타이틀로", -50);
             w.firstSelected = w.retryButton;
+        }
+
+        // ───────────────────────────── 게임 흐름 (GameUI.Flow) ─────────────────────────────
+        //  스테이지 띠:   ────────  STAGE 1  ────────
+        //                       지 하 철 역
+        //  로딩:  검은 화면 + 아래쪽 진행 막대 + 퍼센트 + 문구 + TIP
+        static void BuildFlow(Transform layer)
+        {
+            var rt = UIB.Rect("Flow", layer).Stretch();
+            var flow = rt.gameObject.AddComponent<FlowOverlayView>();
+            var accent = new Color(1f, 0.85f, 0.4f);
+
+            // 1) 스테이지 시작 띠 (페이드보다 아래)
+            var intro = UIB.Rect("StageIntro", rt).Stretch();
+            flow.introGroup = UIB.Group(intro.gameObject);
+            flow.introGroup.alpha = 0f;
+            flow.introGroup.blocksRaycasts = false;
+            var band = UIB.Solid("Band", intro, new Color(0.02f, 0.03f, 0.07f, 0.72f));
+            band.rectTransform.StretchH(0.5f, 36, 52);
+            flow.introBand = band.rectTransform;
+            var edgeTop = UIB.Solid("EdgeTop", band.transform, new Color(accent.r, accent.g, accent.b, 0.35f));
+            edgeTop.rectTransform.StretchH(1, 0, 1);
+            var edgeBottom = UIB.Solid("EdgeBottom", band.transform, new Color(accent.r, accent.g, accent.b, 0.35f));
+            edgeBottom.rectTransform.StretchH(0, 0, 1);
+
+            var stage = UIB.Body12("Stage", band.transform, "STAGE 1", TextAlignmentOptions.Center, accent);
+            stage.rectTransform.Place(0.5f, 0.5f, 0, 14, 120, 13);
+            flow.introStage = stage;
+            var lineL = UIB.Solid("LineLeft", band.transform, accent);
+            lineL.rectTransform.Place(0.5f, 0.5f, 0, 14, 110, 1);
+            lineL.rectTransform.pivot = new Vector2(1f, 0.5f);
+            lineL.rectTransform.anchoredPosition = new Vector2(-34, 14);
+            flow.introLineLeft = lineL.rectTransform;
+            var lineR = UIB.Solid("LineRight", band.transform, accent);
+            lineR.rectTransform.Place(0.5f, 0.5f, 0, 14, 110, 1);
+            lineR.rectTransform.pivot = new Vector2(0f, 0.5f);
+            lineR.rectTransform.anchoredPosition = new Vector2(34, 14);
+            flow.introLineRight = lineR.rectTransform;
+
+            var title = UIB.Text("Title", band.transform, "지하철역", UIB.Title, 28, TextAlignmentOptions.Center, Color.white);
+            title.rectTransform.Place(0.5f, 0.5f, 0, -8, 400, 30);
+            title.textWrappingMode = TextWrappingModes.NoWrap;
+            flow.introTitle = title;
+            var sub = UIB.Small10("Subtitle", intro, "", TextAlignmentOptions.Center, UIB.Dim);
+            sub.rectTransform.Place(0.5f, 0.5f, 0, 2, 400, 12);
+            flow.introSubtitle = sub;
+
+            // 2) 페이드
+            var fade = UIB.Solid("Fade", rt, Color.black, true);
+            fade.rectTransform.Stretch();
+            flow.fadeGroup = UIB.Group(fade.gameObject);
+            flow.fadeGroup.alpha = 0f;
+            flow.fadeGroup.blocksRaycasts = false;
+
+            // 3) 로딩 (맨 위)
+            var loading = UIB.Solid("Loading", rt, new Color(0.02f, 0.025f, 0.05f, 1f), true);
+            loading.rectTransform.Stretch();
+            flow.loadingGroup = UIB.Group(loading.gameObject);
+            flow.loadingGroup.alpha = 0f;
+            flow.loadingGroup.blocksRaycasts = false;
+
+            var lt = UIB.Title15("Title", loading.transform, "LOADING", TextAlignmentOptions.Left, Color.white);
+            lt.rectTransform.Place(1, 0, -80, 72, 90, 16);
+            lt.textWrappingMode = TextWrappingModes.NoWrap;
+            flow.loadingTitle = lt;
+            var msg = UIB.Small10("Message", loading.transform, "", TextAlignmentOptions.Left, UIB.Dim);
+            msg.rectTransform.Place(0.5f, 0, -60, 74, 360, 12);
+            flow.loadingMessage = msg;
+
+            var track = UIB.Solid("Track", loading.transform, new Color(1f, 1f, 1f, 0.08f));
+            track.rectTransform.Place(0.5f, 0, 0, 60, 480, 4);
+            var fill = UIB.Solid("Fill", loading.transform, accent).Filled(Image.FillMethod.Horizontal);
+            fill.rectTransform.Place(0.5f, 0, 0, 60, 480, 4);
+            fill.rectTransform.pivot = new Vector2(0.5f, 0f);
+            fill.fillAmount = 0f;
+            flow.loadingFill = fill;
+            var runner = UIB.Solid("Runner", loading.transform, Color.white);
+            runner.rectTransform.Place(0.5f, 0, -240, 62, 6, 6);
+            runner.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+            flow.loadingRunner = runner.rectTransform;
+            var pct = UIB.Body12("Percent", loading.transform, "0%", TextAlignmentOptions.Right, accent);
+            pct.rectTransform.Place(0.5f, 0, 220, 44, 40, 13);
+            flow.loadingPercent = pct;
+
+            var tipLine = UIB.Solid("TipLine", loading.transform, new Color(1f, 1f, 1f, 0.06f));
+            tipLine.rectTransform.Place(0.5f, 0, 0, 34, 480, 1);
+            var tip = UIB.Small10("Tip", loading.transform, "TIP", TextAlignmentOptions.Left, new Color(0.75f, 0.8f, 0.9f));
+            tip.rectTransform.Place(0.5f, 0, 0, 18, 480, 12);
+            tip.textWrappingMode = TextWrappingModes.NoWrap;
+            flow.loadingTip = tip;
         }
 
         // ───────────────────────────── 옵션 ─────────────────────────────

@@ -9,6 +9,7 @@ namespace OZ.UI.Samples
     /// <summary>
     /// 지하철역 쇼케이스용 임시 3D 적 (로우폴리 블록). IEnemyHealthSource 참고 구현의 3D판.
     ///   좌우 순찰 · 플레이어 접촉 시 피해 · 맞으면 흰 번쩍임 + 밀림 · 죽으면 작아지며 사라졌다 부활
+    ///   풀(SamplePoolManager)용: respawn 끔 → 죽으면 Died 이벤트만, 꺼냈을 때 ResetForSpawn(위치)
     /// </summary>
     [AddComponentMenu("OZ/UI/Samples/Showcase Enemy")]
     public class ShowcaseEnemy : MonoBehaviour, IEnemyHealthSource
@@ -24,6 +25,10 @@ namespace OZ.UI.Samples
         [SerializeField] internal float halfWidth = 0.45f;
         [SerializeField] internal float height = 1.7f;
         [SerializeField] internal float respawnDelay = 2.5f;
+        [Tooltip("끄면 죽은 뒤 제자리 부활 대신 Died 이벤트만 보냄 (풀에서 꺼내 쓰는 적)")]
+        [SerializeField] internal bool respawn = true;
+        [Tooltip("끄면 스스로 체력바를 등록하지 않음 (EnemyHealthBarTracker 컴포넌트를 쓰거나 보스 몸체일 때)")]
+        [SerializeField] internal bool trackHealthBar = true;
 
         float _hp;
         Vector3 _home;
@@ -32,6 +37,7 @@ namespace OZ.UI.Samples
         float _flash;          // 0~1
         float _contactCooldown;
         bool _dying;
+        Vector3 _baseScale;
         MaterialPropertyBlock _mpb;
         Color[] _baseColors;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
@@ -45,11 +51,14 @@ namespace OZ.UI.Samples
         public bool IsElite => elite;
         public bool IsDead => _hp <= 0f;
         public event Action<HealthChange> HealthChanged;
+        /// <summary>쓰러지는 연출이 끝났을 때 (respawn이 꺼져 있으면 여기서 풀에 돌려보내면 됨)</summary>
+        public event Action<ShowcaseEnemy> Died;
 
         void Awake()
         {
             _hp = maxHP;
             _home = transform.position;
+            _baseScale = transform.localScale;
             _mpb = new MaterialPropertyBlock();
             _baseColors = new Color[renderers.Length];
             for (int i = 0; i < renderers.Length; i++)
@@ -61,8 +70,24 @@ namespace OZ.UI.Samples
 
         void OnEnable() => All.Add(this);
         void OnDisable() => All.Remove(this);
-        void Start() => GameUI.Damage.TrackEnemy(this);
-        void OnDestroy() => GameUI.Damage.UntrackEnemy(this);
+        void Start() { if (trackHealthBar) GameUI.Damage.TrackEnemy(this); }
+        void OnDestroy() { if (trackHealthBar) GameUI.Damage.UntrackEnemy(this); }
+
+        /// <summary>풀에서 꺼낼 때: 위치·체력·모습 초기화</summary>
+        public void ResetForSpawn(Vector3 position)
+        {
+            StopAllCoroutines();
+            _home = position;
+            transform.position = position;
+            transform.localScale = _baseScale;
+            foreach (var r in renderers) if (r != null) r.enabled = true;
+            float prev = _hp;
+            _hp = maxHP;
+            _dying = false;
+            _knock = 0f; _flash = 0f; _contactCooldown = 0.6f;
+            _dir = UnityEngine.Random.value < 0.5f ? -1f : 1f;
+            HealthChanged?.Invoke(new HealthChange(prev, _hp, maxHP));
+        }
 
         public Vector3 Center => transform.position + Vector3.up * height * 0.5f;
 
@@ -145,6 +170,8 @@ namespace OZ.UI.Samples
                 yield return null;
             }
             foreach (var r in renderers) if (r != null) r.enabled = false;
+            Died?.Invoke(this);
+            if (!respawn) yield break;
             yield return new WaitForSeconds(respawnDelay);
             transform.localScale = s0;
             transform.position = _home;

@@ -12,6 +12,7 @@ namespace OZ.UI.Contracts
     ///   GameUI.Map.SetPlayerRoom("A_03");          // 레벨: 방 트리거
     ///   GameUI.Dialogue.Play(dialogueData, next);  // NPC/연출: 대화
     ///   GameUI.Damage.Show(hitPos, 37, DamageKind.Critical); // 전투: 피해 숫자 + 타격 이펙트
+    ///   GameUI.Flow.Transition(() => LoadStage(2));       // 코어: 페이드 + 스테이지 교체
     ///
     /// UI가 씬에 없으면 Null 구현이 대신 받아서 아무 일도 하지 않는다 (에러 없음).
     /// </summary>
@@ -24,6 +25,7 @@ namespace OZ.UI.Contracts
         static IMapApi _map;
         static IDialogueApi _dialogue;
         static IDamageFxApi _damage;
+        static IFlowApi _flow;
 
         public static IHudApi HUD => _hud ?? NullHudApi.Instance;
         public static IBossApi Boss => _boss ?? NullBossApi.Instance;
@@ -32,6 +34,8 @@ namespace OZ.UI.Contracts
         public static IMapApi Map => _map ?? NullMapApi.Instance;
         public static IDialogueApi Dialogue => _dialogue ?? NullDialogueApi.Instance;
         public static IDamageFxApi Damage => _damage ?? NullDamageFxApi.Instance;
+        /// <summary>로딩 화면 · 페이드 · 스테이지 시작 띠 (GameManager / StageManager용)</summary>
+        public static IFlowApi Flow => _flow ?? NullFlowApi.Instance;
 
         /// <summary>UI가 씬에 올라와 있는지</summary>
         public static bool IsReady => _screens != null;
@@ -48,6 +52,7 @@ namespace OZ.UI.Contracts
         internal static void Register(IMapApi api) => _map = api;
         internal static void Register(IDialogueApi api) => _dialogue = api;
         internal static void Register(IDamageFxApi api) => _damage = api;
+        internal static void Register(IFlowApi api) => _flow = api;
 
         internal static void Unregister(object api)
         {
@@ -58,12 +63,13 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(_map, api)) _map = null;
             if (ReferenceEquals(_dialogue, api)) _dialogue = null;
             if (ReferenceEquals(_damage, api)) _damage = null;
+            if (ReferenceEquals(_flow, api)) _flow = null;
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
-            _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null;
+            _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null; _flow = null;
         }
     }
 }

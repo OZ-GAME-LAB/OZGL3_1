@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace OZ.UI.Contracts
@@ -112,5 +113,31 @@ namespace OZ.UI.Contracts
         }
 
         public void Stop() { }
+    }
+
+    internal sealed class NullFlowApi : IFlowApi
+    {
+        public static readonly NullFlowApi Instance = new NullFlowApi();
+        public bool IsLoading => false;
+        public bool IsFaded => false;
+        public void ShowLoading(string message = null) => NullLog.Once("Flow.ShowLoading");
+        public void SetLoadingProgress(float progress01, string message = null) { }
+        public void HideLoading(Action onHidden = null) => onHidden?.Invoke();
+        public void FadeOut(float duration = 0.35f, Action onBlack = null) { NullLog.Once("Flow.FadeOut"); onBlack?.Invoke(); }
+        public void FadeIn(float duration = 0.35f, Action onClear = null) => onClear?.Invoke();
+        public void Transition(Action whileBlack, float duration = 0.35f, Action onFinished = null)
+        {
+            NullLog.Once("Flow.Transition");
+            whileBlack?.Invoke(); // 연출이 없어도 실제 교체 작업은 반드시 실행
+            onFinished?.Invoke();
+        }
+        public void StageIntro(int stageNumber, string title, string subtitle = null, Action onFinished = null)
+        {
+            NullLog.Once("Flow.StageIntro");
+            onFinished?.Invoke();
+        }
+        public Task FadeOutAsync(float duration = 0.35f) => Task.CompletedTask;
+        public Task FadeInAsync(float duration = 0.35f) => Task.CompletedTask;
+        public Task TransitionAsync(Func<Task> whileBlack, float duration = 0.35f) => whileBlack != null ? whileBlack() : Task.CompletedTask;
     }
 }

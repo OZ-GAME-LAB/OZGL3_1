@@ -161,15 +161,26 @@ namespace OZ.UI.EditorTools
             avatar.data = data;
             BuildPlayerModel(playerGo.transform, avatar, M);
 
-            // ── 적 (일반 3 + 엘리트 1) ──
-            var specs = new (string name, Vector3 pos, float scale, float hp, bool elite, float range)[]
-            {
-                ("Enemy_A", new Vector3(2f, 0f, 0f), 1f, 120f, false, 2.2f),
-                ("Enemy_B", new Vector3(9f, 0f, 0f), 1f, 120f, false, 1.6f),
-                ("Enemy_C", new Vector3(22f, 2.4f, 0f), 1f, 120f, false, 3f),
-                ("Enemy_Elite", new Vector3(-19f, 0f, 0f), 1.4f, 400f, true, 2.5f),
-            };
-            foreach (var sp in specs) BuildEnemy(sp.name, sp.pos, sp.scale, sp.hp, sp.elite, sp.range, M);
+            // ── 적: 풀 템플릿 (게이트에서 나옴) + 보스 몸체 ──
+            //    v0.5: 고정 배치 적 대신 팀 설계(GameManager → Stage → Gate → GateSpawner → Spawn → Pool) 모양 샘플이 흐름을 돌린다
+            var templates = new GameObject("Pool Templates (비활성)").transform;
+            var enemyTpl = BuildEnemy("Enemy", new Vector3(0f, -50f, 0f), 1f, 90f, false, 2.2f, M);
+            enemyTpl.transform.SetParent(templates, true);
+            enemyTpl.respawn = false;
+            enemyTpl.trackHealthBar = false;
+            enemyTpl.gameObject.AddComponent<EnemyHealthBarTracker>(); // 풀에서 꺼낼 때 체력바 자동 연결
+            enemyTpl.gameObject.SetActive(false);
+
+            var bossGo = new GameObject("Boss (Sample)");
+            var bossBody = BuildEnemy("BossBody", new Vector3(0f, 0f, 0f), 1.9f, 1400f, true, 3.5f, M);
+            bossBody.transform.SetParent(bossGo.transform, true);
+            bossBody.respawn = false;
+            bossBody.trackHealthBar = false; // 보스는 머리 위 대신 상단 보스 체력바
+            bossBody.contactDamage = 16f;
+            bossBody.gameObject.SetActive(false);
+            var sampleBoss = bossGo.AddComponent<SampleBoss>();
+            sampleBoss.data = OZSampleData.Load<BossData>("Boss_Stage1");
+            sampleBoss.body = bossBody;
 
             // ── 카메라 ──
             var camGo = new GameObject("Main Camera", typeof(Camera), typeof(AudioListener));
@@ -198,16 +209,84 @@ namespace OZ.UI.EditorTools
             avatar.feel = feel;
             var fx = dirGo.AddComponent<ShowcaseFx>();
             fx.swordMat = M.fxSword; fx.magicMat = M.fxMagic; fx.hitMat = M.fxHit;
-            var boss = dirGo.AddComponent<DummyBoss>();
-            boss.data = OZSampleData.Load<BossData>("Boss_Stage1");
             var dir = dirGo.AddComponent<ShowcaseDirector>();
             dir.player = data;
             dir.avatar = avatar;
             dir.map = OZSampleData.Load<MapData>("Map_Stage1");
+            dir.managedByGameManager = true;
+            dir.guide = "A/D 이동 · Space 점프 · Z 공격 · Q/E/R 스킬 · K 스킬트리 · I 인벤 · Tab 지도\nF6 스테이지 재시작 · F7 다음 스테이지 · F8 로딩 화면";
+
+            BuildFlowSample(data, dir, enemyTpl, sampleBoss, M);
 
             EditorSceneManager.SaveScene(scene, ScenePath);
             AssetDatabase.SaveAssets();
             Debug.Log("[OZ UI] 지하철역 쇼케이스 씬 생성 → " + ScenePath + "  (Play: A/D 이동 · Space 점프 · Z 공격 · Q/E/R 스킬)");
+        }
+
+        // 팀 설계 다이어그램 모양: GameManager → StageManager → GateManager → Gate → GateSpawner → SpawnManager → PoolManager
+        static void BuildFlowSample(DummyPlayer player, ShowcaseDirector dir, ShowcaseEnemy enemyTpl, SampleBoss boss, Mats M)
+        {
+            var root = new GameObject("Game Flow (Sample)");
+            var pool = root.AddComponent<SamplePoolManager>();
+            var spawn = root.AddComponent<SampleSpawnManager>();
+            spawn.pool = pool;
+            spawn.player = player;
+
+            var gm = root.AddComponent<SampleGateManager>();
+            var gatePositions = new[] { new Vector3(2.5f, 0f, 0f), new Vector3(-17f, 0f, 0f), new Vector3(24f, 2.4f, 0f) };
+            for (int i = 0; i < gatePositions.Length; i++)
+            {
+                var g = new GameObject("Gate_" + (i + 1));
+                g.transform.SetParent(root.transform, false);
+                g.transform.position = gatePositions[i];
+                var spawner = g.AddComponent<SampleGateSpawner>();
+                spawner.spawnManager = spawn;
+                spawner.enemyPrefab = enemyTpl;
+                var gate = g.AddComponent<SampleGate>();
+                gate.spawner = spawner;
+                gate.portal = BuildPortal(g.transform, M);
+                gm.gates.Add(gate);
+            }
+
+            var stage = root.AddComponent<SampleStageManager>();
+            stage.gateManager = gm;
+            stage.boss = boss;
+            stage.player = player;
+            stage.bossSpawn = new Vector3(0f, 0f, 0f);
+
+            var game = root.AddComponent<SampleGameManager>();
+            game.stageManager = stage;
+            game.spawnManager = spawn;
+            game.poolManager = pool;
+            game.enemyPrefab = enemyTpl;
+            game.director = dir;
+        }
+
+        // 보라 포탈: 회전하는 바퀴살이 보이도록 원판 + 살 + 불빛
+        static Transform BuildPortal(Transform gate, Mats M)
+        {
+            var portal = new GameObject("Portal").transform;
+            portal.SetParent(gate, false);
+            portal.localPosition = new Vector3(0f, 1.3f, 1.3f);
+            var rim = Prim(PrimitiveType.Cylinder, "Rim", portal, Vector3.zero, new Vector3(2.4f, 0.02f, 2.4f), M.fxMagic, false);
+            rim.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+            rim.GetComponent<MeshFilter>().sharedMesh = LowPolyCylinder();
+            var core = Prim(PrimitiveType.Cylinder, "Core", portal, new Vector3(0f, 0f, -0.02f), new Vector3(2.0f, 0.02f, 2.0f), M.signDark, false);
+            core.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+            core.GetComponent<MeshFilter>().sharedMesh = LowPolyCylinder();
+            for (int i = 0; i < 4; i++)
+            {
+                var spoke = Box("Spoke", portal, new Vector3(0f, 0f, -0.05f), new Vector3(1.9f, 0.07f, 0.02f), M.fxMagic, false);
+                spoke.transform.localRotation = Quaternion.Euler(0f, 0f, i * 45f);
+            }
+            var light = new GameObject("Glow", typeof(Light)).GetComponent<Light>();
+            light.transform.SetParent(portal, false);
+            light.transform.localPosition = new Vector3(0f, 0f, -1f);
+            light.type = LightType.Point;
+            light.color = new Color(0.75f, 0.4f, 1f);
+            light.range = 5f;
+            light.intensity = 3f;
+            return portal;
         }
 
         [MenuItem("OZ/UI/Open Subway Showcase", priority = 6)]
@@ -249,7 +328,7 @@ namespace OZ.UI.EditorTools
             p.flashRenderers = rs.ToArray();
         }
 
-        static void BuildEnemy(string name, Vector3 pos, float scale, float hp, bool elite, float range, Mats M)
+        static ShowcaseEnemy BuildEnemy(string name, Vector3 pos, float scale, float hp, bool elite, float range, Mats M)
         {
             var go = new GameObject(name);
             go.transform.position = pos;
@@ -283,6 +362,7 @@ namespace OZ.UI.EditorTools
             e.contactDamage = elite ? 14f : 8f;
             e.halfWidth = 0.4f * scale;
             e.height = 1.9f * scale;
+            return e;
         }
 
         static Transform Limb(string name, Transform parent, Vector3 pivot, Vector3 size, Material mat, List<Renderer> rs)
