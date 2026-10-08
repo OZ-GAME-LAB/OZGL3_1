@@ -1,0 +1,30 @@
+flowchart LR
+  subgraph G["팀원 코드"]
+    direction TB
+    P["Player · 정명진"]
+    C["GameManager / StageManager · 이광호"]
+    B["Boss · NPC · 방 트리거"]
+  end
+  subgraph K["OZ.UI.Contracts — 팀원이 참조하는 유일한 UI 어셈블리"]
+    direction TB
+    SRC["Source 인터페이스<br/>체력 · 스킬 · 아이템 · 레벨/랭크<br/>게이트 · 인벤토리 · 보스"]
+    GUI["GameUI 정적 창구<br/>HUD · Boss · Screens · Map · Dialogue · Notify"]
+    REQ["UIRequests<br/>NewGame · ClassSelected · Retry · NextStage"]
+    ST["UIState<br/>IsGameplayInputBlocked"]
+  end
+  subgraph U["OZ.UI — 박한솔 구현"]
+    direction TB
+    HUD["HUD 뷰들"]
+    SCR["UIManager + 창들"]
+    ETC["보스바 · 지도 · 대화 · 토스트"]
+  end
+  P -- "구현 + Bind" --> SRC
+  C -- "구현 + Bind" --> SRC
+  B -- "한 줄 호출" --> GUI
+  C -- "구독" --> REQ
+  P -. "입력 전 확인" .-> ST
+  SRC -- "이벤트" --> HUD
+  GUI -- "등록된 구현으로 전달" --> SCR
+  GUI --> ETC
+  SCR -- "버튼" --> REQ
+  SCR -- "창 열림/닫힘" --> ST

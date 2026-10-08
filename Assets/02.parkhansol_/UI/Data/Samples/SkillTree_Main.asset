@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959dc1fd8cdd1b0478e4c39842a742a9, type: 3}
+  m_Name: SkillTree_Main
+  m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.SkillTreeData
+  treeId: main
+  displayName: "\uC2A4\uD0AC \uD2B8\uB9AC"
+  nodes:
+  - id: sword_q
+    kind: 0
+    slot: 0
+    skill: {fileID: 11400000, guid: 8a90583db8060b74bb6fe7029ad5c149, type: 2}
+    grantsRank: 1
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 0, y: 0}
+    requires: []
+    exclusiveGroup: slot_q
+    cost: 1
+    requiredLevel: 1
+  - id: sword_q_2
+    kind: 1
+    slot: 0
+    skill: {fileID: 11400000, guid: 8a90583db8060b74bb6fe7029ad5c149, type: 2}
+    grantsRank: 2
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 0, y: 1}
+    requires:
+    - sword_q
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 2
+  - id: sword_q_3
+    kind: 1
+    slot: 0
+    skill: {fileID: 11400000, guid: 8a90583db8060b74bb6fe7029ad5c149, type: 2}
+    grantsRank: 3
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 0, y: 2}
+    requires:
+    - sword_q_2
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 5
+  - id: magic_q
+    kind: 0
+    slot: 0
+    skill: {fileID: 11400000, guid: b26a3953a671e454b965009eb3793c2e, type: 2}
+    grantsRank: 1
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 2, y: 0}
+    requires: []
+    exclusiveGroup: slot_q
+    cost: 1
+    requiredLevel: 1
+  - id: magic_q_2
+    kind: 1
+    slot: 0
+    skill: {fileID: 11400000, guid: b26a3953a671e454b965009eb3793c2e, type: 2}
+    grantsRank: 2
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 2, y: 1}
+    requires:
+    - magic_q
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 2
+  - id: magic_q_3
+    kind: 1
+    slot: 0
+    skill: {fileID: 11400000, guid: b26a3953a671e454b965009eb3793c2e, type: 2}
+    grantsRank: 3
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 2, y: 2}
+    requires:
+    - magic_q_2
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 5
+  - id: sword_e
+    kind: 0
+    slot: 1
+    skill: {fileID: 11400000, guid: 501bb4fee8d7ab74bb8f91ed6b4e4882, type: 2}
+    grantsRank: 1
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 4, y: 0}
+    requires: []
+    exclusiveGroup: slot_e
+    cost: 1
+    requiredLevel: 2
+  - id: sword_e_2
+    kind: 1
+    slot: 1
+    skill: {fileID: 11400000, guid: 501bb4fee8d7ab74bb8f91ed6b4e4882, type: 2}
+    grantsRank: 2
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 4, y: 1}
+    requires:
+    - sword_e
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 3
+  - id: sword_e_3
+    kind: 1
+    slot: 1
+    skill: {fileID: 11400000, guid: 501bb4fee8d7ab74bb8f91ed6b4e4882, type: 2}
+    grantsRank: 3
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 4, y: 2}
+    requires:
+    - sword_e_2
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 6
+  - id: magic_e
+    kind: 0
+    slot: 1
+    skill: {fileID: 11400000, guid: 1f2281979428d7f498c7f4cf47ba52f4, type: 2}
+    grantsRank: 1
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 6, y: 0}
+    requires: []
+    exclusiveGroup: slot_e
+    cost: 1
+    requiredLevel: 2
+  - id: magic_e_2
+    kind: 1
+    slot: 1
+    skill: {fileID: 11400000, guid: 1f2281979428d7f498c7f4cf47ba52f4, type: 2}
+    grantsRank: 2
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 6, y: 1}
+    requires:
+    - magic_e
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 3
+  - id: magic_e_3
+    kind: 1
+    slot: 1
+    skill: {fileID: 11400000, guid: 1f2281979428d7f498c7f4cf47ba52f4, type: 2}
+    grantsRank: 3
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 6, y: 2}
+    requires:
+    - magic_e_2
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 6
+  - id: sword_r
+    kind: 0
+    slot: 2
+    skill: {fileID: 11400000, guid: d91b8765028d4434198a852707917d12, type: 2}
+    grantsRank: 1
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 8, y: 0}
+    requires: []
+    exclusiveGroup: slot_r
+    cost: 1
+    requiredLevel: 4
+  - id: sword_r_2
+    kind: 1
+    slot: 2
+    skill: {fileID: 11400000, guid: d91b8765028d4434198a852707917d12, type: 2}
+    grantsRank: 2
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 8, y: 1}
+    requires:
+    - sword_r
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 5
+  - id: sword_r_3
+    kind: 1
+    slot: 2
+    skill: {fileID: 11400000, guid: d91b8765028d4434198a852707917d12, type: 2}
+    grantsRank: 3
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 8, y: 2}
+    requires:
+    - sword_r_2
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 8
+  - id: magic_r
+    kind: 0
+    slot: 2
+    skill: {fileID: 11400000, guid: 0ac175affdcd2224c8b1b09e48f1ecf7, type: 2}
+    grantsRank: 1
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 10, y: 0}
+    requires: []
+    exclusiveGroup: slot_r
+    cost: 1
+    requiredLevel: 4
+  - id: magic_r_2
+    kind: 1
+    slot: 2
+    skill: {fileID: 11400000, guid: 0ac175affdcd2224c8b1b09e48f1ecf7, type: 2}
+    grantsRank: 2
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 10, y: 1}
+    requires:
+    - magic_r
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 5
+  - id: magic_r_3
+    kind: 1
+    slot: 2
+    skill: {fileID: 11400000, guid: 0ac175affdcd2224c8b1b09e48f1ecf7, type: 2}
+    grantsRank: 3
+    statKey: 
+    statValue: 0
+    displayName: 
+    description: 
+    icon: {fileID: 0}
+    gridPos: {x: 10, y: 2}
+    requires:
+    - magic_r_2
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 8
+  - id: p_hp
+    kind: 2
+    slot: 0
+    skill: {fileID: 0}
+    grantsRank: 1
+    statKey: max_hp_pct
+    statValue: 10
+    displayName: "\uAC15\uC778\uD568"
+    description: "\uCD5C\uB300 \uCCB4\uB825 +10%"
+    icon: {fileID: 21300000, guid: 6407b7dae9ae8424b9b9dd7499a996f8, type: 3}
+    gridPos: {x: 2, y: 4}
+    requires: []
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 3
+  - id: p_crit
+    kind: 2
+    slot: 0
+    skill: {fileID: 0}
+    grantsRank: 1
+    statKey: crit_pct
+    statValue: 5
+    displayName: "\uC608\uB9AC\uD568"
+    description: "\uCE58\uBA85\uD0C0 \uD655\uB960 +5%"
+    icon: {fileID: 21300000, guid: 16ffb022cd702ed45bd381657e6397e6, type: 3}
+    gridPos: {x: 4, y: 4}
+    requires:
+    - p_hp
+    exclusiveGroup: 
+    cost: 1
+    requiredLevel: 5
+  - id: p_cdr
+    kind: 2
+    slot: 0
+    skill: {fileID: 0}
+    grantsRank: 1
+    statKey: cooldown_pct
+    statValue: -8
+    displayName: "\uC9D1\uC911"
+    description: "\uBAA8\uB4E0 \uC2A4\uD0AC \uB300\uAE30\uC2DC\uAC04 -8%"
+    icon: {fileID: 21300000, guid: 2e5a7cd51cd579c4799a12ee0bd90243, type: 3}
+    gridPos: {x: 6, y: 4}
+    requires:
+    - p_crit
+    exclusiveGroup: 
+    cost: 2
+    requiredLevel: 8
+  - id: p_move
+    kind: 2
+    slot: 0
+    skill: {fileID: 0}
+    grantsRank: 1
+    statKey: move_pct
+    statValue: 8
+    displayName: "\uC9C8\uC8FC"
+    description: "\uC774\uB3D9 \uC18D\uB3C4 +8%"
+    icon: {fileID: 21300000, guid: 52a604e8ac508c445ba4b3fcab744cbd, type: 3}
+    gridPos: {x: 8, y: 4}
+    requires:
+    - p_cdr
+    exclusiveGroup: 
+    cost: 2
+    requiredLevel: 11
+  labels:
+  - text: Q
+    gridPos: {x: 1, y: -0.9}
+    small: 0
+  - text: E
+    gridPos: {x: 5, y: -0.9}
+    small: 0
+  - text: R
+    gridPos: {x: 9, y: -0.9}
+    small: 0
+  - text: "\uD0DD1"
+    gridPos: {x: 1, y: 0}
+    small: 1
+  - text: "\uD0DD1"
+    gridPos: {x: 5, y: 0}
+    small: 1
+  - text: "\uD0DD1"
+    gridPos: {x: 9, y: 0}
+    small: 1
+  - text: "\uD328\uC2DC\uBE0C"
+    gridPos: {x: 0.4, y: 4}
+    small: 1

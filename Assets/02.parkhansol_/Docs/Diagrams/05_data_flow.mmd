@@ -1,0 +1,15 @@
+flowchart TB
+  subgraph A["① 피격 → HUD (이벤트 방식)"]
+    direction LR
+    a1["Player.TakeDamage()"] --> a2["HealthChanged<br/>(이전, 현재, 최대)"] --> a3["HealthView"] --> a4["Flask·체력바 트윈<br/>흔들림 · 25%↓ 맥박"]
+  end
+  subgraph B["② 메뉴 열기 (UI 단독 처리)"]
+    direction LR
+    b1["K 키"] --> b2["UIInputRouter"] --> b3["UIManager.Open<br/>(SkillWindow)"] --> b4["입력 차단<br/>timeScale 0"]
+    b3 --> b5["투자 클릭 →<br/>ISkillSource.TryInvest()"]
+  end
+  subgraph C["③ UI → 게임 요청"]
+    direction LR
+    c1["사망 화면 '재도전'"] --> c2["UIRequests.Retry"] --> c3["StageManager<br/>.RestartStage()"] --> c4["값 복구 → Source 이벤트<br/>→ HUD 자동 갱신"]
+  end
+  A ~~~ B ~~~ C

@@ -1,0 +1,17 @@
+{
+    "name": "OZ.UI.Samples",
+    "rootNamespace": "OZ.UI.Samples",
+    "references": [
+        "OZ.UI.Contracts",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
