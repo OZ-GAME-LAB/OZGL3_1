@@ -52,6 +52,8 @@ namespace OZ.UI.EditorTools
         static async void Run()
         {
             Lines.Clear(); _pass = _fail = _logErrors = 0;
+            bool bg = Application.runInBackground;
+            Application.runInBackground = true; // Unity 창에서 포커스가 빠져도 플레이가 멈추지 않게 (시간 재는 테스트가 많음)
             Application.logMessageReceived += OnLog;
             Log($"OZ UI Self Test — {DateTime.Now:yyyy-MM-dd HH:mm:ss}  (Unity {Application.unityVersion})");
             try
@@ -93,6 +95,7 @@ namespace OZ.UI.EditorTools
                 if (_fail == 0 && _logErrors == 0) Debug.Log($"[OZ SelfTest] 전체 통과 ({_pass}) → {path}");
                 else Debug.LogError($"[OZ SelfTest] 실패 {_fail}, 콘솔 에러 {_logErrors} → {path}");
                 Time.timeScale = 1f;
+                Application.runInBackground = bg;
                 EditorApplication.isPlaying = false;
             }
         }
