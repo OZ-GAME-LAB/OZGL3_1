@@ -78,7 +78,7 @@ namespace OZ.UI.EditorTools
                 await Suite("대화 반복 시 초상화 위치 고정", DialogueDrift);
                 await Suite("게임 흐름: 로딩·페이드·스테이지 띠 (v0.5)", Flow);
                 await Suite("풀에서 꺼내는 적 체력바 (v0.5)", PooledEnemyBar);
-                await Suite("팀원 연결용 Link 컴포넌트 (v0.5)", Links);
+                await Suite("UI Link 컴포넌트 (v0.5)", Links);
             }
             catch (Exception e)
             {

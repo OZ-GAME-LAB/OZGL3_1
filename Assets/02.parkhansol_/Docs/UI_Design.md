@@ -51,7 +51,7 @@ UI 화면 14종 + 노드형 스킬 트리 + 게임 흐름(로딩·페이드·스
 | 플레이어 | `PlayerUILink` (`SetHP` · `SetExp` · `SetLevel` · `SetRank`) |
 
 - 로딩·페이드 중에는 `UIState.IsGameplayInputBlocked = true`
-- `Assets/Scenes/SampleScene`: UIRoot + EventSystem + `UI Links (팀원 연결용)` (Link 컴포넌트 + 안내 메모)
+- `Assets/Scenes/MainScene`: UIRoot + EventSystem + `UI Links` (Link 컴포넌트 + 안내 메모)
 - 상세: `Docs/UI_Integration.md` · 동작 예시: `Samples/Flow/` (쇼케이스 씬에서 실제로 돌아감)
 
 ## 5. 스킬 트리 (v0.4)

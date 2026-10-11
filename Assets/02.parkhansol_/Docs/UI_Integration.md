@@ -8,15 +8,15 @@ UI가 씬에 없어도 모든 호출은 에러 없이 무시됩니다 (테스트
 
 ## 0. 씬 준비 (이미 해 둠)
 
-`Assets/Scenes/SampleScene`에 들어 있는 것:
+`Assets/Scenes/MainScene`에 들어 있는 것:
 
 | 오브젝트 | 내용 |
 |---|---|
 | `UIRoot` | 모든 UI (프리팹. UI 쪽 수정은 프리팹 갱신으로 자동 반영) |
 | `EventSystem` | UI 클릭용 |
-| `UI Links (팀원 연결용)` | `GateUILink` · `PlayerUILink` · `BossUILink` · `UIRequestEvents` + 안내 메모(`UINote`) |
+| `UI Links` | `GateUILink` · `PlayerUILink` · `BossUILink` · `UIRequestEvents` + 안내 메모(`UINote`) |
 
-다른 씬에 넣을 때: 메뉴 `OZ > UI > Install UI → SampleScene`을 참고하거나 `UIRoot` 프리팹(`Assets/02.parkhansol_/UI/Prefabs/UIRoot.prefab`)을 끌어다 놓기.
+다른 씬에 넣을 때: 메뉴 `OZ > UI > Install UI → MainScene`을 참고하거나 `UIRoot` 프리팹(`Assets/02.parkhansol_/UI/Prefabs/UIRoot.prefab`)을 끌어다 놓기.
 
 연결 방식은 두 가지 중 편한 쪽:
 - **A. Link 컴포넌트** — 인터페이스 구현 없이 메서드만 부름 (아래 예시). 처음엔 이쪽 추천.

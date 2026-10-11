@@ -12,7 +12,7 @@ OZGL3_1 데모의 UI 전부가 이 폴더 안에 있습니다. **팀원 폴더·
    5. `UI/Scenes/UI_Sandbox.unity` 생성
 2. **OZ > UI > Open UI Sandbox** → Play → 화면 오른쪽 위 도움말의 키로 전체 UI 확인
    - **OZ > UI > Open Subway Showcase** → 로우폴리 지하철역 임시 맵. 팀 설계(GameManager→Stage→Gate→Spawn→Pool) 모양 샘플이 로딩→스테이지 띠→게이트→보스→클리어→다음 스테이지 흐름을 돌림
-   - **OZ > UI > Install UI → SampleScene** → 팀 공용 `Assets/Scenes/SampleScene`에 UIRoot + 연결용 Link 오브젝트 설치
+   - **OZ > UI > Install UI → MainScene** → 팀 공용 `Assets/Scenes/MainScene`에 UIRoot + 연결용 Link 오브젝트 설치
 3. **OZ > UI > Run Self Test** → 수치 변화·배치·효과음 자동 점검 (결과: `Logs/OZ_UI_SelfTest.txt`)
 
 > 팀원은 1번을 할 필요가 없습니다. 생성된 결과물이 깃에 같이 올라갑니다.
@@ -21,7 +21,7 @@ OZGL3_1 데모의 UI 전부가 이 폴더 안에 있습니다. **팀원 폴더·
 
 ### 0) 가장 쉬운 방법 (v0.5) — 메서드만 부르기
 
-`Assets/Scenes/SampleScene`의 **UI Links (팀원 연결용)** 오브젝트에 연결 컴포넌트가 들어 있습니다. 매니저에 드래그해서 메서드만 부르면 됩니다 (인터페이스 구현 불필요).
+`Assets/Scenes/MainScene`의 **UI Links** 오브젝트에 연결 컴포넌트가 들어 있습니다. 매니저에 드래그해서 메서드만 부르면 됩니다 (인터페이스 구현 불필요).
 
 | 팀 설계 | 부를 것 |
 |---|---|

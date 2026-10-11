@@ -8,16 +8,16 @@ using UnityEngine.InputSystem.UI;
 namespace OZ.UI.EditorTools
 {
     /// <summary>
-    /// OZ > UI > Install UI → SampleScene
-    /// 팀 공용 씬(Assets/Scenes/SampleScene)에 아래 3개만 넣는다. 기존 오브젝트는 건드리지 않음. 여러 번 실행해도 중복 생성 안 함.
+    /// OZ > UI > Install UI → MainScene
+    /// 팀 공용 씬(Assets/Scenes/MainScene)에 아래 3개만 넣는다. 기존 오브젝트는 건드리지 않음. 여러 번 실행해도 중복 생성 안 함.
     ///   UIRoot            : 모든 UI (프리팹 연결 유지 → UI 쪽 수정은 프리팹 갱신만으로 반영)
     ///   EventSystem       : 없을 때만
-    ///   UI Links (팀원 연결용) : GateUILink · PlayerUILink · BossUILink · UIRequestEvents + 안내 메모
+    ///   UI Links          : GateUILink · PlayerUILink · BossUILink · UIRequestEvents + 안내 메모
     /// </summary>
     internal static class OZSampleSceneInstaller
     {
-        public const string ScenePath = "Assets/Scenes/SampleScene.unity";
-        const string LinksName = "UI Links (팀원 연결용)";
+        public const string ScenePath = "Assets/Scenes/MainScene.unity";
+        const string LinksName = "UI Links";
 
         internal const string Note =
 @"[UI 연결 방법 — 박한솔(UI)]  자세한 설명: Assets/02.parkhansol_/Docs/UI_Integration.md
@@ -49,7 +49,7 @@ GateManager
 
 ※ 매니저가 IGateSource / IHealthSource 등을 직접 구현했다면 해당 Link 컴포넌트는 지우고 GameUI.Bind(this).";
 
-        [MenuItem("OZ/UI/Install UI → SampleScene", priority = 7)]
+        [MenuItem("OZ/UI/Install UI → MainScene", priority = 7)]
         public static void Run()
         {
             if (AssetDatabase.LoadAssetAtPath<SceneAsset>(ScenePath) == null) { Debug.LogError("[OZ UI] " + ScenePath + " 이 없습니다."); return; }
@@ -88,7 +88,7 @@ GateManager
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene);
             Selection.activeGameObject = links;
-            Debug.Log("[OZ UI] SampleScene UI 세팅 완료 → " + ScenePath + "  (연결 안내: '" + LinksName + "' 오브젝트)", links);
+            Debug.Log("[OZ UI] MainScene UI 세팅 완료 → " + ScenePath + "  (연결 안내: '" + LinksName + "' 오브젝트)", links);
         }
 
         static T Ensure<T>(GameObject go) where T : Component

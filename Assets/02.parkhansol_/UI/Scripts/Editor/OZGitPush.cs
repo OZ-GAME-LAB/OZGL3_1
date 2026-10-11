@@ -14,7 +14,7 @@ namespace OZ.UI.EditorTools
     /// 규칙: 02.parkhansol_ 폴더만 커밋 (팀원 폴더·ProjectSettings 제외), 메시지 "parkhansol_내용".
     /// 순서: add → commit → pull --rebase --autostash → push. 로그: 프로젝트/Logs/OZ_GitPush.txt
     ///
-    /// OZ > UI > Git Push + main (SampleScene 포함): 위 + Assets/Scenes/SampleScene.unity 도 커밋하고,
+    /// OZ > UI > Git Push + main (MainScene 포함): 위 + Assets/Scenes/MainScene.unity 도 커밋하고,
     ///   origin/main이 내 브랜치의 조상일 때만(fast-forward) main에도 올린다. 브랜치 전환 없음 → 열린 Unity 파일이 바뀌지 않음.
     ///   팀원이 main에 먼저 올린 게 있으면 main 푸시는 멈추고(브랜치만 올라감) 로그에 남긴다.
     /// </summary>
@@ -22,7 +22,7 @@ namespace OZ.UI.EditorTools
     {
         const string DefaultMessage = "parkhansol_HUD양손분리_퀘스트목록_지도아래시스템알림_UI효과음_안내문구정리";
         const string MainMessage = DefaultMessage;
-        const string SampleScene = "Assets/Scenes/SampleScene.unity";
+        const string SampleScene = "Assets/Scenes/MainScene.unity";
         /// <summary>프로젝트 규칙: 하루 작업 = 브랜치 parkhansol_ui_yyMMdd (없으면 현재 브랜치에서 새로 만듦)</summary>
         const string BranchPrefix = "parkhansol_ui_";
         static bool _running;
@@ -30,10 +30,10 @@ namespace OZ.UI.EditorTools
         [MenuItem("OZ/UI/Git Push (02.parkhansol_ only)", priority = 40)]
         static void Push() => Push(false);
 
-        [MenuItem("OZ/UI/Git Push + main (SampleScene 포함)", priority = 41)]
+        [MenuItem("OZ/UI/Git Push + main (MainScene 포함)", priority = 41)]
         static void PushMain() => Push(true, "main");
 
-        [MenuItem("OZ/UI/Git Push + develop (SampleScene 포함)", priority = 42)]
+        [MenuItem("OZ/UI/Git Push + develop (MainScene 포함)", priority = 42)]
         static void PushDevelop() => Push(true, "develop");
 
         static void Push(bool toMain) => Push(toMain, "main");

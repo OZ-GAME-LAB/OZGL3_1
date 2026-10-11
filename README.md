@@ -8,7 +8,7 @@
 3. In Unity Hub, choose **Add project from disk** and select this repository's
    `OZGL3_1` folder (the folder containing `Assets`, `Packages`, and `ProjectSettings`).
 4. Open the project and let Unity restore packages and import assets.
-5. Open `Assets/Scenes/SampleScene.unity`.
+5. Open `Assets/Scenes/MainScene.unity`.
 
 ## Repository layout
 
