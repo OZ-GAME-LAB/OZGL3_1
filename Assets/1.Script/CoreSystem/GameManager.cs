@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class GameManager : BaseManager
 {
@@ -25,16 +24,6 @@ public class GameManager : BaseManager
     {
         if (Instance == this)
             FirstGameLoadingAsync().Forget();
-    }
-
-    private void Update()
-    {
-        if (Instance != this || !isReady)
-            return;
-
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard != null && keyboard.aKey.wasPressedThisFrame)
-            stageManager.StartStage();
     }
 
     private void InitService()

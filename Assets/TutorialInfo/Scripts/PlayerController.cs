@@ -116,6 +116,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        IsJumpRequested = false;
+        IsAttackRequested = false;
         _inputManager.OnJumpAction -= OnJump;
         _inputManager.OnAttackAction -= OnAttack;
     }

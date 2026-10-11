@@ -47,6 +47,9 @@ public class InputManager : MonoBehaviour
 
     private void OnDisable()
     {
+        MoveInput = Vector2.zero;
+        IsRunning = false;
+
         _moveAction.action.performed -= OnMove;
         _moveAction.action.canceled -= OnMove;
         _runAction.action.performed -= OnRun;

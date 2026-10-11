@@ -58,7 +58,9 @@ public class StageManager : BaseManager
             return;
         }
 
-        CurrentStage = Instantiate(prefab, Vector3.zero, prefab.transform.rotation);
+        CurrentStage = Instantiate(prefab, Vector3.zero, prefab.transform.rotation, stageParent);
+        // 씬에 둔 비활성 스테이지 원본도 사용할 수 있습니다.
+        CurrentStage.SetActive(true);
         Stage stage = CurrentStage.GetComponent<Stage>();
         gateManager.SetGates(stage.Gates);
         IsStageRunning = true;
