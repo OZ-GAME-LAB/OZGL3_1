@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace OZ.UI.Contracts
@@ -42,7 +43,8 @@ namespace OZ.UI.Contracts
     /// [v0.7] 상호작용 안내 — 대상 머리 위에 "[F] 조사". 한 번에 하나 (다른 대상을 Show하면 교체).
     ///   GameUI.Prompt.Show(door.transform, "열기");
     ///   GameUI.Prompt.Hide(door.transform);
-    /// 코드 없이: 대상에 InteractPromptLink 컴포넌트. 실제 상호작용 입력은 게임 쪽에서 처리.
+    /// 코드 없이: 대상에 InteractPromptLink 컴포넌트 (On Interact 이벤트에 문 열기 등 연결).
+    /// 보이는 동안 F를 누르면 UI가 눌림 연출 + GameUI.Prompt.Pressed(대상) 이벤트.
     /// </summary>
     public interface IPromptApi
     {
@@ -50,6 +52,8 @@ namespace OZ.UI.Contracts
         /// <summary>target이 지금 표시 중인 대상일 때만 숨김. null이면 무조건 숨김</summary>
         void Hide(Transform target = null);
         Transform Current { get; }
+        /// <summary>안내가 보이는 동안 키(F)를 눌렀을 때 — (그 대상). UI는 눌림 연출만 하고 실제 동작은 여기서</summary>
+        event Action<Transform> Pressed;
     }
 
     internal sealed class NullAreaApi : IAreaApi
@@ -74,6 +78,7 @@ namespace OZ.UI.Contracts
     {
         public static readonly NullPromptApi Instance = new NullPromptApi();
         public Transform Current => null;
+        public event Action<Transform> Pressed { add { } remove { } }
         public void Show(Transform target, string action, string key = "F", Vector3? worldOffset = null) => NullLog.Once("Prompt.Show");
         public void Hide(Transform target = null) { }
     }

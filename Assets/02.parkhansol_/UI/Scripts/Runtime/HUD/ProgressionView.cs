@@ -71,6 +71,7 @@ namespace OZ.UI
             if (now - _rankLast > LevelMergeWindow) _rankFrom = rank > HunterRank.F ? rank - 1 : rank;
             _rankLast = now;
             GameUI.Notify.System("랭크 승급", $"{_rankFrom.ToDisplay()} → {rank.ToDisplay()}", "헌터 랭크", "rankup");
+            if (RankUpView.Current != null) RankUpView.Current.Play(_rankFrom, rank); // v0.7 팡파레 + 화려한 승급 연출
         }
 
         void Refresh(bool animate)

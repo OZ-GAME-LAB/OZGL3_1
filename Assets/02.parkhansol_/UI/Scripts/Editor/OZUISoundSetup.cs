@@ -33,7 +33,7 @@ namespace OZ.UI.EditorTools
             ("Open", "glass_006", 0.67f, 0.04f, 0.0f),
             ("Close", "drop_004", 0.71f, 0.04f, 0.0f),
             ("SystemAlarm", "glass_001", 1.08f, 0.25f, 0.0f),
-            ("RankUp", "glass_004", 0.89f, 0.04f, 0.0f),
+            ("RankUp", "OZ_Fanfare", 0.8f, 0.5f, 0.0f), // v0.7 팡파레 (자체 합성)
             ("QuestUpdate", "glass_005", 0.76f, 0.15f, 0.03f),
             ("QuestComplete", "confirmation_004", 0.38f, 0.04f, 0.0f),
             ("Toast", "drop_001", 0.74f, 0.1f, 0.03f),

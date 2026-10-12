@@ -29,6 +29,8 @@ namespace OZ.UI
         [Header("v0.7")]
         [SerializeField] internal AreaNameView areaName;
         [SerializeField] internal LowHealthView lowHealth;
+        [SerializeField] internal HealFlashView healFlash;
+        [SerializeField] internal BuffEdgeView buffEdges;
         [SerializeField] internal OffscreenIndicatorView indicators;
         [SerializeField] internal InteractPromptView prompt;
 
@@ -73,6 +75,8 @@ namespace OZ.UI
             if (buffs != null) buffs.Bind(UISources.Items);
             if (banner != null) banner.Bind(UISources.Gate);
             if (lowHealth != null) lowHealth.Bind(UISources.Health);
+            if (healFlash != null) healFlash.Bind(UISources.Health);
+            if (buffEdges != null) buffEdges.Bind(UISources.Items);
         }
 
         // 메뉴가 열리면 HUD를 살짝 흐리게

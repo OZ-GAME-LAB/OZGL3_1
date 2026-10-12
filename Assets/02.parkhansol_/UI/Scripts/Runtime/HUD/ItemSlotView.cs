@@ -18,8 +18,12 @@ namespace OZ.UI
         [SerializeField] internal TMP_Text keyLabel;
         [SerializeField] internal RectTransform punchTarget;
         [SerializeField] internal Image useFx;
+        [Tooltip("v0.7 아이템 쿨타임 (IItemCooldownSource 구현 시)")]
+        [SerializeField] internal CooldownRadial cooldown;
 
         internal int SlotIndex => slotIndex;
+        /// <summary>사용 불가 아이콘 색 (쿨타임 어둡게와 같은 톤)</summary>
+        internal static readonly Color UnusableColor = new Color(0.32f, 0.34f, 0.42f, 1f);
 
         internal void Refresh(IItemSource src)
         {
@@ -31,10 +35,30 @@ namespace OZ.UI
             {
                 icon.sprite = item != null ? item.icon : null;
                 icon.enabled = icon.sprite != null;
-                icon.color = count > 0 ? Color.white : new Color(1f, 1f, 1f, 0.35f);
+                var rest = count > 0 ? Color.white : UnusableColor; // v0.7 사용 불가(수량 0)도 쿨타임처럼 어둡게
+                if (cooldown != null && cooldown.dimTarget == icon) cooldown.SetRestColor(rest);
+                else icon.color = rest;
             }
-            if (countText != null) countText.text = src == null ? "" : count.ToString();
+            if (countText != null)
+            {
+                countText.text = src == null ? "" : count.ToString();
+                countText.color = count > 0 ? Color.white : new Color(1f, 0.45f, 0.45f);
+            }
             if (countShadow != null) countShadow.text = countText != null ? countText.text : "";
+
+            if (cooldown != null)
+            {
+                var cd = src as IItemCooldownSource;
+                float remain = cd?.GetItemCooldownRemaining(slotIndex) ?? 0f;
+                float dur = cd?.GetItemCooldownDuration(slotIndex) ?? 0f;
+                if (remain > 0f && dur > 0f) cooldown.Play(remain, dur);
+                else if (cooldown.IsRunning || cooldown.IsDimmed) cooldown.Clear();
+            }
+        }
+
+        internal void OnCooldownStarted(float duration)
+        {
+            if (cooldown != null) cooldown.Play(duration, duration);
         }
 
         internal void PlayUsed(ItemData item)

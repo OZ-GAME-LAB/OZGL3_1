@@ -20,7 +20,7 @@ namespace OZ.UI.Samples
     /// </summary>
     [AddComponentMenu("OZ/UI/Samples/Dummy Player")]
     public class DummyPlayer : MonoBehaviour,
-        IHealthSource, IProgressionSource, ISkillSource, ISkillTreeSource, IItemSource, IGateSource, IInventorySource
+        IHealthSource, IProgressionSource, ISkillSource, ISkillTreeSource, IItemSource, IGateSource, IInventorySource, IItemCooldownSource
     {
         [Header("Data (선택 — 비우면 이름 없는 슬롯으로 표시)")]
         [SerializeField] internal ClassData classData;
@@ -49,6 +49,9 @@ namespace OZ.UI.Samples
         readonly int[] _skillRanks = new int[3]; // skillTree 없을 때만 사용
         SkillTreeState _tree;
         readonly float[] _cooldownEnd = new float[3];
+        // v0.7 아이템 쿨타임 예시 (칸마다 따로)
+        [SerializeField, Min(0f)] internal float itemCooldown = 1.5f;
+        readonly float[] _itemCdEnd = new float[4];
         readonly float[] _cooldownDur = new float[3];
         ItemStack[] _inv;
         int _sealed;
@@ -68,6 +71,9 @@ namespace OZ.UI.Samples
         public event Action<int> ItemUseFailed;
         public event Action<ItemData, float> BuffApplied;
         public event Action<ItemData> BuffEnded;
+        public event Action<int, float> ItemCooldownStarted;
+        public float GetItemCooldownRemaining(int slotIndex) => slotIndex >= 0 && slotIndex < 4 ? Mathf.Max(0f, _itemCdEnd[slotIndex] - Time.time) : 0f;
+        public float GetItemCooldownDuration(int slotIndex) => itemCooldown;
         public event Action GateOpened;
         public event Action<int, int> GateSealed;
         public event Action BossAreaUnlocked;
@@ -120,6 +126,7 @@ namespace OZ.UI.Samples
                 else _skillRanks[i] = start != null ? (start.startsLearned ? 1 : 0) : (i == 0 ? 1 : 0);
                 _cooldownEnd[i] = 0f; _cooldownDur[i] = 0f;
             }
+            for (int i = 0; i < 4; i++) _itemCdEnd[i] = 0f;
 
             _inv = new ItemStack[Mathf.Max(4, inventoryCapacity)];
             int slot = 0;
@@ -337,6 +344,12 @@ namespace OZ.UI.Samples
             var item = GetItem(slotIndex);
             int at = item != null ? Array.FindIndex(_inv, s => s.Item == item && s.Count > 0) : -1;
             if (at < 0) { ItemUseFailed?.Invoke(slotIndex); return; }
+            if (GetItemCooldownRemaining(slotIndex) > 0f) { ItemUseFailed?.Invoke(slotIndex); return; } // v0.7 쿨타임 중
+            if (itemCooldown > 0f && slotIndex >= 0 && slotIndex < 4)
+            {
+                _itemCdEnd[slotIndex] = Time.time + itemCooldown;
+                ItemCooldownStarted?.Invoke(slotIndex, itemCooldown);
+            }
             ConsumeAt(at);
             ItemUsed?.Invoke(slotIndex);
             Notify(slotIndex);

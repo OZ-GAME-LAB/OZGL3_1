@@ -85,11 +85,11 @@ MonoBehaviour:
     note: Kenney Interface Sounds (CC0) / glass_001
   - sound: 21
     clips:
-    - {fileID: 8300000, guid: fde0617e8cebfe04da7ed22e5ea79453, type: 3}
-    volume: 0.89
+    - {fileID: 8300000, guid: f0ae0345d7316e443a799f9a9d2a1b5d, type: 3}
+    volume: 0.8
     pitchJitter: 0
-    cooldown: 0.04
-    note: Kenney Interface Sounds (CC0) / glass_004
+    cooldown: 0.5
+    note: "OZ \uC790\uCCB4 \uD569\uC131 / OZ_Fanfare"
   - sound: 22
     clips:
     - {fileID: 8300000, guid: 5dad3a60cb660e246bae3e4201400930, type: 3}

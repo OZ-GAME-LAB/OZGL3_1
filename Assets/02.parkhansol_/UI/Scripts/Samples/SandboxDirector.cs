@@ -53,6 +53,7 @@ namespace OZ.UI.Samples
         void Start()
         {
             if (player != null && player.GetComponent<UIPlayerTag>() == null) player.gameObject.AddComponent<UIPlayerTag>(); // v0.7 거리·안내용
+            GameUI.Prompt.Pressed += OnPromptPressed; // v0.7 F 누름 확인용
             if (map != null)
             {
                 GameUI.Map.SetMap(map);
@@ -132,6 +133,10 @@ namespace OZ.UI.Samples
             }
             if (kb.f8Key.wasPressedThisFrame) ToggleFarTargets();
         }
+
+        void OnPromptPressed(Transform target) => GameUI.Notify.Toast("수상한 흔적을 조사했다");
+
+        void OnDestroy() => GameUI.Prompt.Pressed -= OnPromptPressed;
 
         void ToggleFarTargets()
         {

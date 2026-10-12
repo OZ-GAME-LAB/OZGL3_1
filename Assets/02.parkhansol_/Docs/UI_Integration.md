@@ -137,11 +137,16 @@ GameUI.Sound.Play(UISound.Confirm);                   // UI 효과음 — 버튼
 |---|---|---|
 | **지역 이름** (화면 위쪽 가운데, 부드럽게 떴다 사라짐) | 레벨: 지역 입구에 빈 오브젝트 + `Area Name Trigger` (`Add Component > OZ > UI > Links`). BoxCollider 자동 추가·Is Trigger. 이름/부제 입력, `Map Room Id`를 넣으면 지도 방도 같이 바뀜 | `GameUI.Area.Show("서울 거리", "1스테이지");` |
 | **저체력 경고** (체력 30% 이하 → 화면 가장자리 붉은 비네트가 심장 박동에 맞춰 뜀 + 심장 소리) | 없음 (체력 연결만 되어 있으면 자동) | — |
+| **회복 번쩍임** (회복 순간 가장자리 초록 비네트가 짧게) | 없음 (자동) | — |
+| **버프 테두리** (포션 버프 동안 그 포션 색의 얇은 빛 테두리가 점멸, 여러 개면 같은 자리에서 주황→파랑→초록 번갈아 점멸, 새로 먹은 버프 색부터, 점멸 주기는 끝날 때까지 일정) | 없음 — `IItemSource`의 `BuffApplied`/`BuffEnded`만 보내면 됨. 색은 `ItemData.fxColor` | — |
+| **체력바 상태 색** (60% 초과 하늘색 → 60% 이하 노랑 → 30% 이하 빨강, 바뀌는 순간 번쩍) | 없음 (자동) | — |
+| **랭크 승급 연출** (팡파레 + 금빛 번쩍·빛줄기·충격파, 이전 랭크가 빠지고 새 랭크가 솟아오름, 반짝이 터짐, "RANK UP!") | 없음 — `PlayerUILink.SetRank`(또는 `IProgressionSource.RankUp`)로 랭크가 오르면 자동 | — |
 | **화면 밖 목표 화살표** (화면 가장자리 화살표 + 아이콘 + 거리) | MainScene 게이트는 자동 (`GateIndicatorBridge`). 다른 목표는 프리팹에 `Objective Marker Link` (종류: Objective / Gate / Boss) | `GameUI.Indicators.Track(t, IndicatorKind.Gate);` / `Untrack(t)` |
 | **상호작용 안내** "[F] 조사" (대상 머리 위) | 문·레버·NPC·세이브 지점에 `Interact Prompt Link` (행동 글자·키·반경). **표시만** 담당 — 키 입력과 실제 동작은 게임 쪽 | `GameUI.Prompt.Show(door, "열기");` / `Hide(door)` |
 
 - 플레이어 판별: `UIPlayerTag` (MainScene은 Play 시 플레이어에 자동으로 붙음). 다른 씬은 플레이어에 직접 추가하거나 트리거의 `Player Tag`를 맞추면 됨.
 - 같은 지역 이름은 4초 안에 다시 들어와도 안 뜸 (경계에서 왔다 갔다 할 때 깜빡임 방지). 처음 한 번만 띄우려면 `Only First Time`.
+- 안내가 보이는 동안 **F(패드 X)를 누르면** 키 칸이 눌리는 연출 + 확인음 → `InteractPromptLink`의 **On Interact** 이벤트 (인스펙터에서 문 열기 등 연결) / 코드는 `GameUI.Prompt.Pressed += target => ...`. 1회용이면 `Disable After Use`.
 - 상호작용이 끝나 더 못 쓰게 되면 `link.SetAvailable(false)`.
 - 확인: UI_Sandbox에서 **F6 지역 이름 · F7 상호작용 안내 · F8 화면 밖 화살표 · H 연타(저체력)**
 
