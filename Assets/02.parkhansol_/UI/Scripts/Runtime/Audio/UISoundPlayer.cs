@@ -26,8 +26,14 @@ namespace OZ.UI
         public UISound LastPlayed { get; private set; }
         public int PlayCount { get; private set; }
 
-        void Awake()
+        void Awake() => EnsureSources();
+
+        // 플레이 중 스크립트 재컴파일(도메인 리로드) 뒤에는 리스트가 비어 있으므로 다시 채운다
+        void EnsureSources()
         {
+            if (_sources.Count > 0) return;
+            foreach (var old in GetComponents<AudioSource>()) _sources.Add(old);
+            if (_sources.Count > 0) return;
             for (int i = 0; i < voices; i++)
             {
                 var src = gameObject.AddComponent<AudioSource>();
@@ -59,6 +65,8 @@ namespace OZ.UI
             PlayCount++;
             if (vol <= 0.001f) return;
 
+            EnsureSources();
+            if (_next >= _sources.Count) _next = 0;
             var src = _sources[_next];
             _next = (_next + 1) % _sources.Count;
             src.pitch = 1f + (e.pitchJitter > 0f ? Random.Range(-e.pitchJitter, e.pitchJitter) : 0f);

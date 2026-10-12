@@ -79,6 +79,7 @@ namespace OZ.UI.EditorTools
                 await Suite("게임 흐름: 로딩·페이드·스테이지 띠 (v0.5)", Flow);
                 await Suite("풀에서 꺼내는 적 체력바 (v0.5)", PooledEnemyBar);
                 await Suite("UI Link 컴포넌트 (v0.5)", Links);
+                await Suite("지역 이름·저체력·화면 밖 화살표·상호작용 (v0.7)", V07);
             }
             catch (Exception e)
             {
@@ -170,6 +171,109 @@ namespace OZ.UI.EditorTools
             UIManager.Instance.CloseAll();
             Time.timeScale = 1f;
             await Wait(0.6f);
+        }
+
+        // ───────────────────────────── v0.7 지역 이름·저체력·화면 밖 화살표·상호작용 ─────────────────────────────
+        static async Task V07()
+        {
+            await ToCombat();
+            P.ChangeHP(9999); await Wait(0.3f);
+
+            // 지역 이름
+            var area = Hud.areaName;
+            Check("지역 이름 뷰 연결 (GameUI.Area)", area != null && ReferenceEquals(GameUI.Area, area));
+            var art = (RectTransform)area.transform;
+            Check("위쪽 가운데 배치", Mathf.Approximately(art.anchorMin.x, 0.5f) && Mathf.Approximately(art.anchorMin.y, 1f));
+            GameUI.Area.Show("테스트 지역", "부제", 1.0f); await Wait(1.0f);
+            Check("Show → 부드럽게 나타남", area.IsShowing && area.group.alpha > 0.9f, $"alpha {area.group.alpha:0.00}");
+            Eq("이름 표시", area.nameText.text, "테스트 지역");
+            Check("부제 표시", area.subtitleText.gameObject.activeSelf && area.subtitleText.text == "부제");
+            await Wait(2.2f);
+            Check("유지 후 사라짐", area.group.alpha < 0.05f, $"alpha {area.group.alpha:0.00}");
+            GameUI.Area.Show("테스트 지역"); await Wait(0.4f);
+            Check("같은 이름 바로 다시 → 무시 (경계 왕복 깜빡임 방지)", area.group.alpha < 0.05f);
+            var trig = new GameObject("SelfTest_AreaTrigger").AddComponent<AreaNameTrigger>();
+            try
+            {
+                trig.areaName = "트리거 지역";
+                trig.Enter(); await Wait(0.9f);
+                Eq("AreaNameTrigger.Enter → 이름 표시", area.nameText.text, "트리거 지역");
+                area.Hide();
+            }
+            finally { UnityEngine.Object.Destroy(trig.gameObject); }
+
+            // 저체력 경고
+            var low = Hud.lowHealth;
+            Check("저체력 뷰 연결", low != null && low.vignette != null);
+            Check("체력 가득 → 비네트 없음", !low.IsActive && low.CurrentAlpha < 0.01f);
+            P.ChangeHP(-80); await Wait(1.2f);
+            Check("체력 20% → 붉은 비네트 ON", low.IsActive && low.vignette.enabled && low.CurrentAlpha > 0.05f, $"alpha {low.CurrentAlpha:0.00}");
+            P.ChangeHP(-15); await Wait(0.6f);
+            Check("더 낮을수록 진해짐", low.Intensity > 0.6f, $"intensity {low.Intensity:0.00}");
+            P.ChangeHP(9999); await Wait(1.5f);
+            Check("회복 → 부드럽게 꺼짐", !low.IsActive && low.CurrentAlpha < 0.02f, $"alpha {low.CurrentAlpha:0.00}");
+
+            // 화면 밖 화살표
+            var ind = Hud.indicators;
+            var cam = Camera.main;
+            var far = new GameObject("SelfTest_FarGate").transform;
+            var near = new GameObject("SelfTest_NearBoss").transform;
+            far.position = P.transform.position + new Vector3(-80f, 0f, 0f);
+            near.position = cam.transform.position + cam.transform.forward * 10f + Vector3.down * 1f;
+            try
+            {
+                GameUI.Indicators.Track(far, IndicatorKind.Gate);
+                GameUI.Indicators.Track(near, IndicatorKind.Boss, "보스");
+                await Wait(0.6f);
+                Check("추적 2개", ind.Count == 2, $"Count {ind.Count}");
+                Check("화면 밖 대상만 화살표", ind.VisibleCount == 1, $"Visible {ind.VisibleCount}");
+                near.position = P.transform.position + new Vector3(90f, 0f, 0f); await Wait(0.6f);
+                Check("화면 밖으로 나가면 화살표 생김", ind.VisibleCount == 2, $"Visible {ind.VisibleCount}");
+                UnityEngine.Object.Destroy(far.gameObject); await Wait(0.3f);
+                Check("대상 파괴 → 자동 해제", ind.Count == 1, $"Count {ind.Count}");
+                GameUI.Indicators.Untrack(near);
+                Check("Untrack → 0개", ind.Count == 0);
+            }
+            finally
+            {
+                GameUI.Indicators.Clear();
+                if (far != null) UnityEngine.Object.Destroy(far.gameObject);
+                if (near != null) UnityEngine.Object.Destroy(near.gameObject);
+            }
+
+            // 상호작용 안내
+            var pr = Hud.prompt;
+            var target = new GameObject("SelfTest_PromptTarget").transform;
+            target.position = cam.transform.position + cam.transform.forward * 10f + Vector3.down * 2f;
+            var link = new GameObject("SelfTest_PromptLink").AddComponent<InteractPromptLink>();
+            link.transform.position = new Vector3(9999f, 9999f, 0f); // 처음엔 멀리
+            try
+            {
+                GameUI.Prompt.Show(target, "조사"); await Wait(0.5f);
+                Check("Show → 표시", pr.IsVisible);
+                Eq("키 글자", pr.keyText.text, "F");
+                Eq("행동 글자", pr.actionText.text, "조사");
+                GameUI.Screens.Open(ScreenId.Inventory); await Wait(0.5f);
+                Check("창이 열리면 숨김", !pr.IsVisible);
+                UIManager.Instance.CloseAll(); await Wait(0.5f);
+                Check("창이 닫히면 다시 표시", pr.IsVisible);
+                GameUI.Prompt.Hide(link.transform); await Wait(0.3f);
+                Check("다른 대상 Hide는 무시", pr.IsVisible);
+                GameUI.Prompt.Hide(target); await Wait(0.5f);
+                Check("Hide → 사라짐", !pr.IsVisible);
+
+                Check("플레이어 표시(UIPlayerTag) 있음", UIPlayerTag.Current != null);
+                link.transform.position = P.transform.position; await Wait(0.5f);
+                Check("InteractPromptLink: 플레이어가 가까우면 표시", GameUI.Prompt.Current == link.transform);
+                link.transform.position = P.transform.position + new Vector3(50f, 0f, 0f); await Wait(0.5f);
+                Check("InteractPromptLink: 멀어지면 숨김", GameUI.Prompt.Current == null);
+            }
+            finally
+            {
+                GameUI.Prompt.Hide();
+                UnityEngine.Object.Destroy(target.gameObject);
+                UnityEngine.Object.Destroy(link.gameObject);
+            }
         }
 
         // ───────────────────────────── v0.5 게임 흐름 ─────────────────────────────

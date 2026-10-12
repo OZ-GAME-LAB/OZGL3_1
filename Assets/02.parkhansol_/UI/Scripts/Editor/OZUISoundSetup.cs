@@ -17,6 +17,8 @@ namespace OZ.UI.EditorTools
         public const string Folder = OZPaths.UI + "/Audio";
         public const string ClipFolder = Folder + "/KenneyInterface";
         public const string SetPath = Folder + "/UISoundSet_Default.asset";
+        /// <summary>v0.7 자체 합성 소리 (심장 박동 등) — 파일명이 OZ_로 시작</summary>
+        public const string GeneratedFolder = Folder + "/Generated";
 
         // (UISound, 파일, 볼륨, 연타 방지 초, 음높이 흔들림)
         static readonly (string sound, string file, float vol, float cooldown, float jitter)[] Table =
@@ -49,6 +51,10 @@ namespace OZ.UI.EditorTools
             ("ItemUse", "glass_002", 0.71f, 0.04f, 0.0f),
             ("SkillReady", "glass_003", 0.26f, 0.1f, 0.0f),
             ("DialogueNext", "click_005", 0.32f, 0.04f, 0.04f),
+            // v0.7
+            ("AreaEnter", "maximize_007", 0.45f, 0.5f, 0.0f),
+            ("PromptShow", "tick_004", 0.35f, 0.15f, 0.03f),
+            ("Heartbeat", "OZ_Heartbeat", 0.9f, 0.2f, 0.02f), // 자체 합성 (UI/Audio/Generated)
         };
 
         [MenuItem("OZ/UI/Setup UI Sounds", priority = 8)]
@@ -70,14 +76,16 @@ namespace OZ.UI.EditorTools
                 var e = list.Find(x => x != null && x.sound == id);
                 bool auto = e == null || string.IsNullOrEmpty(e.note) || e.note.StartsWith("Kenney");
                 if (e != null && e.clips != null && e.clips.Length > 0 && e.clips[0] != null && !auto) continue; // 손으로 바꾼 항목(메모가 Kenney… 아님)은 유지
-                var clip = AssetDatabase.LoadAssetAtPath<AudioClip>($"{ClipFolder}/{t.file}.wav");
+                bool generated = t.file.StartsWith("OZ_");
+                var clip = AssetDatabase.LoadAssetAtPath<AudioClip>($"{(generated ? GeneratedFolder : ClipFolder)}/{t.file}.wav");
                 if (clip == null) { Debug.LogWarning("[OZ UI] 효과음 없음: " + t.file); continue; }
                 if (e == null) { e = new UISoundSet.Entry { sound = id }; list.Add(e); }
                 e.clips = new[] { clip };
                 e.volume = t.vol;
                 e.cooldown = t.cooldown;
                 e.pitchJitter = t.jitter;
-                e.note = (t.file.StartsWith("ui_") ? "Kenney UI Audio (CC0) / " : "Kenney Interface Sounds (CC0) / ") + t.file;
+                e.note = generated ? "OZ 자체 합성 / " + t.file
+                    : (t.file.StartsWith("ui_") ? "Kenney UI Audio (CC0) / " : "Kenney Interface Sounds (CC0) / ") + t.file;
                 added++;
             }
             list.Sort((a, b) => ((int)a.sound).CompareTo((int)b.sound));

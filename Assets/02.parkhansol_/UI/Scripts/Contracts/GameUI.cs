@@ -15,6 +15,9 @@ namespace OZ.UI.Contracts
     ///   GameUI.Dialogue.Play(dialogueData, next);  // NPC/연출: 대화
     ///   GameUI.Damage.Show(hitPos, 37, DamageKind.Critical); // 전투: 피해 숫자 + 타격 이펙트
     ///   GameUI.Flow.Transition(() => LoadStage(2));       // 코어: 페이드 + 스테이지 교체
+    ///   GameUI.Area.Show("서울 거리");                     // 레벨: 지역 이름 (v0.7, AreaNameTrigger)
+    ///   GameUI.Indicators.Track(gate, IndicatorKind.Gate); // 화면 밖 목표 화살표 (v0.7)
+    ///   GameUI.Prompt.Show(door, "열기");                  // "[F] 열기" (v0.7, InteractPromptLink)
     ///
     /// UI가 씬에 없으면 Null 구현이 대신 받아서 아무 일도 하지 않는다 (에러 없음).
     /// </summary>
@@ -30,6 +33,9 @@ namespace OZ.UI.Contracts
         static IFlowApi _flow;
         static IQuestApi _quest;
         static IUISoundApi _sound;
+        static IAreaApi _area;
+        static IIndicatorApi _indicators;
+        static IPromptApi _prompt;
 
         public static IHudApi HUD => _hud ?? NullHudApi.Instance;
         public static IBossApi Boss => _boss ?? NullBossApi.Instance;
@@ -44,6 +50,12 @@ namespace OZ.UI.Contracts
         public static IQuestApi Quest => _quest ?? NullQuestApi.Instance;
         /// <summary>UI 효과음 (SFX 볼륨 적용). UI 쪽 소리는 자동 — 게임 쪽 특별한 순간에만 호출</summary>
         public static IUISoundApi Sound => _sound ?? NullUISoundApi.Instance;
+        /// <summary>[v0.7] 화면 위쪽 지역 이름 (부드럽게 떴다 사라짐). 배치는 AreaNameTrigger</summary>
+        public static IAreaApi Area => _area ?? NullAreaApi.Instance;
+        /// <summary>[v0.7] 화면 밖 목표 화살표 (게이트·보스 등). 배치는 ObjectiveMarkerLink</summary>
+        public static IIndicatorApi Indicators => _indicators ?? NullIndicatorApi.Instance;
+        /// <summary>[v0.7] 상호작용 안내 "[F] 조사". 배치는 InteractPromptLink</summary>
+        public static IPromptApi Prompt => _prompt ?? NullPromptApi.Instance;
 
         /// <summary>UI가 씬에 올라와 있는지</summary>
         public static bool IsReady => _screens != null;
@@ -63,6 +75,9 @@ namespace OZ.UI.Contracts
         internal static void Register(IFlowApi api) => _flow = api;
         internal static void Register(IQuestApi api) => _quest = api;
         internal static void Register(IUISoundApi api) => _sound = api;
+        internal static void Register(IAreaApi api) => _area = api;
+        internal static void Register(IIndicatorApi api) => _indicators = api;
+        internal static void Register(IPromptApi api) => _prompt = api;
 
         internal static void Unregister(object api)
         {
@@ -76,12 +91,16 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(_flow, api)) _flow = null;
             if (ReferenceEquals(_quest, api)) _quest = null;
             if (ReferenceEquals(_sound, api)) _sound = null;
+            if (ReferenceEquals(_area, api)) _area = null;
+            if (ReferenceEquals(_indicators, api)) _indicators = null;
+            if (ReferenceEquals(_prompt, api)) _prompt = null;
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
             _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null; _flow = null; _quest = null; _sound = null;
+            _area = null; _indicators = null; _prompt = null;
         }
     }
 }

@@ -209,3 +209,24 @@ MonoBehaviour:
     pitchJitter: 0.04
     cooldown: 0.04
     note: Kenney Interface Sounds (CC0) / click_005
+  - sound: 47
+    clips:
+    - {fileID: 8300000, guid: 5e3dfebc75930054abed12ba7a8e2904, type: 3}
+    volume: 0.45
+    pitchJitter: 0
+    cooldown: 0.5
+    note: Kenney Interface Sounds (CC0) / maximize_007
+  - sound: 48
+    clips:
+    - {fileID: 8300000, guid: cea8f74c30c80a04b90ca9d347ad61c7, type: 3}
+    volume: 0.9
+    pitchJitter: 0.02
+    cooldown: 0.2
+    note: "OZ \uC790\uCCB4 \uD569\uC131 / OZ_Heartbeat"
+  - sound: 49
+    clips:
+    - {fileID: 8300000, guid: 2204a55463be6384bbeac105c5bfc5ef, type: 3}
+    volume: 0.35
+    pitchJitter: 0.03
+    cooldown: 0.15
+    note: Kenney Interface Sounds (CC0) / tick_004

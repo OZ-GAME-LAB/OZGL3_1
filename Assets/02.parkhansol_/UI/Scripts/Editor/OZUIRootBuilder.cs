@@ -236,6 +236,11 @@ namespace OZ.UI.EditorTools
             hud.group = UIB.Group(hudRt.gameObject);
             hud.group.blocksRaycasts = false;
 
+            // ── v0.7: 저체력 비네트 · 화면 밖 화살표 · 상호작용 안내 (HUD 패널보다 뒤에 그려지게 먼저 생성) ──
+            hud.lowHealth = BuildLowHealth(hudRt);
+            hud.indicators = BuildIndicators(hudRt);
+            hud.prompt = BuildPrompt(hudRt);
+
             // ── 좌상단: 초상화 칸 + HP 바(Sci-Fi Hud_Lifebar B) + 레벨/랭크/경험치 ──
             //  [초상화 34×34] [HP 바 106×26] 62/100
             //  [E급]          Lv.3
@@ -329,6 +334,9 @@ namespace OZ.UI.EditorTools
             bannerView.subtitleText = bSub;
             hud.banner = bannerView;
 
+            // ── v0.7: 위쪽 가운데 지역 이름 ──
+            hud.areaName = BuildAreaName(hudRt);
+
             // ── 우상단: 미니맵 ──
             var mmFrame = UIB.Panel("Minimap", hudRt, "Panels/Blue/Panel");
             mmFrame.raycastTarget = false;
@@ -382,6 +390,126 @@ namespace OZ.UI.EditorTools
         }
 
         static SystemAlarmView _systemAlarm;
+
+        // ───────────── v0.7 ─────────────
+
+        // 화면 위쪽 가운데:      서울 거리
+        //               ─────────┼─────────   (가운데서 양옆으로 펼쳐짐)
+        //                      1스테이지
+        static AreaNameView BuildAreaName(Transform hudRt)
+        {
+            var root = UIB.Rect("AreaName", hudRt).Place(0.5f, 1, 0, -12, 240, 44);
+            var view = root.gameObject.AddComponent<AreaNameView>();
+            view.group = UIB.Group(root.gameObject);
+            view.group.alpha = 0f;
+            view.group.blocksRaycasts = false;
+            var content = UIB.Rect("Content", root).Stretch();
+            view.content = content;
+
+            var shade = UIB.Solid("Shade", content, new Color(0.02f, 0.03f, 0.07f, 0.35f));
+            shade.rectTransform.Place(0.5f, 1, 0, -1, 180, 20);
+            var name = UIB.Title15("Name", content, "서울 거리", TextAlignmentOptions.Center, Color.white);
+            name.rectTransform.Place(0.5f, 1, 0, -2, 240, 18);
+            name.textWrappingMode = TextWrappingModes.NoWrap;
+            view.nameText = name;
+
+            var lineColor = new Color(UIB.Accent.r, UIB.Accent.g, UIB.Accent.b, 0.75f);
+            var left = UIB.Solid("LineLeft", content, lineColor).rectTransform;
+            left.anchorMin = left.anchorMax = new Vector2(0.5f, 1f);
+            left.pivot = new Vector2(1f, 0.5f);
+            left.anchoredPosition = new Vector2(0, -22);
+            left.sizeDelta = new Vector2(80, 1);
+            var right = UIB.Solid("LineRight", content, lineColor).rectTransform;
+            right.anchorMin = right.anchorMax = new Vector2(0.5f, 1f);
+            right.pivot = new Vector2(0f, 0.5f);
+            right.anchoredPosition = new Vector2(0, -22);
+            right.sizeDelta = new Vector2(80, 1);
+            view.lineLeft = left;
+            view.lineRight = right;
+
+            var sub = UIB.Small10("Subtitle", content, "", TextAlignmentOptions.Center, UIB.Dim);
+            sub.rectTransform.Place(0.5f, 1, 0, -25, 240, 12);
+            sub.textWrappingMode = TextWrappingModes.NoWrap;
+            sub.gameObject.SetActive(false);
+            view.subtitleText = sub;
+            return view;
+        }
+
+        static LowHealthView BuildLowHealth(Transform hudRt)
+        {
+            var art = UIB.HudArt("LowHealthVignette");
+            var vig = UIB.Img("LowHealthVignette", hudRt, art ?? UIB.White, new Color(0.85f, 0.04f, 0.08f, 0f));
+            vig.rectTransform.Stretch();
+            vig.enabled = false;
+            var view = vig.gameObject.AddComponent<LowHealthView>();
+            view.vignette = vig;
+            return view;
+        }
+
+        // 화면 밖 화살표: [▶] 화살표가 화면 가장자리, 그 안쪽에 아이콘 칸, 아래에 거리
+        static OffscreenIndicatorView BuildIndicators(Transform hudRt)
+        {
+            var area = UIB.Rect("Indicators", hudRt).Stretch();
+            var view = area.gameObject.AddComponent<OffscreenIndicatorView>();
+            view.area = area;
+            view.gateIcon = UIB.Art("Map_Gate");
+            view.bossIcon = UIB.Art("Map_Boss");
+            view.objectiveIcon = UIB.Art("Map_Marker");
+
+            var item = UIB.Rect("IndicatorTemplate", area).Place(0.5f, 0.5f, 0, 0, 16, 16);
+            var iv = item.gameObject.AddComponent<IndicatorItemView>();
+            iv.group = UIB.Group(item.gameObject);
+            iv.group.blocksRaycasts = false;
+            var arrow = UIB.Img("Arrow", item, UIB.HudArt("IndicatorArrow") ?? UIB.White);
+            arrow.rectTransform.Place(0.5f, 0.5f, 0, 0, 12, 12);
+            iv.arrow = arrow.rectTransform;
+            iv.arrowImage = arrow;
+            var frame = UIB.Solid("IconFrame", item, new Color(0.4f, 0.86f, 1f, 0.9f));
+            frame.rectTransform.Place(0.5f, 0.5f, -14, 0, 16, 16);
+            iv.iconBack = frame;
+            var inner = UIB.Solid("Inner", frame.transform, new Color(0.03f, 0.05f, 0.1f, 0.92f));
+            inner.rectTransform.Place(0.5f, 0.5f, 0, 0, 14, 14);
+            var icon = UIB.Img("Icon", frame.transform, null);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 10, 10);
+            icon.preserveAspect = true;
+            iv.icon = icon;
+            var label = UIB.Small10("Distance", item, "", TextAlignmentOptions.Center, new Color(0.4f, 0.86f, 1f));
+            label.rectTransform.Place(0.5f, 0.5f, -14, -12, 60, 12);
+            label.textWrappingMode = TextWrappingModes.NoWrap;
+            iv.label = label;
+            view.template = iv;
+            item.gameObject.SetActive(false);
+            return view;
+        }
+
+        // 상호작용 안내:  [F] 조사   (대상 머리 위, 월드 위치를 따라감)
+        static InteractPromptView BuildPrompt(Transform hudRt)
+        {
+            var area = UIB.Rect("PromptArea", hudRt).Stretch();
+            var root = UIB.Rect("Prompt", area).Place(0.5f, 0.5f, 0, 0, 1, 1);
+            var view = root.gameObject.AddComponent<InteractPromptView>();
+            view.group = UIB.Group(root.gameObject);
+            view.group.alpha = 0f;
+            view.group.blocksRaycasts = false;
+            var body = UIB.Rect("Body", root).Place(0.5f, 0, 0, 0, 120, 19);
+            view.body = body;
+            var back = UIB.Solid("Back", body, new Color(0.02f, 0.03f, 0.07f, 0.6f));
+            back.rectTransform.Place(0.5f, 0.5f, 0, 0, 60, 19);
+            view.back = back.rectTransform;
+            var cap = UIB.Panel("KeyCap", body, "Panels/Blue/Panel");
+            cap.raycastTarget = false;
+            cap.rectTransform.Place(0.5f, 0.5f, -20, 0, 15, 15);
+            view.keyCap = cap.rectTransform;
+            var key = UIB.Body12("Key", cap.transform, "F", TextAlignmentOptions.Center, UIB.Accent);
+            key.rectTransform.Stretch(0, 0, 0, 1);
+            key.textWrappingMode = TextWrappingModes.NoWrap;
+            view.keyText = key;
+            var action = UIB.Body12("Action", body, "조사", TextAlignmentOptions.Center, Color.white);
+            action.rectTransform.Place(0.5f, 0.5f, 10, 0, 40, 14);
+            action.textWrappingMode = TextWrappingModes.NoWrap;
+            view.actionText = action;
+            return view;
+        }
 
         // 모든 버튼·토글·슬라이더에 소리. 직접 소리를 내는 칸(스킬 노드·인벤토리 칸)은 클릭 소리 없음
         static void AssignSelectableSounds(GameObject root)

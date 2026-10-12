@@ -1,6 +1,6 @@
-# UI 연결 가이드 (팀원용) — v0.6
+# UI 연결 가이드 (팀원용) — v0.7
 
-작성: 박한솔 (UI/UX) · 2026-10-08
+작성: 박한솔 (UI/UX) · 2026-10-12
 대상: 팀 설계 `GameManager → StageManager / SpawnManager / PoolManager`, `StageManager → GateManager → Gate → GateSpawner → SpawnManager`
 
 UI는 `OZ.UI.Contracts` 어셈블리 하나만 참조하면 됩니다. asmdef를 쓰면 references에 `OZ.UI.Contracts` 추가, 안 쓰면 그냥 `using OZ.UI.Contracts;`.
@@ -109,6 +109,17 @@ playerUI.SetExp(exp, expToNext);
 playerUI.SetLevel(level);           // 오르면 레벨업 연출
 if (UIState.IsGameplayInputBlocked) return;   // 입력 처리 맨 앞 (창·로딩·페이드 중엔 true)
 ```
+**체력은 이미 연결됨 (v0.7)** — `PlayerHealthBridge`가 Play 시 자동으로 붙어 HUD 체력 · 피해 숫자 · 피격 모션 · 사망 화면까지 처리. PlayerController 수정 없음.
+```csharp
+PlayerHealthBridge.Instance.TakeDamage(10f);          // 몬스터 공격·함정 등에서 호출 (무적 0.8초 자동)
+PlayerHealthBridge.Instance.TakeDamage(10f, hitPos);  // 맞은 위치 지정
+PlayerHealthBridge.Instance.Heal(20f);
+PlayerHealthBridge.Instance.Died += () => { ... };    // 사망 시 게임 쪽 처리 (사망 화면은 자동)
+```
+- 지금은 **임시로 몬스터(`Monster`)에 닿으면 10 피해**. 몬스터 공격을 직접 만들면 `UI Links`에 `Player Health Bridge`를 Add Component 해서 `Monster Contact Damage` 끄기.
+- 재도전 → `SceneGameLink.RestartStage`가 체력 가득으로 복구.
+- 코드: `Assets/02.parkhansol_/UI/Scripts/GameBridge/PlayerHealthBridge.cs`
+
 스킬(Q/E/R) · 아이템 · 인벤토리 · 스킬 트리는 `ISkillSource` · `IItemSource` · `IInventorySource` · `ISkillTreeSource` 구현 → `GameUI.Bind(this)`
 (예시: `Assets/02.parkhansol_/UI/Scripts/Samples/DummyPlayer.cs`)
 
@@ -119,6 +130,20 @@ GameUI.Quest.SetProgress("kill", 7);                  // 목표 도달 시 자�
 GameUI.Notify.System("획득", "게이트 키");             // 지도 아래 SYSTEM 알림 (레벨업·랭크 승급은 자동)
 GameUI.Sound.Play(UISound.Confirm);                   // UI 효과음 — 버튼·창·알림 소리는 UI가 자동으로 냄
 ```
+
+## 1-2. v0.7 추가 — 지역 이름 · 저체력 경고 · 화면 밖 화살표 · 상호작용 안내
+
+| 기능 | 팀원이 할 일 | 코드로 부를 때 |
+|---|---|---|
+| **지역 이름** (화면 위쪽 가운데, 부드럽게 떴다 사라짐) | 레벨: 지역 입구에 빈 오브젝트 + `Area Name Trigger` (`Add Component > OZ > UI > Links`). BoxCollider 자동 추가·Is Trigger. 이름/부제 입력, `Map Room Id`를 넣으면 지도 방도 같이 바뀜 | `GameUI.Area.Show("서울 거리", "1스테이지");` |
+| **저체력 경고** (체력 30% 이하 → 화면 가장자리 붉은 비네트가 심장 박동에 맞춰 뜀 + 심장 소리) | 없음 (체력 연결만 되어 있으면 자동) | — |
+| **화면 밖 목표 화살표** (화면 가장자리 화살표 + 아이콘 + 거리) | MainScene 게이트는 자동 (`GateIndicatorBridge`). 다른 목표는 프리팹에 `Objective Marker Link` (종류: Objective / Gate / Boss) | `GameUI.Indicators.Track(t, IndicatorKind.Gate);` / `Untrack(t)` |
+| **상호작용 안내** "[F] 조사" (대상 머리 위) | 문·레버·NPC·세이브 지점에 `Interact Prompt Link` (행동 글자·키·반경). **표시만** 담당 — 키 입력과 실제 동작은 게임 쪽 | `GameUI.Prompt.Show(door, "열기");` / `Hide(door)` |
+
+- 플레이어 판별: `UIPlayerTag` (MainScene은 Play 시 플레이어에 자동으로 붙음). 다른 씬은 플레이어에 직접 추가하거나 트리거의 `Player Tag`를 맞추면 됨.
+- 같은 지역 이름은 4초 안에 다시 들어와도 안 뜸 (경계에서 왔다 갔다 할 때 깜빡임 방지). 처음 한 번만 띄우려면 `Only First Time`.
+- 상호작용이 끝나 더 못 쓰게 되면 `link.SetAvailable(false)`.
+- 확인: UI_Sandbox에서 **F6 지역 이름 · F7 상호작용 안내 · F8 화면 밖 화살표 · H 연타(저체력)**
 
 ## 2. 한눈에 보기
 
@@ -136,6 +161,10 @@ GameUI.Sound.Play(UISound.Confirm);                   // UI 효과음 — 버튼
 | Gate.Close (봉쇄) | 웨이브 정리 | `GateUILink.GateSealed()` |
 | SpawnManager.Spawn | 적 생성 | `EnemyUILink.Init(maxHP)` |
 | (적 피격) | 맞을 때 | `EnemyUILink.Hit(피해, 치명타)` |
+| (플레이어 피격) | 맞을 때 | `PlayerHealthBridge.Instance.TakeDamage(피해)` |
+| 레벨 (지역 입구) | 들어올 때 | `AreaNameTrigger` 또는 `GameUI.Area.Show(이름)` |
+| 게이트·보스 프리팹 | 켜져 있는 동안 | `ObjectiveMarkerLink` 또는 `GameUI.Indicators.Track` |
+| 문·NPC·세이브 지점 | 가까이 왔을 때 | `InteractPromptLink` 또는 `GameUI.Prompt.Show` |
 | PoolManager.Get / Release | 꺼냄 / 반납 | 없음 (자동) |
 
 ## 3. 동작하는 예시
