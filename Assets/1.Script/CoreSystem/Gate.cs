@@ -53,8 +53,8 @@ public class Gate : StageGate
         }
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        StopSpawning();
+        base.OnDisable();
     }
 }
