@@ -1,20 +1,22 @@
+using System;
+using System.Collections;
 using OZ.UI.Contracts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// [박한솔 UI] 플레이어 체력 ↔ HUD 연결. 팀원 코드(PlayerController 등) 수정 없이 동작한다.
+/// [박한솔 UI · v0.8] 플레이어 체력 → 화면 연출만. 체력 값·피격 판정은 갖지 않는다.
 ///
-///   체력 값의 기준은 PlayerUILink (HUD에 보이는 값 = 실제 체력).
-///   PlayerHealthBridge.Instance.TakeDamage(10f);           // 피격 → HUD 감소 + 빨간 숫자 + PlayerController.OnHit()
-///   PlayerHealthBridge.Instance.TakeDamage(10f, hitPos);   // 맞은 위치 지정
-///   PlayerHealthBridge.Instance.Heal(20f);                 // 회복 → 초록 숫자
-///   체력 0 → 사망 화면(GameUI.Screens.ShowDeath) → '재도전'은 SceneGameLink.RestartStage가 체력 가득으로 복구
+///   체력의 기준은 PlayerHealth 하나 (IHealthSource 구현 + GameUI.Bind는 플레이어 담당).
+///   이 컴포넌트는 플레이어의 IHealthSource.HealthChanged를 듣고 아래만 처리한다:
+///     · 체력 감소 → 플레이어 머리 위 빨간 피해 숫자 (HealthChange.IsDamage / Delta)
+///     · 체력 증가 → 초록 회복 숫자 (부활·재도전 복구는 숫자 없음)
+///     · 체력 0   → deathScreenDelay(기본 1초, 사망 모션이 보이게) 뒤 사망 화면. 그 사이 되살아나면 취소
+///   피격·회복·무적·사망 처리(PlayerController.Die)·재도전 복구(ResetHealth)는 전부 PlayerHealth 쪽.
 ///
-/// 씬에 PlayerUILink와 PlayerController가 있으면 Play 시 자동으로 붙는다 (씬 파일 수정 불필요).
-/// 수치를 바꾸고 싶으면 'UI Links' 오브젝트에 직접 Add Component 해서 인스펙터로 조정.
-///
-/// [임시] 몬스터 접촉 피해: 전투 담당이 몬스터 공격에서 TakeDamage를 직접 부르게 되면 monsterContactDamage 끄기.
+/// 씬에 PlayerController가 있으면 Play 시 자동으로 생긴다 (씬·프리팹 수정 없음).
+///   플레이어에 IHealthSource 컴포넌트가 아직 없으면(PlayerHealth 병합 전) 아무것도 하지 않는다.
+/// 수치를 바꾸려면 Play 중 'PlayerHealthBridge (auto, UI)' 오브젝트에서, 또는 씬에 직접 이 컴포넌트를 놓고 수정.
 /// </summary>
 [DisallowMultipleComponent]
 [AddComponentMenu("OZ/UI/Links/Player Health Bridge")]
@@ -22,30 +24,27 @@ public class PlayerHealthBridge : MonoBehaviour
 {
     [Header("연결 (비우면 씬에서 자동으로 찾음)")]
     [SerializeField] PlayerController player;
-    [SerializeField] PlayerUILink playerUI;
 
-    [Header("피격")]
-    [Tooltip("한 번 맞은 뒤 무적 시간(초)")]
-    [SerializeField, Min(0f)] float invincibleTime = 0.8f;
-    [Tooltip("플레이어 머리 위 빨간 피해 숫자")]
-    [SerializeField] bool showDamageNumber = true;
+    [Header("숫자")]
+    [Tooltip("플레이어 머리 위 빨간 피해 숫자 / 초록 회복 숫자")]
+    [SerializeField] bool showNumbers = true;
     [SerializeField] Vector3 numberOffset = new Vector3(0f, 2f, 0f);
 
-    [Header("[임시] 몬스터 접촉 피해")]
-    [SerializeField] bool monsterContactDamage = true;
-    [SerializeField, Min(0f)] float contactDamage = 10f;
+    [Header("사망")]
+    [Tooltip("체력 0 → 사망 화면까지 기다리는 시간(초). 사망 모션이 보이게")]
+    [SerializeField, Min(0f)] float deathScreenDelay = 1.0f;
 
-    float _invincibleUntil;
+    IHealthSource _health;
     bool _dead;
-    PlayerHitRelay _relay;
+    Coroutine _deathRoutine;
 
     public static PlayerHealthBridge Instance { get; private set; }
+    /// <summary>연결된 플레이어 체력 (PlayerHealth). 없으면 null</summary>
+    public IHealthSource Health => _health;
     public bool IsDead => _dead;
-    public float HP => playerUI != null ? playerUI.HP : 0f;
-    public float MaxHP => playerUI != null ? playerUI.MaxHP : 0f;
 
-    /// <summary>체력이 0이 된 순간 (사망 화면 열기 직전)</summary>
-    public event System.Action Died;
+    /// <summary>체력이 0이 된 순간 (사망 화면 열기 전)</summary>
+    public event Action Died;
 
     void Awake()
     {
@@ -56,98 +55,100 @@ public class PlayerHealthBridge : MonoBehaviour
             return;
         }
         Instance = this;
-        FindRefs();
     }
 
     void OnEnable()
     {
-        if (playerUI != null) playerUI.HealthChanged += OnHealthChanged;
-        AttachRelay();
+        UISources.Changed += Connect; // PlayerHealth가 늦게 켜지거나 바뀌어도 다시 연결
+        Connect();
     }
 
     void OnDisable()
     {
-        if (playerUI != null) playerUI.HealthChanged -= OnHealthChanged;
+        UISources.Changed -= Connect;
+        SetHealth(null);
+        StopDeathRoutine();
     }
 
     void OnDestroy()
     {
-        if (_relay != null) Destroy(_relay);
         if (Instance == this) Instance = null;
     }
 
-    void FindRefs()
+    /// <summary>플레이어 오브젝트에서 IHealthSource 구현 컴포넌트(PlayerHealth)를 찾아 구독</summary>
+    void Connect()
     {
-        if (playerUI == null) playerUI = FindAnyObjectByType<PlayerUILink>(FindObjectsInactive.Include);
         if (player == null) player = FindAnyObjectByType<PlayerController>(FindObjectsInactive.Include);
-        if (playerUI == null) Debug.LogWarning("[OZ UI] PlayerHealthBridge: PlayerUILink를 찾지 못했습니다.", this);
-        if (player == null) Debug.LogWarning("[OZ UI] PlayerHealthBridge: PlayerController를 찾지 못했습니다.", this);
+        IHealthSource found = null;
+        if (player != null)
+            foreach (var c in player.GetComponents<MonoBehaviour>())
+                if (c is IHealthSource hs) { found = hs; break; }
+        SetHealth(found);
     }
 
-    void AttachRelay()
+    void SetHealth(IHealthSource h)
     {
-        if (player == null || _relay != null) return;
-        _relay = player.GetComponent<PlayerHitRelay>();
-        if (_relay == null) _relay = player.gameObject.AddComponent<PlayerHitRelay>(); // 런타임에만 추가 (프리팹 수정 없음)
-        _relay.owner = this;
-        // v0.7: 지역 이름·상호작용 안내·화면 밖 화살표 거리가 플레이어를 찾을 수 있게 (런타임에만 추가)
-        if (player.GetComponent<UIPlayerTag>() == null) player.gameObject.AddComponent<UIPlayerTag>();
+        if (ReferenceEquals(h, _health)) return;
+        if (_health != null) _health.HealthChanged -= OnHealthChanged;
+        _health = h;
+        if (_health != null)
+        {
+            _health.HealthChanged += OnHealthChanged;
+            _dead = _health.HP <= 0f;
+            Debug.Log($"[OZ UI] PlayerHealthBridge: {((Component)_health).GetType().Name}.HealthChanged 구독 (피해·회복 숫자, 사망 화면)", this);
+        }
     }
 
-    // RestartStage 등에서 체력이 다시 채워지면 사망 상태 해제
-    void OnHealthChanged(HealthChange change)
+    void OnHealthChanged(HealthChange c)
     {
-        if (_dead && change.Current > 0f) _dead = false;
-    }
+        Vector3 pos = player != null ? player.transform.position + numberOffset : Vector3.zero;
+        float amount = Mathf.Abs(c.Delta);
 
-    /// <summary>피격. 무적 시간·사망·UI 창 열림 중에는 무시. 반환 = 실제로 피해가 들어갔는지</summary>
-    public bool TakeDamage(float amount, Vector3? hitPoint = null)
-    {
-        if (amount <= 0f || _dead || playerUI == null) return false;
-        if (player == null || !player.isActiveAndEnabled) return false;
-        if (UIState.IsGameplayInputBlocked) return false;
-        if (Time.time < _invincibleUntil) return false;
+        if (c.IsDamage && amount > 0f)
+        {
+            if (showNumbers && player != null) GameUI.Damage.Show(pos, amount, DamageKind.PlayerHurt);
+        }
+        else if (c.IsHeal && amount > 0f)
+        {
+            // 부활(0에서 회복)·꺼진 동안의 복구(재도전)는 숫자 없이
+            bool revive = c.Previous <= 0f || player == null || !player.gameObject.activeInHierarchy;
+            if (showNumbers && !revive) GameUI.Damage.Show(pos, amount, DamageKind.Heal);
+        }
 
-        _invincibleUntil = Time.time + invincibleTime;
-        playerUI.SetHP(playerUI.HP - amount);
-
-        if (showDamageNumber)
-            GameUI.Damage.Show(hitPoint ?? player.transform.position + numberOffset, amount, DamageKind.PlayerHurt);
-
-        if (playerUI.HP <= 0f) Die();
-        else player.OnHit();
-        return true;
-    }
-
-    public void Heal(float amount)
-    {
-        if (amount <= 0f || _dead || playerUI == null) return;
-        playerUI.SetHP(playerUI.HP + amount);
-        if (showDamageNumber && player != null)
-            GameUI.Damage.Show(player.transform.position + numberOffset, amount, DamageKind.Heal);
+        if (c.Current <= 0f)
+        {
+            if (!_dead) Die();
+        }
+        else if (_dead)
+        {
+            _dead = false;
+            StopDeathRoutine(); // 사망 화면 뜨기 전에 되살아남
+        }
     }
 
     void Die()
     {
         _dead = true;
-        if (player != null) player.Stop();
         Died?.Invoke();
-        GameUI.Screens.ShowDeath(); // 입력 차단은 사망 화면이 처리 → SceneGameLink가 플레이어 정지
+        StopDeathRoutine();
+        _deathRoutine = StartCoroutine(ShowDeathAfterDelay());
     }
 
-    internal void OnPlayerSpawned()
+    IEnumerator ShowDeathAfterDelay()
     {
-        _invincibleUntil = Time.time + 0.5f; // 스폰 직후 잠깐 보호
+        if (deathScreenDelay > 0f) yield return new WaitForSecondsRealtime(deathScreenDelay);
+        _deathRoutine = null;
+        if (_dead && !GameUI.Screens.IsOpen(ScreenId.Death)) GameUI.Screens.ShowDeath();
     }
 
-    internal void OnMonsterContact(Collider other, Vector3 point)
+    void StopDeathRoutine()
     {
-        if (!monsterContactDamage || other == null) return;
-        if (other.GetComponentInParent<Monster>() == null) return;
-        TakeDamage(contactDamage, point + Vector3.up * 1.5f);
+        if (_deathRoutine == null) return;
+        StopCoroutine(_deathRoutine);
+        _deathRoutine = null;
     }
 
-    // ── 자동 설치: 씬에 PlayerUILink + PlayerController가 있고 Bridge가 없으면 PlayerUILink 오브젝트에 붙임 ──
+    // ── 자동 설치: PlayerController가 있으면 독립 오브젝트로 생성 (플레이어가 꺼져도 사망 화면 대기가 끊기지 않게) ──
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void AutoInstall()
     {
@@ -161,9 +162,10 @@ public class PlayerHealthBridge : MonoBehaviour
     static void TryInstall()
     {
         if (FindAnyObjectByType<PlayerHealthBridge>(FindObjectsInactive.Include) != null) return;
-        var ui = FindAnyObjectByType<PlayerUILink>(FindObjectsInactive.Include);
-        if (ui == null) return;
-        if (FindAnyObjectByType<PlayerController>(FindObjectsInactive.Include) == null) return;
-        ui.gameObject.AddComponent<PlayerHealthBridge>(); // Play 중에만 붙음 → 씬 파일에 저장 안 됨
+        var pc = FindAnyObjectByType<PlayerController>(FindObjectsInactive.Include);
+        if (pc == null) return;
+        // 지역 이름·상호작용 안내·화면 밖 화살표·플레이어 옆 게이지가 플레이어를 찾을 수 있게 (런타임에만 추가)
+        if (pc.GetComponent<UIPlayerTag>() == null) pc.gameObject.AddComponent<UIPlayerTag>();
+        new GameObject("PlayerHealthBridge (auto, UI)").AddComponent<PlayerHealthBridge>(); // Play 중에만 생김
     }
 }

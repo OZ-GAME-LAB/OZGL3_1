@@ -21,6 +21,19 @@ namespace OZ.UI.EditorTools
     [InitializeOnLoad]
     internal static class OZUISelfTest
     {
+        /// <summary>PlayerHealth와 같은 방식(IHealthSource + HealthChanged)의 테스트용 체력</summary>
+        sealed class SelfTestHealth : IHealthSource
+        {
+            public float HP { get; private set; } = 100f;
+            public float MaxHP { get; private set; } = 100f;
+            public event Action<HealthChange> HealthChanged;
+            public void Set(float hp, float max)
+            {
+                float prev = HP; MaxHP = max; HP = Mathf.Clamp(hp, 0f, max);
+                HealthChanged?.Invoke(new HealthChange(prev, HP, MaxHP));
+            }
+        }
+
         const string Flag = "OZ_UI_SELFTEST_PENDING";
         static readonly List<string> Lines = new List<string>();
         static int _pass, _fail, _logErrors;
@@ -511,8 +524,12 @@ namespace OZ.UI.EditorTools
                 Check("GateUILink 목표 달성 → 보스 처치 활성", QRow("boss").Info.State == QuestState.Active && gate.IsBossAreaUnlocked);
                 Hud.banner.Hide();
 
-                player.SetHP(40f, 80f); await Wait(1.0f);
-                Eq("PlayerUILink.SetHP → 40/80", Hud.health.valueText.text, "40/80");
+                // v0.8: 체력은 PlayerHealth(IHealthSource)가 관리 → 같은 방식의 테스트용 소스로 확인
+                var hpSource = new SelfTestHealth(); GameUI.Bind(hpSource);
+                hpSource.Set(40f, 80f); await Wait(1.0f);
+                Eq("IHealthSource(PlayerHealth 방식) → 40/80", Hud.health.valueText.text, "40/80");
+                Check("PlayerUILink는 체력 소스가 아님 (v0.8)", !(player is IHealthSource));
+                GameUI.Unbind(hpSource);
                 player.SetLevel(3); player.SetExp(20f, 100f); await Wait(0.3f);
                 Check("PlayerUILink.SetLevel → Lv.3", UISources.Progression == (IProgressionSource)player && player.Level == 3);
 

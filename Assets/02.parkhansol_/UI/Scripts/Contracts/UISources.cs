@@ -17,6 +17,8 @@ namespace OZ.UI.Contracts
         public static IGateSource Gate { get; private set; }
         public static IInventorySource Inventory { get; private set; }
         public static ISkillTreeSource SkillTree { get; private set; }
+        /// <summary>[v0.8] 대시 게이지 (플레이어 옆 게이지)</summary>
+        public static IDashSource Dash { get; private set; }
 
         /// <summary>소스가 등록/해제될 때마다 호출</summary>
         public static event Action Changed;
@@ -33,6 +35,7 @@ namespace OZ.UI.Contracts
             if (source is IGateSource g) { Gate = g; any = true; }
             if (source is IInventorySource inv) { Inventory = inv; any = true; }
             if (source is ISkillTreeSource tree) { SkillTree = tree; any = true; }
+            if (source is IDashSource dash) { Dash = dash; any = true; }
             if (any) Changed?.Invoke();
         }
 
@@ -48,6 +51,7 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(Gate, source)) { Gate = null; any = true; }
             if (ReferenceEquals(Inventory, source)) { Inventory = null; any = true; }
             if (ReferenceEquals(SkillTree, source)) { SkillTree = null; any = true; }
+            if (ReferenceEquals(Dash, source)) { Dash = null; any = true; }
             if (any) Changed?.Invoke();
         }
 
@@ -55,7 +59,7 @@ namespace OZ.UI.Contracts
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
-            Health = null; Progression = null; Skills = null; Items = null; Gate = null; Inventory = null; SkillTree = null;
+            Health = null; Progression = null; Skills = null; Items = null; Gate = null; Inventory = null; SkillTree = null; Dash = null;
             Changed = null;
         }
     }
