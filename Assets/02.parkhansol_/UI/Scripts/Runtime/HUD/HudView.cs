@@ -26,6 +26,14 @@ namespace OZ.UI
         [SerializeField] internal BuffTrayView buffs;
         [SerializeField] internal HudBannerView banner;
 
+        [Header("v0.7")]
+        [SerializeField] internal AreaNameView areaName;
+        [SerializeField] internal LowHealthView lowHealth;
+        [SerializeField] internal HealFlashView healFlash;
+        [SerializeField] internal BuffEdgeView buffEdges;
+        [SerializeField] internal OffscreenIndicatorView indicators;
+        [SerializeField] internal InteractPromptView prompt;
+
         [Header("Portrait")]
         [Tooltip("HP 바 옆 초상화 칸 안의 이미지")]
         [SerializeField] internal Image portrait;
@@ -66,6 +74,9 @@ namespace OZ.UI
             if (items != null) items.Bind(UISources.Items);
             if (buffs != null) buffs.Bind(UISources.Items);
             if (banner != null) banner.Bind(UISources.Gate);
+            if (lowHealth != null) lowHealth.Bind(UISources.Health);
+            if (healFlash != null) healFlash.Bind(UISources.Health);
+            if (buffEdges != null) buffEdges.Bind(UISources.Items);
         }
 
         // 메뉴가 열리면 HUD를 살짝 흐리게

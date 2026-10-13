@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7626642809234045601}
   - component: {fileID: 2409131921605657330}
   - component: {fileID: 2873690002261162043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,3 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Monster
   moveSpeed: 1
+  maxHP: 30
+  damageNumberOffset: {x: 0, y: 2, z: 0}

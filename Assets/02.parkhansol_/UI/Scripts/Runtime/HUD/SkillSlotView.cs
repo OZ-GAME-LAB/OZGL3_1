@@ -33,7 +33,9 @@ namespace OZ.UI
             {
                 icon.sprite = data != null ? data.icon : null;
                 icon.enabled = icon.sprite != null;
-                icon.color = rank > 0 ? Color.white : new Color(0.45f, 0.45f, 0.45f, 1f);
+                var rest = rank > 0 ? Color.white : ItemSlotView.UnusableColor; // v0.7 미습득 = 쿨타임처럼 어둡게
+                if (cooldown != null && cooldown.dimTarget == icon) cooldown.SetRestColor(rest);
+                else icon.color = rest;
             }
             if (lockOverlay != null) lockOverlay.SetActive(src != null && rank <= 0);
             if (rankText != null) rankText.text = rank > 0 ? new string('·', rank) : "";

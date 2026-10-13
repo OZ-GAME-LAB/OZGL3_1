@@ -22,6 +22,8 @@ namespace OZ.UI.EditorTools
             ti.mipmapEnabled = false;
             ti.alphaIsTransparency = true;
             ti.wrapMode = TextureWrapMode.Clamp;
+            // v0.7 버프 테두리: 9-slice (테두리 16px 고정 두께)
+            if (p.EndsWith("/BuffEdgeGlow.png")) ti.spriteBorder = new Vector4(16, 16, 16, 16);
         }
     }
 }

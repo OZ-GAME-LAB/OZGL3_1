@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   _moveAction: {fileID: -3910160766000164395, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
-  _runAction: {fileID: 1801268185645542975, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
+  _dashAction: {fileID: 1801268185645542975, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
   _jumpAction: {fileID: -8612746184482774675, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
   _attackAction: {fileID: -7946413024775027329, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
   _aimAction: {fileID: -7884975300084633893, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}

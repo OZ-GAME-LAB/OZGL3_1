@@ -79,6 +79,7 @@ namespace OZ.UI.EditorTools
                 await Suite("게임 흐름: 로딩·페이드·스테이지 띠 (v0.5)", Flow);
                 await Suite("풀에서 꺼내는 적 체력바 (v0.5)", PooledEnemyBar);
                 await Suite("UI Link 컴포넌트 (v0.5)", Links);
+                await Suite("지역 이름·저체력·화면 밖 화살표·상호작용 (v0.7)", V07);
             }
             catch (Exception e)
             {
@@ -170,6 +171,204 @@ namespace OZ.UI.EditorTools
             UIManager.Instance.CloseAll();
             Time.timeScale = 1f;
             await Wait(0.6f);
+        }
+
+        // ───────────────────────────── v0.7 지역 이름·저체력·화면 밖 화살표·상호작용 ─────────────────────────────
+        static async Task V07()
+        {
+            await ToCombat();
+            P.ChangeHP(9999); await Wait(0.3f);
+
+            // 지역 이름
+            var area = Hud.areaName;
+            Check("지역 이름 뷰 연결 (GameUI.Area)", area != null && ReferenceEquals(GameUI.Area, area));
+            var art = (RectTransform)area.transform;
+            Check("위쪽 가운데 배치", Mathf.Approximately(art.anchorMin.x, 0.5f) && Mathf.Approximately(art.anchorMin.y, 1f));
+            GameUI.Area.Show("테스트 지역", "부제", 1.0f); await Wait(1.0f);
+            Check("Show → 부드럽게 나타남", area.IsShowing && area.group.alpha > 0.9f, $"alpha {area.group.alpha:0.00}");
+            Eq("이름 표시", area.nameText.text, "테스트 지역");
+            Check("부제 표시", area.subtitleText.gameObject.activeSelf && area.subtitleText.text == "부제");
+            await Wait(2.2f);
+            Check("유지 후 사라짐", area.group.alpha < 0.05f, $"alpha {area.group.alpha:0.00}");
+            GameUI.Area.Show("테스트 지역"); await Wait(0.4f);
+            Check("같은 이름 바로 다시 → 무시 (경계 왕복 깜빡임 방지)", area.group.alpha < 0.05f);
+            var trig = new GameObject("SelfTest_AreaTrigger").AddComponent<AreaNameTrigger>();
+            try
+            {
+                trig.areaName = "트리거 지역";
+                trig.Enter(); await Wait(0.9f);
+                Eq("AreaNameTrigger.Enter → 이름 표시", area.nameText.text, "트리거 지역");
+                area.Hide();
+            }
+            finally { UnityEngine.Object.Destroy(trig.gameObject); }
+
+            // 저체력 경고
+            var low = Hud.lowHealth;
+            Check("저체력 뷰 연결", low != null && low.vignette != null);
+            Check("체력 가득 → 비네트 없음", !low.IsActive && low.CurrentAlpha < 0.01f);
+            P.ChangeHP(-80); await Wait(1.2f);
+            Check("체력 20% → 붉은 비네트 ON", low.IsActive && low.vignette.enabled && low.CurrentAlpha > 0.05f, $"alpha {low.CurrentAlpha:0.00}");
+            P.ChangeHP(-15); await Wait(0.6f);
+            Check("더 낮을수록 진해짐", low.Intensity > 0.6f, $"intensity {low.Intensity:0.00}");
+            P.ChangeHP(9999); await Wait(1.5f);
+            Check("회복 → 부드럽게 꺼짐", !low.IsActive && low.CurrentAlpha < 0.02f, $"alpha {low.CurrentAlpha:0.00}");
+
+            // 체력 상태 색
+            var hv = Hud.health;
+            P.ChangeHP(9999); await Wait(0.5f);
+            Check("체력 가득 → 기본(하늘색) 바", hv.State == 0 && hv.stateFill.sprite == hv.normalSprite);
+            P.ChangeHP(-50); await Wait(0.5f);
+            Check("체력 50% → 노랑 바", hv.State == 1 && hv.stateFill.sprite == hv.cautionSprite && hv.cautionSprite != null);
+            P.ChangeHP(-25); await Wait(0.5f);
+            Check("체력 25% → 빨강 바", hv.State == 2 && hv.stateFill.sprite == hv.dangerSprite && hv.dangerSprite != null);
+            P.ChangeHP(9999); await Wait(0.5f);
+            Check("회복 → 다시 하늘색", hv.State == 0 && hv.stateFill.sprite == hv.normalSprite);
+
+            // 랭크 승급 연출
+            var ru = Find<RankUpView>();
+            Check("랭크 승급 연출 뷰 있음", ru != null);
+            P.PromoteRank(); await Wait(0.3f);
+            Check("승급 → 연출 재생 + 팡파레", ru.IsPlaying && ru.group.alpha > 0.9f && Find<UISoundPlayer>().LastPlayed == UISound.RankUp);
+            await Wait(1.2f);
+            Eq("새 랭크가 솟아오름", ru.newRankText.text, P.Rank.ToString());
+            Check("RANK UP 글자 표시", ru.titleText.alpha > 0.9f);
+            await Wait(2.5f);
+            Check("약 3초 뒤 사라짐", !ru.IsPlaying && ru.group.alpha < 0.05f);
+
+            // 회복 초록 번쩍임
+            var heal = Hud.healFlash;
+            P.ChangeHP(-50); await Wait(0.8f);
+            int flashes = heal.FlashCount;
+            P.ChangeHP(30); await Wait(0.1f);
+            Check("회복 → 초록 비네트 번쩍", heal.FlashCount == flashes + 1 && heal.CurrentAlpha > 0.1f, $"alpha {heal.CurrentAlpha:0.00}");
+            await Wait(0.8f);
+            Check("짧게 나오고 사라짐 (0.6초 안)", heal.CurrentAlpha < 0.02f, $"alpha {heal.CurrentAlpha:0.00}");
+            P.ChangeHP(-999); await Wait(0.3f); P.ChangeHP(9999); await Wait(0.2f);
+            Check("0 → 가득(재도전 복구)은 번쩍 없음", heal.CurrentAlpha < 0.02f);
+            await Wait(1.0f);
+
+            // 쿨타임: 어둡게 + 도는 바늘 + 완료 점멸 (스킬·아이템)
+            var qv = Hud.skills.slots[0];
+            P.UseSkill(SkillSlot.Q); await Wait(0.3f);
+            Check("스킬 대기 중 → 아이콘 어둡게", qv.cooldown.IsDimmed && qv.icon.color.r < 0.5f, $"r {qv.icon.color.r:0.00}");
+            Check("스킬 대기 중 → 도는 바늘 표시", qv.cooldown.sweepHand != null && qv.cooldown.sweepHand.gameObject.activeSelf);
+            float a1 = qv.cooldown.sweepHand.localEulerAngles.z; await Wait(0.5f);
+            Check("바늘이 돈다", Mathf.Abs(Mathf.DeltaAngle(a1, qv.cooldown.sweepHand.localEulerAngles.z)) > 10f);
+            var iv4 = Hud.items.slots[3];
+            P.AddItem(3); await Wait(1.6f);
+            P.UseItem(3); await Wait(0.3f);
+            Check("아이템 대기 중 → 아이콘 어둡게 + 쿨타임", iv4.cooldown.IsDimmed && iv4.cooldown.overlay.enabled);
+            await Wait(1.3f);
+            Check("아이템 쿨타임 끝 → 밝게 점멸", !iv4.cooldown.IsDimmed && (iv4.cooldown.IsReadyFlashing || iv4.icon.color.r > 0.9f));
+            await Wait(0.5f);
+            Check("점멸 후 원래 밝기", iv4.icon.color.r > 0.9f && !iv4.cooldown.IsReadyFlashing);
+            await Wait(4.5f); // Q 쿨타임 끝까지
+            Check("스킬 쿨타임 끝 → 원래 밝기", !qv.cooldown.IsDimmed && qv.icon.color.r > 0.9f);
+
+            // 사용 불가도 어둡게
+            var ev = Hud.skills.slots[1];
+            if (P.GetRank(SkillSlot.E) <= 0) Check("미습득 스킬 → 어둡게", ev.icon.color.r < 0.5f, $"r {ev.icon.color.r:0.00}");
+            while (P.GetCount(0) > 0) { P.UseItem(0); await Wait(1.6f); }
+            await Wait(1.0f);
+            Check("수량 0 아이템 → 어둡게 (쿨타임 끝나도 유지)", Hud.items.slots[0].icon.color.r < 0.5f, $"r {Hud.items.slots[0].icon.color.r:0.00}");
+            P.AddItem(0); await Wait(0.3f);
+            Check("다시 생기면 밝게", Hud.items.slots[0].icon.color.r > 0.9f);
+
+            // 버프 테두리
+            var edges = Hud.buffEdges;
+            var atk = P.GetItem(1); var def = P.GetItem(2); var spd = P.GetItem(3);
+            P.AddItem(1); P.AddItem(2); P.AddItem(3);
+            edges.Shown.Clear();
+            P.UseItem(3); await Wait(0.3f);
+            Check("버프 1개 → 그 색 테두리", edges.ActiveCount == 1 && edges.CurrentItem == spd && edges.CurrentAlpha > 0.1f);
+            P.UseItem(1); await Wait(0.1f);
+            Check("새 버프 → 그 색부터 바로", edges.CurrentItem == atk);
+            P.UseItem(2); await Wait(0.1f);
+            Check("버프 3개 활성", edges.ActiveCount == 3, $"{edges.ActiveCount}");
+            edges.Shown.Clear();
+            await Wait(2.5f);
+            Check("같은 자리에서 주황·파랑·초록이 번갈아 점멸", edges.Shown.Contains(atk) && edges.Shown.Contains(def) && edges.Shown.Contains(spd), $"{edges.Shown.Count}색");
+
+            // 화면 밖 화살표
+            var ind = Hud.indicators;
+            var cam = Camera.main;
+            var far = new GameObject("SelfTest_FarGate").transform;
+            var near = new GameObject("SelfTest_NearBoss").transform;
+            far.position = P.transform.position + new Vector3(-80f, 0f, 0f);
+            near.position = cam.transform.position + cam.transform.forward * 10f + Vector3.down * 1f;
+            try
+            {
+                GameUI.Indicators.Track(far, IndicatorKind.Gate);
+                GameUI.Indicators.Track(near, IndicatorKind.Boss, "보스");
+                await Wait(0.6f);
+                Check("추적 2개", ind.Count == 2, $"Count {ind.Count}");
+                Check("화면 밖 대상만 화살표", ind.VisibleCount == 1, $"Visible {ind.VisibleCount}");
+                near.position = P.transform.position + new Vector3(90f, 0f, 0f); await Wait(0.6f);
+                Check("화면 밖으로 나가면 화살표 생김", ind.VisibleCount == 2, $"Visible {ind.VisibleCount}");
+                UnityEngine.Object.Destroy(far.gameObject); await Wait(0.3f);
+                Check("대상 파괴 → 자동 해제", ind.Count == 1, $"Count {ind.Count}");
+                GameUI.Indicators.Untrack(near);
+                Check("Untrack → 0개", ind.Count == 0);
+            }
+            finally
+            {
+                GameUI.Indicators.Clear();
+                if (far != null) UnityEngine.Object.Destroy(far.gameObject);
+                if (near != null) UnityEngine.Object.Destroy(near.gameObject);
+            }
+
+            // 상호작용 안내
+            var pr = Hud.prompt;
+            var target = new GameObject("SelfTest_PromptTarget").transform;
+            target.position = cam.transform.position + cam.transform.forward * 10f + Vector3.down * 2f;
+            var link = new GameObject("SelfTest_PromptLink").AddComponent<InteractPromptLink>();
+            link.transform.position = new Vector3(9999f, 9999f, 0f); // 처음엔 멀리
+            try
+            {
+                GameUI.Prompt.Show(target, "조사"); await Wait(0.5f);
+                Check("Show → 표시", pr.IsVisible);
+                Eq("키 글자", pr.keyText.text, "F");
+                Eq("행동 글자", pr.actionText.text, "조사");
+                GameUI.Screens.Open(ScreenId.Inventory); await Wait(0.5f);
+                Check("창이 열리면 숨김", !pr.IsVisible);
+                UIManager.Instance.CloseAll(); await Wait(0.5f);
+                Check("창이 닫히면 다시 표시", pr.IsVisible);
+                GameUI.Prompt.Hide(link.transform); await Wait(0.3f);
+                Check("다른 대상 Hide는 무시", pr.IsVisible);
+                GameUI.Prompt.Hide(target); await Wait(0.5f);
+                Check("Hide → 사라짐", !pr.IsVisible);
+
+                Check("플레이어 표시(UIPlayerTag) 있음", UIPlayerTag.Current != null);
+                link.transform.position = P.transform.position; await Wait(0.5f);
+                Check("InteractPromptLink: 플레이어가 가까우면 표시", GameUI.Prompt.Current == link.transform);
+                link.transform.position = P.transform.position + new Vector3(50f, 0f, 0f); await Wait(0.5f);
+                Check("InteractPromptLink: 멀어지면 숨김", GameUI.Prompt.Current == null);
+
+                // F 누름
+                bool fired = false;
+                System.Action<Transform> onPress = t => fired = t == target;
+                GameUI.Prompt.Pressed += onPress;
+                GameUI.Prompt.Show(target, "조사"); await Wait(0.5f);
+                int before = pr.PressCount;
+                Check("보일 때 F → 눌림 처리", pr.Press() && pr.PressCount == before + 1);
+                Check("F → Pressed(대상) 이벤트", fired);
+                Check("연타 방지 (바로 다시 누름 무시)", !pr.Press());
+                GameUI.Prompt.Pressed -= onPress;
+                GameUI.Prompt.Hide(target); await Wait(0.5f);
+                Check("안 보일 때 F → 무시", !pr.Press());
+
+                int used = 0;
+                link.onInteract.AddListener(() => used++);
+                link.transform.position = P.transform.position; await Wait(0.6f);
+                pr.Press(); await Wait(0.1f);
+                Check("InteractPromptLink.onInteract 호출", used == 1);
+            }
+            finally
+            {
+                GameUI.Prompt.Hide();
+                UnityEngine.Object.Destroy(target.gameObject);
+                UnityEngine.Object.Destroy(link.gameObject);
+            }
         }
 
         // ───────────────────────────── v0.5 게임 흐름 ─────────────────────────────
@@ -573,6 +772,7 @@ namespace OZ.UI.EditorTools
             P.UseItem(0); await Wait(1.0f);
             Eq("회복제(30%) → 50→80", Hud.health.valueText.text, "80/100");
             Eq("회복제 3→2", items.slots[0].countText.text, "2");
+            await Wait(0.7f); // v0.7 샘플 아이템 쿨타임 1.5초
             P.UseItem(0); await Wait(1.0f);
             Eq("회복은 최대 체력 초과 안 함", Hud.health.valueText.text, "100/100");
             P.ItemUseFailed -= onFail;
@@ -697,8 +897,8 @@ namespace OZ.UI.EditorTools
             var crt = (RectTransform)canvas.transform;
             float W = crt.rect.width;
             float X(RectTransform rt) => crt.InverseTransformPoint(rt.TransformPoint(rt.rect.center)).x + W * 0.5f;
-            Check("스킬 Q/E/R은 화면 오른쪽 (양손 분리)", X((RectTransform)Hud.skills.slots[0].transform) > W * 0.7f, "Q x " + X((RectTransform)Hud.skills.slots[0].transform));
-            Check("아이템 1~4는 화면 왼쪽", X((RectTransform)Hud.items.slots[3].transform) < W * 0.35f);
+            Check("스킬 Q/E/R은 화면 왼쪽 (v0.7 자리 바꿈)", X((RectTransform)Hud.skills.slots[2].transform) < W * 0.35f, "R x " + X((RectTransform)Hud.skills.slots[2].transform));
+            Check("아이템 1~4는 화면 오른쪽", X((RectTransform)Hud.items.slots[0].transform) > W * 0.6f, "1 x " + X((RectTransform)Hud.items.slots[0].transform));
             Check("스킬·아이템 칸 36px 유지 (아이콘 2배 픽셀)", Mathf.Approximately(((RectTransform)Hud.items.slots[0].transform).rect.width, 36f));
             var mm = Hud.transform.Find("Minimap") as RectTransform;
             var sa = Hud.systemAlarm.GetComponent<RectTransform>();

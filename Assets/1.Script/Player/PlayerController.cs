@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,8 +8,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Component")]
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private InputManager _inputManager;
 
     [Header("Ground Check")]
@@ -16,23 +15,41 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _groundRadius = 0.2f;
     [SerializeField] private LayerMask _groundLayer;
 
-    [Header("Stat")]
+    [Header("Move")]
     [SerializeField] private float _walkSpeed = 5f;
-    [SerializeField] private float _runSpeed = 8f;
     [SerializeField] private float _jumpSpeed = 5f;
     [SerializeField] private float _jumpForce = 12f;
     [SerializeField] private float _landDuration = 0.1f;
     [SerializeField] private float _rotationSpeed = 20f;
-    [SerializeField] private float _attackDuration = 0.4f;
+
+    [Header("Dash")]
+    [SerializeField] private float _dashSpeed = 14f;
+    [SerializeField] private float _dashDuration = 0.18f;
+    [SerializeField] private float _dashInvincibleTime = 0.15f;
+    [SerializeField] private float _dashCooldown = 0.6f;
+    [SerializeField] private bool _canAirDash = true;
+
+    [Header("Combat")]
+    [SerializeField] private float _attackDuration = 0.4f; // IPlayerAttack이 없을 때 기본값
     [SerializeField] private float _hitStunTime = 0.3f;
 
     [Header("Debug")]
     [SerializeField] private PlayerState _currentStateType;
-
+    
+    private Animator _animator;
+    private Rigidbody _rigidbody;
 
     private IPlayerState _currentState;
     private Dictionary<PlayerState, IPlayerState> _playerStates;
     private IPlayerAttack _attack; // 공격 확장 지점. 없으면 모션만 재생.
+
+    private float _facingX = 1f;
+
+    private float _invincibleEndTime;
+    private float _nextDashTime;
+    private bool _airDashUsed;
+
+    public event Action OnDead;
 
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
@@ -41,29 +58,41 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded { get { return Physics.CheckSphere(_groundCheck.position, _groundRadius, _groundLayer); } }
     public bool IsJumpRequested { get; private set; }
+    public bool IsDashRequested { get; private set; }
     public bool IsAttackRequested { get; private set; }
 
+    public bool IsInvincible { get { return Time.time < _invincibleEndTime; } }
+    public bool IsDead { get { return _currentStateType == PlayerState.Dead; } }
+    public float FacingX { get { return _facingX; } }
+
+    public bool CanDash
+    {
+        get
+        {
+            if (Time.time < _nextDashTime)
+            {
+                return false;
+            }
+            if (IsGrounded)
+            {
+                return true;
+            }
+            return _canAirDash && !_airDashUsed;
+        }
+    }
 
     public float WalkSpeed { get { return _walkSpeed; } }
-    public float RunSpeed { get { return _runSpeed; } }
     public float JumpSpeed { get { return _jumpSpeed; } }
     public float LandDuration { get { return _landDuration; } }
+    public float DashSpeed { get { return _dashSpeed; } }
+    public float DashDuration { get { return _dashDuration; } }
     public float AttackDuration { get { return _attackDuration; } }
     public float HitStunTime { get { return _hitStunTime; } }
 
     private void Awake()
     {
-        if (!TryGetComponent(out _animator))
-        {
-            Debug.LogError("[Player:Awake] Animator 컴포넌트를 찾을 수 없습니다.");
-            return;
-        }
-
-        if (!TryGetComponent(out _rigidbody))
-        {
-            Debug.LogError("[Player:Awake] Rigidbody 컴포넌트를 찾을 수 없습니다.");
-            return;
-        }
+        _animator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody>();
 
         if (_inputManager == null)
         {
@@ -85,6 +114,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         _inputManager.OnJumpAction += OnJump;
+        _inputManager.OnDashAction += OnDash;
         _inputManager.OnAttackAction += OnAttack;
 
         ChangeState(PlayerState.Idle);
@@ -100,8 +130,7 @@ public class PlayerController : MonoBehaviour
         _currentState.UpdateState(this);
 
         // 상태가 이번 프레임에 안 쓴 입력은 버림 (경직 중 누른 점프가 끝나고 발동되는 것 방지)
-        IsJumpRequested = false;
-        IsAttackRequested = false;
+        ClearRequests();
     }
 
     private void FixedUpdate()
@@ -116,9 +145,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        IsJumpRequested = false;
-        IsAttackRequested = false;
+        ClearRequests();
         _inputManager.OnJumpAction -= OnJump;
+        _inputManager.OnDashAction -= OnDash;
         _inputManager.OnAttackAction -= OnAttack;
     }
 
@@ -128,18 +157,31 @@ public class PlayerController : MonoBehaviour
         {
             {PlayerState.Idle, new PlayerState_Idle() },
             {PlayerState.Walk, new PlayerState_Walk() },
-            {PlayerState.Run, new PlayerState_Run() },
             {PlayerState.Jump, new PlayerState_Jump() },
             {PlayerState.Air, new PlayerState_Air() },
             {PlayerState.Land, new PlayerState_Land() },
+            {PlayerState.Dash, new PlayerState_Dash() },
             {PlayerState.Attack, new PlayerState_Attack() },
-            {PlayerState.Hit, new PlayerState_Hit() }
+            {PlayerState.Hit, new PlayerState_Hit() },
+            {PlayerState.Dead, new PlayerState_Dead() }
         };
+    }
+
+    private void ClearRequests()
+    {
+        IsJumpRequested = false;
+        IsDashRequested = false;
+        IsAttackRequested = false;
     }
 
     private void OnJump()
     {
         IsJumpRequested = true;
+    }
+
+    private void OnDash()
+    {
+        IsDashRequested = true;
     }
 
     private void OnAttack()
@@ -155,14 +197,18 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // 같은 상태 재진입(EnterState 중복 호출) 방지
-        if (_currentState != null && _currentStateType == newState)
-        {
-            return;
-        }
-
         if (_currentState != null)
         {
+            // 같은 상태 재진입(EnterState 중복 호출) 방지
+            if (_currentStateType == newState)
+            {
+                return;
+            }
+
+            if (_currentStateType == PlayerState.Dead)
+            {
+                return;
+            }
             _currentState.ExitState(this);
         }
 
@@ -171,7 +217,7 @@ public class PlayerController : MonoBehaviour
         _currentState.EnterState(this);
     }
 
-    // 공격/피격이 끝났을 때 돌아갈 상태
+    // 공격/피격/대시가 끝났을 때 돌아갈 상태
     public void ChangeToDefaultState()
     {
         ChangeState(IsGrounded ? PlayerState.Idle : PlayerState.Air);
@@ -193,10 +239,54 @@ public class PlayerController : MonoBehaviour
         _attack = attack;
     }
 
-    // 몬스터 쪽에서 호출. HP 처리는 나중에 붙일 곳.
+    //HP 계산은 PlayerHealth로 옮기고, 컨트롤러는 상태 전환만 담당
     public void OnHit()
     {
         ChangeState(PlayerState.Hit);
+    }
+
+    public void Die()
+    {
+        ChangeState(PlayerState.Dead);
+        OnDead?.Invoke();
+    }
+
+    // 스테이지 재시작 시 (PlayerHealth.ResetHealth에서 호출)
+    public void Revive()
+    {
+        if (_currentState != null)
+        {
+            _currentState.ExitState(this);
+        }
+
+        _currentState = null;
+        _invincibleEndTime = 0f;
+        _nextDashTime = 0f;
+        _airDashUsed = false;
+        ClearRequests();
+        ChangeState(PlayerState.Idle);
+    }
+
+    public void SetInvincible(float duration)
+    {
+        _invincibleEndTime = Mathf.Max(_invincibleEndTime, Time.time + duration);
+    }
+
+    public void StartDash()
+    {
+        IsDashRequested = false;
+        _nextDashTime = Time.time + _dashCooldown;
+        SetInvincible(_dashInvincibleTime);
+
+        if (!IsGrounded)
+        {
+            _airDashUsed = true;
+        }
+    }
+
+    public void ResetAirDash()
+    {
+        _airDashUsed = false;
     }
 
     // AddForce 대신 속도 대입 → 중복 호출돼도 점프력이 누적되지 않음
@@ -234,19 +324,21 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Quaternion targetRotation = Quaternion.LookRotation(dirX > 0 ? Vector3.right : Vector3.left);
+        _facingX = Mathf.Sign(dirX);
+        Quaternion targetRotation = Quaternion.LookRotation(_facingX > 0 ? Vector3.right : Vector3.left);
         _rigidbody.MoveRotation(Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime));
     }
 
-    // 공격처럼 즉시 방향을 돌려야 할 때
+    // 공격, 대시처럼 즉시 방향을 돌려야 할 때
     public void LookAtImmediately(float dirX)
     {
         if (Mathf.Abs(dirX) < 0.01f)
         {
-            return;
+            return; // 커서가 플레이어와 겹치면 마지막 방향 유지
         }
 
-        _rigidbody.rotation = Quaternion.LookRotation(dirX > 0 ? Vector3.right : Vector3.left);
+        _facingX = Mathf.Sign(dirX);
+        _rigidbody.rotation = Quaternion.LookRotation(_facingX > 0 ? Vector3.right : Vector3.left);
     }
 
 }

@@ -13,6 +13,7 @@ namespace OZ.UI
         [SerializeField] internal ItemSlotView[] slots = new ItemSlotView[4];
 
         IItemSource _source;
+        IItemCooldownSource _cooldowns;
 
         internal void Bind(IItemSource source)
         {
@@ -23,6 +24,8 @@ namespace OZ.UI
                 _source.CountChanged += OnCountChanged;
                 _source.ItemUsed += OnItemUsed;
                 _source.ItemUseFailed += OnItemUseFailed;
+                _cooldowns = _source as IItemCooldownSource;
+                if (_cooldowns != null) _cooldowns.ItemCooldownStarted += OnCooldownStarted;
             }
             RefreshAll();
         }
@@ -33,6 +36,8 @@ namespace OZ.UI
             _source.CountChanged -= OnCountChanged;
             _source.ItemUsed -= OnItemUsed;
             _source.ItemUseFailed -= OnItemUseFailed;
+            if (_cooldowns != null) _cooldowns.ItemCooldownStarted -= OnCooldownStarted;
+            _cooldowns = null;
         }
 
         void OnDestroy() => Unsubscribe();
@@ -51,5 +56,6 @@ namespace OZ.UI
         void OnCountChanged(int index, int count) => Find(index)?.Refresh(_source);
         void OnItemUsed(int index) => Find(index)?.PlayUsed(_source?.GetItem(index));
         void OnItemUseFailed(int index) => Find(index)?.PlayFailed();
+        void OnCooldownStarted(int index, float duration) => Find(index)?.OnCooldownStarted(duration);
     }
 }
