@@ -1,10 +1,13 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using OZ.UI.Contracts;
 
 public class StageManager : BaseManager
 {
     [SerializeField] private GameObject stagePrefab;
     [SerializeField] private Transform stageParent;
+    [SerializeField, Min(1)] private int stageNumber = 1;
+    [SerializeField] private HunterRank clearRank = HunterRank.E;
     private GateManager gateManager;
 
     public bool IsStageRunning { get; private set; }
@@ -99,6 +102,7 @@ public class StageManager : BaseManager
         IsStageCleared = true;
         IsStageRunning = false;
         // 폐쇄된 게이트의 빨간색을 확인할 수 있도록 스테이지는 유지합니다.
+        GameUI.Screens.ShowStageClear(stageNumber, clearRank);
         StageCleared?.Invoke();
     }
 
