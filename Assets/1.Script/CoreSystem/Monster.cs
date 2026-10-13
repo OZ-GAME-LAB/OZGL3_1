@@ -8,7 +8,6 @@ public class Monster : MonoBehaviour, IDamageable
     public bool IsDead { get; private set; }
     public event Action<Monster> Died;
 
-    private void OnEnable() => IsDead = false;
 
     public void Die()
     {
@@ -26,6 +25,7 @@ public class Monster : MonoBehaviour, IDamageable
     private void OnEnable()
     {
         hp = maxHP;
+        IsDead = false;
     }
 
     private void Update()
@@ -36,7 +36,7 @@ public class Monster : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
-        if (hp <= 0f || damage <= 0f)
+        if (hp <= 0f || damage <= 0f ||IsDead)
         {
             return;
         }
@@ -49,7 +49,7 @@ public class Monster : MonoBehaviour, IDamageable
 
         if (killed)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 }
