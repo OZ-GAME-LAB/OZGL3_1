@@ -17,36 +17,47 @@ namespace OZ.UI.EditorTools
     /// OZ > UI > Git Push + main (MainScene 포함): 위 + Assets/Scenes/MainScene.unity 도 커밋하고,
     ///   origin/main이 내 브랜치의 조상일 때만(fast-forward) main에도 올린다. 브랜치 전환 없음 → 열린 Unity 파일이 바뀌지 않음.
     ///   팀원이 main에 먼저 올린 게 있으면 main 푸시는 멈추고(브랜치만 올라감) 로그에 남긴다.
+    ///
+    /// v0.7: 메뉴를 누르면 커밋 메시지 입력 창이 뜬다 (전에는 메시지가 코드에 고정돼 있어 매번 같은 문구로 올라감).
+    ///   마지막으로 쓴 메시지는 Logs/OZ_CommitMessage.txt에 남고 다음에 기본값으로 채워짐 (깃 제외 폴더).
     /// </summary>
     internal static class OZGitPush
     {
-        const string DefaultMessage = "parkhansol_HUD양손분리_퀘스트목록_지도아래시스템알림_UI효과음_안내문구정리";
-        const string MainMessage = DefaultMessage;
+        internal const string MessagePrefix = "parkhansol_";
+        internal static string MessageFile => Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Logs", "OZ_CommitMessage.txt"));
         const string SampleScene = "Assets/Scenes/MainScene.unity";
         /// <summary>프로젝트 규칙: 하루 작업 = 브랜치 parkhansol_ui_yyMMdd (없으면 현재 브랜치에서 새로 만듦)</summary>
         const string BranchPrefix = "parkhansol_ui_";
         static bool _running;
 
         [MenuItem("OZ/UI/Git Push (02.parkhansol_ only)", priority = 40)]
-        static void Push() => Push(false);
+        static void Push() => OZGitPushWindow.Open(false, "main");
 
         [MenuItem("OZ/UI/Git Push + main (MainScene 포함)", priority = 41)]
-        static void PushMain() => Push(true, "main");
+        static void PushMain() => OZGitPushWindow.Open(true, "main");
 
         [MenuItem("OZ/UI/Git Push + develop (MainScene 포함)", priority = 42)]
-        static void PushDevelop() => Push(true, "develop");
+        static void PushDevelop() => OZGitPushWindow.Open(true, "develop");
 
-        static void Push(bool toMain) => Push(toMain, "main");
-
-        static void Push(bool toMain, string shared)
+        internal static string LastMessage()
         {
+            try { if (File.Exists(MessageFile)) return File.ReadAllText(MessageFile).Trim(); } catch { }
+            return MessagePrefix;
+        }
+
+        internal static void Push(bool toMain, string shared, string message)
+        {
+            message = (message ?? "").Trim();
+            if (!message.StartsWith(MessagePrefix)) message = MessagePrefix + message;
+            if (message == MessagePrefix) { Debug.LogError("[OZ Git] 커밋 메시지를 입력하세요."); return; }
+            try { Directory.CreateDirectory(Path.GetDirectoryName(MessageFile)); File.WriteAllText(MessageFile, message, new UTF8Encoding(false)); } catch { }
             if (_running) { Debug.LogWarning("[OZ Git] 이미 실행 중입니다."); return; }
             AssetDatabase.SaveAssets();
             string root = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
             string log = Path.Combine(root, "Logs", "OZ_GitPush.txt");
             _running = true;
             Debug.Log("[OZ Git] 푸시 시작… (결과: Logs/OZ_GitPush.txt)");
-            Task.Run(() => Run(root, log, toMain ? MainMessage : DefaultMessage, toMain, shared)).ContinueWith(t =>
+            Task.Run(() => Run(root, log, message, toMain, shared)).ContinueWith(t =>
             {
                 _running = false;
                 bool ok = t.Status == TaskStatus.RanToCompletion && t.Result;
@@ -104,7 +115,7 @@ namespace OZ.UI.EditorTools
                     string msgFile = Path.Combine(Path.GetTempPath(), "oz_commit_msg.txt");
                     File.WriteAllText(msgFile, message + "\n\n" +
                         "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n" +
-                        "Claude-Session: https://claude.ai/code/session_01HKTSP2Z3k6rBxArBjzpmMV\n", new UTF8Encoding(false));
+                        "Claude-Session: https://claude.ai/code/session_013hgdcgnJnupREACjVtYr69\n", new UTF8Encoding(false));
                     if (Exec(git, $"commit -F \"{msgFile}\"", root, sb, out _) != 0) return false;
                 }
 
@@ -188,5 +199,45 @@ namespace OZ.UI.EditorTools
         }
 
         static string Trim(string s) => s.Length > 4000 ? s.Substring(0, 4000) + "\n…(생략)" : s.TrimEnd();
+    }
+
+    /// <summary>커밋 메시지 입력 창 (parkhansol_내용). Enter 또는 버튼으로 푸시</summary>
+    internal class OZGitPushWindow : EditorWindow
+    {
+        bool _toShared;
+        string _shared;
+        string _message;
+
+        internal static void Open(bool toShared, string shared)
+        {
+            var w = GetWindow<OZGitPushWindow>(true, "OZ Git Push", true);
+            w._toShared = toShared;
+            w._shared = shared;
+            w._message = OZGitPush.LastMessage();
+            w.minSize = w.maxSize = new Vector2(520, 130);
+            w.ShowUtility();
+            w.Focus();
+        }
+
+        void OnGUI()
+        {
+            EditorGUILayout.LabelField(_toShared ? $"오늘 브랜치 + {_shared} 에 푸시 (MainScene 포함)" : "오늘 브랜치에만 푸시 (02.parkhansol_만)", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("커밋 메시지 (parkhansol_내용)");
+            GUI.SetNextControlName("msg");
+            _message = EditorGUILayout.TextField(_message);
+            if (Event.current.type == EventType.Repaint && GUI.GetNameOfFocusedControl() != "msg") EditorGUI.FocusTextInControl("msg");
+            bool enter = Event.current.type == EventType.KeyDown && (Event.current.keyCode == KeyCode.Return || Event.current.keyCode == KeyCode.KeypadEnter);
+            EditorGUILayout.Space(6);
+            using (new EditorGUILayout.HorizontalScope())
+            {
+                if (GUILayout.Button("취소", GUILayout.Height(28))) Close();
+                if (GUILayout.Button("푸시", GUILayout.Height(28)) || enter)
+                {
+                    OZGitPush.Push(_toShared, _shared, _message);
+                    Close();
+                    GUIUtility.ExitGUI();
+                }
+            }
+        }
     }
 }

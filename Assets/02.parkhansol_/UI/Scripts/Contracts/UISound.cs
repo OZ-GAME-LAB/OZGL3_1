@@ -17,6 +17,8 @@ namespace OZ.UI.Contracts
         GateSealed = 30, StageIntro = 31, LoadDone = 32, BossAppear = 33, BossDefeat = 34, Death = 35,
         // 스킬 트리·인벤토리·HUD
         Unlock = 40, Reset = 41, ItemPick = 42, ItemPlace = 43, ItemUse = 44, SkillReady = 45, DialogueNext = 46,
+        // v0.7 지역 이름·저체력·상호작용
+        AreaEnter = 47, Heartbeat = 48, PromptShow = 49,
     }
 
     /// <summary>

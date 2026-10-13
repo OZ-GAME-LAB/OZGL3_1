@@ -43,6 +43,7 @@ namespace OZ.UI.EditorTools
                 BuildDamageFx(hudLayer); // HUD보다 먼저 = 뒤에 그려짐 (숫자가 HUD 패널을 가리지 않게)
                 var minimap = BuildHud(hudLayer, overlayLayer);
                 BuildBoss(cineLayer);
+                BuildRankUp(cineLayer); // v0.7 랭크 승급 팡파레 연출
                 BuildToast(toastLayer);
 
                 BuildTitle(fullLayer);
@@ -136,15 +137,32 @@ namespace OZ.UI.EditorTools
             return bar;
         }
 
-        static CooldownRadial Radial(Transform parent, RectTransform punch, Graphic flash, float size, bool label = true)
+        static CooldownRadial Radial(Transform parent, RectTransform punch, Graphic flash, float size, bool label = true, Graphic dim = null)
         {
-            var overlay = UIB.Solid("Cooldown", parent, new Color(0f, 0f, 0f, 0.6f)).Filled(Image.FillMethod.Radial360, (int)Image.Origin360.Top);
+            var overlay = UIB.Solid("Cooldown", parent, new Color(0.01f, 0.02f, 0.06f, dim != null ? 0.7f : 0.6f)).Filled(Image.FillMethod.Radial360, (int)Image.Origin360.Top);
             overlay.fillClockwise = false;
             overlay.rectTransform.Place(0.5f, 0.5f, 0, 0, size, size);
             var cd = overlay.gameObject.AddComponent<CooldownRadial>();
             cd.overlay = overlay;
             cd.punchTarget = punch;
             cd.flashTarget = flash;
+            if (dim != null)
+            {
+                // v0.7: 대기 중 아이콘 어둡게 + 남은 영역 경계를 따라 도는 밝은 바늘 + 완료 시 흰 점멸
+                cd.dimTarget = dim;
+                var hand = UIB.Rect("SweepHand", parent);
+                hand.anchorMin = hand.anchorMax = new Vector2(0.5f, 0.5f);
+                hand.pivot = new Vector2(0.5f, 0f);
+                hand.anchoredPosition = Vector2.zero;
+                hand.sizeDelta = new Vector2(1f, size * 0.5f);
+                UIB.Solid("Line", hand, new Color(1f, 0.92f, 0.6f, 0.95f)).rectTransform.Stretch();
+                hand.gameObject.SetActive(false);
+                cd.sweepHand = hand;
+                var ready = UIB.Solid("ReadyFlash", parent, new Color(1f, 1f, 1f, 0f));
+                ready.rectTransform.Place(0.5f, 0.5f, 0, 0, size, size);
+                ready.enabled = false;
+                cd.readyFlash = ready;
+            }
             if (label)
             {
                 var t = UIB.Small10("Seconds", overlay.transform, "", TextAlignmentOptions.Center, Color.white);
@@ -236,6 +254,13 @@ namespace OZ.UI.EditorTools
             hud.group = UIB.Group(hudRt.gameObject);
             hud.group.blocksRaycasts = false;
 
+            // ── v0.7: 저체력 비네트 · 화면 밖 화살표 · 상호작용 안내 (HUD 패널보다 뒤에 그려지게 먼저 생성) ──
+            hud.lowHealth = BuildLowHealth(hudRt);
+            hud.healFlash = BuildHealFlash(hudRt);
+            hud.buffEdges = BuildBuffEdges(hudRt);
+            hud.indicators = BuildIndicators(hudRt);
+            hud.prompt = BuildPrompt(hudRt);
+
             // ── 좌상단: 초상화 칸 + HP 바(Sci-Fi Hud_Lifebar B) + 레벨/랭크/경험치 ──
             //  [초상화 34×34] [HP 바 106×26] 62/100
             //  [E급]          Lv.3
@@ -277,6 +302,12 @@ namespace OZ.UI.EditorTools
             health.flaskFill = null;
             health.flaskSteps = new Sprite[0];
             health.flashTarget = hpFill;
+            // v0.7 체력 상태 색 (하늘 → 노랑 → 빨강)
+            health.stateFill = hpFill;
+            health.normalSprite = hpFill.sprite;
+            health.cautionSprite = UIB.HudArt("HudLifebarB_Fill_Caution");
+            health.dangerSprite = UIB.HudArt("HudLifebarB_Fill_Danger");
+            health.barRoot = hpRoot;
 
             var hpText = UIB.Small10("HPText", tl, "100/100", TextAlignmentOptions.Left);
             hpText.rectTransform.Place(0, 1, 148, -12, 50, 12);
@@ -329,6 +360,9 @@ namespace OZ.UI.EditorTools
             bannerView.subtitleText = bSub;
             hud.banner = bannerView;
 
+            // ── v0.7: 위쪽 가운데 지역 이름 ──
+            hud.areaName = BuildAreaName(hudRt);
+
             // ── 우상단: 미니맵 ──
             var mmFrame = UIB.Panel("Minimap", hudRt, "Panels/Blue/Panel");
             mmFrame.raycastTarget = false;
@@ -337,22 +371,22 @@ namespace OZ.UI.EditorTools
             hud.systemAlarm = BuildSystemAlarm(hudRt);
             _systemAlarm = hud.systemAlarm;
 
-            // ── 하단 양손 분리 (v0.6) ──
-            //  [버프 20px …]                                          ← 좌하단 y 80
-            //   1    2    3    4                          Q    E    R
-            //  [36] [36] [36] [36]  (아이템, 좌하단)       [36] [36] [36]  (스킬, 우하단)
-            var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 160, 62);
-            var itemsRt = UIB.Rect("Items", bottom).Place(0, 0, 0, 0, 160, 62);
+            // ── 하단 양손 분리 (v0.7: 스킬 ↔ 아이템 자리 바꿈) ──
+            //                                                        [… 버프 20px]  ← 우하단 y 80
+            //   Q    E    R                                 1    2    3    4
+            //  [36] [36] [36]  (스킬, 좌하단)              [36] [36] [36] [36]  (아이템, 우하단)
+            var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 116, 62);
+            var skillBar = bottom.gameObject.AddComponent<SkillBarView>();
+            for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottom, (SkillSlot)i, i * 40f);
+
+            var bottomRight = UIB.Rect("BottomRight", hudRt).Place(1, 0, -8, 8, 153, 62);
+            var itemsRt = UIB.Rect("Items", bottomRight).Place(0, 0, 0, 0, 153, 62);
             var itemBar = itemsRt.gameObject.AddComponent<ItemBarView>();
             for (int i = 0; i < 4; i++) itemBar.slots[i] = ItemSlot(itemsRt, i, i * 39f);
 
-            var bottomRight = UIB.Rect("BottomRight", hudRt).Place(1, 0, -8, 8, 116, 62);
-            var skillBar = bottomRight.gameObject.AddComponent<SkillBarView>();
-            for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottomRight, (SkillSlot)i, i * 40f);
-
-            var buffRt = UIB.Rect("Buffs", hudRt).Place(0, 0, 8, 80, 200, 20);
+            var buffRt = UIB.Rect("Buffs", hudRt).Place(1, 0, -8, 80, 200, 20);
             var hl = buffRt.gameObject.AddComponent<HorizontalLayoutGroup>();
-            hl.spacing = 2; hl.childAlignment = TextAnchor.LowerLeft;
+            hl.spacing = 2; hl.childAlignment = TextAnchor.LowerRight;
             hl.childControlWidth = hl.childControlHeight = false;
             hl.childForceExpandWidth = hl.childForceExpandHeight = false;
             var buffs = buffRt.gameObject.AddComponent<BuffTrayView>();
@@ -382,6 +416,216 @@ namespace OZ.UI.EditorTools
         }
 
         static SystemAlarmView _systemAlarm;
+
+        // ───────────── v0.7 ─────────────
+
+        // 화면 위쪽 가운데:      서울 거리
+        //               ─────────┼─────────   (가운데서 양옆으로 펼쳐짐)
+        //                      1스테이지
+        static AreaNameView BuildAreaName(Transform hudRt)
+        {
+            var root = UIB.Rect("AreaName", hudRt).Place(0.5f, 1, 0, -12, 240, 44);
+            var view = root.gameObject.AddComponent<AreaNameView>();
+            view.group = UIB.Group(root.gameObject);
+            view.group.alpha = 0f;
+            view.group.blocksRaycasts = false;
+            var content = UIB.Rect("Content", root).Stretch();
+            view.content = content;
+
+            var shade = UIB.Solid("Shade", content, new Color(0.02f, 0.03f, 0.07f, 0.35f));
+            shade.rectTransform.Place(0.5f, 1, 0, -1, 180, 20);
+            var name = UIB.Title15("Name", content, "서울 거리", TextAlignmentOptions.Center, Color.white);
+            name.rectTransform.Place(0.5f, 1, 0, -2, 240, 18);
+            name.textWrappingMode = TextWrappingModes.NoWrap;
+            view.nameText = name;
+
+            var lineColor = new Color(UIB.Accent.r, UIB.Accent.g, UIB.Accent.b, 0.75f);
+            var left = UIB.Solid("LineLeft", content, lineColor).rectTransform;
+            left.anchorMin = left.anchorMax = new Vector2(0.5f, 1f);
+            left.pivot = new Vector2(1f, 0.5f);
+            left.anchoredPosition = new Vector2(0, -22);
+            left.sizeDelta = new Vector2(80, 1);
+            var right = UIB.Solid("LineRight", content, lineColor).rectTransform;
+            right.anchorMin = right.anchorMax = new Vector2(0.5f, 1f);
+            right.pivot = new Vector2(0f, 0.5f);
+            right.anchoredPosition = new Vector2(0, -22);
+            right.sizeDelta = new Vector2(80, 1);
+            view.lineLeft = left;
+            view.lineRight = right;
+
+            var sub = UIB.Small10("Subtitle", content, "", TextAlignmentOptions.Center, UIB.Dim);
+            sub.rectTransform.Place(0.5f, 1, 0, -25, 240, 12);
+            sub.textWrappingMode = TextWrappingModes.NoWrap;
+            sub.gameObject.SetActive(false);
+            view.subtitleText = sub;
+            return view;
+        }
+
+        static LowHealthView BuildLowHealth(Transform hudRt)
+        {
+            var art = UIB.HudArt("LowHealthVignette");
+            var vig = UIB.Img("LowHealthVignette", hudRt, art ?? UIB.White, new Color(0.85f, 0.04f, 0.08f, 0f));
+            vig.rectTransform.Stretch();
+            vig.enabled = false;
+            var view = vig.gameObject.AddComponent<LowHealthView>();
+            view.vignette = vig;
+            return view;
+        }
+
+        // 랭크 승급 연출 (Cinematic 레이어 — HUD·창 위, 사망·타이틀 아래)
+        static void BuildRankUp(Transform layer)
+        {
+            var root = UIB.Rect("RankUp", layer).Stretch();
+            var view = root.gameObject.AddComponent<RankUpView>();
+            view.group = UIB.Group(root.gameObject);
+            view.group.alpha = 0f;
+            view.group.blocksRaycasts = false;
+            view.group.interactable = false;
+
+            var flash = UIB.Solid("Flash", root, new Color(1f, 0.85f, 0.3f, 0f));
+            flash.rectTransform.Stretch();
+            view.flash = flash;
+
+            var content = UIB.Rect("Content", root).Place(0.5f, 0.5f, 0, 24, 240, 160);
+            view.content = content;
+            var rays = UIB.Img("Rays", content, UIB.HudArt("RankUpRays") ?? UIB.White, new Color(1f, 0.85f, 0.3f, 0f));
+            rays.rectTransform.Place(0.5f, 0.5f, 0, 0, 128, 128);
+            view.rays = rays.rectTransform;
+            view.raysImage = rays;
+            var ringSprite = UIB.HudArt("RankUpRing") ?? UIB.White;
+            view.rings = new Image[2];
+            for (int i = 0; i < 2; i++)
+            {
+                var ring = UIB.Img("Ring" + i, content, ringSprite, new Color(1f, 0.85f, 0.3f, 0f));
+                ring.rectTransform.Place(0.5f, 0.5f, 0, 0, 48, 48);
+                view.rings[i] = ring;
+            }
+
+            var sparkRoot = UIB.Rect("Sparks", content).Place(0.5f, 0.5f, 0, 0, 1, 1);
+            var spark = UIB.Solid("Spark", sparkRoot, Color.white);
+            spark.rectTransform.Place(0.5f, 0.5f, 0, 0, 3, 3);
+            view.sparkTemplate = spark;
+
+            var badge = UIB.Panel("Badge", content, "Panels/Blue/Panel");
+            badge.raycastTarget = false;
+            badge.rectTransform.Place(0.5f, 0.5f, 0, 0, 48, 48);
+            view.badge = badge.rectTransform;
+            var mask = UIB.Rect("Mask", badge.transform).Stretch(3, 3, 3, 3);
+            mask.gameObject.AddComponent<RectMask2D>();
+            view.rankMask = mask;
+            var oldRank = UIB.Text("OldRank", mask, "F", UIB.Title, 28, TextAlignmentOptions.Center, Color.white);
+            oldRank.rectTransform.Place(0.5f, 0.5f, 0, 0, 42, 42);
+            view.oldRankText = oldRank;
+            var newRank = UIB.Text("NewRank", mask, "E", UIB.Title, 28, TextAlignmentOptions.Center, UIB.Accent);
+            newRank.rectTransform.Place(0.5f, 0.5f, 0, -40, 42, 42);
+            view.newRankText = newRank;
+
+            var arrow = UIB.Img("UpArrow", content, UIB.HudArt("IndicatorArrow") ?? UIB.White, UIB.Accent);
+            arrow.rectTransform.Place(0.5f, 0.5f, 34, -6, 12, 12);
+            arrow.rectTransform.localEulerAngles = new Vector3(0, 0, 90);
+            view.upArrow = arrow.rectTransform;
+
+            var title = UIB.Text("Title", content, "RANK UP!", UIB.Title, 28, TextAlignmentOptions.Center, UIB.Accent);
+            title.rectTransform.Place(0.5f, 0.5f, 0, -46, 320, 30);
+            title.textWrappingMode = TextWrappingModes.NoWrap;
+            view.titleText = title;
+            var sub = UIB.Body12("Sub", content, "헌터 랭크 승급", TextAlignmentOptions.Center, Color.white);
+            sub.rectTransform.Place(0.5f, 0.5f, 0, -68, 320, 14);
+            sub.textWrappingMode = TextWrappingModes.NoWrap;
+            view.subText = sub;
+        }
+
+        // 회복 순간 초록 비네트 (저체력 비네트와 같은 그림, 색만 초록)
+        static HealFlashView BuildHealFlash(Transform hudRt)
+        {
+            var art = UIB.HudArt("LowHealthVignette");
+            var vig = UIB.Img("HealVignette", hudRt, art ?? UIB.White, new Color(0.25f, 0.95f, 0.45f, 0f));
+            vig.rectTransform.Stretch();
+            vig.enabled = false;
+            var view = vig.gameObject.AddComponent<HealFlashView>();
+            view.vignette = vig;
+            return view;
+        }
+
+        // 버프 테두리: 9-slice 빛 테두리 하나에서 버프 색이 번갈아 점멸
+        static BuffEdgeView BuildBuffEdges(Transform hudRt)
+        {
+            var root = UIB.Rect("BuffEdges", hudRt).Stretch();
+            var view = root.gameObject.AddComponent<BuffEdgeView>();
+            var art = UIB.HudArt("BuffEdgeGlow");
+            var tpl = UIB.Img("BuffEdge", root, art ?? UIB.White, new Color(1f, 1f, 1f, 0f));
+            tpl.type = Image.Type.Sliced;
+            tpl.fillCenter = false;
+            tpl.rectTransform.Stretch();
+            tpl.enabled = false;
+            view.template = tpl;
+            return view;
+        }
+
+        // 화면 밖 화살표: [▶] 화살표가 화면 가장자리, 그 안쪽에 아이콘 칸, 아래에 거리
+        static OffscreenIndicatorView BuildIndicators(Transform hudRt)
+        {
+            var area = UIB.Rect("Indicators", hudRt).Stretch();
+            var view = area.gameObject.AddComponent<OffscreenIndicatorView>();
+            view.area = area;
+            view.gateIcon = UIB.Art("Map_Gate");
+            view.bossIcon = UIB.Art("Map_Boss");
+            view.objectiveIcon = UIB.Art("Map_Marker");
+
+            var item = UIB.Rect("IndicatorTemplate", area).Place(0.5f, 0.5f, 0, 0, 16, 16);
+            var iv = item.gameObject.AddComponent<IndicatorItemView>();
+            iv.group = UIB.Group(item.gameObject);
+            iv.group.blocksRaycasts = false;
+            var arrow = UIB.Img("Arrow", item, UIB.HudArt("IndicatorArrow") ?? UIB.White);
+            arrow.rectTransform.Place(0.5f, 0.5f, 0, 0, 12, 12);
+            iv.arrow = arrow.rectTransform;
+            iv.arrowImage = arrow;
+            var frame = UIB.Solid("IconFrame", item, new Color(0.4f, 0.86f, 1f, 0.9f));
+            frame.rectTransform.Place(0.5f, 0.5f, -14, 0, 16, 16);
+            iv.iconBack = frame;
+            var inner = UIB.Solid("Inner", frame.transform, new Color(0.03f, 0.05f, 0.1f, 0.92f));
+            inner.rectTransform.Place(0.5f, 0.5f, 0, 0, 14, 14);
+            var icon = UIB.Img("Icon", frame.transform, null);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 10, 10);
+            icon.preserveAspect = true;
+            iv.icon = icon;
+            var label = UIB.Small10("Distance", item, "", TextAlignmentOptions.Center, new Color(0.4f, 0.86f, 1f));
+            label.rectTransform.Place(0.5f, 0.5f, -14, -12, 60, 12);
+            label.textWrappingMode = TextWrappingModes.NoWrap;
+            iv.label = label;
+            view.template = iv;
+            item.gameObject.SetActive(false);
+            return view;
+        }
+
+        // 상호작용 안내:  [F] 조사   (대상 머리 위, 월드 위치를 따라감)
+        static InteractPromptView BuildPrompt(Transform hudRt)
+        {
+            var area = UIB.Rect("PromptArea", hudRt).Stretch();
+            var root = UIB.Rect("Prompt", area).Place(0.5f, 0.5f, 0, 0, 1, 1);
+            var view = root.gameObject.AddComponent<InteractPromptView>();
+            view.group = UIB.Group(root.gameObject);
+            view.group.alpha = 0f;
+            view.group.blocksRaycasts = false;
+            var body = UIB.Rect("Body", root).Place(0.5f, 0, 0, 0, 120, 19);
+            view.body = body;
+            var back = UIB.Solid("Back", body, new Color(0.02f, 0.03f, 0.07f, 0.6f));
+            back.rectTransform.Place(0.5f, 0.5f, 0, 0, 60, 19);
+            view.back = back.rectTransform;
+            var cap = UIB.Panel("KeyCap", body, "Panels/Blue/Panel");
+            cap.raycastTarget = false;
+            cap.rectTransform.Place(0.5f, 0.5f, -20, 0, 15, 15);
+            view.keyCap = cap.rectTransform;
+            var key = UIB.Body12("Key", cap.transform, "F", TextAlignmentOptions.Center, UIB.Accent);
+            key.rectTransform.Stretch(0, 0, 0, 1);
+            key.textWrappingMode = TextWrappingModes.NoWrap;
+            view.keyText = key;
+            var action = UIB.Body12("Action", body, "조사", TextAlignmentOptions.Center, Color.white);
+            action.rectTransform.Place(0.5f, 0.5f, 10, 0, 40, 14);
+            action.textWrappingMode = TextWrappingModes.NoWrap;
+            view.actionText = action;
+            return view;
+        }
 
         // 모든 버튼·토글·슬라이더에 소리. 직접 소리를 내는 칸(스킬 노드·인벤토리 칸)은 클릭 소리 없음
         static void AssignSelectableSounds(GameObject root)
@@ -503,7 +747,7 @@ namespace OZ.UI.EditorTools
             var lockImg = UIB.Solid("Locked", frame.transform, new Color(0, 0, 0, 0.55f));
             lockImg.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             view.lockOverlay = lockImg.gameObject;
-            view.cooldown = Radial(frame.transform, icon.rectTransform, frame, 32);
+            view.cooldown = Radial(frame.transform, icon.rectTransform, frame, 32, true, icon);
             view.cooldown.label.fontSize = 12; view.cooldown.label.font = UIB.Body;
             view.cooldown.completeSound = UISound.SkillReady;
             var key = UIB.Body12("Key", frame.transform, slot.ToString(), TextAlignmentOptions.Center, UIB.Accent);
@@ -531,6 +775,10 @@ namespace OZ.UI.EditorTools
             var icon = UIB.Img("Icon", frame.transform, null);
             icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
             view.icon = icon;
+            // v0.7 아이템 쿨타임 (IItemCooldownSource 구현 시) — 수량 글자보다 아래에 그려지게 먼저 생성
+            view.cooldown = Radial(frame.transform, icon.rectTransform, frame, 32, true, icon);
+            view.cooldown.label.fontSize = 12; view.cooldown.label.font = UIB.Body;
+            view.cooldown.completeSound = UISound.SkillReady;
             var countSh = UIB.Small10("CountShadow", frame.transform, "", TextAlignmentOptions.BottomRight, new Color(0, 0, 0, 0.9f));
             countSh.rectTransform.Place(1, 0, -2, 1, 30, 10);
             var count = UIB.Small10("Count", frame.transform, "0", TextAlignmentOptions.BottomRight, Color.white);
@@ -619,7 +867,7 @@ namespace OZ.UI.EditorTools
 
         static void BuildToast(Transform layer)
         {
-            var rt = UIB.Rect("Toasts", layer).Place(1, 0, -8, 76, 200, 120); // v0.6: 우하단 스킬 칸 위
+            var rt = UIB.Rect("Toasts", layer).Place(1, 0, -8, 104, 200, 120); // v0.7: 우하단 아이템 칸·버프 줄 위
             var vl = rt.gameObject.AddComponent<VerticalLayoutGroup>();
             vl.childAlignment = TextAnchor.LowerRight;
             vl.spacing = 2;

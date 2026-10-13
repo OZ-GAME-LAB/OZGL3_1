@@ -9,6 +9,7 @@ namespace OZ.UI
     /// <summary>
     /// HP 바(Sci-Fi Hud_Lifebar B) + 수치 + 초상화 칸 반응. (flaskFill은 선택 — 비워 두면 안 씀)
     ///   피격: 흔들림 + 빨강 플래시 / 회복: 초록 플래시 / 25% 이하: 맥박
+    ///   v0.7 체력 상태 색: 60% 초과 하늘색(기본) → 60% 이하 노랑 → 30% 이하 빨강. 바뀌는 순간 바가 하얗게 번쩍 + 살짝 튐, 수치 글자도 같은 색
     /// </summary>
     [AddComponentMenu("OZ/UI/HUD/Health View")]
     public class HealthView : MonoBehaviour
@@ -23,6 +24,21 @@ namespace OZ.UI
         [SerializeField, Range(0f, 1f)] internal float lowThreshold = 0.25f;
         [SerializeField] internal Color damageColor = new Color(1f, 0.3f, 0.3f);
         [SerializeField] internal Color healColor = new Color(0.4f, 1f, 0.5f);
+
+        [Header("v0.7 체력 상태 색")]
+        [SerializeField] internal Image stateFill;
+        [SerializeField] internal Sprite normalSprite;
+        [SerializeField] internal Sprite cautionSprite;
+        [SerializeField] internal Sprite dangerSprite;
+        [SerializeField, Range(0f, 1f)] internal float cautionThreshold = 0.6f;
+        [SerializeField, Range(0f, 1f)] internal float dangerThreshold = 0.3f;
+        [SerializeField] internal Color normalTextColor = new Color(0.93f, 0.95f, 1f);
+        [SerializeField] internal Color cautionTextColor = new Color(1f, 0.85f, 0.35f);
+        [SerializeField] internal Color dangerTextColor = new Color(1f, 0.45f, 0.45f);
+        [SerializeField] internal RectTransform barRoot;
+
+        /// <summary>0 기본 · 1 주의(노랑) · 2 위험(빨강)</summary>
+        public int State { get; private set; }
 
         IHealthSource _source;
         bool _low;
@@ -58,6 +74,23 @@ namespace OZ.UI
             }
         }
 
+        void ApplyState(int state, bool animate)
+        {
+            bool changed = state != State;
+            State = state;
+            if (stateFill != null)
+            {
+                var sp = state == 2 ? dangerSprite : state == 1 ? cautionSprite : normalSprite;
+                if (sp != null && stateFill.sprite != sp) stateFill.sprite = sp;
+            }
+            if (valueText != null) valueText.color = state == 2 ? dangerTextColor : state == 1 ? cautionTextColor : normalTextColor;
+            if (changed && animate)
+            {
+                if (stateFill != null) stateFill.FlashColor(Color.white, 0.25f);
+                if (barRoot != null) barRoot.Punch(0.12f, 0.25f);
+            }
+        }
+
         void Refresh(bool animate)
         {
             float hp = _source?.HP ?? 0f;
@@ -80,6 +113,8 @@ namespace OZ.UI
                 flaskFill.enabled = step > 0;
                 if (step > 0) flaskFill.sprite = flaskSteps[step - 1];
             }
+
+            ApplyState(_source == null ? 0 : n <= dangerThreshold ? 2 : n <= cautionThreshold ? 1 : 0, animate);
 
             bool low = _source != null && n > 0f && n <= lowThreshold;
             if (low != _low && flaskRoot != null)
