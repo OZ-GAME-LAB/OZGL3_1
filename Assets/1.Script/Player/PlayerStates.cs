@@ -290,7 +290,8 @@ public class PlayerState_Attack : PlayerState_Base
         }
     
         _animator.SetTrigger("Attack");
-    
+        _animator.SetBool("Attacking", true);
+
         IPlayerAttack attack = player.Attack;
         if (attack != null)
         {
@@ -313,6 +314,7 @@ public class PlayerState_Attack : PlayerState_Base
     public override void ExitState(PlayerController player)
     {
         _animator.ResetTrigger("Attack");
+        _animator.SetBool("Attacking", false);   // 코드가 끝나면 애니메이션도 끝
     }
 }
 

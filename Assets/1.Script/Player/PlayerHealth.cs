@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
 
     [SerializeField] private float _maxHP = 100f;
     [SerializeField] private float _hitInvincibleTime = 0.5f; // 연속 피격 방지
+    [SerializeField] private float _respawnInvincibleTime = 0.5f; // 재시작 직후 잠깐 보호
 
     private PlayerController _player;
     private float _hp;
@@ -44,6 +45,13 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
             return;
         }
 
+        // UI 창(일시정지, 스킬 창 등)이 열려 있을 때는 피격 무시 (Bridge에 있던 판정을 옮겨옴)
+        if (UIState.IsGameplayInputBlocked)
+        {
+            return;
+        }
+
+
         SetHP(_hp - damage);
 
         if (IsDead)
@@ -67,11 +75,12 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
         SetHP(_hp + amount);
     }
 
-    // 스테이지 재시작 시 코어 쪽에서 호출
+    // 스테이지 재시작 시 코어 쪽에서 호출 (플레이어를 SetActive(true) 한 다음에 호출)
     public void ResetHealth()
     {
         SetHP(_maxHP);
         _player.Revive();
+        _player.SetInvincible(_respawnInvincibleTime); // Revive가 무적을 초기화하므로 그 뒤에 설정
     }
     private void SetHP(float value)
     {

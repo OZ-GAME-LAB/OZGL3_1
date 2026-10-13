@@ -1592,6 +1592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   _maxHP: 100
   _hitInvincibleTime: 0.5
+  _respawnInvincibleTime: 0.5
 --- !u!114 &2843753717330458438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,7 +1612,7 @@ MonoBehaviour:
   _hitBoxHeight: 1
   _enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!95 &1303281578308138415
 Animator:
   serializedVersion: 7
