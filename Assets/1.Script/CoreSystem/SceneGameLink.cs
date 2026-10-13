@@ -1,4 +1,4 @@
-using OZ.UI.Contracts;
+﻿using OZ.UI.Contracts;
 using UnityEngine;
 
 public class SceneGameLink : MonoBehaviour
@@ -6,7 +6,7 @@ public class SceneGameLink : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private PlayerController player;
     [SerializeField] private InputManager input;
-    // 실제 체력 변경은 playerUI.SetHP(hp, maxHP)로 전달합니다.
+    [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerUILink playerUI;
     [SerializeField] private GateUILink gateUI;
 
@@ -45,10 +45,10 @@ public class SceneGameLink : MonoBehaviour
         gameManager.StageManager.StartStage();
         if (!gameManager.StageManager.IsStageRunning) return;
 
-        playerUI.SetHP(playerUI.MaxHP);
         GameUI.Screens.CloseAll();
         GameUI.HUD.Visible = true;
         player.gameObject.SetActive(true);
+        playerHealth.ResetHealth(); // 체력 가득 + Dead 상태 해제.
         var body = player.GetComponent<Rigidbody>();
         body.position = spawnPosition;
         body.rotation = spawnRotation;
