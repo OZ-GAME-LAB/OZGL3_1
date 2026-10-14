@@ -27,8 +27,8 @@
                     "priority": 0
                 },
                 {
-                    "name": "Run",
-                    "type": "PassThrough",
+                    "name": "Dash",
+                    "type": "Button",
                     "id": "f74b1741-7d10-4668-bcc0-642a64c9b915",
                     "expectedControlType": "",
                     "processors": "",
@@ -131,7 +131,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Run",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

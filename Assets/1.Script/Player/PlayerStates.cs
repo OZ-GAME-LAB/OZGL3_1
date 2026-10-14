@@ -248,7 +248,7 @@ public class PlayerState_Dash : PlayerState_Base
         velocity.y = 0f;
         _rigidbody.linearVelocity = velocity;
 
-        _animator.SetTrigger("Dash");
+        _animator.SetBool("IsDashing", true);
     }
 
     public override void UpdateState(PlayerController player)
@@ -268,7 +268,7 @@ public class PlayerState_Dash : PlayerState_Base
     {
         _rigidbody.useGravity = true;
         player.Stop(); // 대시 관성 제거 (미끄러지는 느낌을 원하면 삭제)
-        _animator.ResetTrigger("Dash");
+        _animator.SetBool("IsDashing", false);
     }
 }
 
