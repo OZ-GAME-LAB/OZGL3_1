@@ -1,13 +1,18 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using OZ.UI.Contracts;
 
 public class StageManager : BaseManager
 {
     [SerializeField] private GameObject stagePrefab;
     [SerializeField] private Transform stageParent;
+    [SerializeField, Min(1)] private int stageNumber = 1;
+    [SerializeField] private HunterRank clearRank = HunterRank.E;
     private GateManager gateManager;
 
     public bool IsStageRunning { get; private set; }
+    public bool IsStageCleared { get; private set; }
+    public event System.Action StageCleared;
     public GameObject CurrentStage { get; private set; }
 
     public override UniTask InitializeAsync()
@@ -16,6 +21,8 @@ public class StageManager : BaseManager
             throw new System.InvalidOperationException("GameManager에서 GateManager를 주입해야 합니다.");
 
         EndStage();
+        gateManager.AllGatesClosed -= OnAllGatesClosed;
+        gateManager.AllGatesClosed += OnAllGatesClosed;
         return UniTask.CompletedTask;
     }
 
@@ -26,6 +33,8 @@ public class StageManager : BaseManager
 
         // 이전 매니저가 관리하던 게이트를 정리한 뒤 새 참조를 받습니다.
         EndStage();
+        if (gateManager != null)
+            gateManager.AllGatesClosed -= OnAllGatesClosed;
         gateManager = manager;
         return InitializeAsync();
     }
@@ -58,11 +67,14 @@ public class StageManager : BaseManager
             return;
         }
 
+        if (CurrentStage != null)
+            EndStage();
         CurrentStage = Instantiate(prefab, Vector3.zero, prefab.transform.rotation, stageParent);
         // 씬에 둔 비활성 스테이지 원본도 사용할 수 있습니다.
         CurrentStage.SetActive(true);
         Stage stage = CurrentStage.GetComponent<Stage>();
         gateManager.SetGates(stage.Gates);
+        IsStageCleared = false;
         IsStageRunning = true;
         gateManager.ActivateGates();
     }
@@ -70,6 +82,7 @@ public class StageManager : BaseManager
     public void EndStage()
     {
         IsStageRunning = false;
+        IsStageCleared = false;
 
         if (gateManager != null)
             gateManager.ClearGates();
@@ -81,6 +94,23 @@ public class StageManager : BaseManager
             Destroy(CurrentStage);
             CurrentStage = null;
         }
+    }
+
+    private void OnAllGatesClosed()
+    {
+        if (!IsStageRunning || IsStageCleared) return;
+        IsStageCleared = true;
+        IsStageRunning = false;
+        // 폐쇄된 게이트의 빨간색을 확인할 수 있도록 스테이지는 유지합니다.
+        GameUI.Screens.ShowStageClear(stageNumber, clearRank);
+        StageCleared?.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        if (gateManager != null)
+            gateManager.AllGatesClosed -= OnAllGatesClosed;
+        EndStage();
     }
 
 }
