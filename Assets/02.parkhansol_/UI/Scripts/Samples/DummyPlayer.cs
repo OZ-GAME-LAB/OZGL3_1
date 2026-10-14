@@ -13,6 +13,7 @@ namespace OZ.UI.Samples
     ///   H 피격 -15 / J 회복 +20 / X 경험치 +40
     ///   Q E R 스킬 사용 / 1 2 3 4 아이템 사용 / U 회복제 +1
     ///   G 게이트 봉쇄 / O 게이트 열기 / = 레벨업
+    ///   Shift 대시 (v0.9 — 플레이어 옆 게이지의 대시 동그라미 확인용, 실제 이동은 없음)
     ///
     /// 스킬 트리(v0.4): 규칙은 SkillTreeState가 계산하고, 여기서는 포인트 차감·이벤트만 한다.
     ///   계열 선택 = 그 계열의 Q 스킬 노드를 무료로 찍어 둠 (초기화해도 남음).
@@ -20,8 +21,43 @@ namespace OZ.UI.Samples
     /// </summary>
     [AddComponentMenu("OZ/UI/Samples/Dummy Player")]
     public class DummyPlayer : MonoBehaviour,
-        IHealthSource, IProgressionSource, ISkillSource, ISkillTreeSource, IItemSource, IGateSource, IInventorySource, IItemCooldownSource
+        IHealthSource, IProgressionSource, ISkillSource, ISkillTreeSource, IItemSource, IGateSource, IInventorySource, IItemCooldownSource,
+        IDashSource
     {
+        // ── v0.9 대시 (게이지 확인용 가짜 대시) ──
+        [Header("v0.9 대시 (Shift)")]
+        [Tooltip("최대 대시 횟수 = 게이지 동그라미 수")]
+        [SerializeField, Range(1, 8)] internal int maxDashCharges = 2;
+        [Tooltip("대시 1회가 다시 차는 시간(초)")]
+        [SerializeField, Min(0.1f)] internal float dashRecharge = 0.8f;
+        int _dashCharges = -1;
+        float _dashRefillAt;
+
+        public int MaxDashCharges => Mathf.Clamp(maxDashCharges, 1, 8);
+        public int DashCharges { get { TickDash(); return _dashCharges; } }
+        public float DashCooldownRemaining => DashCharges < MaxDashCharges ? Mathf.Max(0f, _dashRefillAt - Time.time) : 0f;
+        public float DashCooldownDuration => dashRecharge;
+        public bool CanDash => DashCharges > 0;
+
+        void TickDash()
+        {
+            if (_dashCharges < 0) _dashCharges = MaxDashCharges;
+            _dashCharges = Mathf.Min(_dashCharges, MaxDashCharges);
+            while (_dashCharges < MaxDashCharges && Time.time >= _dashRefillAt)
+            {
+                _dashCharges++;
+                if (_dashCharges < MaxDashCharges) _dashRefillAt += dashRecharge; // 한 칸씩 차례로 참
+            }
+        }
+
+        internal void Dash()
+        {
+            TickDash();
+            if (_dashCharges <= 0) return;
+            if (_dashCharges >= MaxDashCharges) _dashRefillAt = Time.time + dashRecharge; // 가득 찬 상태에서 처음 쓰면 충전 시작
+            _dashCharges--;
+        }
+
         [Header("Data (선택 — 비우면 이름 없는 슬롯으로 표시)")]
         [SerializeField] internal ClassData classData;
         [Tooltip("노드형 스킬 트리. 비우면 예전 방식(Q/E/R 단계만)으로 동작")]
@@ -111,6 +147,7 @@ namespace OZ.UI.Samples
         public void ResetAll()
         {
             _hp = maxHP;
+            _dashCharges = MaxDashCharges;
             _level = 1; _exp = 0f; _points = 0;
             var tree = TreeState;
             tree?.Clear();
@@ -475,6 +512,7 @@ namespace OZ.UI.Samples
             if (kb.gKey.wasPressedThisFrame) SealGate();
             if (kb.oKey.wasPressedThisFrame) OpenGate();
             if (kb.equalsKey.wasPressedThisFrame) LevelUpNow();
+            if (kb.leftShiftKey.wasPressedThisFrame || kb.rightShiftKey.wasPressedThisFrame) Dash();
         }
     }
 }

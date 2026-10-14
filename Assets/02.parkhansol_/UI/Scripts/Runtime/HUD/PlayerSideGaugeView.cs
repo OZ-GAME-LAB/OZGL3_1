@@ -102,6 +102,7 @@ namespace OZ.UI
         IHealthSource _health;
         Camera _cam;
         int _segCount, _lit;
+        float _seenHp = -1f, _seenMax = -1f; // 이벤트 없이 값이 바뀐 경우 대비
         float _alpha, _lastEventTime = -99f, _shakeT;
         float _side = -1f;           // +1 플레이어 오른쪽, -1 왼쪽
         bool _hadDash, _targetWasActive;
@@ -236,6 +237,7 @@ namespace OZ.UI
             }
             if (!keepTimers) { System.Array.Clear(_lostT, 0, _lostT.Length); System.Array.Clear(_healT, 0, _healT.Length); }
 
+            _seenHp = hp; _seenMax = max;
             float per = max / count;
             // 조금이라도 남으면 그 칸은 켜짐 (0.1 남아도 1칸 보이게). 0번 = 맨 아래 칸
             _lit = hp <= 0f ? 0 : Mathf.Clamp(Mathf.CeilToInt(hp / per - 0.0001f), 1, count);
@@ -250,6 +252,9 @@ namespace OZ.UI
             Transform target = UIPlayerTag.Current;
             IDashSource dash = UISources.Dash;
             _hadDash = dash != null;
+            // 체력 값이 이벤트 없이 바뀌었으면(초기화 등) 칸 다시 계산
+            if (_health != null && (!Mathf.Approximately(_health.HP, _seenHp) || !Mathf.Approximately(_health.MaxHP, _seenMax)))
+                RebuildSegments(true);
 
             // 대시 상태 → 동그라미 수. 줄면 그 동그라미 바로 사라짐, 늘면 새로 찬 동그라미 깜빡임
             bool dashFull = true;

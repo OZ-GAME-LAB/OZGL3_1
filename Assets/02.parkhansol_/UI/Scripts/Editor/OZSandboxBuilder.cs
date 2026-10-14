@@ -19,7 +19,7 @@ namespace OZ.UI.EditorTools
 
         public const string HelpText =
             "<b>UI SANDBOX</b>  (F1 숨기기)\n" +
-            "<color=#FFD966>HUD</color> H 피격  J 회복  X 경험치  = 레벨업\n" +
+            "<color=#FFD966>HUD</color> H 피격  J 회복  X 경험치  = 레벨업  Shift 대시\n" +
             "<color=#FFD966>사용</color> Q/E/R 스킬  1~4 아이템  U 회복제+1\n" +
             "<color=#FFD966>게이트</color> G 봉쇄  O 열기   P 다음 방\n" +
             "<color=#FFD966>보스</color> B 등장  N 피격  V 큰 피격\n" +
