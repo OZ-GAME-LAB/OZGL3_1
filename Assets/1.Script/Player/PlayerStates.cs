@@ -4,12 +4,13 @@ public enum PlayerState
 {
     Idle,
     Walk,
-    Run,
     Jump,   // 점프 시작 (도약)
     Air,    // 공중 (상승 + 낙하)
     Land,   // 착지
+    Dash,   // 회피 대시 (짧은 무적)
     Attack,
-    Hit
+    Hit,
+    Dead
 }
 
 public interface IPlayerState
@@ -47,12 +48,18 @@ public abstract class PlayerState_Base : IPlayerState
     public virtual void FixedUpdateState(PlayerController player) { }
     public virtual void ExitState(PlayerController player) { }
 
-    // 지상 상태(Idle, Walk, Run, Land) 공통 전환. 전환했으면 true.
+    // 지상 상태(Idle, Walk, Land) 공통 전환. 전환했으면 true.
     protected bool TryGroundAction(PlayerController player)
     {
         if (!player.IsGrounded)
         {
             player.ChangeState(PlayerState.Air); // 발판에서 떨어짐 → 점프 시작 없이 바로 공중
+            return true;
+        }
+        player.ResetAirDash();
+        if (player.IsDashRequested && player.CanDash)
+        {
+            player.ChangeState(PlayerState.Dash); // 회피가 최우선
             return true;
         }
         if (player.IsAttackRequested)
@@ -81,7 +88,7 @@ public class PlayerState_Idle : PlayerState_Base
 
         if (player.Input.MoveInput.x != 0)
         {
-            player.ChangeState(player.Input.IsRunning ? PlayerState.Run : PlayerState.Walk);
+            player.ChangeState(PlayerState.Walk);
         }
     }
 
@@ -108,11 +115,6 @@ public class PlayerState_Walk : PlayerState_Base
         if (player.Input.MoveInput.x == 0)
         {
             player.ChangeState(PlayerState.Idle);
-            return;
-        }
-        if (player.Input.IsRunning)
-        {
-            player.ChangeState(PlayerState.Run);
         }
     }
 
@@ -124,42 +126,6 @@ public class PlayerState_Walk : PlayerState_Base
     public override void ExitState(PlayerController player)
     {
         _animator.SetBool("Walk", false);
-    }
-}
-
-public class PlayerState_Run : PlayerState_Base
-{
-    public override void EnterState(PlayerController player)
-    {
-        base.EnterState(player);
-        _animator.SetBool("Run", true);
-    }
-
-    public override void UpdateState(PlayerController player)
-    {
-        if (TryGroundAction(player))
-        {
-            return;
-        }
-        if (player.Input.MoveInput.x == 0)
-        {
-            player.ChangeState(PlayerState.Idle);
-            return;
-        }
-        if (!player.Input.IsRunning)
-        {
-            player.ChangeState(PlayerState.Walk);
-        }
-    }
-
-    public override void FixedUpdateState(PlayerController player)
-    {
-        player.Move(player.RunSpeed);
-    }
-
-    public override void ExitState(PlayerController player)
-    {
-        _animator.SetBool("Run", false);
     }
 }
 
@@ -206,6 +172,11 @@ public class PlayerState_Air : PlayerState_Base
 
     public override void UpdateState(PlayerController player)
     {
+        if (player.IsDashRequested && player.CanDash)
+        {
+            player.ChangeState(PlayerState.Dash);
+            return;
+        }
         if (player.IsAttackRequested)
         {
             player.ChangeState(PlayerState.Attack);
@@ -259,24 +230,67 @@ public class PlayerState_Land : PlayerState_Base
     }
 }
 
-// 공격 흐름(방향, 정지, 종료 타이밍)만 담당. 실제 판정은 IPlayerAttack에 맡김.
-public class PlayerState_Attack : PlayerState_Base
+// 회피 대시. 입력 방향(없으면 바라보는 방향)으로 일정 시간 직선 이동, 앞부분 무적.
+public class PlayerState_Dash : PlayerState_Base
 {
-    private float _duration;
+    private float _dirX;
 
     public override void EnterState(PlayerController player)
     {
         base.EnterState(player);
+        float inputX = player.Input.MoveInput.x;
+        _dirX = Mathf.Abs(inputX) > 0.01f ? Mathf.Sign(inputX) : player.FacingX;
 
+        player.LookAtImmediately(_dirX);
+        player.StartDash();
+        _rigidbody.useGravity = false; // 공중 대시 중 떨어지지 않게
+        Vector3 velocity = _rigidbody.linearVelocity;
+        velocity.y = 0f;
+        _rigidbody.linearVelocity = velocity;
+
+        _animator.SetTrigger("Dash");
+    }
+
+    public override void UpdateState(PlayerController player)
+    {
+        if (ElapsedTime >= player.DashDuration)
+        {
+            player.ChangeToDefaultState();
+        }
+    }
+    public override void FixedUpdateState(PlayerController player)
+    {
+        Vector3 velocity = _rigidbody.linearVelocity;
+        velocity.x = _dirX * player.DashSpeed;
+        _rigidbody.linearVelocity = velocity;
+    }
+    public override void ExitState(PlayerController player)
+    {
+        _rigidbody.useGravity = true;
+        player.Stop(); // 대시 관성 제거 (미끄러지는 느낌을 원하면 삭제)
+        _animator.ResetTrigger("Dash");
+    }
+}
+
+// 공격 흐름(방향, 정지, 종료 타이밍)만 담당. 실제 판정은 IPlayerAttack에 맡김.
+public class PlayerState_Attack : PlayerState_Base
+{
+    private float _duration;
+    
+    public override void EnterState(PlayerController player)
+    {
+        base.EnterState(player);
+    
         Vector3 aimPoint = player.Input.GetAimPoint(player.transform.position);
         player.LookAtImmediately(aimPoint.x - player.transform.position.x); // 커서 방향 바라보기
-
+    
         if (player.IsGrounded)
         {
             player.Stop();
         }
-
+    
         _animator.SetTrigger("Attack");
+        _animator.SetBool("Attacking", true);
 
         IPlayerAttack attack = player.Attack;
         if (attack != null)
@@ -289,13 +303,18 @@ public class PlayerState_Attack : PlayerState_Base
             _duration = player.AttackDuration;
         }
     }
-
+    
     public override void UpdateState(PlayerController player)
     {
         if (ElapsedTime >= _duration)
         {
             player.ChangeToDefaultState();
         }
+    }
+    public override void ExitState(PlayerController player)
+    {
+        _animator.ResetTrigger("Attack");
+        _animator.SetBool("Attacking", false);   // 코드가 끝나면 애니메이션도 끝
     }
 }
 
@@ -315,5 +334,30 @@ public class PlayerState_Hit : PlayerState_Base
         {
             player.ChangeToDefaultState();
         }
+    }
+    public override void ExitState(PlayerController player)
+    {
+        _animator.ResetTrigger("Hit");
+    }
+}
+
+// 사망. 입력을 받지 않고, Revive 전까지 다른 상태로 나가지 않음.
+public class PlayerState_Dead : PlayerState_Base
+{
+    public override void EnterState(PlayerController player)
+    {
+        base.EnterState(player);
+        player.Stop();
+        _animator.SetTrigger("Dead");
+    }
+
+    public override void FixedUpdateState(PlayerController player)
+    {
+        player.Stop();
+    }
+
+    public override void ExitState(PlayerController player)
+    {
+        _animator.ResetTrigger("Dead");
     }
 }

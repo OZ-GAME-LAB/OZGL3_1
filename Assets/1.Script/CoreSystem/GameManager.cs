@@ -5,12 +5,14 @@ public class GameManager : BaseManager
 {
     [SerializeField] private StageManager stageManager;
     [SerializeField] private GateManager gateManager;
+    [SerializeField] private PoolManager poolManager;
     private bool isReady;
     private bool isLoading;
 
     public static GameManager Instance { get; private set; }
     public StageManager StageManager => stageManager;
     public GateManager GateManager => gateManager;
+    public PoolManager PoolManager => poolManager;
     //public ResourceManager ResourceManager { get; private set; }
 
     private void Awake()
@@ -57,11 +59,12 @@ public class GameManager : BaseManager
     public async UniTask InitializeManagersAsync()
     {
         await InitializeAsync();
-        if (stageManager == null || gateManager == null)
-            throw new System.InvalidOperationException("StageManager와 GateManager를 모두 연결하세요.");
+        if (stageManager == null || gateManager == null || poolManager == null)
+            throw new System.InvalidOperationException("StageManager, GateManager, PoolManager를 모두 연결하세요.");
 
         stageManager.EndStage();
-        await gateManager.InitializeAsync();
+        await poolManager.InitializeAsync();
+        await gateManager.InitializeAsync(poolManager);
         await stageManager.InitializeAsync(gateManager);
         //await ResourceManager.InitializeAsync();    
     }
@@ -84,6 +87,9 @@ public class GameManager : BaseManager
 
     private void SetupManagers()
     {
+        if (poolManager == null) poolManager = GetComponent<PoolManager>();
+        if (poolManager == null)
+            Debug.LogError("PoolManager를 인스펙터에 연결하거나 같은 오브젝트에 추가하세요.", this);
         if (gateManager == null)
             gateManager = GetComponent<GateManager>();
 
