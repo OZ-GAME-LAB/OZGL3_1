@@ -88,4 +88,21 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
         _hp = Mathf.Clamp(value, 0f, _maxHP);
         HealthChanged?.Invoke(new HealthChange(prev, _hp, _maxHP));
     }
+
+    // PlayerStats에서 호출 (체력 스탯 변경 시)
+    // 기획 : 최대 HP가 늘면 현재 HP에는 늘어난 만큼만 더한다 (가득 회복 X)
+    public void SetMaxHP(float maxHP)
+    {
+        float delta = maxHP - _maxHP;
+        _maxHP = Mathf.Max(1f, maxHP);
+
+        // 죽은 상태에서 HP가 더해지면 살아난 것처럼 보이므로 최대치만 갱신
+        if (IsDead)
+        {
+            SetHP(_hp);
+            return;
+        }
+
+        SetHP(_hp + Mathf.Max(0f, delta));
+    }
 }

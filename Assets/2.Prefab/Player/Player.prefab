@@ -1517,6 +1517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3384832017090783504}
   - component: {fileID: 8924420892086741974}
+  - component: {fileID: 2869846327356406548}
   - component: {fileID: 817452346629760248}
   - component: {fileID: 8359091664221977547}
   - component: {fileID: 1303281578308138415}
@@ -1578,6 +1579,35 @@ MonoBehaviour:
   _attackDuration: 0.4
   _hitStunTime: 0.3
   _currentStateType: 0
+--- !u!114 &2869846327356406548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de49e892ae801634390eb6785c0e61c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  _strength:
+    baseValue: 20
+    perLevel: 3
+    maxLevel: 5
+  _vitality:
+    baseValue: 100
+    perLevel: 12
+    maxLevel: 5
+  _agility:
+    baseValue: 0
+    perLevel: 0.03
+    maxLevel: 3
+  _magic:
+    baseValue: 20
+    perLevel: 3
+    maxLevel: 5
+  _punchAttack: {fileID: 817452346629760248}
 --- !u!114 &817452346629760248
 MonoBehaviour:
   m_ObjectHideFlags: 0
