@@ -1517,8 +1517,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3384832017090783504}
   - component: {fileID: 8924420892086741974}
+  - component: {fileID: 817452346629760248}
   - component: {fileID: 8359091664221977547}
-  - component: {fileID: 2843753717330458438}
   - component: {fileID: 1303281578308138415}
   - component: {fileID: 3353712588403264877}
   - component: {fileID: 594316928391325509}
@@ -1578,6 +1578,27 @@ MonoBehaviour:
   _attackDuration: 0.4
   _hitStunTime: 0.3
   _currentStateType: 0
+--- !u!114 &817452346629760248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dbbe5a5ca184e4589b6f482f49e5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PunchAttack
+  _baseDuration: 0.3
+  _attackPower: 20
+  _damageCoefficient: 1
+  _hitBoxSize: {x: 1, y: 1, z: 1}
+  _hitBoxForward: 0.7
+  _hitBoxHeight: 1
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &8359091664221977547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,26 +1614,6 @@ MonoBehaviour:
   _maxHP: 100
   _hitInvincibleTime: 0.5
   _respawnInvincibleTime: 0.5
---- !u!114 &2843753717330458438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050402693780808945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 414b0ee24b984e0408cfa8508d7545b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwordBasicAttack
-  _duration: 0.35
-  _damage: 10
-  _hitBoxSize: {x: 1.6, y: 1.2, z: 1}
-  _hitBoxForward: 0.9
-  _hitBoxHeight: 1
-  _enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!95 &1303281578308138415
 Animator:
   serializedVersion: 7
