@@ -5,6 +5,9 @@ using UnityEngine;
 public class Stage : MonoBehaviour
 {
     [SerializeField] private List<StageGate> gates = new List<StageGate>();
+    [SerializeField] private BossGate bossGate;
+
+    public BossGate BossGate => bossGate;
 
     public IReadOnlyList<StageGate> Gates => gates.AsReadOnly();
 }

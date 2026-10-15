@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed67b1399774d94b95214b85eae6b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
-  stagePrefab: {fileID: 2108500846}
+  stagePrefab: {fileID: 7441219851636034096, guid: d5d0b851500be7047b8c8a33c7f666bf, type: 3}
   stageParent: {fileID: 2118460631}
   stageNumber: 1
   clearRank: 1
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoolManager
   monsterPrefabs:
   - {fileID: 2230925935269110599, guid: eae14ad38e0af6646baaa88d9f335130, type: 3}
+  - {fileID: 2230925935269110599, guid: ae2fd175855b4597b985f092ee1c9834, type: 3}
   initialCount: 5
 --- !u!1001 &626829084
 PrefabInstance:

@@ -9,6 +9,7 @@ public class GateManager : BaseManager
     private readonly List<StageGate> gates = new List<StageGate>();
     private int activeGateIndex = -1;
     private PoolManager poolManager;
+    public PoolManager PoolManager => poolManager;
     public event Action AllGatesClosed;
 
     public bool AreGatesActive { get; private set; }
@@ -30,7 +31,7 @@ public class GateManager : BaseManager
         ClearGates();
         foreach (StageGate gate in incomingGates)
         {
-            if (gate != null && !gates.Contains(gate))
+            if (gate != null && !(gate is BossGate) && !gates.Contains(gate))
             {
                 gates.Add(gate);
                 // 스테이지 게이트 등록/초기화 단계에서 구독합니다.

@@ -22,13 +22,13 @@ public class Monster : MonoBehaviour, IDamageable
 
     private float hp;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         hp = maxHP;
         IsDead = false;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (IsDead) return;
         transform.position += transform.forward * Mathf.Max(0f, moveSpeed) * Time.deltaTime;

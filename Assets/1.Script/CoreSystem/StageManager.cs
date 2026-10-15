@@ -9,6 +9,7 @@ public class StageManager : BaseManager
     [SerializeField, Min(1)] private int stageNumber = 1;
     [SerializeField] private HunterRank clearRank = HunterRank.E;
     private GateManager gateManager;
+    private BossGate bossGate;
 
     public bool IsStageRunning { get; private set; }
     public bool IsStageCleared { get; private set; }
@@ -73,16 +74,32 @@ public class StageManager : BaseManager
         // 씬에 둔 비활성 스테이지 원본도 사용할 수 있습니다.
         CurrentStage.SetActive(true);
         Stage stage = CurrentStage.GetComponent<Stage>();
+        bossGate = stage.BossGate;
+        if (bossGate != null)
+        {
+            bossGate.Initialize(gateManager.PoolManager);
+            bossGate.BossDefeated += OnBossDefeated;
+        }
+        else
+            Debug.LogError("Stage의 Boss Gate 참조를 연결하세요.", stage);
         gateManager.SetGates(stage.Gates);
         IsStageCleared = false;
         IsStageRunning = true;
         gateManager.ActivateGates();
+        if (gateManager.Gates.Count == 0) OnAllGatesClosed();
     }
 
     public void EndStage()
     {
         IsStageRunning = false;
         IsStageCleared = false;
+
+        if (bossGate != null)
+        {
+            bossGate.BossDefeated -= OnBossDefeated;
+            bossGate.Deactivate();
+            bossGate = null;
+        }
 
         if (gateManager != null)
             gateManager.ClearGates();
@@ -97,6 +114,14 @@ public class StageManager : BaseManager
     }
 
     private void OnAllGatesClosed()
+    {
+        if (!IsStageRunning || IsStageCleared) return;
+        if (bossGate == null) return;
+        bossGate.Unlock();
+        GameUI.HUD.ShowGuide("보스 게이트를 공격해 개방하세요");
+    }
+
+    private void OnBossDefeated()
     {
         if (!IsStageRunning || IsStageCleared) return;
         IsStageCleared = true;
