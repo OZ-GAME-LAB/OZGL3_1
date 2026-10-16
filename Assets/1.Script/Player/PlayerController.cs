@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OZ.UI.Contracts;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private IPlayerState _currentState;
     private Dictionary<PlayerState, IPlayerState> _playerStates;
     private IPlayerAttack _attack; // 공격 확장 지점. 없으면 모션만 재생.
+    private PlayerSkill _skills; //없으면 스킬 입력 무시 -> 스킬 없는 테스트 씬에서도 플레이어가 그대로 동작
 
     private float _facingX = 1f;
 
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
+    public PlayerSkill Skills { get { return _skills; } } //PlayerState_Skill이 장착 스킬·쿨다운을 읽기 위해
     public PlayerState CurrentStateType { get { return _currentStateType; } }
 
 
@@ -62,6 +65,8 @@ public class PlayerController : MonoBehaviour
     public bool IsJumpRequested { get; private set; }
     public bool IsDashRequested { get; private set; }
     public bool IsAttackRequested { get; private set; }
+    public bool IsSkillRequested { get; private set; }
+    public SkillSlot RequestedSkillSlot { get; private set; } //어느 키(Q/E/R)를 눌렀는지 상태에 전달
 
     public bool IsInvincible { get { return Time.time < _invincibleEndTime; } }
     public bool IsDead { get { return _currentStateType == PlayerState.Dead; } }
@@ -111,6 +116,7 @@ public class PlayerController : MonoBehaviour
         }
 
         _attack = GetComponent<IPlayerAttack>();
+        _skills = GetComponent<PlayerSkill>();
         _rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         InitStateDictionary();
     }
@@ -120,6 +126,7 @@ public class PlayerController : MonoBehaviour
         _inputManager.OnJumpAction += OnJump;
         _inputManager.OnDashAction += OnDash;
         _inputManager.OnAttackAction += OnAttack;
+        _inputManager.OnSkillAction += OnSkill;
 
         ChangeState(PlayerState.Idle);
     }
@@ -153,6 +160,7 @@ public class PlayerController : MonoBehaviour
         _inputManager.OnJumpAction -= OnJump;
         _inputManager.OnDashAction -= OnDash;
         _inputManager.OnAttackAction -= OnAttack;
+        _inputManager.OnSkillAction -= OnSkill;
     }
 
     private void InitStateDictionary()
@@ -166,6 +174,7 @@ public class PlayerController : MonoBehaviour
             {PlayerState.Land, new PlayerState_Land() },
             {PlayerState.Dash, new PlayerState_Dash() },
             {PlayerState.Attack, new PlayerState_Attack() },
+            {PlayerState.Skill, new PlayerState_Skill() },
             {PlayerState.Hit, new PlayerState_Hit() },
             {PlayerState.Dead, new PlayerState_Dead() }
         };
@@ -176,6 +185,7 @@ public class PlayerController : MonoBehaviour
         IsJumpRequested = false;
         IsDashRequested = false;
         IsAttackRequested = false;
+        IsSkillRequested = false;
     }
 
     private void OnJump()
@@ -191,6 +201,21 @@ public class PlayerController : MonoBehaviour
     private void OnAttack()
     {
         IsAttackRequested = true;
+    }
+
+    private void OnSkill(SkillSlot slot)
+    {
+        if (_skills == null)
+        {
+            return;
+        }
+        if (!_skills.CanUse(slot, out SkillUseFailReason reason))
+        {
+            _skills.NotifyUseFailed(slot, reason);
+            return;
+        }
+        IsSkillRequested = true;
+        RequestedSkillSlot = slot;
     }
 
     public void ChangeState(PlayerState newState)
@@ -221,7 +246,7 @@ public class PlayerController : MonoBehaviour
         _currentState.EnterState(this);
     }
 
-    // 공격/피격/대시가 끝났을 때 돌아갈 상태
+    // 공격/스킬/피격/대시가 끝났을 때 돌아갈 상태 (스킬도 여기로 복귀)
     public void ChangeToDefaultState()
     {
         ChangeState(IsGrounded ? PlayerState.Idle : PlayerState.Air);

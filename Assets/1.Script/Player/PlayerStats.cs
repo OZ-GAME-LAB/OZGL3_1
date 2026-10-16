@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Stat Config")]
     [SerializeField] private StatConfig _strength = new StatConfig(20f, 3f, 5);    // 물리 공격력 20, +3, 최대 5
-    [SerializeField] private StatConfig _vitality = new StatConfig(100f, 12f, 5);  // 최대 HP 100, +12, 최대 5
+    [SerializeField] private StatConfig _vitality = new StatConfig(0f, 12f, 5);    // 추가 최대 HP 0, +12, 최대 5 (기본 HP는 PlayerHealth)
     [SerializeField] private StatConfig _agility = new StatConfig(0f, 0.03f, 3);   // 추가 속도 0%, +3%, 최대 3
     [SerializeField] private StatConfig _magic = new StatConfig(20f, 3f, 5);       // 마법 공격력 20, +3, 최대 5
 
@@ -48,7 +48,7 @@ public class PlayerStats : MonoBehaviour
     public event Action<StatType> StatChanged;
 
     public float PhysicalAttack { get { return GetValue(StatType.Strength); } }
-    public float MaxHP { get { return GetValue(StatType.Vitality); } }
+    public float BonusMaxHP { get { return GetValue(StatType.Vitality); } }
     public float AgilityBonus { get { return GetValue(StatType.Agility); } } // 0.09 = +9%
     public float MagicAttack { get { return GetValue(StatType.Magic); } }
 
@@ -190,7 +190,7 @@ public class PlayerStats : MonoBehaviour
                 break;
 
             case StatType.Vitality:
-                _health.SetMaxHP(MaxHP);
+                _health.SetBonusMaxHP(BonusMaxHP);
                 break;
 
             case StatType.Agility:
