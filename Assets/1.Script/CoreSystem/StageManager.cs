@@ -12,6 +12,7 @@ public class StageManager : BaseManager
     private BossGate bossGate;
 
     public bool IsStageRunning { get; private set; }
+    public int StageNumber => stageNumber;
     public bool IsStageCleared { get; private set; }
     public event System.Action StageCleared;
     public GameObject CurrentStage { get; private set; }

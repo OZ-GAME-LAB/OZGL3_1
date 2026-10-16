@@ -41,9 +41,7 @@ public class SceneGameLink : MonoBehaviour
     {
         player.gameObject.SetActive(false);
         input.enabled = false;
-        gameManager.StageManager.EndStage();
-        gameManager.StageManager.StartStage();
-        if (!gameManager.StageManager.IsStageRunning) return;
+        if (!gameManager.RestartStage()) return;
 
         GameUI.Screens.CloseAll();
         GameUI.HUD.Visible = true;
@@ -56,8 +54,8 @@ public class SceneGameLink : MonoBehaviour
         body.angularVelocity = Vector3.zero;
         SetInputBlocked(UIState.IsGameplayInputBlocked);
 
-        gateUI.BeginStage(1, gameManager.GateManager.Gates.Count);
-        if (gameManager.GateManager.AreGatesActive) gateUI.GateOpened();
+        gateUI.BeginStage(gameManager.StageNumber, gameManager.GateCount);
+        if (gameManager.AreGatesActive) gateUI.GateOpened();
         // 봉쇄가 확정되는 곳에서 gateUI.GateSealed()를 호출합니다.
     }
 
@@ -65,7 +63,7 @@ public class SceneGameLink : MonoBehaviour
     {
         player.gameObject.SetActive(false);
         input.enabled = false;
-        gameManager.StageManager.EndStage();
+        gameManager.EndStage();
         GameUI.Screens.CloseAll();
         GameUI.HUD.Visible = false;
         GameUI.Screens.ShowTitle(false);

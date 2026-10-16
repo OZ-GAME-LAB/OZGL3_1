@@ -13,6 +13,10 @@ public class GameManager : BaseManager
     public StageManager StageManager => stageManager;
     public GateManager GateManager => gateManager;
     public PoolManager PoolManager => poolManager;
+    public bool IsStageRunning => stageManager != null && stageManager.IsStageRunning;
+    public int StageNumber => stageManager != null ? stageManager.StageNumber : 0;
+    public int GateCount => gateManager != null ? gateManager.Gates.Count : 0;
+    public bool AreGatesActive => gateManager != null && gateManager.AreGatesActive;
     //public ResourceManager ResourceManager { get; private set; }
 
     private void Awake()
@@ -54,6 +58,33 @@ public class GameManager : BaseManager
     public async UniTask GameStartAsync()
     {
        // await GameManager.Instance.UIManager.OpenMainUIAsync();
+    }
+
+    public bool StartStage()
+    {
+        if (!isReady)
+        {
+            Debug.LogWarning("게임 시스템 초기화가 완료되지 않았습니다.", this);
+            return false;
+        }
+        stageManager.StartStage();
+        return IsStageRunning;
+    }
+
+    public bool RestartStage()
+    {
+        if (!isReady)
+        {
+            Debug.LogWarning("게임 시스템 초기화가 완료되지 않았습니다.", this);
+            return false;
+        }
+        EndStage();
+        return StartStage();
+    }
+
+    public void EndStage()
+    {
+        if (stageManager != null) stageManager.EndStage();
     }
 
     public async UniTask InitializeManagersAsync()
