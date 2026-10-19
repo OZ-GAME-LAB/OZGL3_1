@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Sword_Horizontal_Slash",
+    "duration": 3,
+    "prompt": "A person performs ONE right-handed sword slash horizontally at waist height. Facing forward throughout, feet planted in a balanced staggered stance. Anticipation with hip coil, smooth shoulder and hip turn, right arm sweeps across the body on a level plane, controlled follow-through then returns to ready stance. Relaxed left arm balances the body. No spins, no overhead cuts, no second attack.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15313-1131-75eb-b667-bf9eef807798\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-1131-75eb-b667-bf9eef807798\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15313-1131-75eb-b667-bf9eef807798",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-1131-75eb-b667-bf9eef807798",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Sword_Aerial_Plunge",
+    "duration": 3,
+    "prompt": "A warrior jumps vertically, grips a sword with both hands above the head, points the blade straight down and plunges vertically to the ground. Knees tuck briefly in the air, body extends during rapid descent, landing compresses through knees and hips with the sword driven down in front. Recover smoothly into ready stance. Face one direction throughout, no flip, no turn, one jump and impact.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15313-143b-7024-b6a1-7b5241e333df\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-143b-7024-b6a1-7b5241e333df\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15313-143b-7024-b6a1-7b5241e333df",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-143b-7024-b6a1-7b5241e333df",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Idle_Fists",
+    "duration": 4,
+    "prompt": "A relaxed alert fighter stands in place, facing forward, hands loosely closed into fists at the sides. Gentle breathing, subtle chest and shoulder motion, a very small natural weight shift between both feet. Knees softly bent. Head looks forward and stays stable. Quiet restrained seamless idle loop, feet planted, no steps, no gestures, no looking around, no rigid freeze.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15313-17dd-73e6-b034-ed8d1a875518\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-17dd-73e6-b034-ed8d1a875518\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15313-17dd-73e6-b034-ed8d1a875518",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-17dd-73e6-b034-ed8d1a875518",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  }
+]

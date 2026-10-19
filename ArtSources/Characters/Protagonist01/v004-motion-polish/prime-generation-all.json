@@ -1,0 +1,263 @@
+[
+  {
+    "name": "Sword_Horizontal_Slash",
+    "duration": 3,
+    "prompt": "A person performs ONE right-handed sword slash horizontally at waist height. Facing forward throughout, feet planted in a balanced staggered stance. Anticipation with hip coil, smooth shoulder and hip turn, right arm sweeps across the body on a level plane, controlled follow-through then returns to ready stance. Relaxed left arm balances the body. No spins, no overhead cuts, no second attack.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15313-1131-75eb-b667-bf9eef807798\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-1131-75eb-b667-bf9eef807798\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15313-1131-75eb-b667-bf9eef807798",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-1131-75eb-b667-bf9eef807798",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Sword_Aerial_Plunge",
+    "duration": 3,
+    "prompt": "A warrior jumps vertically, grips a sword with both hands above the head, points the blade straight down and plunges vertically to the ground. Knees tuck briefly in the air, body extends during rapid descent, landing compresses through knees and hips with the sword driven down in front. Recover smoothly into ready stance. Face one direction throughout, no flip, no turn, one jump and impact.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15313-143b-7024-b6a1-7b5241e333df\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-143b-7024-b6a1-7b5241e333df\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15313-143b-7024-b6a1-7b5241e333df",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-143b-7024-b6a1-7b5241e333df",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Idle_Fists",
+    "duration": 4,
+    "prompt": "A relaxed alert fighter stands in place, facing forward, hands loosely closed into fists at the sides. Gentle breathing, subtle chest and shoulder motion, a very small natural weight shift between both feet. Knees softly bent. Head looks forward and stays stable. Quiet restrained seamless idle loop, feet planted, no steps, no gestures, no looking around, no rigid freeze.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15313-17dd-73e6-b034-ed8d1a875518\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-17dd-73e6-b034-ed8d1a875518\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15313-17dd-73e6-b034-ed8d1a875518",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15313-17dd-73e6-b034-ed8d1a875518",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Walk_Fists",
+    "duration": 4,
+    "prompt": "A person walks forward at a relaxed steady pace with natural heel-to-toe steps, softly bent knees, loose closed fists and relaxed reciprocal arm swing. Head steady, shoulders gently counter-rotate with hips, no exaggerated bounce. Straight forward direction, even cadence, no turning, no gestures, no start or stop. Smooth repeatable walking cycle.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-8a17-7030-97a6-df74ed3ded2d\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-8a17-7030-97a6-df74ed3ded2d\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-8a17-7030-97a6-df74ed3ded2d",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-8a17-7030-97a6-df74ed3ded2d",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Run_Fists",
+    "duration": 3,
+    "prompt": "A person runs forward at a steady moderate jogging speed, fists loosely closed. Athletic relaxed reciprocal arm swing, elbows bent about ninety degrees, natural hip and shoulder counter-rotation, soft foot strikes, clear brief flight phase. Head stable, body leans slightly forward. Straight direction, no turns, no sprinting, no start or stop. Repeatable running cycle.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-8d61-7337-819f-9c94577269b9\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-8d61-7337-819f-9c94577269b9\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-8d61-7337-819f-9c94577269b9",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-8d61-7337-819f-9c94577269b9",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Jump_Full",
+    "duration": 3,
+    "prompt": "A person performs one natural vertical jump from standing: a small anticipation squat with arms sweeping back, pushes off through both feet, swings arms forward up, rises with bent knees, straightens slightly before landing on both feet, absorbs impact through ankles knees and hips, settles smoothly back to standing. Face forward throughout. No flip or turn. Relaxed fists.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-90cd-7765-9650-0f685d6ef656\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-90cd-7765-9650-0f685d6ef656\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-90cd-7765-9650-0f685d6ef656",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-90cd-7765-9650-0f685d6ef656",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Dash_Forward",
+    "duration": 2.5,
+    "prompt": "A fighter makes one quick low forward dash: briefly compresses knees, leans forward, drives sharply off back foot into a short fast glide with one long stride, then brakes through a soft front knee and recovers balanced stance. Loose fists, arms counterbalance fluidly. Single direction, no turn, no roll, no jump, no frozen pose. Natural anticipation and follow-through.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-93f9-76c9-b1b0-e7e5197d8f07\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-93f9-76c9-b1b0-e7e5197d8f07\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-93f9-76c9-b1b0-e7e5197d8f07",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-93f9-76c9-b1b0-e7e5197d8f07",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Punch_Right_Jab",
+    "duration": 2,
+    "prompt": "A boxer throws one clean right straight punch at chest height from a relaxed fighting guard. Brief weight shift, rear foot pivots, hips and shoulder rotate together, right elbow extends without locking, left fist protects chin. Quick acceleration followed by controlled recoil into the same guard. Feet planted. One punch only, no turning around, no extra attacks.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-972e-71b0-81e7-4acf460619af\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-972e-71b0-81e7-4acf460619af\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-972e-71b0-81e7-4acf460619af",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-972e-71b0-81e7-4acf460619af",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Potion_Drink",
+    "duration": 4,
+    "prompt": "A standing person drinks from a small bottle held in the RIGHT hand. Smoothly raises the bottle to the mouth, gently tilts wrist and head for one short sip, lowers the bottle to waist height, settles naturally. Left hand rests loosely at side. Keep feet planted, facing forward. Controlled elbow motion, no exaggerated head tilt, no walking or gestures.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-9a3c-722a-a898-c8089300b097\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-9a3c-722a-a898-c8089300b097\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-9a3c-722a-a898-c8089300b097",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-9a3c-722a-a898-c8089300b097",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Item_Throw_Overhand",
+    "duration": 3,
+    "prompt": "A person throws one small object forward with the RIGHT hand. Left foot stays forward. Right arm winds back, hips and shoulders coil gently, weight transfers forward as the elbow leads then the hand releases above shoulder height. Smooth arm follow-through and relaxed recovery. Athletic but restrained. Remain facing forward, no spins, one throw only.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-9d0a-74dd-80c5-f15281bdc639\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-9d0a-74dd-80c5-f15281bdc639\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-9d0a-74dd-80c5-f15281bdc639",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-9d0a-74dd-80c5-f15281bdc639",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Staff_Cast_Forward",
+    "duration": 3,
+    "prompt": "A mage holding a staff in the RIGHT hand makes one forward casting gesture. Feet planted in a relaxed staggered stance. Gathers energy with a slight torso coil, raises the right forearm, extends the right hand toward a target at chest height then smoothly retracts to a relaxed ready stance. Left arm balances with a small gesture. No stepping, no spins, no overhead attack.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-a0be-7268-97be-c8ce9e0f6ced\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-a0be-7268-97be-c8ce9e0f6ced\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-a0be-7268-97be-c8ce9e0f6ced",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-a0be-7268-97be-c8ce9e0f6ced",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Hit_Reaction",
+    "duration": 2,
+    "prompt": "A standing fighter is struck once in the chest: upper body recoils briefly, shoulders and elbows react with a small lag, knees flex to absorb the force, one small controlled recovery step, then returns to a stable forward-facing guard. Hands remain loosely closed fists. Natural restrained impact reaction, no falling, no death, no exaggerated flailing or turning.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-a413-773f-be78-7edcaf5817df\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-a413-773f-be78-7edcaf5817df\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-a413-773f-be78-7edcaf5817df",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-a413-773f-be78-7edcaf5817df",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Interact_Reach",
+    "duration": 3,
+    "prompt": "A standing person reaches forward at chest height with the RIGHT hand to press a wall button, gently extends elbow and leans slightly forward from ankles, presses once, then withdraws arm and returns to relaxed standing. Left hand rests naturally. Feet remain planted, face forward, no turning, no door pulling, no big gestures.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"task_id\": \"01a15314-a71f-701d-9543-ca41a98f692f\",\n  \"status\": \"PENDING\",\n  \"message\": \"Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-a71f-701d-9543-ca41a98f692f\",\n  \"estimated_time\": \"10-30 seconds\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "task_id": "01a15314-a71f-701d-9543-ca41a98f692f",
+        "status": "PENDING",
+        "message": "Text-to-motion task created (prime, 10 credits). Task ID: 01a15314-a71f-701d-9543-ca41a98f692f",
+        "estimated_time": "10-30 seconds"
+      }
+    }
+  },
+  {
+    "name": "Pickup_Low",
+    "duration": 3.5,
+    "prompt": "A person picks up a small object from the floor in front using the RIGHT hand. Bends naturally through hips and knees with back balanced, left arm counterbalances, right hand reaches down, grasps the object, then pushes through legs to return smoothly to standing. Feet planted, face forward, no turn or additional steps. One complete controlled pickup.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error: Your task queue is full. NoMorePendingTasks: Upgrade your plan to queue up more tasks. You can manage your plan on https://www.meshy.ai/settings/subscription Wait for one of your running tasks to finish before creating another (`meshy_list_tasks` with status IN_PROGRESS; its default covers generation and image tasks only, so pass task_types for printing, rigging, animation, motion, post-processing or Creative Lab tasks); retrying right away will not help."
+        }
+      ],
+      "isError": true
+    }
+  }
+]

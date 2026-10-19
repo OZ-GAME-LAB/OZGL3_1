@@ -1,0 +1,26 @@
+{
+    "name": "SlashWave",
+    "prefab": "Assets/Art/CombatVFX_v1/Prefabs/SlashWave.prefab",
+    "frames30Directory": "ArtSources/Characters/Protagonist01/v004-motion-polish/VFX/Frames30/SlashWave",
+    "frames60Directory": "",
+    "method": "Actual isolated CombatVfxSample prefab SetPreviewTime at 60Hz; 30fps PNG samples. Neutral floor/lighting, effect local +Z rotated to gameplay +X. No gameplay or environment scene is loaded or modified.",
+    "duration": 0.949999988079071,
+    "travelSpeed": 7.5,
+    "orthographicSize": 2.799999952316284,
+    "sampleRate": 60,
+    "gifRate": 30,
+    "frames30": 33,
+    "frames60": 0,
+    "width": 960,
+    "height": 540,
+    "cameraPosition": {
+        "x": 3.6499998569488527,
+        "y": 2.049999952316284,
+        "z": -10.0
+    },
+    "cameraTarget": {
+        "x": 2.5999999046325685,
+        "y": 1.0,
+        "z": 0.0
+    }
+}

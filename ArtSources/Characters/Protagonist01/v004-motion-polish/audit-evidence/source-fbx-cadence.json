@@ -1,0 +1,438 @@
+[
+  {
+    "file": "Protagonist01_Rig.fbx",
+    "version": 7400,
+    "boneCount": 24,
+    "bones": [
+      "head_end",
+      "headfront",
+      "Head",
+      "neck",
+      "LeftHand",
+      "LeftForeArm",
+      "LeftArm",
+      "LeftShoulder",
+      "RightHand",
+      "RightForeArm",
+      "RightArm",
+      "RightShoulder",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "LeftToeBase",
+      "LeftFoot",
+      "LeftLeg",
+      "LeftUpLeg",
+      "RightToeBase",
+      "RightFoot",
+      "RightLeg",
+      "RightUpLeg",
+      "Hips"
+    ],
+    "curveCount": 150,
+    "minKeys": 2,
+    "maxKeys": 2,
+    "commonPositiveKeyIntervalsSeconds": [
+      [
+        0.033333333,
+        150
+      ]
+    ],
+    "globalSettings": {
+      "UpAxis": 1,
+      "UpAxisSign": 1,
+      "FrontAxis": 2,
+      "FrontAxisSign": 1,
+      "CoordAxis": 0,
+      "CoordAxisSign": 1,
+      "OriginalUpAxis": 1,
+      "OriginalUpAxisSign": 1,
+      "UnitScaleFactor": 1.0,
+      "OriginalUnitScaleFactor": 1.0,
+      "AmbientColor": 0.0,
+      "DefaultCamera": "Producer Perspective",
+      "TimeMode": 6,
+      "CustomFrameRate": 30.0,
+      "TimeSpanStart": 0,
+      "TimeSpanStop": 1539538600
+    },
+    "takes": [
+      {
+        "name": "Armature|Armature|clip0|baselayer",
+        "startTicks": 0,
+        "stopTicks": 1539538600,
+        "seconds": 0.03333333333333333
+      }
+    ]
+  },
+  {
+    "file": "Protagonist01_Walk.fbx",
+    "version": 7400,
+    "boneCount": 24,
+    "bones": [
+      "head_end",
+      "headfront",
+      "Head",
+      "neck",
+      "LeftHand",
+      "LeftForeArm",
+      "LeftArm",
+      "LeftShoulder",
+      "RightHand",
+      "RightForeArm",
+      "RightArm",
+      "RightShoulder",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "LeftToeBase",
+      "LeftFoot",
+      "LeftLeg",
+      "LeftUpLeg",
+      "RightToeBase",
+      "RightFoot",
+      "RightLeg",
+      "RightUpLeg",
+      "Hips"
+    ],
+    "curveCount": 138,
+    "minKeys": 32,
+    "maxKeys": 32,
+    "commonPositiveKeyIntervalsSeconds": [
+      [
+        0.033333331,
+        1518
+      ],
+      [
+        0.033333361,
+        1104
+      ],
+      [
+        0.033333302,
+        1104
+      ],
+      [
+        0.033333335,
+        276
+      ],
+      [
+        0.033333339,
+        138
+      ]
+    ],
+    "globalSettings": {
+      "UpAxis": 1,
+      "UpAxisSign": 1,
+      "FrontAxis": 2,
+      "FrontAxisSign": 1,
+      "CoordAxis": 0,
+      "CoordAxisSign": 1,
+      "OriginalUpAxis": 1,
+      "OriginalUpAxisSign": 1,
+      "UnitScaleFactor": 1.0,
+      "OriginalUnitScaleFactor": 1.0,
+      "AmbientColor": 0.0,
+      "DefaultCamera": "Producer Perspective",
+      "TimeMode": 6,
+      "CustomFrameRate": 30.0,
+      "TimeSpanStart": 0,
+      "TimeSpanStop": 47725695132
+    },
+    "takes": [
+      {
+        "name": "Armature|Armature|walking_man|baselayer",
+        "startTicks": 0,
+        "stopTicks": 47725695132,
+        "seconds": 1.0333333015489186
+      }
+    ]
+  },
+  {
+    "file": "Protagonist01_Run.fbx",
+    "version": 7400,
+    "boneCount": 24,
+    "bones": [
+      "head_end",
+      "headfront",
+      "Head",
+      "neck",
+      "LeftHand",
+      "LeftForeArm",
+      "LeftArm",
+      "LeftShoulder",
+      "RightHand",
+      "RightForeArm",
+      "RightArm",
+      "RightShoulder",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "LeftToeBase",
+      "LeftFoot",
+      "LeftLeg",
+      "LeftUpLeg",
+      "RightToeBase",
+      "RightFoot",
+      "RightLeg",
+      "RightUpLeg",
+      "Hips"
+    ],
+    "curveCount": 138,
+    "minKeys": 20,
+    "maxKeys": 20,
+    "commonPositiveKeyIntervalsSeconds": [
+      [
+        0.033333331,
+        1518
+      ],
+      [
+        0.033333335,
+        276
+      ],
+      [
+        0.033333361,
+        276
+      ],
+      [
+        0.033333302,
+        276
+      ],
+      [
+        0.033333339,
+        138
+      ]
+    ],
+    "globalSettings": {
+      "UpAxis": 1,
+      "UpAxisSign": 1,
+      "FrontAxis": 2,
+      "FrontAxisSign": 1,
+      "CoordAxis": 0,
+      "CoordAxisSign": 1,
+      "OriginalUpAxis": 1,
+      "OriginalUpAxisSign": 1,
+      "UnitScaleFactor": 1.0,
+      "OriginalUnitScaleFactor": 1.0,
+      "AmbientColor": 0.0,
+      "DefaultCamera": "Producer Perspective",
+      "TimeMode": 6,
+      "CustomFrameRate": 30.0,
+      "TimeSpanStart": 0,
+      "TimeSpanStop": 29251233033
+    },
+    "takes": [
+      {
+        "name": "Armature|Armature|running|baselayer",
+        "startTicks": 0,
+        "stopTicks": 29251233033,
+        "seconds": 0.6333333253872296
+      }
+    ]
+  },
+  {
+    "file": "Protagonist01_Actions.fbx",
+    "version": 7400,
+    "boneCount": 24,
+    "bones": [
+      "Hips",
+      "Spine02",
+      "Spine01",
+      "Spine",
+      "neck",
+      "Head",
+      "head_end",
+      "headfront",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "LeftToeBase",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot",
+      "RightToeBase"
+    ],
+    "curveCount": 675,
+    "minKeys": 2,
+    "maxKeys": 121,
+    "commonPositiveKeyIntervalsSeconds": [
+      [
+        0.033333333,
+        13237
+      ],
+      [
+        0.066666667,
+        214
+      ],
+      [
+        1.7,
+        159
+      ],
+      [
+        1.833333333,
+        159
+      ],
+      [
+        4.0,
+        156
+      ]
+    ],
+    "globalSettings": {
+      "UpAxis": 1,
+      "UpAxisSign": 1,
+      "FrontAxis": 2,
+      "FrontAxisSign": 1,
+      "CoordAxis": 0,
+      "CoordAxisSign": 1,
+      "OriginalUpAxis": -1,
+      "OriginalUpAxisSign": 1,
+      "UnitScaleFactor": 1.0,
+      "OriginalUnitScaleFactor": 1.0,
+      "AmbientColor": 0.0,
+      "DefaultCamera": "Producer Perspective",
+      "TimeMode": 6,
+      "TimeSpanStart": 0,
+      "TimeSpanStop": 46186158000,
+      "CustomFrameRate": 30.0
+    },
+    "takes": [
+      {
+        "name": "Idle",
+        "startTicks": null,
+        "stopTicks": 184744632000,
+        "seconds": 4.0
+      },
+      {
+        "name": "Left_Jab_from_Guard",
+        "startTicks": null,
+        "stopTicks": 80056001327,
+        "seconds": 1.733333206174023
+      },
+      {
+        "name": "Regular_Jump",
+        "startTicks": null,
+        "stopTicks": 86214155727,
+        "seconds": 1.8666665395073563
+      }
+    ]
+  },
+  {
+    "file": "Protagonist01_ExtendedActions.fbx",
+    "version": 7400,
+    "boneCount": 24,
+    "bones": [
+      "Hips",
+      "Spine02",
+      "Spine01",
+      "Spine",
+      "neck",
+      "Head",
+      "head_end",
+      "headfront",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "LeftToeBase",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot",
+      "RightToeBase"
+    ],
+    "curveCount": 1350,
+    "minKeys": 2,
+    "maxKeys": 267,
+    "commonPositiveKeyIntervalsSeconds": [
+      [
+        0.033333333,
+        44167
+      ],
+      [
+        0.066666667,
+        1753
+      ],
+      [
+        0.1,
+        555
+      ],
+      [
+        0.133333333,
+        305
+      ],
+      [
+        0.166666667,
+        200
+      ]
+    ],
+    "globalSettings": {
+      "UpAxis": 1,
+      "UpAxisSign": 1,
+      "FrontAxis": 2,
+      "FrontAxisSign": 1,
+      "CoordAxis": 0,
+      "CoordAxisSign": 1,
+      "OriginalUpAxis": -1,
+      "OriginalUpAxisSign": 1,
+      "UnitScaleFactor": 1.0,
+      "OriginalUnitScaleFactor": 1.0,
+      "AmbientColor": 0.0,
+      "DefaultCamera": "Producer Perspective",
+      "TimeMode": 6,
+      "TimeSpanStart": 0,
+      "TimeSpanStop": 46186158000,
+      "CustomFrameRate": 30.0
+    },
+    "takes": [
+      {
+        "name": "Stand_and_Drink",
+        "startTicks": null,
+        "stopTicks": 409517267600,
+        "seconds": 8.866666666666667
+      },
+      {
+        "name": "Over_Shoulder_Throw",
+        "startTicks": null,
+        "stopTicks": 198600479400,
+        "seconds": 4.3
+      },
+      {
+        "name": "Left_Slash",
+        "startTicks": null,
+        "stopTicks": 146256167000,
+        "seconds": 3.1666666666666665
+      },
+      {
+        "name": "mage_soell_cast",
+        "startTicks": null,
+        "stopTicks": 104688624800,
+        "seconds": 2.2666666666666666
+      },
+      {
+        "name": "open_door",
+        "startTicks": null,
+        "stopTicks": 240168045091,
+        "seconds": 5.20000050861559
+      },
+      {
+        "name": "Male_Bend_Over_Pick_Up",
+        "startTicks": null,
+        "stopTicks": 331000799000,
+        "seconds": 7.166666666666667
+      }
+    ]
+  }
+]
