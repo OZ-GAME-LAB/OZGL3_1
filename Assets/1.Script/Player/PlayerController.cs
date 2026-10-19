@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private bool _airDashUsed;
 
     private float _moveSpeedBonus; // 민첩 스탯 보너스. 0.03 = +3%
+    private float _walkInputMultiplier = 1f;
 
     public event Action OnDead;
 
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
     // 수평 이동 속도에만 배율 적용 (대시는 회피 거리가 바뀌지 않도록 제외)
     public float MoveSpeedMultiplier { get { return 1f + _moveSpeedBonus; } }
-    public float WalkSpeed { get { return _walkSpeed * MoveSpeedMultiplier; } }
+    public float WalkSpeed { get { return _walkSpeed * MoveSpeedMultiplier * _walkInputMultiplier; } }
     public float JumpSpeed { get { return _jumpSpeed * MoveSpeedMultiplier; } }
     public float LandDuration { get { return _landDuration; } }
     public float DashSpeed { get { return _dashSpeed; } }
@@ -272,6 +273,12 @@ public class PlayerController : MonoBehaviour
     public void SetMoveSpeedBonus(float bonus)
     {
         _moveSpeedBonus = Mathf.Max(0f, bonus);
+    }
+
+    // Optional gait input; defaults to the existing full movement speed.
+    public void SetWalkInputMultiplier(float multiplier)
+    {
+        _walkInputMultiplier = Mathf.Clamp(multiplier, 0.1f, 1f);
     }
 
     //HP 계산은 PlayerHealth로 옮기고, 컨트롤러는 상태 전환만 담당
