@@ -42,6 +42,10 @@ namespace OZ.UI.Contracts
         Map = 9,
         Dialogue = 10,
         Options = 11,
+        /// <summary>[v1.0] 상점 (NPC · GameUI.Shop.Open)</summary>
+        Shop = 12,
+        /// <summary>[v1.0 · 기획서 v0.5] 상태창 (Tab) — 스탯·퀘스트·상점·스킬·지도</summary>
+        Status = 13,
     }
 
     /// <summary>피해 숫자 종류 (GameUI.Damage.Show)</summary>
