@@ -15,6 +15,7 @@ public class BossGate : StageGate, IDamageable
     public bool CanTakeDamage { get; private set; }
     public bool IsOpened { get; private set; }
     public event Action BossDefeated;
+    public event Action BossSpawned;
 
     public override void Initialize(PoolManager poolManager)
     {
@@ -63,7 +64,13 @@ public class BossGate : StageGate, IDamageable
     {
         yield return new WaitForSeconds(SummonDelay);
         summonRoutine = null;
-        if (spawner.Spawn() != null) spawner.NotifySpawningCompleted();
+        if (spawner.Spawn() != null)
+        {
+            BossSpawned?.Invoke();
+            // 콜백에서 스테이지가 종료된 경우 완료 통지를 보내지 않습니다.
+            if (State == GateState.Active && IsOpened)
+                spawner.NotifySpawningCompleted();
+        }
     }
 
     private void OnBossDefeated()

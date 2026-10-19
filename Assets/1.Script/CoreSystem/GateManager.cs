@@ -9,8 +9,11 @@ public class GateManager : BaseManager
     private readonly List<StageGate> gates = new List<StageGate>();
     private int activeGateIndex = -1;
     private PoolManager poolManager;
+    private BossGate bossGate;
     public PoolManager PoolManager => poolManager;
     public event Action AllGatesClosed;
+    public event Action BossSpawned;
+    public event Action BossDefeated;
 
     public bool AreGatesActive { get; private set; }
     public IReadOnlyList<StageGate> Gates => gates.AsReadOnly();
@@ -21,7 +24,7 @@ public class GateManager : BaseManager
         return UniTask.CompletedTask;
     }
 
-    public void SetGates(IEnumerable<StageGate> stageGates)
+    public void SetGates(IEnumerable<StageGate> stageGates, BossGate stageBossGate = null)
     {
         if (poolManager == null) throw new InvalidOperationException("StageManager에서 PoolManager를 주입해야 합니다.");
         var incomingGates = stageGates == null
@@ -39,7 +42,24 @@ public class GateManager : BaseManager
                 gate.Closed += OnGateClosed;
             }
         }
+        bossGate = stageBossGate;
+        if (bossGate != null)
+        {
+            bossGate.Initialize(poolManager);
+            bossGate.BossSpawned += OnBossSpawned;
+            bossGate.BossDefeated += OnBossDefeated;
+        }
+        else
+            Debug.LogError("Stage의 Boss Gate 참조를 연결하세요.", this);
     }
+
+    public void UnlockBossGate()
+    {
+        if (bossGate != null) bossGate.Unlock();
+    }
+
+    private void OnBossSpawned() => BossSpawned?.Invoke();
+    private void OnBossDefeated() => BossDefeated?.Invoke();
 
     public UniTask InitializeAsync(PoolManager manager)
     {
@@ -54,7 +74,11 @@ public class GateManager : BaseManager
         if (AreGatesActive)
             return;
 
-        if (gates.Count == 0) return;
+        if (gates.Count == 0)
+        {
+            AllGatesClosed?.Invoke();
+            return;
+        }
         foreach (StageGate gate in gates)
             if (gate != null) gate.Initialize();
         AreGatesActive = true;
@@ -98,6 +122,13 @@ public class GateManager : BaseManager
 
     public void ClearGates()
     {
+        if (bossGate != null)
+        {
+            bossGate.BossSpawned -= OnBossSpawned;
+            bossGate.BossDefeated -= OnBossDefeated;
+            bossGate.Deactivate();
+            bossGate = null;
+        }
         DeactivateGates();
         foreach (StageGate gate in gates)
             if (gate != null) gate.Closed -= OnGateClosed;
