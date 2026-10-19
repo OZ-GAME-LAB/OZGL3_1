@@ -1,0 +1,28 @@
+{
+  "version": "v005",
+  "scope": "Fourteen individual animation clips and actual Unity side-view preview renders; no gameplay integration.",
+  "final_motion_report_sha256": "765b0b30e5320f8d7085b370a1dfd811b626df2bd1b209348f0a22313fb3bba0",
+  "summary_author": "Root, consolidating independent visual audit and delivery validation",
+  "visual_review": "research/final-review.txt",
+  "independent_locomotion_utility_review": "research/final30-independent-visual-qa.txt",
+  "sampled_motion_metrics": "research/final-motion-metrics.json",
+  "delivery_validation": "delivery-validation.json",
+  "posture_diagnosis": "research/posture-root-cause.txt",
+  "actual_render_directory": "Frames30",
+  "final_plunge_evidence": "research/plunge-tip-final.json",
+  "final_plunge_actual_weapon_tip_minimum_y_metres": 0.0089997,
+  "final_plunge_below_ground_samples": 0,
+  "delivery_check_count": 307,
+  "delivery_failed_checks": 0,
+  "motion_gifs": 14,
+  "montage_gifs": 3,
+  "unchanged_vfx_files_sha256_verified": 54,
+  "visual_result": "No additional blocking defect identified in the reviewed final motion intervals.",
+  "limitations": [
+    "Continuity, contact and file-validity metrics are not a naturalness score.",
+    "Runtime locomotion speed matching, Animator transitions, physics and gameplay contact are outside this review.",
+    "Final clips are Generic and require the supplied original 24-bone hierarchy.",
+    "Jump and plunge contain baked vertical hip motion; avoid applying a second vertical trajectory during integration.",
+    "RawCandidateReview and Diagnostics are intermediate material, not the final delivery. The final plunge replacement is in Frames30."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "method": "Actual rendered Unity PNGs only. No generated/interpolated frames, speed changes or optical flow.",
+  "gif_clock": "Cumulative centisecond rounding preserves the exact average 30Hz timeline with 30/40ms delays; GIF cannot store 33/34ms directly.",
+  "outputs": [
+    {
+      "name": "Drink_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Drink_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Idle_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Idle_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Jump_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Jump_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Punch_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Punch_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Run_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Run_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Slash_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Slash_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Staff_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Staff_Candidate_SourceOnly.png"
+    },
+    {
+      "name": "Walk_Candidate_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Walk_Candidate_SourceOnly.png"
+    }
+  ]
+}

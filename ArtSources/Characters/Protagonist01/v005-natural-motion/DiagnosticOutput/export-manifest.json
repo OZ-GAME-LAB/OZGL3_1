@@ -1,0 +1,76 @@
+{
+  "method": "Actual rendered Unity PNGs only. No generated/interpolated frames, speed changes or optical flow.",
+  "gif_clock": "Cumulative centisecond rounding preserves the exact average 30Hz timeline with 30/40ms delays; GIF cannot store 33/34ms directly.",
+  "outputs": [
+    {
+      "name": "Idle_Fists_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Idle_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Walk_Fists_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Walk_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Run_Fists_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Run_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Jump_Full_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Jump_Full_SourceOnly.png"
+    },
+    {
+      "name": "Dash_Forward_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Dash_Forward_SourceOnly.png"
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Punch_Right_Jab_SourceOnly.png"
+    },
+    {
+      "name": "Potion_Drink_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Potion_Drink_SourceOnly.png"
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Item_Throw_Overhand_SourceOnly.png"
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Staff_Cast_Forward_SourceOnly.png"
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Hit_Reaction_SourceOnly.png"
+    },
+    {
+      "name": "Interact_Reach_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Interact_Reach_SourceOnly.png"
+    },
+    {
+      "name": "Pickup_Low_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Pickup_Low_SourceOnly.png"
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Sword_Horizontal_Slash_SourceOnly.png"
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly",
+      "category": "Motion",
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\DiagnosticOutput\\Contacts\\Sword_Aerial_Plunge_SourceOnly.png"
+    }
+  ]
+}

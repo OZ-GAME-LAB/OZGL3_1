@@ -1,0 +1,78 @@
+{
+  "model": "Meshy Text-to-Motion Prime",
+  "newCredits": 80,
+  "jobs": [
+    {
+      "name": "Idle_Candidate",
+      "duration": 4,
+      "prompt": "A healthy confident young adult stands upright in a relaxed neutral stance, spine tall, pelvis neutral, shoulders open and level, head looking straight ahead. Both hands rest loosely closed beside the thighs, elbows slightly soft. Very subtle breathing and balanced weight shift. No slouch, backward lean, crouching, looking down, turning or gestures.",
+      "task_id": "01a15359-e884-74c9-9260-de63cbe02cdf",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Idle_Candidate.fbx"
+    },
+    {
+      "name": "Walk_Candidate",
+      "duration": 4,
+      "prompt": "A confident relaxed young adult walks straight forward at a normal comfortable pace. Upright torso and neutral pelvis, open relaxed shoulders, eyes looking ahead. Compact natural steps with heel contact and toe push-off, soft knees and opposing relaxed bent arm swing. Both hands loosely closed. Continuous steady walking, no stopping, turning, swagger or slouch.",
+      "task_id": "01a15359-ebd8-7093-ad5a-acd7be3aa364",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Walk_Candidate.fbx"
+    },
+    {
+      "name": "Run_Candidate",
+      "duration": 3,
+      "prompt": "A healthy young adult runs straight forward at a steady athletic jogging pace. Compact quick running strides, clear foot push-off and natural flight, bent elbows swing opposite legs, hands loosely closed. Body inclines slightly forward from ankles, chest open and spine long, head level looking ahead. Continuous running, no turning, stopping, crouching or leaning backward.",
+      "task_id": "01a15359-eead-7628-af14-c160d41467d3",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Run_Candidate.fbx"
+    },
+    {
+      "name": "Jump_Candidate",
+      "duration": 3,
+      "prompt": "A healthy athletic young adult facing forward performs one vertical jump from a tall relaxed stance. Brief knee bend with hips back and arms swing behind, extend ankles knees and hips to take off, arms swing forward, knees soften naturally in flight, land on both feet with a soft knee bend, recover fully to upright standing. No travel, turn, back arch, squat hold or spin.",
+      "task_id": "01a15359-f29e-7359-8b22-018c0a1b0fce",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Jump_Candidate.fbx"
+    },
+    {
+      "name": "Punch_Candidate",
+      "duration": 3,
+      "prompt": "A standing athletic young adult in a relaxed upright boxing guard throws one clean straight right-hand jab forward then retracts smoothly to the same guard. Hip initiates, shoulder follows, elbow extends without locking, wrist stays straight. Opposite fist guards the chin, feet stay planted and weight shifts briefly forward. One punch only, no turns, steps, crouch or dramatic backward lean.",
+      "task_id": "01a1535f-877e-777d-8595-23141809a4b8",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Punch_Candidate.fbx"
+    },
+    {
+      "name": "Slash_Candidate",
+      "duration": 3,
+      "prompt": "An upright young swordsman holding an imaginary one-handed sword in the right hand performs one waist-height horizontal slash. Small backswing and hip coil, rotate hips then chest, sweep the right arm horizontally across the front, controlled follow-through and return to ready. Feet firmly planted in a balanced stance, head looking forward. One cut only, no spins, overhead cuts or jumping.",
+      "task_id": "01a1535f-8a5b-7084-bdbf-91272a9fec71",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Slash_Candidate.fbx"
+    },
+    {
+      "name": "Staff_Candidate",
+      "duration": 3,
+      "prompt": "A standing upright young mage holds an imaginary staff in the right hand, raises it slightly to charge, then directs its tip forward to cast one spell and returns smoothly to ready. A small hip weight shift leads the chest and shoulder, left hand supports the casting gesture. Feet planted, spine long and gaze level. No twirl, spin, crouch, bowing or backward lean.",
+      "task_id": "01a1535f-8d72-73dd-9a72-d7584ef97de1",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Staff_Candidate.fbx"
+    },
+    {
+      "name": "Drink_Candidate",
+      "duration": 3.5,
+      "prompt": "An upright relaxed young adult takes one drink from a small bottle held in the right hand. Smoothly bring bottle to lips, tilt bottle and head slightly back, swallow once, lower bottle naturally and return to the same relaxed stance. Left arm rests beside body, both feet planted, shoulders open, pelvis neutral. No bowing, slouching, dramatic acting or turning.",
+      "task_id": "01a1535f-9069-74fc-a7ea-94d9faa3f9a2",
+      "status": "SUCCEEDED",
+      "credits": 10,
+      "localSource": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Drink_Candidate.fbx"
+    }
+  ]
+}

@@ -1,0 +1,1690 @@
+{
+  "validated_utc": "2026-10-19T09:19:39.282302+00:00",
+  "success": true,
+  "check_count": 307,
+  "failed_checks": [],
+  "source_report_sha256": "765b0b30e5320f8d7085b370a1dfd811b626df2bd1b209348f0a22313fb3bba0",
+  "export_manifest_sha256": "cab2c59fa045a1e4028828159c4c365bfbb45199d6527b28d8d356c7dde582dd",
+  "motion_gifs": 14,
+  "montage_gifs": 3,
+  "local_html_links": 120,
+  "effect_baseline_files": 54,
+  "comparison": {
+    "gif": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\Comparisons\\Idle_v004_vs_v005.gif",
+    "poster": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\Comparisons\\Idle_v004_vs_v005.png",
+    "source_rate": 30,
+    "frame_count": 240,
+    "duration_ms": 8000,
+    "source_speed": 1,
+    "previous_frames": 238,
+    "current_frames": 240,
+    "previous_authored_duration": 3.9666666984558105,
+    "current_authored_duration": 4.0,
+    "camera_reference": {
+      "cameraPosition": {
+        "x": 1.0607719421386719,
+        "y": 1.899999976158142,
+        "z": -10.007469177246094
+      },
+      "cameraTarget": {
+        "x": 0.010771989822387695,
+        "y": 0.8500000238418579,
+        "z": -0.00746917724609375
+      },
+      "orthographicSize": 1.399999976158142
+    },
+    "camera_translation_pixels": {
+      "previous": [
+        0.0,
+        -0.0
+      ],
+      "current": [
+        1.5084778353807353,
+        0.009894440864219612
+      ]
+    },
+    "method": "Actual 30fps Unity PNGs, 1x clocks, independent existing loops. Identical orientation and orthographic scale. Only the saved camera center difference is normalized by uniform image translation (about 1.5 source pixels); both tiles then share one uniform spatial downscale. No pose, body alignment, height, timing, temporal interpolation, or original file is modified."
+  },
+  "artifacts": [
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Idle_Fists_SourceOnly.gif",
+      "sha256": "ed3dc23cc7b23354842b8092ad7101046d788cc529aa49d46eeb75f63c5c7c09",
+      "bytes": 5546615,
+      "duration_ms": 8000
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Walk_Fists_SourceOnly.gif",
+      "sha256": "4f66edce440ff14e3f5859b0b6b088e9d928e2a4e61937212aba56cba91dee3d",
+      "bytes": 1405281,
+      "duration_ms": 1970
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Run_Fists_SourceOnly.gif",
+      "sha256": "c3eeb84494e1a77d2a878d28d149f94654f2599124e4cc1a138d22174ff24d22",
+      "bytes": 1057443,
+      "duration_ms": 1500
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Jump_Full_SourceOnly.gif",
+      "sha256": "9059e2050580fc7a90c23155fd5e44aac49b92f5503407f03ee4787c10057d89",
+      "bytes": 1780372,
+      "duration_ms": 2730
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Dash_Forward_SourceOnly.gif",
+      "sha256": "030c03e852e0bd2de0ed3a273379a206c2c6180c71179b4a16b4168965af7660",
+      "bytes": 591875,
+      "duration_ms": 870
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Punch_Right_Jab_SourceOnly.gif",
+      "sha256": "caf6c5774253de7f7e28aa17177162a1f86c0a553d25110b99697a854aea229a",
+      "bytes": 648241,
+      "duration_ms": 1070
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Potion_Drink_SourceOnly.gif",
+      "sha256": "2aa15e8ab4ee49caf458bc51f576c395ba58890bc95138768d1d84c09961a90c",
+      "bytes": 1122951,
+      "duration_ms": 2800
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Item_Throw_Overhand_SourceOnly.gif",
+      "sha256": "660c700a16b6570feda4ea307d4ef278ec89fd9ad7bfda19f13afb69f21b75c9",
+      "bytes": 2178619,
+      "duration_ms": 2970
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Staff_Cast_Forward_SourceOnly.gif",
+      "sha256": "950626413ad2449dd2a5a6f024aa759e04d4acba380a29af476f7da807934443",
+      "bytes": 1114202,
+      "duration_ms": 1500
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Hit_Reaction_SourceOnly.gif",
+      "sha256": "aac3197596486b5b2886745a51e4d7a5db01785b42eb08b03843d9c09f7fea2b",
+      "bytes": 631576,
+      "duration_ms": 900
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Interact_Reach_SourceOnly.gif",
+      "sha256": "9c2a0c480e5de303d05ff5bf821aaa0badb311f8952c982f910a328131e2d5b9",
+      "bytes": 1021267,
+      "duration_ms": 1700
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Pickup_Low_SourceOnly.gif",
+      "sha256": "443f03469d45171a4c91ab2d4a5990029fa8ae80aa6cecd85a5c77f14069a93c",
+      "bytes": 1316556,
+      "duration_ms": 2170
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Sword_Horizontal_Slash_SourceOnly.gif",
+      "sha256": "da3e73083885e167edf5a27052d368ebfdf1f4fc2d5402847a4f9a68b8346d95",
+      "bytes": 989499,
+      "duration_ms": 1370
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\GIF\\Sword_Aerial_Plunge_SourceOnly.gif",
+      "sha256": "62b3451ee60bdbc83a772927b38417f15ac7a4355ed254a6603023dfaf7412c6",
+      "bytes": 796160,
+      "duration_ms": 1570
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\Groups\\01_Locomotion.gif",
+      "sha256": "58080e8dc8b38332ef8c1778f796ae7b54ac514ba52c9f98334e434385c690e8",
+      "bytes": 8942939,
+      "duration_ms": 8000
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\Groups\\02_Combat.gif",
+      "sha256": "be00395980f8972615c73ff4689951f45634aa391b909a934c114e85a989e18a",
+      "bytes": 3529859,
+      "duration_ms": 3000
+    },
+    {
+      "file": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v005-natural-motion\\ReviewOutput\\Groups\\03_Utility.gif",
+      "sha256": "98d68c5d8838181f26e1e9008e5c323fab02dfb456d7fab79ee3b36406a755b0",
+      "bytes": 2875108,
+      "duration_ms": 3000
+    }
+  ],
+  "visual_qa_scope": "Independent eye review is recorded separately after reading consecutive original 30fps image sequences. File checks are not a substitute for aesthetic approval.",
+  "checks": [
+    {
+      "name": "14 motion reports",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "14 individual GIFs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "3 motion montage GIFs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "14 prior motion comparisons",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No effect outputs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No death output",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Newest export follows source report",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle_Fists_SourceOnly duration",
+      "passed": true,
+      "detail": 8000
+    },
+    {
+      "name": "Idle_Fists_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Walk_Fists_SourceOnly duration",
+      "passed": true,
+      "detail": 1970
+    },
+    {
+      "name": "Walk_Fists_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Run_Fists_SourceOnly duration",
+      "passed": true,
+      "detail": 1500
+    },
+    {
+      "name": "Run_Fists_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Jump_Full_SourceOnly duration",
+      "passed": true,
+      "detail": 2730
+    },
+    {
+      "name": "Jump_Full_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dash_Forward_SourceOnly duration",
+      "passed": true,
+      "detail": 870
+    },
+    {
+      "name": "Dash_Forward_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly duration",
+      "passed": true,
+      "detail": 1070
+    },
+    {
+      "name": "Punch_Right_Jab_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Potion_Drink_SourceOnly duration",
+      "passed": true,
+      "detail": 2800
+    },
+    {
+      "name": "Potion_Drink_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly duration",
+      "passed": true,
+      "detail": 2970
+    },
+    {
+      "name": "Item_Throw_Overhand_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly duration",
+      "passed": true,
+      "detail": 1500
+    },
+    {
+      "name": "Staff_Cast_Forward_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly duration",
+      "passed": true,
+      "detail": 900
+    },
+    {
+      "name": "Hit_Reaction_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Interact_Reach_SourceOnly duration",
+      "passed": true,
+      "detail": 1700
+    },
+    {
+      "name": "Interact_Reach_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pickup_Low_SourceOnly duration",
+      "passed": true,
+      "detail": 2170
+    },
+    {
+      "name": "Pickup_Low_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly duration",
+      "passed": true,
+      "detail": 1370
+    },
+    {
+      "name": "Sword_Horizontal_Slash_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly PNG count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly source 1x clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly newest GIF",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly contact exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly encoded frame count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly duration",
+      "passed": true,
+      "detail": 1570
+    },
+    {
+      "name": "Sword_Aerial_Plunge_SourceOnly quantization bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "기본 동작 group duration",
+      "passed": true,
+      "detail": 8000
+    },
+    {
+      "name": "기본 동작 group dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "기본 동작 poster exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "전투 group duration",
+      "passed": true,
+      "detail": 3000
+    },
+    {
+      "name": "전투 group dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "전투 poster exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "상호작용 group duration",
+      "passed": true,
+      "detail": 3000
+    },
+    {
+      "name": "상호작용 group dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "상호작용 poster exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Gallery v005 title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Gallery no effect category",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Gallery local link 1",
+      "passed": true,
+      "detail": "Groups/01_Locomotion.gif"
+    },
+    {
+      "name": "Gallery local link 2",
+      "passed": true,
+      "detail": "Groups/01_Locomotion.gif"
+    },
+    {
+      "name": "Gallery local link 3",
+      "passed": true,
+      "detail": "Groups/02_Combat.gif"
+    },
+    {
+      "name": "Gallery local link 4",
+      "passed": true,
+      "detail": "Groups/02_Combat.gif"
+    },
+    {
+      "name": "Gallery local link 5",
+      "passed": true,
+      "detail": "Groups/03_Utility.gif"
+    },
+    {
+      "name": "Gallery local link 6",
+      "passed": true,
+      "detail": "Groups/03_Utility.gif"
+    },
+    {
+      "name": "Gallery local link 7",
+      "passed": true,
+      "detail": "GIF/Idle_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 8",
+      "passed": true,
+      "detail": "GIF/Idle_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 9",
+      "passed": true,
+      "detail": "Contacts/Idle_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 10",
+      "passed": true,
+      "detail": "Contacts/Idle_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 11",
+      "passed": true,
+      "detail": "GIF/Walk_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 12",
+      "passed": true,
+      "detail": "GIF/Walk_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 13",
+      "passed": true,
+      "detail": "Contacts/Walk_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 14",
+      "passed": true,
+      "detail": "Contacts/Walk_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 15",
+      "passed": true,
+      "detail": "GIF/Run_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 16",
+      "passed": true,
+      "detail": "GIF/Run_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 17",
+      "passed": true,
+      "detail": "Contacts/Run_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 18",
+      "passed": true,
+      "detail": "Contacts/Run_Fists_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 19",
+      "passed": true,
+      "detail": "GIF/Jump_Full_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 20",
+      "passed": true,
+      "detail": "GIF/Jump_Full_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 21",
+      "passed": true,
+      "detail": "Contacts/Jump_Full_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 22",
+      "passed": true,
+      "detail": "Contacts/Jump_Full_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 23",
+      "passed": true,
+      "detail": "GIF/Dash_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 24",
+      "passed": true,
+      "detail": "GIF/Dash_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 25",
+      "passed": true,
+      "detail": "Contacts/Dash_Forward_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 26",
+      "passed": true,
+      "detail": "Contacts/Dash_Forward_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 27",
+      "passed": true,
+      "detail": "GIF/Punch_Right_Jab_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 28",
+      "passed": true,
+      "detail": "GIF/Punch_Right_Jab_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 29",
+      "passed": true,
+      "detail": "Contacts/Punch_Right_Jab_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 30",
+      "passed": true,
+      "detail": "Contacts/Punch_Right_Jab_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 31",
+      "passed": true,
+      "detail": "GIF/Potion_Drink_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 32",
+      "passed": true,
+      "detail": "GIF/Potion_Drink_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 33",
+      "passed": true,
+      "detail": "Contacts/Potion_Drink_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 34",
+      "passed": true,
+      "detail": "Contacts/Potion_Drink_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 35",
+      "passed": true,
+      "detail": "GIF/Item_Throw_Overhand_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 36",
+      "passed": true,
+      "detail": "GIF/Item_Throw_Overhand_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 37",
+      "passed": true,
+      "detail": "Contacts/Item_Throw_Overhand_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 38",
+      "passed": true,
+      "detail": "Contacts/Item_Throw_Overhand_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 39",
+      "passed": true,
+      "detail": "GIF/Staff_Cast_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 40",
+      "passed": true,
+      "detail": "GIF/Staff_Cast_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 41",
+      "passed": true,
+      "detail": "Contacts/Staff_Cast_Forward_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 42",
+      "passed": true,
+      "detail": "Contacts/Staff_Cast_Forward_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 43",
+      "passed": true,
+      "detail": "GIF/Hit_Reaction_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 44",
+      "passed": true,
+      "detail": "GIF/Hit_Reaction_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 45",
+      "passed": true,
+      "detail": "Contacts/Hit_Reaction_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 46",
+      "passed": true,
+      "detail": "Contacts/Hit_Reaction_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 47",
+      "passed": true,
+      "detail": "GIF/Interact_Reach_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 48",
+      "passed": true,
+      "detail": "GIF/Interact_Reach_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 49",
+      "passed": true,
+      "detail": "Contacts/Interact_Reach_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 50",
+      "passed": true,
+      "detail": "Contacts/Interact_Reach_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 51",
+      "passed": true,
+      "detail": "GIF/Pickup_Low_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 52",
+      "passed": true,
+      "detail": "GIF/Pickup_Low_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 53",
+      "passed": true,
+      "detail": "Contacts/Pickup_Low_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 54",
+      "passed": true,
+      "detail": "Contacts/Pickup_Low_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 55",
+      "passed": true,
+      "detail": "GIF/Sword_Horizontal_Slash_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 56",
+      "passed": true,
+      "detail": "GIF/Sword_Horizontal_Slash_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 57",
+      "passed": true,
+      "detail": "Contacts/Sword_Horizontal_Slash_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 58",
+      "passed": true,
+      "detail": "Contacts/Sword_Horizontal_Slash_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 59",
+      "passed": true,
+      "detail": "GIF/Sword_Aerial_Plunge_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 60",
+      "passed": true,
+      "detail": "GIF/Sword_Aerial_Plunge_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 61",
+      "passed": true,
+      "detail": "Contacts/Sword_Aerial_Plunge_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 62",
+      "passed": true,
+      "detail": "Contacts/Sword_Aerial_Plunge_SourceOnly.png"
+    },
+    {
+      "name": "Gallery local link 63",
+      "passed": true,
+      "detail": "hand-grips-contact.png"
+    },
+    {
+      "name": "Gallery local link 64",
+      "passed": true,
+      "detail": "hand-grips-contact.png"
+    },
+    {
+      "name": "Gallery local link 65",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Idle_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 66",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Idle_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 67",
+      "passed": true,
+      "detail": "GIF/Idle_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 68",
+      "passed": true,
+      "detail": "GIF/Idle_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 69",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Walk_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 70",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Walk_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 71",
+      "passed": true,
+      "detail": "GIF/Walk_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 72",
+      "passed": true,
+      "detail": "GIF/Walk_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 73",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Run_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 74",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Run_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 75",
+      "passed": true,
+      "detail": "GIF/Run_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 76",
+      "passed": true,
+      "detail": "GIF/Run_Fists_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 77",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Jump_Full_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 78",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Jump_Full_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 79",
+      "passed": true,
+      "detail": "GIF/Jump_Full_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 80",
+      "passed": true,
+      "detail": "GIF/Jump_Full_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 81",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Dash_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 82",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Dash_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 83",
+      "passed": true,
+      "detail": "GIF/Dash_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 84",
+      "passed": true,
+      "detail": "GIF/Dash_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 85",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Punch_Right_Jab_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 86",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Punch_Right_Jab_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 87",
+      "passed": true,
+      "detail": "GIF/Punch_Right_Jab_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 88",
+      "passed": true,
+      "detail": "GIF/Punch_Right_Jab_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 89",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Potion_Drink_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 90",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Potion_Drink_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 91",
+      "passed": true,
+      "detail": "GIF/Potion_Drink_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 92",
+      "passed": true,
+      "detail": "GIF/Potion_Drink_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 93",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Item_Throw_Overhand_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 94",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Item_Throw_Overhand_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 95",
+      "passed": true,
+      "detail": "GIF/Item_Throw_Overhand_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 96",
+      "passed": true,
+      "detail": "GIF/Item_Throw_Overhand_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 97",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Staff_Cast_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 98",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Staff_Cast_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 99",
+      "passed": true,
+      "detail": "GIF/Staff_Cast_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 100",
+      "passed": true,
+      "detail": "GIF/Staff_Cast_Forward_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 101",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Hit_Reaction_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 102",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Hit_Reaction_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 103",
+      "passed": true,
+      "detail": "GIF/Hit_Reaction_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 104",
+      "passed": true,
+      "detail": "GIF/Hit_Reaction_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 105",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Interact_Reach_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 106",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Interact_Reach_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 107",
+      "passed": true,
+      "detail": "GIF/Interact_Reach_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 108",
+      "passed": true,
+      "detail": "GIF/Interact_Reach_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 109",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Pickup_Low_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 110",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Pickup_Low_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 111",
+      "passed": true,
+      "detail": "GIF/Pickup_Low_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 112",
+      "passed": true,
+      "detail": "GIF/Pickup_Low_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 113",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Sword_Horizontal_Slash_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 114",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Sword_Horizontal_Slash_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 115",
+      "passed": true,
+      "detail": "GIF/Sword_Horizontal_Slash_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 116",
+      "passed": true,
+      "detail": "GIF/Sword_Horizontal_Slash_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 117",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Sword_Aerial_Plunge_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 118",
+      "passed": true,
+      "detail": "../../v004-motion-polish/ReviewOutput/GIF/Sword_Aerial_Plunge_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 119",
+      "passed": true,
+      "detail": "GIF/Sword_Aerial_Plunge_SourceOnly.gif"
+    },
+    {
+      "name": "Gallery local link 120",
+      "passed": true,
+      "detail": "GIF/Sword_Aerial_Plunge_SourceOnly.gif"
+    },
+    {
+      "name": "Effect unchanged: BuildReport.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: BuildReport.json.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Editor.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Materials.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Meshes.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Prefabs.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Samples.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Shaders.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: CombatVfxBuilder.cs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: CombatVfxBuilder.cs.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: VFX_Glow.mat",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: VFX_Glow.mat.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: VFX_Smoke.mat",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: VFX_Smoke.mat.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: VFX_Spark.mat",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: VFX_Spark.mat.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Burst_Star.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Burst_Star.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Core.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Core.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Crescent_Core.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Crescent_Core.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Crescent_Glow.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Crescent_Glow.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Crescent.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Crescent.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Missile_Helix.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Missile_Helix.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ribbon_Ivory.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ribbon_Ivory.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ribbon.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ribbon.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ring_Teal.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ring_Teal.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ring.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Ring.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Shard.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Shard.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Shockwave_Dome.asset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Shockwave_Dome.asset.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: DashBurst.prefab",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: DashBurst.prefab.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Explosion.prefab",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: Explosion.prefab.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: MagicMissile.prefab",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: MagicMissile.prefab.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: SlashWave.prefab",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: SlashWave.prefab.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: CombatVfxSample.cs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: CombatVfxSample.cs.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: README_ko.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: README_ko.txt.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: CombatVfxPreview.shader",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Effect unchanged: CombatVfxPreview.shader.meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle comparison clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Idle comparison dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Nine consecutive-frame QA sheets",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

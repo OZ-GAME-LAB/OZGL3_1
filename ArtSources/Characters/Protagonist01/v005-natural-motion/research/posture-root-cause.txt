@@ -1,0 +1,142 @@
+v005 자세 재검수: v004 공통 굽힘/뒤기울기 원인
+2026-10-19 / sideview_motion_audit / source와 runtime는 읽기 전용
+
+판단 정정
+이전 v004 검수는 접지·반복·손목·소품 오류가 해소된 것을 자연스러운 전체 자세의 승인으로 넓혀 해석했다.
+사용자가 지적한 뒤로 기댄 몸통과 숙인 큰 머리는 실제 저장 pose에 존재한다. 이전 통과를 v005의 근거로 쓰지 않는다.
+각 clip이 숫자상 연속이라는 사실과 캐릭터 동작이 보기 좋다는 판단은 별개다.
+
+1. 실제 척추 계층과 Avatar 매핑
+
+FBX OO 부모 연결, Generic curve path, 원본 .fbx.meta 매핑을 대조했다.
+실제 계층: Armature → Hips → Spine02 → Spine01 → Spine → neck → Head → head_end/headfront.
+원본 Humanoid 매핑: Spine=Spine02, Chest=Spine01, UpperChest=Spine, Neck=neck, Head=Head.
+이름은 흔한 오름차순 명명과 다르지만, 이 순서와 매핑은 맞다. 이름만 보고 Spine/Spine02를 교환하면 오히려 잘못된다.
+Prime source의 Pelvis→Spine1→Spine2→Spine3→Neck→Head 매핑도 순서 자체는 맞다.
+
+MotionPolishBake.cs의 spine=B("Spine02")는 최하부 척추이고 chest=B("Spine")는 상부 흉곽이다.
+이 선택 자체가 역전 오류는 아니다. 다만 chest 변수는 할당 후 사용되지 않는다.
+Stance()의 lean은 최하부 Spine02 하나에만 적용된다. 상부 흉곽/목/머리의 pitch overlap이나 counter-lean은 없다.
+
+2. 실제 Unity probe가 확인한 자세
+
+증거: ../probe/pose-probe.json 및 BindPose.png, AvatarZero.png, OldIdle.png, PrimeIdle.png,
+      OldWalk.png, OldPunch.png. 전부 동일 캐릭터 실제 CPU BakeMesh의 순수 측면 사진이다.
+프로브의 headPitch 필드는 neck→Head 위치축이다. 실제 머리 숙임이나 시선과 혼동하면 안 된다.
+아래 head-up은 Head→head_end 축이고, face pitch는 Head→headfront 축으로 재계산했다.
+각도는 actor +Z가 전방이다. 몸통/head-up 양수=전방 숙임, face pitch 음수=아래를 봄.
+pelvis-midfoot는 ankle+toe 4점 평균에 대한 골반 전후 위치의 진단 proxy다. 물리적 질량중심 계산은 아니다.
+
+사진       lumbar  torso  neck→Head  head-up  face pitch  pelvis-midfoot
+BindPose    -0.61   -0.61    -0.62      +4.09      0.00       -3.00cm
+AvatarZero  -0.61   -0.61    -0.62      +4.09      0.00       +9.53cm
+OldIdle     -8.83   -4.79    -2.53     +28.45    -25.15       -8.79cm
+PrimeIdle   -8.50   -4.72    -6.78     +21.66    -17.95       -8.73cm
+OldWalk     +4.07   +4.00   +13.52      +5.94     -1.95       -5.34cm
+OldPunch    -8.44   -1.86    -1.81     +26.75    -22.64       -8.73cm
+
+lumbar=Hips→Spine02, torso=Hips→Spine.
+JSON에서 직접 측정한 위 값은 Generic 저장 curve를 offline FK로 계산한 값과 일치한다.
+FK의 actor90° 변환 후 head X/Z도 기존 motion-review.json 실제 샘플과 일치했다.
+
+사진 판독
+- BindPose: 흉곽과 목이 거의 수직이며 얼굴은 정면을 본다. 현 mesh가 본질적으로 굽어 있을 필요는 없다.
+- OldIdle/PrimeIdle: 골반과 허리는 뒤로 기울고, 큰 머리는 반대 방향으로 22~28도 접힌다.
+  얼굴이 18~25도 아래를 보는 데다 골반도 reference보다 약5.7cm 뒤로 이동해 등이 둥글고 뒤로 주저앉아 보인다.
+- OldPunch: 팔을 뻗어도 lower lumbar는 -8.4도를 유지하고 골반은 약8.7cm 뒤에 머문다.
+  공격의 체중 전달 없이 팔만 움직이는 인상을 만든다.
+- OldWalk: 몸통 약4도 전경사, 시선 약2도 아래로 비교적 중립이다. 같은 보정을 모든 clip에 강제로 더하면 이 자세가 망가진다.
+- AvatarZero: 근육0은 이 actor에서 다리를 굽혀 띄운 모양이다. HumanPose.muscles=0이 곧 유용한 서 있는 neutral은 아니다.
+  torso reference quaternion을 얻는 데 쓸 수 있어도, 전신 pose/발 위치를 그대로 neutral로 승인하면 안 된다.
+
+3. 공통 원인: 원본 리그 역전보다 neutral 전달
+
+MotionPolishBake.Build()는 Read("Idle_Fists")의 60번째, 즉 1초 pose를 neutral로 채택한다.
+이 pose는 이미 retarget된 source의 허리/머리 굽힘을 가진다. 바닥 높이만 조정하며 torso/head 태도는 교정하지 않는다.
+Stance()는 매 프레임 Apply(neutral)로 전신을 재시작한다. 따라서 다음 authored 동작의 모든 ready/회복 pose가 같은 결함을 공유한다.
+Dash, Punch, Drink, Staff, SwordHorizontal, SwordPlunge.
+Idle 자체도 해당 source를 유지하므로 같은 문제가 남는다.
+
+Stance()의 head 보정은 yaw의 -35%만 counter-rotate한다. pitch 보정은 없다.
+Dash에서 torso를 앞으로 기울이면 머리까지 함께 숙여져 원래 -18도 face pitch가 최대 약-36도로 내려간다.
+Spine02 하나를 움직여 상체 전체를 들썩이는 구조라, 흉곽/목/머리 사이의 순차적 동작이 생기지 않는다.
+
+손 target를 IK로 움직이는 것과 몸 전체의 자연스러운 행동을 만드는 것은 다르다.
+기존 authored Punch/Staff/Sword는 발과 골반 전후 위치가 거의 고정된 채 상체 yaw와 손 target만 움직인다.
+접지가 맞고 손 궤적이 매끄러워도 체중 전달, scapula/흉곽 회전, 팔꿈치 선행, 회복 overlap이 부족할 수 있다.
+
+4. 현재 14종의 저장 curve 전 구간 분리 분석
+
+아래는 v004 clip의 median torso / face pitch다. 연출상의 숙임을 전부 오류로 판정하지 않는다.
+
+Idle_Fists              -4.8 / -22.0도 : 허리 뒤기울기+큰 머리 숙임. 기준 자세부터 교체 필요.
+Walk_Fists              +2.4 /  -1.7도 : 시선과 몸통은 비교적 중립. 무차별 neutral offset 금지.
+Run_Fists              +20.7 / -28.5도 : 몸통의 달리기 lean은 의도 가능. 머리/목 counter-lean은 부족.
+Jump_Full               +8.0 / +14.6도 : 준비/비행/착지 단계로 나눠 평가. source 시선 변화는 별도 연출 판단.
+Dash_Forward            -2.3 / -21.6도 : ready의 뒤기울기와 drive의 깊은 head bow가 공존.
+Punch_Right_Jab         -4.7 / -18.1도 : 발/골반 고정과 아래 보는 guard. 새 upright ready+체중 전달 필요.
+Potion_Drink            -4.7 / -14.1도 : 숙인 기준 위에 손/병을 맞춤. neutral 교체 뒤 입 목표도 재계산 필요.
+Item_Throw_Overhand     -3.9 / +17.4도 : 위를 보는 구간은 투척 의도. neutral 교정을 통째로 적용하지 말 것.
+Staff_Cast_Forward      -4.7 / -18.2도 : 발사 방향보다 아래 보는 머리와 고정 골반.
+Hit_Reaction           +19.1 / -37.5도 : 큰 recoil은 의도 가능. 시작/회복과 타격 peak를 따로 판단.
+Interact_Reach          +7.5 /  +8.2도 : reach의 전경사는 의도 가능. 출발/복귀는 새 ready에 연결할 것.
+Pickup_Low             +19.2 / -37.7도 : 집는 중 아래 보기 정상. 기존 숙인 시작/끝 pose를 그대로 보존할 필요는 없음.
+Sword_Horizontal_Slash  -4.7 / -18.4도 : 손/검만 빠른 arc. 골반·흉곽 분산회전과 회복이 필요.
+Sword_Aerial_Plunge      0.0 / -25.1도 : 낙하 중 아래 보기는 가능. ready/회복까지 같은 bow로 고정하면 부자연스러움.
+
+5. 수정 우선순위와 구현 제안
+
+A. 최초에 upright neutral 한 개를 실제 측면으로 승인한다.
+   원본 bind/reference의 Hips/Spine02/Spine01/Spine/neck/Head local quaternion을 기준으로 삼는 편이 명확하다.
+   원본 A/T 기준에서 팔·다리를 그대로 가져오는 대신, 서 있는 발 support와 편한 팔은 별도로 배치한다.
+   사진 기준 얼굴 수평, 흉곽/목 수직, 골반이 발 지지 범위와 맞는지 확인한 뒤 전체 clip에 사용한다.
+   muscles0 전신을 곧바로 서 있는 pose로 쓰지 않는다.
+
+B. authored 6종과 Idle은 새 neutral을 기준으로 다시 구성한다.
+   lower spine/중간 chest/upper chest/목/머리를 역할에 맞게 분산한다.
+   달리기와 dash는 상체 lean을 허용하되 얼굴은 진행 방향을 볼 수 있도록 head counter-lean을 만든다.
+   Punch/Sword/Staff는 골반의 짧은 전방 체중 전달→흉곽→어깨/팔→회복 순서를 실제 키 pose로 구성한다.
+   hand target smoothstep만 추가하거나 모든 곡선에 smoothing을 더하는 것으로 해결됐다고 보지 않는다.
+
+C. source 자연 동작은 clip별·구간별로 다룬다.
+   Walk는 baseline 자세가 비교적 정상이라 우선 보존한다.
+   Run은 head/gaze를 별도 조정하되 전경사와 비행을 강제 직립/접지로 없애지 않는다.
+   Pickup/Hit/Throw/Jump는 의도된 상체/시선 변화와 새로운 ready/회복을 구분한다.
+   모든 frame에 동일한 +20도 head correction이나 동일한 몸통 수직 제한을 걸지 않는다.
+
+D. neutral 교체의 후속 영향을 재검수한다.
+   기존 elbow hints, world hand targets, weapon/socket 방향, bottle mouth target은 새 shoulder/head 위치에 맞춰 다시 점검한다.
+   feet IK와 pelvis reach fit도 새 neutral의 발/골반 위치에서 계산해야 한다.
+   이전 clip의 발 위치를 고정하고 상체만 펴면 무릎/골반이 다른 방식으로 꺾일 수 있다.
+
+6. v005 acceptance 기준
+
+기본 자세 — 필수 육안 판단
+- FX·무기 없이 순수 측면과 약한2.5D 각도에서 Idle/ready/복귀를 먼저 본다.
+- 머리만 forward bow, 허리만 backward sway가 되는 S자 과장이 없어야 한다.
+- 얼굴이 자연스럽게 진행 방향을 보고, 골반/흉곽/목이 한 덩어리로 고정되어 움직이지 않아야 한다.
+- bound한 신발/발 접지뿐 아니라 골반의 균형과 무릎의 편안함을 함께 본다.
+
+기본 자세 — 보조 수치 목표
+- neutral Hips→Spine은 reference(-.6도) 부근, 대략 ±3도 범위부터 시각 검토한다.
+- neutral face pitch는 수평±5도부터 검토하고, guard의 작은 chin tuck은 연출 선택으로 구분한다.
+- head-up은 head_end 축 기준이며 neck→Head 축으로 대신 측정하지 않는다.
+- pelvis-midfoot는 reference -3cm와 비교해 추가로 약6cm 뒤로 빠지는 현상이 없어야 한다.
+  이는 COM/pass-fail 물리 기준이 아니며 mesh 실루엣/발 support 사진과 함께 판단한다.
+
+동작 — 필수 육안 판단
+- 14종 각각 준비/주 동작/복귀를1x 30fps 이상으로 확인한다. 최대속도나 가속값만으로 승인하지 않는다.
+- Punch/Sword/Staff의 임팩트가 몸통·골반과 연결되고, 팔꿈치/손목이 불필요하게 뒤집히지 않아야 한다.
+- Run/Dash 중 시선이 바닥에 고정되지 않아야 한다. Pickup/Plunge의 의도된 아래 보기는 허용한다.
+- Jump/Plunge의 실제 비행/충격과 source pose, 발 접지, 몸통 움직임을 같이 확인한다.
+- 손·병·무기 정렬은 새 neutral에서 재검증한다. VFX로 pose의 어색함을 가리거나 검사하지 않는다.
+
+기술 검사 — 별도 수행
+- Idle/Walk/Run 실제2cycle에서 반복 위치/회전과 접촉 phase가 연속인지 확인한다.
+- phase 경계/IK 활성 경계의 위치 팝을 확인한다. 의도된 임팩트 가속은 자동 제거하지 않는다.
+- foot-slip은 실제 root 이동을 포함할 때 판단한다. in-place backward stance를 곧바로 slip으로 부르지 않는다.
+- 저장 clip 1x와 GIF clock/프레임 수 일치, Generic rig/bakedY 제약을 따로 기록한다.
+
+승인 방식
+upright neutral 확인 → Idle/Walk/Run/Jump 핵심4종 → 나머지10종의 body mechanics → 소품/무기 정렬 → 전체 전달 자료 순으로 검토한다.
+이 문서는 원인 분석과 수용 기준이다. 아직 새 v005 전체 동작을 승인한 문서는 아니다.

@@ -1,0 +1,61 @@
+V005 Pilot2 독립 시각 검수
+검수일 2026-10-19 / NaturalMotionPilot2 batchmode exit 0 확인 후 작성
+입력: motion-review-diagnostic.json / Diagnostics/*_SourceOnly/*.png
+출력: python -B export_review_gifs.py --diagnostic --contacts-only -> 14개 contact 및 motion-overview.png
+작업 범위: 기본 3종 + Utility 4종. C#/Unity/클립/VFX 변경 없음.
+
+검수 방식과 한계
+  10fps 실제 CPU 스킨 PNG와 12칸 contact를 육안으로 확인했다. 개별 정지 포즈의 실루엣, 자세의 흐름, 손 도달/병 접촉을 평가했다. 30fps 최종 재생의 매끄러움이나 상태 전이까지 통과시킨 것은 아니다. 수치가 정상이라는 이유로 자연스러움을 승인하지 않았다. 아래 수치는 시각적으로 발견한 구간을 특정하는 보조다.
+
+Idle_Fists: 기본 자세 개선 확인, 최종 재생 검수 조건부
+  직립 자세이며 이전처럼 몸 전체가 뒤로 젖거나 공통 기준 자세부터 구부정한 인상이 없다. 고개·가슴·골반이 심하게 오르내리지 않고 장시간 대기용 실루엣으로 안정적이다. 큰 제스처가 없는 것도 이 동작에서는 적절하다.
+  4초짜리 미세한 호흡은 정지 contact에서 거의 보이지 않으므로, 최종 GIF로 '움직이지 않는 프레임'처럼 보이지 않는지만 다시 본다. 과장된 상하 bob을 추가할 필요는 없다.
+  보조값: torsoPitch -0.2..0.2°, facePitch -1.1..-0.2°.
+  이미지: DiagnosticOutput/Contacts/Idle_Fists_SourceOnly.png
+
+Walk_Fists: 보행 실루엣 개선 확인, 최종 재생 검수 조건부
+  걸음 앞/뒤 위치와 반대 팔의 왕복이 읽히고, 상체가 불필요하게 앞으로 꺾이지 않는다. 보폭이 달리기보다 좁고 팔꿈치도 낮아 걷기와 달리기가 구분된다. 발이 몸 아래에서 서로 바뀌는 passing pose도 있다.
+  정지 프레임에서 뒤꿈치/발끝 각도와 무릎 전환은 보행으로 해석할 수 있다. 다만 발이 지면에 붙어 있는 구간의 미끄러움과 사이클 경계 속도는 최종 30fps 2회 반복으로 다시 확인해야 한다. 거의 고정된 몸통에 다리만 움직이는 느낌이 남는지도 실제 재생에서 판단한다.
+  보조값: 한 사이클 .983초, torsoPitch -0.9..0.6°.
+  이미지: DiagnosticOutput/Contacts/Walk_Fists_SourceOnly.png
+
+Run_Fists: 보행과 구별되는 실루엣 확인, 최종 재생 검수 조건부
+  뒤로 접히는 무릎, 앞발의 도달, 구부린 팔과 적당한 전경이 달리기로 읽힌다. 걷기를 단순 가속한 결과와 구분된다. 이전의 고정된 허리 굽힘을 제거한 뒤에도 약 10°의 의도된 전경이 있어 힘을 앞쪽으로 보내는 자세다.
+  달리기의 부유 구간과 접지 구간의 리듬은 정지 사진만으로 확정할 수 없다. 루프 접점과 골반의 상하 리듬이 부드러운지 최종 GIF에서 확인한다.
+  보조값: 한 사이클 .750초, torsoPitch 9.5..11.8°, facePitch -3.8..-0.4°.
+  이미지: DiagnosticOutput/Contacts/Run_Fists_SourceOnly.png
+
+Potion_Drink: 수정 우선
+  0.7초에 병이 얼굴로 올라오고 1.0~1.7초에 유지된다. 전체 PNG 1.2초에서 병 주둥이는 입술보다 높은 코/눈 부근에 닿아 보인다. 실제 입술 접촉과 병 기울기의 목적이 먼저 보정되어야 한다. 단순히 머리 가까이에 소품이 있으므로 마시기 성공으로 볼 수 없다.
+  고개가 숙여진다고 했던 초기 실루엣 해석은 철회한다. 실제 head bind 기준 facePitch는 +5.4°로 약간 위를 보는 상태다. 문제는 고개 각도 자체보다 입 anchor의 실제 메시 위치다.
+  기존 mouthReference는 head.position + placement*(0,.14,.15)이며 병과 약 .0244m 차이지만, 이 가정점이 실제 입을 나타내지 못한다. 실제 얼굴의 입술 높이를 측면 메시에서 확인하고 작은 mouth anchor로 고정한 뒤 손/병을 그 anchor에 맞출 것을 권한다. 손목만 높이 조정하여 병이 이마를 관통하지 않게 하며 병 주둥이의 접촉 방향도 함께 확인한다.
+  이미지: Diagnostics/Potion_Drink_SourceOnly/0012.png
+  contact: DiagnosticOutput/Contacts/Potion_Drink_SourceOnly.png
+
+Item_Throw_Overhand: 머리/시선 후행 수정 권장
+  어깨 뒤 준비→위쪽으로 올라오는 손→물체 분리→팔을 내리는 흐름은 읽힌다. 분리 후 물체가 손에 계속 붙어 있는 오류는 보이지 않는다.
+  1.3~1.8초에 턱을 많이 들어 하늘을 보는 실루엣이 유지된다. 낮은 전방 투척을 주로 쓰는 사이드뷰 게임에서는 시선이 던질 방향에서 벗어나 과장된 뒤로 젖힘으로 읽힐 수 있다. 고개를 몸통과 같은 각도로 강제하는 대신, 목표 방향을 따라가는 범위로 head/neck 회전을 줄이고 release 뒤 자연스럽게 전방으로 복귀시키는 편이 좋다.
+  보조값: facePitch 최대 +36.8°, torsoPitch -6.2..9.0°. 숫자만으로 동작을 거부한 것이 아니라 해당 구간의 측면 이미지에서 동작 목적과 시선 방향이 어긋나 보여 지적한 것이다.
+  이미지: Diagnostics/Item_Throw_Overhand_SourceOnly/0013.png
+  contact: DiagnosticOutput/Contacts/Item_Throw_Overhand_SourceOnly.png
+
+Interact_Reach: 목적에 맞는 접촉 대상 확인 필요
+  0.3초부터 한쪽 팔을 들어 0.6~1.0초에 전방 가슴 높이로 뻗고 복귀한다. 전신 T-pose는 아니며 한쪽 팔로 전방 버튼을 누르거나 물체를 잡으려는 모션으로 읽을 수 있다.
+  다만 팔이 거의 수평으로 펴진 상태에서 오래 유지되고 손바닥이 아래를 보아, 대상이 없으면 지시/좀비 팔처럼 보일 수 있다. 버튼을 누르는 용도라면 짧은 reach와 작은 손목/팔꿈치 접촉·반동을, 잡기라면 손바닥 방향과 grip 변화 및 대상 위치를 정해야 한다. 현재 contact만으로 '범용 상호작용 모두 자연스러움'을 승인할 수 없다.
+  이미지: Diagnostics/Interact_Reach_SourceOnly/0008.png
+  contact: DiagnosticOutput/Contacts/Interact_Reach_SourceOnly.png
+
+Pickup_Low: 수정 우선
+  무릎을 굽혀 낮아지는 동작은 명확하지만 0.8~1.3초에 손이 무릎 앞에 머문다. 바닥의 물체를 집기보다 양손을 무릎 위에 올리고 쪼그려 앉는 실루엣이다.
+  오른손 최저 y=.505m로 바닥 소품과 상당히 떨어져 있다. 실질적인 pickup contact가 없으므로 바닥 줍기 용도로는 통과시킬 수 없다. 물체 위치를 한쪽 발 앞의 바닥으로 정한 뒤 몸통/골반을 적절히 기울여 reach 거리를 확보하고, 팔꿈치를 무릎 밖으로 빼서 손이 물체까지 내려가도록 해야 한다. 손을 바닥에 직접 강제하여 팔이 늘어나거나 어깨가 꺾이지 않는지 함께 본다. 잡는 순간 grip 변화 후 손을 들어 복귀시키면 동작 목적이 읽힌다.
+  이미지: Diagnostics/Pickup_Low_SourceOnly/0010.png
+  contact: DiagnosticOutput/Contacts/Pickup_Low_SourceOnly.png
+
+우선순위
+  1. Drink 실제 입 anchor와 병 주둥이 접촉.
+  2. Pickup 바닥 도달과 잡기/들기 동작 목적.
+  3. Throw 시선의 과한 상향과 release 뒤 복귀.
+  4. Interact가 사용할 대상 높이/접촉 의도 확정.
+  5. 기본3종의 30fps 자연스러운 시간 연속성/루프/발 미끄럼 재검수.
+
+이 검수는 V005에 한정한다. V004와 VFX 파일은 수정하거나 재출력하지 않았다.

@@ -1,0 +1,248 @@
+Project M / v005 자연스러운 모션 — 해외 실무 사례·공식 자료 조사
+조사일: 2026-10-19 (KST)
+범위: 캐릭터 애니메이션 제작 방법 조사. 아래의 제안은 제작 지침이며 품질 합격 판정이나 구현 완료 보고가 아니다.
+이번 조사에서는 모션 자산·기존 게임 코드·씬·환경·VFX를 수정하지 않았다. Unity도 실행하지 않았다.
+
+1. 먼저 결정할 것
+
+권장 방향은 '좋은 기준 동작 선정 → 기준 포즈/축을 검증한 한 번의 리타깃 → 실제 치비 메시의 접촉·실루엣 교정 → 타이밍 편집 → 원래 24본에 베이크'이다. 도구 이름이나 보간 종류를 바꾸는 것만으로 해결된다는 근거는 찾지 못했다.
+
+현재 사용자가 느끼는 어색함은 접지 오차 하나로 환원하면 안 된다. 원본 동작의 의도와 무게 이동, 리타깃의 자세 변환, 큰 머리와 짧은 팔에 맞는 도달 거리, 손·무기·입의 접촉, 사이드뷰에서 보이는 포즈와 타이밍을 각각 판단해야 한다. 낮은 가속도·작은 프레임 차이·루프 일치 지표는 오류 탐지 수단이고 자연스러움의 충분조건이 아니다.
+
+14개 전체를 다시 유료 생성하기 전에 Idle/Walk/Run과 Punch 또는 Drink 한 개로 공통 파이프라인을 먼저 검증한다. 기본 세 동작부터 몸통·어깨·손목이 무너진다면 개별 모션을 계속 보정하기 전에 공통 기준 포즈와 리타깃을 고친다. 공통 문제가 없는데 원본 자체의 연기·주기가 나쁘다면 그 원본을 교체한다.
+
+Meshy, Mixamo, Rokoko, DeepMotion, Cascadeur 중 어느 서비스도 이 프로젝트의 3.5등신 메시·24본·실제 소품에 대해 이번 조사에서 실측 비교하지 않았다. 서비스별 우승 순위나 성공률은 제시하지 않는다.
+
+2. 로컬에서 확인한 조건
+
+- ProjectSettings/ProjectVersion.txt: Unity 6000.3.21f1. Packages/manifest.json: URP 17.3.0, Timeline 1.8.12. Animation Rigging 패키지는 현재 manifest에 없다.
+- 대상은 기존 고정 24본 스킨이며 개별 손가락·전완 twist 본이 없다. 주먹/무기 그립은 별도 메시의 blendshape로 표현하고, 본 애니메이션은 손목과 팔의 자세를 담당한다.
+- v004에는 Meshy Prime 소스 14개와 별도 Generic 베이크 클립이 있다. Generic 변환은 고정 계층의 재생을 보존하기 위한 전달 형식이고, 좋은 동작으로 자동 개선하는 단계가 아니다.
+- v005/probe/pose-probe.json의 BindPose 실제 척추 순서는 Hips → Spine02 → Spine01 → Spine → neck이다. 따라서 현재 meta의 Spine02→Human Spine, Spine01→Chest, Spine→UpperChest는 실제 계층상 맞다. 이름이 역순처럼 보인다는 이유로 뒤집지 않는다.
+- 같은 probe에서 Armature에 X -90도에 해당하는 회전이 있다. 이는 파일 좌표계 변환일 수 있으므로 결함으로 단정하지 않는다. 소스/타깃의 실제 world-forward·up·본 로컬 축을 함께 확인해야 한다.
+- 이 노트는 부모 에이전트의 v005 시각·기준 포즈 감사와 별개다. 현재 전 동작의 어색함을 특정 본 매핑 하나가 원인이라고 확정하지 않는다.
+
+3. 해외 커뮤니티의 실제 맥락
+
+아래는 공개 경험담이다. 제공된 FBX·원본 영상·환경을 재현한 실험이 아니므로 발생률이나 서비스 전체 품질의 증거로 쓰지 않는다. 기술 처방은 뒤의 공식 자료와 교차 확인했다.
+
+[C1] Reddit / r/aigamedev — Any success with animating in 3D?
+https://www.reddit.com/r/aigamedev/comments/1v2w60l/any_success_with_animating_in_3d/
+맥락: Meshy에서 발이 붙고, 다른 생성기의 손가락 없는 리그로 물건을 잡기 어렵고, 모캡/프레임 참고를 넣은 자체 Claude 시스템도 발 침투는 줄었지만 뻣뻣하다고 OP가 보고했다. 댓글도 뒤집힌 팔·무릎 축과 리그 검사 문제를 언급한다.
+우리에게 주는 점: '생성 → 코드로 접지·귀환 보정 → 자동 수치 검사'만으로 충분하지 않았다는 매우 유사한 실패 사례다. 다만 소수 사용자 경험이며 그 글에서 우리 프로젝트의 원인까지 증명하는 것은 아니다.
+교차 근거: Meshy 공식은 raw standalone motion과 적용 단계를 분리한다[O1]. 피부·접촉까지 보는 연구도 관절 동작만 옮기는 방법의 한계를 다룬다[O16, O17].
+
+[C2] Blender Artists — How to avoid sliding? (2020)
+https://blenderartists.org/t/how-to-avoid-sliding/1271384
+맥락: Mixamo와 비슷한 단순 deform rig에 baked walk를 쓰는 질문. 답변자는 별도 controller/IK와 보정 layer에서 전진을 임시로 복원하고 패턴 바닥으로 발 미끄러짐을 찾아 발 IK를 조정한 뒤 다시 in-place로 만드는 작업을 설명한다. 촘촘히 baked된 deform rig는 직접 편집하기 어렵다고 지적한다.
+우리에게 주는 점: 원래 스킨/리그를 버릴 필요 없이 '편집용 컨트롤'과 '게임에 전달할 deform bones'를 분리할 수 있다. 이 답변의 옛 Blender UI 조작을 그대로 적용하는 대신 현재 베이크/constraint 동작을 확인해야 한다[O13, O14].
+
+[C3] Reddit / r/Rokoko — Anyone else getting awful results with retargetting? (2023)
+https://www.reddit.com/r/Rokoko/comments/1432rvj/anyone_else_getting_awful_results_with/
+맥락: OP는 팔이 몸에 박힘, 어깨 후퇴, 무릎 잠김, 발 드리프트와 척추 자세 문제를 여러 캐릭터에서 겪고 필터만으로 해결되지 않았다고 한다. 다른 사용자는 UE5의 modified A-pose와 일정한 파이프라인에서는 잘 된다고 반박한다.
+우리에게 주는 점: 같은 제품이라도 중간 리그·기준 포즈·사용 파이프라인이 결과를 바꾼다. 제품 탓 또는 AI 전체 문제라는 결론은 과도하다. 댓글의 모든 모델을 UE5 리그에 다시 묶으라는 방법은 우리 원본 스킨 보존 조건에 그대로 채택하지 않는다.
+교차 근거: Rokoko의 자체 리타깃 기능은 고급 보정을 모두 제공하는 도구가 아니라고 공식 안내가 명시한다[O6].
+
+[C4] Unity Discussions — Humanoid rig problems... Feet sliding, rotation from hips (2020)
+https://discussions.unity.com/t/humanoid-rig-problems-feet-sliding-rotation-from-hips-every-combination-tried/815607
+맥락: Generic에서는 보존되던 발·골반 동작이 Humanoid에서 달라지는 증상과 Avatar 설정을 둘러싼 토론이다.
+우리에게 주는 점: 소스 FBX → Humanoid → 최종 Generic 단계별로 비교해야 변형이 생긴 단계가 드러난다. Generic이 정상이라고 해서 Humanoid의 모든 리타깃이 잘못됐다는 뜻은 아니다. 옛 글의 설정·라이선스 제한은 Unity 6.3 처방으로 쓰지 않는다.
+교차 근거: 현재 Unity 문서의 Avatar 확인, muscle 범위, root 설정과 대조한다[O3–O5].
+
+[C5] Reddit / r/blender — Retargeting twists my mesh (2023)
+https://www.reddit.com/r/blender/comments/114j3n8/retargeting_twists_my_mesh/
+맥락: Plask 비디오 모캡 결과를 원본 메시로 옮기면서 본 이름·형태가 같아 보이는데도 꼬였다. OP는 나중에 bone roll 차이를 발견했다. 마지막에는 재스키닝으로 우회했다고 보고한다.
+우리에게 주는 점: 같은 이름·계층만으로 동일한 로컬 회전 기준이라고 가정할 수 없다. 그러나 OP의 automatic weights 재적용은 우리 UV/원본 weight 보존 목표에 맞는 처방이 아니므로 따라 하지 않는다.
+교차 근거: Blender는 bone roll을 rest pose의 구성 요소로 정의한다[O13].
+
+[C6] Reddit / r/Cascadeur — A short action sequence animated in Cascadeur (2023–2024 토론)
+https://www.reddit.com/r/Cascadeur/comments/182op3z/a_short_action_sequence_animated_in_cascadeur/
+맥락: 완성 영상만 보면 자동 도구 성공 사례처럼 보이지만, 제작자는 댓글에서 바닥 침투·깜빡임 때문에 Blender에서 Cascadeur 결과를 참고해 동작을 다시 만들었다고 밝혔다. 당시 첫 Cascadeur 작업이었고, 더 숙련됐다면 도구 안에서 고쳐 직접 썼을 것이라고도 한다.
+우리에게 주는 점: 예쁜 데모를 '한 번 생성해서 바로 사용'한 결과로 오해하지 않는다. 편집·정리 비용과 도구 숙련도를 포함해서 비교한다. 현재 Cascadeur가 항상 수작업 재제작을 요구한다는 근거는 아니다.
+교차 근거: Cascadeur는 pose/타이밍 편집, unbaking, 접촉 정리의 서로 다른 역할을 공식 문서에서 구분한다[O9–O12].
+
+[C7] Reddit / r/UnityHelp — Humanoid retargeting changes hand/foot positions from Blender
+https://www.reddit.com/r/UnityHelp/comments/1wh1s4h/unity_humanoid_retargeting_changes_handfoot/
+맥락: ARP→FBX를 Blender에 재임포트하거나 Unity Generic으로 볼 때는 맞지만 Humanoid에서 정지 손발 접촉이 달라지는 분리 실험을 OP가 보고한다. 공개된 해결책을 검증한 사례가 아니라 문제 제기다.
+우리에게 주는 점: 동일 영상 비교 시 '최종 스킨'만 보지 말고 원본/리타깃/베이크의 세 단계를 따로 저장하자는 검사 설계 근거다. 특정 옵션 하나의 효과는 이 글에서 확정하지 않는다.
+
+검토했으나 추천 순위 근거에서 제외한 자료:
+- 자사 제품을 포함한 동일 영상 비교: https://www.reddit.com/r/TopologyAI/comments/1uuehxt/ai_motion_capture_tools_compared_with_the_same/
+  동일 입력 비교라는 방법은 좋지만 비교 제작자의 제품 이해관계가 있고 반복 시험이 없어 순위·품질 수치를 인용하지 않았다.
+- 신생 리타깃 애드온 작성자가 여러 서브레딧에 올린 데모는 서로 독립된 사용자 검증으로 세지 않았다.
+- 확인하지 못한 '한 번에 모두 자연스럽게 만드는 프롬프트', 출처 불명 모션 압축 파일, 오래된 Unity Pro 전용 IK 설명도 채택하지 않았다.
+
+4. 공식 자료에서 확인한 기술적 경계
+
+[O1] Meshy — Text to Motion API
+https://docs.meshy.ai/en/api/text-to-motion
+확인: 생성은 캐릭터 모델과 분리된 standalone raw motion이다. Prime은 FBX, Swift는 BVH이며 결과를 별도 리타깃하거나 Animation API에 적용한다. 현재 문서상 Prime 10크레딧, Swift 3크레딧, 목표 길이 2–10초(0.5초 단위), prompt 400자 제한이다.
+해석: raw 생성 입력에 우리 메시/소품의 형상이 없으므로 chibi나 potion을 문장에 넣는 것만으로 손-입·손-검의 기하학적 접촉이 보장되지 않는다. 이는 API 입력에서 도출한 판단이지 공식의 품질 불량 선언이 아니다. 이미 다운로드한 후보를 먼저 비교하고, 추가 생성은 원본 동작 결함이 확인된 클립에 한정하는 편이 효율적이다.
+
+[O2] Meshy — Auto Rigging 도움말 (2026-08-27)
+https://help.meshy.ai/en/articles/16231707-how-to-create-3d-animation-with-auto-rigging
+확인: 정상 T/A pose, 분리된 팔다리, topology와 기준 위치를 점검하라고 한다. 발이 붙는 경우 발을 벌린 T-pose를 권한다.
+해석: 공개 불평 C1의 '발 붙음'은 생성 동작뿐 아니라 입력 리깅 문제도 검사해야 한다. 우리 원본 모델을 즉시 재생성/재스키닝하라는 결론은 아니다. 기존 skin의 기준 포즈와 변형을 먼저 검사한다.
+
+[O3] Unity 6.3 — Importing a model with humanoid animations
+https://docs.unity3d.com/6000.3/Documentation/Manual/ConfiguringtheAvatar.html
+확인: Avatar 성공은 필수 본 대응이 성립했다는 뜻이다. optional bones·올바른 T-pose·수동 mapping 검증이 별도로 필요하다. 같은 구조의 파일은 한 Avatar를 재사용할 수 있다.
+적용: 한 소스의 중립 포즈와 실제 타깃 bind/T-pose를 대조한 뒤 기준 Avatar를 고정한다. full arm raise·elbow bend·forearm roll·knee flexion을 테스트해 회전 기준이 맞는지 검사한다. 이름이 같은 뼈의 Euler 값을 복사하는 방법을 검증 없이 쓰지 않는다.
+
+[O4] Unity 6.3 — Avatar Muscle & Settings tab reference
+https://docs.unity3d.com/6000.3/Documentation/Manual/MuscleDefinitions.html
+확인: 근육별 범위와 변형을 preview해 self-overlap을 줄일 수 있다. Translation DoF는 일부 척추·목·허벅지·어깨에 적용되고 추가 처리 비용이 있으므로 데이터에 필요한 경우 사용한다.
+적용: 치비의 큰 머리·두꺼운 몸통 때문에 팔이 관통한다면 모든 곡선을 약하게 만드는 대신 해당 관절의 허용 범위/기본 자세를 확인한다. 원본에 translation이 없는데 DoF를 켜면 좋아진다는 식의 일괄 변경은 피한다.
+
+[O5] Unity 6.3 — How Root Motion works
+https://docs.unity3d.com/6000.3/Documentation/Manual/RootMotion.html
+확인: Body Orientation은 일반 전진 모캡에는 유용하지만 옆걸음처럼 몸 방향과 이동 방향이 다르면 맞지 않을 수 있다. Original은 저작된 방향을 보존한다. Feet 기반 Y는 root 기준과 전환을 다루며, Loop Pose는 시작/끝 자세 차이를 클립에 분산한다.
+적용: 모든 클립을 같은 root 설정으로 임포트하지 않는다. 검사 시 원본 전진량/수직 궤적을 보관하고 별도의 in-place 판본을 만든다. Feet Y나 Loop Pose로 손·발의 XZ 접촉이나 잘못된 발 디딤 타이밍까지 고쳐진다고 주장하지 않는다.
+
+[O6] Rokoko — Studio Retargeting Guide
+https://support.rokoko.com/hc/en-us/articles/14843726304657-Rokoko-Studio-Retargeting-Guide
+확인: 커스텀 캐릭터 preview 중심의 비교적 단순한 retarget 기능이며, 어깨 높이/앞뒤 이동·목 이동 등을 조정할 수 있다. Roll extraction은 roll/twist 본이 있는 리그에만 작동한다.
+적용: 우리 24본에 없는 twist 본을 해당 옵션이 대신 만들어 주지는 않는다. 어깨 offset은 기준 포즈 검증과 별도이며, 좌표계가 틀린 데이터를 큰 offset으로 가리는 수단으로 쓰지 않는다.
+
+[O7] Rokoko — Filters explained
+https://support.rokoko.com/hc/en-us/articles/4410415474321-Filters-explained
+확인: 좌/우 foot contact의 시작/끝 구간을 편집해 locomotion을 다시 처리할 수 있다. 어느 발도 접촉하지 않는 구간은 점프 궤적을 만든다. feet-above-floor는 발 침투에 IK를 쓰는 별도 기능이다.
+적용: 접지 구간을 실제 디딤에 맞추는 작업과 힙 높이 jitter 평활화는 다른 작업이다. 착지·발끝 push-off·공중 구간을 구분하지 않는 상시 발 고정은 동작 의도를 해친다. 이 문서는 주로 Smartsuit 데이터용으로, 모든 외부 FBX에 같은 필터를 적용할 수 있다는 뜻은 아니다.
+
+[O8] Rokoko — Real-time Locomotion & Drift Fix
+https://support.rokoko.com/hc/en-us/articles/41620261484945-Rokoko-Studio-Update-Real-time-Locomotion-Drift-Fix
+확인: post-process가 최종 fidelity를 높인다. Drift Fix는 실제 시작/끝 위치가 같은 촬영의 root 드리프트를 맞추는 용도다.
+적용: 원래 앞으로 나아가는 공격/대시까지 시작점으로 강제 복귀시키는 cleanup과 혼동하지 않는다.
+
+[O9] Cascadeur — Retargeting
+https://cascadeur.com/help/category/219
+확인: source/target neutral A/T pose를 유사하게 맞추는 것이 권장된다. AutoPosing을 지원하는 rig와 동일한 point-controller hierarchy가 필요하다. Root Motion Correction은 fulcrum을 정지 접촉으로 간주하므로 의도적 slide도 제거할 수 있다.
+적용: 파일을 가져오기만 하면 기존 24본에 바로 되는 도구라고 가정하지 않는다. 복사본에서 quick rig compatibility를 먼저 확인한다. 대시는 미끄러짐을 의도한 발 동작일 수 있어 걷기와 같은 correction을 무조건 적용하지 않는다.
+
+[O10] Cascadeur — Fulcrum Points / Fulcrum Motion Cleaning
+https://cascadeur.com/help/tools/physics_tools/fulcrum_points
+https://cascadeur.com/help/category/206
+확인: 지면 근처에서 프레임 간 움직임이 작은 point가 접촉으로 인식된다. 접촉 구간은 조정할 수 있다. 공식은 일반적인 stay-in-place 애니메이션에 AutoPhysics가 그대로 잘 맞지 않을 수 있음을 설명한다.
+적용: root가 고정되고 발이 뒤로 가는 in-place walk를 world contact로 오해하지 않는다. 임시 전진을 복원한 '개발된 보행'에서 접촉/무게 이동을 고친 뒤 전진을 분리하는 순서가 타당하다. 발을 붙이는 것과 무릎/골반의 자연스러운 보행을 만드는 것은 함께 검수해야 한다.
+
+[O11] Cascadeur — Animation Unbaking / Spline
+https://cascadeur.com/help/category/221
+https://cascadeur.com/help/animation/spline
+확인: fully baked 결과를 편집 가능한 키·interpolation으로 줄이는 도구다. 허용 차이와 부위별 처리를 설정할 수 있다. Spline 문서는 timing과 spacing을 별개로 정의하며 궤적을 보며 속도 변화·정지를 편집하도록 설명한다.
+적용: unbake/key reduction은 나쁜 포즈를 좋은 포즈로 판별하는 기능이 아니다. 접촉 프레임·타격·최대 확장·회복의 핵심 키를 먼저 살린 뒤 중간 흐름을 편집한다. 전신에 동일 low-pass를 걸어 임팩트와 발 디딤을 뭉개지 않는다.
+
+[O12] Cascadeur — Inbetweening / FAQ
+https://cascadeur.com/help/category/278
+https://cascadeur.com/help/faq
+확인: AI inbetweening은 키 포즈와 타이밍을 이용하고 결과가 항상 물리적으로 정확하지 않다. 공식 제한에는 melee weapon/tool 등 props 동작, 손을 다른 본에 상대적으로 고정하는 동작, 환경과의 상호작용이 포함된다. FAQ는 stylized 비율에서 shoulder slouch 같은 AutoPosing 문제가 생길 수 있음을 인정한다.
+적용: 포션 섭취나 검 동작을 AI inbetweening만으로 끝내지 않는다. 짧은 팔의 도달과 손잡이/입 접촉을 직접 제약·편집해야 한다. AI physics 결과가 게임의 의도된 포즈와 속도보다 우선하는 것도 아니다.
+
+[O13] Blender Manual — Bone Roll / Pose Transform
+https://docs.blender.org/manual/en/latest/animation/armatures/bones/editing/bone_roll.html
+https://docs.blender.org/manual/id/dev/animation/armatures/posing/editing/transform.html
+확인: bone roll은 rest pose에서 뼈 길이 방향 회전을 정의한다. 포즈 변환은 부모와 각 본의 rest/local space의 영향을 받는다.
+적용: 축을 비교할 때 본 길이와 이름만 보지 말고 로컬 좌표 frame도 확인한다. 기존 애니메이션을 가진 원본 armature에서 모든 roll을 0으로 바꾸는 것은 안전한 범용 수리가 아니다. 원본은 보존하고 편집 복사본/리타깃 기준 frame에서 해결한다.
+
+[O14] Blender 개발자 답변 — Bake Action / Visual Keying
+https://projects.blender.org/blender/blender/issues/36772
+확인: Blender 개발자는 constraint가 만든 최종 변형을 bake하려면 Visual Keying이 필요하다고 설명한다. 2013년 이슈이므로 현재 버전별 UI 옵션을 대체하는 사용 설명서로 보지 않는다.
+적용: IK/controller layer를 만들었다면 constraint를 제거한 export에서도 최종 pose가 같은지 재임포트해 검사한다. '키가 많다/파일이 생겼다'만으로 최종 결과가 전달됐다고 판정하지 않는다.
+
+[O15] Adobe — Mixamo Common questions
+https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html
+확인: Adobe ID로 이용 가능하며 라이브러리는 biped humanoid 대상이다. autorig는 뚜렷한 몸 부위, neutral pose, clean mesh 등을 요구하고 너무 변형된 비율은 실패할 수 있다고 한다.
+적용: 사람 모캡의 리듬·체중 이동이 분명한 라이브러리 동작을 비교용 source로 쓰는 것은 유용하다. 우리 캐릭터를 다시 autorig하는 것은 별도 결정이다. 기존 skin 보존이 목적이면 기존 hero로 리타깃할 source 동작만 구하고, 일반 성인 모션을 그대로 치비의 최종 스타일이라고 판단하지 않는다.
+
+[O16] ICCV 2021 — Contact-Aware Retargeting of Skinned Motion
+https://arxiv.org/abs/2109.07431
+확인: target skeleton뿐 아니라 geometry를 고려해 self-contact·ground-contact를 유지하고 interpenetration을 줄이는 리타깃 연구다.
+적용: 팔꿈치 각도 전송만으로 손-머리 접촉이 보존되지 않는다는 설계 근거다. 이 논문을 바로 설치하면 우리 작업이 자동 해결된다거나 프로젝트가 그 알고리즘을 사용한다고 주장하지 않는다.
+
+[O17] NeurIPS 2024 — Skinned Motion Retargeting with Dense Geometric Interaction Perception
+https://arxiv.org/abs/2410.20986
+확인: 몸 형상을 무시하거나 skeleton retarget 이후 별도 geometry correction을 붙일 때 접촉 충돌·jitter 문제가 생길 수 있다고 분석하고 geometry interaction을 함께 모델링한다.
+적용: 발을 고친 뒤 몸통이 이동하면 손-입 접촉도 재검사해야 한다. 각각의 보정치를 쌓을수록 전체가 좋아진다고 가정하지 않는다. 새 ML 학습 파이프라인 도입은 이 14개 클립 수정을 위한 우선 선택이 아니다.
+
+[O18] DeepMotion — Capture Guidelines
+https://www.deepmotion.com/article/capture-guidelines-quick-guide
+확인: 실제 사람 영상, 고정 카메라, 비가림 감소, 관절이 보이는 복장·균일한 조명·배경 대비를 권한다. 바닥 동작에는 3/4 각도가 관절 가림을 줄이는 데 도움이 된다. cartoon/abstract 영상을 모캡 입력으로 권하지 않는다.
+적용: 최종 게임 시점이 사이드뷰라고 모캡 촬영까지 완전 옆면일 필요는 없다. 치비 AI 영상을 먼저 만든 뒤 추출하면 신체 비율과 가려진 관절의 일관성 문제를 더할 수 있으므로 기본 루트로 권하지 않는다.
+
+[O19] DeepMotion — Foot Locking
+https://www.deepmotion.com/article/foot-locking
+확인: Auto/Always/Never/Grounding을 동작 의도에 따라 구분한다. 공중·수중 동작에는 Never, 의도적 gliding에는 Grounding을 설명한다. 모드별 제공 플랜은 다르다.
+적용: jump의 airborne 구간까지 발 잠금을 강제하지 않는다. 'Always가 품질 최상' 같은 일괄 선택을 피한다. 새 결제나 해당 서비스 접근 권한은 이번 조사에서 확보하지 않았다.
+
+[O20] DeepMotion — Custom Characters
+https://www.deepmotion.com/article/custom-characters
+확인: rigged humanoid, T-pose, 발의 origin plane, +Z forward/팔 X축, 하나의 root·unique names·단순한 hierarchy를 요구한다. joint scale을 피하고 전체 크기는 root에서 조정하라고 한다.
+적용: 현 hero를 바로 업로드할 수 있다고 단정하지 말고 export 복사본으로 축·root·pose compatibility를 검사해야 한다. 3.5등신 비율에서 접촉이 충분히 맞는지는 별도 실제 메시 검사 대상이다.
+
+[O21] Rokoko Vision 3.0 — 현재 제품·촬영 지침
+https://www.rokoko.com/products/vision
+https://support.rokoko.com/hc/en-us/articles/48823622640785-Best-Practices-for-Video-Capture-Rokoko-Vision-3-0
+확인: 현재 안내는 사전 녹화한 영상을 Create에 업로드하고 Studio에서 편집·export하는 방식이다. 고정 카메라·전신 프레임·비가림 최소화를 요구한다. 기존 live webcam/dual-camera 추천 글과 현 제품 안내가 다르다.
+적용: 오래된 Reddit의 dual-camera 추천을 현재 사용 가능 기능으로 소개하지 않는다. 소품에 가려지는 손과 손가락 표현을 이것만으로 해결할 수 있다고 보지 않는다. 영상 입력 확보와 계정/접근 확인이 필요한 대안이다.
+
+5. 우리 조건에서의 도구 선택
+
+A. 최우선: 기존 좋은 source + 검증된 리타깃 + 별도 offline control/pose 편집
+장점: 기존 모델·UV·weights·24본을 보존하고 원인별 A/B가 가능하다. 현재 Unity 소스와 편집 도구로 시작할 수 있다. 새 클립/검수 프리팹에만 출력하면 gameplay 변경이 필요 없다.
+조건: 기존 동작 중 좋은 것을 선별할 것. 소스의 몸통 타이밍까지 모두 나쁜 경우 그 소스를 억지로 살리는 비용을 중단한다. 이전 procedural 정정처럼 프레임마다 손·팔 위치만 따로 맞춰 전신 리듬을 무너뜨리지 않는다.
+
+B. Mixamo 또는 사용 조건이 확인된 curated mocap을 source로 이용
+장점: 생성 prompt를 반복하는 대신 사람이 수행한 보행·전투의 체중 이동을 관찰하고 비교하기 쉽다.
+조건: 최종 hero의 스타일·접촉은 다시 편집해야 한다. browser/Adobe ID 등 실제 접근은 별도 확인이 필요하다. 라이브러리마다 pose·root·clip 품질이 다르므로 한 소스 skeleton과 일정한 export 조건으로 먼저 세 클립을 비교한다.
+
+C. Cascadeur를 편집 도구로 사용
+장점: pose, contact, trajectory, unbaking, physics-assisted 정리를 한 편집 환경에서 다룬다.
+조건: AutoPosing rig compatibility와 실제 설치/라이선스/자동화 수단이 이번 조사에서 확인되지 않았다. 24본 복사본을 quick-rig한 뒤 원래 deform skeleton으로 animation-only 왕복하는 파일럿이 먼저다. props AI 제한을 고려해 sword/drink 핵심 포즈는 명시적으로 편집한다.
+
+D. DeepMotion / Rokoko Vision 비디오 모캡
+장점: 연기·속도·준비/회복을 원본 영상으로 직접 지정할 수 있다.
+조건: 실제 사람 reference와 적절한 촬영이 필요하다. 소스 비가림·빠른 회전·검/병으로 가려진 손은 cleanup 대상이다. 짧은 팔다리와 큰 머리의 geometry contact는 추출 후 재타깃 단계에서 해결한다. 동일한 짧은 영상으로 비교하고 raw result와 cleanup 시간을 함께 평가한다.
+
+E. Meshy Prime 재생성
+장점: 이미 연결된 도구로 새로운 action 후보를 확보하는 접근성이 높다.
+조건: 캐릭터/소품 geometry를 입력받지 않는 raw motion이라는 경계가 있다. 공통 Avatar·기준 pose 문제를 해결한 후 source action이 부적합한 경우에만 사용한다. simple action 한 가지를 지정하고 원본 source skeleton부터 확인한다. '자연스럽게, 접지 좋게' 문구를 늘리는 것만으로 접촉 보존을 증명하지 않는다.
+
+F. 모션 전체를 sin 곡선·보간·손 위치 추정 코드로 재합성
+판단: 이번 대규모 개선의 기본 루트로 권하지 않는다. 수학적으로 매끈해도 골반→몸통→어깨→손끝의 순서, 지지발의 체중 이동, 공격 준비와 회복은 별도로 설계해야 한다. 코드는 검증·정확한 접촉·출력 자동화에 쓰고, 근거 없는 전신 연기를 대신하는 용도로 확대하지 않는다.
+
+6. 재작업을 줄이는 실행 순서
+
+1) 비교 기준을 고정한다.
+   동일 hero·scale·바닥·카메라·재생속도로 source/retarget/baked의 세 판본을 저장한다. 기본 우향과 좌향을 각각 확인하고, 검수용 카메라 회전으로 팔 관통이나 비뚤어진 몸통을 가리지 않는다. 사이드뷰에서 먼저 판독하고 작은 3/4 회전에서도 관절이 무너지지 않는지 본다.
+
+2) 중립 포즈와 축을 분리 확인한다.
+   원본 bind pose, source rest/T-pose, target Avatar T-pose, zero muscle pose를 나란히 본다. 어깨·팔꿈치·손목·고관절·무릎의 단일 방향 시험으로 굽힘/roll 축을 확인한다. 이 단계에서 메시가 비틀리면 원본 animation을 탓하거나 smoothing을 추가하지 않는다. 원본 스킨/rig는 보존한다.
+
+3) 짧은 파일럿으로 기본 리듬을 검증한다.
+   Idle: 주먹을 쥐어도 어깨·전완이 긴장해 고정판처럼 되지 않는지, 작은 호흡이 전신 흔들림이 되지 않는지 본다.
+   Walk/Run: contact→down→passing→up과 지지발 교대가 읽히는지, 골반 높이·흉곽 counter-rotation·팔 swing이 같은 주기를 공유하는지 본다. 원본의 전진량을 먼저 측정하고, 실제 디딤 거리와 목표 이동 속도에 맞는 cadence를 선택한다.
+   Punch: 손만 앞으로 나가는지, 골반·몸통의 준비/회전·어깨의 지연·발의 지지가 함께 보이는지 본다. peak extension에서 팔꿈치의 과신전과 손목 꺾임을 검사한다.
+   이 목록은 우리 아트 디렉션용 시각 체크이며 자동 수치 합격 기준이 아니다.
+
+4) 접촉은 의도한 구간만 보존한다.
+   발: 지지/heel roll/toe push-off/공중을 구별하고 world-space 접촉을 검사한다. in-place 검수에는 임시 전진을 복원해 바닥 상대 미끄러짐을 분리 측정한다.
+   Drink: 실제 병 grip의 손 좌표와 병 입구-입술 목표를 함께 잡는다. 짧은 팔이면 몸통/목/어깨의 자연스러운 도움 동작을 허용하되 손이 머리 안으로 들어가는 해를 금지한다.
+   Sword: 손잡이를 기준으로 손목 orientation을 맞추고 검끝 궤적을 검수한다. 실제 횡베기와 공중 수직 내려찍기는 preparation/contact/recovery 구조가 다른 별도 action으로 유지한다.
+   Throw: release 이전의 손-물체 연결, release 순간의 손 방향·물체 속도, 이후 팔의 follow-through를 분리한다. 샘플 궤적이 손의 부자연스러움을 가리지 않아야 한다.
+   손가락 본이 없으므로 주먹/무기 blendshape는 접촉 상태를 표현한다. 그것을 손목/팔 회전 오류의 해결책으로 취급하지 않는다.
+
+5) 전신 연기를 보존하며 치비 스타일을 편집한다.
+   큰 머리가 무게중심을 가려도 전신 balance는 읽혀야 한다. 성인 모캡의 관절 각도를 줄이는 일괄 비율보다 실제 silhouette·보폭·팔 여유·시선·접촉을 기준으로 키 포즈를 조정한다. 강한 준비, 짧은 타격, 충분한 회복을 action에 맞게 편집한다. 과장량과 프레임 수는 레퍼런스/실제 GIF 비교로 결정하며 이 노트에서 임의의 표준값을 확정하지 않는다.
+
+6) 마지막에 bake하고 다시 평가한다.
+   편집 컨트롤은 offline에만 두고 원래 24본의 최종 transform/그립 curve를 새 clip에 bake한다. 이 접근은 새 runtime solver를 필수로 요구하지 않는다. 동일 pose가 재생되는지, loop의 자세뿐 아니라 속도도 이어지는지, 영문 clip 이름·duration·source provenance가 맞는지 확인한다. Generic 전달 시 해당 hierarchy 전제와 기존 Humanoid controller의 직접 대체 가능 여부를 분명히 쓴다.
+
+7) 자동 지표는 시각 검수와 함께 쓴다.
+   접촉 구간의 발 속도, 최소 mesh-floor 거리, 손-소품/입 목표 오차, 갑작스러운 관절 회전, loop 위치·속도 차이를 기록한다. metric을 줄이려고 발 디딤·타격·착지 peak를 평활화하지 않는다. 실제 게임 카메라 크기의 1배 속도 GIF와 느린 재생, 핵심 pose contact sheet를 함께 보고 합격을 정한다. 정량 임계치는 장면 scale과 화면 픽셀 크기에 맞춰 파일럿에서 정하고 '보편적인 자연스러움 수치'로 소개하지 않는다.
+
+7. 아직 확정하지 않은 것
+
+- 현재 어색함의 주원인이 source, target Avatar, retarget parameter, authored correction 중 무엇인지는 로컬 pose/모션 감사 결과와 A/B로 확정해야 한다.
+- 새 모캡/편집 서비스의 계정·설치·라이선스·원본 reference 확보 여부를 확인하지 않았다. 이번 조사에서는 추가 크레딧을 사용하지 않았다.
+- 새 ML 논문 파이프라인을 이 프로젝트에 설치·검증하지 않았다. 연구는 geometry/contact를 별도 항목으로 다뤄야 한다는 근거로만 사용했다.
+- 자연스러움은 사용자와 프로젝트의 아트 디렉션 판단을 포함한다. 이전 전달물의 자동 검사 통과나 렌더 완료가 이번 사용자의 불만을 반박하는 근거가 되지는 않는다.
+- 사용자 지시대로 새 검수 자산/클립 범위에서 개선하며 기존 gameplay 자동 연결은 별도 작업으로 남긴다. VFX는 이번 모션 개선에서 제외한다.
