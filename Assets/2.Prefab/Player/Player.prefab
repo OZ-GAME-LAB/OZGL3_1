@@ -1517,11 +1517,16 @@ GameObject:
   m_Component:
   - component: {fileID: 3384832017090783504}
   - component: {fileID: 8924420892086741974}
+  - component: {fileID: 2869846327356406548}
+  - component: {fileID: 817452346629760248}
   - component: {fileID: 8359091664221977547}
-  - component: {fileID: 2843753717330458438}
   - component: {fileID: 1303281578308138415}
   - component: {fileID: 3353712588403264877}
   - component: {fileID: 594316928391325509}
+  - component: {fileID: 5068825118391019262}
+  - component: {fileID: 7076220012804595860}
+  - component: {fileID: 3948204752371307333}
+  - component: {fileID: 5988778150097011242}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1578,6 +1583,56 @@ MonoBehaviour:
   _attackDuration: 0.4
   _hitStunTime: 0.3
   _currentStateType: 0
+--- !u!114 &2869846327356406548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de49e892ae801634390eb6785c0e61c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  _strength:
+    baseValue: 20
+    perLevel: 3
+    maxLevel: 5
+  _vitality:
+    baseValue: 0
+    perLevel: 12
+    maxLevel: 5
+  _agility:
+    baseValue: 0
+    perLevel: 0.03
+    maxLevel: 3
+  _magic:
+    baseValue: 20
+    perLevel: 3
+    maxLevel: 5
+  _punchAttack: {fileID: 817452346629760248}
+--- !u!114 &817452346629760248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dbbe5a5ca184e4589b6f482f49e5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PunchAttack
+  _baseDuration: 0.3
+  _attackPower: 20
+  _damageCoefficient: 1
+  _hitBoxSize: {x: 1, y: 1, z: 1}
+  _hitBoxForward: 0.7
+  _hitBoxHeight: 1
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &8359091664221977547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,29 +1645,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a34837429d50194cbe843fcfb170a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  _maxHP: 100
+  _baseMaxHP: 100
   _hitInvincibleTime: 0.5
   _respawnInvincibleTime: 0.5
---- !u!114 &2843753717330458438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050402693780808945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 414b0ee24b984e0408cfa8508d7545b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwordBasicAttack
-  _duration: 0.35
-  _damage: 10
-  _hitBoxSize: {x: 1.6, y: 1.2, z: 1}
-  _hitBoxForward: 0.9
-  _hitBoxHeight: 1
-  _enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!95 &1303281578308138415
 Animator:
   serializedVersion: 7
@@ -1685,6 +1720,57 @@ CapsuleCollider:
   m_Height: 1.8768151
   m_Direction: 1
   m_Center: {x: 0, y: 0.92159235, z: 0}
+--- !u!114 &5068825118391019262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b1edb3480ddd4f883dcd7aabaa9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSkill
+--- !u!114 &7076220012804595860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69683659184e8ae45aa973022158b33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestLogSkill
+  _data: {fileID: 11400000, guid: ed44e62e592322a41b216ed5da5b363f, type: 2}
+--- !u!114 &3948204752371307333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69683659184e8ae45aa973022158b33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestLogSkill
+  _data: {fileID: 11400000, guid: 9fa6bad08f3f2f84b8c19bd59909c88a, type: 2}
+--- !u!114 &5988778150097011242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69683659184e8ae45aa973022158b33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestLogSkill
+  _data: {fileID: 11400000, guid: 10518b829186b2e41bc076dd4c374026, type: 2}
 --- !u!1 &7287103729589707858
 GameObject:
   m_ObjectHideFlags: 0

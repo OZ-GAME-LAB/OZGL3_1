@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using OZ.UI.Contracts;
 
 public enum PlayerState
 {
@@ -9,6 +10,7 @@ public enum PlayerState
     Land,   // 착지
     Dash,   // 회피 대시 (짧은 무적)
     Attack,
+    Skill, //Q/E/R 스킬 시전
     Hit,
     Dead
 }
@@ -60,6 +62,11 @@ public abstract class PlayerState_Base : IPlayerState
         if (player.IsDashRequested && player.CanDash)
         {
             player.ChangeState(PlayerState.Dash); // 회피가 최우선
+            return true;
+        }
+        if (player.IsSkillRequested)
+        {
+            player.ChangeState(PlayerState.Skill);
             return true;
         }
         if (player.IsAttackRequested)
@@ -177,6 +184,12 @@ public class PlayerState_Air : PlayerState_Base
             player.ChangeState(PlayerState.Dash);
             return;
         }
+        //공중에서도 스킬 사용 가능
+        if (player.IsSkillRequested)
+        {
+            player.ChangeState(PlayerState.Skill);
+            return;
+        }
         if (player.IsAttackRequested)
         {
             player.ChangeState(PlayerState.Attack);
@@ -248,7 +261,7 @@ public class PlayerState_Dash : PlayerState_Base
         velocity.y = 0f;
         _rigidbody.linearVelocity = velocity;
 
-        _animator.SetTrigger("Dash");
+        _animator.SetBool("IsDashing", true);
     }
 
     public override void UpdateState(PlayerController player)
@@ -268,7 +281,7 @@ public class PlayerState_Dash : PlayerState_Base
     {
         _rigidbody.useGravity = true;
         player.Stop(); // 대시 관성 제거 (미끄러지는 느낌을 원하면 삭제)
-        _animator.ResetTrigger("Dash");
+        _animator.SetBool("IsDashing", false);
     }
 }
 
@@ -317,6 +330,52 @@ public class PlayerState_Attack : PlayerState_Base
         _animator.SetBool("Attacking", false);   // 코드가 끝나면 애니메이션도 끝
     }
 }
+
+//스킬 시전 흐름(방향, 정지, 쿨다운 시작, 종료 타이밍)만 담당. 실제 판정은 PlayerSkillBase에 맡김.
+public class PlayerState_Skill : PlayerState_Base
+{
+    private float _duration;
+    public override void EnterState(PlayerController player)
+    {
+        base.EnterState(player);
+        PlayerSkill skills = player.Skills;
+        SkillSlot slot = player.RequestedSkillSlot;
+        PlayerSkillBase skill = skills.GetEquipped(slot);
+        // 입력~진입 사이에 장착·쿨다운이 바뀐 경우 대비 → 바로 빠져나감
+        // (_duration = 0이면 다음 Update에서 즉시 기본 상태로 복귀)
+        if (skill == null || !skills.CanUse(slot, out _))
+        {
+            _duration = 0f;
+            return;
+        }
+        Vector3 aimPoint = player.Input.GetAimPoint(player.transform.position);
+        player.LookAtImmediately(aimPoint.x - player.transform.position.x); // 커서 방향 바라보기
+        if (player.IsGrounded)
+        {
+            player.Stop();
+        }
+        _animator.SetTrigger("Skill");
+        // 쿨다운을 판정보다 먼저 거는 이유: Execute 안에서 에러가 나도 연타로 무한 발동되지 않게
+        skills.StartCooldown(slot);
+        skill.Execute(player, aimPoint, skills.GetDamage(skill));
+        _duration = skill.Data.CastDuration;
+    }
+    public override void UpdateState(PlayerController player)
+    {
+        if (ElapsedTime >= _duration)
+        {
+            player.ChangeToDefaultState();
+        }
+    }
+    public override void ExitState(PlayerController player)
+    {
+        _animator.ResetTrigger("Skill");
+    }
+}
+
+
+
+
 
 // 경직
 public class PlayerState_Hit : PlayerState_Base

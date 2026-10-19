@@ -7,16 +7,16 @@ using OZ.UI.Contracts;
 [RequireComponent(typeof(PlayerController))]
 public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
 {
-
-    [SerializeField] private float _maxHP = 100f;
+    [SerializeField] private float _baseMaxHP = 100f;
     [SerializeField] private float _hitInvincibleTime = 0.5f; // 연속 피격 방지
     [SerializeField] private float _respawnInvincibleTime = 0.5f; // 재시작 직후 잠깐 보호
 
     private PlayerController _player;
     private float _hp;
+    private float _bonusMaxHP; // 체력 스탯으로 늘어난 최대 HP (PlayerStats가 설정)
 
     public float HP { get { return _hp; } }
-    public float MaxHP { get { return _maxHP; } }
+    public float MaxHP { get { return _baseMaxHP + _bonusMaxHP; } }
     public bool IsDead { get { return _hp <= 0f; } }
 
     public event Action<HealthChange> HealthChanged;
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     private void Awake()
     {
         _player = GetComponent<PlayerController>();
-        _hp = _maxHP;
+        _hp = MaxHP;
     }
 
     private void OnEnable()
@@ -78,14 +78,32 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     // 스테이지 재시작 시 코어 쪽에서 호출 (플레이어를 SetActive(true) 한 다음에 호출)
     public void ResetHealth()
     {
-        SetHP(_maxHP);
+        SetHP(MaxHP);
         _player.Revive();
         _player.SetInvincible(_respawnInvincibleTime); // Revive가 무적을 초기화하므로 그 뒤에 설정
     }
     private void SetHP(float value)
     {
         float prev = _hp;
-        _hp = Mathf.Clamp(value, 0f, _maxHP);
-        HealthChanged?.Invoke(new HealthChange(prev, _hp, _maxHP));
+        _hp = Mathf.Clamp(value, 0f, MaxHP);
+        HealthChanged?.Invoke(new HealthChange(prev, _hp, MaxHP));
+    }
+
+    // PlayerStats에서 호출 (체력 스탯 변경 시). bonus = 늘어난 최대 HP 총량 (예: 2회 구매 → 24)
+    // 기획: 최대 HP가 늘면 현재 HP에는 늘어난 만큼만 더한다 (가득 회복 X)
+    public void SetBonusMaxHP(float bonus)
+    {
+        float prevMaxHP = MaxHP;
+        _bonusMaxHP = Mathf.Max(0f, bonus);
+        float delta = MaxHP - prevMaxHP;
+
+        // 죽은 상태에서 HP가 더해지면 살아난 것처럼 보이므로 최대치만 갱신
+        if (IsDead)
+        {
+            SetHP(_hp);
+            return;
+        }
+
+        SetHP(_hp + Mathf.Max(0f, delta));
     }
 }

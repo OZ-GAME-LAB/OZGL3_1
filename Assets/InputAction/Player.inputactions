@@ -27,8 +27,8 @@
                     "priority": 0
                 },
                 {
-                    "name": "Run",
-                    "type": "PassThrough",
+                    "name": "Dash",
+                    "type": "Button",
                     "id": "f74b1741-7d10-4668-bcc0-642a64c9b915",
                     "expectedControlType": "",
                     "processors": "",
@@ -54,6 +54,36 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "SkillQ",
+                    "type": "Button",
+                    "id": "0e963d8b-54c5-4026-be37-9413290d9df4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "SkillE",
+                    "type": "Button",
+                    "id": "7a522959-c866-4c23-ac96-8a5d069a9442",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "SkillR",
+                    "type": "Button",
+                    "id": "d046f10a-fe78-4f52-a3eb-ce8985e2f496",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
                     "priority": 0
                 }
             ],
@@ -131,7 +161,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Run",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -154,6 +184,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00335281-a113-4f55-bcdc-2f160b3de5f7",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillQ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff32ca39-68ab-4c8b-93c0-c679cd007c41",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fed4a58-b21a-4742-9b00-60754fbf621d",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
