@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "runtimeBakeMesh": false,
+    "originalSkinMeshUnchanged": true,
+    "physicsRootUnchanged": true,
+    "method": "40 sole support/extreme landmarks and 14 directional extrema per dominant-bone group. Per marker: sum(bone.localToWorld * bindpose * (original position + active grip deltas) * skin weight). Reset visual branch to its serialized base, align landmark minimum with physics capsule bottom, clamp world offset to +/-0.25m. Airborne poses retain zero height correction. Dead uses whole-body landmarks. Dash/Hit fallback poses receive -/+40 degree visual yaw for right/left facing respectively. Original mesh, avatar, UVs, collider and physics root are unchanged.",
+    "prefabs": [
+        {
+            "prefab": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Visual.prefab",
+            "visualOffsetRoot": "Armature",
+            "soleMarkers": 40,
+            "leftSoleMarkers": 20,
+            "rightSoleMarkers": 20,
+            "bodyMarkers": 234,
+            "bones": 24,
+            "standingMatrixVectorMultipliesPerFrame": 160,
+            "worstCaseMatrixVectorMultipliesPerFrame": 936,
+            "groundOffsetMetres": 0.0,
+            "maximumCorrectionMetres": 0.25
+        },
+        {
+            "prefab": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab",
+            "visualOffsetRoot": "Protagonist01_Visual",
+            "soleMarkers": 40,
+            "leftSoleMarkers": 20,
+            "rightSoleMarkers": 20,
+            "bodyMarkers": 234,
+            "bones": 24,
+            "standingMatrixVectorMultipliesPerFrame": 160,
+            "worstCaseMatrixVectorMultipliesPerFrame": 936,
+            "groundOffsetMetres": 0.0,
+            "maximumCorrectionMetres": 0.25
+        }
+    ]
+}

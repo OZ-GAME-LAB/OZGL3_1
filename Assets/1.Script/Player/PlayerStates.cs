@@ -289,6 +289,10 @@ public class PlayerState_Dash : PlayerState_Base
 public class PlayerState_Attack : PlayerState_Base
 {
     private float _duration;
+    private IPlayerAttack _pendingAttack;
+    private Vector3 _aimPoint;
+    private float _contactAt;
+    private bool _committed;
     
     public override void EnterState(PlayerController player)
     {
@@ -306,23 +310,35 @@ public class PlayerState_Attack : PlayerState_Base
         _animator.SetBool("Attacking", true);
 
         IPlayerAttack attack = player.Attack;
+        _pendingAttack = attack;
+        _aimPoint = aimPoint;
+        _committed = false;
         if (attack != null)
         {
-            attack.Execute(player, aimPoint);
             _duration = attack.Duration;
         }
         else
         {
             _duration = player.AttackDuration;
         }
+        var visual = player.GetComponent<ProtagonistAnimationDriver>();
+        _contactAt = visual != null ? _duration * visual.AttackContactNormalized : 0f;
+        if (_contactAt <= 0f) CommitAttack(player);
     }
     
     public override void UpdateState(PlayerController player)
     {
+        if (!_committed && ElapsedTime >= _contactAt) CommitAttack(player);
         if (ElapsedTime >= _duration)
         {
             player.ChangeToDefaultState();
         }
+    }
+    private void CommitAttack(PlayerController player)
+    {
+        if (_committed) return;
+        _committed = true;
+        _pendingAttack?.Execute(player, _aimPoint);
     }
     public override void ExitState(PlayerController player)
     {

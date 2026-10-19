@@ -1,0 +1,311 @@
+{
+  "success": true,
+  "generatedUtc": "2026-10-19T07:15:32.603900+00:00",
+  "unity": "6000.3.21f1",
+  "additionalMeshyCreditsThisRevision": 0,
+  "camera": "Orthographic -Z gameplay side; camera offset +1.2 X, +1.25 Y, -10 Z = 6.84 degree yaw and 7.07 degree downward pitch. Actor faces exactly +/-X. X/Y camera follows motion; Z remains fixed.",
+  "renderMethod": "Actual saved root Humanoid Avatar and Mecanim controller/weapon override controller, Animator.Play at explicit normalized times and Animator.Update(0). FacingLeft state mirroring and actual blend trees are evaluated. After pose, grip and runtime grounding evaluation, every SkinnedMeshRenderer.BakeMesh generates a disposable MeshFilter/MeshRenderer snapshot at the identical transform with identical shared materials; the original GPU skinned renderer is disabled only in the disposable review instance. This prevents stale edit-time Camera.Render GPU skin poses. Nested Animator remains disabled, matching the saved Player prefab. Source equipment AttachTo and saved potion calibration preserved. Idle/Walk/Run have no start/end hold. Finite actions have .25 second Idle segments before/after, except Dead retains its final pose after the action; Jump returns to Idle after Land. Utility-with-staff fixtures hide the weapon only during the action and restore it during post-Idle. No imported animation, prefab, material or gameplay scene is altered.",
+  "canonicalActions": 15,
+  "directionAndEquipmentReviewGifs": 28,
+  "environmentScreenshots": 5,
+  "gifs": [
+    {
+      "name": "Idle",
+      "sourceFrames": 64,
+      "encodedFrames": 64,
+      "durationMilliseconds": 4000,
+      "bytes": 2272354
+    },
+    {
+      "name": "Walk",
+      "sourceFrames": 9,
+      "encodedFrames": 9,
+      "durationMilliseconds": 560,
+      "bytes": 303273
+    },
+    {
+      "name": "Run",
+      "sourceFrames": 7,
+      "encodedFrames": 7,
+      "durationMilliseconds": 430,
+      "bytes": 233646
+    },
+    {
+      "name": "Punch",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 454735
+    },
+    {
+      "name": "Jump",
+      "sourceFrames": 49,
+      "encodedFrames": 49,
+      "durationMilliseconds": 3060,
+      "bytes": 1360744
+    },
+    {
+      "name": "Land",
+      "sourceFrames": 10,
+      "encodedFrames": 10,
+      "durationMilliseconds": 620,
+      "bytes": 345998
+    },
+    {
+      "name": "Dash",
+      "sourceFrames": 11,
+      "encodedFrames": 11,
+      "durationMilliseconds": 680,
+      "bytes": 403827
+    },
+    {
+      "name": "Hit",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 452574
+    },
+    {
+      "name": "Dead",
+      "sourceFrames": 64,
+      "encodedFrames": 61,
+      "durationMilliseconds": 4000,
+      "bytes": 2087999
+    },
+    {
+      "name": "Drink",
+      "sourceFrames": 30,
+      "encodedFrames": 30,
+      "durationMilliseconds": 1870,
+      "bytes": 1046940
+    },
+    {
+      "name": "Throw",
+      "sourceFrames": 20,
+      "encodedFrames": 20,
+      "durationMilliseconds": 1250,
+      "bytes": 700100
+    },
+    {
+      "name": "SwordSlash",
+      "sourceFrames": 16,
+      "encodedFrames": 16,
+      "durationMilliseconds": 1000,
+      "bytes": 570224
+    },
+    {
+      "name": "MagicCast",
+      "sourceFrames": 19,
+      "encodedFrames": 19,
+      "durationMilliseconds": 1180,
+      "bytes": 677931
+    },
+    {
+      "name": "Interact",
+      "sourceFrames": 22,
+      "encodedFrames": 22,
+      "durationMilliseconds": 1370,
+      "bytes": 767620
+    },
+    {
+      "name": "Pickup",
+      "sourceFrames": 24,
+      "encodedFrames": 24,
+      "durationMilliseconds": 1500,
+      "bytes": 831493
+    },
+    {
+      "name": "Punch_Left",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 501162
+    },
+    {
+      "name": "Jump_Left",
+      "sourceFrames": 49,
+      "encodedFrames": 49,
+      "durationMilliseconds": 3060,
+      "bytes": 1231620
+    },
+    {
+      "name": "Drink_Left",
+      "sourceFrames": 30,
+      "encodedFrames": 30,
+      "durationMilliseconds": 1870,
+      "bytes": 1153355
+    },
+    {
+      "name": "Throw_Left",
+      "sourceFrames": 20,
+      "encodedFrames": 20,
+      "durationMilliseconds": 1250,
+      "bytes": 775918
+    },
+    {
+      "name": "SwordSlash_Left",
+      "sourceFrames": 16,
+      "encodedFrames": 16,
+      "durationMilliseconds": 1000,
+      "bytes": 618990
+    },
+    {
+      "name": "MagicCast_Left",
+      "sourceFrames": 19,
+      "encodedFrames": 19,
+      "durationMilliseconds": 1180,
+      "bytes": 734251
+    },
+    {
+      "name": "Throw_WithStaff",
+      "sourceFrames": 20,
+      "encodedFrames": 20,
+      "durationMilliseconds": 1250,
+      "bytes": 711946
+    },
+    {
+      "name": "Interact_WithStaff",
+      "sourceFrames": 22,
+      "encodedFrames": 22,
+      "durationMilliseconds": 1370,
+      "bytes": 782638
+    },
+    {
+      "name": "Pickup_WithStaff",
+      "sourceFrames": 24,
+      "encodedFrames": 24,
+      "durationMilliseconds": 1500,
+      "bytes": 854139
+    },
+    {
+      "name": "SwordBasicAttack",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 463157
+    },
+    {
+      "name": "SwordBasicAttack_Left",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 519448
+    },
+    {
+      "name": "StaffBasicAttack",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 464407
+    },
+    {
+      "name": "StaffBasicAttack_Left",
+      "sourceFrames": 13,
+      "encodedFrames": 13,
+      "durationMilliseconds": 810,
+      "bytes": 506566
+    }
+  ],
+  "staff": {
+    "crystalScale": 0.8500000238418579,
+    "clearanceMeters": 0.04500000178813934,
+    "shaftTop": 1.0290000438690186,
+    "crystalBottom": 1.0740000009536743,
+    "tipHeight": 1.3893499374389648,
+    "triangles": 957
+  },
+  "validation": {
+    "corePlayPassed": true,
+    "corePlayChecks": 21,
+    "extendedEditorPassed": true,
+    "extendedEditorChecks": 60,
+    "extendedPlayPassed": true,
+    "extendedPlayChecks": 52,
+    "extendedErrors": [],
+    "attackContactExpectedSeconds": 0.8199999928474426,
+    "attackContactObservedSeconds": 0.820615291595459,
+    "kitPassed": true,
+    "environmentMaterials": 1,
+    "shaderErrors": false,
+    "platformRoofsValidated": true
+  },
+  "grounding": {
+    "minimumGroundedSkinClearanceMetres": -0.016690699383616447,
+    "perMotion": {
+      "Idle": 0.0019999889191240072,
+      "Walk": 0.0011569687630981207,
+      "Run": 0.001999962842091918,
+      "Punch": -2.1785730496048927e-05,
+      "Jump": 0.0019999851938337088,
+      "Land": 0.0019999926444143057,
+      "Dash": -0.008990753442049026,
+      "Hit": 0.0019999889191240072,
+      "Dead": -0.016690699383616447,
+      "Drink": 0.0019999854266643524,
+      "Throw": -0.0007994736079126596,
+      "SwordSlash": 0.0019999851938337088,
+      "MagicCast": 0.0019999907817691565,
+      "Interact": 0.0019999926444143057,
+      "Pickup": 0.0019999893847852945,
+      "Punch_Left": 0.0019999814685434103,
+      "Jump_Left": 0.0019999814685434103,
+      "Drink_Left": 0.0019999814685434103,
+      "Throw_Left": 0.0003198904450982809,
+      "SwordSlash_Left": 0.0019999814685434103,
+      "MagicCast_Left": 0.001306184334680438,
+      "Throw_WithStaff": -0.0007994736079126596,
+      "Interact_WithStaff": 0.0019999926444143057,
+      "Pickup_WithStaff": 0.0019999893847852945,
+      "SwordBasicAttack": 0.00199998845346272,
+      "SwordBasicAttack_Left": 0.0019999814685434103,
+      "StaffBasicAttack": 0.0019999926444143057,
+      "StaffBasicAttack_Left": 2.3669330403208733e-05
+    },
+    "runtimeMethod": "40 sole landmarks, 234 whole-body landmarks only when dead; no runtime BakeMesh. Physics root/collider unchanged."
+  },
+  "attackContactMeasurements": [
+    {
+      "configuration": "Unarmed",
+      "state": "Attack",
+      "sourceSeconds": 1.0746667385101318,
+      "savedAttackContactNormalized": 0.8199999928474426,
+      "maximumRightHandForwardNormalized": 0.8399999737739563,
+      "maximumTipForwardNormalized": -1.0
+    },
+    {
+      "configuration": "Sword",
+      "state": "Attack",
+      "sourceSeconds": 0.9499999284744263,
+      "savedAttackContactNormalized": 0.7799999713897705,
+      "maximumRightHandForwardNormalized": 0.7599999904632568,
+      "maximumTipForwardNormalized": 0.7900000214576721
+    },
+    {
+      "configuration": "Staff",
+      "state": "Attack",
+      "sourceSeconds": 1.4280000925064087,
+      "savedAttackContactNormalized": 0.7300000190734863,
+      "maximumRightHandForwardNormalized": 0.75,
+      "maximumTipForwardNormalized": 0.8399999737739563
+    },
+    {
+      "configuration": "Sword",
+      "state": "SwordSlash",
+      "sourceSeconds": 0.9499999284744263,
+      "savedAttackContactNormalized": 0.7799999713897705,
+      "maximumRightHandForwardNormalized": 0.7599999904632568,
+      "maximumTipForwardNormalized": 0.7900000214576721
+    },
+    {
+      "configuration": "Staff",
+      "state": "MagicCast",
+      "sourceSeconds": 1.4280000925064087,
+      "savedAttackContactNormalized": 0.7300000190734863,
+      "maximumRightHandForwardNormalized": 0.75,
+      "maximumTipForwardNormalized": 0.8399999737739563
+    }
+  ],
+  "scope": "Saved Unity art/player prefabs and preview scenes. Motion GIFs are sampled Mecanim poses, not an input-driven video. Input-driven Play Mode is validated separately. Throw trajectory is art preview only; item effects and weapon combat implementations remain game callbacks.",
+  "gallery": "ArtSources/Stage01Kit/SideviewReview/index.html",
+  "previewScene": "Assets/Art/Stage01Kit/UrbanKit_Preview.unity"
+}

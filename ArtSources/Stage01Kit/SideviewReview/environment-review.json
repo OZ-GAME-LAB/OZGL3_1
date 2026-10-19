@@ -1,0 +1,135 @@
+{
+    "method": "Actual saved Unity kit prefabs, orthographic game-axis camera (-Z, 6.84 degree yaw / 7.07 degree pitch), shared cloudy lighting, no 3/4 catalogue camera. Character scale references use actual Mecanim Idle plus runtime grip/grounding, rendered from disposable CPU BakeMesh snapshots at identical renderer transforms/materials to prevent stale edit-time GPU skin poses. Environment tiles remain three-dimensional; gameplay traverses X with fixed Z.",
+    "shots": [
+        {
+            "name": "01_Street_Props",
+            "image": "ArtSources/Stage01Kit/SideviewReview/Environment/01_Street_Props.png",
+            "orthographicSize": 4.5,
+            "cameraPosition": {
+                "x": 1.2000000476837159,
+                "y": 3.5,
+                "z": -10.0
+            },
+            "cameraTarget": {
+                "x": 0.0,
+                "y": 2.25,
+                "z": 0.0
+            },
+            "prefabs": [
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Building_ShopLow",
+                "Modules/Building_OfficeMid",
+                "Props/StreetLamp",
+                "Props/StreetTree",
+                "Props/VendingMachine",
+                "Props/Bench",
+                "Props/TrashBin",
+                "Modules/Planter_Shrubs"
+            ]
+        },
+        {
+            "name": "02_Platform_Buildings",
+            "image": "ArtSources/Stage01Kit/SideviewReview/Environment/02_Platform_Buildings.png",
+            "orthographicSize": 8.199999809265137,
+            "cameraPosition": {
+                "x": 1.2000000476837159,
+                "y": 6.849999904632568,
+                "z": -10.0
+            },
+            "cameraTarget": {
+                "x": 0.0,
+                "y": 5.599999904632568,
+                "z": 0.0
+            },
+            "prefabs": [
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Building_ShopLow",
+                "Modules/Building_OfficeMid",
+                "Modules/Building_ApartmentTall",
+                "Modules/Rooftop_Bridge_6m",
+                "Modules/Rooftop_Bridge_6m",
+                "Props/GatePylon"
+            ]
+        },
+        {
+            "name": "03_Rooftop_Utilities",
+            "image": "ArtSources/Stage01Kit/SideviewReview/Environment/03_Rooftop_Utilities.png",
+            "orthographicSize": 5.699999809265137,
+            "cameraPosition": {
+                "x": 1.2000000476837159,
+                "y": 5.900000095367432,
+                "z": -10.0
+            },
+            "cameraTarget": {
+                "x": 0.0,
+                "y": 4.650000095367432,
+                "z": 0.0
+            },
+            "prefabs": [
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Road_Straight_12m",
+                "Modules/Building_RooftopArena",
+                "Modules/Exterior_Stairs_Rise3m",
+                "Modules/Ladder_4m",
+                "Modules/Rooftop_Hut",
+                "Modules/Rooftop_WaterTank",
+                "Modules/Rooftop_Billboard",
+                "Props/ACUnit",
+                "Modules/Utility_Box",
+                "Modules/Guardrail_4m",
+                "Props/GatePylon"
+            ]
+        },
+        {
+            "name": "04_Tutorial_Gameplay",
+            "image": "ArtSources/Stage01Kit/SideviewReview/Environment/04_Tutorial_Gameplay.png",
+            "orthographicSize": 4.300000190734863,
+            "cameraPosition": {
+                "x": 14.199999809265137,
+                "y": 3.25,
+                "z": -10.0
+            },
+            "cameraTarget": {
+                "x": 13.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "prefabs": [
+                "Blocks/Tutorial_Block",
+                "Protagonist01_Player (actual Idle Humanoid pose)"
+            ]
+        },
+        {
+            "name": "05_Stage01_Rooftops",
+            "image": "ArtSources/Stage01Kit/SideviewReview/Environment/05_Stage01_Rooftops.png",
+            "orthographicSize": 5.300000190734863,
+            "cameraPosition": {
+                "x": 41.20000076293945,
+                "y": 12.850000381469727,
+                "z": -10.0
+            },
+            "cameraTarget": {
+                "x": 40.0,
+                "y": 11.600000381469727,
+                "z": 0.0
+            },
+            "prefabs": [
+                "Blocks/Stage01_Block",
+                "Protagonist01_Player (actual Idle Humanoid pose)"
+            ]
+        }
+    ]
+}

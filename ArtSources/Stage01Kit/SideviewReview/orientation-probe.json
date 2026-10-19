@@ -1,0 +1,3607 @@
+{
+    "success": true,
+    "originalClipSettingsRestored": true,
+    "originalReferencesStable": true,
+    "temporaryClipsRemoved": true,
+    "unity": "6000.3.21f1",
+    "source": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_ExtendedActions.fbx",
+    "prefab": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab",
+    "method": "Retain every original imported clip and append 18 uniquely named full-source-take variants in one temporary import. Three source takes, six variants each, sampled at normalized .2/.5/.8 using a disposable root Humanoid Animator and HumanPoseHandler. Actor is origin, yaw 90 (+X), no controller/root motion/foot IK/playable IK/physics. Nested Animators removed. Finally restore the original ModelImporterClipAnimation array, reimport and verify original clip GUID/local IDs and removal of all temporary clips.",
+    "variantSelection": "For each take: the four keepOriginalOrientation true/false x lockRootRotation true/false combinations at offset 0; then keepOriginalOrientation=false, lockRootRotation=true with offsets +representativeYaw and -representativeYaw. RepresentativeYaw is +57 degrees for SwordSlash/MagicCast, -24 for Throw, based on prior raw sideview diagnostics. All variants use each default take's full first/last frames, rather than any subsequently trimmed import interval.",
+    "humanPoseInterpretation": "humanPoseBodyRotation and humanPoseForward store HumanPoseHandler.GetHumanPose output directly. humanPoseYawFromActorForward treats that rotation as world space. An explicit root-local interpretation (actor.rotation * pose.bodyRotation) is also recorded, alongside Animator.bodyRotation yaw, so coordinate-space differences are visible rather than silently assumed. Yaw is SignedAngle(actor.forward, planar body forward, up).",
+    "error": "",
+    "originalClipNames": [
+        "Drink",
+        "Throw",
+        "SwordSlash",
+        "MagicCast",
+        "Interact",
+        "Pickup"
+    ],
+    "originalReferences": [
+        {
+            "clip": "Drink",
+            "guid": "9567914dd7b826f43bbb37a0599ec8be",
+            "localFileId": -6240113235714367947,
+            "restored": true
+        },
+        {
+            "clip": "Throw",
+            "guid": "9567914dd7b826f43bbb37a0599ec8be",
+            "localFileId": -4305893501465247849,
+            "restored": true
+        },
+        {
+            "clip": "SwordSlash",
+            "guid": "9567914dd7b826f43bbb37a0599ec8be",
+            "localFileId": 277525627537474026,
+            "restored": true
+        },
+        {
+            "clip": "MagicCast",
+            "guid": "9567914dd7b826f43bbb37a0599ec8be",
+            "localFileId": 1226351774899546166,
+            "restored": true
+        },
+        {
+            "clip": "Interact",
+            "guid": "9567914dd7b826f43bbb37a0599ec8be",
+            "localFileId": 7169286557442754512,
+            "restored": true
+        },
+        {
+            "clip": "Pickup",
+            "guid": "9567914dd7b826f43bbb37a0599ec8be",
+            "localFileId": -6827329897430172337,
+            "restored": true
+        }
+    ],
+    "variants": [
+        {
+            "action": "SwordSlash",
+            "sourceTake": "Left_Slash",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__SwordSlash_0",
+            "keepOriginalOrientation": true,
+            "lockRootRotation": false,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 95.0,
+            "clipSeconds": 3.1666667461395265,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 59.670654296875,
+            "animatorBodyYawMin": 57.832584381103519,
+            "animatorBodyYawMax": 62.75760269165039,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.6333333849906921,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.1024203971028328,
+                        "y": 0.9476209282875061,
+                        "z": -0.10762607306241989,
+                        "w": 0.28273895382881167
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.5138124823570252,
+                        "y": -0.2618938982486725,
+                        "z": -0.8169506788253784
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 57.832584381103519,
+                    "hips": {
+                        "x": 0.021982604637742044,
+                        "y": 0.6666479706764221,
+                        "z": -0.050285011529922488
+                    },
+                    "rightHand": {
+                        "x": -0.39783599972724917,
+                        "y": 0.8138062953948975,
+                        "z": -0.2240307331085205
+                    },
+                    "leftHand": {
+                        "x": 0.46665358543395998,
+                        "y": 0.722778856754303,
+                        "z": -0.062248289585113528
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.5833333730697632,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.2468915432691574,
+                        "y": 0.9109735488891602,
+                        "z": -0.18786680698394776,
+                        "w": 0.2718046009540558
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.4024481475353241,
+                        "y": -0.4764959216117859,
+                        "z": -0.7816564440727234
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 62.75760269165039,
+                    "hips": {
+                        "x": 0.01690787449479103,
+                        "y": 0.6782138347625732,
+                        "z": 0.01987345702946186
+                    },
+                    "rightHand": {
+                        "x": -0.28302332758903506,
+                        "y": 0.8159980773925781,
+                        "z": 0.052647143602371219
+                    },
+                    "leftHand": {
+                        "x": 0.5488103628158569,
+                        "y": 0.6787108778953552,
+                        "z": 0.10344231128692627
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 2.5333335399627687,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.12931115925312043,
+                        "y": 0.9429711103439331,
+                        "z": -0.12216991931200028,
+                        "w": 0.28135159611701968
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.49901697039604189,
+                        "y": -0.3031691908836365,
+                        "z": -0.8118317127227783
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 58.42177200317383,
+                    "hips": {
+                        "x": 0.050011880695819858,
+                        "y": 0.6809015274047852,
+                        "z": 0.0023092664778232576
+                    },
+                    "rightHand": {
+                        "x": -0.1087297648191452,
+                        "y": 0.675833523273468,
+                        "z": -0.33390724658966067
+                    },
+                    "leftHand": {
+                        "x": 0.5233091115951538,
+                        "y": 0.7490715384483337,
+                        "z": 0.09866809844970703
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "SwordSlash",
+            "sourceTake": "Left_Slash",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__SwordSlash_1",
+            "keepOriginalOrientation": true,
+            "lockRootRotation": true,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 95.0,
+            "clipSeconds": 3.1666667461395265,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 47.93568420410156,
+            "animatorBodyYawMin": 17.60317039489746,
+            "animatorBodyYawMax": 67.2977523803711,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.6333333849906921,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.13318607211112977,
+                        "y": 0.7925875782966614,
+                        "z": -0.06583905965089798,
+                        "w": 0.5913812518119812
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9199051260948181,
+                        "y": -0.2618939280509949,
+                        "z": -0.2918671667575836
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 17.60317039489746,
+                    "hips": {
+                        "x": 0.04925960674881935,
+                        "y": 0.6666479706764221,
+                        "z": -0.02419341914355755
+                    },
+                    "rightHand": {
+                        "x": -0.15904320776462556,
+                        "y": 0.8138062953948975,
+                        "z": -0.4279818534851074
+                    },
+                    "leftHand": {
+                        "x": 0.39647653698921206,
+                        "y": 0.7227789759635925,
+                        "z": 0.25386369228363039
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.5833333730697632,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.23925644159317017,
+                        "y": 0.9210247993469238,
+                        "z": -0.19749870896339417,
+                        "w": 0.2355077862739563
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.3393113613128662,
+                        "y": -0.4764959216117859,
+                        "z": -0.8110606670379639
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 67.2977523803711,
+                    "hips": {
+                        "x": 0.018427971750497819,
+                        "y": 0.6782138347625732,
+                        "z": 0.018472691997885705
+                    },
+                    "rightHand": {
+                        "x": -0.2779677212238312,
+                        "y": 0.8159980177879334,
+                        "z": 0.0748853087425232
+                    },
+                    "leftHand": {
+                        "x": 0.5552763342857361,
+                        "y": 0.6787108182907105,
+                        "z": 0.05967533588409424
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 2.5333335399627687,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.1287936121225357,
+                        "y": 0.9441518783569336,
+                        "z": -0.12271540611982346,
+                        "w": 0.27736330032348635
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.4921362102031708,
+                        "y": -0.3031691908836365,
+                        "z": -0.8160210847854614
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 58.90613555908203,
+                    "hips": {
+                        "x": 0.05002964287996292,
+                        "y": 0.6809015274047852,
+                        "z": 0.0018863938748836518
+                    },
+                    "rightHand": {
+                        "x": -0.11154858767986298,
+                        "y": 0.675833523273468,
+                        "z": -0.33297622203826907
+                    },
+                    "leftHand": {
+                        "x": 0.5241245627403259,
+                        "y": 0.749071478843689,
+                        "z": 0.09424072504043579
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "SwordSlash",
+            "sourceTake": "Left_Slash",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__SwordSlash_2",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": false,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 95.0,
+            "clipSeconds": 3.1666667461395265,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 2.8974497318267824,
+            "animatorBodyYawMin": 1.059432864189148,
+            "animatorBodyYawMax": 5.984384059906006,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.6333333849906921,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.14127276837825776,
+                        "y": 0.6992591619491577,
+                        "z": -0.045992471277713779,
+                        "w": 0.6992591619491577
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9649317860603333,
+                        "y": -0.2618938684463501,
+                        "z": -0.017842721194028856
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 1.059432864189148,
+                    "hips": {
+                        "x": 0.05410940200090408,
+                        "y": 0.6666479706764221,
+                        "z": -0.009165298193693161
+                    },
+                    "rightHand": {
+                        "x": -0.03059190884232521,
+                        "y": 0.8138062953948975,
+                        "z": -0.4555516839027405
+                    },
+                    "leftHand": {
+                        "x": 0.3077758550643921,
+                        "y": 0.7227789163589478,
+                        "z": 0.35625043511390688
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.5833333730697632,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.3065206706523895,
+                        "y": 0.6722167730331421,
+                        "z": -0.047900743782520297,
+                        "w": 0.6722167730331421
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.8743856549263,
+                        "y": -0.47649604082107546,
+                        "z": -0.09166061878204346
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 5.984384059906006,
+                    "hips": {
+                        "x": -0.007359501905739307,
+                        "y": 0.6782138347625732,
+                        "z": 0.02503325417637825
+                    },
+                    "rightHand": {
+                        "x": -0.19912344217300416,
+                        "y": 0.8159980773925781,
+                        "z": -0.2079031765460968
+                    },
+                    "leftHand": {
+                        "x": 0.2141922414302826,
+                        "y": 0.6787108182907105,
+                        "z": 0.5157660245895386
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 2.5333335399627687,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.17184463143348695,
+                        "y": 0.6958280205726624,
+                        "z": -0.046003200113773349,
+                        "w": 0.6958280205726624
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9525424838066101,
+                        "y": -0.30316925048828127,
+                        "z": -0.02741442620754242
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 1.648532509803772,
+                    "hips": {
+                        "x": 0.025472529232501985,
+                        "y": 0.6809015274047852,
+                        "z": 0.04310065135359764
+                    },
+                    "rightHand": {
+                        "x": 0.21973752975463868,
+                        "y": 0.6758335828781128,
+                        "z": -0.2739192247390747
+                    },
+                    "leftHand": {
+                        "x": 0.20421257615089417,
+                        "y": 0.749071478843689,
+                        "z": 0.49181804060935976
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "SwordSlash",
+            "sourceTake": "Left_Slash",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__SwordSlash_3",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 95.0,
+            "clipSeconds": 3.1666667461395265,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -8.837577819824219,
+            "animatorBodyYawMin": -39.17009353637695,
+            "animatorBodyYawMax": 10.52450180053711,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.6333333849906921,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.1484728306531906,
+                        "y": 0.4161326587200165,
+                        "z": 0.005396618973463774,
+                        "w": 0.8970843553543091
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.7482147216796875,
+                        "y": -0.2618938982486725,
+                        "z": 0.6095788478851318
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -39.17009353637695,
+                    "hips": {
+                        "x": 0.04723001644015312,
+                        "y": 0.6666479706764221,
+                        "z": 0.02794908732175827
+                    },
+                    "rightHand": {
+                        "x": 0.2708622217178345,
+                        "y": 0.8138062953948975,
+                        "z": -0.36755526065826418
+                    },
+                    "leftHand": {
+                        "x": 0.004891634453088045,
+                        "y": 0.7227789163589478,
+                        "z": 0.47076138854026797
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.5833333730697632,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.30438274145126345,
+                        "y": 0.6983155608177185,
+                        "z": -0.06000439077615738,
+                        "w": 0.6450627446174622
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.8643861413002014,
+                        "y": -0.4764959216117859,
+                        "z": -0.16058693826198579
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 10.52450180053711,
+                    "hips": {
+                        "x": -0.005354878026992083,
+                        "y": 0.6782138347625732,
+                        "z": 0.025537267327308656
+                    },
+                    "rightHand": {
+                        "x": -0.21495580673217774,
+                        "y": 0.8159979581832886,
+                        "z": -0.19148865342140199
+                    },
+                    "leftHand": {
+                        "x": 0.25434693694114687,
+                        "y": 0.6787108182907105,
+                        "z": 0.4971925914287567
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 2.5333335399627687,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.17164863646030427,
+                        "y": 0.6987629532814026,
+                        "z": -0.04672915115952492,
+                        "w": 0.6928805708885193
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9522765278816223,
+                        "y": -0.30316922068595889,
+                        "z": -0.035465821623802188
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 2.13285756111145,
+                    "hips": {
+                        "x": 0.025835998356342317,
+                        "y": 0.6809015274047852,
+                        "z": 0.04288376495242119
+                    },
+                    "rightHand": {
+                        "x": 0.2174140214920044,
+                        "y": 0.6758335828781128,
+                        "z": -0.2757670283317566
+                    },
+                    "leftHand": {
+                        "x": 0.20836296677589417,
+                        "y": 0.749071478843689,
+                        "z": 0.4900740683078766
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "SwordSlash",
+            "sourceTake": "Left_Slash",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__SwordSlash_4",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": 57.0,
+            "firstFrame": 0.0,
+            "lastFrame": 95.0,
+            "clipSeconds": 3.1666667461395265,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -65.83755493164063,
+            "animatorBodyYawMin": -96.17007446289063,
+            "animatorBodyYawMax": -46.475486755371097,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.6333333849906921,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.12790542840957642,
+                        "y": -0.062346987426280978,
+                        "z": 0.07558773458003998,
+                        "w": 0.9869344830513
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": -0.10372862219810486,
+                        "y": -0.2618938982486725,
+                        "z": 0.959506094455719
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -96.17007446289063,
+                    "hips": {
+                        "x": 0.0022833424154669048,
+                        "y": 0.6666479706764221,
+                        "z": 0.054832521826028827
+                    },
+                    "rightHand": {
+                        "x": 0.45578014850616457,
+                        "y": 0.813806414604187,
+                        "z": 0.026979029178619386
+                    },
+                    "leftHand": {
+                        "x": -0.392149418592453,
+                        "y": 0.722778856754303,
+                        "z": 0.2604975700378418
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.5833333730697632,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.29612839221954348,
+                        "y": 0.3058944344520569,
+                        "z": 0.09250598400831223,
+                        "w": 0.900099515914917
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.60545814037323,
+                        "y": -0.4764959216117859,
+                        "z": 0.6374731659889221
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -46.475486755371097,
+                    "hips": {
+                        "x": -0.024333719164133073,
+                        "y": 0.6782138347625732,
+                        "z": 0.009417586959898472
+                    },
+                    "rightHand": {
+                        "x": 0.04352268949151039,
+                        "y": 0.8159980773925781,
+                        "z": -0.2845692038536072
+                    },
+                    "leftHand": {
+                        "x": -0.27845337986946108,
+                        "y": 0.6787108182907105,
+                        "z": 0.48410382866859438
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 2.5333335399627687,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.17314498126506806,
+                        "y": 0.28347089886665347,
+                        "z": 0.04083724319934845,
+                        "w": 0.9423362016677856
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.5483912825584412,
+                        "y": -0.30316922068595889,
+                        "z": 0.7793301343917847
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -54.86709976196289,
+                    "hips": {
+                        "x": -0.021893976256251336,
+                        "y": 0.6809015274047852,
+                        "z": 0.04502397030591965
+                    },
+                    "rightHand": {
+                        "x": 0.34968993067741396,
+                        "y": 0.6758334636688232,
+                        "z": 0.03214508295059204
+                    },
+                    "leftHand": {
+                        "x": -0.2975279986858368,
+                        "y": 0.7490713596343994,
+                        "z": 0.4416613280773163
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "SwordSlash",
+            "sourceTake": "Left_Slash",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__SwordSlash_5",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": -57.0,
+            "firstFrame": 0.0,
+            "lastFrame": 95.0,
+            "clipSeconds": 3.1666667461395265,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 48.16241455078125,
+            "animatorBodyYawMin": 17.82988739013672,
+            "animatorBodyYawMax": 67.52448272705078,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.6333333849906921,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.13305552303791047,
+                        "y": 0.7937560677528381,
+                        "z": -0.06610245257616043,
+                        "w": 0.5898118019104004
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.918742835521698,
+                        "y": -0.2618938684463501,
+                        "z": -0.29550492763519289
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 17.82988739013672,
+                    "hips": {
+                        "x": 0.049163464456796649,
+                        "y": 0.6666479706764221,
+                        "z": -0.024388158693909646
+                    },
+                    "rightHand": {
+                        "x": -0.160735622048378,
+                        "y": 0.8138062357902527,
+                        "z": -0.4273490905761719
+                    },
+                    "leftHand": {
+                        "x": 0.39747801423072817,
+                        "y": 0.7227789759635925,
+                        "z": 0.2522927522659302
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.5833333730697632,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.23886515200138093,
+                        "y": 0.9214890003204346,
+                        "z": -0.19797173142433167,
+                        "w": 0.2336849570274353
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.33609911799430849,
+                        "y": -0.4764959216117859,
+                        "z": -0.8123970031738281
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 67.52448272705078,
+                    "hips": {
+                        "x": 0.018500927835702897,
+                        "y": 0.6782138347625732,
+                        "z": 0.018399661406874658
+                    },
+                    "rightHand": {
+                        "x": -0.277669221162796,
+                        "y": 0.8159979581832886,
+                        "z": 0.07598479092121124
+                    },
+                    "leftHand": {
+                        "x": 0.5555081963539124,
+                        "y": 0.6787109375,
+                        "z": 0.05747753381729126
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 2.5333335399627687,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.12855054438114167,
+                        "y": 0.9446988105773926,
+                        "z": -0.12296999990940094,
+                        "w": 0.2754945755004883
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.4889030456542969,
+                        "y": -0.3031691908836365,
+                        "z": -0.817962110042572
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 59.132869720458987,
+                    "hips": {
+                        "x": 0.05003667622804642,
+                        "y": 0.6809015274047852,
+                        "z": 0.0016884095966815949
+                    },
+                    "rightHand": {
+                        "x": -0.11286543309688568,
+                        "y": 0.6758334636688232,
+                        "z": -0.3325321078300476
+                    },
+                    "leftHand": {
+                        "x": 0.524493396282196,
+                        "y": 0.749071478843689,
+                        "z": 0.09216582775115967
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "MagicCast",
+            "sourceTake": "mage_soell_cast",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__MagicCast_0",
+            "keepOriginalOrientation": true,
+            "lockRootRotation": false,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 68.0,
+            "clipSeconds": 2.266666889190674,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 56.725440979003909,
+            "animatorBodyYawMin": 56.52748107910156,
+            "animatorBodyYawMax": 56.971893310546878,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.45333337783813479,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.04099799320101738,
+                        "y": 0.9550290107727051,
+                        "z": -0.0780218169093132,
+                        "w": 0.28311023116111758
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.547154426574707,
+                        "y": -0.12581229209899903,
+                        "z": -0.8275224566459656
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 56.52748107910156,
+                    "hips": {
+                        "x": 0.01966714859008789,
+                        "y": 0.7290100455284119,
+                        "z": -0.015109891071915627
+                    },
+                    "rightHand": {
+                        "x": -0.20563086867332459,
+                        "y": 0.7379856109619141,
+                        "z": -0.400069922208786
+                    },
+                    "leftHand": {
+                        "x": 0.3594730496406555,
+                        "y": 0.7905522584915161,
+                        "z": -0.08326345682144165
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.133333444595337,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.009558617137372494,
+                        "y": 0.958107590675354,
+                        "z": -0.035631272941827777,
+                        "w": 0.28402289748191836
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.5435678362846375,
+                        "y": -0.07370691746473313,
+                        "z": -0.8361231088638306
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 56.971893310546878,
+                    "hips": {
+                        "x": 0.02411597967147827,
+                        "y": 0.7278901934623718,
+                        "z": -0.032607123255729678
+                    },
+                    "rightHand": {
+                        "x": -0.054328955709934238,
+                        "y": 1.330600380897522,
+                        "z": -0.3649788498878479
+                    },
+                    "leftHand": {
+                        "x": 0.42032983899116518,
+                        "y": 0.7960716485977173,
+                        "z": 0.017880290746688844
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 1.813333511352539,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.003899212460964918,
+                        "y": 0.9536397457122803,
+                        "z": -0.10313953459262848,
+                        "w": 0.2826983630657196
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.53838050365448,
+                        "y": -0.19892051815986634,
+                        "z": -0.8188879489898682
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 56.676944732666019,
+                    "hips": {
+                        "x": 0.03383940830826759,
+                        "y": 0.7337422966957092,
+                        "z": 0.0017656795680522919
+                    },
+                    "rightHand": {
+                        "x": -0.15900464355945588,
+                        "y": 1.0074232816696168,
+                        "z": -0.4242907762527466
+                    },
+                    "leftHand": {
+                        "x": 0.446586012840271,
+                        "y": 0.7832621335983276,
+                        "z": 0.051781922578811648
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "MagicCast",
+            "sourceTake": "mage_soell_cast",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__MagicCast_1",
+            "keepOriginalOrientation": true,
+            "lockRootRotation": true,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 68.0,
+            "clipSeconds": 2.266666889190674,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 43.17743682861328,
+            "animatorBodyYawMin": 31.3040714263916,
+            "animatorBodyYawMax": 57.830726623535159,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.45333337783813479,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.0229733195155859,
+                        "y": 0.8701711893081665,
+                        "z": -0.08509093523025513,
+                        "w": 0.48480290174484255
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.8476327061653137,
+                        "y": -0.12581230700016023,
+                        "z": -0.5154513716697693
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 31.3040714263916,
+                    "hips": {
+                        "x": 0.02423107996582985,
+                        "y": 0.7290100455284119,
+                        "z": -0.005288120359182358
+                    },
+                    "rightHand": {
+                        "x": -0.01553511805832386,
+                        "y": 0.7379856109619141,
+                        "z": -0.44955381751060488
+                    },
+                    "leftHand": {
+                        "x": 0.36068105697631838,
+                        "y": 0.7905523180961609,
+                        "z": 0.07786449790000916
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.133333444595337,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.014594522304832936,
+                        "y": 0.9071654677391052,
+                        "z": -0.033881478011608127,
+                        "w": 0.41915398836135867
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.7594950795173645,
+                        "y": -0.07370691746473313,
+                        "z": -0.6463243365287781
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 40.39751434326172,
+                    "hips": {
+                        "x": 0.03241550922393799,
+                        "y": 0.7278901934623718,
+                        "z": -0.024373004212975503
+                    },
+                    "rightHand": {
+                        "x": 0.052042342722415927,
+                        "y": 1.3306005001068116,
+                        "z": -0.36531195044517519
+                    },
+                    "leftHand": {
+                        "x": 0.3977646827697754,
+                        "y": 0.7960716485977173,
+                        "z": 0.1370406150817871
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 1.813333511352539,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.002860560780391097,
+                        "y": 0.9564377069473267,
+                        "z": -0.10317356139421463,
+                        "w": 0.27308234572410586
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.5217822194099426,
+                        "y": -0.19892051815986634,
+                        "z": -0.8295626044273377
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 57.830726623535159,
+                    "hips": {
+                        "x": 0.03386813774704933,
+                        "y": 0.7337422966957092,
+                        "z": 0.001083921641111374
+                    },
+                    "rightHand": {
+                        "x": -0.167515829205513,
+                        "y": 1.0074231624603272,
+                        "z": -0.4210031032562256
+                    },
+                    "leftHand": {
+                        "x": 0.4475381672382355,
+                        "y": 0.7832621335983276,
+                        "z": 0.042779117822647098
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "MagicCast",
+            "sourceTake": "mage_soell_cast",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__MagicCast_2",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": false,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 68.0,
+            "clipSeconds": 2.266666889190674,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -0.24928642809391023,
+            "animatorBodyYawMin": -0.44849780201911929,
+            "animatorBodyYawMax": 0.0,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.45333337783813479,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.001180577790364623,
+                        "y": 0.7043549418449402,
+                        "z": -0.08812970668077469,
+                        "w": 0.7043549418449402
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9920237064361572,
+                        "y": -0.12581227719783784,
+                        "z": 0.007765426300466061
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -0.44849780201911929,
+                    "hips": {
+                        "x": 0.023387257009744645,
+                        "y": 0.7290100455284119,
+                        "z": 0.00825495459139347
+                    },
+                    "rightHand": {
+                        "x": 0.22336873412132264,
+                        "y": 0.7379856705665588,
+                        "z": -0.39044389128685
+                    },
+                    "leftHand": {
+                        "x": 0.26572102308273318,
+                        "y": 0.7905522584915161,
+                        "z": 0.25601956248283389
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.133333444595337,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.025396443903446199,
+                        "y": 0.7066254615783691,
+                        "z": -0.02675771713256836,
+                        "w": 0.7066254615783691
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9972800016403198,
+                        "y": -0.07370691746473313,
+                        "z": 0.0000709345331415534
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 0.0,
+                    "hips": {
+                        "x": 0.04048222675919533,
+                        "y": 0.7278901934623718,
+                        "z": 0.0024492070078849794
+                    },
+                    "rightHand": {
+                        "x": 0.2764049768447876,
+                        "y": 1.3306005001068116,
+                        "z": -0.2444618046283722
+                    },
+                    "leftHand": {
+                        "x": 0.21408414840698243,
+                        "y": 0.7960716485977173,
+                        "z": 0.36216679215431216
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 1.813333511352539,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.05262202396988869,
+                        "y": 0.7033302783966065,
+                        "z": -0.08879127353429795,
+                        "w": 0.7033302783966065
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.980002224445343,
+                        "y": -0.19892050325870515,
+                        "z": 0.005114864092320204
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -0.2993614971637726,
+                    "hips": {
+                        "x": 0.01696181856095791,
+                        "y": 0.7337422966957092,
+                        "z": 0.029334599152207376
+                    },
+                    "rightHand": {
+                        "x": 0.2690874934196472,
+                        "y": 1.0074234008789063,
+                        "z": -0.3645506203174591
+                    },
+                    "leftHand": {
+                        "x": 0.19996896386146546,
+                        "y": 0.7832620739936829,
+                        "z": 0.4026571810245514
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "MagicCast",
+            "sourceTake": "mage_soell_cast",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__MagicCast_3",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 68.0,
+            "clipSeconds": 2.266666889190674,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -13.798606872558594,
+            "animatorBodyYawMin": -25.67190170288086,
+            "animatorBodyYawMax": 0.8545501232147217,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.45333337783813479,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.02039456181228161,
+                        "y": 0.5335697531700134,
+                        "z": -0.08574555069208145,
+                        "w": 0.8411511182785034
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.8941280841827393,
+                        "y": -0.12581227719783784,
+                        "z": 0.42977479100227358
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -25.67190170288086,
+                    "hips": {
+                        "x": 0.01763952150940895,
+                        "y": 0.7290100455284119,
+                        "z": 0.01743428222835064
+                    },
+                    "rightHand": {
+                        "x": 0.36845842003822329,
+                        "y": 0.7379856705665588,
+                        "z": -0.25802791118621828
+                    },
+                    "leftHand": {
+                        "x": 0.13128285109996797,
+                        "y": 0.7905522584915161,
+                        "z": 0.3448455333709717
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.133333444595337,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.028987979516386987,
+                        "y": 0.5973974466323853,
+                        "z": -0.02281779795885086,
+                        "w": 0.8010963797569275
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9558230042457581,
+                        "y": -0.07370691746473313,
+                        "z": 0.2845519781112671
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -16.578468322753908,
+                    "hips": {
+                        "x": 0.03810156136751175,
+                        "y": 0.7278901934623718,
+                        "z": 0.013895396143198014
+                    },
+                    "rightHand": {
+                        "x": 0.3346555233001709,
+                        "y": 1.3306002616882325,
+                        "z": -0.15545718371868134
+                    },
+                    "leftHand": {
+                        "x": 0.10187734663486481,
+                        "y": 0.7960716485977173,
+                        "z": 0.40818852186203005
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 1.813333511352539,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.0517253540456295,
+                        "y": 0.7103760838508606,
+                        "z": -0.08931659162044525,
+                        "w": 0.6962131857872009
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9799065589904785,
+                        "y": -0.19892048835754395,
+                        "z": -0.014619427733123303
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 0.8545501232147217,
+                    "hips": {
+                        "x": 0.017549043521285058,
+                        "y": 0.7337422966957092,
+                        "z": 0.02898711897432804
+                    },
+                    "rightHand": {
+                        "x": 0.2616922855377197,
+                        "y": 1.0074231624603272,
+                        "z": -0.36989501118659975
+                    },
+                    "leftHand": {
+                        "x": 0.20803627371788026,
+                        "y": 0.7832621932029724,
+                        "z": 0.39854899048805239
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "MagicCast",
+            "sourceTake": "mage_soell_cast",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__MagicCast_4",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": 57.0,
+            "firstFrame": 0.0,
+            "lastFrame": 68.0,
+            "clipSeconds": 2.266666889190674,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -70.79852294921875,
+            "animatorBodyYawMin": -82.67189025878906,
+            "animatorBodyYawMax": -56.14523696899414,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.45333337783813479,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.05883732810616493,
+                        "y": 0.06754778325557709,
+                        "z": -0.06562323123216629,
+                        "w": 0.9938154220581055
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.12653787434101106,
+                        "y": -0.12581229209899903,
+                        "z": 0.9839509129524231
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -82.67189025878906,
+                    "hips": {
+                        "x": -0.005014356691390276,
+                        "y": 0.7290100455284119,
+                        "z": 0.024289067834615709
+                    },
+                    "rightHand": {
+                        "x": 0.41707760095596316,
+                        "y": 0.7379857301712036,
+                        "z": 0.1684829294681549
+                    },
+                    "leftHand": {
+                        "x": -0.21770989894866944,
+                        "y": 0.7905522584915161,
+                        "z": 0.29791951179504397
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.133333444595337,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.036362845450639728,
+                        "y": 0.14275307953357697,
+                        "z": -0.006220807321369648,
+                        "w": 0.9890706539154053
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.28193336725234988,
+                        "y": -0.07370692491531372,
+                        "z": 0.9565985798835754
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -73.57845306396485,
+                    "hips": {
+                        "x": 0.009098057635128498,
+                        "y": 0.7278901934623718,
+                        "z": 0.03952254727482796
+                    },
+                    "rightHand": {
+                        "x": 0.31264394521713259,
+                        "y": 1.3306002616882325,
+                        "z": 0.19599750638008119
+                    },
+                    "leftHand": {
+                        "x": -0.28684908151626589,
+                        "y": 0.7960715889930725,
+                        "z": 0.3077569603919983
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 1.813333511352539,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.08807532489299774,
+                        "y": 0.292086660861969,
+                        "z": -0.05381175875663757,
+                        "w": 0.9508062601089478
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.5459566712379456,
+                        "y": -0.19892054796218873,
+                        "z": 0.8138562440872192
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -56.14523696899414,
+                    "hips": {
+                        "x": -0.014752624556422234,
+                        "y": 0.7337422966957092,
+                        "z": 0.030505316331982614
+                    },
+                    "rightHand": {
+                        "x": 0.45274800062179568,
+                        "y": 1.0074232816696168,
+                        "z": 0.018014073371887208
+                    },
+                    "leftHand": {
+                        "x": -0.22094634175300599,
+                        "y": 0.7832620143890381,
+                        "z": 0.3915393054485321
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "MagicCast",
+            "sourceTake": "mage_soell_cast",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__MagicCast_5",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": -57.0,
+            "firstFrame": 0.0,
+            "lastFrame": 68.0,
+            "clipSeconds": 2.266666889190674,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 43.20143508911133,
+            "animatorBodyYawMin": 31.328073501586915,
+            "animatorBodyYawMax": 57.85472106933594,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.45333337783813479,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.02299114130437374,
+                        "y": 0.8702727556228638,
+                        "z": -0.08508612215518952,
+                        "w": 0.4846206307411194
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.8474166989326477,
+                        "y": -0.12581230700016023,
+                        "z": -0.5158064961433411
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 31.328073501586915,
+                    "hips": {
+                        "x": 0.024228814989328386,
+                        "y": 0.7290100455284119,
+                        "z": -0.005298268049955368
+                    },
+                    "rightHand": {
+                        "x": -0.01572352834045887,
+                        "y": 0.7379856109619141,
+                        "z": -0.4495472311973572
+                    },
+                    "leftHand": {
+                        "x": 0.3607136309146881,
+                        "y": 0.7905522584915161,
+                        "z": 0.07771334052085877
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 1.133333444595337,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.01458742655813694,
+                        "y": 0.9072532057762146,
+                        "z": -0.03388454020023346,
+                        "w": 0.4189639687538147
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.7592241764068604,
+                        "y": -0.07370692491531372,
+                        "z": -0.6466423273086548
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 40.421512603759769,
+                    "hips": {
+                        "x": 0.032405316829681399,
+                        "y": 0.7278901934623718,
+                        "z": -0.024386584758758546
+                    },
+                    "rightHand": {
+                        "x": 0.05188927799463272,
+                        "y": 1.3306005001068116,
+                        "z": -0.3653337061405182
+                    },
+                    "leftHand": {
+                        "x": 0.3978220820426941,
+                        "y": 0.7960717082023621,
+                        "z": 0.13687396049499513
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 1.813333511352539,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.0028389503713697197,
+                        "y": 0.956494927406311,
+                        "z": -0.10317416489124298,
+                        "w": 0.2728820741176605
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.5214348435401917,
+                        "y": -0.19892051815986634,
+                        "z": -0.829781174659729
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 57.85472106933594,
+                    "hips": {
+                        "x": 0.03386855497956276,
+                        "y": 0.7337422966957092,
+                        "z": 0.0010697431862354279
+                    },
+                    "rightHand": {
+                        "x": -0.1676921397447586,
+                        "y": 1.0074232816696168,
+                        "z": -0.4209328889846802
+                    },
+                    "leftHand": {
+                        "x": 0.4475560188293457,
+                        "y": 0.7832622528076172,
+                        "z": 0.04259169101715088
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "Throw",
+            "sourceTake": "Over_Shoulder_Throw",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__Throw_0",
+            "keepOriginalOrientation": true,
+            "lockRootRotation": false,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 129.0,
+            "clipSeconds": 4.300000190734863,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -23.408010482788087,
+            "animatorBodyYawMin": -23.79827308654785,
+            "animatorBodyYawMax": -23.012205123901368,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.8600000739097595,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.11399079859256745,
+                        "y": 0.541311502456665,
+                        "z": -0.0616634301841259,
+                        "w": 0.8307741284370422
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9134733080863953,
+                        "y": 0.12264296412467957,
+                        "z": 0.38797593116760256
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -23.012205123901368,
+                    "hips": {
+                        "x": -0.012754974886775017,
+                        "y": 0.7613787055015564,
+                        "z": 0.025130877271294595
+                    },
+                    "rightHand": {
+                        "x": 0.28671011328697207,
+                        "y": 1.0886569023132325,
+                        "z": -0.3797113001346588
+                    },
+                    "leftHand": {
+                        "x": 0.11425009369850159,
+                        "y": 0.8955886363983154,
+                        "z": 0.15656636655330659
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 2.1500000953674318,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.025388050824403764,
+                        "y": 0.5457337498664856,
+                        "z": -0.004648305010050535,
+                        "w": 0.8375610113143921
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.913934588432312,
+                        "y": -0.04760155454277992,
+                        "z": 0.4030602276325226
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -23.79827308654785,
+                    "hips": {
+                        "x": -0.03692609444260597,
+                        "y": 0.7537095546722412,
+                        "z": -0.007582642138004303
+                    },
+                    "rightHand": {
+                        "x": 0.11575843393802643,
+                        "y": 0.8073056936264038,
+                        "z": 0.03865911066532135
+                    },
+                    "leftHand": {
+                        "x": 0.07838360220193863,
+                        "y": 0.8625086545944214,
+                        "z": 0.231991708278656
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 3.440000295639038,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.1697777956724167,
+                        "y": 0.5357502698898315,
+                        "z": -0.08983385562896729,
+                        "w": 0.822239100933075
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.8505260944366455,
+                        "y": -0.3754529058933258,
+                        "z": 0.36829429864883425
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -23.41355323791504,
+                    "hips": {
+                        "x": -0.05659611150622368,
+                        "y": 0.734696090221405,
+                        "z": -0.024120882153511049
+                    },
+                    "rightHand": {
+                        "x": 0.3119569718837738,
+                        "y": 0.8930748701095581,
+                        "z": 0.028087258338928224
+                    },
+                    "leftHand": {
+                        "x": 0.0698036327958107,
+                        "y": 0.9256168603897095,
+                        "z": 0.35689958930015566
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "Throw",
+            "sourceTake": "Over_Shoulder_Throw",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__Throw_1",
+            "keepOriginalOrientation": true,
+            "lockRootRotation": true,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 129.0,
+            "clipSeconds": 4.300000190734863,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -93.393798828125,
+            "animatorBodyYawMin": -160.71250915527345,
+            "animatorBodyYawMax": -46.2955436706543,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.8600000739097595,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.09920278191566467,
+                        "y": 0.36253389716148379,
+                        "z": -0.08339718729257584,
+                        "w": 0.9229154586791992
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.6857227683067322,
+                        "y": 0.12264294922351837,
+                        "z": 0.7174559831619263
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -46.2955436706543,
+                    "hips": {
+                        "x": -0.02164989709854126,
+                        "y": 0.7613787055015564,
+                        "z": 0.018042460083961488
+                    },
+                    "rightHand": {
+                        "x": 0.41345247626304629,
+                        "y": 1.0886567831039429,
+                        "z": -0.23545785248279572
+                    },
+                    "leftHand": {
+                        "x": 0.043058428913354877,
+                        "y": 0.8955886960029602,
+                        "z": 0.18897642195224763
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 2.1500000953674318,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.02500901371240616,
+                        "y": 0.14602960646152497,
+                        "z": 0.006380366161465645,
+                        "w": 0.9889434576034546
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.2891491651535034,
+                        "y": -0.04760155454277992,
+                        "z": 0.956099808216095
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -73.17333984375,
+                    "hips": {
+                        "x": -0.018287604674696924,
+                        "y": 0.7537095546722412,
+                        "z": -0.03296360373497009
+                    },
+                    "rightHand": {
+                        "x": 0.04602910950779915,
+                        "y": 0.8073055744171143,
+                        "z": 0.113030344247818
+                    },
+                    "leftHand": {
+                        "x": -0.12504296004772187,
+                        "y": 0.8625086545944214,
+                        "z": 0.21054308116436006
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 3.440000295639038,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.14548005163669587,
+                        "y": -0.5707571506500244,
+                        "z": 0.1254199594259262,
+                        "w": 0.7983368039131165
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": -0.8748206496238709,
+                        "y": -0.37545281648635867,
+                        "z": 0.3061436414718628
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -160.71250915527345,
+                    "hips": {
+                        "x": 0.05795092135667801,
+                        "y": 0.734696090221405,
+                        "z": -0.020655527710914613
+                    },
+                    "rightHand": {
+                        "x": -0.24830567836761475,
+                        "y": 0.8930746912956238,
+                        "z": 0.19091951847076417
+                    },
+                    "leftHand": {
+                        "x": -0.2933385372161865,
+                        "y": 0.9256168007850647,
+                        "z": -0.21494725346565247
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "Throw",
+            "sourceTake": "Over_Shoulder_Throw",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__Throw_2",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": false,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 129.0,
+            "clipSeconds": 4.300000190734863,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": 0.4177824556827545,
+            "animatorBodyYawMin": 0.02797645516693592,
+            "animatorBodyYawMax": 0.8132511377334595,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.8600000739097595,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.12426447868347168,
+                        "y": 0.7011433243751526,
+                        "z": -0.036805205047130588,
+                        "w": 0.7011433243751526
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9923511147499085,
+                        "y": 0.12264297157526016,
+                        "z": -0.014087269082665444
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 0.8132511377334595,
+                    "hips": {
+                        "x": -0.0015162790659815074,
+                        "y": 0.7613787055015564,
+                        "z": 0.028141649439930917
+                    },
+                    "rightHand": {
+                        "x": 0.10889138281345368,
+                        "y": 1.0886569023132325,
+                        "z": -0.46316951513290408
+                    },
+                    "leftHand": {
+                        "x": 0.16775909066200257,
+                        "y": 0.895588755607605,
+                        "z": 0.09707222878932953
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 2.1500000953674318,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.023881759494543077,
+                        "y": 0.7068712711334229,
+                        "z": -0.009788844734430313,
+                        "w": 0.7068712711334229
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9988664388656616,
+                        "y": -0.04760156571865082,
+                        "z": -0.0004746546037495136
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 0.02797645516693592,
+                    "hips": {
+                        "x": -0.03684229031205177,
+                        "y": 0.7537095546722412,
+                        "z": 0.00797995924949646
+                    },
+                    "rightHand": {
+                        "x": 0.12150998413562775,
+                        "y": 0.8073056936264038,
+                        "z": -0.011396288871765137
+                    },
+                    "leftHand": {
+                        "x": 0.1654174029827118,
+                        "y": 0.8625086545944214,
+                        "z": 0.18055813014507295
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 3.440000295639038,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.14757761359214784,
+                        "y": 0.6939399838447571,
+                        "z": -0.12294495105743408,
+                        "w": 0.6939399838447571
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9268175363540649,
+                        "y": -0.37545284628868105,
+                        "z": -0.0066636838018894199
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 0.4121198058128357,
+                    "hips": {
+                        "x": -0.0615166500210762,
+                        "y": 0.734696090221405,
+                        "z": 0.0007968880236148834
+                    },
+                    "rightHand": {
+                        "x": 0.2967178225517273,
+                        "y": 0.8930748105049133,
+                        "z": -0.10032214224338532
+                    },
+                    "leftHand": {
+                        "x": 0.2080255150794983,
+                        "y": 0.9256169199943543,
+                        "z": 0.2982872426509857
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "Throw",
+            "sourceTake": "Over_Shoulder_Throw",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__Throw_3",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": 0.0,
+            "firstFrame": 0.0,
+            "lastFrame": 129.0,
+            "clipSeconds": 4.300000190734863,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -69.56830596923828,
+            "animatorBodyYawMin": -136.8870086669922,
+            "animatorBodyYawMax": -22.470054626464845,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.8600000739097595,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.11428126692771912,
+                        "y": 0.5452359318733215,
+                        "z": -0.06112344563007355,
+                        "w": 0.8282037973403931
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9171034693717957,
+                        "y": 0.12264296412467957,
+                        "z": 0.3793151378631592
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -22.470054626464845,
+                    "hips": {
+                        "x": -0.01251661591231823,
+                        "y": 0.7613787055015564,
+                        "z": 0.025250444188714029
+                    },
+                    "rightHand": {
+                        "x": 0.28310438990592959,
+                        "y": 1.0886567831039429,
+                        "z": -0.38240721821784975
+                    },
+                    "leftHand": {
+                        "x": 0.11572644114494324,
+                        "y": 0.895588755607605,
+                        "z": 0.1554783135652542
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 2.1500000953674318,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.02578744664788246,
+                        "y": 0.3470241129398346,
+                        "z": 0.0010805436177179218,
+                        "w": 0.9375010132789612
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.6507266163825989,
+                        "y": -0.04760156571865082,
+                        "z": 0.7578185200691223
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -49.34784698486328,
+                    "hips": {
+                        "x": -0.030044859275221826,
+                        "y": 0.753709614276886,
+                        "z": -0.02276710420846939
+                    },
+                    "rightHand": {
+                        "x": 0.08776535093784332,
+                        "y": 0.8073056936264038,
+                        "z": 0.08480437844991684
+                    },
+                    "leftHand": {
+                        "x": -0.029337380081415178,
+                        "y": 0.8625087141990662,
+                        "z": 0.2431119829416275
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 3.440000295639038,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.16823627054691316,
+                        "y": -0.39367058873176577,
+                        "z": 0.09268853068351746,
+                        "w": 0.8989598751068115
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": -0.676600992679596,
+                        "y": -0.37545281648635867,
+                        "z": 0.6334400773048401
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -136.8870086669922,
+                    "hips": {
+                        "x": 0.044668495655059817,
+                        "y": 0.734696090221405,
+                        "z": -0.042304627597332
+                    },
+                    "rightHand": {
+                        "x": -0.15002267062664033,
+                        "y": 0.8930748105049133,
+                        "z": 0.27495306730270388
+                    },
+                    "leftHand": {
+                        "x": -0.3551686704158783,
+                        "y": 0.9256167411804199,
+                        "z": -0.07813465595245362
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "Throw",
+            "sourceTake": "Over_Shoulder_Throw",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__Throw_4",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": -24.0,
+            "firstFrame": 0.0,
+            "lastFrame": 129.0,
+            "clipSeconds": 4.300000190734863,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -45.568302154541019,
+            "animatorBodyYawMin": -112.88700866699219,
+            "animatorBodyYawMax": 1.5299508571624756,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.8600000739097595,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.12449221312999726,
+                        "y": 0.7055145502090454,
+                        "z": -0.03602733463048935,
+                        "w": 0.6967446804046631
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9920972585678101,
+                        "y": 0.12264295667409897,
+                        "z": -0.026498200371861459
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": 1.5299508571624756,
+                    "hips": {
+                        "x": -0.001164194312877953,
+                        "y": 0.7613787055015564,
+                        "z": 0.028158411383628846
+                    },
+                    "rightHand": {
+                        "x": 0.10308976471424103,
+                        "y": 1.0886567831039429,
+                        "z": -0.46449530124664309
+                    },
+                    "leftHand": {
+                        "x": 0.16896012425422669,
+                        "y": 0.8955886363983154,
+                        "z": 0.09496636688709259
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 2.1500000953674318,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.02544858679175377,
+                        "y": 0.5343582630157471,
+                        "z": -0.004304581321775913,
+                        "w": 0.844864010810852
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.9027010202407837,
+                        "y": -0.04760156571865082,
+                        "z": 0.42762720584869387
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -25.347843170166017,
+                    "hips": {
+                        "x": -0.036707524210214618,
+                        "y": 0.7537095546722412,
+                        "z": -0.008578423410654068
+                    },
+                    "rightHand": {
+                        "x": 0.1146707683801651,
+                        "y": 0.8073055744171143,
+                        "z": 0.041775286197662356
+                    },
+                    "leftHand": {
+                        "x": 0.07208160310983658,
+                        "y": 0.8625086545944214,
+                        "z": 0.2340264916419983
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 3.440000295639038,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.18383093178272248,
+                        "y": -0.198163703083992,
+                        "z": 0.055684760212898257,
+                        "w": 0.961164116859436
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": -0.3604625165462494,
+                        "y": -0.37545278668403628,
+                        "z": 0.853874683380127
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -112.88700866699219,
+                    "hips": {
+                        "x": 0.023599859327077867,
+                        "y": 0.734696090221405,
+                        "z": -0.05681547150015831
+                    },
+                    "rightHand": {
+                        "x": -0.025219056755304338,
+                        "y": 0.8930747509002686,
+                        "z": 0.3122018873691559
+                    },
+                    "leftHand": {
+                        "x": -0.3562430441379547,
+                        "y": 0.9256168603897095,
+                        "z": 0.07308050990104675
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "action": "Throw",
+            "sourceTake": "Over_Shoulder_Throw",
+            "name": "__SIDEVIEW_ORIENTATION_PROBE__Throw_5",
+            "keepOriginalOrientation": false,
+            "lockRootRotation": true,
+            "rotationOffset": 24.0,
+            "firstFrame": 0.0,
+            "lastFrame": 129.0,
+            "clipSeconds": 4.300000190734863,
+            "humanPoseYawMean": 0.0,
+            "humanPoseYawMin": 0.0,
+            "humanPoseYawMax": 0.0,
+            "humanPoseRootLocalYawMean": 89.99999237060547,
+            "animatorBodyYawMean": -93.56830596923828,
+            "animatorBodyYawMin": -160.8870086669922,
+            "animatorBodyYawMax": -46.470054626464847,
+            "samples": [
+                {
+                    "normalizedTime": 0.20000000298023225,
+                    "seconds": 0.8600000739097595,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": -0.09907566756010056,
+                        "y": 0.3611280024051666,
+                        "z": -0.0835481509566307,
+                        "w": 0.9234664440155029
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.6835343837738037,
+                        "y": 0.12264295667409897,
+                        "z": 0.7195411920547485
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -46.470054626464847,
+                    "hips": {
+                        "x": -0.02170473337173462,
+                        "y": 0.7613787055015564,
+                        "z": 0.017976442351937295
+                    },
+                    "rightHand": {
+                        "x": 0.4141678512096405,
+                        "y": 1.0886569023132325,
+                        "z": -0.2341974973678589
+                    },
+                    "leftHand": {
+                        "x": 0.0424826480448246,
+                        "y": 0.8955886960029602,
+                        "z": 0.18910667300224305
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.5,
+                    "seconds": 2.1500000953674318,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.024999268352985383,
+                        "y": 0.14452345669269563,
+                        "z": 0.006418442353606224,
+                        "w": 0.9891647100448608
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": 0.2862359285354614,
+                        "y": -0.04760155454277992,
+                        "z": 0.9569759964942932
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -73.34784698486328,
+                    "hips": {
+                        "x": -0.018187111243605615,
+                        "y": 0.7537095546722412,
+                        "z": -0.03301914781332016
+                    },
+                    "rightHand": {
+                        "x": 0.04568459466099739,
+                        "y": 0.807305634021759,
+                        "z": 0.11316998302936554
+                    },
+                    "leftHand": {
+                        "x": -0.12568359076976777,
+                        "y": 0.8625086545944214,
+                        "z": 0.2101612389087677
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "normalizedTime": 0.800000011920929,
+                    "seconds": 3.440000295639038,
+                    "humanPoseBodyRotation": {
+                        "x": 3.643798862640324e-8,
+                        "y": 0.7071067094802856,
+                        "z": 1.2296638374209579e-7,
+                        "w": 0.7071067690849304
+                    },
+                    "animatorBodyRotation": {
+                        "x": 0.14528889954090119,
+                        "y": -0.5719722509384155,
+                        "z": 0.1256413608789444,
+                        "w": 0.7974666953086853
+                    },
+                    "actorForward": {
+                        "x": 1.0000001192092896,
+                        "y": 0.0,
+                        "z": -1.1920928955078126e-7
+                    },
+                    "humanPoseForward": {
+                        "x": 0.9999998807907105,
+                        "y": 1.223696131091856e-7,
+                        "z": 1.7881393432617188e-7
+                    },
+                    "humanPoseForwardIfRootLocal": {
+                        "x": 5.960468030252741e-8,
+                        "y": 1.223696131091856e-7,
+                        "z": -1.0
+                    },
+                    "animatorBodyForward": {
+                        "x": -0.8757489919662476,
+                        "y": -0.3754528760910034,
+                        "z": 0.30347776412963869
+                    },
+                    "humanPoseYawFromActorForward": 0.0,
+                    "humanPoseRootLocalYawFromActorForward": 89.99999237060547,
+                    "animatorBodyYawFromActorForward": -160.8870086669922,
+                    "hips": {
+                        "x": 0.058013565838336948,
+                        "y": 0.734696090221405,
+                        "z": -0.020478922873735429
+                    },
+                    "rightHand": {
+                        "x": -0.24888604879379273,
+                        "y": 0.8930747509002686,
+                        "z": 0.19016234576702119
+                    },
+                    "leftHand": {
+                        "x": -0.2926824688911438,
+                        "y": 0.9256168603897095,
+                        "z": -0.2158397138118744
+                    },
+                    "actorPositionAfterEvaluation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        }
+    ]
+}

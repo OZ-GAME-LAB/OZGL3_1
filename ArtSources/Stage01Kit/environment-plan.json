@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "created_local_date": "2026-10-19",
+  "asset_family": "Stage01Kit",
+  "scope": "Original tutorial and Stage 1 Seoul street/rooftop art; modular geometry supports later level assembly. No Stage 2 subway, detailed shop interiors, monsters, or level progression logic.",
+  "design_sources": [
+    "planning/Project_M_상세기획서.docx v0.5, sections 3 and 7",
+    "planning/Project_M_기획데이터.txt v0.5",
+    "ArtSources/Characters/Protagonist01/v001/generation.json, reference_research"
+  ],
+  "style_translation": {
+    "description_ko": "주인공과 맞추어 큰 각면과 절제된 무광 색을 사용한다. 서울 상가·업무 빌딩·다세대 주택의 차이를 창 배열과 간판·발코니 실루엣으로 표현한다. 작은 때·스크래치·고해상도 PBR 질감은 생략한다.",
+    "characters_reference_height_m": 1.65,
+    "palette": {
+      "concrete": "#B5B4AE",
+      "warm_concrete": "#D8D3C3",
+      "cool_concrete": "#858E93",
+      "asphalt": "#3B4652",
+      "navy": "#293D50",
+      "metal": "#526876",
+      "teal": "#498F8C",
+      "deep_teal": "#32636C",
+      "glass": "#71949C",
+      "deep_glass": "#3D6477",
+      "warm_window": "#E7C781",
+      "ivory": "#F1E9D4",
+      "ochre": "#DDB46D",
+      "muted_red": "#B86D58",
+      "foliage": "#597F68",
+      "light_foliage": "#81A373"
+    }
+  },
+  "authoring": {
+    "method": "Deterministic authored polygon meshes. Architectural dimensions and roof collisions are designed on a meter grid; detailed facade, canopy, frame, balcony, sill, utility and roof forms are modeled explicitly.",
+    "builder": "Assets/Art/Stage01Kit/Editor/UrbanModuleBuilder.cs",
+    "entrypoint": "UrbanModuleBuilder.Build()",
+    "menu": "Project M/Art/Build Urban Platform Modules",
+    "prefab_folder": "Assets/Art/Stage01Kit/Prefabs/Modules",
+    "mesh_folder": "Assets/Art/Stage01Kit/Meshes",
+    "material": "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+    "shader": "ProjectM/Urban Vertex Color",
+    "signature_props": "Seven Meshy-generated props are normalized and palette-colored by UrbanPropBuilder.Build(); see root generation records for Sword, Staff, StreetLamp, StreetTree, VendingMachine, Bench, TrashBin, ACUnit and GatePylon.",
+    "prop_builder": "Assets/Art/Stage01Kit/Editor/UrbanPropBuilder.cs",
+    "prop_normalization_report": "ArtSources/Stage01Kit/prop-normalization.json",
+    "authored_prop_detail": "Twelve colored cans in vending display; five broad fan blades and grille on AC; faceted teal crystal and ivory center in gate frame; three solid faceted tree canopy clusters. Four reusable 0.237m potion bottle color variants for Health/Attack/Defense/Speed, opaque geometry with no glass rendering pass."
+  },
+  "placement": {
+    "unit": "meters",
+    "gameplay_plane": "X/Y; player lane Z=0",
+    "front_facade": "-Z",
+    "architecture_pivot": "center of footprint at ground level",
+    "flat_module_pivot": "center of footprint at walkable top Y=0",
+    "roof_anchors": ["RoofSurface", "RoofLeft", "RoofRight"],
+    "flat_module_anchors": ["SnapLeft", "SnapRight", "WalkableSurface"],
+    "roof_finish_thickness_m": 0.008,
+    "note": "Architectural ornaments and parapets are visual only and should not block the X gameplay lane. Building body colliders are solid. Move buildings behind the lane when used solely as a street background."
+  },
+  "modules": [
+    {"prefab":"Building_ShopLow", "footprint_m":[8,4], "walkable_top_y_m":4, "features":"Recessed shopfront glazing, framed double entry, teal sign and broad awning, rear pipes, low roof coping", "lod":true, "collision":"single solid building box"},
+    {"prefab":"Building_OfficeMid", "footprint_m":[8,5], "walkable_top_y_m":8, "features":"Three window rows, muted lit windows, facade bands, twin teal vertical landmark panels, rear pipes", "lod":true, "collision":"single solid building box"},
+    {"prefab":"Building_ApartmentTall", "footprint_m":[10,6], "walkable_top_y_m":12, "features":"Five window rows, side windows, two balcony stacks, sill geometry and broad cornice", "lod":true, "collision":"single solid building box"},
+    {"prefab":"Building_RooftopArena", "footprint_m":[18,6], "walkable_top_y_m":4, "features":"Wide flat open battle roof with low rear coping, eight large facade windows", "lod":true, "collision":"single solid building box"},
+    {"prefab":"Rooftop_Hut", "footprint_m":[2.5,2], "walkable_top_y_m":2.3, "features":"Door, grille, vent chimney, overhanging roof slab", "collision":"single hut body box"},
+    {"prefab":"Road_Straight_12m", "footprint_m":[12,6], "walkable_top_y_m":0, "features":"Dashed center stripe, edge stripe, drain channels and faceted manhole", "collision":"single deck box"},
+    {"prefab":"Sidewalk_Straight_8m", "footprint_m":[8,2.4], "walkable_top_y_m":0, "features":"Curb sections, large pavers, ochre tactile strip", "collision":"single deck box"},
+    {"prefab":"Rooftop_Bridge_6m", "footprint_m":[6,1.8], "walkable_top_y_m":0, "features":"Strip deck, twin structural beams, rear safety railing, hazard post caps", "collision":"single deck box"},
+    {"prefab":"Exterior_Stairs_Rise3m", "footprint_m":[4,1.8], "height_m":3, "features":"Twelve 0.25m rise metal/concrete treads, stringers, handrails and ochre tread noses", "anchors":{"Entry":[-2,0,0],"Exit":[2,3,0]}, "collision":"twelve tread box colliders; slope/step traversal behavior depends on the gameplay controller"},
+    {"prefab":"Ladder_4m", "footprint_m":[0.8,0.35], "height_m":4, "features":"Thirteen rungs, two rails, wall brackets, extended grab handles", "anchors":{"ClimbBottom":[0,0,-0.3],"ClimbTop":[0,4,-0.3]}, "collision":"none; visual plus anchors, requires gameplay ladder trigger/controller"},
+    {"prefab":"Guardrail_4m", "footprint_m":[4,0.23], "height_m":1.15, "features":"Top/mid rails, five posts with bolted style base plates", "collision":"none; decorative"},
+    {"prefab":"Utility_Box", "footprint_m":[1.04,0.6], "height_m":1.3, "features":"Inset front door, five vent slots, handle and warning color plate", "collision":"none; decorative"},
+    {"prefab":"Planter_Shrubs", "footprint_m":[1.88,0.82], "height_m":1.14, "features":"Tapered concrete tub, soil inset and three six-sided faceted shrub clusters", "collision":"none; decorative"},
+    {"prefab":"Road_Barrier", "footprint_m":[1.8,0.62], "height_m":0.92, "features":"Tapered concrete shell, feet, lifting lugs and broad hazard markings", "collision":"none; decorative"},
+    {"prefab":"Rooftop_WaterTank", "footprint_m":[2.02,1.8], "height_m":2.47, "features":"Ten-sided reservoir, reinforcing rings, tapered lid, four-leg support and outlet pipe", "collision":"none; decorative"},
+    {"prefab":"Rooftop_Billboard", "footprint_m":[3.4,0.7], "height_m":2.8, "features":"Thick frame, graphic sign panel, two feet and rear diagonal braces; original abstract graphics", "collision":"none; decorative"}
+  ],
+  "optimization": {
+    "materials_per_module": 1,
+    "unique_texture_maps": 0,
+    "geometry": "Flat shaded per-face vertices; combined into one mesh per module or LOD, no procedural Update or runtime generation.",
+    "building_lod_screen_relative_heights": [0.1,0.025],
+    "building_lod1": "Reduces window inset details, sills, balcony and pipe geometry; retains building masses and readable window layout.",
+    "collision": "Simple boxes only on designed walking surfaces; small props and decorative parapets do not carry mesh colliders.",
+    "batching": "One vertex-color material shared across modules, GPU instancing enabled; editor static batching flags for architecture.",
+    "lighting": "URP directional main light, shadows and fog. No baked directional shading in colors, no extra per-prop lights."
+  },
+  "validation": {
+    "source_review": "Mesh face winding, coordinate convention, consistent prefab names and output paths reviewed.",
+    "unity_build_and_visual_review": "Performed by the integrating root task; see build reports generated alongside the kit.",
+    "limitations": "The source modules are modeled art assets with collision/anchors, not a completed navigable level or ladder/one-way platform gameplay system."
+  }
+}

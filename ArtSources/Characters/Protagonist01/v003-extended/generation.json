@@ -1,0 +1,32 @@
+{
+  "version": "v003-extended",
+  "created_local_date": "2026-10-19",
+  "rig_task_id": "01a1529d-6f10-7190-8135-5a889a022b98",
+  "animation_task_id": "01a152b6-0705-728d-a577-3969158a71af",
+  "status": "SUCCEEDED",
+  "authorization": "User explicitly authorized efficient model and credit choices without further confirmation for this expansion.",
+  "consumed_credits": 18,
+  "output_format": "fbx",
+  "output_path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_ExtendedActions.fbx",
+  "output_bytes": 4092108,
+  "selected_actions": [
+    { "action_id": 342, "key": "Stand_and_Drink", "unity_clip": "Drink", "default_seconds": 1.35, "commit_normalized": 0.45, "prop_hand": "LeftHand" },
+    { "action_id": 421, "key": "Over_Shoulder_Throw", "unity_clip": "Throw", "default_seconds": 0.75, "commit_normalized": 0.52, "prop_hand": "RightHand" },
+    { "action_id": 97, "key": "Left_Slash", "unity_clip": "SwordSlash", "default_seconds": 0.45, "commit_normalized": 0.55, "prop_hand": "RightHand" },
+    { "action_id": 129, "key": "mage_soell_cast", "unity_clip": "MagicCast", "default_seconds": 0.65, "commit_normalized": 0.48, "prop_hand": "RightHand" },
+    { "action_id": 285, "key": "open_door", "unity_clip": "Interact", "default_seconds": 0.85, "commit_normalized": 0.5 },
+    { "action_id": 276, "key": "Male_Bend_Over_Pick_Up", "unity_clip": "Pickup", "default_seconds": 1.0, "commit_normalized": 0.36 }
+  ],
+  "planning_basis": {
+    "consumables": "Four item slots; healing restores 30 percent maximum HP, buffs last 10 seconds, caps five per type. This animation extension does not implement consumption or inventory rules.",
+    "gate_interaction": "Gate closure is a deliberate player interaction after its monsters are defeated; Interact provides a reach motion, while the caller remains responsible for gate completion.",
+    "combat": "Existing basic damage remains gameplay-owned. SwordSlash and MagicCast are motion assets with optional timing callbacks, without damage or projectile side effects."
+  },
+  "unity_setup_entry_point": "ProtagonistExtendedAnimationSetup.Build() after ProtagonistUnitySetup.Build()",
+  "runtime_api": "ProtagonistActionAnimator.TryPlay(action, onCommit, onCompleted, duration); TryDrink, TryThrow, TryInteract, TryPickup convenience methods; Cancel; Committed/Completed/Cancelled events.",
+  "weapon_override_assets": [
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Sword.overrideController",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Staff.overrideController"
+  ],
+  "validation": "FBX binary verified to contain all six exact source takes. Unity import and runtime validation are performed separately by the root builder. Commit fractions are configurable prototype timing markers and should be checked against the imported poses."
+}

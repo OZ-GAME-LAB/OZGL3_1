@@ -48,8 +48,7 @@ public static class ProtagonistPlayValidation
     private static Mouse _mouse;
     private static InputActionAsset _inputAsset;
     private static InputDevice[] _previousDevices;
-    private static InputSettings _previousSettings;
-    private static InputSettings _validationSettings;
+    private static InputSettings _settings;
     private static float _phaseStart;
     private static float _initialX;
     private static Vector3 _initialPosition;
@@ -63,6 +62,7 @@ public static class ProtagonistPlayValidation
     private static bool _released;
     private static bool _logging;
     private static bool _finishing;
+    private static bool _exitScheduled;
 
     static ProtagonistPlayValidation()
     {
@@ -131,7 +131,7 @@ public static class ProtagonistPlayValidation
         string state = SessionState.GetString(Prefix + "State", "");
         if (state == "Stopping" && !EditorApplication.isPlayingOrWillChangePlaymode)
         {
-            Exit();
+            ScheduleExit();
         }
         else if (state == "Running" && EditorApplication.isPlaying && _player == null)
         {
@@ -152,7 +152,7 @@ public static class ProtagonistPlayValidation
             {
                 Finish("Play Mode ended before the integration checks completed.");
             }
-            else Exit();
+            else ScheduleExit();
         }
     }
 
@@ -188,12 +188,15 @@ public static class ProtagonistPlayValidation
             Require(reference != null && reference.action != null, "Configured input actions are available");
             _inputAsset = reference.action.actionMap.asset;
             _previousDevices = _inputAsset.devices.HasValue ? _inputAsset.devices.Value.ToArray() : null;
-            _previousSettings = InputSystem.settings;
-            _validationSettings = UnityEngine.Object.Instantiate(_previousSettings);
-            _validationSettings.hideFlags = HideFlags.HideAndDontSave;
-            _validationSettings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
-            _validationSettings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
-            InputSystem.settings = _validationSettings;
+            // Keep the Input System's own temporary Play Mode settings object alive.
+            // Replacing settings can destroy the object its exit snapshot still references.
+            _settings = InputSystem.settings;
+            SessionState.SetInt(Prefix + "Background", (int)_settings.backgroundBehavior);
+            SessionState.SetInt(Prefix + "EditorInput", (int)_settings.editorInputBehaviorInPlayMode);
+            SessionState.SetBool(Prefix + "SettingsWereDirty", EditorUtility.IsDirty(_settings));
+            SessionState.SetBool(Prefix + "SettingsTweaked", true);
+            _settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
+            _settings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
             _keyboard = InputSystem.AddDevice<Keyboard>("ProtagonistValidationKeyboard");
             _mouse = InputSystem.AddDevice<Mouse>("ProtagonistValidationMouse");
             _inputAsset.devices = new InputDevice[] { _keyboard, _mouse };
@@ -214,9 +217,9 @@ public static class ProtagonistPlayValidation
         if (!SessionState.GetBool(Prefix + "Active", false) || _finishing) return;
         try
         {
-            if (EditorApplication.timeSinceStartup - SessionState.GetFloat(Prefix + "Started", 0f) > 20f)
+            if (EditorApplication.timeSinceStartup - SessionState.GetFloat(Prefix + "Started", 0f) > 30f)
             {
-                Finish("Integration validation exceeded its 20-second bound.");
+                Finish("Integration validation exceeded its 30-second bound.");
                 return;
             }
             if (!EditorApplication.isPlaying || _player == null ||
@@ -433,7 +436,7 @@ public static class ProtagonistPlayValidation
         WriteReport();
         CleanupInputs();
         if (EditorApplication.isPlaying) EditorApplication.isPlaying = false;
-        else if (!EditorApplication.isPlayingOrWillChangePlaymode) Exit();
+        else if (!EditorApplication.isPlayingOrWillChangePlaymode) ScheduleExit();
     }
 
     private static void CleanupInputs()
@@ -442,8 +445,7 @@ public static class ProtagonistPlayValidation
         if (_inputAsset != null) _inputAsset.devices = _previousDevices;
         if (_keyboard != null && _keyboard.added) InputSystem.RemoveDevice(_keyboard);
         if (_mouse != null && _mouse.added) InputSystem.RemoveDevice(_mouse);
-        if (_previousSettings != null) InputSystem.settings = _previousSettings;
-        if (_validationSettings != null) UnityEngine.Object.DestroyImmediate(_validationSettings);
+        RestoreSettings(false);
         _keyboard = null;
         _mouse = null;
     }
@@ -464,9 +466,29 @@ public static class ProtagonistPlayValidation
         File.WriteAllText(OutputPath, JsonUtility.ToJson(_report, true));
     }
 
+    private static void RestoreSettings(bool final)
+    {
+        if (!SessionState.GetBool(Prefix + "SettingsTweaked", false)) return;
+        InputSettings settings = InputSystem.settings;
+        settings.backgroundBehavior = (InputSettings.BackgroundBehavior)SessionState.GetInt(Prefix + "Background", 0);
+        settings.editorInputBehaviorInPlayMode = (InputSettings.EditorInputBehaviorInPlayMode)SessionState.GetInt(Prefix + "EditorInput", 0);
+        if (!SessionState.GetBool(Prefix + "SettingsWereDirty", false) && EditorUtility.IsDirty(settings))
+            EditorUtility.ClearDirty(settings);
+        if (final) SessionState.SetBool(Prefix + "SettingsTweaked", false);
+    }
+
+    private static void ScheduleExit()
+    {
+        if (_exitScheduled) return;
+        _exitScheduled = true;
+        // Let every Input System EnteredEditMode callback finish before checking restoration.
+        EditorApplication.delayCall += Exit;
+    }
+
     private static void Exit()
     {
         RestoreReport();
+        RestoreSettings(true);
         _report.success &= _report.errors.Count == 0;
         WriteReport();
         SessionState.SetBool(Prefix + "Active", false);

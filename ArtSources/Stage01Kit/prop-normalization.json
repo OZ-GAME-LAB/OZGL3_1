@@ -1,0 +1,235 @@
+{
+    "props": [
+        {
+            "key": "StreetLamp",
+            "source": "Assets/Art/Stage01Kit/Models/StreetLamp.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 0.8992331027984619,
+                "y": 4.300000190734863,
+                "z": 1.0953842401504517
+            },
+            "center_m": {
+                "x": -2.9802322387695315e-8,
+                "y": 2.1500000953674318,
+                "z": 0.0
+            },
+            "source_triangles": 644,
+            "final_triangles": 644,
+            "materials": 1
+        },
+        {
+            "key": "StreetTree",
+            "source": "Assets/Art/Stage01Kit/Models/StreetTree.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 2.8018412590026857,
+                "y": 4.5,
+                "z": 2.1221179962158205
+            },
+            "center_m": {
+                "x": -5.960464477539063e-8,
+                "y": 2.25,
+                "z": 5.960464477539063e-8
+            },
+            "source_triangles": 815,
+            "final_triangles": 857,
+            "materials": 1
+        },
+        {
+            "key": "VendingMachine",
+            "source": "Assets/Art/Stage01Kit/Models/VendingMachine.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "single body box; place outside player lane if decorative",
+            "dimensions_m": {
+                "x": 0.8922854661941528,
+                "y": 1.850000023841858,
+                "z": 0.771780788898468
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.925000011920929,
+                "z": -0.04499998688697815
+            },
+            "source_triangles": 947,
+            "final_triangles": 2003,
+            "materials": 1
+        },
+        {
+            "key": "Bench",
+            "source": "Assets/Art/Stage01Kit/Models/Bench.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 1.4999539852142335,
+                "y": 0.8500000238418579,
+                "z": 0.761856734752655
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.42500001192092898,
+                "z": 0.0
+            },
+            "source_triangles": 616,
+            "final_triangles": 616,
+            "materials": 1
+        },
+        {
+            "key": "TrashBin",
+            "source": "Assets/Art/Stage01Kit/Models/TrashBin.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "single body box; place outside player lane if decorative",
+            "dimensions_m": {
+                "x": 0.5409237146377564,
+                "y": 0.8999999761581421,
+                "z": 0.5640004873275757
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.44999998807907107,
+                "z": 1.4901161193847657e-8
+            },
+            "source_triangles": 394,
+            "final_triangles": 394,
+            "materials": 1
+        },
+        {
+            "key": "ACUnit",
+            "source": "Assets/Art/Stage01Kit/Models/ACUnit.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 1.025089144706726,
+                "y": 0.8999999761581421,
+                "z": 0.7173427939414978
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.44999998807907107,
+                "z": -0.038000017404556277
+            },
+            "source_triangles": 297,
+            "final_triangles": 473,
+            "materials": 1
+        },
+        {
+            "key": "GatePylon",
+            "source": "Assets/Art/Stage01Kit/Models/GatePylon.fbx",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 1.8386038541793824,
+                "y": 2.200000047683716,
+                "z": 1.6228946447372437
+            },
+            "center_m": {
+                "x": -5.960464477539063e-8,
+                "y": 1.100000023841858,
+                "z": 0.0
+            },
+            "source_triangles": 746,
+            "final_triangles": 770,
+            "materials": 1
+        },
+        {
+            "key": "Potion_Health",
+            "source": "Original authored polygon bottle",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.13199999928474427
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.1184999942779541,
+                "z": -0.0040000006556510929
+            },
+            "source_triangles": 0,
+            "final_triangles": 196,
+            "materials": 1
+        },
+        {
+            "key": "Potion_Attack",
+            "source": "Original authored polygon bottle",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.12999999523162843
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.1184999942779541,
+                "z": -0.00299999862909317
+            },
+            "source_triangles": 0,
+            "final_triangles": 184,
+            "materials": 1
+        },
+        {
+            "key": "Potion_Defense",
+            "source": "Original authored polygon bottle",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.12999999523162843
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.1184999942779541,
+                "z": -0.00299999862909317
+            },
+            "source_triangles": 0,
+            "final_triangles": 184,
+            "materials": 1
+        },
+        {
+            "key": "Potion_Speed",
+            "source": "Original authored polygon bottle",
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab",
+            "front": "-Z",
+            "pivot": "Source base Y=0, footprint centered XZ",
+            "collision": "none; decorative",
+            "dimensions_m": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.12999999523162843
+            },
+            "center_m": {
+                "x": 0.0,
+                "y": 0.1184999942779541,
+                "z": -0.00299999862909317
+            },
+            "source_triangles": 0,
+            "final_triangles": 184,
+            "materials": 1
+        }
+    ]
+}
