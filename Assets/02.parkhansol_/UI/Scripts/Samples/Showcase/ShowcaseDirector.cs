@@ -18,9 +18,9 @@ namespace OZ.UI.Samples
         [SerializeField] internal ShowcasePlayer avatar;
         [SerializeField] internal MapData map;
         [SerializeField] internal int startLevel = 6;
-        [Tooltip("시작할 때 찍어 둘 스킬 트리 노드 (E 검술 · R 마법 — 두 계열 이펙트를 같이 보려고)")]
-        [SerializeField] internal string[] startNodes = { "sword_e", "magic_r" };
-        [TextArea] [SerializeField] internal string guide = "A/D 이동 · Space 점프 · Z 공격 · Q/E/R 스킬 · K 스킬트리 · I 인벤 · Tab 지도";
+        [Tooltip("시작할 때 찍어 둘 스킬 트리 노드 (계열 트리에 없는 id는 무시)")]
+        [SerializeField] internal string[] startNodes = { "sword_e", "sword_r", "magic_e", "magic_r" };
+        [TextArea] [SerializeField] internal string guide = "A/D 이동 · Space 점프 · Z 공격 · Q/E/R 스킬 · K 스킬 · Tab 지도";
         [Tooltip("켜면 시작·재도전을 SampleGameManager가 처리 (게임 흐름 시연)")]
         [SerializeField] internal bool managedByGameManager;
 

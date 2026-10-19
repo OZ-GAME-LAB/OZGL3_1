@@ -14,15 +14,18 @@ namespace OZ.UI.Samples
     ///   Q E R 스킬 사용 / 1 2 3 4 아이템 사용 / U 회복제 +1
     ///   G 게이트 봉쇄 / O 게이트 열기 / = 레벨업
     ///   Shift 대시 (v0.9 — 플레이어 옆 게이지의 대시 동그라미 확인용, 실제 이동은 없음)
+    ///   ] 포인트 +500 (v1.0 상태창·상점 확인용)
     ///
-    /// 스킬 트리(v0.4): 규칙은 SkillTreeState가 계산하고, 여기서는 포인트 차감·이벤트만 한다.
-    ///   계열 선택 = 그 계열의 Q 스킬 노드를 무료로 찍어 둠 (초기화해도 남음).
-    ///   E·R은 트리에서 검술/마법 중 하나를 골라 찍는다.
+    /// v1.0 (기획서 v0.5): 포인트·스탯·기술 구매/장착·지도 노드는 DummyPlayer.Growth.cs (기획데이터 수치)
+    ///
+    /// 스킬 트리(v0.9 기획서 기준): 규칙은 SkillTreeState가 계산하고, 여기서는 포인트 차감·이벤트만 한다.
+    ///   계열마다 트리 하나 (ClassData.skillTree): Q는 Lv.1부터 1단계 보유(무료), E는 Lv.2·R은 Lv.4부터 1P로 습득,
+    ///   각 스킬 최대 3단계 · 강화도 단계당 1P. 최대 Lv.7 → 6P (전부 강화엔 8P 필요 → 투자처를 고름).
     /// </summary>
     [AddComponentMenu("OZ/UI/Samples/Dummy Player")]
-    public class DummyPlayer : MonoBehaviour,
+    public partial class DummyPlayer : MonoBehaviour,
         IHealthSource, IProgressionSource, ISkillSource, ISkillTreeSource, IItemSource, IGateSource, IInventorySource, IItemCooldownSource,
-        IDashSource
+        IDashSource, IShopSource
     {
         // ── v0.9 대시 (게이지 확인용 가짜 대시) ──
         [Header("v0.9 대시 (Shift)")]
@@ -60,7 +63,7 @@ namespace OZ.UI.Samples
 
         [Header("Data (선택 — 비우면 이름 없는 슬롯으로 표시)")]
         [SerializeField] internal ClassData classData;
-        [Tooltip("노드형 스킬 트리. 비우면 예전 방식(Q/E/R 단계만)으로 동작")]
+        [Tooltip("계열 트리가 없을 때만 쓰는 예비 트리. 보통은 비워 두고 ClassData.skillTree를 쓴다. 둘 다 없으면 예전 방식(Q/E/R 단계만)")]
         [SerializeField] internal SkillTreeData skillTree;
         [Tooltip("1~4 퀵슬롯 아이템 (slotIndex 0~3)")]
         [SerializeField] internal ItemData[] quickItems = new ItemData[4];
@@ -69,10 +72,12 @@ namespace OZ.UI.Samples
 
         [Header("Start Values")]
         [SerializeField] internal float maxHP = 100f;
-        [Tooltip("최대 레벨 (레벨당 스킬 포인트 1)")]
-        [SerializeField] internal int maxLevel = 15;
+        [Tooltip("최대 레벨 (레벨당 스킬 포인트 1). 기획서 검증값 Lv.7 → 6P")]
+        [SerializeField] internal int maxLevel = 7;
         [SerializeField] internal int[] startItemCounts = { 3, 1, 1, 1 };
         [SerializeField] internal int inventoryCapacity = 24;
+        [Tooltip("v1.0 상점 재화 시작값 (기획서 각성 지급 1000포인트)")]
+        [SerializeField] internal int startShopPoints = 1000;
         [SerializeField] internal int gateTarget = 3;
         [SerializeField] internal int stageNumber = 1;
         [SerializeField] internal bool enableDebugKeys = true;
@@ -115,18 +120,23 @@ namespace OZ.UI.Samples
         public event Action BossAreaUnlocked;
         public event Action GateStateReset;
         public event Action Changed; // IInventorySource
+        public event Action ShopChanged; // IShopSource
 
-        void Awake() => ResetAll();
+        void Awake() { InitGrowth(); ResetAll(); }
+
+        /// <summary>지금 계열의 스킬 트리 (계열 트리 우선, 없으면 예비 트리)</summary>
+        SkillTreeData ActiveTree => classData != null && classData.skillTree != null ? classData.skillTree : skillTree;
 
         SkillTreeState TreeState
         {
             get
             {
-                if (skillTree == null) return null;
-                if (_tree == null || _tree.Tree != skillTree)
+                var data = ActiveTree;
+                if (data == null) return null;
+                if (_tree == null || _tree.Tree != data)
                 {
                     if (_tree != null) _tree.Changed -= OnTreeStateChanged;
-                    _tree = new SkillTreeState(skillTree);
+                    _tree = new SkillTreeState(data);
                     _tree.Changed += OnTreeStateChanged;
                 }
                 return _tree;
@@ -146,7 +156,7 @@ namespace OZ.UI.Samples
         /// <summary>스테이지 시작 상태로 복구 (재도전 예시)</summary>
         public void ResetAll()
         {
-            _hp = maxHP;
+            _hp = MaxHP;
             _dashCharges = MaxDashCharges;
             _level = 1; _exp = 0f; _points = 0;
             var tree = TreeState;
@@ -157,7 +167,7 @@ namespace OZ.UI.Samples
                 if (tree != null)
                 {
                     // 계열의 시작 스킬(검증값: Q)은 무료로 찍어 둔다
-                    var node = start != null && start.startsLearned ? skillTree.FindSkillNode(start) : null;
+                    var node = start != null && start.startsLearned ? tree.Tree.FindSkillNode(start) : null;
                     if (node != null) tree.Unlock(node.id, free: true);
                 }
                 else _skillRanks[i] = start != null ? (start.startsLearned ? 1 : 0) : (i == 0 ? 1 : 0);
@@ -179,7 +189,7 @@ namespace OZ.UI.Samples
             _sealed = 0;
             _gateActive = true;
 
-            HealthChanged?.Invoke(new HealthChange(_hp, _hp, maxHP));
+            HealthChanged?.Invoke(new HealthChange(_hp, _hp, MaxHP));
             ProgressionChanged?.Invoke();
             for (int i = 0; i < 3; i++) SkillChanged?.Invoke((SkillSlot)i);
             for (int i = 0; i < 4; i++) CountChanged?.Invoke(i, GetCount(i));
@@ -190,19 +200,20 @@ namespace OZ.UI.Samples
         public void SetClass(ClassData data)
         {
             classData = data;
-            ResetAll();
+            ResetAll(); // 계열이 바뀌면 트리도 바뀜 → TreeState가 새로 만들어지고 TreeChanged
+            TreeChanged?.Invoke();
         }
 
         // ── IHealthSource ──
         public float HP => _hp;
-        public float MaxHP => maxHP;
+        public float MaxHP => maxHP + _bonusHP; // v1.0 체력 스탯 구매분 포함
 
         public void ChangeHP(float delta)
         {
             float prev = _hp;
-            _hp = Mathf.Clamp(_hp + delta, 0f, maxHP);
+            _hp = Mathf.Clamp(_hp + delta, 0f, MaxHP);
             if (!Mathf.Approximately(prev, _hp))
-                HealthChanged?.Invoke(new HealthChange(prev, _hp, maxHP));
+                HealthChanged?.Invoke(new HealthChange(prev, _hp, MaxHP));
         }
 
         // ── IProgressionSource ──
@@ -256,8 +267,9 @@ namespace OZ.UI.Samples
             return tree != null ? tree.GetRank(slot) : _skillRanks[(int)slot];
         }
 
-        public float GetCooldownRemaining(SkillSlot slot) => Mathf.Max(0f, _cooldownEnd[(int)slot] - Time.time);
-        public float GetCooldownDuration(SkillSlot slot) => _cooldownDur[(int)slot];
+        // v1.0: 기획서 v0.5 구매·장착 모델이면 장착된 기술 기준 (DummyPlayer.Growth.cs)
+        public float GetCooldownRemaining(SkillSlot slot) => v05Growth ? LoadoutCooldownRemaining(slot) : Mathf.Max(0f, _cooldownEnd[(int)slot] - Time.time);
+        public float GetCooldownDuration(SkillSlot slot) => v05Growth ? LoadoutCooldownDuration(slot) : _cooldownDur[(int)slot];
 
         /// <summary>예전 카드형 스킬 창 호환: 트리에서는 그 버튼의 '다음 노드'를 찍는다 (미배정이면 계열 스킬).</summary>
         public bool CanInvest(SkillSlot slot, out string reason)
@@ -299,6 +311,7 @@ namespace OZ.UI.Samples
 
         public void UseSkill(SkillSlot slot)
         {
+            if (v05Growth) { UseLoadoutSkill(slot); return; }
             int i = (int)slot;
             int rank = GetRank(slot);
             if (rank <= 0) { SkillUseFailed?.Invoke(slot, SkillUseFailReason.NotLearned); return; }
@@ -314,7 +327,7 @@ namespace OZ.UI.Samples
         }
 
         // ── ISkillTreeSource ──
-        public SkillTreeData Tree => skillTree;
+        public SkillTreeData Tree => ActiveTree;
         public bool IsUnlocked(string nodeId) => TreeState != null && TreeState.IsUnlocked(nodeId);
 
         public bool CanUnlock(string nodeId, out string reason)
@@ -327,7 +340,7 @@ namespace OZ.UI.Samples
         public bool TryUnlock(string nodeId)
         {
             if (!CanUnlock(nodeId, out _)) return false;
-            _points -= skillTree.Find(nodeId).cost;
+            _points -= ActiveTree.Find(nodeId).cost;
             TreeState.Unlock(nodeId); // → TreeChanged, SkillChanged
             ProgressionChanged?.Invoke();
             return true;
@@ -402,7 +415,7 @@ namespace OZ.UI.Samples
         void ApplyEffect(ItemData item)
         {
             if (item == null) return;
-            if (item.effectType == ItemEffectType.Heal) ChangeHP(maxHP * item.effectPercent / 100f);
+            if (item.effectType == ItemEffectType.Heal) ChangeHP(MaxHP * item.effectPercent / 100f);
             else if (item.IsBuff)
             {
                 BuffApplied?.Invoke(item, item.buffDuration); // 같은 버프는 시간 갱신
@@ -429,6 +442,66 @@ namespace OZ.UI.Samples
         {
             if (quickSlot >= 0) CountChanged?.Invoke(quickSlot, GetCount(quickSlot));
             Changed?.Invoke();
+            ShopChanged?.Invoke();
+        }
+
+        // ── IShopSource (v1.0 임시 상점) ──
+        public int Currency => _gp; // v1.0: 상점 포인트 = 상태창 포인트 (기획서 재화 하나)
+
+        public int GetOwned(ItemData item)
+        {
+            if (item == null || _inv == null) return 0;
+            int total = 0;
+            foreach (var s in _inv) if (s.Item == item) total += s.Count;
+            return total;
+        }
+
+        public ShopBuyResult TryBuy(ShopEntry entry, int amount)
+        {
+            var check = ShopRules.Check(entry, amount, GetOwned(entry?.item), _gp);
+            if (check != ShopBuyResult.Success) return check;
+            if (!HasRoom(entry.item, amount)) return ShopBuyResult.InventoryFull;
+            SpendPoints(entry.price * amount);
+            AddStack(entry.item, amount);
+            Notify(entry.item.slotIndex);
+            return ShopBuyResult.Success;
+        }
+
+        public void AddShopPoints(int amount)
+        {
+            AddPoints(amount);
+        }
+
+        /// <summary>maxStack 기준으로 기존 칸을 채우고 남으면 빈 칸에</summary>
+        bool HasRoom(ItemData item, int amount)
+        {
+            int room = 0, stack = Mathf.Max(1, item.maxStack);
+            foreach (var s in _inv)
+            {
+                if (s.IsEmpty) room += stack;
+                else if (s.Item == item) room += Mathf.Max(0, stack - s.Count);
+                if (room >= amount) return true;
+            }
+            return false;
+        }
+
+        void AddStack(ItemData item, int amount)
+        {
+            int stack = Mathf.Max(1, item.maxStack);
+            for (int i = 0; i < _inv.Length && amount > 0; i++)
+            {
+                if (_inv[i].Item != item || _inv[i].Count >= stack) continue;
+                int add = Mathf.Min(amount, stack - _inv[i].Count);
+                _inv[i] = new ItemStack(item, _inv[i].Count + add);
+                amount -= add;
+            }
+            for (int i = 0; i < _inv.Length && amount > 0; i++)
+            {
+                if (!_inv[i].IsEmpty) continue;
+                int add = Mathf.Min(amount, stack);
+                _inv[i] = new ItemStack(item, add);
+                amount -= add;
+            }
         }
 
         // ── IInventorySource ──
@@ -509,6 +582,7 @@ namespace OZ.UI.Samples
             if (kb.digit3Key.wasPressedThisFrame) UseItem(2);
             if (kb.digit4Key.wasPressedThisFrame) UseItem(3);
             if (kb.uKey.wasPressedThisFrame) AddItem(0);
+            if (kb.rightBracketKey.wasPressedThisFrame) AddPoints(500);
             if (kb.gKey.wasPressedThisFrame) SealGate();
             if (kb.oKey.wasPressedThisFrame) OpenGate();
             if (kb.equalsKey.wasPressedThisFrame) LevelUpNow();

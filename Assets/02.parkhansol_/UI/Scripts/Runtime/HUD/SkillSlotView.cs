@@ -15,6 +15,8 @@ namespace OZ.UI
         [SerializeField] internal Image icon;
         [SerializeField] internal TMP_Text keyLabel;
         [SerializeField] internal TMP_Text rankText;
+        [Tooltip("v1.0: 장착한 기술에 아이콘이 없으면 이름 첫 글자 (선택)")]
+        [SerializeField] internal TMP_Text iconLetter;
         [SerializeField] internal CooldownRadial cooldown;
         [SerializeField] internal GameObject lockOverlay;
         [SerializeField] internal RectTransform shakeTarget;
@@ -38,10 +40,47 @@ namespace OZ.UI
                 else icon.color = rest;
             }
             if (lockOverlay != null) lockOverlay.SetActive(src != null && rank <= 0);
+            if (iconLetter != null) iconLetter.text = "";
             if (rankText != null) rankText.text = rank > 0 ? new string('·', rank) : "";
 
             float remain = src?.GetCooldownRemaining(slot) ?? 0f;
             float dur = src?.GetCooldownDuration(slot) ?? 0f;
+            if (cooldown != null)
+            {
+                if (remain > 0f && dur > 0f) cooldown.Play(remain, dur);
+                else cooldown.Clear();
+            }
+        }
+
+        /// <summary>v1.0 (기획서 v0.5): 장착된 기술 아이콘 · 빈 칸은 잠금 표시(미장착) · 쿨다운</summary>
+        internal void RefreshLoadout(ISkillLoadoutSource lo)
+        {
+            if (keyLabel != null) keyLabel.text = UIText.Key(slot);
+            string id = lo?.GetEquipped(slot);
+            SkillOffer offer = default;
+            if (lo != null && !string.IsNullOrEmpty(id))
+                for (int i = 0; i < lo.SkillCount; i++) { var o = lo.GetSkill(i); if (o.id == id) { offer = o; break; } }
+            bool equipped = offer.IsValid;
+
+            if (icon != null)
+            {
+                icon.sprite = equipped ? offer.icon : null;
+                icon.enabled = icon.sprite != null;
+                var rest = equipped ? Color.white : ItemSlotView.UnusableColor;
+                if (cooldown != null && cooldown.dimTarget == icon) cooldown.SetRestColor(rest);
+                else icon.color = rest;
+            }
+            if (lockOverlay != null) lockOverlay.SetActive(!equipped);
+            if (rankText != null) rankText.text = ""; // 강화 단계 없음
+            if (iconLetter != null)
+            {
+                bool letterOn = equipped && offer.icon == null && !string.IsNullOrEmpty(offer.displayName);
+                iconLetter.text = letterOn ? offer.displayName.Substring(0, 1) : "";
+                iconLetter.color = offer.damageKind == SkillDamageKind.Magic ? new Color(0.55f, 0.72f, 1f) : new Color(1f, 0.62f, 0.3f);
+            }
+
+            float remain = equipped ? lo.GetCooldownRemaining(slot) : 0f;
+            float dur = equipped ? lo.GetCooldownDuration(slot) : 0f;
             if (cooldown != null)
             {
                 if (remain > 0f && dur > 0f) cooldown.Play(remain, dur);

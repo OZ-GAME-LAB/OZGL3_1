@@ -11,6 +11,8 @@ namespace OZ.UI
     ///   - IGateSource가 연결되면 "게이트 봉쇄 n / 목표" + "보스 처치 (게이트 후)" 두 줄을 자동으로 관리
     ///   - 완료 줄은 초록 체크·취소선 후 doneLinger초 뒤 사라짐
     ///   - 줄이 하나도 없으면 바탕째 숨김
+    ///   - v0.9 (기획서 "보스 진입 가능 상태에 시각·사운드 피드백"): 게이트 목표를 채우는 순간
+    ///     SYSTEM 알림 "보스 구역 개방" (+ 알림 소리). 불러오기처럼 처음부터 열린 상태면 띄우지 않음
     /// </summary>
     [AddComponentMenu("OZ/UI/HUD/Quest List View")]
     public class QuestListView : MonoBehaviour, IQuestApi
@@ -31,12 +33,20 @@ namespace OZ.UI
         [SerializeField] internal string gateTitle = "게이트 봉쇄";
         [SerializeField] internal string bossTitle = "보스 처치";
         [SerializeField] internal string bossLockedHint = "게이트 후";
+        [Tooltip("게이트 목표 달성 순간 SYSTEM 알림")]
+        [SerializeField] internal bool notifyBossUnlock = true;
+        [SerializeField] internal string bossUnlockKind = "보스 구역";
+        [SerializeField] internal string bossUnlockMain = "보스 구역 개방";
 
         readonly List<QuestRowView> _rows = new List<QuestRowView>();
         readonly Stack<QuestRowView> _free = new Stack<QuestRowView>();
         IGateSource _gate;
+        bool? _bossUnlockedSeen; // null = 아직 한 번도 안 봄 (바인딩 직후엔 알림 없음)
         int _seq;
         readonly Dictionary<string, int> _insertOrder = new Dictionary<string, int>();
+        readonly Dictionary<string, (int reward, bool main)> _rewards = new Dictionary<string, (int, bool)>(); // v1.0 상태창용
+
+        public event System.Action Changed;
 
         public IReadOnlyList<QuestRowView> Rows => _rows;
 
@@ -57,6 +67,7 @@ namespace OZ.UI
             if (ReferenceEquals(gate, _gate)) return;
             UnbindGate();
             _gate = gate;
+            _bossUnlockedSeen = null;
             if (!autoGateQuests) return;
             if (_gate == null) { Remove(GateId); Remove(BossId); return; }
             _gate.GateStateReset += SyncGate;
@@ -82,6 +93,9 @@ namespace OZ.UI
         {
             if (_gate == null) return;
             bool unlocked = _gate.IsBossAreaUnlocked;
+            if (notifyBossUnlock && unlocked && _bossUnlockedSeen == false)
+                GameUI.Notify.System(bossUnlockKind, bossUnlockMain, $"게이트 {_gate.SealedCount}/{_gate.TargetCount} 봉쇄", "boss_unlock");
+            _bossUnlockedSeen = unlocked;
             if (unlocked)
             {
                 if (TryGet(GateId, out var g) && g.State != QuestState.Done) Set(GateId, gateTitle, _gate.SealedCount, _gate.TargetCount, QuestState.Done, null, -20);
@@ -120,6 +134,7 @@ namespace OZ.UI
             Sort();
             Layout(true);
             if (isNew) Appear(row);
+            Changed?.Invoke();
         }
 
         public void SetProgress(string id, int progress, int target = -1)
@@ -152,6 +167,7 @@ namespace OZ.UI
             row.gameObject.SetActive(false);
             _free.Push(row);
             Layout(true);
+            Changed?.Invoke();
         }
 
         public void Clear()
@@ -159,6 +175,7 @@ namespace OZ.UI
             foreach (var r in _rows) { r.group.DOKill(); r.gameObject.SetActive(false); _free.Push(r); }
             _rows.Clear();
             Layout(false);
+            Changed?.Invoke();
         }
 
         public bool TryGet(string id, out QuestInfo info)
@@ -167,6 +184,24 @@ namespace OZ.UI
             info = row != null ? row.Info : default;
             return row != null;
         }
+
+        public void SetReward(string id, int rewardPoints, bool isMain = true)
+        {
+            if (string.IsNullOrEmpty(id)) return;
+            _rewards[id] = (rewardPoints, isMain);
+            Changed?.Invoke();
+        }
+
+        public bool TryGetReward(string id, out int rewardPoints, out bool isMain)
+        {
+            bool ok = id != null && _rewards.TryGetValue(id, out var r);
+            rewardPoints = ok ? _rewards[id].reward : 0;
+            isMain = !ok || _rewards[id].main;
+            return ok;
+        }
+
+        public int Count => _rows.Count;
+        public QuestInfo GetAt(int index) => index >= 0 && index < _rows.Count ? _rows[index].Info : default;
 
         // ───────────── 표시 ─────────────
 

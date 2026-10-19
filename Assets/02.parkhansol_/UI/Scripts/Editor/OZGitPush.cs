@@ -165,6 +165,21 @@ namespace OZ.UI.EditorTools
                 Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Programs\Git\cmd\git.exe"),
             };
             foreach (var c in candidates) if (File.Exists(c)) return c;
+
+            // Git for Windows가 없으면 GitHub Desktop에 들어 있는 git 사용 (가장 최신 app-x.y.z)
+            string desktop = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GitHubDesktop");
+            if (Directory.Exists(desktop))
+            {
+                string best = null; Version bestVer = null;
+                foreach (var dir in Directory.GetDirectories(desktop, "app-*"))
+                {
+                    string exe = Path.Combine(dir, @"resources\app\git\cmd\git.exe");
+                    if (!File.Exists(exe)) continue;
+                    Version.TryParse(Path.GetFileName(dir).Substring(4), out var v);
+                    if (best == null || (v != null && (bestVer == null || v > bestVer))) { best = exe; bestVer = v; }
+                }
+                if (best != null) return best;
+            }
             return "git"; // PATH
         }
 

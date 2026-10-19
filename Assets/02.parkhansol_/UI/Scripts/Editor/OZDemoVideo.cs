@@ -84,7 +84,7 @@ namespace OZ.UI.EditorTools
                     await Clip("F03_쿨타임_사용불가_자리변경", Cooldowns);
                     await Clip("F04_버프테두리_번갈아점멸", Buffs);
                     await Clip("F05_랭크승급_팡파레", RankUp);
-                    await Clip("F06_창_인벤토리_스킬트리_지도_옵션", Windows);
+                    await Clip("F06_창_스킬트리_지도_옵션", Windows);
                     await Clip("F07_전투_피해숫자_적체력바", Combat);
                     await Clip("F08_게이트봉쇄_보스", GateBoss);
                     await Clip("F09_지역이름_상호작용F_화면밖화살표", World);
@@ -356,14 +356,12 @@ namespace OZ.UI.EditorTools
             GameUI.HUD.ShowGuide("게이트를 찾아 봉쇄하라"); await Wait(2.6f);
         }
 
-        // F06) 창: 인벤토리 · 노드형 스킬 트리 · 지도 · 일시정지 → 옵션
+        // F06) 창: 스킬 트리 · 지도 · 일시정지 → 옵션
         static async Task Windows()
         {
             await Wait(0.6f);
             P.AddExp(40f); await Wait(1.0f);
             P.LevelUpNow(); await Wait(1.2f);
-            GameUI.Screens.Open(ScreenId.Inventory); await Wait(3.0f);
-            GameUI.Screens.Close(ScreenId.Inventory); await Wait(0.5f);
             GameUI.Screens.Open(ScreenId.SkillWindow); await Wait(3.5f);
             GameUI.Screens.Close(ScreenId.SkillWindow); await Wait(0.5f);
             GameUI.Screens.Open(ScreenId.Map); await Wait(3.0f);

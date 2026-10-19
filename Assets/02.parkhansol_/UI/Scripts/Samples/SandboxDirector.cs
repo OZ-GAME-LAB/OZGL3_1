@@ -6,7 +6,7 @@ namespace OZ.UI.Samples
 {
     /// <summary>
     /// UI_Sandbox 흐름 연출 = "코어 담당이 할 일"의 참고 구현.
-    ///   타이틀 → 새 게임 → 계열 선택 → 대화 → 전투 HUD → (사망/재도전, 보스, 클리어, 데모 종료)
+    ///   타이틀 → 새 게임 → (v1.0 기획서 v0.5: 계열 선택 없음) → 대화 → 전투 HUD → (사망/재도전, 보스, 클리어, 데모 종료)
     ///
     /// 디버그 키
     ///   T 대화 / P 다음 방(지도) / F2 사망 / F3 스테이지 클리어(게이트 파괴 띠) / F4 데모 종료 / F5 타이틀
@@ -25,6 +25,8 @@ namespace OZ.UI.Samples
         [SerializeField] internal DialogueData introDialogue;
         [SerializeField] internal MapData map;
         [SerializeField] internal bool startAtTitle = true;
+        [Tooltip("v1.0 기획서 v0.5: 시작 직업 선택 없음 → 새 게임에서 계열 선택 창을 건너뜀")]
+        [SerializeField] internal bool skipClassSelect = true;
 
         [Header("v0.9 화면 전환")]
         [Tooltip("맵이 바뀔 때(계열 선택·재도전·다음 방·타이틀로) 화면을 잠깐 어둡게")]
@@ -113,7 +115,11 @@ namespace OZ.UI.Samples
             else if (UIPlayerTag.Current != target) { tag.enabled = false; tag.enabled = true; } // Current 다시 지정
         }
 
-        void OnNewGame() => GameUI.Screens.ShowClassSelect(classes);
+        void OnNewGame()
+        {
+            if (skipClassSelect) OnClassSelected(PlayerClass.Sword); // 계열 데이터는 예전 스킬 트리용으로만 남음
+            else GameUI.Screens.ShowClassSelect(classes);
+        }
 
         void OnClassSelected(PlayerClass cls)
         {
@@ -195,7 +201,8 @@ namespace OZ.UI.Samples
             if (kb.f8Key.wasPressedThisFrame) ToggleFarTargets();
         }
 
-        void OnPromptPressed(Transform target) => GameUI.Notify.Toast("수상한 흔적을 조사했다");
+        // F7로 띄운 보스 머리 위 '조사'만 (상점 NPC 등 다른 상호작용엔 반응 안 함)
+        void OnPromptPressed(Transform target) { if (boss != null && target == boss.transform) GameUI.Notify.Toast("수상한 흔적을 조사했다"); }
 
         void OnDestroy() => GameUI.Prompt.Pressed -= OnPromptPressed;
 

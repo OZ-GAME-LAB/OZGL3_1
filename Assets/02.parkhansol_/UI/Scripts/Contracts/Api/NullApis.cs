@@ -96,6 +96,11 @@ namespace OZ.UI.Contracts
         public void Remove(string id) { }
         public void Clear() { }
         public bool TryGet(string id, out QuestInfo info) { info = default; return false; }
+        public void SetReward(string id, int rewardPoints, bool isMain = true) { }
+        public bool TryGetReward(string id, out int rewardPoints, out bool isMain) { rewardPoints = 0; isMain = true; return false; }
+        public int Count => 0;
+        public QuestInfo GetAt(int index) => default;
+        public event Action Changed { add { } remove { } }
     }
 
     internal sealed class NullMapApi : IMapApi
