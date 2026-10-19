@@ -211,4 +211,37 @@ public class PlayerSkill : MonoBehaviour
             }
         }
     }
+    
+    [ContextMenu("Test/물리 보유 + 장착")]
+    private void TestEquipPhysical()
+    {
+        TestEquipByType(SkillDamageType.Physical);
+    }
+
+    [ContextMenu("Test/마법 보유 + 장착")]
+    private void TestEquipMagic()
+    {
+        TestEquipByType(SkillDamageType.Magic);
+    }
+
+    private void TestEquipByType(SkillDamageType type)
+    {
+        int slot = 0;
+        foreach (PlayerSkillBase skill in _allSkills.Values)
+        {
+            if (skill.Data.DamageType != type)
+            {
+                continue;
+            }
+
+            TryAddOwned(skill.Data.Id);
+
+            if (slot < SlotCount)
+            {
+                TryEquip((SkillSlot)slot, skill.Data.Id);
+                Debug.Log($"[PlayerSkill] {(SkillSlot)slot} ← {skill.Data.DisplayName}");
+                slot++;
+            }
+        }
+    }
 }
