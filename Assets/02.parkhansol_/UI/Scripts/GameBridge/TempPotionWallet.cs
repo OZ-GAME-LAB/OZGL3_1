@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// [박한솔 UI · v1.0 임시] 상점 NPC를 실제 씬(MainScene 등)에서 바로 써 보기 위한 임시 지갑 + 1~4 포션 칸.
-///   IShopSource (포인트·구매) + IItemSource (1~4 수량·사용) 를 구현해서 GameUI.Bind 한다.
+/// [박한솔 UI · v1.1 임시] 상태창 아이템 탭·상점 NPC를 실제 씬(MainScene 등)에서 바로 써 보기 위한 임시 지갑 + 1~4 포션 칸.
+///   IShopSource (아이템 포인트·구매) + IItemSource (1~4 수량·사용) 를 구현해서 GameUI.Bind 한다.
+///   아이템 포인트는 성장 포인트(스탯·스킬, IPointsSource)와 따로 센다.
 ///
-/// 언제 생기나: 씬에 ShopkeeperLink(상점 NPC)가 있으면 Play 시 자동 생성 (씬·프리팹 수정 없음).
+/// 언제 생기나: 씬에 상태창(아이템 탭) 또는 ShopkeeperLink(상점 NPC)가 있으면 Play 시 자동 생성 (씬·프리팹 수정 없음).
 ///   다른 쪽이 이미 상점 소스를 등록했으면(UI 샌드박스의 DummyPlayer, 나중에 코어의 실제 구현) 스스로 사라진다.
 /// 효과: 회복은 PlayerHealth.Heal (체력이 가득이면 소비 안 함 — 기획데이터 9장).
 ///   공격·방어·신속은 HUD 버프 표시까지만 (실제 능력치 반영은 플레이어 담당 PlayerStats 연결 후).
@@ -18,7 +19,7 @@ using UnityEngine.SceneManagement;
 [AddComponentMenu("OZ/UI/Links/Temp Potion Wallet")]
 public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
 {
-    [Tooltip("시작 포인트 (기획서 각성 지급 1000)")]
+    [Tooltip("시작 아이템 포인트 (임시값 — 기획 확정 전)")]
     [SerializeField] int startPoints = 1000;
     [Tooltip("1~4 칸 시작 수량")]
     [SerializeField] int[] startCounts = { 1, 0, 0, 0 };
@@ -28,6 +29,7 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     [SerializeField] bool useNumberKeys = true;
 
     readonly int[] _counts = new int[4];
+    readonly System.Collections.Generic.Dictionary<ItemData, int> _others = new System.Collections.Generic.Dictionary<ItemData, int>(); // 1~4 칸이 없는 아이템 (장비 등)
     int _points;
     PlayerHealth _health;
 
@@ -53,7 +55,8 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     static void TryInstall()
     {
         if (FindAnyObjectByType<TempPotionWallet>() != null) return;
-        if (FindAnyObjectByType<ShopkeeperLink>() == null) return;
+        if (FindAnyObjectByType<ShopkeeperLink>() == null &&
+            FindAnyObjectByType<OZ.UI.StatusItemPage>(FindObjectsInactive.Include) == null) return;
         new GameObject("TempPotionWallet (auto, UI)").AddComponent<TempPotionWallet>();
     }
 
@@ -78,9 +81,11 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     void FillQuickItemsFromShop()
     {
         if (quickItems == null || quickItems.Length < 4) Array.Resize(ref quickItems, 4);
-        foreach (var keeper in FindObjectsByType<ShopkeeperLink>(FindObjectsSortMode.None))
+        var shops = new System.Collections.Generic.List<ShopData>();
+        foreach (var page in FindObjectsByType<OZ.UI.StatusItemPage>(FindObjectsInactive.Include, FindObjectsSortMode.None)) shops.Add(page.ItemShop);
+        foreach (var keeper in FindObjectsByType<ShopkeeperLink>(FindObjectsSortMode.None)) shops.Add(keeper.Shop);
+        foreach (var shop in shops)
         {
-            var shop = keeper.Shop;
             if (shop == null || shop.entries == null) continue;
             foreach (var e in shop.entries)
             {
@@ -152,8 +157,9 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
 
     public int GetOwned(ItemData item)
     {
-        for (int i = 0; i < 4; i++) if (quickItems[i] == item && item != null) return _counts[i];
-        return 0;
+        if (item == null) return 0;
+        for (int i = 0; i < 4; i++) if (quickItems[i] == item) return _counts[i];
+        return _others.TryGetValue(item, out int n) ? n : 0;
     }
 
     public ShopBuyResult TryBuy(ShopEntry entry, int amount)
@@ -161,7 +167,14 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
         var check = ShopRules.Check(entry, amount, GetOwned(entry?.item), _points);
         if (check != ShopBuyResult.Success) return check;
         int slot = entry.item.slotIndex;
-        if (slot < 0 || slot > 3) return ShopBuyResult.Unavailable; // 1~4 칸 아이템만
+        if (slot < 0 || slot > 3)
+        {
+            // 1~4 칸이 없는 아이템 (장비 등): 개수만 센다
+            _points -= entry.price * amount;
+            _others[entry.item] = GetOwned(entry.item) + amount;
+            ShopChanged?.Invoke();
+            return ShopBuyResult.Success;
+        }
         if (quickItems[slot] == null) quickItems[slot] = entry.item;
         else if (quickItems[slot] != entry.item) return ShopBuyResult.Unavailable;
 
@@ -171,7 +184,7 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
         return ShopBuyResult.Success;
     }
 
-    /// <summary>임시: 퀘스트 보상 등에서 포인트 지급 확인용</summary>
+    /// <summary>임시: 아이템 포인트 지급 확인용</summary>
     public void AddPoints(int amount)
     {
         _points = Mathf.Max(0, _points + amount);

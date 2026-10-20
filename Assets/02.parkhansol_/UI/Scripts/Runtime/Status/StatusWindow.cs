@@ -9,26 +9,33 @@ using UnityEngine.UI;
 namespace OZ.UI
 {
     /// <summary>
-    /// [v1.0 · 기획서 v0.5] 상태창 (GameUI.Status 구현). 스탯 · 퀘스트 · 상점 · 스킬 · 지도 5탭, 열린 동안 전투 정지.
-    ///   탭 바꾸기: 탭 클릭 · 숫자 1~5 · 게임패드 LB/RB
-    ///   데이터: UISources.Points / Stats / Loadout / GrowthShop / StageMap + GameUI.Quest — 바뀌면 지금 탭만 다시 그린다.
+    /// [v1.1] 상태창 (GameUI.Status 구현). 캐릭터 · 퀘스트 · 상점 · 지도 4탭, 열린 동안 전투 정지.
+    ///   탭 바꾸기: 탭 클릭 · 숫자 1~4 · 게임패드 LB/RB
+    ///   재화 2종을 머리 오른쪽에 함께 표시: 지금 탭이 쓰는 쪽을 크게 (캐릭터 = 성장 포인트, 상점 = 아이템 포인트)
+    ///   데이터: UISources.Points / Stats / Loadout / GrowthShop / Path / Shop / StageMap + GameUI.Quest — 바뀌면 지금 탭만 다시 그린다.
     /// 탭 내용은 StatusPage 상속 컴포넌트 (OZUIRootBuilder.BuildStatus가 만든다).
     /// </summary>
     [AddComponentMenu("OZ/UI/Status/Status Window")]
     public class StatusWindow : UIWindow, IStatusApi
     {
         [Header("머리")]
-        [SerializeField] internal Button[] tabButtons = new Button[5];
-        [SerializeField] internal Image[] tabMarks = new Image[5];
+        [SerializeField] internal Button[] tabButtons = new Button[TabCount];
+        [SerializeField] internal Image[] tabMarks = new Image[TabCount];
         [Tooltip("탭 그림 (옵션 창과 같은 TabTop / TabInactiveTop). 비우면 tabMarks만 켜고 끔")]
         [SerializeField] internal Sprite tabActive;
         [SerializeField] internal Sprite tabInactive;
-        [SerializeField] internal TMP_Text[] tabLabels = new TMP_Text[5];
+        [SerializeField] internal TMP_Text[] tabLabels = new TMP_Text[TabCount];
+        [Tooltip("성장 포인트 (캐릭터 탭 [+] 투자)")]
         [SerializeField] internal TMP_Text pointsText;
+        [Tooltip("아이템 포인트 (상점 탭 구매)")]
+        [SerializeField] internal TMP_Text itemPointsText;
         [SerializeField] internal RectTransform pointsPunch;
+        [SerializeField] internal float currencyBigSize = 12f;
+        [SerializeField] internal float currencySmallSize = 10f;
+        [SerializeField] internal Color itemPointsColor = new Color(0.37f, 0.88f, 0.72f);
 
         [Header("탭 내용 (StatusTab 순서)")]
-        [SerializeField] internal StatusPage[] pages = new StatusPage[5];
+        [SerializeField] internal StatusPage[] pages = new StatusPage[TabCount];
 
         [Header("아래")]
         [SerializeField] internal TMP_Text messageText;
@@ -41,7 +48,8 @@ namespace OZ.UI
         [SerializeField] internal Color badColor = new Color(1f, 0.45f, 0.45f);
         [SerializeField] internal float messageSeconds = 1.6f;
 
-        StatusTab _tab = StatusTab.Stats;
+        internal const int TabCount = 4;
+        StatusTab _tab = StatusTab.Character;
         InputAction _tabKeys, _prevTab, _nextTab;
         Tween _msgTween;
         IPointsSource _points;
@@ -49,6 +57,10 @@ namespace OZ.UI
         ISkillLoadoutSource _loadout;
         IStageMapSource _map;
         IQuestApi _quests;
+        ICombatPathSource _path;
+        IShopSource _shop;
+        Vector2 _bigPos, _smallPos;
+        bool _posCaptured;
 
         public StatusTab CurrentTab => _tab;
         public event Action<StatusTab> TabChanged;
@@ -62,6 +74,16 @@ namespace OZ.UI
             if (IsOpen) { SetTab(tab); return; }
             ui.Open(this, tab);
         }
+        public void SetItemShop(ShopData shop)
+        {
+            foreach (var p in pages)
+                if (p is StatusItemPage ip) ip.Shop = shop;
+        }
+
+        /// <summary>계열 선택 소스 (캐릭터 탭)</summary>
+        internal ICombatPathSource Path => _path;
+        /// <summary>아이템 구매 소스 (상점 탭)</summary>
+        internal IShopSource ItemShop => _shop;
         // Close() · IsOpen 은 UIWindow 것
 
         // ───────────── 수명 ─────────────
@@ -78,16 +100,16 @@ namespace OZ.UI
                 if (pages[i] != null) { pages[i].Owner = this; pages[i].gameObject.SetActive(false); }
 
             _tabKeys = new InputAction("UI_StatusTabKey", InputActionType.Button);
-            for (int i = 1; i <= 5; i++) _tabKeys.AddBinding("<Keyboard>/" + i);
+            for (int i = 1; i <= TabCount; i++) _tabKeys.AddBinding("<Keyboard>/" + i);
             _tabKeys.performed += ctx =>
             {
                 if (!IsOpen || ctx.control == null) return;
-                if (int.TryParse(ctx.control.name, out int n) && n >= 1 && n <= 5) SetTab((StatusTab)(n - 1));
+                if (int.TryParse(ctx.control.name, out int n) && n >= 1 && n <= TabCount && n <= pages.Length) SetTab((StatusTab)(n - 1));
             };
             _prevTab = new InputAction("UI_StatusPrev", InputActionType.Button, "<Gamepad>/leftShoulder");
             _nextTab = new InputAction("UI_StatusNext", InputActionType.Button, "<Gamepad>/rightShoulder");
-            _prevTab.performed += _ => { if (IsOpen) SetTab((StatusTab)(((int)_tab + 4) % 5)); };
-            _nextTab.performed += _ => { if (IsOpen) SetTab((StatusTab)(((int)_tab + 1) % 5)); };
+            _prevTab.performed += _ => { if (IsOpen) SetTab((StatusTab)(((int)_tab + pages.Length - 1) % pages.Length)); };
+            _nextTab.performed += _ => { if (IsOpen) SetTab((StatusTab)(((int)_tab + 1) % pages.Length)); };
         }
 
         // 중복 UIRoot(UIManager가 지우는 쪽)의 창이 등록을 덮어쓰지 않게
@@ -158,7 +180,7 @@ namespace OZ.UI
             page.OnShow();
             page.Refresh();
             page.Focus();
-            if (hintText != null) hintText.text = "[1~5] 탭   " + page.Hint + "   [Tab]/[ESC] 닫기";
+            if (hintText != null) hintText.text = $"[1~{pages.Length}] 탭   " + page.Hint + "   [Tab]/[ESC] 닫기";
             if (animate && page.transform is RectTransform rt) rt.SlideIn(Vector2.down, 6f, UITweenStyle.Fast);
             RefreshPoints(0);
         }
@@ -180,6 +202,10 @@ namespace OZ.UI
             _loadout = UISources.Loadout;
             _map = UISources.StageMap;
             _quests = GameUI.Quest;
+            _path = UISources.Path;
+            _shop = UISources.Shop;
+            if (_path != null) _path.PathChanged += RefreshPage;
+            if (_shop != null) _shop.ShopChanged += OnShop;
             if (_points != null) _points.PointsChanged += OnPoints;
             if (_stats != null) _stats.StatChanged += OnStat;
             if (_loadout != null) { _loadout.SkillOwned += OnSkillOwned; _loadout.SlotChanged += OnSlot; }
@@ -195,13 +221,16 @@ namespace OZ.UI
             if (_loadout != null) { _loadout.SkillOwned -= OnSkillOwned; _loadout.SlotChanged -= OnSlot; }
             if (_map != null) _map.NodesChanged -= RefreshPage;
             if (_quests != null) _quests.Changed -= RefreshPage;
-            _points = null; _stats = null; _loadout = null; _map = null; _quests = null;
+            if (_path != null) _path.PathChanged -= RefreshPage;
+            if (_shop != null) _shop.ShopChanged -= OnShop;
+            _points = null; _stats = null; _loadout = null; _map = null; _quests = null; _path = null; _shop = null;
         }
 
         void OnPoints(int value, int delta) { RefreshPoints(delta); RefreshPage(); }
         void OnStat(StatKind _) => RefreshPage();
         void OnSkillOwned(string _) => RefreshPage();
         void OnSlot(SkillSlot _) => RefreshPage();
+        void OnShop() { RefreshPoints(0); RefreshPage(); }
 
         void RefreshPage()
         {
@@ -209,10 +238,34 @@ namespace OZ.UI
             Page(_tab)?.Refresh();
         }
 
+        /// <summary>머리 재화 글자만 다시</summary>
+        internal void RefreshHeader() => RefreshPoints(0);
+
         void RefreshPoints(int delta)
         {
             if (pointsText == null) return;
-            pointsText.text = _points != null ? $"{_points.Points:N0} 포인트" : "- 포인트";
+            pointsText.text = _points != null ? $"성장 {_points.Points:N0}P" : "성장 -P";
+            if (itemPointsText != null) itemPointsText.text = _shop != null ? $"아이템 {_shop.Currency:N0}P" : "아이템 -P";
+
+            // 지금 탭이 쓰는 재화를 크게·오른쪽에, 다른 쪽은 작게·왼쪽에
+            if (itemPointsText != null)
+            {
+                if (!_posCaptured)
+                {
+                    _bigPos = pointsText.rectTransform.anchoredPosition;
+                    _smallPos = itemPointsText.rectTransform.anchoredPosition;
+                    _posCaptured = true;
+                }
+                bool item = IsOpen && Page(_tab) != null && Page(_tab).UsesItemPoints;
+                var big = item ? itemPointsText : pointsText;
+                var small = item ? pointsText : itemPointsText;
+                big.rectTransform.anchoredPosition = _bigPos;
+                small.rectTransform.anchoredPosition = _smallPos;
+                big.fontSize = currencyBigSize; small.fontSize = currencySmallSize;
+                pointsText.color = item ? tabOffColor : tabOnColor;
+                itemPointsText.color = item ? itemPointsColor : tabOffColor;
+                if (pointsPunch != null && pointsPunch != big.rectTransform) pointsPunch = big.rectTransform;
+            }
             if (delta != 0 && pointsPunch != null) pointsPunch.Punch(0.25f);
         }
 
@@ -229,8 +282,15 @@ namespace OZ.UI
             _msgTween = messageText.DOFade(0f, 0.4f).SetDelay(messageSeconds).SetUpdate(true).SetLink(messageText.gameObject);
         }
 
+        static bool EndsWithBatchim(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return false;
+            char c = s[s.Length - 1];
+            return c >= 0xAC00 && c <= 0xD7A3 && (c - 0xAC00) % 28 != 0;
+        }
+
         /// <summary>구매 결과 → 소리·문구 (성공 true)</summary>
-        internal bool Report(ShopBuyResult result, string successText)
+        internal bool Report(ShopBuyResult result, string successText, string currencyName = "성장 포인트", string limitText = null)
         {
             switch (result)
             {
@@ -240,12 +300,12 @@ namespace OZ.UI
                     return true;
                 case ShopBuyResult.NotEnoughCurrency:
                     UISfx.Play(UISound.Error);
-                    ShowMessage("포인트가 부족하다", false);
+                    ShowMessage($"{currencyName}{(EndsWithBatchim(currencyName) ? "이" : "가")} 부족하다", false);
                     if (pointsPunch != null) pointsPunch.Shake(3f, 0.2f);
                     return false;
                 case ShopBuyResult.LimitReached:
                     UISfx.Play(UISound.Error);
-                    ShowMessage("더 살 수 없다 (구매 상한)", false);
+                    ShowMessage(limitText ?? "더 올릴 수 없다 (최대 단계)", false);
                     return false;
                 default:
                     UISfx.Play(UISound.Error);

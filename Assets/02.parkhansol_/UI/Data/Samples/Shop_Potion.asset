@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.ShopData
   id: shop_potion
   displayName: "\uD3B8\uC758\uC810"
-  currencyName: "\uD3EC\uC778\uD2B8"
+  currencyName: "\uC544\uC774\uD15C \uD3EC\uC778\uD2B8"
   keeper: {fileID: 11400000, guid: 6f4ba481add65024d8c1241e9c463409, type: 2}
   greeting: "\uAC8C\uC774\uD2B8 \uD130\uC9C4 \uB4A4\uB85C \uC774\uB7F0 \uAC83\uB9CC
     \uD314\uB824. \uD558\uB098\uC529 \uCC59\uACA8 \uAC00."
@@ -31,3 +31,9 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: d15c022e2ee8dca43b13076148841a12, type: 2}
     price: 120
     maxOwned: 5
+  - item: {fileID: 11400000, guid: 840a266b078edef46b22bb11f9458e5c, type: 2}
+    price: 300
+    maxOwned: 1
+  - item: {fileID: 11400000, guid: 460f097acae45114f8d18bdb9e1fadb4, type: 2}
+    price: 250
+    maxOwned: 1

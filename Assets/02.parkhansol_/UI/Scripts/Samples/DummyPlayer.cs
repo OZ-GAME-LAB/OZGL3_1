@@ -76,8 +76,10 @@ namespace OZ.UI.Samples
         [SerializeField] internal int maxLevel = 7;
         [SerializeField] internal int[] startItemCounts = { 3, 1, 1, 1 };
         [SerializeField] internal int inventoryCapacity = 24;
-        [Tooltip("v1.0 상점 재화 시작값 (기획서 각성 지급 1000포인트)")]
+        [Tooltip("성장 포인트 시작값 (기획서 각성 지급 1000포인트) — 스탯·스킬 구매")]
         [SerializeField] internal int startShopPoints = 1000;
+        [Tooltip("[v1.1] 아이템 포인트 시작값 (임시) — 상태창 아이템 탭·상점 NPC 소모품 구매. 성장 포인트와 따로")]
+        [SerializeField] internal int startItemPoints = 1000;
         [SerializeField] internal int gateTarget = 3;
         [SerializeField] internal int stageNumber = 1;
         [SerializeField] internal bool enableDebugKeys = true;
@@ -445,8 +447,9 @@ namespace OZ.UI.Samples
             ShopChanged?.Invoke();
         }
 
-        // ── IShopSource (v1.0 임시 상점) ──
-        public int Currency => _gp; // v1.0: 상점 포인트 = 상태창 포인트 (기획서 재화 하나)
+        // ── IShopSource (아이템 구매) ──
+        int _ip;
+        public int Currency => _ip; // v1.1: 아이템 포인트 (성장 포인트 _gp와 따로)
 
         public int GetOwned(ItemData item)
         {
@@ -458,18 +461,21 @@ namespace OZ.UI.Samples
 
         public ShopBuyResult TryBuy(ShopEntry entry, int amount)
         {
-            var check = ShopRules.Check(entry, amount, GetOwned(entry?.item), _gp);
+            var check = ShopRules.Check(entry, amount, GetOwned(entry?.item), _ip);
             if (check != ShopBuyResult.Success) return check;
             if (!HasRoom(entry.item, amount)) return ShopBuyResult.InventoryFull;
-            SpendPoints(entry.price * amount);
+            _ip -= entry.price * amount;
             AddStack(entry.item, amount);
             Notify(entry.item.slotIndex);
             return ShopBuyResult.Success;
         }
 
+        /// <summary>아이템 포인트 지급 ([ 키 = +500)</summary>
         public void AddShopPoints(int amount)
         {
-            AddPoints(amount);
+            if (amount == 0) return;
+            _ip = Mathf.Max(0, _ip + amount);
+            ShopChanged?.Invoke();
         }
 
         /// <summary>maxStack 기준으로 기존 칸을 채우고 남으면 빈 칸에</summary>
@@ -583,6 +589,7 @@ namespace OZ.UI.Samples
             if (kb.digit4Key.wasPressedThisFrame) UseItem(3);
             if (kb.uKey.wasPressedThisFrame) AddItem(0);
             if (kb.rightBracketKey.wasPressedThisFrame) AddPoints(500);
+            if (kb.leftBracketKey.wasPressedThisFrame) AddShopPoints(500);
             if (kb.gKey.wasPressedThisFrame) SealGate();
             if (kb.oKey.wasPressedThisFrame) OpenGate();
             if (kb.equalsKey.wasPressedThisFrame) LevelUpNow();

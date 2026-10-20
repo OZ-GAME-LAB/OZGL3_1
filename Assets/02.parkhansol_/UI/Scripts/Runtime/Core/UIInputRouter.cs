@@ -104,7 +104,7 @@ namespace OZ.UI
             ui.Open(ScreenId.Pause);
         }
 
-        void OnSkillWindow(InputAction.CallbackContext _) { if (!ToggleStatus(StatusTab.Skills)) ToggleMenu(ScreenId.SkillWindow); }
+        void OnSkillWindow(InputAction.CallbackContext _) { if (!ToggleStatus(StatusTab.Character)) ToggleMenu(ScreenId.SkillWindow); }
         void OnInventory(InputAction.CallbackContext _) => ToggleMenu(ScreenId.Inventory);
         void OnMap(InputAction.CallbackContext ctx)
         {

@@ -6,15 +6,23 @@ using UnityEngine;
 namespace OZ.UI.Samples
 {
     /// <summary>
-    /// v1.0 (기획서 v0.5) 상태창 참고 구현 — 기획데이터 v0.5 수치 그대로.
+    /// v1.1 상태창 참고 구현 — 기획데이터 v0.5 수치 + v1.1 (계열 선택 · 기술 단계형 · 아이템 포인트 분리).
     ///   포인트: 각성 1000 (퀘스트 보상으로만 증가) · 스탯 4종 (가격 200/250/300…, 상한 5·5·3·5)
     ///   기술 6종 (한 번 구매·영구 보유, 강화 없음) · Q/E/R 장착 (같은 기술 한 칸, 쿨다운은 기술별로 유지)
     ///   지도 노드 4개 (메인 완료로 다음 노드 해금)
     /// 사망·재도전(ResetAll)으로 포인트·구매·장착이 사라지지 않는다 (기획서 8장).
     /// 실제 게임에서는 PlayerStats / PlayerSkill + 코어 포인트·상점 로직이 같은 인터페이스를 구현하면 된다.
     /// </summary>
-    public partial class DummyPlayer : IPointsSource, IStatSource, ISkillLoadoutSource, IGrowthShopSource, IStageMapSource
+    public partial class DummyPlayer : IPointsSource, IStatSource, ISkillLoadoutSource, IGrowthShopSource, IStageMapSource, ICombatPathSource
     {
+        [Header("v1.1 계열 · 기술 단계")]
+        [Tooltip("계열(물리/마법)을 고른 뒤 바꿀 수 있나 (기획 미정 — 기본 false)")]
+        [SerializeField] internal bool allowPathChange = false;
+        [Tooltip("기술에 단계 목록(ranks)이 비어 있으면 임시 3단계를 채운다 (기획 확정 전 확인용)")]
+        [SerializeField] internal bool fillPlaceholderRanks = true;
+        CombatPath _path;
+        public event Action PathChanged;
+
         [Header("v1.0 기획서 v0.5 성장 (상태창)")]
         [Tooltip("끄면 예전 방식(계열 스킬 트리·레벨)으로 Q/E/R 동작")]
         [SerializeField] internal bool v05Growth = true;
@@ -31,7 +39,7 @@ namespace OZ.UI.Samples
         int _gp;
         float _bonusHP;
         readonly int[] _statLv = new int[4];
-        readonly HashSet<string> _owned = new HashSet<string>();
+        readonly Dictionary<string, int> _skillRank = new Dictionary<string, int>(); // 기술 id → 단계 (1 = 배움)
         readonly string[] _equipped = new string[3];
         readonly Dictionary<string, float> _cdEnd = new Dictionary<string, float>();
         readonly List<StageNode> _nodes = new List<StageNode>();
@@ -55,15 +63,28 @@ namespace OZ.UI.Samples
         };
 
         static SkillOffer Skill(string id, string name, string desc, SkillDamageKind kind, int price, float coef, float cd) =>
-            new SkillOffer { id = id, displayName = name, description = desc, damageKind = kind, price = price, coefficient = coef, cooldown = cd };
+            new SkillOffer { id = id, displayName = name, description = desc, damageKind = kind, price = price, coefficient = coef, cooldown = cd, ranks = PlaceholderRanks(price) };
+
+        /// <summary>v1.1 임시 단계: 1단계 = 배우기(기획 가격), 2·3단계 = 기능 추가 (가격·기능은 기획 확정 전 자리)</summary>
+        static SkillRank[] PlaceholderRanks(int learnPrice) => new[]
+        {
+            new SkillRank { price = learnPrice, description = "배우기" },
+            new SkillRank { price = 300, description = "[2단계 추가 기능 — 기획 미정]" },
+            new SkillRank { price = 450, description = "[3단계 추가 기능 — 기획 미정]" },
+        };
 
         void InitGrowth()
         {
             _gp = startShopPoints;
+            _ip = startItemPoints;
             _bonusHP = 0f;
             Array.Clear(_statLv, 0, _statLv.Length);
-            _owned.Clear();
-            if (startOwnedSkills != null) foreach (var id in startOwnedSkills) if (!string.IsNullOrEmpty(id)) _owned.Add(id);
+            _skillRank.Clear();
+            _path = CombatPath.None;
+            if (fillPlaceholderRanks && skillOffers != null)
+                for (int i = 0; i < skillOffers.Length; i++)
+                    if (skillOffers[i].ranks == null || skillOffers[i].ranks.Length == 0) skillOffers[i].ranks = PlaceholderRanks(skillOffers[i].price);
+            if (startOwnedSkills != null) foreach (var id in startOwnedSkills) if (!string.IsNullOrEmpty(id)) _skillRank[id] = 1;
             for (int i = 0; i < 3; i++) _equipped[i] = null;
             _cdEnd.Clear();
 
@@ -147,10 +168,12 @@ namespace OZ.UI.Samples
         public ShopBuyResult TryBuyStat(StatKind s)
         {
             int i = (int)s;
+            if (CombatPathRules.IsLocked(_path, s)) return ShopBuyResult.Unavailable;
             if (_statLv[i] >= StatMax[i]) return ShopBuyResult.LimitReached;
             int price = GetStatPrice(s);
             if (price > _gp) return ShopBuyResult.NotEnoughCurrency;
             SpendPoints(price);
+            AutoPath(CombatPathRules.PathOf(s));
             _statLv[i]++;
             if (s == StatKind.Vitality)
             {
@@ -168,7 +191,8 @@ namespace OZ.UI.Samples
 
         public int SkillCount => v05Growth && skillOffers != null ? skillOffers.Length : 0; // 0 = HUD가 예전 방식으로 그림
         public SkillOffer GetSkill(int index) => skillOffers != null && index >= 0 && index < skillOffers.Length ? skillOffers[index] : default;
-        public bool IsOwned(string id) => id != null && _owned.Contains(id);
+        public bool IsOwned(string id) => GetRank(id) > 0;
+        public int GetRank(string id) => id != null && _skillRank.TryGetValue(id, out int r) ? r : 0;
 
         SkillOffer Offer(string id)
         {
@@ -184,18 +208,49 @@ namespace OZ.UI.Samples
             return Mathf.RoundToInt(power * o.coefficient);
         }
 
+        /// <summary>v1.1: 다음 단계로 (0→1 = 배우기). 단계 수 = SkillOffer.MaxRank (ranks 길이)</summary>
         public ShopBuyResult TryBuySkill(string id)
         {
             var o = Offer(id);
             if (!o.IsValid) return ShopBuyResult.Unavailable;
-            if (_owned.Contains(id)) return ShopBuyResult.LimitReached;
-            if (o.price > _gp) return ShopBuyResult.NotEnoughCurrency;
-            SpendPoints(o.price);
-            _owned.Add(id);
+            if (CombatPathRules.IsLocked(_path, o.damageKind)) return ShopBuyResult.Unavailable;
+            int rank = GetRank(id);
+            if (rank >= o.MaxRank) return ShopBuyResult.LimitReached;
+            int price = o.RankPrice(rank + 1);
+            if (price > _gp) return ShopBuyResult.NotEnoughCurrency;
+            SpendPoints(price);
+            AutoPath(CombatPathRules.PathOf(o.damageKind));
+            _skillRank[id] = rank + 1;
             SkillOwned?.Invoke(id);
-            // 빈 칸이 있으면 바로 장착해 둔다 (첫 구매가 바로 손에 잡히게)
-            for (int i = 0; i < 3; i++) if (_equipped[i] == null) { TryEquip((SkillSlot)i, id); break; }
+            // 처음 배우면 빈 칸에 바로 장착 (첫 구매가 바로 손에 잡히게)
+            if (rank == 0) for (int i = 0; i < 3; i++) if (_equipped[i] == null) { TryEquip((SkillSlot)i, id); break; }
             return ShopBuyResult.Success;
+        }
+
+        // ───────────── 계열 (v1.1) ─────────────
+
+        public CombatPath Path => _path;
+        public bool CanChangePath => allowPathChange || _path == CombatPath.None;
+
+        public ShopBuyResult TrySetPath(CombatPath path)
+        {
+            if (path == _path) return ShopBuyResult.Success;
+            if (!CanChangePath) return ShopBuyResult.Unavailable;
+            _path = path;
+            // 다른 계열 기술은 장착에서 뺀다 (그 계열만 작동)
+            for (int i = 0; i < 3; i++)
+            {
+                var o = Offer(_equipped[i]);
+                if (o.IsValid && CombatPathRules.IsLocked(_path, o.damageKind)) Unequip((SkillSlot)i);
+            }
+            PathChanged?.Invoke();
+            return ShopBuyResult.Success;
+        }
+
+        /// <summary>계열 미선택일 때 힘·물리 기술(또는 마력·마법 기술)에 투자하면 그쪽으로 정해진다</summary>
+        void AutoPath(CombatPath p)
+        {
+            if (_path == CombatPath.None && p != CombatPath.None) TrySetPath(p);
         }
 
         public string GetEquipped(SkillSlot slot) => _equipped[(int)slot];
@@ -203,6 +258,7 @@ namespace OZ.UI.Samples
         public bool TryEquip(SkillSlot slot, string id)
         {
             if (!IsOwned(id)) return false;
+            if (CombatPathRules.IsLocked(_path, Offer(id).damageKind)) return false;
             for (int i = 0; i < 3; i++)
                 if (_equipped[i] == id && i != (int)slot) { _equipped[i] = null; SlotChanged?.Invoke((SkillSlot)i); }
             _equipped[(int)slot] = id;
