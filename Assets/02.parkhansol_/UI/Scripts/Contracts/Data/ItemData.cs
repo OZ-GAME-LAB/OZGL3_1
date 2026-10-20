@@ -29,6 +29,7 @@ namespace OZ.UI.Contracts
         public Color fxColor = Color.white;
 
         public bool IsBuff => buffDuration > 0f;
-        public bool IsUsable => effectType != ItemEffectType.KeyItem;
+        public bool IsUsable => effectType != ItemEffectType.KeyItem && effectType != ItemEffectType.Equipment;
+        public bool IsEquipment => effectType == ItemEffectType.Equipment;
     }
 }

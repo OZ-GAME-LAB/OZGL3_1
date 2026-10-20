@@ -232,7 +232,7 @@ namespace OZ.UI
         ShopEntry Current => _shop != null ? _shop.Get(_selected) : null;
         int Currency => _source?.Currency ?? 0;
         int Owned(ShopEntry e) => e != null && e.item != null && _source != null ? _source.GetOwned(e.item) : 0;
-        string CurrencyShort => _shop != null && _shop.currencyName == "포인트" ? "P" : "";
+        string CurrencyShort => _shop != null && _shop.currencyName != null && _shop.currencyName.EndsWith("포인트") ? "P" : "";
 
         void ChangeQty(int delta)
         {

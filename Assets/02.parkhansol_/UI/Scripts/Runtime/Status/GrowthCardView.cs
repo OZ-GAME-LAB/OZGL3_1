@@ -24,6 +24,11 @@ namespace OZ.UI
         [SerializeField] internal TMP_Text subText;
         [SerializeField] internal TMP_Text detailText;
         [SerializeField] internal Image[] pips = new Image[0];
+        [Tooltip("[v1.1] 단계 글자 (예: 2/5). 단계가 칸 수보다 많으면 칸 대신 이것만 보인다")]
+        [SerializeField] internal TMP_Text pipText;
+        [Tooltip("[v1.1] 잠김(다른 계열) 표시 — 반투명")]
+        [SerializeField] internal CanvasGroup group;
+        [SerializeField] internal float lockedAlpha = 0.45f;
         [SerializeField] internal Button actionButton;
         [SerializeField] internal TMP_Text actionLabel;
         [SerializeField] internal Color normalColor = Color.white;
@@ -61,11 +66,13 @@ namespace OZ.UI
             if (titleText != null) { titleText.text = title; titleText.color = color; }
             if (subText != null) subText.text = sub;
             if (detailText != null) detailText.text = detail;
+            bool usePips = pipCount <= pips.Length; // 단계가 칸보다 많으면 숫자만
+            if (pipText != null) pipText.text = pipCount > 0 ? $"{pipFilled}/{pipCount}" : "";
             for (int k = 0; k < pips.Length; k++)
             {
                 if (pips[k] == null) continue;
                 var back = pips[k].transform.parent;
-                bool show = k < pipCount;
+                bool show = usePips && k < pipCount;
                 if (back != null && back != transform) back.gameObject.SetActive(show);
                 else pips[k].gameObject.SetActive(show);
                 pips[k].color = k < pipFilled ? color : pipEmptyColor;
@@ -78,6 +85,12 @@ namespace OZ.UI
             if (actionLabel != null) actionLabel.text = actionText ?? "";
             if (background != null) background.color = selected ? selectedColor : normalColor;
             if (selectedMark != null) selectedMark.enabled = selected;
+        }
+
+        /// <summary>[v1.1] 다른 계열이라 잠김 → 반투명 (선택·설명은 그대로 가능)</summary>
+        internal void SetLocked(bool locked)
+        {
+            if (group != null) group.alpha = locked ? lockedAlpha : 1f;
         }
 
         public void OnPointerClick(PointerEventData e)

@@ -19,11 +19,11 @@ namespace OZ.UI.EditorTools
 
         public const string HelpText =
             "<b>UI SANDBOX</b>  (F1 숨기기)\n" +
-            "<color=#FFD966>HUD</color> H 피격  J 회복  Shift 대시  ] 포인트+500\n" +
+            "<color=#FFD966>HUD</color> H 피격  J 회복  Shift 대시  ] 성장P+500  [ 아이템P+500\n" +
             "<color=#FFD966>사용</color> Q/E/R 스킬  1~4 아이템  U 회복제+1\n" +
             "<color=#FFD966>게이트</color> G 봉쇄  O 열기   P 다음 방\n" +
             "<color=#FFD966>보스</color> B 등장  N 피격  V 큰 피격\n" +
-            "<color=#FFD966>창</color> Tab 상태창(1~5 탭)  K 스킬탭  M 지도탭  T 대화  ESC\n" +
+            "<color=#FFD966>창</color> Tab 상태창(1~4 탭)  K 캐릭터  M 지도  T 대화  ESC\n" +
             "<color=#FFD966>화면</color> F2 사망  F3 게이트파괴  F4 끝  F5 타이틀\n" +
             "<color=#FFD966>v0.7</color> F6 지역이름 F7 상호작용 F8 화면밖화살표\n" +
             "<color=#FFD966>상점</color> 옆 상인에게 F (임시 포션 상점)\n" +

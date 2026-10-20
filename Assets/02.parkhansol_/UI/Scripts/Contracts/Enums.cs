@@ -91,6 +91,8 @@ namespace OZ.UI.Contracts
         DefenseBuff = 2,
         SpeedBuff = 3,
         KeyItem = 4, // 사용 불가(퀘스트·열쇠 등) — 인벤토리 표시용
+        /// <summary>[v1.1] 장비 (칼·방패 등) — 상점에서 1회 구매, 영구 보유. 효과는 플레이어 쪽이 적용</summary>
+        Equipment = 5,
     }
 
     /// <summary>대화 초상화 위치</summary>
