@@ -70,6 +70,11 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
         return _owned.Contains(id);
     }
 
+    public int GetRank(string id)
+    {
+        return _owned.Contains(id) ? 1 : 0;
+    }
+
     // 상점이 포인트를 확인·차감한 뒤 호출. 없는 스킬이거나 이미 보유면 false
     public bool TryAddOwned(string id)
     {
