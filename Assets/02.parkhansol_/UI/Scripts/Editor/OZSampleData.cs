@@ -168,10 +168,35 @@ namespace OZ.UI.EditorTools
         /// v1.0 임시 상점: 1~4 소모품을 파는 Shop_Potion (+ 상인 화자). 없으면 만들고, 있으면 그대로 돌려준다.
         /// 가격은 임시값 (기획데이터에 소모품 가격 없음 — 기획 확정 시 에셋에서 수정). 보유 상한 5 = 기획데이터 9장.
         /// </summary>
+        /// <summary>
+        /// v1.1 임시 장비 2종 (칼·방패) — 상점에서 1회 구매(maxOwned 1)·영구 보유. 퀵슬롯 없음(slotIndex -1).
+        /// 효과·가격은 기획 확정 전 자리값 — 실제 공격/방어 반영은 플레이어 쪽(PlayerStats)이 ItemData.id로 판단.
+        /// </summary>
+        static List<ShopEntry> EnsureEquipment()
+        {
+            var sword = Make<ItemData>("Item_Sword", i => { i.id = "equip_sword"; i.displayName = "칼"; i.description = "[임시] 공격 강화 장비 — 효과 기획 미정"; i.icon = Icon("Item_Sword"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.fxColor = new Color(0.85f, 0.87f, 0.92f); });
+            var shield = Make<ItemData>("Item_Shield", i => { i.id = "equip_shield"; i.displayName = "방패"; i.description = "[임시] 방어 강화 장비 — 효과 기획 미정"; i.icon = Icon("Item_Shield"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.fxColor = new Color(0.79f, 0.64f, 0.36f); });
+            return new List<ShopEntry>
+            {
+                new ShopEntry { item = sword, price = 300, maxOwned = 1 },
+                new ShopEntry { item = shield, price = 250, maxOwned = 1 },
+            };
+        }
+
         public static ShopData EnsureShop()
         {
             var existing = Load<ShopData>("Shop_Potion");
-            if (existing != null) return existing;
+            if (existing != null)
+            {
+                bool dirty = false;
+                // v1.1: 아이템은 성장 포인트와 다른 '아이템 포인트'로 산다 (예전에 만든 에셋도 이름만 바꿔 줌)
+                if (existing.currencyName == "포인트") { existing.currencyName = "아이템 포인트"; dirty = true; }
+                // v1.1: 임시 장비 (칼·방패) — 1회 구매
+                foreach (var eq in EnsureEquipment())
+                    if (existing.entries != null && !existing.entries.Exists(e => e != null && e.item == eq.item)) { existing.entries.Add(eq); dirty = true; }
+                if (dirty) { EditorUtility.SetDirty(existing); AssetDatabase.SaveAssets(); }
+                return existing;
+            }
             OZFontBuilder.EnsureFolder(OZPaths.SampleData);
             var heal = Load<ItemData>("Item_Heal");
             if (heal == null) { Run(); return Load<ShopData>("Shop_Potion"); } // 아이템부터 없으면 전체 샘플 생성 (끝에서 다시 여기로 옴)
@@ -181,7 +206,7 @@ namespace OZ.UI.EditorTools
             {
                 sh.id = "shop_potion";
                 sh.displayName = "편의점";
-                sh.currencyName = "포인트";
+                sh.currencyName = "아이템 포인트";
                 sh.keeper = keeper;
                 sh.greeting = "게이트 터진 뒤로 이런 것만 팔려. 하나씩 챙겨 가.";
                 sh.entries = new List<ShopEntry>
@@ -191,6 +216,7 @@ namespace OZ.UI.EditorTools
                     new ShopEntry { item = Load<ItemData>("Item_Defense"), price = 150, maxOwned = 5 },
                     new ShopEntry { item = Load<ItemData>("Item_Speed"), price = 120, maxOwned = 5 },
                 };
+                sh.entries.AddRange(EnsureEquipment());
             });
             AssetDatabase.SaveAssets();
             return shop;

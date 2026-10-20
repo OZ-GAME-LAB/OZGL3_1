@@ -72,7 +72,9 @@ namespace OZ.UI
             for (int k = 0; k < pips.Length; k++)
             {
                 if (pips[k] == null) continue;
-                pips[k].gameObject.SetActive(k < limit);
+                var back = pips[k].transform.parent; // 칸 바탕(PipBack)이 있으면 같이 끈다
+                if (back != null && back != transform) back.gameObject.SetActive(k < limit);
+                else pips[k].gameObject.SetActive(k < limit);
                 pips[k].color = k < owned ? c : pipEmptyColor;
             }
             if (ownedText != null)
@@ -83,12 +85,13 @@ namespace OZ.UI
             }
 
             string price = entry != null ? $"{entry.price:N0}{currencyShort}" : "";
+            bool oneTime = limit == 1; // 장비 등 1회 구매
             if (priceText != null)
             {
-                priceText.text = maxed ? "최대" : price;
+                priceText.text = maxed ? (oneTime ? "보유" : "최대") : price;
                 priceText.color = maxed ? maxedColor : afford ? priceOkColor : priceBadColor;
             }
-            if (buyLabel != null) buyLabel.text = maxed ? "최대 보유" : price;
+            if (buyLabel != null) buyLabel.text = maxed ? (oneTime ? "구매 완료" : "최대 보유") : price;
             if (buyButton != null && buyButton.targetGraphic != null)
                 buyButton.targetGraphic.color = !maxed && afford ? Color.white : buyDisabledColor;
 

@@ -1269,6 +1269,30 @@ namespace OZ.UI.EditorTools
             grid.childAlignment = TextAnchor.UpperCenter;
             w.list = listRt;
 
+            var view = ShopCard(listRt, CardW, CardH);
+            w.entryTemplate = view;
+
+            var empty = UIB.Small10("Empty", c, "판매 목록이 비어 있습니다 (ShopData)", TextAlignmentOptions.Center, UIB.Dim);
+            empty.rectTransform.Place(0.5f, 1, 0, -100, innerW, 24);
+            w.emptyText = empty;
+
+            // ── 내 가방 줄 (1~4) ──
+            const float BagH = 44f;
+            var bag = UIB.Solid("Bag", c, new Color(0.01f, 0.02f, 0.06f, 0.75f));
+            bag.rectTransform.Place(0, 0, Pad, 22, innerW, BagH);
+            var bagBar = BagRow(bag.transform);
+            w.bagBar = bagBar;
+            var msg = UIB.Small10("Message", bag.transform, "", TextAlignmentOptions.Right);
+            msg.rectTransform.Place(1, 0.5f, -10, 0, 200, 11);
+            w.messageText = msg;
+
+            var hint = UIB.Small10("Hint", c, "[←→] 고르기   [Enter]/구매 버튼 1개 구매   [ESC] 닫기   · 가방 = 화면 아래 1~4 칸", TextAlignmentOptions.Left, UIB.Dim);
+            hint.rectTransform.Place(0, 0, Pad, 7, innerW, 11);
+        }
+
+        /// <summary>판매 카드 한 장 (NPC 상점 · 상태창 아이템 탭 공용). 비활성 템플릿으로 쓴다</summary>
+        static ShopEntryView ShopCard(RectTransform listRt, float CardW, float CardH)
+        {
             var card = UIB.Img("CardTemplate", listRt, UIB.Px("Panels/Blue/GridPanel") ?? UIB.Px("Panels/Blue/GridPanelIndent") ?? UIB.Fallback, null, true);
             card.type = Image.Type.Sliced;
             var view = card.gameObject.AddComponent<ShopEntryView>();
@@ -1317,19 +1341,16 @@ namespace OZ.UI.EditorTools
             // GridPanel(밝은 하늘색) 위에 곱해 어둡게 → 파란 이름·회색 글씨도 읽히게
             view.normalColor = CardNormal;
             view.selectedColor = CardSelected;
-            w.entryTemplate = view;
+            return view;
+        }
 
-            var empty = UIB.Small10("Empty", c, "판매 목록이 비어 있습니다 (ShopData)", TextAlignmentOptions.Center, UIB.Dim);
-            empty.rectTransform.Place(0.5f, 1, 0, -100, innerW, 24);
-            w.emptyText = empty;
-
-            // ── 내 가방 줄 (1~4) ──
-            const float BagH = 44f, Slot = 36f, SlotGap = 5f;
-            var bag = UIB.Solid("Bag", c, new Color(0.01f, 0.02f, 0.06f, 0.75f));
-            bag.rectTransform.Place(0, 0, Pad, 22, innerW, BagH);
-            var bagLabel = UIB.Body12("Label", bag.transform, "내 가방", TextAlignmentOptions.Left, UIB.Accent);
+        /// <summary>'내 가방' 1~4 칸 줄 (어두운 띠 안에 넣는다). HUD 아이템 칸과 같은 ItemBarView</summary>
+        static ItemBarView BagRow(Transform bagParent)
+        {
+            const float Slot = 36f, SlotGap = 5f;
+            var bagLabel = UIB.Body12("Label", bagParent, "내 가방", TextAlignmentOptions.Left, UIB.Accent);
             bagLabel.rectTransform.Place(0, 0.5f, 8, 0, 50, 14);
-            var bagRow = UIB.Rect("Slots", bag.transform).Place(0, 0.5f, 60, 0, 4 * Slot + 3 * SlotGap, Slot);
+            var bagRow = UIB.Rect("Slots", bagParent).Place(0, 0.5f, 60, 0, 4 * Slot + 3 * SlotGap, Slot);
             var bagBar = bagRow.gameObject.AddComponent<ItemBarView>();
             bagBar.slots = new ItemSlotView[4];
             for (int i = 0; i < 4; i++)
@@ -1354,20 +1375,14 @@ namespace OZ.UI.EditorTools
                 sv.punchTarget = frame.rectTransform;
                 bagBar.slots[i] = sv;
             }
-            w.bagBar = bagBar;
-            var msg = UIB.Small10("Message", bag.transform, "", TextAlignmentOptions.Right);
-            msg.rectTransform.Place(1, 0.5f, -10, 0, 200, 11);
-            w.messageText = msg;
-
-            var hint = UIB.Small10("Hint", c, "[←→] 고르기   [Enter]/구매 버튼 1개 구매   [ESC] 닫기   · 가방 = 화면 아래 1~4 칸", TextAlignmentOptions.Left, UIB.Dim);
-            hint.rectTransform.Place(0, 0, Pad, 7, innerW, 11);
+            return bagBar;
         }
 
-        // ───────────────────────────── 상태창 (v1.0 · 기획서 v0.5 4장) ─────────────────────────────
-        // [상태창] [스탯][퀘스트][상점][스킬][지도]                1,000 포인트
-        // ┌ 탭 내용 (카드 = 시안 B 모양) ───────────────────────────────┐
+        // ───────────────────────────── 상태창 (v1.1 · 4탭) ─────────────────────────────
+        // [상태창] [1 캐릭터][2 퀘스트][3 상점][4 지도]          아이템 800P  성장 1,000P
+        // ┌ 탭 내용 ─────────────────────────────────────────────┐
         // └─────────────────────────────────────────────────────┘
-        //            결과 문구                    [1~5] 탭 · 탭별 조작 · [Tab]/[ESC] 닫기
+        //            결과 문구                    [1~4] 탭 · 탭별 조작 · [Tab]/[ESC] 닫기
         const float StW = 600f, StH = 330f, StPad = 12f;
         // 카드 바탕 (GridPanel 스프라이트에 곱하는 색) — 화면 점검: 원색 하늘색은 파란 글씨가 묻힘
         static readonly Color CardNormal = new Color(0.2f, 0.26f, 0.4f, 1f);
@@ -1381,35 +1396,40 @@ namespace OZ.UI.EditorTools
             var title = UIB.Title15("Title", c, "상태창", TextAlignmentOptions.Left, UIB.Accent);
             title.rectTransform.Place(0, 1, StPad, -9, 70, 18);
 
-            string[] tabNames = { "스탯", "퀘스트", "상점", "스킬", "지도" };
+            // v1.1: 캐릭터(스탯+스킬) · 퀘스트 · 상점(아이템) · 지도
+            string[] tabNames = { "캐릭터", "퀘스트", "상점", "지도" };
+            int tabCount = tabNames.Length;
             w.tabActive = UIB.Px("Panels/Blue/TabTop");
             w.tabInactive = UIB.Px("Panels/Blue/TabInactiveTop");
-            w.tabButtons = new Button[5]; w.tabMarks = new Image[5]; w.tabLabels = new TMP_Text[5];
-            for (int i = 0; i < 5; i++)
+            w.tabButtons = new Button[tabCount]; w.tabMarks = new Image[tabCount]; w.tabLabels = new TMP_Text[tabCount];
+            for (int i = 0; i < tabCount; i++)
             {
                 var tab = UIB.Img("Tab_" + tabNames[i], c, w.tabActive ?? UIB.Fallback, null, true);
                 tab.rectTransform.Place(0, 1, 84 + i * 66, -12, 62, 18);
                 var tb = tab.gameObject.AddComponent<Button>();
                 tb.targetGraphic = tab;
-                var nav = tb.navigation; nav.mode = Navigation.Mode.None; tb.navigation = nav; // 탭은 1~5·클릭으로만
+                var nav = tb.navigation; nav.mode = Navigation.Mode.None; tb.navigation = nav; // 탭은 숫자키·클릭으로만
                 var tl = UIB.Small10("Label", tab.transform, $"{i + 1} {tabNames[i]}", TextAlignmentOptions.Center);
                 tl.rectTransform.Stretch(0, 0, 1, 0);
                 w.tabButtons[i] = tb; w.tabMarks[i] = tab; w.tabLabels[i] = tl;
             }
-            var pts = UIB.Body12("Points", c, "0 포인트", TextAlignmentOptions.Right, UIB.Accent);
-            pts.rectTransform.Place(1, 1, -StPad, -13, 120, 14);
+            // 재화 2종: 지금 탭이 쓰는 쪽이 오른쪽(크게), 다른 쪽이 왼쪽(작게) — StatusWindow가 자리를 바꾼다
+            var pts = UIB.Body12("GrowthPoints", c, "성장 0P", TextAlignmentOptions.Right, UIB.Accent);
+            pts.rectTransform.Place(1, 1, -StPad, -13, 110, 14);
             w.pointsText = pts;
             w.pointsPunch = pts.rectTransform;
+            var ipts = UIB.Small10("ItemPoints", c, "아이템 0P", TextAlignmentOptions.Right, UIB.Dim);
+            ipts.rectTransform.Place(1, 1, -StPad - 112, -13, 96, 14);
+            w.itemPointsText = ipts;
             var line = UIB.Solid("TitleLine", c, new Color(0.25f, 0.75f, 1f, 0.45f));
             line.rectTransform.Place(0, 1, StPad, -32, StInner, 1);
 
             var area = UIB.Rect("Pages", c).Place(0, 1, StPad, -38, StInner, 252);
-            w.pages = new StatusPage[5];
-            w.pages[0] = BuildStatusStats(area);
-            w.pages[1] = BuildStatusQuests(area);
-            w.pages[2] = BuildStatusShop(area);
-            w.pages[3] = BuildStatusSkills(area);
-            w.pages[4] = BuildStatusMap(area);
+            w.pages = new StatusPage[tabCount];
+            w.pages[(int)StatusTab.Character] = BuildStatusCharacter(area);
+            w.pages[(int)StatusTab.Quests] = BuildStatusQuests(area);
+            w.pages[(int)StatusTab.Shop] = BuildStatusItemShop(area);
+            w.pages[(int)StatusTab.Map] = BuildStatusMap(area);
 
             var msg = UIB.Small10("Message", c, "", TextAlignmentOptions.Center);
             msg.rectTransform.Place(0.5f, 0, 0, 22, StInner, 11);
@@ -1418,6 +1438,272 @@ namespace OZ.UI.EditorTools
             hint.rectTransform.Place(0, 0, StPad, 7, StInner, 11);
             hint.textWrappingMode = TextWrappingModes.NoWrap;
             w.hintText = hint;
+        }
+
+        // ── 캐릭터 탭 ──
+        // 계열 [물리][마법]  설명
+        // 스탯 4줄 (+)   │ 물리 기술 (+)  │ 마법 기술 (+)
+        //                │ [Q] [E] [R] 장착
+        const float GRowH = 46f, GRowGap = 4f, MaxPips = 8;
+
+        /// <summary>
+        /// 한 줄 카드 (아이콘 없음): 1줄 제목 · 오른쪽 단계 글자(2/5) / 2줄 단계 칸 / 3줄 설명 · 오른쪽 아래 [+] 버튼.
+        /// 단계 칸은 MaxPips개까지 — 더 많으면 GrowthCardView가 칸을 숨기고 글자만 보인다 (단계 수는 데이터로 늘림)
+        /// </summary>
+        static GrowthCardView GrowthRow(Transform parent, string name, Vector2 size, int pipCount, float actionW = 58f)
+        {
+            var card = UIB.Img(name, parent, UIB.Px("Panels/Blue/GridPanel") ?? UIB.Px("Panels/Blue/GridPanelIndent") ?? UIB.Fallback, null, true);
+            card.type = Image.Type.Sliced;
+            card.rectTransform.sizeDelta = size;
+            var v = card.gameObject.AddComponent<GrowthCardView>();
+            v.background = card;
+            v.normalColor = CardNormal;
+            v.selectedColor = CardSelected;
+            v.group = card.gameObject.AddComponent<CanvasGroup>();
+            var btn = card.gameObject.AddComponent<Button>();
+            btn.targetGraphic = card;
+            btn.transition = Selectable.Transition.None;
+            var mark = UIB.Img("SelectedMark", card.transform, UIB.Px("Grid/Blue/SelectorThin_Focus") ?? UIB.Px("Grid/Blue/SelectorA") ?? UIB.White);
+            mark.rectTransform.Stretch(-2, -2, -2, -2);
+            mark.enabled = false;
+            v.selectedMark = mark;
+            var acc = UIB.Solid("Accent", card.transform, Color.white);
+            acc.rectTransform.Place(0, 0.5f, 2, 0, 2, size.y - 8);
+            v.accent = acc;
+
+            var t = UIB.Body12("Title", card.transform, "", TextAlignmentOptions.Left);
+            t.rectTransform.Place(0, 1, 7, -3, size.x - 50, 14);
+            t.textWrappingMode = TextWrappingModes.NoWrap; t.overflowMode = TextOverflowModes.Ellipsis;
+            v.titleText = t;
+            var pt = UIB.Small10("Rank", card.transform, "", TextAlignmentOptions.Right, UIB.Dim);
+            pt.rectTransform.Place(1, 1, -6, -4, 40, 11);
+            v.pipText = pt;
+            v.pips = new Image[pipCount];
+            for (int k = 0; k < pipCount; k++)
+            {
+                var back = UIB.Solid("PipBack_" + (k + 1), card.transform, new Color(0f, 0f, 0f, 0.55f));
+                back.rectTransform.Place(0, 1, 7 + k * 10, -19, 8, 7);
+                var pip = UIB.Solid("Pip", back.transform, Color.white);
+                pip.rectTransform.Stretch(1, 1, 1, 1);
+                v.pips[k] = pip;
+            }
+            var sub = UIB.Small10("Sub", card.transform, "", TextAlignmentOptions.Left, UIB.Dim);
+            sub.rectTransform.Place(0, 1, 7, -30, size.x - actionW - 14, 11);
+            sub.textWrappingMode = TextWrappingModes.NoWrap; sub.overflowMode = TextOverflowModes.Ellipsis;
+            v.subText = sub;
+            var act = UIB.Button("Action", card.transform, "", out var actLabel);
+            ((RectTransform)act.transform).Place(1, 0, -4, 4, actionW, 18);
+            v.actionButton = act;
+            v.actionLabel = actLabel;
+            return v;
+        }
+
+        static StatusPage BuildStatusCharacter(Transform area)
+        {
+            var p = StatusPageRoot<StatusCharacterPage>(area, "Page_Character");
+            // 계열
+            var lab = UIB.Small10("PathLabel", p.transform, "계열", TextAlignmentOptions.Left, UIB.Accent);
+            lab.rectTransform.Place(0, 1, 0, -3, 28, 11);
+            Button PathButton(string n, string text, float x, out Image mark)
+            {
+                var b = UIB.Button(n, p.transform, text);
+                ((RectTransform)b.transform).Place(0, 1, x, 0, 56, 17);
+                mark = UIB.Img("Mark", b.transform, UIB.Px("Grid/Blue/SelectorThin_Focus") ?? UIB.White);
+                mark.rectTransform.Stretch(-2, -2, -2, -2);
+                mark.enabled = false;
+                return b;
+            }
+            p.physicalButton = PathButton("Path_Physical", "물리", 28, out p.physicalMark);
+            p.magicButton = PathButton("Path_Magic", "마법", 90, out p.magicMark);
+            var pt = UIB.Small10("PathText", p.transform, "", TextAlignmentOptions.Left, UIB.Dim);
+            pt.rectTransform.Place(0, 1, 154, -3, StInner - 154, 11);
+            pt.textWrappingMode = TextWrappingModes.NoWrap; pt.overflowMode = TextOverflowModes.Ellipsis;
+            p.pathText = pt;
+
+            // 스탯 4줄
+            const float StatW = 186f, ColW = 189f, Col1X = 193f, Col2X = 387f, ListY = -36f;
+            var sh = UIB.Small10("StatsHeader", p.transform, "스탯  [+] 투자", TextAlignmentOptions.Left, UIB.Dim);
+            sh.rectTransform.Place(0, 1, 0, -22, StatW, 11);
+            p.statRows = new GrowthCardView[4];
+            for (int i = 0; i < 4; i++)
+            {
+                var row = GrowthRow(p.transform, "Stat_" + (StatKind)i, new Vector2(StatW, GRowH), (int)MaxPips);
+                ((RectTransform)row.transform).Place(0, 1, 0, ListY - i * (GRowH + GRowGap), StatW, GRowH);
+                p.statRows[i] = row;
+            }
+
+            // 물리 · 마법 기술 열
+            RectTransform SkillCol(string n, string header, float x, Color color, out TextMeshProUGUI head)
+            {
+                head = UIB.Small10(n + "Header", p.transform, header, TextAlignmentOptions.Left, color);
+                head.rectTransform.Place(0, 1, x, -22, ColW, 11);
+                var list = UIB.Rect(n, p.transform).Place(0, 1, x, ListY, ColW, 3 * GRowH + 2 * GRowGap);
+                var vlg = list.gameObject.AddComponent<VerticalLayoutGroup>();
+                vlg.spacing = GRowGap;
+                vlg.childControlWidth = true; vlg.childForceExpandWidth = true;
+                vlg.childControlHeight = false; vlg.childForceExpandHeight = false;
+                return list;
+            }
+            p.physicalList = SkillCol("PhysicalSkills", "물리 기술  [+] 단계마다 기능 추가", Col1X, new Color(1f, 0.62f, 0.3f), out var ph);
+            p.physicalHeader = ph;
+            p.magicList = SkillCol("MagicSkills", "마법 기술  [+] 단계마다 기능 추가", Col2X, new Color(0.55f, 0.72f, 1f), out var mh);
+            p.magicHeader = mh;
+            p.skillTemplate = GrowthRow(p.physicalList, "SkillTemplate", new Vector2(ColW, GRowH), (int)MaxPips);
+
+            // Q/E/R 장착
+            float slotY = ListY - 3 * (GRowH + GRowGap) - 4;
+            var cap = UIB.Small10("LoadoutHeader", p.transform, "장착 — 기술 고르고 Q / E / R · X 빼기", TextAlignmentOptions.Left, UIB.Dim);
+            cap.rectTransform.Place(0, 1, Col1X, slotY, 2 * ColW + 5, 11);
+            float slotW = (2 * ColW + 5 - 2 * 4) / 3f;
+            p.slotCards = new GrowthCardView[3];
+            for (int i = 0; i < 3; i++)
+            {
+                var sc = GrowthRow(p.transform, "Slot_" + (SkillSlot)i, new Vector2(slotW, 40), 0, 34f);
+                ((RectTransform)sc.transform).Place(0, 1, Col1X + i * (slotW + 4), slotY - 14, slotW, 40);
+                ((RectTransform)sc.subText.transform).Place(0, 1, 7, -22, slotW - 46, 11);
+                p.slotCards[i] = sc;
+            }
+            p.emptyText = StatusEmpty(p.transform, "기술 소스가 연결되지 않았습니다 (ISkillLoadoutSource)", -100);
+            return p;
+        }
+
+        // ── 상점 탭 (아이템) ──
+        // 판매 카드 3열              │ 내 아이템 (가진 것 한눈에)
+        //                            │ 고른 아이템 설명 · 구매하면 n개
+        static StatusPage BuildStatusItemShop(Transform area)
+        {
+            var p = StatusPageRoot<StatusItemPage>(area, "Page_Shop");
+            const float CardW = 116f, CardH = 64f, Gap = 8f, LeftW = 3 * CardW + 2 * Gap, PanelX = LeftW + 8f, PanelW = 576f - (LeftW + 8f);
+            var sec = UIB.Small10("Section", p.transform, "판매 — 아이템 포인트로 구매 · 장비는 1회 구매", TextAlignmentOptions.Left, UIB.Dim);
+            sec.rectTransform.Place(0, 1, 0, -2, LeftW, 11);
+            var listRt = UIB.Rect("Cards", p.transform).Place(0, 1, 0, -16, LeftW, 3 * CardH + 2 * 6);
+            var grid = listRt.gameObject.AddComponent<GridLayoutGroup>();
+            grid.cellSize = new Vector2(CardW, CardH);
+            grid.spacing = new Vector2(Gap, 6);
+            grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            grid.constraintCount = 3;
+            grid.childAlignment = TextAnchor.UpperLeft;
+            p.list = listRt;
+            p.columns = 3;
+            p.entryTemplate = ShopCardCompact(listRt, CardW, CardH);
+            p.emptyText = StatusEmpty(p.transform, "", -90);
+
+            // 내 아이템
+            var panel = UIB.Panel("Owned", p.transform, "Panels/Blue/Panel");
+            panel.rectTransform.Place(0, 1, PanelX, 0, PanelW, 250);
+            var oh = UIB.Body12("Title", panel.transform, "내 아이템", TextAlignmentOptions.Left, UIB.Accent);
+            oh.rectTransform.Place(0, 1, 8, -5, 90, 14);
+            var os = UIB.Small10("Sub", panel.transform, "최대 5개 · 장비 1회", TextAlignmentOptions.Right, UIB.Dim);
+            os.rectTransform.Place(1, 1, -8, -7, 110, 11);
+            os.textWrappingMode = TextWrappingModes.NoWrap;
+            var ol = UIB.Rect("List", panel.transform).Place(0, 1, 6, -24, PanelW - 12, 140);
+            var vlg = ol.gameObject.AddComponent<VerticalLayoutGroup>();
+            vlg.spacing = 3;
+            vlg.childControlWidth = true; vlg.childForceExpandWidth = true;
+            vlg.childControlHeight = false; vlg.childForceExpandHeight = false;
+            p.ownedList = ol;
+            p.ownedTemplate = OwnedRow(ol, PanelW - 12);
+
+            var line = UIB.Solid("Line", panel.transform, new Color(0.25f, 0.75f, 1f, 0.35f));
+            line.rectTransform.Place(0, 1, 8, -168, PanelW - 16, 1);
+            var dn = UIB.Body12("DetailName", panel.transform, "", TextAlignmentOptions.Left);
+            dn.rectTransform.Place(0, 1, 8, -173, PanelW - 16, 14);
+            p.detailName = dn;
+            var dd = UIB.Small10("DetailDesc", panel.transform, "", TextAlignmentOptions.TopLeft, UIB.Dim);
+            dd.rectTransform.Place(0, 1, 8, -189, PanelW - 16, 34);
+            p.detailDesc = dd;
+            var dx = UIB.Small10("DetailNext", panel.transform, "", TextAlignmentOptions.Left, new Color(0.6f, 1f, 0.7f));
+            dx.rectTransform.Place(0, 1, 8, -228, PanelW - 16, 11);
+            p.detailNext = dx;
+            p.shop = OZSampleData.EnsureShop(); // 기본 목록 (게임에서는 GameUI.Status.SetItemShop으로 교체 가능)
+            return p;
+        }
+
+        /// <summary>상점 탭 작은 판매 카드: 아이콘 · 이름 · 효과 / 보유 칸 · [가격] 버튼</summary>
+        static ShopEntryView ShopCardCompact(RectTransform listRt, float w, float h)
+        {
+            var card = UIB.Img("CardTemplate", listRt, UIB.Px("Panels/Blue/GridPanel") ?? UIB.Px("Panels/Blue/GridPanelIndent") ?? UIB.Fallback, null, true);
+            card.type = Image.Type.Sliced;
+            var view = card.gameObject.AddComponent<ShopEntryView>();
+            view.background = card;
+            view.normalColor = CardNormal;
+            view.selectedColor = CardSelected;
+            var cardBtn = card.gameObject.AddComponent<Button>();
+            cardBtn.targetGraphic = card;
+            cardBtn.transition = Selectable.Transition.None;
+            var mark = UIB.Img("SelectedMark", card.transform, UIB.Px("Grid/Blue/SelectorThin_Focus") ?? UIB.Px("Grid/Blue/SelectorA") ?? UIB.White);
+            mark.rectTransform.Stretch(-2, -2, -2, -2);
+            mark.enabled = false;
+            view.selectedMark = mark;
+            var acc = UIB.Solid("Accent", card.transform, Color.white);
+            acc.rectTransform.Place(0.5f, 1, 0, -3, w - 10, 2);
+            view.accent = acc;
+            var well = UIB.Img("IconWell", card.transform, UIB.Px("Panels/Blue/GridPanelIndent") ?? UIB.Fallback);
+            well.type = Image.Type.Sliced;
+            well.rectTransform.Place(0, 1, 5, -8, 30, 30);
+            var icon = UIB.Img("Icon", well.transform, null);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 24, 24);
+            icon.preserveAspect = true;
+            view.icon = icon;
+            var key = UIB.Small10("Key", well.transform, "", TextAlignmentOptions.TopLeft, UIB.Accent);
+            key.rectTransform.Place(0, 1, 1, 0, 10, 10);
+            view.keyText = key;
+            var name = UIB.Body12("Name", card.transform, "", TextAlignmentOptions.Left);
+            name.rectTransform.Place(0, 1, 39, -7, w - 43, 14);
+            name.textWrappingMode = TextWrappingModes.NoWrap; name.overflowMode = TextOverflowModes.Ellipsis;
+            view.nameText = name;
+            var eff = UIB.Small10("Effect", card.transform, "", TextAlignmentOptions.TopLeft, new Color(0.6f, 1f, 0.7f));
+            eff.rectTransform.Place(0, 1, 39, -22, w - 43, 20);
+            eff.overflowMode = TextOverflowModes.Ellipsis;
+            view.effectText = eff;
+            const int Pips = 5;
+            view.pips = new Image[Pips];
+            for (int k = 0; k < Pips; k++)
+            {
+                var back = UIB.Solid("PipBack_" + (k + 1), card.transform, new Color(0f, 0f, 0f, 0.55f));
+                back.rectTransform.Place(0, 0, 6 + k * 8, 8, 6, 6);
+                var pip = UIB.Solid("Pip", back.transform, Color.white);
+                pip.rectTransform.Stretch(1, 1, 1, 1);
+                view.pips[k] = pip;
+            }
+            var owned = UIB.Small10("Owned", card.transform, "", TextAlignmentOptions.Left);
+            owned.rectTransform.Place(0, 0, 6, 5, 40, 11);
+            view.ownedText = owned;
+            var buy = UIB.Button("Buy", card.transform, "", out var buyLabel);
+            ((RectTransform)buy.transform).Place(1, 0, -4, 4, 62, 17);
+            view.buyButton = buy;
+            view.buyLabel = buyLabel;
+            return view;
+        }
+
+        /// <summary>'내 아이템' 한 줄: [키] 아이콘 이름 ▮▮▯ 4/5 (장비는 보유 ✓)</summary>
+        static OwnedItemRow OwnedRow(Transform parent, float w)
+        {
+            var bg = UIB.Solid("RowTemplate", parent, new Color(0.12f, 0.16f, 0.28f, 1f));
+            bg.rectTransform.sizeDelta = new Vector2(w, 19);
+            var r = bg.gameObject.AddComponent<OwnedItemRow>();
+            r.background = bg;
+            var key = UIB.Small10("Key", bg.transform, "", TextAlignmentOptions.Center, UIB.Accent);
+            key.rectTransform.Place(0, 0.5f, 2, 0, 10, 11);
+            r.keyText = key;
+            var icon = UIB.Img("Icon", bg.transform, null);
+            icon.rectTransform.Place(0, 0.5f, 14, 0, 16, 16);
+            icon.preserveAspect = true;
+            r.icon = icon;
+            var name = UIB.Small10("Name", bg.transform, "", TextAlignmentOptions.Left);
+            name.rectTransform.Place(0, 0.5f, 33, 0, w - 33 - 84, 11);
+            name.textWrappingMode = TextWrappingModes.NoWrap; name.overflowMode = TextOverflowModes.Ellipsis;
+            r.nameText = name;
+            var back = UIB.Solid("BarBack", bg.transform, new Color(0f, 0f, 0f, 0.55f));
+            back.rectTransform.Place(1, 0.5f, -40, 0, 40, 5);
+            r.barBack = back;
+            var fill = UIB.Img("Fill", back.transform, UIB.White).Filled(Image.FillMethod.Horizontal);
+            fill.rectTransform.Stretch();
+            r.barFill = fill;
+            var cnt = UIB.Small10("Count", bg.transform, "", TextAlignmentOptions.Right);
+            cnt.rectTransform.Place(1, 0.5f, -4, 0, 34, 11);
+            r.countText = cnt;
+            return r;
         }
 
         static T StatusPageRoot<T>(Transform area, string name) where T : StatusPage
@@ -1513,22 +1799,6 @@ namespace OZ.UI.EditorTools
             return g;
         }
 
-        static StatusPage BuildStatusStats(Transform area)
-        {
-            var p = StatusPageRoot<StatusStatsPage>(area, "Page_Stats");
-            var cap = UIB.Small10("Caption", p.transform, "지금 능력과 구매로 늘어난 효과 — 구매는 [3] 상점 탭", TextAlignmentOptions.Left, UIB.Dim);
-            cap.rectTransform.Place(0, 1, 0, -2, StInner, 11);
-            var grid = UIB.Rect("Grid", p.transform).Place(0, 1, 0, -18, StInner, 160);
-            CardGrid(grid, new Vector2(285, 74), 2);
-            p.grid = grid;
-            p.cardTemplate = GrowthCard(grid, "CardTemplate", new Vector2(285, 74), 5);
-            var sum = UIB.Body12("Summary", p.transform, "", TextAlignmentOptions.Left);
-            sum.rectTransform.Place(0, 1, 0, -186, StInner, 14);
-            p.summaryText = sum;
-            p.emptyText = StatusEmpty(p.transform, "스탯 소스가 연결되지 않았습니다 (IStatSource)", -80);
-            return p;
-        }
-
         static StatusPage BuildStatusQuests(Transform area)
         {
             var p = StatusPageRoot<StatusQuestPage>(area, "Page_Quests");
@@ -1563,53 +1833,6 @@ namespace OZ.UI.EditorTools
             q.rewardText = rew;
             p.rowTemplate = q;
             p.emptyText = StatusEmpty(p.transform, "진행 중인 퀘스트가 없습니다", -60);
-            return p;
-        }
-
-        static StatusPage BuildStatusShop(Transform area)
-        {
-            var p = StatusPageRoot<StatusShopPage>(area, "Page_Shop");
-            string[] names = { "기술  [Q]", "스탯  [E]" };
-            for (int i = 0; i < 2; i++)
-            {
-                var b = UIB.Button(i == 0 ? "SubTab_Skills" : "SubTab_Stats", p.transform, names[i]);
-                ((RectTransform)b.transform).Place(0, 1, i * 86, 0, 80, 20);
-                var nav = b.navigation; nav.mode = Navigation.Mode.None; b.navigation = nav;
-                var mark = UIB.Img("Mark", b.transform, UIB.Px("Grid/Blue/SelectorThin_Focus") ?? UIB.White);
-                mark.rectTransform.Stretch(-2, -2, -2, -2);
-                if (i == 0) { p.skillsTab = b; p.skillsMark = mark; } else { p.statsTab = b; p.statsMark = mark; }
-            }
-            var sec = UIB.Small10("Section", p.transform, "", TextAlignmentOptions.Left, UIB.Dim);
-            sec.rectTransform.Place(0, 1, 180, -5, StInner - 180, 11);
-            p.sectionText = sec;
-            var grid = UIB.Rect("Grid", p.transform).Place(0, 1, 0, -28, StInner, 160);
-            p.layout = CardGrid(grid, new Vector2(188, 74), 3);
-            p.grid = grid;
-            p.cardTemplate = GrowthCard(grid, "CardTemplate", new Vector2(188, 74), 5);
-            p.emptyText = StatusEmpty(p.transform, "", -90);
-            return p;
-        }
-
-        static StatusPage BuildStatusSkills(Transform area)
-        {
-            var p = StatusPageRoot<StatusSkillPage>(area, "Page_Skills");
-            var cap = UIB.Small10("Caption", p.transform, "장착 (Q / E / R)", TextAlignmentOptions.Left, UIB.Dim);
-            cap.rectTransform.Place(0, 1, 0, -2, 200, 11);
-            p.slotCards = new GrowthCardView[3];
-            for (int i = 0; i < 3; i++)
-            {
-                var sc = GrowthCard(p.transform, "Slot_" + (SkillSlot)i, new Vector2(188, 60), 0);
-                ((RectTransform)sc.transform).Place(0, 1, i * 194, -16, 188, 60);
-                sc.detailText.rectTransform.StretchH(1, -38, 11, 52, 82); // 오른쪽 아래 [빼기] 버튼과 안 겹치게
-                p.slotCards[i] = sc;
-            }
-            var cap2 = UIB.Small10("Caption2", p.transform, "보유 기술 — 고르고 Q / E / R", TextAlignmentOptions.Left, UIB.Dim);
-            cap2.rectTransform.Place(0, 1, 0, -82, 300, 11);
-            var grid = UIB.Rect("Grid", p.transform).Place(0, 1, 0, -96, StInner, 154);
-            CardGrid(grid, new Vector2(188, 74), 3);
-            p.grid = grid;
-            p.cardTemplate = GrowthCard(grid, "CardTemplate", new Vector2(188, 74), 0);
-            p.emptyText = StatusEmpty(p.transform, "보유한 기술이 없습니다 — [3] 상점 탭에서 구매", -140);
             return p;
         }
 

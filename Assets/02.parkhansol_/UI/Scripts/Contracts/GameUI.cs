@@ -19,7 +19,7 @@ namespace OZ.UI.Contracts
     ///   GameUI.Indicators.Track(gate, IndicatorKind.Gate); // 화면 밖 목표 화살표 (v0.7)
     ///   GameUI.Prompt.Show(door, "열기");                  // "[F] 열기" (v0.7, InteractPromptLink)
     ///   GameUI.Shop.Open(shopData);                        // 상점 창 (v1.0, 보통은 ShopkeeperLink가 부름)
-    ///   GameUI.Status.Open(StatusTab.Shop);                // 상태창 (v1.0 기획서 v0.5, Tab)
+    ///   GameUI.Status.Open(StatusTab.Character);           // 상태창 (v1.1 캐릭터·퀘스트·상점·지도, Tab)
     ///
     /// UI가 씬에 없으면 Null 구현이 대신 받아서 아무 일도 하지 않는다 (에러 없음).
     /// </summary>
