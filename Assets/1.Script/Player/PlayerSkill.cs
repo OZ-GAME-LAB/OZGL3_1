@@ -11,6 +11,7 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     public const int SlotCount = 3;
 
     private PlayerStats _stats;
+    private PlayerBuffs _buffs; // 없으면 공격 버프 없이 동작
 
     private readonly Dictionary<string, PlayerSkillBase> _allSkills = new Dictionary<string, PlayerSkillBase>();
     // UI는 번호로 읽는데 Dictionary는 순서 보장이 안 됨 -> 등록 순서(하이어라키 순서)를 리스트로 고정
@@ -32,6 +33,7 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     private void Awake()
     {
         _stats = GetComponent<PlayerStats>();
+        _buffs = GetComponent<PlayerBuffs>();
         RegisterSkills();
     }
 
@@ -218,6 +220,13 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     {
         float power = skill.Data.DamageType == SkillDamageType.Physical ? _stats.PhysicalAttack : _stats.MagicAttack;
         return Mathf.Round(power * skill.Data.DamageCoefficient);
+    }
+
+    // 실제로 때릴 때 쓰는 피해 = 스탯 피해 x 버프 배율
+    public float GetFinalDamage(PlayerSkillBase skill)
+    {
+        float multiplier = _buffs != null ? _buffs.AttackMultiplier : 1f;
+        return Mathf.Round(GetDamage(skill) * multiplier);
     }
 
     public SkillOffer GetSkill(int index)

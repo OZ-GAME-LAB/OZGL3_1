@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private Dictionary<PlayerState, IPlayerState> _playerStates;
     private IPlayerAttack _attack; // 공격 확장 지점. 없으면 모션만 재생.
     private PlayerSkill _skills; //없으면 스킬 입력 무시 -> 스킬 없는 테스트 씬에서도 플레이어가 그대로 동작
+    private PlayerBuffs _buffs;  //없으면 신속 버프 없이 동작
 
     private float _facingX = 1f;
 
@@ -90,7 +91,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // 수평 이동 속도에만 배율 적용 (대시는 회피 거리가 바뀌지 않도록 제외)
-    public float MoveSpeedMultiplier { get { return 1f + _moveSpeedBonus; } }
+    // 민첩 스탯 x 신속 버프
+    public float MoveSpeedMultiplier { get { return (1f + _moveSpeedBonus) * (_buffs != null ? _buffs.MoveSpeedMultiplier : 1f); } }
     public float WalkSpeed { get { return _walkSpeed * MoveSpeedMultiplier * _walkInputMultiplier; } }
     public float JumpSpeed { get { return _jumpSpeed * MoveSpeedMultiplier; } }
     public float LandDuration { get { return _landDuration; } }
@@ -118,6 +120,7 @@ public class PlayerController : MonoBehaviour
 
         _attack = GetComponent<IPlayerAttack>();
         _skills = GetComponent<PlayerSkill>();
+        _buffs = GetComponent<PlayerBuffs>();
         _rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         InitStateDictionary();
     }

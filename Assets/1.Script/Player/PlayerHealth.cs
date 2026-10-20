@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     [SerializeField] private float _respawnInvincibleTime = 0.5f; // 재시작 직후 잠깐 보호
 
     private PlayerController _player;
+    private PlayerBuffs _buffs; // 없으면 방어 버프 없이 동작
     private float _hp;
     private float _bonusMaxHP; // 체력 스탯으로 늘어난 최대 HP (PlayerStats가 설정)
 
@@ -24,6 +25,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     private void Awake()
     {
         _player = GetComponent<PlayerController>();
+        _buffs = GetComponent<PlayerBuffs>();
         _hp = MaxHP;
     }
 
@@ -51,6 +53,11 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
             return;
         }
 
+        // 방어 강화: 받는 피해 x 0.75
+        if (_buffs != null)
+        {
+            damage = Mathf.Round(damage * _buffs.DamageTakenMultiplier);
+        }
 
         SetHP(_hp - damage);
 
