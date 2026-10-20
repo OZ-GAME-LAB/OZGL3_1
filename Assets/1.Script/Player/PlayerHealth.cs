@@ -78,7 +78,8 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     // 스테이지 재시작 시 코어 쪽에서 호출 (플레이어를 SetActive(true) 한 다음에 호출)
     public void ResetHealth()
     {
-        SetHP(MaxHP);
+        _hp = MaxHP;
+        HealthChanged?.Invoke(new HealthChange(0f, _hp, MaxHP));
         _player.Revive();
         _player.SetInvincible(_respawnInvincibleTime); // Revive가 무적을 초기화하므로 그 뒤에 설정
     }

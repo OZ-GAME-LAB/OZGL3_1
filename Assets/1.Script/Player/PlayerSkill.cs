@@ -6,13 +6,15 @@ using UnityEngine;
 // 보유 스킬, Q/E/R 장착, 쿨다운, 피해 계산 담당.
 // 구매(가격, 포인트 차감)는 상점이 담당하고, 여기는 보유 추가 요청만 받는다.
 [RequireComponent(typeof(PlayerStats))]
-public class PlayerSkill : MonoBehaviour
+public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
 {
     public const int SlotCount = 3;
 
     private PlayerStats _stats;
 
     private readonly Dictionary<string, PlayerSkillBase> _allSkills = new Dictionary<string, PlayerSkillBase>();
+    // UI는 번호로 읽는데 Dictionary는 순서 보장이 안 됨 -> 등록 순서(하이어라키 순서)를 리스트로 고정
+    private readonly List<PlayerSkillBase> _skillList = new List<PlayerSkillBase>();
     private readonly HashSet<string> _owned = new HashSet<string>(); // 중복으로 보유 못하도록
     private readonly PlayerSkillBase[] _equipped = new PlayerSkillBase[SlotCount];
 
@@ -24,12 +26,23 @@ public class PlayerSkill : MonoBehaviour
     public event Action<SkillSlot, float> CooldownStarted;             // UI에 알림 -> HUD 쿨다운 게이지
     public event Action<SkillSlot, SkillUseFailReason> SkillUseFailed; // UI에 알림 -> HUD 아이콘 흔들기
 
-    public IEnumerable<PlayerSkillBase> AllSkills { get { return _allSkills.Values; } }
+    public IEnumerable<PlayerSkillBase> AllSkills { get { return _skillList; } }
+    public int SkillCount { get { return _skillList.Count; } } // UI 전용
 
     private void Awake()
     {
         _stats = GetComponent<PlayerStats>();
         RegisterSkills();
+    }
+
+    private void OnEnable()
+    {
+        GameUI.Bind(this);
+    }
+
+    private void OnDisable()
+    {
+        GameUI.Unbind(this);
     }
 
     private void RegisterSkills()
@@ -47,6 +60,7 @@ public class PlayerSkill : MonoBehaviour
                 continue;
             }
             _allSkills.Add(skill.Data.Id, skill);
+            _skillList.Add(skill);
         }
     }
 
@@ -141,6 +155,13 @@ public class PlayerSkill : MonoBehaviour
         return skill == null ? 0f : GetCooldownRemaining(skill.Data.Id);
     }
 
+    //쿨다운 전체 시간. HUD 원형 게이지가 "남은 시간 / 전체 시간" 비율로 그림
+    public float GetCooldownDuration(SkillSlot slot)
+    {
+        PlayerSkillBase skill = GetEquipped(slot);
+        return skill == null ? 0f : skill.Data.Cooldown;
+    }
+
     // - 사용 -
     public bool CanUse(SkillSlot slot, out SkillUseFailReason reason)
     {
@@ -171,7 +192,6 @@ public class PlayerSkill : MonoBehaviour
     public void NotifyUseFailed(SkillSlot slot, SkillUseFailReason reason)
     {
         SkillUseFailed?.Invoke(slot, reason);
-        Debug.Log($"[PlayerSkill] {slot} 사용 실패: {reason}"); // UI 연동 전 확인용. 연동 후 삭제 가능
     }
 
     // PlayerState_Skill에서 시전 시작 시 호출
@@ -195,12 +215,50 @@ public class PlayerSkill : MonoBehaviour
         return Mathf.Round(power * skill.Data.DamageCoefficient);
     }
 
+    public SkillOffer GetSkill(int index)
+    {
+        if (index < 0 || index >= _skillList.Count)
+        {
+            return default; // IsValid == false → UI가 빈 칸으로 처리
+        }
+
+        PlayerSkillData data = _skillList[index].Data;
+        return new SkillOffer
+        {
+            id = data.Id,
+            displayName = data.DisplayName,
+            description = data.Description,
+            icon = data.Icon, // 없으면 UI가 이름 첫 글자로 대신 표시
+            // SkillDamageType과 SkillDamageKind는 순서(Physical=0, Magic=1)가 같음
+            damageKind = (SkillDamageKind)(int)data.DamageType,
+            price = data.Price,
+            coefficient = data.DamageCoefficient,
+            cooldown = data.Cooldown,
+        };
+    }
+
+    string ISkillLoadoutSource.GetEquipped(SkillSlot slot)
+    {
+        PlayerSkillBase skill = GetEquipped(slot);
+        return skill == null ? null : skill.Data.Id;
+    }
+
+    int ISkillLoadoutSource.GetDamage(string skillId)
+    {
+        if (!_allSkills.TryGetValue(skillId, out PlayerSkillBase skill))
+        {
+            return 0;
+        }
+        return Mathf.RoundToInt(GetDamage(skill));
+    }
+
+
     // 상점이 생기기 전 테스트용: 전체 보유 + 앞에서부터 Q/E/R 장착
     [ContextMenu("Test/전체 보유 + 장착")]
     private void TestOwnAll()
     {
         int slot = 0;
-        foreach (PlayerSkillBase skill in _allSkills.Values)
+        foreach (PlayerSkillBase skill in _skillList)
         {
             TryAddOwned(skill.Data.Id);
             if (slot < SlotCount)
@@ -227,7 +285,7 @@ public class PlayerSkill : MonoBehaviour
     private void TestEquipByType(SkillDamageType type)
     {
         int slot = 0;
-        foreach (PlayerSkillBase skill in _allSkills.Values)
+        foreach (PlayerSkillBase skill in _skillList)
         {
             if (skill.Data.DamageType != type)
             {
