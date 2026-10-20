@@ -1,11 +1,14 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using System.Collections.Generic;
 using OZ.UI.Contracts;
 
 // 생성·의존성 연결·종료를 담당하며 진행 상태는 Stage에서 조회합니다.
 public class StageManager : BaseManager
 {
-    [SerializeField] private GameObject stagePrefab;
+    [SerializeField] private List<GameObject> stagePrefabs = new List<GameObject>();
+    // 기존 씬의 단일 프리팹 설정은 초기화 시 목록으로 옮깁니다.
+    [SerializeField, HideInInspector] private GameObject stagePrefab;
     [SerializeField] private Transform stageParent;
     [SerializeField, Min(1)] private int stageNumber = 1;
     [SerializeField] private HunterRank clearRank = HunterRank.E;
@@ -23,6 +26,8 @@ public class StageManager : BaseManager
         if (gateManager == null)
             throw new System.InvalidOperationException("GameManager에서 GateManager를 주입해야 합니다.");
         EndStage();
+        if (stagePrefabs.Count == 0 && stagePrefab != null)
+            stagePrefabs.Add(stagePrefab);
         return UniTask.CompletedTask;
     }
 
@@ -34,11 +39,54 @@ public class StageManager : BaseManager
         return InitializeAsync();
     }
 
-    public void StartStage() => StartStage(stagePrefab);
+    public int StageCount => stagePrefabs.Count;
+
+    // 목록의 0번 항목이 1스테이지입니다. 진행 대상 선택은 GameManager가 담당합니다.
+    public bool HasStage(int number) => number >= 1 && number <= stagePrefabs.Count;
+
+    public bool CanSetStage(int number)
+    {
+        if (!HasStage(number) || gateManager == null) return false;
+        GameObject prefab = stagePrefabs[number - 1];
+        return prefab != null && prefab.GetComponent<Stage>() != null;
+    }
+
+    public bool SetStage(int number)
+    {
+        if (!CanSetStage(number))
+        {
+            Debug.LogError($"{number}스테이지의 프리팹과 매니저 설정을 확인하세요.", this);
+            return false;
+        }
+        int previousNumber = stageNumber;
+        try
+        {
+            LoadStage(stagePrefabs[number - 1]);
+            if (IsStageRunning)
+            {
+                stageNumber = number;
+                return true;
+            }
+            stageNumber = previousNumber;
+            return false;
+        }
+        catch
+        {
+            stageNumber = previousNumber;
+            throw;
+        }
+    }
+
+    public void StartStage() => SetStage(stageNumber);
 
     public void StartStage(GameObject prefab)
     {
         if (IsStageRunning) return;
+        LoadStage(prefab);
+    }
+
+    private void LoadStage(GameObject prefab)
+    {
         if (prefab == null || prefab.GetComponent<Stage>() == null)
         {
             Debug.LogError("Stage 컴포넌트가 있는 스테이지 프리팹을 지정하세요.", this);

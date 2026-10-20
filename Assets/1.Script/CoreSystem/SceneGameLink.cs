@@ -12,37 +12,83 @@ public class SceneGameLink : MonoBehaviour
 
     private Vector3 spawnPosition;
     private Quaternion spawnRotation;
+    private bool initialized;
 
-    private void OnEnable() => UIState.GameplayInputBlockedChanged += SetInputBlocked;
+    private void OnEnable()
+    {
+        UIState.GameplayInputBlockedChanged += SetInputBlocked;
+        if (gameManager == null)
+        {
+            Debug.LogError("SceneGameLink에 GameManager를 연결하세요.", this);
+            return;
+        }
+        gameManager.InitializationCompleted += Initialize;
+        gameManager.StageChanging += SuspendPlayer;
+        gameManager.StageStarted += RestorePlayer;
+        gameManager.GameCompleted += ShowDemoEnd;
+        if (gameManager.IsReady) Initialize();
+        if (initialized) SetInputBlocked(UIState.IsGameplayInputBlocked);
+    }
 
     private void OnDisable()
     {
         UIState.GameplayInputBlockedChanged -= SetInputBlocked;
+        if (gameManager != null)
+        {
+            gameManager.InitializationCompleted -= Initialize;
+            gameManager.StageChanging -= SuspendPlayer;
+            gameManager.StageStarted -= RestorePlayer;
+            gameManager.GameCompleted -= ShowDemoEnd;
+        }
         if (input != null) input.enabled = false;
     }
 
-    private void Start()
+    private void Initialize()
     {
+        if (initialized) return;
         spawnPosition = player.transform.position;
         spawnRotation = player.transform.rotation;
+        initialized = true;
         ReturnToTitle();
     }
 
     // UI Links의 UIRequestEvents에서 시작·재도전·타이틀 요청을 연결합니다.
-    public void SelectClass() => GameUI.Screens.ShowClassSelect(null);
+    public void SelectClass()
+    {
+        if (!initialized) return;
+        GameUI.Screens.ShowClassSelect(null);
+    }
 
     public void StartGame(int selectedClass)
     {
+        if (!initialized) return;
         playerUI.SetClass((PlayerClass)selectedClass);
-        RestartStage();
+        NewGame();
+    }
+
+    public void NewGame()
+    {
+        if (initialized) gameManager.NewGame();
     }
 
     public void RestartStage()
     {
+        if (initialized) gameManager.RestartStage();
+    }
+
+    public void NextStage()
+    {
+        if (initialized) gameManager.NextStage();
+    }
+
+    private void SuspendPlayer()
+    {
         player.gameObject.SetActive(false);
         input.enabled = false;
-        if (!gameManager.RestartStage()) return;
+    }
 
+    private void RestorePlayer()
+    {
         GameUI.Screens.CloseAll();
         GameUI.HUD.Visible = true;
         player.gameObject.SetActive(true);
@@ -59,8 +105,16 @@ public class SceneGameLink : MonoBehaviour
         // 봉쇄가 확정되는 곳에서 gateUI.GateSealed()를 호출합니다.
     }
 
+    private void ShowDemoEnd()
+    {
+        GameUI.Screens.CloseAll();
+        GameUI.HUD.Visible = false;
+        GameUI.Screens.ShowDemoEnd();
+    }
+
     public void ReturnToTitle()
     {
+        if (!initialized) return;
         player.gameObject.SetActive(false);
         input.enabled = false;
         gameManager.EndStage();
@@ -71,7 +125,7 @@ public class SceneGameLink : MonoBehaviour
 
     private void SetInputBlocked(bool blocked)
     {
-        bool canPlay = player.gameObject.activeInHierarchy && !blocked;
+        bool canPlay = initialized && player.gameObject.activeInHierarchy && !blocked;
         input.enabled = canPlay;
         player.enabled = canPlay;
         if (!canPlay && player.gameObject.activeInHierarchy) player.Stop();
