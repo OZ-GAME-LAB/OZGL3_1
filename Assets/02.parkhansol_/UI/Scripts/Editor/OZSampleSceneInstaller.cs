@@ -44,7 +44,8 @@ GateManager
   풀에서 꺼내고 넣는 건 자동 처리
 
 플레이어
-  PlayerUILink.SetHP(hp, max) / SetExp / SetLevel / SetRank
+  체력: PlayerHealth가 IHealthSource 구현 + GameUI.Bind(this) (피해·회복 숫자, 사망 화면은 UI가 자동)
+  PlayerUILink.SetExp / SetLevel / SetRank (체력은 v0.8부터 PlayerUILink에서 다루지 않음)
   입력 처리 앞에: if (UIState.IsGameplayInputBlocked) return;
 
 ※ 매니저가 IGateSource / IHealthSource 등을 직접 구현했다면 해당 Link 컴포넌트는 지우고 GameUI.Bind(this).";

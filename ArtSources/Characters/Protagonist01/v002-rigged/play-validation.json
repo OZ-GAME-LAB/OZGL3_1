@@ -1,0 +1,42 @@
+{
+    "success": true,
+    "unity": "6000.3.21f1",
+    "scene": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Playground.unity",
+    "prefab": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab",
+    "failure": "",
+    "phase": "Jumping",
+    "elapsedSeconds": 8.991632461547852,
+    "moveDistance": 1.902008056640625,
+    "slowWalkSpeed": 2.0822765827178957,
+    "peakHorizontalSpeed": 4.8822808265686039,
+    "maximumJumpHeight": 7.219695091247559,
+    "expectedAttackSpeed": 6.176666736602783,
+    "actualAttackSpeed": 6.176666736602783,
+    "checks": [
+        "Playground contains the named generated player instance",
+        "Playground prefab source is verified before entering Play Mode",
+        "Playground player and damage target exist",
+        "Gameplay components remain on player root",
+        "Named runtime player retains the generated prefab controller and Avatar",
+        "Valid Humanoid controller with root motion disabled",
+        "Root input reference and Ground layer are bound",
+        "Configured input actions are available",
+        "Idle is grounded in the actual scene",
+        "Ctrl+D drives slow-walk Locomotion at approximately 2.2 units per second",
+        "Slow-walk probe resets before the normal movement and target-hit checks",
+        "D input drives Locomotion at approximately 5 units per second",
+        "D input moves the player positively without passing the target",
+        "Releasing D returns to stationary Idle",
+        "Left mouse input enters the actual Attack state and animation",
+        "One punch produces exactly one 20-damage target hit",
+        "Punch recovery returns to Idle",
+        "AttackSpeed follows the 9-percent agility-adjusted gameplay duration",
+        "Space input plays Jump and Air while physics raises the player",
+        "Jump lands at ground height and returns through Land to Idle",
+        "No additional damage is emitted after the punch"
+    ],
+    "damageMessages": [
+        "[TestDummy] 20 피해"
+    ],
+    "errors": []
+}

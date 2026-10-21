@@ -10,6 +10,8 @@ namespace OZ.UI
     {
         [SerializeField] internal TMP_Text levelText;
         [SerializeField] internal TweenFillBar expBar;
+        [Tooltip("v1.0 기획서 v0.5: 레벨 없음 → 레벨 업 SYSTEM 알림 끔")]
+        [SerializeField] internal bool notifyLevelUp = false;
         [SerializeField] internal TMP_Text rankText;
         [SerializeField] internal RectTransform rankBadge;
         [Tooltip("미사용 스킬 포인트가 있으면 표시 (\"SP 1 [K]\")")]
@@ -61,7 +63,7 @@ namespace OZ.UI
             _lvCount++;
             string main = _lvCount == 1 ? $"Lv.{level}" : $"Lv.{_lvFrom} → Lv.{level}";
             if (_lvCount == 1 && _lvFrom > 0) main = $"Lv.{_lvFrom} → Lv.{level}";
-            GameUI.Notify.System("레벨 업", main, $"스킬 포인트 +{_lvCount}", "levelup");
+            if (notifyLevelUp) GameUI.Notify.System("레벨 업", main, $"스킬 포인트 +{_lvCount}", "levelup");
         }
 
         void OnRankUp(HunterRank rank)

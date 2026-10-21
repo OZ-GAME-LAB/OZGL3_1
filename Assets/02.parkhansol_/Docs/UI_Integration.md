@@ -120,7 +120,7 @@ PlayerHealthBridge.Instance.Died += () => { ... };    // 사망 시 게임 쪽 �
 - 재도전 → `SceneGameLink.RestartStage`가 체력 가득으로 복구.
 - 코드: `Assets/02.parkhansol_/UI/Scripts/GameBridge/PlayerHealthBridge.cs`
 
-스킬(Q/E/R) · 아이템 · 인벤토리 · 스킬 트리는 `ISkillSource` · `IItemSource` · `IInventorySource` · `ISkillTreeSource` 구현 → `GameUI.Bind(this)`
+스킬(Q/E/R) · 아이템(1~4) · 스킬 트리는 `ISkillSource` · `IItemSource` · `ISkillTreeSource` 구현 → `GameUI.Bind(this)`
 (예시: `Assets/02.parkhansol_/UI/Scripts/Samples/DummyPlayer.cs`)
 
 ## 1-1. v0.6 추가
@@ -169,6 +169,7 @@ GameUI.Sound.Play(UISound.Confirm);                   // UI 효과음 — 버튼
 | (플레이어 피격) | 맞을 때 | `PlayerHealthBridge.Instance.TakeDamage(피해)` |
 | 레벨 (지역 입구) | 들어올 때 | `AreaNameTrigger` 또는 `GameUI.Area.Show(이름)` |
 | 게이트·보스 프리팹 | 켜져 있는 동안 | `ObjectiveMarkerLink` 또는 `GameUI.Indicators.Track` |
+| 보스 구역 입구 (레벨) | 게이트 목표 달성 후 | `ObjectiveMarkerLink` (Kind = Boss, **Only After Boss Unlock** 체크) — v0.9 |
 | 문·NPC·세이브 지점 | 가까이 왔을 때 | `InteractPromptLink` 또는 `GameUI.Prompt.Show` |
 | PoolManager.Get / Release | 꺼냄 / 반납 | 없음 (자동) |
 

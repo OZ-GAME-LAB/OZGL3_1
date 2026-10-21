@@ -1,0 +1,82 @@
+{
+    "success": true,
+    "unity": "6000.3.21f1",
+    "humanoidAvatarValid": true,
+    "skinnedRenderers": 1,
+    "weightedBones": 24,
+    "triangles": 6087,
+    "rootMotion": false,
+    "playerInputBound": true,
+    "groundedLayerBound": true,
+    "weaponSocketPresent": true,
+    "animatorChecks": [
+        "Idle",
+        "Locomotion",
+        "Locomotion",
+        "Attack",
+        "Jump",
+        "Air",
+        "Land"
+    ],
+    "clips": [
+        {
+            "name": "Idle",
+            "seconds": 4.0,
+            "humanMotion": true,
+            "loop": true,
+            "maximumVertexDisplacement": 0.6063990592956543
+        },
+        {
+            "name": "Walk",
+            "seconds": 1.033333420753479,
+            "humanMotion": true,
+            "loop": true,
+            "maximumVertexDisplacement": 0.6434849500656128
+        },
+        {
+            "name": "Run",
+            "seconds": 0.6333333849906921,
+            "humanMotion": true,
+            "loop": true,
+            "maximumVertexDisplacement": 1.1620113849639893
+        },
+        {
+            "name": "Punch",
+            "seconds": 1.7000000476837159,
+            "humanMotion": true,
+            "loop": false,
+            "maximumVertexDisplacement": 0.21058973670005799
+        },
+        {
+            "name": "JumpFull",
+            "seconds": 1.8333333730697632,
+            "humanMotion": true,
+            "loop": false,
+            "maximumVertexDisplacement": 0.616015613079071
+        },
+        {
+            "name": "JumpTakeoff",
+            "seconds": 0.46666669845581057,
+            "humanMotion": true,
+            "loop": false,
+            "maximumVertexDisplacement": 0.4647589325904846
+        },
+        {
+            "name": "AirApex",
+            "seconds": 0.18666678667068482,
+            "humanMotion": true,
+            "loop": true,
+            "maximumVertexDisplacement": 0.267428994178772
+        },
+        {
+            "name": "Land",
+            "seconds": 0.4333333969116211,
+            "humanMotion": true,
+            "loop": false,
+            "maximumVertexDisplacement": 0.29548603296279909
+        }
+    ],
+    "playablePrefab": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab",
+    "previewScene": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Playground.unity",
+    "notes": "Meshy rig/walk/run plus Idle, left jab and regular jump. In-place controller; physics drives position. Jump split into takeoff/apex/landing. Existing dash/hit/death clips reused. Shift remains dash. Weapons attach to hand sockets; no weapon shop logic changed."
+}

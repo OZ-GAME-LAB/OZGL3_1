@@ -66,8 +66,12 @@ namespace OZ.UI.Contracts
             if (!string.IsNullOrEmpty(description)) return description;
             if (skill == null) return "";
             var r = skill.GetRank(grantsRank);
-            string line = $"{grantsRank}단계: {r.summary}  (대기 {r.cooldown:0.#}초)";
-            return kind == SkillNodeKind.Skill ? skill.description + "\n" + line : line;
+            if (kind == SkillNodeKind.Skill)
+                return skill.description + $"\n{grantsRank}단계: {r.summary}  (대기 {r.cooldown:0.#}초)";
+
+            // 강화: 기획서 "다음 효과" — 이전 단계 → 이 단계
+            var prev = skill.GetRank(grantsRank - 1);
+            return $"다음 효과\n{grantsRank - 1}단계  {prev.summary}\n→ {grantsRank}단계  {r.summary}\n대기 {prev.cooldown:0.#}초 → {r.cooldown:0.#}초";
         }
     }
 
@@ -82,6 +86,8 @@ namespace OZ.UI.Contracts
 
     /// <summary>
     /// 노드식 스킬 트리 데이터. 이 에셋만 채우면 스킬 트리 창이 알아서 그린다.
+    /// v0.9 (기획서 기준): 계열마다 트리 하나 (ClassData.skillTree) — Q/E/R × 1~3단계, 패시브·택1 없음.
+    ///   Passive 노드와 exclusiveGroup은 나중에 기획이 바뀔 때를 위해 기능만 남겨 둔다.
     /// 규칙 계산은 SkillTreeState (플레이어 담당이 그대로 가져다 써도 된다).
     /// </summary>
     [CreateAssetMenu(menuName = "OZ/UI/Skill Tree", fileName = "SkillTree_")]
@@ -116,9 +122,10 @@ namespace OZ.UI.Contracts
             var groupBest = new Dictionary<string, int>();
             foreach (var n in nodes)
             {
-                if (n == null) continue;
-                if (string.IsNullOrEmpty(n.exclusiveGroup)) { if (n.kind == SkillNodeKind.Passive) total += n.cost; continue; }
+                if (n == null || n.kind == SkillNodeKind.Upgrade) continue; // 강화는 스킬 줄기(BranchCost)에서 같이 셈
+                if (n.kind == SkillNodeKind.Passive) { total += n.cost; continue; }
                 int branch = BranchCost(n);
+                if (string.IsNullOrEmpty(n.exclusiveGroup)) { total += branch; continue; }
                 groupBest.TryGetValue(n.exclusiveGroup, out var best);
                 if (branch > best) groupBest[n.exclusiveGroup] = branch;
             }

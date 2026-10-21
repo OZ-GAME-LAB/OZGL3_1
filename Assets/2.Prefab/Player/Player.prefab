@@ -446,6 +446,160 @@ Transform:
   - {fileID: 4731851580630750083}
   m_Father: {fileID: 5607071084250566243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1821323172198065204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3086316409501557006}
+  - component: {fileID: 5373255106931860758}
+  - component: {fileID: 1496564337514104916}
+  - component: {fileID: 1933370022781185324}
+  - component: {fileID: 4585035729476897857}
+  - component: {fileID: 2266676557801415409}
+  - component: {fileID: 1297308358607063799}
+  m_Layer: 0
+  m_Name: Skills
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3086316409501557006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3384832017090783504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5373255106931860758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb18cb33a8779c4b9715b0a382513d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwordWaveSkill
+  _data: {fileID: 11400000, guid: ed44e62e592322a41b216ed5da5b363f, type: 2}
+  _projectilePrefab: {fileID: 3728478302445197095, guid: 5632b587dd47eee419185de0f523da2f, type: 3}
+  _spawnOffset: {x: 0.6, y: 1, z: 0}
+  _horizontalOnly: 0
+--- !u!114 &1496564337514104916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8400a58bca8141f469c4188924af8373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpinSlashSkill
+  _data: {fileID: 11400000, guid: 10518b829186b2e41bc076dd4c374026, type: 2}
+  _hitBoxSize: {x: 3.5, y: 2, z: 2}
+  _hitBoxHeight: 1
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _slashVfx: {fileID: 0}
+--- !u!114 &1933370022781185324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1aa497180f83b44c84d8dd66f342546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlurrySlashSkill
+  _data: {fileID: 11400000, guid: 9714a686075684c48b7f967da6b2720a, type: 2}
+  _hitCount: 5
+  _hitInterval: 0.08
+  _hitBoxSize: {x: 1.8, y: 1.6, z: 2}
+  _hitBoxForward: 1
+  _hitBoxHeight: 1
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _slashVfx: {fileID: 0}
+--- !u!114 &4585035729476897857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05dd8d7833097b47a2809f6ead11dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MagicBoltSkill
+  _data: {fileID: 11400000, guid: 9fa6bad08f3f2f84b8c19bd59909c88a, type: 2}
+  _projectilePrefab: {fileID: 1413429033902298609, guid: e8970e015ebb3834caf38bf54c170891, type: 3}
+  _spawnHeight: 1.2
+  _spawnForward: 0.5
+  _horizontalOnly: 0
+--- !u!114 &2266676557801415409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493bd4ec1fe3c3d40ae20ccd54e5a27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManaFieldSkill
+  _data: {fileID: 11400000, guid: 0cb5617276a93ac48adf8e74e043595a, type: 2}
+  _fieldPrefab: {fileID: 6703381795469290259, guid: 60cd2f5cd01f7c141bbf5e2d2a33b606, type: 3}
+  _maxRange: 7
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _rayHeight: 2
+  _rayDistance: 10
+--- !u!114 &1297308358607063799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821323172198065204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fadae7be6d79e414db75c42767aa85b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChainBlastSkill
+  _data: {fileID: 11400000, guid: 91ca144c1ce39724cad6be924b67b613, type: 2}
+  _explosionPrefab: {fileID: 2765641129457132431, guid: 44945b67e9aec9947831569594e40895, type: 3}
+  _count: 5
+  _startDistance: 1.5
+  _spacing: 1.5
+  _interval: 0.12
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _rayHeight: 2
+  _rayDistance: 5
 --- !u!1 &2037939783802706763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,11 +1671,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3384832017090783504}
   - component: {fileID: 8924420892086741974}
+  - component: {fileID: 2869846327356406548}
+  - component: {fileID: 817452346629760248}
   - component: {fileID: 8359091664221977547}
-  - component: {fileID: 2843753717330458438}
   - component: {fileID: 1303281578308138415}
   - component: {fileID: 3353712588403264877}
   - component: {fileID: 594316928391325509}
+  - component: {fileID: 5068825118391019262}
+  - component: {fileID: 1316547149369735824}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1545,6 +1702,7 @@ Transform:
   - {fileID: 5534941706533889168}
   - {fileID: 6727246591032293986}
   - {fileID: 3403178073339012576}
+  - {fileID: 3086316409501557006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8924420892086741974
@@ -1578,6 +1736,56 @@ MonoBehaviour:
   _attackDuration: 0.4
   _hitStunTime: 0.3
   _currentStateType: 0
+--- !u!114 &2869846327356406548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de49e892ae801634390eb6785c0e61c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  _strength:
+    baseValue: 20
+    perLevel: 3
+    maxLevel: 5
+  _vitality:
+    baseValue: 0
+    perLevel: 12
+    maxLevel: 5
+  _agility:
+    baseValue: 0
+    perLevel: 0.03
+    maxLevel: 3
+  _magic:
+    baseValue: 20
+    perLevel: 3
+    maxLevel: 5
+  _punchAttack: {fileID: 817452346629760248}
+--- !u!114 &817452346629760248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dbbe5a5ca184e4589b6f482f49e5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PunchAttack
+  _baseDuration: 0.3
+  _attackPower: 20
+  _damageCoefficient: 1
+  _hitBoxSize: {x: 1, y: 1, z: 1}
+  _hitBoxForward: 0.7
+  _hitBoxHeight: 1
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &8359091664221977547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,29 +1798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a34837429d50194cbe843fcfb170a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  _maxHP: 100
+  _baseMaxHP: 100
   _hitInvincibleTime: 0.5
   _respawnInvincibleTime: 0.5
---- !u!114 &2843753717330458438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050402693780808945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 414b0ee24b984e0408cfa8508d7545b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwordBasicAttack
-  _duration: 0.35
-  _damage: 10
-  _hitBoxSize: {x: 1.6, y: 1.2, z: 1}
-  _hitBoxForward: 0.9
-  _hitBoxHeight: 1
-  _enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!95 &1303281578308138415
 Animator:
   serializedVersion: 7
@@ -1685,6 +1873,30 @@ CapsuleCollider:
   m_Height: 1.8768151
   m_Direction: 1
   m_Center: {x: 0, y: 0.92159235, z: 0}
+--- !u!114 &5068825118391019262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b1edb3480ddd4f883dcd7aabaa9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSkill
+--- !u!114 &1316547149369735824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050402693780808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc537f043413b74bb08d74ca82f8494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBuffs
 --- !u!1 &7287103729589707858
 GameObject:
   m_ObjectHideFlags: 0

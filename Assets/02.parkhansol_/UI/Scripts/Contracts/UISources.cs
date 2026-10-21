@@ -17,6 +17,18 @@ namespace OZ.UI.Contracts
         public static IGateSource Gate { get; private set; }
         public static IInventorySource Inventory { get; private set; }
         public static ISkillTreeSource SkillTree { get; private set; }
+        /// <summary>[v0.8] 대시 게이지 (플레이어 옆 게이지)</summary>
+        public static IDashSource Dash { get; private set; }
+        /// <summary>[v1.0] 상점 구매 (재화·보유 수량)</summary>
+        public static IShopSource Shop { get; private set; }
+        // ── v1.0 상태창 (기획서 v0.5) ──
+        public static IPointsSource Points { get; private set; }
+        public static IStatSource Stats { get; private set; }
+        public static ISkillLoadoutSource Loadout { get; private set; }
+        public static IGrowthShopSource GrowthShop { get; private set; }
+        public static IStageMapSource StageMap { get; private set; }
+        /// <summary>[v1.1] 물리/마법 계열</summary>
+        public static ICombatPathSource Path { get; private set; }
 
         /// <summary>소스가 등록/해제될 때마다 호출</summary>
         public static event Action Changed;
@@ -33,6 +45,14 @@ namespace OZ.UI.Contracts
             if (source is IGateSource g) { Gate = g; any = true; }
             if (source is IInventorySource inv) { Inventory = inv; any = true; }
             if (source is ISkillTreeSource tree) { SkillTree = tree; any = true; }
+            if (source is IDashSource dash) { Dash = dash; any = true; }
+            if (source is IShopSource shop) { Shop = shop; any = true; }
+            if (source is IPointsSource pts) { Points = pts; any = true; }
+            if (source is IStatSource st) { Stats = st; any = true; }
+            if (source is ISkillLoadoutSource lo) { Loadout = lo; any = true; }
+            if (source is IGrowthShopSource gs) { GrowthShop = gs; any = true; }
+            if (source is IStageMapSource sm) { StageMap = sm; any = true; }
+            if (source is ICombatPathSource cp) { Path = cp; any = true; }
             if (any) Changed?.Invoke();
         }
 
@@ -48,6 +68,14 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(Gate, source)) { Gate = null; any = true; }
             if (ReferenceEquals(Inventory, source)) { Inventory = null; any = true; }
             if (ReferenceEquals(SkillTree, source)) { SkillTree = null; any = true; }
+            if (ReferenceEquals(Dash, source)) { Dash = null; any = true; }
+            if (ReferenceEquals(Shop, source)) { Shop = null; any = true; }
+            if (ReferenceEquals(Points, source)) { Points = null; any = true; }
+            if (ReferenceEquals(Stats, source)) { Stats = null; any = true; }
+            if (ReferenceEquals(Loadout, source)) { Loadout = null; any = true; }
+            if (ReferenceEquals(GrowthShop, source)) { GrowthShop = null; any = true; }
+            if (ReferenceEquals(StageMap, source)) { StageMap = null; any = true; }
+            if (ReferenceEquals(Path, source)) { Path = null; any = true; }
             if (any) Changed?.Invoke();
         }
 
@@ -55,7 +83,8 @@ namespace OZ.UI.Contracts
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
-            Health = null; Progression = null; Skills = null; Items = null; Gate = null; Inventory = null; SkillTree = null;
+            Health = null; Progression = null; Skills = null; Items = null; Gate = null; Inventory = null; SkillTree = null; Dash = null; Shop = null;
+            Points = null; Stats = null; Loadout = null; GrowthShop = null; StageMap = null; Path = null;
             Changed = null;
         }
     }

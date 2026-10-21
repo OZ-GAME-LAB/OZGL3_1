@@ -39,13 +39,17 @@ namespace OZ.UI.EditorTools
         [MenuItem("OZ/UI/Git Push + develop (MainScene 포함)", priority = 42)]
         static void PushDevelop() => OZGitPushWindow.Open(true, "develop");
 
+        /// <summary>develop에 팀원 커밋이 먼저 있어도 올린다: origin/develop을 내 브랜치에 merge(충돌 없을 때만) → 브랜치·develop 둘 다 푸시</summary>
+        [MenuItem("OZ/UI/Git Push + develop (develop 합쳐서 올림)", priority = 43)]
+        static void PushDevelopMerge() => OZGitPushWindow.Open(true, "develop", true);
+
         internal static string LastMessage()
         {
             try { if (File.Exists(MessageFile)) return File.ReadAllText(MessageFile).Trim(); } catch { }
             return MessagePrefix;
         }
 
-        internal static void Push(bool toMain, string shared, string message)
+        internal static void Push(bool toMain, string shared, string message, bool mergeShared = false)
         {
             message = (message ?? "").Trim();
             if (!message.StartsWith(MessagePrefix)) message = MessagePrefix + message;
@@ -57,7 +61,7 @@ namespace OZ.UI.EditorTools
             string log = Path.Combine(root, "Logs", "OZ_GitPush.txt");
             _running = true;
             Debug.Log("[OZ Git] 푸시 시작… (결과: Logs/OZ_GitPush.txt)");
-            Task.Run(() => Run(root, log, message, toMain, shared)).ContinueWith(t =>
+            Task.Run(() => Run(root, log, message, toMain, shared, mergeShared)).ContinueWith(t =>
             {
                 _running = false;
                 bool ok = t.Status == TaskStatus.RanToCompletion && t.Result;
@@ -69,7 +73,7 @@ namespace OZ.UI.EditorTools
             });
         }
 
-        static bool Run(string root, string logPath, string message, bool toMain, string shared)
+        static bool Run(string root, string logPath, string message, bool toMain, string shared, bool mergeShared)
         {
             var sb = new StringBuilder();
             sb.AppendLine("OZ Git Push — " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -132,8 +136,19 @@ namespace OZ.UI.EditorTools
                     if (Exec(git, $"fetch origin {shared}", root, sb, out _, timeoutMs: 300000) != 0) return false;
                     if (Exec(git, $"merge-base --is-ancestor origin/{shared} HEAD", root, sb, out _) != 0)
                     {
-                        sb.AppendLine($"!! origin/{shared}에 내 브랜치에 없는 커밋이 있음 (팀원 푸시) → {shared} 푸시 중단. 브랜치는 올라감 → PR로 합칠 것");
-                        return false;
+                        if (!mergeShared)
+                        {
+                            sb.AppendLine($"!! origin/{shared}에 내 브랜치에 없는 커밋이 있음 (팀원 푸시) → {shared} 푸시 중단. 브랜치는 올라감 → PR로 합칠 것");
+                            return false;
+                        }
+                        // 팀원 커밋을 내 브랜치로 합친다. 충돌이 하나라도 나면 되돌리고 멈춤 (팀원 파일은 손대지 않음)
+                        if (Exec(git, $"merge --no-edit --autostash origin/{shared}", root, sb, out _, timeoutMs: 300000) != 0)
+                        {
+                            sb.AppendLine($"!! origin/{shared} 합치기 실패(충돌) → merge 취소. {shared} 푸시 안 함");
+                            Exec(git, "merge --abort", root, sb, out _);
+                            return false;
+                        }
+                        if (Exec(git, $"push origin {branch}", root, sb, out _, timeoutMs: 600000) != 0) return false;
                     }
                     if (Exec(git, $"push origin HEAD:{shared}", root, sb, out _, timeoutMs: 600000) != 0) return false;
                 }
@@ -165,6 +180,21 @@ namespace OZ.UI.EditorTools
                 Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Programs\Git\cmd\git.exe"),
             };
             foreach (var c in candidates) if (File.Exists(c)) return c;
+
+            // Git for Windows가 없으면 GitHub Desktop에 들어 있는 git 사용 (가장 최신 app-x.y.z)
+            string desktop = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GitHubDesktop");
+            if (Directory.Exists(desktop))
+            {
+                string best = null; Version bestVer = null;
+                foreach (var dir in Directory.GetDirectories(desktop, "app-*"))
+                {
+                    string exe = Path.Combine(dir, @"resources\app\git\cmd\git.exe");
+                    if (!File.Exists(exe)) continue;
+                    Version.TryParse(Path.GetFileName(dir).Substring(4), out var v);
+                    if (best == null || (v != null && (bestVer == null || v > bestVer))) { best = exe; bestVer = v; }
+                }
+                if (best != null) return best;
+            }
             return "git"; // PATH
         }
 
@@ -205,13 +235,15 @@ namespace OZ.UI.EditorTools
     internal class OZGitPushWindow : EditorWindow
     {
         bool _toShared;
+        bool _merge;
         string _shared;
         string _message;
 
-        internal static void Open(bool toShared, string shared)
+        internal static void Open(bool toShared, string shared, bool merge = false)
         {
             var w = GetWindow<OZGitPushWindow>(true, "OZ Git Push", true);
             w._toShared = toShared;
+            w._merge = merge;
             w._shared = shared;
             w._message = OZGitPush.LastMessage();
             w.minSize = w.maxSize = new Vector2(520, 130);
@@ -221,7 +253,8 @@ namespace OZ.UI.EditorTools
 
         void OnGUI()
         {
-            EditorGUILayout.LabelField(_toShared ? $"오늘 브랜치 + {_shared} 에 푸시 (MainScene 포함)" : "오늘 브랜치에만 푸시 (02.parkhansol_만)", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField(!_toShared ? "오늘 브랜치에만 푸시 (02.parkhansol_만)"
+                : _merge ? $"오늘 브랜치 + {_shared} 에 푸시 ({_shared} 먼저 합침)" : $"오늘 브랜치 + {_shared} 에 푸시 (MainScene 포함)", EditorStyles.boldLabel);
             EditorGUILayout.LabelField("커밋 메시지 (parkhansol_내용)");
             GUI.SetNextControlName("msg");
             _message = EditorGUILayout.TextField(_message);
@@ -233,7 +266,7 @@ namespace OZ.UI.EditorTools
                 if (GUILayout.Button("취소", GUILayout.Height(28))) Close();
                 if (GUILayout.Button("푸시", GUILayout.Height(28)) || enter)
                 {
-                    OZGitPush.Push(_toShared, _shared, _message);
+                    OZGitPush.Push(_toShared, _shared, _message, _merge);
                     Close();
                     GUIUtility.ExitGUI();
                 }

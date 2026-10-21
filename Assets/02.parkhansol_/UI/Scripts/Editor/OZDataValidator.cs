@@ -39,6 +39,12 @@ namespace OZ.UI.EditorTools
                     if (s.slot != (SkillSlot)i) Err(c, $"{c.name}: {(SkillSlot)i} 칸에 {s.slot} 스킬({s.name})");
                     if (s.playerClass != c.playerClass) Err(c, $"{c.name}: {s.name} 계열 불일치");
                 }
+                // v0.9: 계열마다 자기 스킬 트리 (다른 계열 스킬이 섞이면 안 됨)
+                if (c.skillTree == null) Warn(c, $"{c.name}: 스킬 트리 없음 (K 창이 비어 보임)");
+                else
+                    foreach (var n in c.skillTree.nodes)
+                        if (n != null && n.skill != null && n.skill.playerClass != c.playerClass)
+                            Err(c, $"{c.name}: 트리 {c.skillTree.name}에 다른 계열 스킬 {n.skill.name}");
             }
             var quick = new Dictionary<int, ItemData>();
             foreach (var it in All<ItemData>())

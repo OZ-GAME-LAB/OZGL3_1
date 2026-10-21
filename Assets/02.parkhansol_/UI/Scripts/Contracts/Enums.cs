@@ -42,6 +42,10 @@ namespace OZ.UI.Contracts
         Map = 9,
         Dialogue = 10,
         Options = 11,
+        /// <summary>[v1.0] 상점 (NPC · GameUI.Shop.Open)</summary>
+        Shop = 12,
+        /// <summary>[v1.0 · 기획서 v0.5] 상태창 (Tab) — 스탯·퀘스트·상점·스킬·지도</summary>
+        Status = 13,
     }
 
     /// <summary>피해 숫자 종류 (GameUI.Damage.Show)</summary>
@@ -87,6 +91,8 @@ namespace OZ.UI.Contracts
         DefenseBuff = 2,
         SpeedBuff = 3,
         KeyItem = 4, // 사용 불가(퀘스트·열쇠 등) — 인벤토리 표시용
+        /// <summary>[v1.1] 장비 (칼·방패 등) — 상점에서 1회 구매, 영구 보유. 효과는 플레이어 쪽이 적용</summary>
+        Equipment = 5,
     }
 
     /// <summary>대화 초상화 위치</summary>

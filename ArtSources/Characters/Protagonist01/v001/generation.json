@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "created_local_date": "2026-10-19",
+  "asset": "Protagonist01",
+  "version": "v001",
+  "status": "complete",
+  "reference_research": {
+    "scope": "Visual reference analysis for this project; not model training.",
+    "requested_sources": [
+      "https://www.youtube.com/shorts/ujVLoPdd1Pg",
+      "https://x.com/cartridge102"
+    ],
+    "primary_portfolio": "https://coloso.global/en/products/3dartist-cartridge102-us",
+    "verified": "Original YouTube short viewed in browser. Artist X profile read in browser; X video playback unavailable. Multiple original portfolio clips directly viewed on official Coloso page.",
+    "viewed_examples": [
+      "Pink-haired character full body and action close-up",
+      "Blonde animal-eared character on treadmill",
+      "Blonde character with black/orange outfit, full body and facial close-up",
+      "Blue-haired character and angular armored companion matching supplied short",
+      "Black-haired character in dark urban outfit and grey scarf",
+      "Blonde child with blocky armored companion"
+    ],
+    "observed_traits_ko": [
+      "머리는 크게, 몸통과 팔다리는 짧게 압축한 치비 비율",
+      "머리카락은 큰 각진 덩어리와 선명한 끝 모양으로 실루엣을 구성",
+      "얼굴은 단순한 입체 위에 큰 눈·눈썹·작은 입을 평면적으로 표현",
+      "재질은 무광의 큰 색면과 단순한 명암, 복잡한 미세 질감은 최소화",
+      "의상과 소품은 작은 화면에서도 읽히는 색 대비와 큰 형태를 사용",
+      "도트 인상에는 Blender 레트로 픽셀 후처리와 After Effects 연출도 포함"
+    ],
+    "game_style_translation_ko": {
+      "characters": "3~4등신, 분명한 헤어 실루엣, 단순한 얼굴 평면과 큰 눈, 대비가 선명한 색 덩어리.",
+      "environments": "향후 서울 거리·상가·옥상·지하철에 큰 각면, 단순한 색 구역, 제한된 소품 디테일을 적용하는 제안. 이번 작업에서 생성한 환경 모델은 없음.",
+      "enemies": "향후 큰 몸통·주요 공격 부위·위험색으로 실루엣과 패턴을 구분하는 제안. 이번 작업에서 생성한 적 모델은 없음.",
+      "rendering": "모델 자체의 저폴리 형태와 인게임 픽셀 후처리를 별도 단계로 관리."
+    },
+    "attribution": "Coloso Yellow original character artwork credited to Sapoo. New protagonist uses an original modern commuter design."
+  },
+  "design": {
+    "premise_source": "planning/Project_M_상세기획서.docx v0.5",
+    "premise": "Seoul commuter awakened at F-rank; empty-handed default punch attacks.",
+    "target_head_ratio": 3.5,
+    "accepted_range": [
+      3,
+      4
+    ],
+    "presentation": "Young adult male; unspecified appearance chosen for first draft",
+    "outfit": "Cropped navy bomber jacket, ivory tee, charcoal pants, ivory/charcoal sneakers, restrained teal accents",
+    "pose": "t-pose",
+    "target_face_count": 6000,
+    "topology": "triangle",
+    "material": "Matte base color, 2K texture, PBR disabled",
+    "purpose": "First visual model draft for Unity; rigging and prefab replacement outside this generation."
+  },
+  "generation": {
+    "concept_provider": "Built-in image_gen",
+    "concept_image": "protagonist01-reference.png",
+    "concept_prompt": "Use case: stylized-concept, a clean source image for image-to-3D.\nCreate ONE original full-body low-poly anime chibi male protagonist for a Korean urban side-scrolling action game. A young adult Seoul commuter newly awakened with powers, wearing ordinary contemporary clothes, EMPTY HANDS, no weapons.\nComposition: ONE character only, entire body and both hands clearly visible, centered, front view with a tiny 8-degree turn to reveal form, near-orthographic camera at chest height. Strict symmetrical T-pose: straight arms horizontal at shoulder height, hands open palms downward, fingers simply formed and slightly separated; legs straight a modest distance apart, both shoes flat. Plain light gray solid background. No floor platform, props, scenery, text, labels, graphic frame, duplicate views, cast-shadow blob, or outline shell.\nProportions: exactly 3.5 heads tall from hair crown to soles, where head including hair equals 2/7 of total height. Oversized youthful head, compact torso, short but distinct thighs and calves, slightly large readable hands and sneakers. The character must feel like a young adult, not a toddler.\nVisual language: deliberately low-poly mesh, clear planar surfaces, sparse broad polygon facets, simple economical geometry, clean game silhouette. Angular chunky dark charcoal hair with blue undertones, 6-8 large tapered locks, asymmetrical side-swept fringe leaving both eyes visible. Smooth pale warm face plane, big crisp illustrated slate-teal anime eyes painted onto the face with black upper lash line, tiny simple nose and mouth. Hair angular, face simple and soft. No realistic pores, individual hairs or cloth microtexture.\nOutfit: cropped dark desaturated navy bomber jacket with a low collar and clean straight waist hem, worn open over a warm ivory plain crewneck T-shirt. Ribbed cuffs as simple blocks. A tiny teal rectangular seam accent on upper sleeves, no emblem, no text. Dark charcoal tapered pants with visibly separate legs and a simple waistband. Chunky ivory and charcoal everyday sneakers with teal heel tabs, plain soles. No bag, coat tails, scarf, hanging accessories, armor or glowing effects.\nColor and rendering: tightly controlled navy / charcoal / warm ivory palette with restrained teal accents. Matte flat local colors, hard simple two-step cel shadows, near-unlit anime game materials, subtle faceted shading. Limited painted details only at eyes and seams. Crisp clean edges, model geometry clearly readable. Charming retro handheld 3D anime aesthetic, but render at high resolution without applying pixelation. Neutral even lighting and very little baked shading. One model, one image.",
+    "meshy_request": {
+      "ai_model": "meshy-t2.5",
+      "model_type": "smart-topology",
+      "file_path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v001\\protagonist01-reference.png",
+      "pose_mode": "t-pose",
+      "target_polycount": 6000,
+      "topology": "triangle",
+      "target_formats": [
+        "fbx",
+        "glb"
+      ],
+      "should_texture": true,
+      "enable_pbr": false,
+      "texture_resolution": "2k",
+      "texture_prompt": "Original Korean urban commuter anime chibi. Keep reference colors: dark charcoal angular hair, pale warm face with large crisp slate teal anime eyes, dark desaturated navy bomber jacket, plain ivory T-shirt, charcoal trousers, ivory charcoal sneakers with small teal accents. Matte flat local colors, minimal two-tone cel shading, clean painted face. No realistic cloth grain, noise, dirt, metal shine, extra logos, text, weapons, accessories or baked directional shadows. Keep silhouette and clothing faithfully.",
+      "image_enhancement": false,
+      "alpha_thumbnail": true,
+      "multi_view_thumbnails": true,
+      "response_format": "json"
+    },
+    "meshy_task_id": "01a15292-5608-74ae-8f99-9c79f847bf5a",
+    "approved_model": "meshy-t2.5",
+    "approved_credits": 15,
+    "approval": "User explicitly selected Meshy T2.5 Smart Topology at 15 credits.",
+    "download_format": "fbx",
+    "rigged": false,
+    "consumed_credits": 15
+  },
+  "outputs": {
+    "fbx": "Assets/Art/Characters/Protagonist01/protagonist01-v001.fbx",
+    "base_color": "Assets/Art/Characters/Protagonist01/protagonist01-v001_base_color.png",
+    "reference": "ArtSources/Characters/Protagonist01/v001/protagonist01-reference.png",
+    "review": "ArtSources/Characters/Protagonist01/v001/protagonist01-review.png"
+  },
+  "validation": {
+    "fbx_version": 7400,
+    "vertices": 3179,
+    "triangles": 6086,
+    "geometry_count": 1,
+    "material_count": 1,
+    "invalid_vertex_indices": 0,
+    "texture_dimensions": [
+      2048,
+      2048
+    ],
+    "texture_embedded": true,
+    "rigged": false,
+    "views_checked": [
+      "front",
+      "three-quarter",
+      "side",
+      "back"
+    ],
+    "proportions": "Within 3–4 head target range on front orthographic visual check; approximately 3.5 heads.",
+    "review_ko": "전체 실루엣과 등신, 빈손 T포즈, 헤어 덩어리, 의상 전후면을 검수. 리깅 및 인게임 머티리얼 설정 전의 첫 시안이며, 정교한 손가락 변형과 얼굴 표정은 이후 작업 대상.",
+    "unity_editor_import_tested": false,
+    "inspection_report": "inspection.json"
+  }
+}
