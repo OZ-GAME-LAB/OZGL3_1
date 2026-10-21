@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 ///   IGrowthShopSource  : 가격 확인 → 포인트 차감 → PlayerStats.TryAddLevel / PlayerSkill.TryAddOwned (팀원 코드 그대로 호출)
 ///   ICombatPathSource  : 힘·물리 기술(또는 마력·마법 기술)을 처음 찍으면 그 계열로 고정, 반대 계열은 잠김
 ///
-/// 언제 생기나: 씬에 PlayerStats 또는 PlayerSkill이 있으면 Play 시 자동 생성 (씬·프리팹·팀원 파일 수정 없음).
+/// 언제 생기나: 씬에 PlayerStats 또는 PlayerSkill이 있으면 (꺼져 있어도) Play 시 자동 생성 (씬·프리팹·팀원 파일 수정 없음).
 ///   다른 쪽이 이미 성장 상점을 등록했으면(UI 샌드박스의 DummyPlayer, 나중에 코어 구현) 스스로 사라진다.
 ///
 /// 포인트 들어오는 곳 (지금 팀 코드에 포인트 시스템이 없어서 여기서 모은다):
@@ -78,7 +78,9 @@ public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource,
     static void TryInstall()
     {
         if (FindAnyObjectByType<GrowthShopBridge>() != null) return;
-        if (FindAnyObjectByType<PlayerStats>() == null && FindAnyObjectByType<PlayerSkill>() == null) return;
+        // MainScene의 Player는 꺼진 채로 시작해서 '새 게임' 때 켜진다 → 꺼진 것도 찾는다
+        if (FindAnyObjectByType<PlayerStats>(FindObjectsInactive.Include) == null &&
+            FindAnyObjectByType<PlayerSkill>(FindObjectsInactive.Include) == null) return;
         new GameObject("GrowthShopBridge (auto, UI)").AddComponent<GrowthShopBridge>();
     }
 
@@ -107,8 +109,8 @@ public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource,
 
     void FindPlayer()
     {
-        if (_stats == null) _stats = FindAnyObjectByType<PlayerStats>();
-        if (_skills == null) _skills = FindAnyObjectByType<PlayerSkill>();
+        if (_stats == null) _stats = FindAnyObjectByType<PlayerStats>(FindObjectsInactive.Include);
+        if (_skills == null) _skills = FindAnyObjectByType<PlayerSkill>(FindObjectsInactive.Include);
     }
 
     void HookQuests()
