@@ -543,7 +543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed67b1399774d94b95214b85eae6b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
-  stagePrefab: {fileID: 7441219851636034096, guid: d5d0b851500be7047b8c8a33c7f666bf, type: 3}
+  stagePrefabs:
+  - {fileID: 7441219851636034096, guid: d5d0b851500be7047b8c8a33c7f666bf, type: 3}
+  - {fileID: 8933158922703630053, guid: f25787ff5573ded4dbb3d3215189eea1, type: 3}
+  stagePrefab: {fileID: 0}
   stageParent: {fileID: 2118460631}
   stageNumber: 1
   clearRank: 1
@@ -799,7 +802,19 @@ MonoBehaviour:
         m_CallState: 2
   onNextStage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 838661939}
+        m_TargetAssemblyTypeName: SceneGameLink, Assembly-CSharp
+        m_MethodName: NextStage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onReturnToTitle:
     m_PersistentCalls:
       m_Calls:
