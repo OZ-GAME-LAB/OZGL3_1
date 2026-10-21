@@ -1,0 +1,255 @@
+using System;
+using System.Collections.Generic;
+using OZ.UI.Contracts;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+/// <summary>
+/// [박한솔 UI · v1.1] 상태창 캐릭터 탭의 "구매 처리" 정식 연결 — 성장 포인트 지갑 + 스탯/스킬 구매 + 물리/마법 계열.
+///   IPointsSource      : 성장 포인트 (시작 = 각성 1000, 기획데이터 2장)
+///   IGrowthShopSource  : 가격 확인 → 포인트 차감 → PlayerStats.TryAddLevel / PlayerSkill.TryAddOwned (팀원 코드 그대로 호출)
+///   ICombatPathSource  : 힘·물리 기술(또는 마력·마법 기술)을 처음 찍으면 그 계열로 고정, 반대 계열은 잠김
+///
+/// 언제 생기나: 씬에 PlayerStats 또는 PlayerSkill이 있으면 Play 시 자동 생성 (씬·프리팹·팀원 파일 수정 없음).
+///   다른 쪽이 이미 성장 상점을 등록했으면(UI 샌드박스의 DummyPlayer, 나중에 코어 구현) 스스로 사라진다.
+///
+/// 포인트 들어오는 곳 (지금 팀 코드에 포인트 시스템이 없어서 여기서 모은다):
+///   1) 시작 포인트 (각성 1000)
+///   2) 퀘스트 보상: GameUI.Quest.SetReward(id, 포인트)로 걸어 둔 퀘스트가 '완료'되면 첫 1회만 지급
+///   3) 스테이지 클리어: StageManager.StageCleared → stageClearReward (임시. 코어가 퀘스트 보상으로 주기 시작하면 0으로)
+///   4) 다른 코드에서 직접: GrowthShopBridge.Give(500, "보스 처치")
+/// 저장은 하지 않는다 (씬을 다시 열면 초기화) — 세이브가 생기면 Points / Path 두 값만 저장하면 된다.
+/// </summary>
+[DisallowMultipleComponent]
+[AddComponentMenu("OZ/UI/Links/Growth Shop Bridge")]
+public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource, ICombatPathSource
+{
+    [Header("포인트")]
+    [Tooltip("시작 성장 포인트 (기획: 각성 1000)")]
+    [SerializeField] int startPoints = 1000;
+    [Tooltip("스테이지 클리어 보상 (임시). 코어가 퀘스트 보상으로 주면 0")]
+    [SerializeField] int stageClearReward = 1200;
+
+    [Header("스탯 가격 = 기본 + 레벨 × 증가")]
+    [SerializeField] int statBasePrice = 200;
+    [SerializeField] int statPricePerLevel = 50;
+
+    [Header("계열")]
+    [Tooltip("켜면 계열을 바꿀 수 있다 (기획: 한 번 정하면 고정)")]
+    [SerializeField] bool allowPathChange = false;
+
+    static GrowthShopBridge _instance;
+
+    int _points;
+    CombatPath _path = CombatPath.None;
+    PlayerStats _stats;
+    PlayerSkill _skills;
+    IQuestApi _quest;
+    StageManager _stage;
+    readonly HashSet<string> _paidQuests = new HashSet<string>();
+
+    public event Action<int, int> PointsChanged;
+    public event Action PathChanged;
+
+    // ───────────── 외부 API ─────────────
+
+    /// <summary>성장 포인트 지급 (음수 = 차감). 지갑이 없으면 false</summary>
+    public static bool Give(int amount, string reason = null)
+    {
+        if (_instance == null) return false;
+        _instance.AddPoints(amount);
+        if (amount > 0 && !string.IsNullOrEmpty(reason))
+            GameUI.Notify.System("상태창", reason, $"+{amount:N0} 성장 포인트", "growth_" + reason);
+        return true;
+    }
+
+    // ───────────── 자동 설치 ─────────────
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void AutoInstall()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        TryInstall();
+    }
+
+    static void OnSceneLoaded(Scene scene, LoadSceneMode mode) => TryInstall();
+
+    static void TryInstall()
+    {
+        if (FindAnyObjectByType<GrowthShopBridge>() != null) return;
+        if (FindAnyObjectByType<PlayerStats>() == null && FindAnyObjectByType<PlayerSkill>() == null) return;
+        new GameObject("GrowthShopBridge (auto, UI)").AddComponent<GrowthShopBridge>();
+    }
+
+    // ───────────── 수명 ─────────────
+
+    void Awake() => _points = Mathf.Max(0, startPoints);
+
+    void Start()
+    {
+        // 다른 오브젝트가 먼저 성장 상점을 등록했으면 양보 (샌드박스 DummyPlayer 등)
+        if (UISources.GrowthShop != null && !ReferenceEquals(UISources.GrowthShop, this)) { Destroy(gameObject); return; }
+        _instance = this;
+        FindPlayer();
+        GameUI.Bind(this);
+        HookQuests();
+        HookStage();
+    }
+
+    void OnDestroy()
+    {
+        if (_instance == this) _instance = null;
+        if (_quest != null) _quest.Changed -= PayQuestRewards;
+        if (_stage != null) _stage.StageCleared -= OnStageCleared;
+        GameUI.Unbind(this);
+    }
+
+    void FindPlayer()
+    {
+        if (_stats == null) _stats = FindAnyObjectByType<PlayerStats>();
+        if (_skills == null) _skills = FindAnyObjectByType<PlayerSkill>();
+    }
+
+    void HookQuests()
+    {
+        _quest = GameUI.Quest;
+        if (_quest != null) _quest.Changed += PayQuestRewards;
+    }
+
+    void HookStage()
+    {
+        _stage = GameManager.Instance != null ? GameManager.Instance.StageManager : FindAnyObjectByType<StageManager>();
+        if (_stage != null) _stage.StageCleared += OnStageCleared;
+    }
+
+    void PayQuestRewards()
+    {
+        var q = _quest;
+        if (q == null) return;
+        for (int i = 0; i < q.Count; i++)
+        {
+            var info = q.GetAt(i);
+            if (info.State != QuestState.Done || _paidQuests.Contains(info.Id)) continue;
+            if (!q.TryGetReward(info.Id, out int reward, out _) || reward <= 0) continue;
+            _paidQuests.Add(info.Id);
+            AddPoints(reward);
+            GameUI.Notify.System("상태창", info.Title + " 완료", $"+{reward:N0} 성장 포인트", "reward_" + info.Id);
+        }
+    }
+
+    void OnStageCleared()
+    {
+        if (stageClearReward > 0) Give(stageClearReward, "스테이지 클리어");
+    }
+
+    // ───────────── 포인트 ─────────────
+
+    public int Points => _points;
+
+    public void AddPoints(int amount)
+    {
+        if (amount == 0) return;
+        int before = _points;
+        _points = Mathf.Max(0, _points + amount);
+        PointsChanged?.Invoke(_points, _points - before);
+    }
+
+    // ───────────── 스탯 ─────────────
+
+    public int GetStatPrice(StatKind stat)
+    {
+        FindPlayer();
+        if (_stats == null) return 0;
+        var t = (StatType)(int)stat; // StatKind와 StatType 순서 같음 (힘·체력·민첩·마력)
+        return _stats.IsMaxLevel(t) ? 0 : statBasePrice + statPricePerLevel * _stats.GetLevel(t);
+    }
+
+    public ShopBuyResult TryBuyStat(StatKind stat)
+    {
+        FindPlayer();
+        if (_stats == null) return ShopBuyResult.Unavailable;
+        if (CombatPathRules.IsLocked(_path, stat)) return ShopBuyResult.Unavailable;
+        var t = (StatType)(int)stat;
+        if (_stats.IsMaxLevel(t)) return ShopBuyResult.LimitReached;
+        int price = GetStatPrice(stat);
+        if (price > _points) return ShopBuyResult.NotEnoughCurrency;
+        if (!_stats.TryAddLevel(t)) return ShopBuyResult.LimitReached; // 실패하면 포인트 그대로
+        AddPoints(-price);
+        AutoPath(CombatPathRules.PathOf(stat));
+        return ShopBuyResult.Success;
+    }
+
+    // ───────────── 스킬 ─────────────
+
+    SkillOffer Offer(string id)
+    {
+        var src = UISources.Loadout;
+        if (src == null || string.IsNullOrEmpty(id)) return default;
+        for (int i = 0; i < src.SkillCount; i++)
+        {
+            var o = src.GetSkill(i);
+            if (o.id == id) return o;
+        }
+        return default;
+    }
+
+    /// <summary>다음 단계로 (0→1 = 배우기). 단계 수 = SkillOffer.MaxRank</summary>
+    public ShopBuyResult TryBuySkill(string skillId)
+    {
+        FindPlayer();
+        var src = UISources.Loadout;
+        var o = Offer(skillId);
+        if (src == null || _skills == null || !o.IsValid) return ShopBuyResult.Unavailable;
+        if (CombatPathRules.IsLocked(_path, o.damageKind)) return ShopBuyResult.Unavailable;
+        int rank = src.GetRank(skillId);
+        if (rank >= o.MaxRank) return ShopBuyResult.LimitReached;
+        int price = o.RankPrice(rank + 1);
+        if (price > _points) return ShopBuyResult.NotEnoughCurrency;
+
+        if (rank == 0)
+        {
+            if (!_skills.TryAddOwned(skillId)) return ShopBuyResult.Unavailable;
+        }
+        else
+        {
+            // 2단계 이상: PlayerSkill에 단계 올리기 함수가 생기면 여기서 호출 (지금 PlayerSkill은 ranks를 안 넘겨서 MaxRank = 1)
+            return ShopBuyResult.Unavailable;
+        }
+
+        AddPoints(-price);
+        AutoPath(CombatPathRules.PathOf(o.damageKind));
+        // 처음 배우면 빈 칸에 바로 장착
+        if (rank == 0)
+            for (int i = 0; i < 3; i++)
+                if (string.IsNullOrEmpty(src.GetEquipped((SkillSlot)i))) { src.TryEquip((SkillSlot)i, skillId); break; }
+        return ShopBuyResult.Success;
+    }
+
+    // ───────────── 계열 ─────────────
+
+    public CombatPath Path => _path;
+    public bool CanChangePath => allowPathChange || _path == CombatPath.None;
+
+    public ShopBuyResult TrySetPath(CombatPath path)
+    {
+        if (path == _path) return ShopBuyResult.Success;
+        if (!CanChangePath) return ShopBuyResult.Unavailable;
+        _path = path;
+        // 반대 계열 기술은 장착에서 뺀다 (선택한 계열만 작동)
+        var src = UISources.Loadout;
+        if (src != null)
+            for (int i = 0; i < 3; i++)
+            {
+                var o = Offer(src.GetEquipped((SkillSlot)i));
+                if (o.IsValid && CombatPathRules.IsLocked(_path, o.damageKind)) src.Unequip((SkillSlot)i);
+            }
+        PathChanged?.Invoke();
+        return ShopBuyResult.Success;
+    }
+
+    void AutoPath(CombatPath p)
+    {
+        if (_path == CombatPath.None && p != CombatPath.None) TrySetPath(p);
+    }
+}
