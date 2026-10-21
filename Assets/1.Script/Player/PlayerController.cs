@@ -1,5 +1,4 @@
 ﻿using OZ.UI.Contracts;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +35,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private PlayerState _currentStateType;
-    
+    [SerializeField] private float _debugWalkSpeed; // 인스펙터 확인용. 민첩·신속 버프가 곱해진 최종 걷기 속도
+
     private Animator _animator;
     private Rigidbody _rigidbody;
 
@@ -54,8 +54,6 @@ public class PlayerController : MonoBehaviour
 
     private float _moveSpeedBonus; // 민첩 스탯 보너스. 0.03 = +3%
     private float _walkInputMultiplier = 1f;
-
-    public event Action OnDead;
 
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
@@ -142,6 +140,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        _debugWalkSpeed = WalkSpeed;
         _currentState.UpdateState(this);
 
         // 상태가 이번 프레임에 안 쓴 입력은 버림 (경직 중 누른 점프가 끝나고 발동되는 것 방지)
@@ -266,12 +265,6 @@ public class PlayerController : MonoBehaviour
         return _rigidbody;
     }
 
-    // 다른 공격(스킬 등)으로 교체할 때 사용
-    public void SetAttack(IPlayerAttack attack)
-    {
-        _attack = attack;
-    }
-
     // PlayerStats에서 호출 (민첩 스탯 변경 시). 0.09 = +9%
     public void SetMoveSpeedBonus(float bonus)
     {
@@ -293,7 +286,6 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         ChangeState(PlayerState.Dead);
-        OnDead?.Invoke();
     }
 
     // 스테이지 재시작 시 (PlayerHealth.ResetHealth에서 호출)

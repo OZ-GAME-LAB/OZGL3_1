@@ -8,7 +8,7 @@ using OZ.UI.Contracts;
 public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
 {
     [SerializeField] private float _baseMaxHP = 100f;
-    [SerializeField] private float _hitInvincibleTime = 0.5f; // 연속 피격 방지
+    [SerializeField] private float _hitInvincibleTime = 1.0f; // 연속 피격 방지
     [SerializeField] private float _respawnInvincibleTime = 0.5f; // 재시작 직후 잠깐 보호
 
     private PlayerController _player;
