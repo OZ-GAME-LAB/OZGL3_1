@@ -124,9 +124,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2230925935269110599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d122e186ed948139b4fd133bbf96380, type: 3}
+  m_Script: {fileID: 11500000, guid: 6065f3969ea1453d9afc7af04ae02d0f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Monster
+  m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
   moveSpeed: 1
   maxHP: 5
   damageNumberOffset: {x: 0, y: 2, z: 0}

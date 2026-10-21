@@ -543,7 +543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed67b1399774d94b95214b85eae6b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
-  stagePrefab: {fileID: 2108500846}
+  stagePrefabs:
+  - {fileID: 7441219851636034096, guid: d5d0b851500be7047b8c8a33c7f666bf, type: 3}
+  - {fileID: 8933158922703630053, guid: f25787ff5573ded4dbb3d3215189eea1, type: 3}
+  stagePrefab: {fileID: 0}
   stageParent: {fileID: 2118460631}
   stageNumber: 1
   clearRank: 1
@@ -573,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoolManager
   monsterPrefabs:
   - {fileID: 2230925935269110599, guid: eae14ad38e0af6646baaa88d9f335130, type: 3}
+  - {fileID: 2230925935269110599, guid: ae2fd175855b4597b985f092ee1c9834, type: 3}
   initialCount: 5
 --- !u!1001 &626829084
 PrefabInstance:
@@ -798,7 +802,19 @@ MonoBehaviour:
         m_CallState: 2
   onNextStage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 838661939}
+        m_TargetAssemblyTypeName: SceneGameLink, Assembly-CSharp
+        m_MethodName: NextStage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onReturnToTitle:
     m_PersistentCalls:
       m_Calls:
@@ -3253,11 +3269,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28267093bcfc58b4ca3d45691c53fa84, type: 3}
---- !u!1 &2108500846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7441219851636034096, guid: d5d0b851500be7047b8c8a33c7f666bf, type: 3}
-  m_PrefabInstance: {fileID: 1630397194}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2118460630
 GameObject:
   m_ObjectHideFlags: 0
