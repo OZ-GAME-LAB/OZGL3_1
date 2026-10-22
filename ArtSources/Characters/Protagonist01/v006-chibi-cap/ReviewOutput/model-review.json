@@ -1,0 +1,147 @@
+{
+  "unity": "6000.3.21f1",
+  "model": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Model/Protagonist_ChibiCap.fbx",
+  "texture": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png",
+  "material": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat",
+  "prefab": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Model.prefab",
+  "outputDirectory": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap\\ReviewOutput",
+  "method": "Actual imported FBX rendered in an isolated Unity preview scene. Fixed orthographic scale, 720x720 PNGs; static model turntable, not action animation.",
+  "sourceForward": "Visually verified +Z by actual Unity Front/ThreeQuarter/Side_Orthographic/Side_2p5D/Back renders. Fixed -Z camera, actor front yaw180 and screen-right side yaw90.",
+  "sourceForwardVisuallyVerified": true,
+  "rigged": false,
+  "gameplayConnected": false,
+  "width": 720,
+  "height": 720,
+  "turntableFrames": 120,
+  "turntableFrameRate": 30,
+  "rendererCount": 1,
+  "uniqueMeshes": 1,
+  "totalVertices": 7100,
+  "totalTriangles": 8079,
+  "targetHeightMetres": 1.2000000476837158,
+  "sourceHeightMetres": 0.9516600966453552,
+  "normalizationScale": 1.26095449924469,
+  "renderedHeightMetres": 1.2000000476837158,
+  "turntableDurationSeconds": 4.0,
+  "sourceBoundsCenter": {
+    "x": 0.0,
+    "y": -0.0004879898624494672,
+    "z": -0.001464993692934513
+  },
+  "sourceBoundsSize": {
+    "x": 0.9077140092849731,
+    "y": 0.9516600966453552,
+    "z": 0.5561520457267761
+  },
+  "normalizedBoundsCenter": {
+    "x": 0.0,
+    "y": 0.6000000238418579,
+    "z": 0.0
+  },
+  "normalizedBoundsSize": {
+    "x": 1.1445860862731934,
+    "y": 1.2000000476837158,
+    "z": 0.7012825012207031
+  },
+  "notes": [
+    "The prefab preserves the imported source hierarchy and applies uniform normalization only to its visual child. Its root position/rotation/scale are identity.",
+    "The floor and soft ellipse are disposable review guides. The ellipse is not a baked body shadow or VFX asset.",
+    "The same orthographic scale is used for every view and every turntable frame. No per-frame automatic size adjustment is applied.",
+    "This tool does not attach animation, a RuntimeAnimatorController, player scripts, colliders, or gameplay logic.",
+    "Triangle and vertex totals count renderer instances; uniqueMeshes separately counts shared Mesh assets.",
+    "Source +Z confirmed by direct front/side/back PNG inspection after rendering."
+  ],
+  "meshes": [
+    {
+      "renderer": "Protagonist_ChibiCap_Visual",
+      "mesh": "Mesh_0",
+      "rendererType": "MeshRenderer",
+      "vertices": 7100,
+      "submeshes": 1,
+      "materialSlots": 1,
+      "triangles": 8079
+    }
+  ],
+  "views": [
+    {
+      "name": "Front",
+      "image": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap\\ReviewOutput\\Views\\Front.png",
+      "modelYawDegrees": 180.0,
+      "orthographicSize": 0.8553102016448975,
+      "cameraPosition": {
+        "x": 0.0,
+        "y": 1.600000023841858,
+        "z": -10.0
+      },
+      "cameraTarget": {
+        "x": 0.0,
+        "y": 0.6000000238418579,
+        "z": 0.0
+      }
+    },
+    {
+      "name": "ThreeQuarter",
+      "image": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap\\ReviewOutput\\Views\\ThreeQuarter.png",
+      "modelYawDegrees": 145.0,
+      "orthographicSize": 0.8553102016448975,
+      "cameraPosition": {
+        "x": 0.0,
+        "y": 1.600000023841858,
+        "z": -10.0
+      },
+      "cameraTarget": {
+        "x": 0.0,
+        "y": 0.6000000238418579,
+        "z": 0.0
+      }
+    },
+    {
+      "name": "Side_Orthographic",
+      "image": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap\\ReviewOutput\\Views\\Side_Orthographic.png",
+      "modelYawDegrees": 90.0,
+      "orthographicSize": 0.8553102016448975,
+      "cameraPosition": {
+        "x": 0.0,
+        "y": 0.6000000238418579,
+        "z": -10.0
+      },
+      "cameraTarget": {
+        "x": 0.0,
+        "y": 0.6000000238418579,
+        "z": 0.0
+      }
+    },
+    {
+      "name": "Side_2p5D",
+      "image": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap\\ReviewOutput\\Views\\Side_2p5D.png",
+      "modelYawDegrees": 90.0,
+      "orthographicSize": 0.8553102016448975,
+      "cameraPosition": {
+        "x": 1.0499999523162842,
+        "y": 1.649999976158142,
+        "z": -10.0
+      },
+      "cameraTarget": {
+        "x": 0.0,
+        "y": 0.6000000238418579,
+        "z": 0.0
+      }
+    },
+    {
+      "name": "Back",
+      "image": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap\\ReviewOutput\\Views\\Back.png",
+      "modelYawDegrees": 0.0,
+      "orthographicSize": 0.8553102016448975,
+      "cameraPosition": {
+        "x": 0.0,
+        "y": 1.600000023841858,
+        "z": -10.0
+      },
+      "cameraTarget": {
+        "x": 0.0,
+        "y": 0.6000000238418579,
+        "z": 0.0
+      }
+    }
+  ]
+}

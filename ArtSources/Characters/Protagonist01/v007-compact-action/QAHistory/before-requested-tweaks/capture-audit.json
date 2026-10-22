@@ -1,0 +1,405 @@
+{
+  "sourceSHA256": "bd0506828fde0669721568fc6415f695a9e8e2816d5b142cc1b2d36c9809660a",
+  "scope": "Numerical skin/pose and preservation measurements; visual review is separately recorded in qa-review.txt. Offline previews do not validate runtime input/physics.",
+  "passed": true,
+  "checks": [
+    {
+      "name": "14 main + 7 auxiliary + 3 offline transition captures",
+      "passed": true,
+      "evidence": [
+        14,
+        7,
+        3
+      ]
+    },
+    {
+      "name": "Idle_Fists: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026193123776465654
+      }
+    },
+    {
+      "name": "Idle_Fists: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Walk_Fists: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0028960031922906637
+      }
+    },
+    {
+      "name": "Walk_Fists: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Run_Fists: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025393979158252478
+      }
+    },
+    {
+      "name": "Run_Fists: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Jump_Full: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.00258374004624784
+      }
+    },
+    {
+      "name": "Dash_Forward: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025509956758469343
+      }
+    },
+    {
+      "name": "Punch_Right_Jab: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026915345806628466
+      }
+    },
+    {
+      "name": "Sword_Horizontal_Slash: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026215335819870234
+      }
+    },
+    {
+      "name": "Sword_Aerial_Plunge: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.002589214826002717
+      }
+    },
+    {
+      "name": "Staff_Cast_Forward: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026582975406199694
+      }
+    },
+    {
+      "name": "Potion_Drink: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.002622545463964343
+      }
+    },
+    {
+      "name": "Item_Throw_Overhand: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025916153099387884
+      }
+    },
+    {
+      "name": "Hit_Reaction: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026889860164374113
+      }
+    },
+    {
+      "name": "Interact_Reach: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026202809531241655
+      }
+    },
+    {
+      "name": "Pickup_Low: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025448817759752274
+      }
+    },
+    {
+      "name": "Jump_Takeoff: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0026001373771578074
+      }
+    },
+    {
+      "name": "Jump_Rise_Loop: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.005870983935892582
+      }
+    },
+    {
+      "name": "Jump_Rise_Loop: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Jump_Apex_Loop: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.006500679068267345
+      }
+    },
+    {
+      "name": "Jump_Apex_Loop: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Jump_Fall_Loop: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.004558322485536337
+      }
+    },
+    {
+      "name": "Jump_Fall_Loop: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Jump_Land: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025836422573775053
+      }
+    },
+    {
+      "name": "Sword_Plunge_Fall_Loop: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.014368701726198196
+      }
+    },
+    {
+      "name": "Sword_Plunge_Fall_Loop: repeated cycle pose matches",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0
+      }
+    },
+    {
+      "name": "Sword_Plunge_Land: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025893335696309805
+      }
+    },
+    {
+      "name": "Move_Dash_Recover: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025394733529537916
+      }
+    },
+    {
+      "name": "Jump_Attack_Dash: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.002551004057750106
+      }
+    },
+    {
+      "name": "Jump_Sword_Plunge: no skin sole penetration",
+      "passed": true,
+      "evidence": {
+        "minimumYMetres": 0.0025892097037285566
+      }
+    },
+    {
+      "name": "Idle_Fists: both fists closed throughout",
+      "passed": true,
+      "evidence": {
+        "leftMin": 100.0,
+        "rightMin": 100.0
+      }
+    },
+    {
+      "name": "Idle_Fists: forward gaze remains level",
+      "passed": true,
+      "evidence": {
+        "maximumAbsoluteFacePitchDegrees": 0.2500251241252896
+      }
+    },
+    {
+      "name": "Walk_Fists: both fists closed throughout",
+      "passed": true,
+      "evidence": {
+        "leftMin": 100.0,
+        "rightMin": 100.0
+      }
+    },
+    {
+      "name": "Walk_Fists: forward gaze remains level",
+      "passed": true,
+      "evidence": {
+        "maximumAbsoluteFacePitchDegrees": 6.00298391326063e-05
+      }
+    },
+    {
+      "name": "Run_Fists: both fists closed throughout",
+      "passed": true,
+      "evidence": {
+        "leftMin": 100.0,
+        "rightMin": 100.0
+      }
+    },
+    {
+      "name": "Run_Fists: forward gaze remains level",
+      "passed": true,
+      "evidence": {
+        "maximumAbsoluteFacePitchDegrees": 6.002985867393426e-05
+      }
+    },
+    {
+      "name": "Jump_Full: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452334899154964
+      }
+    },
+    {
+      "name": "Dash_Forward: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452632930522331
+      }
+    },
+    {
+      "name": "Punch_Right_Jab: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452632930522331
+      }
+    },
+    {
+      "name": "Sword_Horizontal_Slash: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452632930522331
+      }
+    },
+    {
+      "name": "Sword_Aerial_Plunge: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452632922377839
+      }
+    },
+    {
+      "name": "Staff_Cast_Forward: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452334954133285
+      }
+    },
+    {
+      "name": "Potion_Drink: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452633427336272
+      }
+    },
+    {
+      "name": "Item_Throw_Overhand: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452633305168913
+      }
+    },
+    {
+      "name": "Hit_Reaction: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452633305168913
+      }
+    },
+    {
+      "name": "Interact_Reach: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452633305168913
+      }
+    },
+    {
+      "name": "Pickup_Low: recovery returns to common stance",
+      "passed": true,
+      "evidence": {
+        "maximumPositionErrorMetres": 0.0005452634738599081
+      }
+    },
+    {
+      "name": "Potion: actual mounted nozzle contacts mouth during sip",
+      "passed": true,
+      "evidence": {
+        "maximumErrorMetres": 2.2759549721909142e-07
+      }
+    },
+    {
+      "name": "Pickup: actual open-hand skin reaches ground ahead of shoes",
+      "passed": true,
+      "evidence": {
+        "frame": 15,
+        "time": 0.5,
+        "fingertipYMetres": 0.0046300883404910564,
+        "forwardToeClearanceMetres": 0.07078284025192261
+      }
+    },
+    {
+      "name": "Sword slash: cutting section remains horizontal",
+      "passed": true,
+      "evidence": {
+        "maximumTipWristHeightDifferenceMetres": 1.1920928955078125e-07
+      }
+    },
+    {
+      "name": "Jump to plunge: no upward blade spike at handoff",
+      "passed": true,
+      "evidence": {
+        "frames": [
+          13,
+          14,
+          15,
+          16
+        ],
+        "tipYMetres": [
+          1.0391123294830322,
+          1.0370991230010986,
+          0.7599471807479858,
+          0.457427054643631
+        ]
+      }
+    },
+    {
+      "name": "Preserved v005/v006 and VFX assets are byte-identical",
+      "passed": true,
+      "evidence": {
+        "filesCompared": 130,
+        "changed": []
+      }
+    }
+  ]
+}

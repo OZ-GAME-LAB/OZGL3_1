@@ -1,0 +1,59 @@
+v006 새 3등신 모자 캐릭터 — 기존 제작 파이프라인 조사
+2026-10-21 KST / chibi_model_pipeline / 읽기 전용 조사
+Unity 실행, 유료 생성, 기존 자산·모션·게임 코드·VFX 변경 없음.
+
+결론
+새 reference 이미지 → Meshy T2.5 Smart Topology → 독립 경로 FBX+GLB+base color 다운로드 → 새 Editor 정적 검수 클래스의 실제 Unity 렌더가 가장 단순하다. 기존 v005 캡처 전체를 호출하거나 기존 플레이어/클립을 새 비율에 그대로 덮어쓰지 않는다.
+
+기존 경로와 재사용 가능 자료
+ArtSources/Characters/Protagonist01/v001/generation.json:
+  이전 image_gen 참조 이미지 프롬프트, Meshy 요청, task id, 최종 FBX 경로, 시각 검수 기록이 있다.
+  meshy-t2.5 / smart-topology / T-pose / 약6,000 triangles / 2K base color / PBR off / FBX+GLB였다.
+  기존 실제 결과는1 geometry,3,179 vertices,6,086 triangles,1 material,2K base color였다. 이 수치를 새 모델의 결과로 주장해서는 안 된다.
+ArtSources/Characters/Protagonist01/v001/inspect_fbx.py:
+  python inspect_fbx.py absolute-model-path.fbx 형태의 읽기 전용 검사.
+  binary/ASCII FBX, 모든 Geometry의 vertex/face 합계, 인덱스 오류, embedded texture와 skeleton 목록을 JSON 출력한다.
+ArtSources/Characters/Protagonist01/v001/render_review.py:
+  예전 첫 모델용 numpy CPU rasterizer다. 첫 Geometry만 읽고 texture 파일·축·triangle·UV 구조를 고정 가정한다.
+  새 Smart Topology 결과가 cap/body 등 여러 Geometry이면 일부만 렌더할 수 있으므로 그대로 새 모델 검수에 쓰지 않는 것이 안전하다.
+
+권장 새 파일 분리
+ArtSources/Characters/Protagonist01/v006-chibi-cap/:
+  reference.png, generation.json(실제 prompt/task id/비용/확정 결과), inspection.json, ReviewOutput/, research/.
+Assets/Art/Characters/Protagonist01/ChibiCap_v006/:
+  Source/Protagonist01_ChibiCap.fbx, Source/Protagonist01_ChibiCap.glb(원본 보관은 ArtSources도 가능), Textures/, Materials/, Prefabs/.
+게임 플레이어·기존 v005 review prefab·원본 rig·Controller는 수정하지 않는다.
+
+Meshy 현재 도구 스키마에서 확인한 선택
+meshy_image_to_3d:
+  ai_model='meshy-t2.5', model_type='smart-topology', target_polycount=6000,
+  topology='triangle', pose_mode='t-pose', should_texture=true, enable_pbr=false,
+  texture_resolution='2k', image_enhancement=false, alpha_thumbnail=true,
+  multi_view_thumbnails=true, target_formats=['fbx','glb'], response_format='json'.
+  로컬 참조 이미지는 file_path 절대경로로 전달하며 스스로 base64 변환하지 않는다.
+  smart-topology는 직접 목표 삼각형 메시를 만들며 remesh/decimation 옵션을 무시한다. quad 옵션과 should_remesh 추가는 불필요하다.
+meshy_get_task_status로 실제 SUCCEEDED와 결과를 확인한 뒤 다운로드한다.
+meshy_download_model:
+  format='fbx', include_textures=true, save_to=새 FBX 절대경로.
+  GLB도 별도 format='glb', 새 절대경로로 다운로드해 둘 수 있다.
+  단순히 URL이 있다는 것과 실제 로컬 파일 저장은 구분한다. 실제 크기·존재·texture 확인 후 완료로 기록한다.
+리깅은 새 비율 승인 뒤 별도 단계가 안전하다. 필요하면 meshy_rig는 textured humanoid input_task_id와 height_meters를 받는다. 실제 생성하지 않았으며 비용/성공을 여기서 가정하지 않는다.
+
+새 Editor 정적 캡처 최소안
+기존 NaturalMotionCapture.cs의 private Stage(약199~340행)는 별도 preview scene, URP 조명/바닥, RenderTexture, Camera.Render/ReadPixels를 사용한다. 이 원칙만 간단히 복사해 새로운 ChibiCapReviewCapture.cs 등에서 사용한다.
+기존 NaturalMotionCapture.CaptureMotion(약574행)은 Animator·손발·머리·골반본과 SkinnedMeshRenderer를 강제하므로 리그 없는 새 정적 모델에는 사용할 수 없다. NaturalMotionBuilder.Build도 v005 후보를 임포트하므로 호출하지 않는다.
+
+새 클래스가 할 일:
+1. AssetDatabase.Refresh 후 새 FBX를 LoadAssetAtPath<GameObject>로 로드한다. 새 importer에만 materialImportMode=None, importAnimation=false, importCameras=false, importLights=false 등을 명시한다. renderer의 모든 MeshFilter/SkinnedMeshRenderer를 대상으로 합산한다.
+2. 새 전용 URP/Unlit material을 생성하고 base color 텍스처를 _BaseMap에 연결한다. 기존 v005 머티리얼을 수정하지 않는다. 로우폴리 면형은 메시 형상이며 픽셀 후처리와 구분한다.
+3. 임시 preview scene 안에서 새 모델을 instantiate하고 bounds를 합산한다. 필요 시 별도 부모의 uniform scale로 전체 높이를 예컨대1.2m로 맞추고 renderer bounds.min.y가0에 오도록 배치한다. 원본 FBX 내부 좌표를 직접 파괴하지 않는다.
+4. front / rear / left / right / 3-quarter 정지뷰 및0~360도 turntable을 렌더한다. sideview는 기존과 같은 actor +Z를 화면 +X 방향으로 회전하고 카메라 offset(1.05,1.05,-10) 비율을 유지하면 약6도 사선의 2.5D 인상이 난다. 새 모델 전방축은 실제 얼굴 렌더로 확인한다.
+5. 모든 프레임에 같은 고정 카메라·orthographicSize·모델 중심을 사용한다. 회전마다 tight fit을 새로 하면 모델 크기가 호흡하듯 바뀐다. 모델의 전체 회전 bounds 또는 고정 원기둥 bounds를 먼저 계산해 맞춘다.
+6. Camera.Render를 두 번 호출하고 ReadPixels 후 PNG 저장. 실제 PNG들로 PIL GIF 작성. 30fps이면30/40ms 누적 지연시간으로 원속도를 유지한다. 이것은 모델 검수용 회전이며 새 캐릭터의 실제 액션 애니메이션이라고 부르지 않는다.
+7. finally에서 임시 object/material/rendertexture/preview scene을 정리하고 RenderSettings·이전 RenderTexture·active scene을 되돌린다. gameplay scene은 저장하지 않는다.
+
+검수할 모델 요소
+실제 전/측/후에서 약3등신의 큰 머리/짧은 몸통·팔다리, 모자 챙이 측면에서 얼굴을 가리는 정도, 목·어깨 분리, 겨드랑이와 다리 사이 틈, 팔꿈치·무릎 부근의 급격한 두께 변화, 손/발 형태와 바닥 높이를 확인한다.
+모자 포함 전체 높이와 머리 높이를 어떻게 측정했는지 generation.json에 명시한다. 눈대중 비율을 정밀한 실측으로 표기하지 않는다.
+큰 모자와 머리는 향후 팔을 머리 위로 드는 점프/투척에 충돌 위험이 있으므로 리깅 후 별도 검수한다. 기존24본용 Generic v005클립은 새 skeleton의 계층과 비율에 자동 호환된다고 볼 수 없다.
+새 모델이 탄성 있는 액션에 유리한 단순 실루엣과 관절 여유를 갖추는 것과, 실제 모션의 anticipation/spacing/overlap/squash-stretch를 제작하는 것은 별도 단계다. 모델 회전 GIF만으로 액션의 손맛이 개선됐다고 주장하지 않는다.

@@ -1,0 +1,20 @@
+Reference-based revision — first pilot visual findings (NOT FINAL APPROVAL)
+2026-10-21 KST
+Source report SHA256: e94ca6b61c10d03d89363f72cac1f7b7f7cb6bf8e0b102580a6ae51f0555b210
+Evidence: 28 Sword + 28 Staff full-pose PNG and 28 Sword + 28 Staff GripDetails PNG contact sheets. Original720px closeups Sword0000/0007/0010, Staff0000/0007 and full-pose0007 for both reviewed separately.
+Files are snapshotted in PilotSnapshot/ with pilot-frame-hashes.json. This first pilot uses the earlier HandZ cylinder calibration and is superseded by the pending45-degree diagonal calibration for grip quality.
+
+Blocking finding1: physically strained wrist despite attached hilt
+Sword closeups0000/0007/0010 show a large down-cocked palm with a cup-like underside. Staff likewise has a strong forearm/palm angular change. A socket that stays attached is insufficient evidence of a natural grasp.
+The imported source bind Hand+Y follows RightForeArm-to-RightHand within8.80degrees. Thus Hand+Y is a meaningful palm/finger-long-axis approximation.
+Under the current mapping HandY=-propNormal, actual forearm-to-HandY angles are Sword86.7–120.1degrees (ready109.5) and Staff93.1–103.7degrees. This agrees with the visible strained wrist. These numbers are diagnostic coordinate evidence, not medical human range-of-motion limits.
+Parent notified before further code editing. Parent is replacing the cylinder/mount with a diagonal45degree grasp and will rerender.
+
+Finding2: near-straight arm locks
+Sword0008/.267s elbow bend29.2deg→0009/.300s3.1deg→0010/.333s14.4deg (0=straight); Staff0008 also3.1deg. The actual arm approaches full extension and immediately bends again, potentially adding a rigid snap unrelated to the intended compact action. Reevaluate after calibration because its wrist offset changes the physical reach. If it persists, author a nearer hilt path rather than applying a cosmetic elbow-angle cap.
+
+Provisional motion observations, separate from grip approval
+The mounted sword travels inside to outside once, with continuous outward follow-through. Actual propAxis yaw at0003 through0009 is-49.1/-41.6/-18.3/+13.3/+39.0/+54.7/+60.6deg. Active pitch is0. Actual recovery pitch rises progressively to12.7deg rather than dipping below the waist. Hilt retracts before tip alignment finishes. No fixed .23–.30hold remains.
+These facts verify the revised action's direction and recovery intent. They do not override the blocking wrist problem or establish complete naturalness.
+
+Status: WAIT FOR NEW ACTUAL CALIBRATION CAPTURE. No code/assets edited by this reviewer.

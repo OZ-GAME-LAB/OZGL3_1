@@ -1,0 +1,19 @@
+Staff / Sword grip independent QA — candidate rejected, further revision required
+
+Scope: actual Unity v007 full/detail PNG and calibrated BakeMesh JSON, camera11.25 degrees, 2026-10-21 final-local-topology candidate. This record is deliberately not an approval. The actual surface audit JSON is authoritative for current hashes and per-region numbers.
+
+VISUAL FINDING
+Staff and sword exposed fingers now wrap their different handle widths, rather than placing a shaft through an open palm below the fingers. Source75/100 and base original vertices are retained. However, the latest175 corrective adds a small grey knot/spike beside the pommel and sleeve in Sword detail0000; a thin twisted underside is visible in native probe peakXY. These are grounds for rejection even where a camera obscures the contact surface.
+
+ACTUAL SURFACE FAILURE
+Staff ready: grid minimum -0.134mm, analytic axis-closest triangle point -0.140mm. Finger minimum +0.164mm and thumb +0.380mm. Peak all grid samples +0.164mm minimum.
+Sword ready: added midpoint face7427/7431/7169 grid minimum -12.817mm and axis-closest point -15.335mm. Peak face7430/7431/7427 grid minimum -8.996mm and axis-closest point -12.364mm. Exposed fingers remain +0.463mm minimum and thumb +2.001mm. The root triangle crosses the weapon axis; distributing its interior vertices radially onto opposite sides leaves connecting faces through the shaft. More numeric passes do not establish a valid physical grip.
+
+PRESERVATION VERIFIED
+Original v006 mesh SHA256 remains862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593. Existing7101 vertex position/normal/tangent/UV prefix is exact. Right75/100 and Left75/100 existing indexed delta records are exact. Bindposes are exact.455 local midpoint vertices were added intentionally and index topology changes. Additional weights use at most3 bones and sum to1 within1e-6. Existing222-vertex right-hand skin-weight rule remains unchanged, maximum absolute float error5.2e-8. v007 weights are not identical to v006; the previously documented distal-hand correction remains.
+
+METHOD / LIMITS
+Each actual exported hand triangle is sampled at15 barycentric positions and ray-tested against the actual attached shaft mesh at that axial coordinate. Signed radial gap is reported, not wrist/socket marker distance. An additional analytic closest-to-axis triangle point is ray-tested to detect faces spanning the shaft between grid samples. These checks are finite and do not prove continuous triangle-varying-profile collision freedom or Euclidean minimum distance. Probe includes Hand influence>=.50 plus new refinement faces; the wrist cut is artificial, but its retained triangles are real source skin. Negative source face533/532/530 was not excused as a mere cut boundary. Forced Idle Grip150 is diagnostic and is not a claim about unarmed Idle_Fists.
+
+NEXT REVISION
+Root has been informed that current candidate is rejected. A shaft basis that exits beside the palm rather than crossing wrist volume should be evaluated before additional skin deformation. No Unity runs by this agent; no VFX or gameplay changes.

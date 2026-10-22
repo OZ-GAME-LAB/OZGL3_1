@@ -1,0 +1,36 @@
+{
+    "sourceMesh": "Assets/Art/Stage01Kit/Meshes/Weapons/Staff.asset",
+    "sourceMeshSha256": "2dc3192d78668147a3303e5a8d33d1be75f7228e364d5470853f4df04e292fa9",
+    "transparentShader": "Assets/Art/Stage01Kit/Materials/StaffOrb/StaffOrb_FacetedTransparent.shader",
+    "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+    "originalSharedMeshUnchanged": true,
+    "socketWeaponMetadataUnchanged": true,
+    "refractiveScreenRead": false,
+    "effectTipFollowsNewOrbTop": true,
+    "sourceTriangles": 957,
+    "removedHeadTriangles": 122,
+    "shaftTriangles": 835,
+    "orbTriangles": 80,
+    "meshRenderers": 2,
+    "transparentPasses": 1,
+    "extraTextures": 0,
+    "originalHeadSize": {
+        "x": 0.21208566427230836,
+        "y": 0.3153499364852905,
+        "z": 0.2071963995695114
+    },
+    "orbCenter": {
+        "x": -1.4901161193847657e-8,
+        "y": 0.7070001363754273,
+        "z": -7.450580596923828e-9
+    },
+    "originalHeadBottom": 0.6119999885559082,
+    "originalHeadTop": 0.9273499250411987,
+    "orbDiameter": 0.1899999976158142,
+    "floatingGap": 0.04500000178813934,
+    "shaftTop": 0.567000150680542,
+    "orbBottom": 0.6120001673698425,
+    "orbTop": 0.8020001649856567,
+    "alphaAtFaceCenter": 0.4000000059604645,
+    "maximumRimAlpha": 0.6100000143051148
+}

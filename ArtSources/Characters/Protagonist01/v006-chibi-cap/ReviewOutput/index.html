@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Protagonist Chibi Cap v006 — Model Review</title>
+<style>body{margin:0;background:#151b22;color:#e2e9f2;font:16px/1.7 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:28px 20px 60px}h1{font-size:27px}h2{margin-top:36px;font-size:22px}a{color:#95d5da}.hero{display:block;max-width:720px;width:100%;margin:18px auto;background:#1a2027}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}figure{margin:0;background:#1b232d}figure img{display:block;width:100%}figcaption{padding:7px 14px}.note{color:#afbecf}@media(max-width:640px){.grid{grid-template-columns:1fr}}</style>
+<main><h1>새 주인공 · Chibi Cap v006</h1>
+<p>큰 머리, 짧고 넓은 몸통과 팔다리, 넓은 모자와 큰 신발을 중심으로 만든 새 로우폴리 모델입니다.</p>
+<p class="note">아래는 실제 FBX를 Unity에서 렌더한 화면입니다. 턴테이블은 정적 모델의 360도 회전이며 캐릭터 액션 애니메이션이 아닙니다. 기존 플레이어·씬·모션·VFX에는 연결하지 않았습니다.</p>
+<nav><a href="../../../../../Assets/Art/Characters/Protagonist01/ChibiCap_v006/Model/Protagonist_ChibiCap.fbx">FBX 모델</a> · <a href="../Protagonist_ChibiCap.glb">GLB 원본</a> · <a href="../../../../../Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Model.prefab">모델 프리팹</a> · <a href="../../../../../Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Rig.prefab">리깅·주먹 프리팹</a> · <a href="../../../../../Assets/Art/Characters/Protagonist01/ChibiCap_v006/Clips/Punch_Elastic_Preview.anim">탄성 펀치 테스트 클립</a> · <a href="../Protagonist_ChibiCap_Concept.png">생성 기준 이미지</a> · <a href="model-review.json">Unity 모델 계측</a> · <a href="../research/reference-analysis-2026-10-21.txt">레퍼런스 재분석</a> · <a href="../research/visual-audit.txt">시각 검수</a> · <a href="../generation.json">생성 기록</a></nav>
+<h2>360도 모델 확인</h2><p>원속도 · 30fps · 4초 반복 · 동일 카메라와 크기</p>
+<img class="hero" src="Protagonist_ChibiCap_Turntable.gif" alt="Actual Unity model turntable">
+<h2>탄성 액션 방향 테스트</h2><p>샘플 전용 개별 클립의 실제 Unity 렌더입니다. 게임에 연결한 결과가 아닙니다.</p><img class="hero" src="PunchElastic.gif" alt="Elastic punch sample"><h2>주먹을 쥔 기본 자세</h2><div class="grid"><figure><img src="../ElasticReview/Neutral_Front.png" alt="Rigged neutral front"><figcaption>정면 · 별도 리그/주먹 메시 적용</figcaption></figure><figure><img src="../ElasticReview/Neutral_Side_2p5D.png" alt="Rigged neutral side"><figcaption>2.5D 측면 · 기본 자세</figcaption></figure></div>
+<h2>정면·측면·뒤 확인</h2><div class="grid"><figure><img src="Views/Front.png" alt="Front" loading="lazy"><figcaption>Front</figcaption></figure>
+<figure><img src="Views/ThreeQuarter.png" alt="Three-quarter" loading="lazy"><figcaption>Three-quarter</figcaption></figure>
+<figure><img src="Views/Side_Orthographic.png" alt="Pure side view" loading="lazy"><figcaption>Pure side view</figcaption></figure>
+<figure><img src="Views/Side_2p5D.png" alt="2.5D side view" loading="lazy"><figcaption>2.5D side view</figcaption></figure>
+<figure><img src="Views/Back.png" alt="Back" loading="lazy"><figcaption>Back</figcaption></figure></div>
+<h2>생성 기준 이미지</h2><p class="note">아래는 이미지 생성 단계의 기준 시안입니다. 최종 메시의 증거는 위의 Unity 렌더입니다.</p>
+<img class="hero" src="../Protagonist_ChibiCap_Concept.png" alt="Concept image, not final mesh">
+</main></html>

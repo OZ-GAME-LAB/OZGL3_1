@@ -1,0 +1,509 @@
+{
+  "file": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx",
+  "format": "binary",
+  "fbx_version": 7400,
+  "file_bytes": 3125980,
+  "global_axis_and_unit_settings": {
+    "UpAxis": 1,
+    "UpAxisSign": 1,
+    "FrontAxis": 2,
+    "FrontAxisSign": 1,
+    "CoordAxis": 0,
+    "CoordAxisSign": 1,
+    "UnitScaleFactor": 1.0
+  },
+  "bounds_space": "raw geometry local; model transforms and unit conversion not applied",
+  "totals": {
+    "geometries": 1,
+    "vertices": 7101,
+    "faces": 8079,
+    "fan_triangles": 8079,
+    "materials": 1
+  },
+  "geometry": [
+    {
+      "id": 1000000052,
+      "name": "char1",
+      "type": "Mesh",
+      "vertices": 7101,
+      "faces": 8079,
+      "fan_triangles": 8079,
+      "largest_polygon_vertices": 3,
+      "invalid_vertex_indices": 0,
+      "local_axis_bounds": {
+        "x": {
+          "min": -57.229305267333984,
+          "max": 57.229305267333984,
+          "size": 114.45861053466797
+        },
+        "y": {
+          "min": 0.0,
+          "max": 120.00000762939453,
+          "size": 120.00000762939453
+        },
+        "z": {
+          "min": -35.064117431640625,
+          "max": 35.064117431640625,
+          "size": 70.12823486328125
+        }
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": 1000000053,
+      "name": "Material_0"
+    }
+  ],
+  "textures": [
+    {
+      "id": 1000000054,
+      "name": "Material_0_baseColor.jpg",
+      "object_type": "Video",
+      "filename": "Material_0_baseColor.jpg",
+      "relative_filename": "Material_0_baseColor.jpg",
+      "embedded": true,
+      "embedded_byte_count": 2583170
+    },
+    {
+      "id": 1000000055,
+      "name": "Material_0_baseColor.jpg",
+      "object_type": "Texture",
+      "filename": "Material_0_baseColor.jpg",
+      "relative_filename": "Material_0_baseColor.jpg",
+      "embedded": false,
+      "embedded_byte_count": null
+    }
+  ],
+  "embedded_texture_filenames": [
+    "Material_0_baseColor.jpg"
+  ],
+  "skeleton": {
+    "bone_count": 24,
+    "bones": [
+      {
+        "id": 1000000001,
+        "name": "head_end",
+        "type": "LimbNode",
+        "parent_id": 1000000063
+      },
+      {
+        "id": 1000000003,
+        "name": "headfront",
+        "type": "LimbNode",
+        "parent_id": 1000000064
+      },
+      {
+        "id": 1000000005,
+        "name": "Head",
+        "type": "LimbNode",
+        "parent_id": 1000000062
+      },
+      {
+        "id": 1000000007,
+        "name": "neck",
+        "type": "LimbNode",
+        "parent_id": 1000000061
+      },
+      {
+        "id": 1000000009,
+        "name": "LeftHand",
+        "type": "LimbNode",
+        "parent_id": 1000000068
+      },
+      {
+        "id": 1000000011,
+        "name": "LeftForeArm",
+        "type": "LimbNode",
+        "parent_id": 1000000067
+      },
+      {
+        "id": 1000000013,
+        "name": "LeftArm",
+        "type": "LimbNode",
+        "parent_id": 1000000066
+      },
+      {
+        "id": 1000000015,
+        "name": "LeftShoulder",
+        "type": "LimbNode",
+        "parent_id": 1000000065
+      },
+      {
+        "id": 1000000017,
+        "name": "RightHand",
+        "type": "LimbNode",
+        "parent_id": 1000000072
+      },
+      {
+        "id": 1000000019,
+        "name": "RightForeArm",
+        "type": "LimbNode",
+        "parent_id": 1000000071
+      },
+      {
+        "id": 1000000021,
+        "name": "RightArm",
+        "type": "LimbNode",
+        "parent_id": 1000000070
+      },
+      {
+        "id": 1000000023,
+        "name": "RightShoulder",
+        "type": "LimbNode",
+        "parent_id": 1000000069
+      },
+      {
+        "id": 1000000025,
+        "name": "Spine",
+        "type": "LimbNode",
+        "parent_id": 1000000060
+      },
+      {
+        "id": 1000000027,
+        "name": "Spine01",
+        "type": "LimbNode",
+        "parent_id": 1000000059
+      },
+      {
+        "id": 1000000029,
+        "name": "Spine02",
+        "type": "LimbNode",
+        "parent_id": 1000000058
+      },
+      {
+        "id": 1000000031,
+        "name": "LeftToeBase",
+        "type": "LimbNode",
+        "parent_id": 1000000076
+      },
+      {
+        "id": 1000000033,
+        "name": "LeftFoot",
+        "type": "LimbNode",
+        "parent_id": 1000000075
+      },
+      {
+        "id": 1000000035,
+        "name": "LeftLeg",
+        "type": "LimbNode",
+        "parent_id": 1000000074
+      },
+      {
+        "id": 1000000037,
+        "name": "LeftUpLeg",
+        "type": "LimbNode",
+        "parent_id": 1000000073
+      },
+      {
+        "id": 1000000039,
+        "name": "RightToeBase",
+        "type": "LimbNode",
+        "parent_id": 1000000080
+      },
+      {
+        "id": 1000000041,
+        "name": "RightFoot",
+        "type": "LimbNode",
+        "parent_id": 1000000079
+      },
+      {
+        "id": 1000000043,
+        "name": "RightLeg",
+        "type": "LimbNode",
+        "parent_id": 1000000078
+      },
+      {
+        "id": 1000000045,
+        "name": "RightUpLeg",
+        "type": "LimbNode",
+        "parent_id": 1000000077
+      },
+      {
+        "id": 1000000047,
+        "name": "Hips",
+        "type": "LimbNode",
+        "parent_id": 1000000057
+      }
+    ],
+    "root_bone_names": [
+      "head_end",
+      "headfront",
+      "Head",
+      "neck",
+      "LeftHand",
+      "LeftForeArm",
+      "LeftArm",
+      "LeftShoulder",
+      "RightHand",
+      "RightForeArm",
+      "RightArm",
+      "RightShoulder",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "LeftToeBase",
+      "LeftFoot",
+      "LeftLeg",
+      "LeftUpLeg",
+      "RightToeBase",
+      "RightFoot",
+      "RightLeg",
+      "RightUpLeg",
+      "Hips"
+    ],
+    "skeleton_node_attributes": [
+      {
+        "id": 1000000002,
+        "name": "head_end",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000004,
+        "name": "headfront",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000006,
+        "name": "Head",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000008,
+        "name": "neck",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000010,
+        "name": "LeftHand",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000012,
+        "name": "LeftForeArm",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000014,
+        "name": "LeftArm",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000016,
+        "name": "LeftShoulder",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000018,
+        "name": "RightHand",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000020,
+        "name": "RightForeArm",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000022,
+        "name": "RightArm",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000024,
+        "name": "RightShoulder",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000026,
+        "name": "Spine",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000028,
+        "name": "Spine01",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000030,
+        "name": "Spine02",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000032,
+        "name": "LeftToeBase",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000034,
+        "name": "LeftFoot",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000036,
+        "name": "LeftLeg",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000038,
+        "name": "LeftUpLeg",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000040,
+        "name": "RightToeBase",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000042,
+        "name": "RightFoot",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000044,
+        "name": "RightLeg",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000046,
+        "name": "RightUpLeg",
+        "type": "LimbNode"
+      },
+      {
+        "id": 1000000048,
+        "name": "Hips",
+        "type": "LimbNode"
+      }
+    ],
+    "skin_deformer_count": 1,
+    "skin_deformers": [
+      {
+        "id": 1000000056,
+        "name": ""
+      }
+    ],
+    "cluster_count": 24,
+    "clusters": [
+      {
+        "id": 1000000057,
+        "name": "Hips",
+        "weighted_vertex_entries": 1022
+      },
+      {
+        "id": 1000000058,
+        "name": "Spine02",
+        "weighted_vertex_entries": 992
+      },
+      {
+        "id": 1000000059,
+        "name": "Spine01",
+        "weighted_vertex_entries": 23
+      },
+      {
+        "id": 1000000060,
+        "name": "Spine",
+        "weighted_vertex_entries": 4
+      },
+      {
+        "id": 1000000061,
+        "name": "neck",
+        "weighted_vertex_entries": 220
+      },
+      {
+        "id": 1000000062,
+        "name": "Head",
+        "weighted_vertex_entries": 2633
+      },
+      {
+        "id": 1000000063,
+        "name": "head_end",
+        "weighted_vertex_entries": 1188
+      },
+      {
+        "id": 1000000064,
+        "name": "headfront",
+        "weighted_vertex_entries": 1412
+      },
+      {
+        "id": 1000000065,
+        "name": "LeftShoulder",
+        "weighted_vertex_entries": 1341
+      },
+      {
+        "id": 1000000066,
+        "name": "LeftArm",
+        "weighted_vertex_entries": 1080
+      },
+      {
+        "id": 1000000067,
+        "name": "LeftForeArm",
+        "weighted_vertex_entries": 590
+      },
+      {
+        "id": 1000000068,
+        "name": "LeftHand",
+        "weighted_vertex_entries": 623
+      },
+      {
+        "id": 1000000069,
+        "name": "RightShoulder",
+        "weighted_vertex_entries": 1560
+      },
+      {
+        "id": 1000000070,
+        "name": "RightArm",
+        "weighted_vertex_entries": 1316
+      },
+      {
+        "id": 1000000071,
+        "name": "RightForeArm",
+        "weighted_vertex_entries": 604
+      },
+      {
+        "id": 1000000072,
+        "name": "RightHand",
+        "weighted_vertex_entries": 634
+      },
+      {
+        "id": 1000000073,
+        "name": "LeftUpLeg",
+        "weighted_vertex_entries": 1377
+      },
+      {
+        "id": 1000000074,
+        "name": "LeftLeg",
+        "weighted_vertex_entries": 892
+      },
+      {
+        "id": 1000000075,
+        "name": "LeftFoot",
+        "weighted_vertex_entries": 750
+      },
+      {
+        "id": 1000000076,
+        "name": "LeftToeBase",
+        "weighted_vertex_entries": 348
+      },
+      {
+        "id": 1000000077,
+        "name": "RightUpLeg",
+        "weighted_vertex_entries": 1319
+      },
+      {
+        "id": 1000000078,
+        "name": "RightLeg",
+        "weighted_vertex_entries": 833
+      },
+      {
+        "id": 1000000079,
+        "name": "RightFoot",
+        "weighted_vertex_entries": 725
+      },
+      {
+        "id": 1000000080,
+        "name": "RightToeBase",
+        "weighted_vertex_entries": 337
+      }
+    ]
+  },
+  "warnings": []
+}

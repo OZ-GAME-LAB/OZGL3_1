@@ -1,0 +1,1737 @@
+{
+  "validated_utc": "2026-10-21T10:43:12.485638+00:00",
+  "success": true,
+  "scope": "Media delivery integrity only; not an automatic naturalness or gameplay approval.",
+  "partial_diagnostic": false,
+  "checks_count": 340,
+  "failed_checks": [],
+  "main_motion_gifs": 13,
+  "auxiliary_motion_gifs": 5,
+  "transition_gifs": 2,
+  "montage_gifs": 4,
+  "local_html_links": 104,
+  "capture_report_sha256": "4a0125f5a7b948020051c8da20d235d258f297d40d5a55c597619518c4df716f",
+  "export_manifest_sha256": "7da70ee448e3694a62228deb6f731846f6cabdffd1130b527a4cba386934394f",
+  "checks": [
+    {
+      "check": "capture_report_hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unique_motion_names",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "main_thirteen_names",
+      "passed": true,
+      "detail": [
+        "Dash_Forward",
+        "Hit_Reaction",
+        "Idle_Fists",
+        "Interact_Reach",
+        "Item_Throw_Overhand",
+        "Jump_Full",
+        "Pickup_Low",
+        "Potion_Drink",
+        "Punch_Right_Jab",
+        "Run_Fists",
+        "Staff_Cast_Forward",
+        "Sword_Horizontal_Slash",
+        "Walk_Fists"
+      ]
+    },
+    {
+      "check": "auxiliary_count",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "auxiliary_five_names",
+      "passed": true,
+      "detail": [
+        "Jump_Apex_Loop",
+        "Jump_Fall_Loop",
+        "Jump_Land",
+        "Jump_Rise_Loop",
+        "Jump_Takeoff"
+      ]
+    },
+    {
+      "check": "transition_two_names",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "main_three_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "retired_active_previews_absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/duration",
+      "passed": true,
+      "detail": 5600
+    },
+    {
+      "check": "Motion/Idle_Fists/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Idle_Fists/authored_capture_count",
+      "passed": true,
+      "detail": 168
+    },
+    {
+      "check": "Motion/Idle_Fists/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Idle_Fists/qa_pages",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "Motion/Idle_Fists/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/duration",
+      "passed": true,
+      "detail": 1730
+    },
+    {
+      "check": "Motion/Walk_Fists/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Walk_Fists/authored_capture_count",
+      "passed": true,
+      "detail": 52
+    },
+    {
+      "check": "Motion/Walk_Fists/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Walk_Fists/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Motion/Walk_Fists/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/duration",
+      "passed": true,
+      "detail": 1270
+    },
+    {
+      "check": "Motion/Run_Fists/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Run_Fists/authored_capture_count",
+      "passed": true,
+      "detail": 38
+    },
+    {
+      "check": "Motion/Run_Fists/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Run_Fists/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Motion/Run_Fists/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/duration",
+      "passed": true,
+      "detail": 1470
+    },
+    {
+      "check": "Motion/Jump_Full/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Jump_Full/authored_capture_count",
+      "passed": true,
+      "detail": 44
+    },
+    {
+      "check": "Motion/Jump_Full/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Full/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Motion/Jump_Full/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/duration",
+      "passed": true,
+      "detail": 930
+    },
+    {
+      "check": "Motion/Dash_Forward/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Dash_Forward/authored_capture_count",
+      "passed": true,
+      "detail": 28
+    },
+    {
+      "check": "Motion/Dash_Forward/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Dash_Forward/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Dash_Forward/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/duration",
+      "passed": true,
+      "detail": 800
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/authored_capture_count",
+      "passed": true,
+      "detail": 24
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Punch_Right_Jab/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/duration",
+      "passed": true,
+      "detail": 930
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/authored_capture_count",
+      "passed": true,
+      "detail": 28
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Sword_Horizontal_Slash/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/duration",
+      "passed": true,
+      "detail": 930
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/authored_capture_count",
+      "passed": true,
+      "detail": 28
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Staff_Cast_Forward/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/duration",
+      "passed": true,
+      "detail": 2270
+    },
+    {
+      "check": "Motion/Potion_Drink/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Potion_Drink/authored_capture_count",
+      "passed": true,
+      "detail": 68
+    },
+    {
+      "check": "Motion/Potion_Drink/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Potion_Drink/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Motion/Potion_Drink/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/duration",
+      "passed": true,
+      "detail": 1570
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/authored_capture_count",
+      "passed": true,
+      "detail": 47
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Motion/Item_Throw_Overhand/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/duration",
+      "passed": true,
+      "detail": 930
+    },
+    {
+      "check": "Motion/Hit_Reaction/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Hit_Reaction/authored_capture_count",
+      "passed": true,
+      "detail": 28
+    },
+    {
+      "check": "Motion/Hit_Reaction/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Hit_Reaction/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Hit_Reaction/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/duration",
+      "passed": true,
+      "detail": 1200
+    },
+    {
+      "check": "Motion/Interact_Reach/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Interact_Reach/authored_capture_count",
+      "passed": true,
+      "detail": 36
+    },
+    {
+      "check": "Motion/Interact_Reach/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Interact_Reach/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Interact_Reach/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/duration",
+      "passed": true,
+      "detail": 1600
+    },
+    {
+      "check": "Motion/Pickup_Low/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/endpoint_hold",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "Motion/Pickup_Low/authored_capture_count",
+      "passed": true,
+      "detail": 48
+    },
+    {
+      "check": "Motion/Pickup_Low/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Pickup_Low/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Motion/Pickup_Low/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/duration",
+      "passed": true,
+      "detail": 170
+    },
+    {
+      "check": "Motion/Jump_Takeoff/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Jump_Takeoff/authored_capture_count",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "Motion/Jump_Takeoff/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Takeoff/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Jump_Takeoff/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/duration",
+      "passed": true,
+      "detail": 600
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/authored_capture_count",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Jump_Rise_Loop/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/duration",
+      "passed": true,
+      "detail": 400
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/authored_capture_count",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Jump_Apex_Loop/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/duration",
+      "passed": true,
+      "detail": 600
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/authored_capture_count",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Jump_Fall_Loop/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/duration",
+      "passed": true,
+      "detail": 430
+    },
+    {
+      "check": "Motion/Jump_Land/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/endpoint_hold",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Motion/Jump_Land/authored_capture_count",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "check": "Motion/Jump_Land/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Motion/Jump_Land/qa_pages",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "Motion/Jump_Land/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/duration",
+      "passed": true,
+      "detail": 5100
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/qa_pages",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "Transition/Move_Dash_Recover/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/duration",
+      "passed": true,
+      "detail": 2270
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/source_speed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/source_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/clock_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/qa_pages",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "Transition/Jump_Attack_Dash/sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "01_Locomotion/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "01_Locomotion/duration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "01_Locomotion/poster",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "02_Combat/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "02_Combat/duration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "02_Combat/poster",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "03_Utility/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "03_Utility/duration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "03_Utility/poster",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "04_Air_Phases/hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "04_Air_Phases/duration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "04_Air_Phases/poster",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../review-report.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/export-manifest.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/delivery-validation.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/README_ko.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/README_ko.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../capture-audit.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../qa-review.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Groups/01_Locomotion.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Groups/02_Combat.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Groups/03_Utility.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Groups/04_Air_Phases.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Idle_Fists.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Idle_Fists.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Idle_Fists/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Idle_Fists/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Idle_Fists/0072.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Idle_Fists/0108.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Idle_Fists/0144.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Walk_Fists.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Walk_Fists.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Walk_Fists/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Walk_Fists/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Run_Fists.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Run_Fists.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Run_Fists/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Run_Fists/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Jump_Full.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Jump_Full.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Full/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Full/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Dash_Forward.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Dash_Forward.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Dash_Forward/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Punch_Right_Jab.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Punch_Right_Jab.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Punch_Right_Jab/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Punch_Right_Jab.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Sword_Horizontal_Slash.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Sword_Horizontal_Slash.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Sword_Horizontal_Slash/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Sword_Horizontal_Slash.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Staff_Cast_Forward.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Staff_Cast_Forward.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Staff_Cast_Forward/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Staff_Cast_Forward.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Potion_Drink.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Potion_Drink.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Potion_Drink/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Potion_Drink/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Item_Throw_Overhand.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Item_Throw_Overhand.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Item_Throw_Overhand/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Item_Throw_Overhand/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Hit_Reaction.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Hit_Reaction.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Hit_Reaction/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Interact_Reach.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Interact_Reach.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Interact_Reach/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/GIF/Pickup_Low.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Pickup_Low.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Pickup_Low/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Pickup_Low/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Auxiliary/Jump_Takeoff.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Jump_Takeoff.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Takeoff/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Auxiliary/Jump_Rise_Loop.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Jump_Rise_Loop.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Rise_Loop/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Auxiliary/Jump_Apex_Loop.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Jump_Apex_Loop.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Apex_Loop/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Auxiliary/Jump_Fall_Loop.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Jump_Fall_Loop.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Fall_Loop/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Auxiliary/Jump_Land.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Contacts/Jump_Land.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/QA/Jump_Land/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/../../../../../Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/Move_Dash_Recover.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/Contacts/Move_Dash_Recover.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Move_Dash_Recover/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Move_Dash_Recover/0036.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Move_Dash_Recover/0072.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Move_Dash_Recover/0108.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Move_Dash_Recover/0144.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/Jump_Attack_Dash.gif",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/Contacts/Jump_Attack_Dash.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Jump_Attack_Dash/0000.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "html_link/Transitions/QA/Jump_Attack_Dash/0036.png",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

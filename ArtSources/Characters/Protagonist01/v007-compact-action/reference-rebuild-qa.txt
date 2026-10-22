@@ -1,0 +1,44 @@
+v007 reference-based combat revision: superseded visible-motion QA
+STATUS: REJECTED GRIP APPEARANCE. After strict closed-grip review, the large planar thumb-web/palm silhouette in Sword and Staff is a blocking visual defect. Earlier acceptance of this shape as stylized was too permissive and is withdrawn. Sword details0/4/7/14 show an open triangular plate above the hilt; Staff detail7 shows a broad open Z-like thumb/web around the shaft. The motion-trajectory observations below remain a record of their report SHA, but this report is not approval of current grip appearance. A new150/175-only thumb/web sculpt and actual Unity recapture are pending.
+Reviewer: chibi_model_pipeline. Date: 2026-10-21.
+
+Current candidate and evidence
+- Mount45; sword hilt height HipNeutral.y+.025 m; point-up guard30; horizontal blade plane retained; unchanged compact timing; camera elevation11.25 degrees. Dedicated finger grips150/175 on the original7101 topology. Rejected30-degree mount/wrist corrective/subdivision is not the subject of this approval.
+- Current review-report.json SHA256: 3aaa049ead7e754403573dcb62bb283e50cb96ca06a2c725115fb8d23f08bd8b.
+- Unity producer: reference-grip-placement45-unity.log; root reported CHIBI_V007_WEAPON_REVIEW_SUCCESS. This reviewer did not execute Unity.
+- Independent snapshot: ReviewOutput/IndependentCombatQA/ReferenceBased/FinalMount45/.
+- All112 captured images copied and checked against source SHA256: zero mismatches. Main Sword_Horizontal_Slash and Staff_Cast_Forward contain28 frames each; Sword_Grip_Side_25D and Staff_Grip_Side_25D contain28 each. Read all112 in chronological contact sheets.
+- Additional720-square inspections: sword main0003/0009/0016; staff main0003/0008/0016; sword detail0000/0007/0009/0012/0020; staff detail0000/0008/0012. Total14 full-resolution inspections of this replacement capture.
+- Main camera position(1.05,2.78,-10), target(0,.78,0), orthographic size1.05, yaw approximately6 degrees and elevation11.25 degrees. Details use the same angle and tighter crop. Images come from saved/reloaded Generic clip sampling and CPU skinning in Unity.
+
+Visible-motion conclusion
+No new blocking wrist flip, elbow snap/lock, corrective-mesh spike, detached grip, arbitrary blade downfold, or interrupted staff movement was found. Lowering the sword hilt20mm while returning the mount to45 degrees preserved the previously accepted compact action silhouette. The visible-motion candidate can be delivered subject to the independent actual-surface contact audit. This note is not approval of hidden triangle penetration or a replacement for that audit.
+
+Sword observations
+- F0000 is the raised-point guard; F0003(.100s) is inside preparation; F0004-F0009(.133-.300s) is one outward horizontal cut and follow-through. F0010-F0020(.333-.667s) retracts the hilt/elbow and raises the point back toward guard. No arbitrary roll or downfold is visible.
+- Full detailsF0007/F0009/F0012 show continuous wrist/forearm connection and held handle rather than the rejected90-degree down-cocked palm. The original coarse palm silhouette remains stylized, especially at the outward extreme; no new corrective spike or folded face is visible from this angle. Hidden-surface inspection is explicitly separate.
+- Recovery has a different purpose from the cut: the point rises as the hilt returns. No second torso attack impulse or sudden wrist flip is visible. The earlier small re-jab impression is substantially reduced by the30-degree final guard.
+- The11.25-degree camera exposes more of the blade's horizontal face and depth pass than the former6-degree elevation, particularlyF0007-F0010. Movement is still deliberately compact. Its depth component remains subtle in a near-side view; this should not be described as a large screen-space sweep.
+- Actual mounted axis yaw reaches -49.122 degrees atF0003, +60.562 atF0009, then returns monotonically to zero. Active pitch is approximately0 degrees(minimum-.000085 degrees is floating-point noise), and recovery returns to30 degrees without a below-horizontal authored fold. These support one inside-to-outside cut; visual findings above were not inferred from numbers alone.
+- Actual elbow bend spans35.206-97.934 degrees(0 would be a straight lock). Calibrated hand-long-axis versus forearm spans27.216-63.769 degrees; guard27.216 degrees. This coordinate proxy is a diagnostic, not an anatomical safety claim. Actual minimum skin sole clearance is+.002594m.
+- Start/end wrist position error6.83e-8m; hilt1.50e-7m. The matching guard is also visible in the neutral tail.
+
+Staff observations
+- F0000-F0003 is a short preparation; F0004-F0008 aims the staff forward; F0009-F0020 returns smoothly to the starting diagonal guard. Orb and shaft stay clear of the eyes, with the intended floating gap preserved.
+- Full detailsF0000/F0008/F0012 show a stable handle relationship and continuous wrist/forearm silhouette. The hand does not independently flip as the staff lowers and returns; the arm is not dropped straight down. Main fullposeF0003/F0008/F0016 has no new large body motion or head lean.
+- AcrossF0007->0008->0009->0010, actual hilt displacements are11.737/4.876/7.976mm per frame, and mounted-axis changes2.520/.869/2.053 degrees. The action slows through release and reverses continuously instead of freezing all limbs at one key.
+- Staff pitch goes from about45 degrees to21.099 degrees atF0008 and returns to45 degrees; small preparation overshoot45.204 degrees is visually unobtrusive. Elbow bend remains65.251-98.672 degrees. Hand-long-axis/forearm proxy remains45.572-58.981 degrees. Minimum actual skin sole clearance+.002647m.
+- Start/end wrist error1.19e-7m; hilt2.98e-8m.
+
+Timing and scope
+- Authored actions are.65s; saved sampling is quantized to.666667s at30fps. Captures have28frames through.900s. F0020-F0027 is an intentional settled neutral tail, not an active-motion freeze.
+- Scope is these two actions and their actual visible grips. Geometry agent owns exact wrist/shaft/palm-surface intersection; root owns the overall preservation and full-scope audit. Unchanged motions, transitions, old grip frames, VFX, and runtime responsiveness are not re-approved from older statistics here.
+- No Unity execution, gameplay code, controller, or VFX changes were performed by this reviewer in this review.
+- Superseded report017572f90348cdcffee67f31f67e4b9e6ed8178643eafa04841597fd9422c64c belongs to the rejected30-degree candidate. Its apparently good frame silhouettes did not establish hidden-surface clearance. This replacement review deliberately separates those claims.
+
+Reference basis
+- AHF https://swordfight.uk/the-six-cuts/: writtenCut6 horizontal inside-to-outside pass and smooth point-up guard recovery informed the single cut/follow-through/return. Chibi scale, compact timing and exact30-degree guard are our adaptation.
+- AHF https://swordfight.uk/hold-the-sword/: wrapped controlled fingers and handshake/hammer/thumb-up distinctions informed calibrated handle/palm alignment rather than arbitrary fixed wrist-axis forcing.
+- Root observed official https://www.youtube.com/watch?v=EC4SO8yudd0 at2:42-2:52. This reviewer used written sources and root's observation and does not claim independent video viewing.
+- Jonathan Cooper https://www.gameanim.com/2020/04/04/the-five-fundamentals-of-video-game-animation/: camera/silhouette staging was considered separately from smoothness and joint mechanics.
+- Detailed original-source research and community cases: research/sword-reference-research.txt.

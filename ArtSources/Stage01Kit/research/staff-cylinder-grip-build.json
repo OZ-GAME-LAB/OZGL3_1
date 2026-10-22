@@ -1,0 +1,94 @@
+{
+    "source": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset",
+    "sourceSha256": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+    "output": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset",
+    "method": "Source(Y,Z) triangle-ray cross-sections measure each finger's local X centre and thickness instead of flattening its full longitudinal X envelope. Fingers fold around the actual staff profile in a45degree mount basis so the shaft exits beside the palm rather than through wrist volume; thumb opposes the shaft. Anatomical thumb mask stops before the long index finger; distal thumb fairing and source-edge length constraints limit stretched tips. Welded-position groups move together across UV seams. Grip_R150 is new; original75/100 and all other frame deltas are copied exactly. Skin weights use the same prior smooth distal-hand correction. Requires actual3-view and animated approval; no numeric naturalness claim.",
+    "weightRule": "Only original RightHand influence >=.5 and bind Y .025..19m. RightHand weight lerps to1 with smoothstep(Y=.025..065m); other original bone influences renormalize proportionally. Under .025m unchanged. v006 source, left hand, bind poses, UVs, base vertices and full-fist100 deltas preserved. Unarmed thumb skinning changes locally in v007 and must be visually rechecked.",
+    "sourceUnchanged": true,
+    "requiresVisualApproval": true,
+    "gripCenterMetres": {
+        "x": -0.024000000208616258,
+        "y": 0.06800000369548798,
+        "z": -0.020500000566244127
+    },
+    "mountRotationEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "axisHandMetres": {
+        "x": 0.0,
+        "y": 0.7071067094802856,
+        "z": 0.7071068286895752
+    },
+    "thumbTargetMetres": {
+        "x": -0.03993711620569229,
+        "y": 0.0901791974902153,
+        "z": 0.028738582506775857
+    },
+    "propScale": 0.699999988079071,
+    "maximumActualShaftRadius": 0.018774613738059999,
+    "fingerCentrelineRadius": 0.030774613842368127,
+    "padHalfThickness": 0.012000000104308129,
+    "surfaceTolerance": 0.0005499999970197678,
+    "columnMinimumMaximumX": [
+        {
+            "x": -0.002058661077171564,
+            "y": 0.0511758029460907
+        },
+        {
+            "x": -0.02783898077905178,
+            "y": 0.046807412058115008
+        },
+        {
+            "x": -0.04192129895091057,
+            "y": 0.03440012410283089
+        },
+        {
+            "x": -0.04363223537802696,
+            "y": 0.013982844538986683
+        }
+    ],
+    "originalFingerColumnsZ": [
+        -0.03999999910593033,
+        -0.01899999938905239,
+        0.0020000000949949028,
+        0.023000000044703485
+    ],
+    "changedGrip150VerticesRelativeTo75": 400,
+    "changedWeightVertices": 222,
+    "localXraySections": 279,
+    "localXrayMinimumSourceThickness": 0.011020845733582974,
+    "localXrayMaximumSourceThickness": 0.07770513743162155,
+    "swordGripFrameWeight": 175.0,
+    "swordMaximumShaftRadius": 0.013337211683392525,
+    "swordAdditionalConstraintCorrection": 0.0017104021972045303,
+    "swordProfileIntrusion": 0.0,
+    "swordMethod": "New175 is derived from unchanged staff150: preserve axial position and pad thickness, subtract actual Staff-vs-Sword radial profile difference, then apply identical welded fairing/contact/edge constraints. Original75/100, staff150 and the skin weight formula are unchanged by adding175.",
+    "profileEnvelopeSourceYMinimum": -0.07999999821186066,
+    "profileEnvelopeSourceYMaximum": 0.10000000149011612,
+    "staffDepthBeforeFinalContactOnlyPass": 0.0,
+    "staffSourceFaceBeforeFinalContactOnlyPass": [],
+    "staffOriginalHandInfluencesOnThatFace": [],
+    "staffReadyPalmCompensationMaximumMetres": 0.0015999999595806003,
+    "staffReadyPalmCompensation": "Staff150 only: smooth local radial offset on palm sourceY .014..076, sourceZ below .040; maximum1.6mm. Compensates measured actual ready skin drift on450/449/425 and adjacent457/456/458 and1828/1831/1832. Sword175 and all weights unchanged.",
+    "swordWristCorrectiveMaximumMetres": 0.0,
+    "swordWristCorrectiveVertexCount": 0,
+    "swordWristCorrective": "Disabled. The rejected30degree basis and strong16-vertex skin corrective were removed;45degree shaft placement is evaluated directly on original7101 topology.",
+    "originalVertexCount": 7101,
+    "refinedVertexCount": 7101,
+    "swordWristRefinementAddedVertices": 0,
+    "swordWristRefinedCorrectiveMaximumMetres": 0.0,
+    "swordWristRefinement": "Disabled. Original7101 topology and index buffer restored; no additional vertices or midpoint skin corrections.",
+    "thumbBasalPivotMetres": {
+        "x": 0.0,
+        "y": 0.017000000923871995,
+        "z": 0.03500000014901161
+    },
+    "thumbWebSculpt": "Grip150/175 only: CMC pivot moved from palmY.052 to basalY.017/Z.035. Anatomical thumb/web mask starts sourceZ.026..064 and permits a smooth basal rotation from sourceY.005..030, including original hand influence>=.30 in that thumb-only region. Ordinary wrist/weights unchanged. Palm-to-MCP curl blends over sourceY.025..055 instead of.040..070, avoiding stationary75 base connected to a rotated tip. Preserves transverse thumb volume with a rigid basal rotation and longitudinal scale; no additional contact iteration loops.",
+    "cylindricalGripFrameWeight": 150.0,
+    "maximumDifferenceFromOriginal75Metres": 0.07118001580238342,
+    "triangleConstraintMaximumCorrection": 0.012953009456396103,
+    "finalConservativeProfileIntrusionMetres": 0.0,
+    "maximumAddedHandWeight": 0.22249829769134522
+}

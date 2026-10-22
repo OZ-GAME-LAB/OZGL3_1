@@ -1,0 +1,1400 @@
+{
+  "saved_utc": "2026-10-21T12:10:40.472363+00:00",
+  "scope": "Original PNG-to-PNG regression at the same 62 samples in six non-weapon motions; only new clipping/skin collapse/visible changes, not overall animation approval.",
+  "baseline_manifest": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\baseline-manifest.json",
+  "baseline_report_sha256": "2178cc0f4a236c8de591868221e7e870466e79105cbe47e6f8275667ba734c49",
+  "current_report_sha256": "139b9057eec30af25d3c52ffcec11f64f2a2dfa7bef569f1477fac1c55ce20b2",
+  "capture_log": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\reference-local-topology-final-unity.log",
+  "motions": [
+    {
+      "name": "Idle_Fists",
+      "camera_equal": true,
+      "metadata_max_delta": {
+        "hips": 0.0,
+        "head": 0.0,
+        "leftHand": 0.0,
+        "rightHand": 0.0,
+        "leftElbow": 0.0,
+        "rightElbow": 0.0,
+        "gripL": 0.0,
+        "gripR": 0.0
+      },
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Idle_Fists_Original_PNG_Comparison.png",
+      "maximum_sampled_delta": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Idle_Fists_Maximum_Sampled_Delta.png",
+      "samples": [
+        {
+          "tick": 0,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0000.png",
+          "baseline_sha256": "6db53edda2bf34ee7955e95f9bdc3f1e233a0f38195e42f08ae28809fd34e097",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0000.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0000.png",
+          "after_sha256": "6df39e8314b27ecd50a7a26fc5a874fb367a6b4e079be443bd004e855c820421",
+          "different_rgb_pixels": 111,
+          "difference_bbox": [
+            330,
+            491,
+            364,
+            520
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 10,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0010.png",
+          "baseline_sha256": "939c1f003df884e8cc39be57a9a7f95383b7e0f92f31602dd5face5bdb225f56",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0010.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0010.png",
+          "after_sha256": "9a273f2d5e6d22ed5a03f8a2ebd5e90d4b810d1f14729210145160a3ae307df3",
+          "different_rgb_pixels": 111,
+          "difference_bbox": [
+            331,
+            491,
+            365,
+            527
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 21,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0021.png",
+          "baseline_sha256": "f73f4cf523e315d4b01532e9456b380b707fd5a41d249a09c1907a1c7afdb36b",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0021.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0021.png",
+          "after_sha256": "f80606f448d82bab5bd2647f82d211548c3b6ef50e02e52e42aa9b226a42aab6",
+          "different_rgb_pixels": 99,
+          "difference_bbox": [
+            332,
+            491,
+            370,
+            536
+          ],
+          "crop_xyxy": [
+            292,
+            462,
+            412,
+            582
+          ]
+        },
+        {
+          "tick": 31,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0031.png",
+          "baseline_sha256": "c14a9e43c168bc9931cc5384959a8d382fd85990336292346f68b50c38e9ff2d",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0031.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0031.png",
+          "after_sha256": "266c59f94350d9af85960f8ab08d414fda69a712def00df9809b7ceae046d4f8",
+          "different_rgb_pixels": 97,
+          "difference_bbox": [
+            332,
+            494,
+            366,
+            566
+          ],
+          "crop_xyxy": [
+            292,
+            463,
+            412,
+            583
+          ]
+        },
+        {
+          "tick": 42,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0042.png",
+          "baseline_sha256": "ee77d8e955a0dfa4ad4a477ecba0b25c64507c43379a4b9b4697e3a42cb5a27c",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0042.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0042.png",
+          "after_sha256": "2c227e6db570c4a7403d95d97db188327e49094d5ecee2cadae7853eb901410c",
+          "different_rgb_pixels": 98,
+          "difference_bbox": [
+            329,
+            492,
+            369,
+            547
+          ],
+          "crop_xyxy": [
+            291,
+            463,
+            411,
+            583
+          ]
+        },
+        {
+          "tick": 51,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0051.png",
+          "baseline_sha256": "8cc48e479842f099d3cc494ea6cd710ae0a55ecef292344315325baacc804499",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0051.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0051.png",
+          "after_sha256": "d9624caa13f0ec79b24d3819ccf51edc1a6bdd4de5e8f5f768a18040adee735d",
+          "different_rgb_pixels": 113,
+          "difference_bbox": [
+            331,
+            491,
+            368,
+            585
+          ],
+          "crop_xyxy": [
+            290,
+            463,
+            410,
+            583
+          ]
+        },
+        {
+          "tick": 52,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0052.png",
+          "baseline_sha256": "b1a4bf9646eea5f4e77f8373c5856b165fa3d550cb2803ca1330f12d8e32da20",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0052.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0052.png",
+          "after_sha256": "b474f7bd296e017e146d1d4f4b5ed22806dce203041e91d3b43479a6f0c83544",
+          "different_rgb_pixels": 118,
+          "difference_bbox": [
+            331,
+            458,
+            370,
+            585
+          ],
+          "crop_xyxy": [
+            290,
+            463,
+            410,
+            583
+          ]
+        },
+        {
+          "tick": 63,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0063.png",
+          "baseline_sha256": "5fd6d896742c6c3acadaefb334ef25c3f88b1aca93f20b713d20d28a73710f6e",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0063.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0063.png",
+          "after_sha256": "0d666121924c724bc16b2ffb28edd0b8da75f3cbb3b4c5fcd29584c74e73d334",
+          "different_rgb_pixels": 105,
+          "difference_bbox": [
+            330,
+            491,
+            387,
+            526
+          ],
+          "crop_xyxy": [
+            290,
+            462,
+            410,
+            582
+          ]
+        },
+        {
+          "tick": 73,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0073.png",
+          "baseline_sha256": "f95e21b63e5a48c23787c408b34890cb7dc440d4e75b40f69e77585850be0d29",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0073.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0073.png",
+          "after_sha256": "9beff43392011e115d2656d57e8eceec16044ee4e52b8064040204c55fc905cc",
+          "different_rgb_pixels": 112,
+          "difference_bbox": [
+            330,
+            491,
+            364,
+            537
+          ],
+          "crop_xyxy": [
+            290,
+            462,
+            410,
+            582
+          ]
+        },
+        {
+          "tick": 83,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Idle_Fists\\0083.png",
+          "baseline_sha256": "7db953126f0565095234689708990ce19eb2a667a27d25ae78ac32471fbc5370",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Idle_Fists\\0083.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Idle_Fists\\0083.png",
+          "after_sha256": "9a8bdf893814f9bbf77819622fd1dcd1ba6f56009f49e26cf2ab52edfba3f9c1",
+          "different_rgb_pixels": 114,
+          "difference_bbox": [
+            331,
+            487,
+            365,
+            575
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        }
+      ],
+      "contact_sha256": "6a8c034f1d2694db0744ec0c6d0de6bb67642c2c671507508eddc34f3e2bc8e7",
+      "maximum_sampled_delta_sha256": "13d22dd7c01c5e9e2db085b88426e349f4d4a691f10653e8c34dd2192ee20ed8"
+    },
+    {
+      "name": "Walk_Fists",
+      "camera_equal": true,
+      "metadata_max_delta": {
+        "hips": 0.0,
+        "head": 0.0,
+        "leftHand": 0.0,
+        "rightHand": 0.0,
+        "leftElbow": 0.0,
+        "rightElbow": 0.0,
+        "gripL": 0.0,
+        "gripR": 0.0
+      },
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Walk_Fists_Original_PNG_Comparison.png",
+      "maximum_sampled_delta": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Walk_Fists_Maximum_Sampled_Delta.png",
+      "samples": [
+        {
+          "tick": 0,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0000.png",
+          "baseline_sha256": "5507a4a97a7353e164341e696ade9f8cb63d5ebd32c8eb9f865966ba6cfb64ca",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0000.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0000.png",
+          "after_sha256": "ac8a72860b9275a54849d2c2a2068e14d7fe72e4ba40ff3fe01d39c4d43a0473",
+          "different_rgb_pixels": 70,
+          "difference_bbox": [
+            325,
+            435,
+            361,
+            595
+          ],
+          "crop_xyxy": [
+            287,
+            460,
+            407,
+            580
+          ]
+        },
+        {
+          "tick": 3,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0003.png",
+          "baseline_sha256": "e39b7899b9b3a57f5fbfed6b00c7d01716ab186b65b949ccfb94eea10abedddd",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0003.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0003.png",
+          "after_sha256": "07eda9efcb65cf09df4aaaebbaf32df202ea0ad8e322ae3076fe7ed901a11d46",
+          "different_rgb_pixels": 89,
+          "difference_bbox": [
+            315,
+            491,
+            366,
+            521
+          ],
+          "crop_xyxy": [
+            276,
+            464,
+            396,
+            584
+          ]
+        },
+        {
+          "tick": 6,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0006.png",
+          "baseline_sha256": "383034ee1540ddb4c21ec69cffc03021d2ad0d6662198e6537f07b1d41f28025",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0006.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0006.png",
+          "after_sha256": "a72bc8aea9b7ba5aee9009678d26ef5960758a59be3c18b40e655b29497daca4",
+          "different_rgb_pixels": 91,
+          "difference_bbox": [
+            303,
+            497,
+            366,
+            535
+          ],
+          "crop_xyxy": [
+            265,
+            468,
+            385,
+            588
+          ]
+        },
+        {
+          "tick": 9,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0009.png",
+          "baseline_sha256": "6c5e77332d1b73d25b67a8b16bd89d75cc6d20d667f021d78e15ae4441fd0824",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0009.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0009.png",
+          "after_sha256": "5226338901cf7ec284dbfd92723f1f4612b072627eb2987e65966b0ad0b28e5c",
+          "different_rgb_pixels": 74,
+          "difference_bbox": [
+            298,
+            489,
+            363,
+            588
+          ],
+          "crop_xyxy": [
+            262,
+            467,
+            382,
+            587
+          ]
+        },
+        {
+          "tick": 12,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0012.png",
+          "baseline_sha256": "82c9304f7ac310f105b2de0ebbd198e13890bd63013561358ac1cfcaba99e911",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0012.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0012.png",
+          "after_sha256": "a9ee68740049589aa7fd2a209ee190c7b93636608d86489cd43dcf4e91b4bc47",
+          "different_rgb_pixels": 89,
+          "difference_bbox": [
+            312,
+            492,
+            359,
+            614
+          ],
+          "crop_xyxy": [
+            273,
+            464,
+            393,
+            584
+          ]
+        },
+        {
+          "tick": 15,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0015.png",
+          "baseline_sha256": "49e0c6bbb9592155c3d4920f2e64a7f887220ebb67c7e43223f7d9eb17aa9fab",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0015.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0015.png",
+          "after_sha256": "66b2bb050f1934c011cf7e4c35ba651c3cd5bf355ba5014a6a98b00538d90165",
+          "different_rgb_pixels": 73,
+          "difference_bbox": [
+            322,
+            483,
+            361,
+            530
+          ],
+          "crop_xyxy": [
+            287,
+            458,
+            407,
+            578
+          ]
+        },
+        {
+          "tick": 18,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0018.png",
+          "baseline_sha256": "d2bd45dd5fd6a5ddc7daeed6d6c26435dbcba6069aa8447f376650dcf484c77f",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0018.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0018.png",
+          "after_sha256": "6e12f9e9bac4ae743dfb29d07e97695eac0b048816e1fe66ea4d620b082772c1",
+          "different_rgb_pixels": 73,
+          "difference_bbox": [
+            342,
+            447,
+            410,
+            606
+          ],
+          "crop_xyxy": [
+            299,
+            454,
+            419,
+            574
+          ]
+        },
+        {
+          "tick": 21,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0021.png",
+          "baseline_sha256": "e796f1d1cdccda569d4604b5327634baa9c287f3e4306fb2376ea387ed48223c",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0021.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0021.png",
+          "after_sha256": "dd86fcb438db8329c706bbf872f30baafcda63a9d3f2671e4706ce8119e079d3",
+          "different_rgb_pixels": 61,
+          "difference_bbox": [
+            344,
+            480,
+            376,
+            507
+          ],
+          "crop_xyxy": [
+            302,
+            456,
+            422,
+            576
+          ]
+        },
+        {
+          "tick": 25,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Walk_Fists\\0025.png",
+          "baseline_sha256": "a59092859d6ccb1eb1a1c5ce9b8b1ca55aada61afc029696746b58b9cf17c20b",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Walk_Fists\\0025.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Walk_Fists\\0025.png",
+          "after_sha256": "36d0c3503a360a58e056527b3cefa7bc1305ab4b2f93512f5acb5c5a02cdd4fe",
+          "different_rgb_pixels": 65,
+          "difference_bbox": [
+            310,
+            486,
+            364,
+            551
+          ],
+          "crop_xyxy": [
+            291,
+            459,
+            411,
+            579
+          ]
+        }
+      ],
+      "contact_sha256": "b615d27b12dad56193a603e1698d7977d7994a098b46482b90c498ef10f9b4bb",
+      "maximum_sampled_delta_sha256": "14fb90bde1e279b180a7be6627422ae1ae8fcc672a1a6f6af5e54f37e3782eef"
+    },
+    {
+      "name": "Run_Fists",
+      "camera_equal": true,
+      "metadata_max_delta": {
+        "hips": 0.0,
+        "head": 0.0,
+        "leftHand": 0.0,
+        "rightHand": 0.0,
+        "leftElbow": 0.0,
+        "rightElbow": 0.0,
+        "gripL": 0.0,
+        "gripR": 0.0
+      },
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Run_Fists_Original_PNG_Comparison.png",
+      "maximum_sampled_delta": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Run_Fists_Maximum_Sampled_Delta.png",
+      "samples": [
+        {
+          "tick": 0,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0000.png",
+          "baseline_sha256": "7623fbe240f461ad9908bf38306bc11e3e086e199dfa220ad874eb05cabce633",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0000.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0000.png",
+          "after_sha256": "7623fbe240f461ad9908bf38306bc11e3e086e199dfa220ad874eb05cabce633",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            281,
+            439,
+            401,
+            559
+          ]
+        },
+        {
+          "tick": 2,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0002.png",
+          "baseline_sha256": "c420f4c4b4f178f46a0b82bdf92605070a17e78bf50b379fc6c81a715f412cc1",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0002.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0002.png",
+          "after_sha256": "c420f4c4b4f178f46a0b82bdf92605070a17e78bf50b379fc6c81a715f412cc1",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            302,
+            441,
+            422,
+            561
+          ]
+        },
+        {
+          "tick": 4,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0004.png",
+          "baseline_sha256": "4648768aeffedf47d19d044e218a21ab5692c08c8a418244954cc12ced974fe5",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0004.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0004.png",
+          "after_sha256": "874e7d5d3e65b69733bc57ccc9e0266834336e92d6617cc94a9344d5fed6ecb9",
+          "different_rgb_pixels": 81,
+          "difference_bbox": [
+            382,
+            457,
+            398,
+            487
+          ],
+          "crop_xyxy": [
+            323,
+            427,
+            443,
+            547
+          ]
+        },
+        {
+          "tick": 5,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0005.png",
+          "baseline_sha256": "1a6f0e6e9c9e52e1f9208db6e7261a829de4a2fa0299496bef59523032176d1d",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0005.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0005.png",
+          "after_sha256": "86660d917a7b38d814873f370ed3406e3d9dc36b5676babc9788bb7177b2648a",
+          "different_rgb_pixels": 88,
+          "difference_bbox": [
+            359,
+            420,
+            421,
+            506
+          ],
+          "crop_xyxy": [
+            327,
+            418,
+            447,
+            538
+          ]
+        },
+        {
+          "tick": 7,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0007.png",
+          "baseline_sha256": "6b53a1564c799f49dee41f499f56fa083d8620b0ee526892db4e86615d4b4943",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0007.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0007.png",
+          "after_sha256": "daaf17c533ee08c9a4bdec9563aa7401e186262b08283581d23384fa92b39967",
+          "different_rgb_pixels": 80,
+          "difference_bbox": [
+            386,
+            389,
+            414,
+            463
+          ],
+          "crop_xyxy": [
+            327,
+            404,
+            447,
+            524
+          ]
+        },
+        {
+          "tick": 9,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0009.png",
+          "baseline_sha256": "97d2d76ec5de5b31e45cdbb12f1c2378daa3edb0a7526be0f9b31cc5e31ebca1",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0009.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0009.png",
+          "after_sha256": "6a9be1ee004b888f9799cf79aadc94abb0d6ff5df9fb4ffaaf1654524a2a3965",
+          "different_rgb_pixels": 10,
+          "difference_bbox": [
+            389,
+            441,
+            394,
+            461
+          ],
+          "crop_xyxy": [
+            320,
+            409,
+            440,
+            529
+          ]
+        },
+        {
+          "tick": 11,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0011.png",
+          "baseline_sha256": "2296de975088f89e4344b0bc118486c840b4321edfe1695bc612acf3d9bc8c1f",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0011.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0011.png",
+          "after_sha256": "2296de975088f89e4344b0bc118486c840b4321edfe1695bc612acf3d9bc8c1f",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            307,
+            433,
+            427,
+            553
+          ]
+        },
+        {
+          "tick": 14,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0014.png",
+          "baseline_sha256": "91ca5370f8d1904086d3a44aad6f8e901db75584f9684cb8cdcf543590bbe5a5",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0014.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0014.png",
+          "after_sha256": "91ca5370f8d1904086d3a44aad6f8e901db75584f9684cb8cdcf543590bbe5a5",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            281,
+            449,
+            401,
+            569
+          ]
+        },
+        {
+          "tick": 16,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0016.png",
+          "baseline_sha256": "e1666fa88dfece3050a913abeae36f41fc91c8365f0b21084834ffe480a8bd20",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0016.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0016.png",
+          "after_sha256": "e1666fa88dfece3050a913abeae36f41fc91c8365f0b21084834ffe480a8bd20",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            273,
+            441,
+            393,
+            561
+          ]
+        },
+        {
+          "tick": 18,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Run_Fists\\0018.png",
+          "baseline_sha256": "381c06ebf9fbaee7aa5c2c99716aad77d07a9c3dfb61c3fe15eec570ff7f97ed",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Run_Fists\\0018.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Run_Fists\\0018.png",
+          "after_sha256": "381c06ebf9fbaee7aa5c2c99716aad77d07a9c3dfb61c3fe15eec570ff7f97ed",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            276,
+            438,
+            396,
+            558
+          ]
+        }
+      ],
+      "contact_sha256": "e87d3f2f131b881ad1d19356664e171692589ad03f351e50c67387326d3af55b",
+      "maximum_sampled_delta_sha256": "73ded76c1b6591e7c4ec7fc351e0a6cbb4372e7b2f4fc8fab2de1492d25e6d39"
+    },
+    {
+      "name": "Potion_Drink",
+      "camera_equal": true,
+      "metadata_max_delta": {
+        "hips": 0.0,
+        "head": 0.0,
+        "leftHand": 0.0,
+        "rightHand": 0.0,
+        "leftElbow": 0.0,
+        "rightElbow": 0.0,
+        "gripL": 0.0,
+        "gripR": 0.0
+      },
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Potion_Drink_Original_PNG_Comparison.png",
+      "maximum_sampled_delta": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Potion_Drink_Maximum_Sampled_Delta.png",
+      "samples": [
+        {
+          "tick": 0,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0000.png",
+          "baseline_sha256": "54a6dbd9ec9f30b637bdcf8e025e899e055446dbf9c1caf027c9d34a1894ed09",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0000.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0000.png",
+          "after_sha256": "a8cc3e9455722d9233c7d49be1d9a55ca4318baa28e351a9bb62b382d36b419c",
+          "different_rgb_pixels": 102,
+          "difference_bbox": [
+            331,
+            493,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 6,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0006.png",
+          "baseline_sha256": "19fdb23fb5b5100a52c89291608ccf57e89e32575a65025dd8a5997c28417228",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0006.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0006.png",
+          "after_sha256": "6feb7e20537416f8bc696adfc95750ef7a50b47dcb6c509c423724ba44eea2dc",
+          "different_rgb_pixels": 117,
+          "difference_bbox": [
+            362,
+            447,
+            413,
+            503
+          ],
+          "crop_xyxy": [
+            318,
+            421,
+            438,
+            541
+          ]
+        },
+        {
+          "tick": 15,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0015.png",
+          "baseline_sha256": "26dcd338504ec373c400cc25baa5abcd57dc606bbecb14e62da35d9e90afeb5c",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0015.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0015.png",
+          "after_sha256": "a8427b8c5400a1bec8664e4d31bede1046ee077d07701e0d68b96fada7b080ab",
+          "different_rgb_pixels": 14,
+          "difference_bbox": [
+            363,
+            350,
+            430,
+            432
+          ],
+          "crop_xyxy": [
+            361,
+            379,
+            481,
+            499
+          ]
+        },
+        {
+          "tick": 24,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0024.png",
+          "baseline_sha256": "bfb7e30961fe2aca6ebc31b623f22c6fa68f35c15fd4d0758e95df89fac00150",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0024.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0024.png",
+          "after_sha256": "e5e06b423ed39536b6cb5519b6f1ced6cd52eb80a6cc679c90217e8d98ef4a4d",
+          "different_rgb_pixels": 1,
+          "difference_bbox": [
+            444,
+            426,
+            445,
+            427
+          ],
+          "crop_xyxy": [
+            380,
+            369,
+            500,
+            489
+          ]
+        },
+        {
+          "tick": 30,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0030.png",
+          "baseline_sha256": "bfb7e30961fe2aca6ebc31b623f22c6fa68f35c15fd4d0758e95df89fac00150",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0030.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0030.png",
+          "after_sha256": "e5e06b423ed39536b6cb5519b6f1ced6cd52eb80a6cc679c90217e8d98ef4a4d",
+          "different_rgb_pixels": 1,
+          "difference_bbox": [
+            444,
+            426,
+            445,
+            427
+          ],
+          "crop_xyxy": [
+            380,
+            369,
+            500,
+            489
+          ]
+        },
+        {
+          "tick": 36,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0036.png",
+          "baseline_sha256": "5f8ad5490552abff1078326dea2e8c08f7b0e365a7025d22f66de8b3cd87b897",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0036.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0036.png",
+          "after_sha256": "a5beedd32d55206f26c48185297638f0b7a38b740bc79250dc806c5b9dc36089",
+          "different_rgb_pixels": 1,
+          "difference_bbox": [
+            443,
+            427,
+            444,
+            428
+          ],
+          "crop_xyxy": [
+            379,
+            370,
+            499,
+            490
+          ]
+        },
+        {
+          "tick": 45,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0045.png",
+          "baseline_sha256": "9cf8bcaf3bc3a547303e46e1bc7c57a96311cbbd4e2ae6d1189babb66a1d6a74",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0045.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0045.png",
+          "after_sha256": "ed6a16fff8b2a4f1ab6d9d401794c642c4f629be6dbacc60f26509d747d1dbae",
+          "different_rgb_pixels": 61,
+          "difference_bbox": [
+            373,
+            343,
+            422,
+            445
+          ],
+          "crop_xyxy": [
+            353,
+            390,
+            473,
+            510
+          ]
+        },
+        {
+          "tick": 49,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0049.png",
+          "baseline_sha256": "6422a8e8eba3d0f94772538b32cf41ae078af255a3d515bdec3b52c9620240e2",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0049.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0049.png",
+          "after_sha256": "5ec2b41fd8629c982f4f53cbdbfe8dcf1bf6e4a6d23c4077803bb77236b9e295",
+          "different_rgb_pixels": 167,
+          "difference_bbox": [
+            352,
+            431,
+            402,
+            528
+          ],
+          "crop_xyxy": [
+            322,
+            421,
+            442,
+            541
+          ]
+        },
+        {
+          "tick": 54,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0054.png",
+          "baseline_sha256": "0595e9cc9071a6329b0b5b9b6784e3305cea50d75c2535eebc810884fd52ea07",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0054.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0054.png",
+          "after_sha256": "c93980785d8cab67480b423852b6ff4c1063bea14ba09b8963f96298f0c494b1",
+          "different_rgb_pixels": 109,
+          "difference_bbox": [
+            337,
+            476,
+            377,
+            608
+          ],
+          "crop_xyxy": [
+            296,
+            450,
+            416,
+            570
+          ]
+        },
+        {
+          "tick": 59,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0059.png",
+          "baseline_sha256": "f0abf41c9be508b840c4ec1a5ce0a6e04b0951aa7c92da7d89f2c86d8401bcda",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0059.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0059.png",
+          "after_sha256": "ba069f154d2db0dfcff36d97f5f425b7beda12b875f772937c8b0da29e533bd3",
+          "different_rgb_pixels": 92,
+          "difference_bbox": [
+            331,
+            487,
+            366,
+            585
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 67,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Potion_Drink\\0067.png",
+          "baseline_sha256": "54a6dbd9ec9f30b637bdcf8e025e899e055446dbf9c1caf027c9d34a1894ed09",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Potion_Drink\\0067.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Potion_Drink\\0067.png",
+          "after_sha256": "a8cc3e9455722d9233c7d49be1d9a55ca4318baa28e351a9bb62b382d36b419c",
+          "different_rgb_pixels": 102,
+          "difference_bbox": [
+            331,
+            493,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        }
+      ],
+      "contact_sha256": "44d19ea727e32927dfe65f7a01dea637dd569911404039201d428dc3c02b71d5",
+      "maximum_sampled_delta_sha256": "0d09772a608373351fdde708a31d5b139c2c57dc7a0df65cc3844efcea828f30"
+    },
+    {
+      "name": "Item_Throw_Overhand",
+      "camera_equal": true,
+      "metadata_max_delta": {
+        "hips": 0.0,
+        "head": 0.0,
+        "leftHand": 0.0,
+        "rightHand": 0.0,
+        "leftElbow": 0.0,
+        "rightElbow": 0.0,
+        "gripL": 0.0,
+        "gripR": 0.0
+      },
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Item_Throw_Overhand_Original_PNG_Comparison.png",
+      "maximum_sampled_delta": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Item_Throw_Overhand_Maximum_Sampled_Delta.png",
+      "samples": [
+        {
+          "tick": 0,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0000.png",
+          "baseline_sha256": "720c6d90482063be1b8c1ff6ac51d2c1683c40da776450327f404f6af5428952",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0000.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0000.png",
+          "after_sha256": "6c05b4013f406eec5559582a230fa2e2365ea6aa59f275095ad41e30f03205c8",
+          "different_rgb_pixels": 101,
+          "difference_bbox": [
+            331,
+            493,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 5,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0005.png",
+          "baseline_sha256": "6696548fda1115fd69f3915e34a288686a8a0e97d7f5f8a5bcc133f1e233fc4f",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0005.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0005.png",
+          "after_sha256": "eec6f187400d9f6b8b165744418fd7c87622ed09eb0eaeb4ccead0de45ca9add",
+          "different_rgb_pixels": 82,
+          "difference_bbox": [
+            367,
+            440,
+            410,
+            473
+          ],
+          "crop_xyxy": [
+            316,
+            413,
+            436,
+            533
+          ]
+        },
+        {
+          "tick": 10,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0010.png",
+          "baseline_sha256": "ffa79c33274c5e47d5fc61b6de773549fd0f42ce26efa151a319c83b6c09b7b5",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0010.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0010.png",
+          "after_sha256": "ffa79c33274c5e47d5fc61b6de773549fd0f42ce26efa151a319c83b6c09b7b5",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            245,
+            346,
+            365,
+            466
+          ]
+        },
+        {
+          "tick": 13,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0013.png",
+          "baseline_sha256": "aca07715c48ebf31db3e489f46ecd0353d27c0a87e30262865bf3eee3e41e548",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0013.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0013.png",
+          "after_sha256": "aca07715c48ebf31db3e489f46ecd0353d27c0a87e30262865bf3eee3e41e548",
+          "different_rgb_pixels": 0,
+          "difference_bbox": null,
+          "crop_xyxy": [
+            247,
+            347,
+            367,
+            467
+          ]
+        },
+        {
+          "tick": 14,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0014.png",
+          "baseline_sha256": "3f102943d9ca502e04e13f910d720099783e8cb2448b58f1076518f0ce9cb0d5",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0014.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0014.png",
+          "after_sha256": "6a98cad71380858259c8d623444e9b0128526d4c4f08bc1cdd0f8255aea94b75",
+          "different_rgb_pixels": 49,
+          "difference_bbox": [
+            326,
+            304,
+            385,
+            397
+          ],
+          "crop_xyxy": [
+            283,
+            350,
+            403,
+            470
+          ]
+        },
+        {
+          "tick": 16,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0016.png",
+          "baseline_sha256": "15d743a3628c8b467111e2e32ad97a69bbdb859076d15588f93de7432a80068a",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0016.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0016.png",
+          "after_sha256": "b00fda78691751ab528beffb5cef2dba27e3d73bd6bf04ce8b1f978822cde5fa",
+          "different_rgb_pixels": 55,
+          "difference_bbox": [
+            386,
+            298,
+            446,
+            414
+          ],
+          "crop_xyxy": [
+            377,
+            359,
+            497,
+            479
+          ]
+        },
+        {
+          "tick": 20,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0020.png",
+          "baseline_sha256": "4a1c1ff31c3895cad2f1b9b264eda0f9a58836565e1c0cb5aca95f41b78efee0",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0020.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0020.png",
+          "after_sha256": "fd624c51188a9b1be0b83449d178f416b48b88c88cf169bb783288215e97bbb0",
+          "different_rgb_pixels": 61,
+          "difference_bbox": [
+            381,
+            382,
+            433,
+            443
+          ],
+          "crop_xyxy": [
+            361,
+            380,
+            481,
+            500
+          ]
+        },
+        {
+          "tick": 25,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0025.png",
+          "baseline_sha256": "8592fab38e231e18a274a3457b1110c981962408811643f738a3af62fb7e0542",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0025.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0025.png",
+          "after_sha256": "d73095e9883f1e156cf715648d0b90682ad7e10c01f1f6b6ec2c0d2f84aaef5a",
+          "different_rgb_pixels": 95,
+          "difference_bbox": [
+            349,
+            346,
+            400,
+            572
+          ],
+          "crop_xyxy": [
+            315,
+            411,
+            435,
+            531
+          ]
+        },
+        {
+          "tick": 32,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0032.png",
+          "baseline_sha256": "93b458ecab4830bb7e0892fee29240b7a23d9e7641d935dc6156b5348ebded7b",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0032.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0032.png",
+          "after_sha256": "25e8d08c7b3622cacdc4af3695abc364550e6787b097fbedfb1689d26461daee",
+          "different_rgb_pixels": 108,
+          "difference_bbox": [
+            303,
+            394,
+            373,
+            533
+          ],
+          "crop_xyxy": [
+            297,
+            451,
+            417,
+            571
+          ]
+        },
+        {
+          "tick": 38,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0038.png",
+          "baseline_sha256": "666b11ef32b61750f754e2ac70245cf04a1119599999f3a977112de07ae9521e",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0038.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0038.png",
+          "after_sha256": "e2b1cf034f4b8699552baa18ae957e49827cc74436ba56d44dfe82aecc8ee23a",
+          "different_rgb_pixels": 93,
+          "difference_bbox": [
+            331,
+            492,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 46,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Item_Throw_Overhand\\0046.png",
+          "baseline_sha256": "666b11ef32b61750f754e2ac70245cf04a1119599999f3a977112de07ae9521e",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Item_Throw_Overhand\\0046.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Item_Throw_Overhand\\0046.png",
+          "after_sha256": "e2b1cf034f4b8699552baa18ae957e49827cc74436ba56d44dfe82aecc8ee23a",
+          "different_rgb_pixels": 93,
+          "difference_bbox": [
+            331,
+            492,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        }
+      ],
+      "contact_sha256": "2cd631ff47bc8888fe37e8f20aa9b307086ff521dde1c77b371960f9caaab836",
+      "maximum_sampled_delta_sha256": "37582e5069895c285fbed0df940c039753c24742025ed0d37b7be1f961192166"
+    },
+    {
+      "name": "Pickup_Low",
+      "camera_equal": true,
+      "metadata_max_delta": {
+        "hips": 0.0,
+        "head": 0.0,
+        "leftHand": 0.0,
+        "rightHand": 0.0,
+        "leftElbow": 0.0,
+        "rightElbow": 0.0,
+        "gripL": 0.0,
+        "gripR": 0.0
+      },
+      "contact": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Pickup_Low_Original_PNG_Comparison.png",
+      "maximum_sampled_delta": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\Pickup_Low_Maximum_Sampled_Delta.png",
+      "samples": [
+        {
+          "tick": 0,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0000.png",
+          "baseline_sha256": "f57c343db7f37979596285272cfd676da1e24df72a27ab183170321723304c19",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0000.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0000.png",
+          "after_sha256": "cb665141f77bacb6a905375e9b686cdef1e099064d7baf1df16e431b10067ac4",
+          "different_rgb_pixels": 94,
+          "difference_bbox": [
+            331,
+            492,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 5,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0005.png",
+          "baseline_sha256": "db9bd9df92a8bde205f68b48798f4861aec16a7586881f79d18eb7f9d15d9c44",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0005.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0005.png",
+          "after_sha256": "d1e9f922d5b9aa8896d08a5e2578a414d1e68d13d44504f8ff7a78ab7393b0b0",
+          "different_rgb_pixels": 61,
+          "difference_bbox": [
+            344,
+            496,
+            379,
+            578
+          ],
+          "crop_xyxy": [
+            308,
+            470,
+            428,
+            590
+          ]
+        },
+        {
+          "tick": 10,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0010.png",
+          "baseline_sha256": "cb6f9be42445090724cfd99d3700b1c850366b6a8f1544b296187b86c21c1bff",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0010.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0010.png",
+          "after_sha256": "2dae0c64cdb7a8f697d0e72719b8cb9555a7698ec697af174f11fc22764b24d9",
+          "different_rgb_pixels": 100,
+          "difference_bbox": [
+            345,
+            468,
+            469,
+            644
+          ],
+          "crop_xyxy": [
+            377,
+            520,
+            497,
+            640
+          ]
+        },
+        {
+          "tick": 12,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0012.png",
+          "baseline_sha256": "98a38468207379bc8042fb2c194e2b38012a8dd63a0319b47e61f0eb4f801485",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0012.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0012.png",
+          "after_sha256": "492e53ae3d15ce9f328422c1d0df2d2c71c19ba47ca31085d8e48e4469d630df",
+          "different_rgb_pixels": 52,
+          "difference_bbox": [
+            390,
+            556,
+            458,
+            604
+          ],
+          "crop_xyxy": [
+            394,
+            529,
+            514,
+            649
+          ]
+        },
+        {
+          "tick": 15,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0015.png",
+          "baseline_sha256": "668dca0411e143a61f2e02b3790a0f8fd67052a01e27713b04ac741b3a552506",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0015.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0015.png",
+          "after_sha256": "fba00795c9654007c4b084577676da8ae586d91b2a91f6b33e9b72bad50f75f0",
+          "different_rgb_pixels": 65,
+          "difference_bbox": [
+            414,
+            498,
+            470,
+            623
+          ],
+          "crop_xyxy": [
+            394,
+            529,
+            514,
+            649
+          ]
+        },
+        {
+          "tick": 20,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0020.png",
+          "baseline_sha256": "c360a26cdf4b82139f7f3c80fdedf7c6d5a5784053f51986a181a774417a9a78",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0020.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0020.png",
+          "after_sha256": "13d8f0c971446658a52d0842e835ac93619573f9ef69d85df2f8bb4e17cf22ef",
+          "different_rgb_pixels": 74,
+          "difference_bbox": [
+            414,
+            492,
+            455,
+            597
+          ],
+          "crop_xyxy": [
+            390,
+            530,
+            510,
+            650
+          ]
+        },
+        {
+          "tick": 25,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0025.png",
+          "baseline_sha256": "55f3a1d47e2c42e073997c6971479bdfd675e1161f005a697e8ab369dcccb187",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0025.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0025.png",
+          "after_sha256": "113d9a70480b83bd63d37b31fa6c57a94f93948c2828702048f03f82f258b78e",
+          "different_rgb_pixels": 99,
+          "difference_bbox": [
+            374,
+            511,
+            414,
+            564
+          ],
+          "crop_xyxy": [
+            345,
+            491,
+            465,
+            611
+          ]
+        },
+        {
+          "tick": 30,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0030.png",
+          "baseline_sha256": "bff468aa23df08920a1a209f7a3dc1526ebccf3f791a002b481dc35c6771f4bd",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0030.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0030.png",
+          "after_sha256": "69a56d063bdc75dcee96c0bab071ae14c55a58b767d01aeaeecda18e000a2c3c",
+          "different_rgb_pixels": 86,
+          "difference_bbox": [
+            336,
+            451,
+            374,
+            570
+          ],
+          "crop_xyxy": [
+            300,
+            468,
+            420,
+            588
+          ]
+        },
+        {
+          "tick": 35,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0035.png",
+          "baseline_sha256": "f57c343db7f37979596285272cfd676da1e24df72a27ab183170321723304c19",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0035.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0035.png",
+          "after_sha256": "cb665141f77bacb6a905375e9b686cdef1e099064d7baf1df16e431b10067ac4",
+          "different_rgb_pixels": 94,
+          "difference_bbox": [
+            331,
+            492,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 39,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0039.png",
+          "baseline_sha256": "f57c343db7f37979596285272cfd676da1e24df72a27ab183170321723304c19",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0039.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0039.png",
+          "after_sha256": "cb665141f77bacb6a905375e9b686cdef1e099064d7baf1df16e431b10067ac4",
+          "different_rgb_pixels": 94,
+          "difference_bbox": [
+            331,
+            492,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        },
+        {
+          "tick": 47,
+          "baseline": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\QAHistory\\before-local-wrist-subdivision\\Frames\\Pickup_Low\\0047.png",
+          "baseline_sha256": "f57c343db7f37979596285272cfd676da1e24df72a27ab183170321723304c19",
+          "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\Frames\\Pickup_Low\\0047.png",
+          "after_snapshot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\AfterSource\\Pickup_Low\\0047.png",
+          "after_sha256": "cb665141f77bacb6a905375e9b686cdef1e099064d7baf1df16e431b10067ac4",
+          "different_rgb_pixels": 94,
+          "difference_bbox": [
+            331,
+            492,
+            367,
+            533
+          ],
+          "crop_xyxy": [
+            291,
+            462,
+            411,
+            582
+          ]
+        }
+      ],
+      "contact_sha256": "c168237d1a6acac4bf4c711485aef8b74a78dd4b493bb325e288b54ac484caa2",
+      "maximum_sampled_delta_sha256": "f3823e86ee11e596e7d85c1a9a8ca0d76087ec5e9409a4383cdcee2eeab50dd7"
+    }
+  ],
+  "sample_count": 62,
+  "all_62_sources_and_snapshots_unchanged_after_qa": true,
+  "capture_report_sha256_at_end": "139b9057eec30af25d3c52ffcec11f64f2a2dfa7bef569f1477fac1c55ce20b2",
+  "capture_report_unchanged_during_qa": true,
+  "review_note": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentHandRegressionQA\\LocalWristSubdivision\\local-wrist-subdivision-review.txt",
+  "review_note_sha256": "533b0e686dbf9cf3d9d96773fab5ae35140a695477ce15ade7ea08c4add1ca71",
+  "visually_reviewed_ticks": 62,
+  "verdict": "No new obvious visible hand collapse/clipping found in the 62 original-to-original comparison samples; limited regression judgement only."
+}

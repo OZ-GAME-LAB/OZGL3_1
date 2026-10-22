@@ -1,0 +1,791 @@
+{
+  "method": "Actual Unity BakeMesh hand triangles sampled at15 barycentric positions each. At each point, cast a physical radial ray from the actual mounted weapon axis into its actual attached mesh triangles (two-sided first positive Moller-Trumbore hit), at that point axial coordinate. Report signed radial surface gap, not marker distance.",
+  "limits": "Finite surface sampling does not prove continuous collision freedom or Euclidean minimum distance. Whole exported wrist includes an artificial open selection cut. The bone-proxy region masks are stated in the research note and do not replace visual anatomical inspection. No full-game runtime or other unexported poses are certified.",
+  "sourceOriginalMeshSHA256": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+  "variantMeshSHA256": "a95a83e34d2d802d7db7ea20f9509122e63f39e89a3b247470430678b938e399",
+  "unchangedOriginalFrameRecords": {
+    "Right75": true,
+    "Right100": true,
+    "Left75": true,
+    "Left100": true
+  },
+  "baseVertexNormalTangentUVStreamsExact": true,
+  "originalTriangleIndicesExact": true,
+  "originalBindposesExact": true,
+  "topologyScope": {
+    "originalVertexCount": 7101,
+    "variantVertexCount": 7101,
+    "statement": "Original vertex count and topology restored. No wrist subdivision or strong wrist corrective. Existing vertex streams, original75/100 records and index buffer are checked exactly."
+  },
+  "newFrames": [
+    {
+      "weight": 150.0,
+      "vertices": 390,
+      "SHA256": "edb637fddea2ca1afc0fb1b1136a6bec65ebe9569b9d79147ba829291ef2ea42",
+      "existingVertexRecordCount": 390,
+      "existingVertexRecordSHA256": "edb637fddea2ca1afc0fb1b1136a6bec65ebe9569b9d79147ba829291ef2ea42"
+    },
+    {
+      "weight": 175.0,
+      "vertices": 381,
+      "SHA256": "bcfa9ff063ce96ef61fa248ca601cda187f35ce33850dfbfd64fedca873fa555",
+      "existingVertexRecordCount": 381,
+      "existingVertexRecordSHA256": "bcfa9ff063ce96ef61fa248ca601cda187f35ce33850dfbfd64fedca873fa555"
+    }
+  ],
+  "skinWeightRuleVerification": {
+    "ruleMaximumAbsoluteWeightError": 5.193776864143018e-08,
+    "ruleWithinFloatTolerance5eMinus7": true,
+    "changedVertexCountAbove1eMinus6": 222,
+    "verticesOutsideRuleUnchangedWithin1eMinus7": true,
+    "allLeftHandBoneInfluencesExact": true,
+    "additionalInterpolatedVertices": 0,
+    "additionalWeightSumsWithin1eMinus6": true,
+    "additionalMaximumBonesPerVertex": 0,
+    "statement": "v007 weights are not identical to v006. The prior documented smooth distal right-hand correction is retained; this check verifies that exact rule and unchanged vertices outside it."
+  },
+  "staff150Isolation": "The175 path clones target as Vector3[] before any changes; its fairing/contact and normal calculation operate on the clone. No archived pre175 frame record is available for an independent historical byte comparison.",
+  "samples": [
+    {
+      "probe": "Idle_Fists_0000ms.json",
+      "probeSHA256": "7e03694a51c1d08303e6b8b0c41a15f53703a5a5bcfccb796ab8c50fbb414377",
+      "clip": "Idle_Fists",
+      "time": 0.0,
+      "grip": 150,
+      "mountEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "surface": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+      "barycentricSamplesPerTriangle": 15,
+      "axisClosestTriangleCriticalPoints": {
+        "triangles": 498,
+        "minimumRadialGapM": -0.00028107231364542587,
+        "negativeTrianglesBelowMinus0p1mm": 2,
+        "worstSourceTriangle": [
+          5289,
+          5292,
+          5290
+        ],
+        "method": "Analytic closest point to the axis in each projected hand triangle, followed by an actual prop-mesh radial ray at its interpolated axial coordinate. Additional critical-point check; not a proof for continuously varying prop profiles."
+      },
+      "rows": {
+        "all_exported_hand_triangles": {
+          "samples": 7470,
+          "minimumRadialSurfaceGapM": -0.000403761761054236,
+          "medianRadialSurfaceGapM": 0.014414221920611375,
+          "penetratingSamplesBelowMinus0p1mm": 4,
+          "nearContactSamplesWithin2mm": 1055,
+          "worstSourceTriangle": [
+            5289,
+            5290,
+            5291
+          ],
+          "worstSampleBindHandMetres": [
+            -0.04265820141881704,
+            0.06503594387322664,
+            0.0291498894803226
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.011743793787900358,
+            0.08580088056623936,
+            0.015957436989992857
+          ]
+        },
+        "palm_proxy": {
+          "samples": 589,
+          "minimumRadialSurfaceGapM": -0.000403761761054236,
+          "medianRadialSurfaceGapM": 0.02934701669478832,
+          "penetratingSamplesBelowMinus0p1mm": 3,
+          "nearContactSamplesWithin2mm": 2,
+          "worstSourceTriangle": [
+            5289,
+            5290,
+            5291
+          ],
+          "worstSampleBindHandMetres": [
+            -0.04265820141881704,
+            0.06503594387322664,
+            0.0291498894803226
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.011743793787900358,
+            0.08580088056623936,
+            0.015957436989992857
+          ]
+        },
+        "finger_proxy": {
+          "samples": 5011,
+          "minimumRadialSurfaceGapM": -4.729295784299328e-05,
+          "medianRadialSurfaceGapM": 0.011363454564920068,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 889,
+          "worstSourceTriangle": [
+            5289,
+            5292,
+            5290
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0416473438963294,
+            0.07037950213998556,
+            0.015217566164210439
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.009685782613814808,
+            0.07939512841403484,
+            0.005350294639356434
+          ]
+        },
+        "thumb_proxy": {
+          "samples": 704,
+          "minimumRadialSurfaceGapM": 0.0005664885202461625,
+          "medianRadialSurfaceGapM": 0.004626377280137716,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 160,
+          "worstSourceTriangle": [
+            662,
+            661,
+            664
+          ],
+          "worstSampleBindHandMetres": [
+            -0.017602644860744476,
+            0.08711571991443634,
+            0.09166800230741501
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.020022418349981308,
+            0.09005606174468994,
+            0.028321431949734688
+          ]
+        },
+        "contactDistribution": {
+          "fingerColumns": [
+            {
+              "sourceColumnZ": -0.04,
+              "samples": 1221,
+              "minimumRadialGapM": 0.0001644217294193423
+            },
+            {
+              "sourceColumnZ": -0.019,
+              "samples": 1401,
+              "minimumRadialGapM": 0.00032298492274560053
+            },
+            {
+              "sourceColumnZ": 0.002,
+              "samples": 839,
+              "minimumRadialGapM": 0.00019950182534953995
+            },
+            {
+              "sourceColumnZ": 0.023,
+              "samples": 1550,
+              "minimumRadialGapM": -4.729295784299328e-05
+            }
+          ],
+          "occupiedFingerContactAngleBins30deg": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "probe": "Staff_Cast_Forward_0000ms.json",
+      "probeSHA256": "2c10145451c10a758939b37a79bf767c1a2d9e1810dccda83abccba492e6eb27",
+      "clip": "Staff_Cast_Forward",
+      "time": 0.0,
+      "grip": 150,
+      "mountEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "surface": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+      "barycentricSamplesPerTriangle": 15,
+      "axisClosestTriangleCriticalPoints": {
+        "triangles": 498,
+        "minimumRadialGapM": -0.0014079447912891084,
+        "negativeTrianglesBelowMinus0p1mm": 3,
+        "worstSourceTriangle": [
+          448,
+          449,
+          451
+        ],
+        "method": "Analytic closest point to the axis in each projected hand triangle, followed by an actual prop-mesh radial ray at its interpolated axial coordinate. Additional critical-point check; not a proof for continuously varying prop profiles."
+      },
+      "rows": {
+        "all_exported_hand_triangles": {
+          "samples": 7470,
+          "minimumRadialSurfaceGapM": -0.0011546424487667954,
+          "medianRadialSurfaceGapM": 0.014669321336626958,
+          "penetratingSamplesBelowMinus0p1mm": 11,
+          "nearContactSamplesWithin2mm": 1047,
+          "worstSourceTriangle": [
+            448,
+            449,
+            451
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0014327575772767887,
+            0.0806784238666296,
+            -0.04025743342936039
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.009962647571228445,
+            0.056795427575707436,
+            -0.03942270949482918
+          ]
+        },
+        "palm_proxy": {
+          "samples": 589,
+          "minimumRadialSurfaceGapM": -0.0001630128704450222,
+          "medianRadialSurfaceGapM": 0.02679726502545832,
+          "penetratingSamplesBelowMinus0p1mm": 2,
+          "nearContactSamplesWithin2mm": 4,
+          "worstSourceTriangle": [
+            448,
+            425,
+            449
+          ],
+          "worstSampleBindHandMetres": [
+            0.007911187509307638,
+            0.06729740649461746,
+            -0.044420354068279266
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.007300527533516288,
+            0.04738455079495907,
+            -0.03852606378495693
+          ]
+        },
+        "finger_proxy": {
+          "samples": 5011,
+          "minimumRadialSurfaceGapM": -0.0011546424487667954,
+          "medianRadialSurfaceGapM": 0.011363481077736277,
+          "penetratingSamplesBelowMinus0p1mm": 6,
+          "nearContactSamplesWithin2mm": 877,
+          "worstSourceTriangle": [
+            448,
+            449,
+            451
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0014327575772767887,
+            0.0806784238666296,
+            -0.04025743342936039
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.009962647571228445,
+            0.056795427575707436,
+            -0.03942270949482918
+          ]
+        },
+        "thumb_proxy": {
+          "samples": 704,
+          "minimumRadialSurfaceGapM": 0.0005665840320670835,
+          "medianRadialSurfaceGapM": 0.004626572810217316,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 160,
+          "worstSourceTriangle": [
+            662,
+            661,
+            664
+          ],
+          "worstSampleBindHandMetres": [
+            -0.017602646723389626,
+            0.08711572736501694,
+            0.0916680097579956
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.020022494718432426,
+            0.0900559201836586,
+            0.028321396559476852
+          ]
+        },
+        "contactDistribution": {
+          "fingerColumns": [
+            {
+              "sourceColumnZ": -0.04,
+              "samples": 1221,
+              "minimumRadialGapM": -0.0011546424487667954
+            },
+            {
+              "sourceColumnZ": -0.019,
+              "samples": 1401,
+              "minimumRadialGapM": 0.00032287993319397856
+            },
+            {
+              "sourceColumnZ": 0.002,
+              "samples": 839,
+              "minimumRadialGapM": 0.00028430931523927214
+            },
+            {
+              "sourceColumnZ": 0.023,
+              "samples": 1550,
+              "minimumRadialGapM": 0.00017620021670696276
+            }
+          ],
+          "occupiedFingerContactAngleBins30deg": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "probe": "Staff_Cast_Forward_0240ms.json",
+      "probeSHA256": "6892efc3df6816e5c84e584a139df6ec1afe1f1261530f1d1ee3928acdb2a7b7",
+      "clip": "Staff_Cast_Forward",
+      "time": 0.23999999463558197,
+      "grip": 150,
+      "mountEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "surface": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+      "barycentricSamplesPerTriangle": 15,
+      "axisClosestTriangleCriticalPoints": {
+        "triangles": 498,
+        "minimumRadialGapM": -0.0007908459422398435,
+        "negativeTrianglesBelowMinus0p1mm": 3,
+        "worstSourceTriangle": [
+          453,
+          451,
+          449
+        ],
+        "method": "Analytic closest point to the axis in each projected hand triangle, followed by an actual prop-mesh radial ray at its interpolated axial coordinate. Additional critical-point check; not a proof for continuously varying prop profiles."
+      },
+      "rows": {
+        "all_exported_hand_triangles": {
+          "samples": 7470,
+          "minimumRadialSurfaceGapM": -0.0007912977602835634,
+          "medianRadialSurfaceGapM": 0.014738108423933064,
+          "penetratingSamplesBelowMinus0p1mm": 6,
+          "nearContactSamplesWithin2mm": 1044,
+          "worstSourceTriangle": [
+            448,
+            449,
+            451
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0014327572571346536,
+            0.08067840430885553,
+            -0.040257422253489494
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.009518858511000872,
+            0.057160863652825356,
+            -0.03898334316909313
+          ]
+        },
+        "palm_proxy": {
+          "samples": 589,
+          "minimumRadialSurfaceGapM": 0.0007299732700523816,
+          "medianRadialSurfaceGapM": 0.027633350731646092,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 2,
+          "worstSourceTriangle": [
+            448,
+            425,
+            449
+          ],
+          "worstSampleBindHandMetres": [
+            0.00791118512279354,
+            0.06729738973081112,
+            -0.04442034102976322
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.006412950344383717,
+            0.04811543971300125,
+            -0.03764733858406544
+          ]
+        },
+        "finger_proxy": {
+          "samples": 5011,
+          "minimumRadialSurfaceGapM": -0.0007912977602835634,
+          "medianRadialSurfaceGapM": 0.01136348503530394,
+          "penetratingSamplesBelowMinus0p1mm": 6,
+          "nearContactSamplesWithin2mm": 875,
+          "worstSourceTriangle": [
+            448,
+            449,
+            451
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0014327572571346536,
+            0.08067840430885553,
+            -0.040257422253489494
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.009518858511000872,
+            0.057160863652825356,
+            -0.03898334316909313
+          ]
+        },
+        "thumb_proxy": {
+          "samples": 704,
+          "minimumRadialSurfaceGapM": 0.0005666950384547904,
+          "medianRadialSurfaceGapM": 0.004626486215783977,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 160,
+          "worstSourceTriangle": [
+            662,
+            661,
+            664
+          ],
+          "worstSampleBindHandMetres": [
+            -0.017602642998099327,
+            0.08711570501327515,
+            0.09166798740625381
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.02002241462469101,
+            0.09005583822727203,
+            0.028321513906121254
+          ]
+        },
+        "contactDistribution": {
+          "fingerColumns": [
+            {
+              "sourceColumnZ": -0.04,
+              "samples": 1221,
+              "minimumRadialGapM": -0.0007912977602835634
+            },
+            {
+              "sourceColumnZ": -0.019,
+              "samples": 1401,
+              "minimumRadialGapM": 0.0003229059664824757
+            },
+            {
+              "sourceColumnZ": 0.002,
+              "samples": 839,
+              "minimumRadialGapM": 0.0002842793434032209
+            },
+            {
+              "sourceColumnZ": 0.023,
+              "samples": 1550,
+              "minimumRadialGapM": 0.00017615719026402646
+            }
+          ],
+          "occupiedFingerContactAngleBins30deg": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "probe": "Sword_Horizontal_Slash_0000ms.json",
+      "probeSHA256": "f1433c7c5a092d62fc9b6e439f2d611d4e6e1f4f3376a145758aef7fd9602a7c",
+      "clip": "Sword_Horizontal_Slash",
+      "time": 0.0,
+      "grip": 175,
+      "mountEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "surface": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+      "barycentricSamplesPerTriangle": 15,
+      "axisClosestTriangleCriticalPoints": {
+        "triangles": 498,
+        "minimumRadialGapM": 0.0011330190104422346,
+        "negativeTrianglesBelowMinus0p1mm": 0,
+        "worstSourceTriangle": [
+          6700,
+          6701,
+          6702
+        ],
+        "method": "Analytic closest point to the axis in each projected hand triangle, followed by an actual prop-mesh radial ray at its interpolated axial coordinate. Additional critical-point check; not a proof for continuously varying prop profiles."
+      },
+      "rows": {
+        "all_exported_hand_triangles": {
+          "samples": 7470,
+          "minimumRadialSurfaceGapM": 0.0007113921242838019,
+          "medianRadialSurfaceGapM": 0.01562501704842286,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 290,
+          "worstSourceTriangle": [
+            4407,
+            4413,
+            4410
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0015001148276496679,
+            0.13649862632155418,
+            -0.017139811534434557
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.031857932452112436,
+            0.07749441638588905,
+            -0.02533747022971511
+          ]
+        },
+        "palm_proxy": {
+          "samples": 589,
+          "minimumRadialSurfaceGapM": 0.0040891654172977385,
+          "medianRadialSurfaceGapM": 0.029171963417680614,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 0,
+          "worstSourceTriangle": [
+            448,
+            425,
+            449
+          ],
+          "worstSampleBindHandMetres": [
+            0.007911187029094435,
+            0.06729740649461746,
+            -0.04442035220563412
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.008788235252723098,
+            0.05094045586884022,
+            -0.041032347828149796
+          ]
+        },
+        "finger_proxy": {
+          "samples": 5011,
+          "minimumRadialSurfaceGapM": 0.0007113921242838019,
+          "medianRadialSurfaceGapM": 0.012220242404314251,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 290,
+          "worstSourceTriangle": [
+            4407,
+            4413,
+            4410
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0015001148276496679,
+            0.13649862632155418,
+            -0.017139811534434557
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.031857932452112436,
+            0.07749441638588905,
+            -0.02533747022971511
+          ]
+        },
+        "thumb_proxy": {
+          "samples": 704,
+          "minimumRadialSurfaceGapM": 0.0021157261294085274,
+          "medianRadialSurfaceGapM": 0.005648533412156542,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 0,
+          "worstSourceTriangle": [
+            662,
+            661,
+            664
+          ],
+          "worstSampleBindHandMetres": [
+            -0.017602646723389626,
+            0.08711572736501694,
+            0.0916680097579956
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.02183060720562935,
+            0.09448032826185226,
+            0.022069068625569344
+          ]
+        },
+        "contactDistribution": {
+          "fingerColumns": [
+            {
+              "sourceColumnZ": -0.04,
+              "samples": 1221,
+              "minimumRadialGapM": 0.0011217417012498506
+            },
+            {
+              "sourceColumnZ": -0.019,
+              "samples": 1401,
+              "minimumRadialGapM": 0.0007113921242838019
+            },
+            {
+              "sourceColumnZ": 0.002,
+              "samples": 839,
+              "minimumRadialGapM": 0.0009012300625058003
+            },
+            {
+              "sourceColumnZ": 0.023,
+              "samples": 1550,
+              "minimumRadialGapM": 0.0011513669772593455
+            }
+          ],
+          "occupiedFingerContactAngleBins30deg": [
+            5,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "probe": "Sword_Horizontal_Slash_0240ms.json",
+      "probeSHA256": "a716dabd3ce0e6e9d9370e52e908d0f71e39248e67857e3f5bc422ca486609ab",
+      "clip": "Sword_Horizontal_Slash",
+      "time": 0.23999999463558197,
+      "grip": 175,
+      "mountEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "surface": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+      "barycentricSamplesPerTriangle": 15,
+      "axisClosestTriangleCriticalPoints": {
+        "triangles": 498,
+        "minimumRadialGapM": 0.0011329784765080307,
+        "negativeTrianglesBelowMinus0p1mm": 0,
+        "worstSourceTriangle": [
+          6701,
+          6703,
+          6702
+        ],
+        "method": "Analytic closest point to the axis in each projected hand triangle, followed by an actual prop-mesh radial ray at its interpolated axial coordinate. Additional critical-point check; not a proof for continuously varying prop profiles."
+      },
+      "rows": {
+        "all_exported_hand_triangles": {
+          "samples": 7470,
+          "minimumRadialSurfaceGapM": 0.0007114723871432856,
+          "medianRadialSurfaceGapM": 0.016007474803089068,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 290,
+          "worstSourceTriangle": [
+            4407,
+            4413,
+            4410
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0015001148276496679,
+            0.13649862632155418,
+            -0.017139811534434557
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.03185795480385423,
+            0.07749458216130733,
+            -0.025337487924844027
+          ]
+        },
+        "palm_proxy": {
+          "samples": 589,
+          "minimumRadialSurfaceGapM": 0.003448274301401129,
+          "medianRadialSurfaceGapM": 0.030803200897202933,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 0,
+          "worstSourceTriangle": [
+            448,
+            425,
+            449
+          ],
+          "worstSampleBindHandMetres": [
+            0.007911187509307638,
+            0.06729740649461746,
+            -0.044420354068279266
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.008292356040328741,
+            0.05079356022179127,
+            -0.03854391910135746
+          ]
+        },
+        "finger_proxy": {
+          "samples": 5011,
+          "minimumRadialSurfaceGapM": 0.0007114723871432856,
+          "medianRadialSurfaceGapM": 0.012220333042987086,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 290,
+          "worstSourceTriangle": [
+            4407,
+            4413,
+            4410
+          ],
+          "worstSampleBindHandMetres": [
+            -0.0015001148276496679,
+            0.13649862632155418,
+            -0.017139811534434557
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.03185795480385423,
+            0.07749458216130733,
+            -0.025337487924844027
+          ]
+        },
+        "thumb_proxy": {
+          "samples": 704,
+          "minimumRadialSurfaceGapM": 0.0021156171762603797,
+          "medianRadialSurfaceGapM": 0.005648558407743777,
+          "penetratingSamplesBelowMinus0p1mm": 0,
+          "nearContactSamplesWithin2mm": 0,
+          "worstSourceTriangle": [
+            662,
+            661,
+            664
+          ],
+          "worstSampleBindHandMetres": [
+            -0.017602646723389626,
+            0.08711572736501694,
+            0.0916680097579956
+          ],
+          "worstSampleLiveHandMetres": [
+            -0.021830637007951736,
+            0.09448053687810898,
+            0.022069010883569717
+          ]
+        },
+        "contactDistribution": {
+          "fingerColumns": [
+            {
+              "sourceColumnZ": -0.04,
+              "samples": 1221,
+              "minimumRadialGapM": 0.0011217550871593027
+            },
+            {
+              "sourceColumnZ": -0.019,
+              "samples": 1401,
+              "minimumRadialGapM": 0.0007114723871432856
+            },
+            {
+              "sourceColumnZ": 0.002,
+              "samples": 839,
+              "minimumRadialGapM": 0.0009012195177299422
+            },
+            {
+              "sourceColumnZ": 0.023,
+              "samples": 1550,
+              "minimumRadialGapM": 0.0011512694363165193
+            }
+          ],
+          "occupiedFingerContactAngleBins30deg": [
+            5,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    }
+  ]
+}
