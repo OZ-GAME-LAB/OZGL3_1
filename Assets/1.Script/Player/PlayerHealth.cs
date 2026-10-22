@@ -8,10 +8,11 @@ using OZ.UI.Contracts;
 public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
 {
     [SerializeField] private float _baseMaxHP = 100f;
-    [SerializeField] private float _hitInvincibleTime = 0.5f; // 연속 피격 방지
+    [SerializeField] private float _hitInvincibleTime = 1.0f; // 연속 피격 방지
     [SerializeField] private float _respawnInvincibleTime = 0.5f; // 재시작 직후 잠깐 보호
 
     private PlayerController _player;
+    private PlayerBuffs _buffs; // 없으면 방어 버프 없이 동작
     private float _hp;
     private float _bonusMaxHP; // 체력 스탯으로 늘어난 최대 HP (PlayerStats가 설정)
 
@@ -24,6 +25,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     private void Awake()
     {
         _player = GetComponent<PlayerController>();
+        _buffs = GetComponent<PlayerBuffs>();
         _hp = MaxHP;
     }
 
@@ -51,6 +53,11 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
             return;
         }
 
+        // 방어 강화: 받는 피해 x 0.75
+        if (_buffs != null)
+        {
+            damage = Mathf.Round(damage * _buffs.DamageTakenMultiplier);
+        }
 
         SetHP(_hp - damage);
 
@@ -78,7 +85,8 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     // 스테이지 재시작 시 코어 쪽에서 호출 (플레이어를 SetActive(true) 한 다음에 호출)
     public void ResetHealth()
     {
-        SetHP(MaxHP);
+        _hp = MaxHP;
+        HealthChanged?.Invoke(new HealthChange(0f, _hp, MaxHP));
         _player.Revive();
         _player.SetInvincible(_respawnInvincibleTime); // Revive가 무적을 초기화하므로 그 뒤에 설정
     }

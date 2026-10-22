@@ -17,6 +17,7 @@ namespace OZ.UI
                 case ItemEffectType.DefenseBuff: return "방어 강화";
                 case ItemEffectType.SpeedBuff: return "신속 강화";
                 case ItemEffectType.KeyItem: return "중요 물품";
+                case ItemEffectType.Equipment: return "장비";
                 default: return "";
             }
         }
@@ -30,6 +31,7 @@ namespace OZ.UI
                 case ItemEffectType.AttackBuff: return $"{item.buffDuration:0}초 동안 공격 피해 {item.effectPercent:0}% 증가";
                 case ItemEffectType.DefenseBuff: return $"{item.buffDuration:0}초 동안 받는 피해 {item.effectPercent:0}% 감소";
                 case ItemEffectType.SpeedBuff: return $"{item.buffDuration:0}초 동안 이동 속도 {item.effectPercent:0}% 증가";
+                case ItemEffectType.Equipment: return item.description ?? "";
                 default: return "";
             }
         }

@@ -373,7 +373,7 @@ public class PlayerState_Skill : PlayerState_Base
         _animator.SetTrigger("Skill");
         // 쿨다운을 판정보다 먼저 거는 이유: Execute 안에서 에러가 나도 연타로 무한 발동되지 않게
         skills.StartCooldown(slot);
-        skill.Execute(player, aimPoint, skills.GetDamage(skill));
+        skill.Execute(player, aimPoint, skills.GetFinalDamage(skill)); // 버프 포함 피해로 시전
         _duration = skill.Data.CastDuration;
     }
     public override void UpdateState(PlayerController player)

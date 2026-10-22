@@ -23,10 +23,17 @@ public class PunchAttack : MonoBehaviour, IPlayerAttack
     private readonly Collider[] _hits = new Collider[16];
     private readonly List<IDamageable> _damaged = new List<IDamageable>();
 
-    private float _speedBonus; // 0.03 = +3%
+    private float _speedBonus; // 0.03 = +3%.
+    private PlayerBuffs _buffs; // 없으면 버프 없이 동작 
 
     public float Duration { get { return _baseDuration / (1f + _speedBonus); } }
     public float Damage { get { return Mathf.Round(_attackPower * _damageCoefficient); } }
+
+    private void Awake()
+    {
+        _buffs = GetComponent<PlayerBuffs>();
+    }
+
 
     // PlayerStats에서 호출 (힘 구매 시)
     public void SetAttackPower(float attackPower)
@@ -46,8 +53,9 @@ public class PunchAttack : MonoBehaviour, IPlayerAttack
         int count = Physics.OverlapBoxNonAlloc(center, _hitBoxSize * 0.5f, _hits, Quaternion.identity, _enemyLayer);
 
         //루프 밖에서 한 번만 계산: 여러 적을 맞혀도 같은 피해, 계산도 1회
-        float damage = Damage;
+        float damage = Mathf.Round(Damage * (_buffs != null ? _buffs.AttackMultiplier : 1f));
         _damaged.Clear();
+
         for (int i = 0; i < count; i++)
         {
             IDamageable target = _hits[i].GetComponentInParent<IDamageable>();

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEditor.SceneManagement;
@@ -508,7 +509,7 @@ public static class ProtagonistExtendedValidation
                             }
                             else
                             {
-                                _player.SetAttack(_originalAttack);
+                                SetValidationAttack(_originalAttack);
                                 Check(_report.unexpectedDamageMessages == 0,
                                     "Timing probes use an isolated IPlayerAttack observer and never damage scene dummies");
                                 Finish(null);
@@ -554,10 +555,18 @@ public static class ProtagonistExtendedValidation
     private static void StartAttackProbe()
     {
         _attackProbe = new AttackProbe();
-        _player.SetAttack(_attackProbe);
+        SetValidationAttack(_attackProbe);
         _attackStartedAt = Time.time;
         _player.ChangeState(PlayerState.Attack);
         Check(_attackProbe.executions == 0, "Animation-driven attack defers execution when entering its state");
+    }
+    private static void SetValidationAttack(IPlayerAttack attack)
+    {
+        // Develop exposes Attack as read-only. Inject the isolated observer only in
+        // this Editor harness instead of adding a test setter to the runtime API.
+        FieldInfo field = typeof(PlayerController).GetField("_attack", BindingFlags.Instance | BindingFlags.NonPublic);
+        if (field == null) throw new MissingFieldException(typeof(PlayerController).FullName, "_attack");
+        field.SetValue(_player, attack);
     }
     private static void OnCancelled(ProtagonistExtraAction action) { if (action == ProtagonistExtraAction.Drink) _report.cancellations++; }
     private static void Begin(Phase phase) { _phase = phase; _phaseStart = Time.realtimeSinceStartup; _report.phase = phase.ToString(); Persist(); }
@@ -592,7 +601,7 @@ public static class ProtagonistExtendedValidation
         Write();
         if (_actions != null) { _actions.Cancelled -= OnCancelled; if (_actions.IsBusy) _actions.Cancel(); }
         if (_equipment != null) _equipment.Unequip();
-        if (_player != null && _originalAttack != null) _player.SetAttack(_originalAttack);
+        if (_player != null && _originalAttack != null) SetValidationAttack(_originalAttack);
         if (_asset != null) _asset.devices = _oldDevices;
         if (_keyboard != null && _keyboard.added) InputSystem.RemoveDevice(_keyboard);
         RestoreSettings(false);

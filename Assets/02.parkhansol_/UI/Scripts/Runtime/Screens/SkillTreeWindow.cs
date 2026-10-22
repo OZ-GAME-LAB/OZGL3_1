@@ -9,8 +9,9 @@ namespace OZ.UI
 {
     /// <summary>
     /// 스킬 트리 창 (K). SkillTreeData를 읽어 노드·연결선·안내 글자를 자동 배치한다.
-    ///   노드 클릭 = 해금 (ISkillTreeSource.TryUnlock) · 마우스 올림/선택 = 오른쪽 설명 칸
-    ///   초기화 버튼 = 두 번 눌러 확정 (ISkillTreeSource.TryResetTree)
+    ///   노드 클릭 = 해금 (ISkillTreeSource.TryUnlock) · 마우스 올림/선택 = 오른쪽 설명 칸 (다음 효과·비용)
+    ///   열려 있는 동안 게임 시간 정지 (기획서 기본안, UIWindow.pausesGame)
+    ///   초기화 버튼 = 기획서에 없어서 기본 꺼짐 (allowReset). 켜면 두 번 눌러 확정 (ISkillTreeSource.TryResetTree)
     /// 규칙 판단은 전부 소스 쪽 (UI는 결과만 그림).
     /// </summary>
     [AddComponentMenu("OZ/UI/Screens/Skill Tree Window")]
@@ -39,7 +40,8 @@ namespace OZ.UI
         [SerializeField] internal TMP_Text detailDesc;
         [SerializeField] internal TMP_Text detailStatus;
 
-        [Header("초기화")]
+        [Header("초기화 (기획서 v0.2에 없음 → 기본 꺼짐)")]
+        [SerializeField] internal bool allowReset;
         [SerializeField] internal Button resetButton;
         [SerializeField] internal TMP_Text resetLabel;
         [SerializeField] internal float resetConfirmSeconds = 2.5f;
@@ -82,7 +84,11 @@ namespace OZ.UI
             if (nodeTemplate != null) nodeTemplate.gameObject.SetActive(false);
             if (linkTemplate != null) linkTemplate.gameObject.SetActive(false);
             if (labelTemplate != null) labelTemplate.gameObject.SetActive(false);
-            if (resetButton != null) resetButton.onClick.AddListener(OnResetClicked);
+            if (resetButton != null)
+            {
+                resetButton.onClick.AddListener(OnResetClicked);
+                resetButton.gameObject.SetActive(allowReset);
+            }
         }
 
         protected override void OnOpened()
@@ -299,7 +305,7 @@ namespace OZ.UI
 
         void RefreshReset()
         {
-            if (resetButton == null) return;
+            if (resetButton == null || !allowReset) return;
             string reason = null;
             bool can = _src != null && _src.CanResetTree(out reason);
             resetButton.interactable = can;
@@ -338,7 +344,7 @@ namespace OZ.UI
 
         void OnResetClicked()
         {
-            if (_src == null || !_src.CanResetTree(out _)) return;
+            if (!allowReset || _src == null || !_src.CanResetTree(out _)) return;
             if (_resetArmedUntil < 0f)
             {
                 _resetArmedUntil = Time.unscaledTime + resetConfirmSeconds;

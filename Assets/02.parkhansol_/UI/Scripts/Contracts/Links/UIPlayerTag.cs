@@ -4,7 +4,7 @@ namespace OZ.UI.Contracts
 {
     /// <summary>
     /// [v0.7] "이 오브젝트가 플레이어"라는 표시. AreaNameTrigger · InteractPromptLink · 화면 밖 화살표 거리 계산이 이걸로 플레이어를 찾는다.
-    /// MainScene에서는 PlayerHealthBridge가 Play 시 PlayerController에 자동으로 붙인다 (프리팹 수정 없음).
+    /// MainScene에서는 GameBridge(PlayerHealthBridge·PlayerDashBridge)가 Play 시 PlayerController에 자동으로 붙인다 (프리팹 수정 없음).
     /// 다른 씬의 플레이어에는 직접 Add Component 하거나, 트리거의 Player Tag를 맞추면 된다.
     /// </summary>
     [DisallowMultipleComponent]

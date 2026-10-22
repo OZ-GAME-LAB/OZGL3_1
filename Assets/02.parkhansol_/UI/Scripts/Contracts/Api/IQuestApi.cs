@@ -1,3 +1,5 @@
+using System;
+
 namespace OZ.UI.Contracts
 {
     public enum QuestState
@@ -39,5 +41,15 @@ namespace OZ.UI.Contracts
         void Remove(string id);
         void Clear();
         bool TryGet(string id, out QuestInfo info);
+
+        // ── v1.0 상태창 퀘스트 탭 (기획서 4장: 메인 목표와 서브 목표의 진행·보상) ──
+        /// <summary>보상 포인트와 메인/서브 구분. HUD 목록에는 안 보이고 상태창 퀘스트 탭에만 나온다</summary>
+        void SetReward(string id, int rewardPoints, bool isMain = true);
+        bool TryGetReward(string id, out int rewardPoints, out bool isMain);
+        /// <summary>지금 목록에 있는 퀘스트 수 / 순서대로 읽기</summary>
+        int Count { get; }
+        QuestInfo GetAt(int index);
+        /// <summary>추가·진행·완료·삭제·보상 변경</summary>
+        event Action Changed;
     }
 }

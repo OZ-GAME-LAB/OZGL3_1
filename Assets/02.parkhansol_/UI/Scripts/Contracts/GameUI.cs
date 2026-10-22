@@ -18,6 +18,8 @@ namespace OZ.UI.Contracts
     ///   GameUI.Area.Show("서울 거리");                     // 레벨: 지역 이름 (v0.7, AreaNameTrigger)
     ///   GameUI.Indicators.Track(gate, IndicatorKind.Gate); // 화면 밖 목표 화살표 (v0.7)
     ///   GameUI.Prompt.Show(door, "열기");                  // "[F] 열기" (v0.7, InteractPromptLink)
+    ///   GameUI.Shop.Open(shopData);                        // 상점 창 (v1.0, 보통은 ShopkeeperLink가 부름)
+    ///   GameUI.Status.Open(StatusTab.Character);           // 상태창 (v1.1 캐릭터·퀘스트·상점·지도, Tab)
     ///
     /// UI가 씬에 없으면 Null 구현이 대신 받아서 아무 일도 하지 않는다 (에러 없음).
     /// </summary>
@@ -36,6 +38,8 @@ namespace OZ.UI.Contracts
         static IAreaApi _area;
         static IIndicatorApi _indicators;
         static IPromptApi _prompt;
+        static IShopApi _shop;
+        static IStatusApi _status;
 
         public static IHudApi HUD => _hud ?? NullHudApi.Instance;
         public static IBossApi Boss => _boss ?? NullBossApi.Instance;
@@ -56,6 +60,10 @@ namespace OZ.UI.Contracts
         public static IIndicatorApi Indicators => _indicators ?? NullIndicatorApi.Instance;
         /// <summary>[v0.7] 상호작용 안내 "[F] 조사". 배치는 InteractPromptLink</summary>
         public static IPromptApi Prompt => _prompt ?? NullPromptApi.Instance;
+        /// <summary>[v1.0] 상점 창. 배치는 ShopkeeperLink (NPC)</summary>
+        public static IShopApi Shop => _shop ?? NullShopApi.Instance;
+        /// <summary>[v1.0] 상태창 (스탯·퀘스트·상점·스킬·지도). Tab 키</summary>
+        public static IStatusApi Status => _status ?? NullStatusApi.Instance;
 
         /// <summary>UI가 씬에 올라와 있는지</summary>
         public static bool IsReady => _screens != null;
@@ -78,6 +86,8 @@ namespace OZ.UI.Contracts
         internal static void Register(IAreaApi api) => _area = api;
         internal static void Register(IIndicatorApi api) => _indicators = api;
         internal static void Register(IPromptApi api) => _prompt = api;
+        internal static void Register(IShopApi api) => _shop = api;
+        internal static void Register(IStatusApi api) => _status = api;
 
         internal static void Unregister(object api)
         {
@@ -94,13 +104,15 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(_area, api)) _area = null;
             if (ReferenceEquals(_indicators, api)) _indicators = null;
             if (ReferenceEquals(_prompt, api)) _prompt = null;
+            if (ReferenceEquals(_shop, api)) _shop = null;
+            if (ReferenceEquals(_status, api)) _status = null;
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
             _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null; _flow = null; _quest = null; _sound = null;
-            _area = null; _indicators = null; _prompt = null;
+            _area = null; _indicators = null; _prompt = null; _shop = null; _status = null;
         }
     }
 }

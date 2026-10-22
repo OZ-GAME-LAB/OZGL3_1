@@ -150,13 +150,11 @@ namespace OZ.UI.EditorTools
             playerGo.AddComponent<Rigidbody>();
             var data = playerGo.AddComponent<DummyPlayer>();
             data.classData = OZSampleData.Load<ClassData>("Class_Sword");
-            data.skillTree = OZSampleData.Load<SkillTreeData>("SkillTree_Main");
             data.quickItems = new[]
             {
                 OZSampleData.Load<ItemData>("Item_Heal"), OZSampleData.Load<ItemData>("Item_Attack"),
                 OZSampleData.Load<ItemData>("Item_Defense"), OZSampleData.Load<ItemData>("Item_Speed"),
             };
-            data.extraItems = new[] { OZSampleData.Load<ItemData>("Item_GateKey") };
             var avatar = playerGo.AddComponent<ShowcasePlayer>();
             avatar.data = data;
             BuildPlayerModel(playerGo.transform, avatar, M);
@@ -214,7 +212,7 @@ namespace OZ.UI.EditorTools
             dir.avatar = avatar;
             dir.map = OZSampleData.Load<MapData>("Map_Stage1");
             dir.managedByGameManager = true;
-            dir.guide = "A/D 이동 · Space 점프 · Z 공격 · Q/E/R 스킬 · K 스킬트리 · I 인벤 · Tab 지도\nF6 스테이지 재시작 · F7 다음 스테이지 · F8 로딩 화면";
+            dir.guide = "A/D 이동 · Space 점프 · Z 공격 · Q/E/R 스킬 · K 스킬 · Tab 지도\nF6 스테이지 재시작 · F7 다음 스테이지 · F8 로딩 화면";
 
             BuildFlowSample(data, dir, enemyTpl, sampleBoss, M);
 

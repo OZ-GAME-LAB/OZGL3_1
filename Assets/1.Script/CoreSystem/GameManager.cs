@@ -10,9 +10,19 @@ public class GameManager : BaseManager
     private bool isLoading;
 
     public static GameManager Instance { get; private set; }
+    public bool IsReady => isReady;
+    public event System.Action InitializationCompleted;
+    public event System.Action StageChanging;
+    public event System.Action StageStarted;
+    public event System.Action GameCompleted;
+    private bool gameCompleted;
     public StageManager StageManager => stageManager;
     public GateManager GateManager => gateManager;
     public PoolManager PoolManager => poolManager;
+    public bool IsStageRunning => stageManager != null && stageManager.IsStageRunning;
+    public int StageNumber => stageManager != null ? stageManager.StageNumber : 0;
+    public int GateCount => gateManager != null ? gateManager.Gates.Count : 0;
+    public bool AreGatesActive => gateManager != null && gateManager.AreGatesActive;
     //public ResourceManager ResourceManager { get; private set; }
 
     private void Awake()
@@ -48,12 +58,62 @@ public class GameManager : BaseManager
         {
             isLoading = false;
         }
+        InitializationCompleted?.Invoke();
         //await GameManager.Instance.UIManager.OpenMainMenuUIAsync();
     }
 
     public async UniTask GameStartAsync()
     {
        // await GameManager.Instance.UIManager.OpenMainUIAsync();
+    }
+
+    public bool StartStage()
+    {
+        return SetStage(StageNumber);
+    }
+
+    public bool NewGame()
+    {
+        bool started = SetStage(1);
+        if (started) gameCompleted = false;
+        return started;
+    }
+
+    public bool RestartStage() => SetStage(StageNumber);
+
+    public bool NextStage()
+    {
+        if (!isReady || gameCompleted || !stageManager.IsStageCleared) return false;
+        int nextNumber = stageManager.StageNumber + 1;
+        if (stageManager.HasStage(nextNumber)) return SetStage(nextNumber);
+        StageChanging?.Invoke();
+        stageManager.EndStage();
+        gameCompleted = true;
+        GameCompleted?.Invoke();
+        return true;
+    }
+
+    private bool SetStage(int number)
+    {
+        if (!isReady)
+        {
+            Debug.LogWarning("게임 시스템 초기화가 완료되지 않았습니다.", this);
+            return false;
+        }
+        if (!stageManager.CanSetStage(number))
+        {
+            Debug.LogError($"{number}스테이지를 목록에 올바르게 등록하세요.", this);
+            return false;
+        }
+        StageChanging?.Invoke();
+        if (!stageManager.SetStage(number)) return false;
+        StageStarted?.Invoke();
+        return true;
+    }
+
+    public void EndStage()
+    {
+        if (stageManager != null) stageManager.EndStage();
     }
 
     public async UniTask InitializeManagersAsync()

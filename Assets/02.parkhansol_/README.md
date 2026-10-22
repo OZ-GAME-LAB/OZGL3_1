@@ -61,9 +61,9 @@ public class Player : MonoBehaviour, IHealthSource, ISkillSource, IItemSource
 | `IHealthSource` | 플레이어 | 초상화 칸 + HP 바 + 피격/회복 연출 |
 | `IProgressionSource` | 플레이어/코어 | 레벨 · 경험치 · 헌터 랭크 · 남은 스킬 포인트 |
 | `ISkillSource` | 플레이어 | Q/E/R 아이콘 · 쿨타임 · 완료 연출 · 잠금 / 스킬 창 투자 |
-| `ISkillTreeSource` | 플레이어 | K 스킬 트리 (노드 해금·택1·초기화) — 규칙은 `SkillTreeState` 그대로 사용 |
+| `ISkillTreeSource` | 플레이어 | K 스킬 트리 (계열 트리, 습득·강화) — 규칙은 `SkillTreeState` 그대로 사용 |
 | `IItemSource` | 플레이어/코어 | 1~4 아이템 수량 · 사용 연출 · 버프 타이머 |
-| `IInventorySource` | 코어 | 인벤토리 창 (1×1 슬롯, 이동/사용) |
+| `IInventorySource` | (v0.9 사용 안 함) | 인벤토리 창 — 기획서 범위 밖이라 UIRoot에서 빠짐. 아이템은 `IItemSource` 1~4 고정 슬롯만 |
 | `IGateSource` | 코어 | 퀘스트 목록 '게이트 봉쇄 n/목표' · '보스 처치' 자동 · 게이트 파괴 띠 |
 | `IBossSource` | 보스 담당 | 보스 체력바 · 페이즈 · 처치 연출 |
 
@@ -74,14 +74,12 @@ public class Player : MonoBehaviour, IHealthSource, ISkillSource, IItemSource
 규칙 계산은 `SkillTreeState`에 다 들어 있어서 감싸기만 하면 됩니다 (`Samples/DummyPlayer.cs` 참고).
 
 ```csharp
-var tree = new SkillTreeState(skillTreeData);           // SkillTree_Main 에셋
-tree.Unlock("sword_q", free: true);                      // 계열 시작 스킬 (초기화해도 남음)
-if (tree.CanUnlock(id, level, points, out var why)) { points -= skillTreeData.Find(id).cost; tree.Unlock(id); }
-points += tree.Reset();                                  // 초기화 → 포인트 환급
+var tree = new SkillTreeState(classData.skillTree);     // 계열 트리: SkillTree_Sword / SkillTree_Magic
+tree.Unlock("sword_q", free: true);                      // 계열 시작 스킬 Q (1단계 보유)
+if (tree.CanUnlock(id, level, points, out var why)) { points -= classData.skillTree.Find(id).cost; tree.Unlock(id); }
 SkillData q = tree.GetSkill(SkillSlot.Q); int rank = tree.GetRank(SkillSlot.Q);   // ISkillSource에 그대로
-float hp = tree.GetStat("max_hp_pct");                   // 패시브 수치
 ```
-최대 레벨 15(임시), 레벨당 1P. Q/E/R 버튼마다 검술·마법 택1 → 2·3단계, 공용 패시브 4개.
+기획서 v0.2 검증값 (v0.9): 최대 Lv.7, 레벨당 1P → 6P. Q는 시작부터 1단계, E는 Lv.2·R은 Lv.4부터 1P로 습득, 각 3단계까지 단계당 1P (전부 찍으려면 8P → 투자처를 고름). 패시브·택1·초기화 없음. 스킬 창이 열려 있으면 시간 정지.
 
 ### 2) 한 줄 호출 (GameUI)
 
@@ -156,7 +154,7 @@ if (UISettings.ShowDamageNumbers) SpawnDamageText(dmg);
 ### 4) 입력 막기
 
 ```csharp
-if (UIState.IsGameplayInputBlocked) return;   // 스킬 창/인벤토리/대화 등이 열려 있으면 true
+if (UIState.IsGameplayInputBlocked) return;   // 스킬 창/지도/대화 등이 열려 있으면 true
 ```
 
 ### 5) 데이터 (ScriptableObject, 기획/팀원 입력)
@@ -169,7 +167,6 @@ if (UIState.IsGameplayInputBlocked) return;   // 스킬 창/인벤토리/대화 
 | 키 | 기능 |
 |---|---|
 | K / 패드 Select | 스킬 창 |
-| I / 패드 Y | 인벤토리 |
 | Tab · M / 패드 ↑ | 지도 |
 | ESC / 패드 Start | 닫기 → 없으면 일시정지 |
 | Q / E · 패드 LB/RB | 옵션 창 탭 전환 |
@@ -202,7 +199,7 @@ Q/E/R, 1~4 는 **플레이어 담당이 입력 처리** → UI는 이벤트만 �
 ## 공지
 
 - **TextMesh Pro 기본 리소스는 `02.parkhansol_/ThirdParty/TextMesh Pro`에 있습니다.** TMP Essentials를 다시 Import 하지 마세요 (중복 생성됨).
-- 일시정지: 스킬 창·인벤토리·지도·일시정지는 열리면 `Time.timeScale = 0` (기획서 기본안). UI 연출은 시간 정지와 무관하게 동작.
+- 일시정지: 스킬 창·지도·일시정지는 열리면 `Time.timeScale = 0` (기획서 기본안). UI 연출은 시간 정지와 무관하게 동작.
 
 
 ## 효과음 출처

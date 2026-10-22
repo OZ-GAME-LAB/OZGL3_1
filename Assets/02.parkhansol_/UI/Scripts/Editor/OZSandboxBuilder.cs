@@ -19,13 +19,14 @@ namespace OZ.UI.EditorTools
 
         public const string HelpText =
             "<b>UI SANDBOX</b>  (F1 숨기기)\n" +
-            "<color=#FFD966>HUD</color> H 피격  J 회복  X 경험치  = 레벨업\n" +
+            "<color=#FFD966>HUD</color> H 피격  J 회복  Shift 대시  ] 성장P+500  [ 아이템P+500\n" +
             "<color=#FFD966>사용</color> Q/E/R 스킬  1~4 아이템  U 회복제+1\n" +
             "<color=#FFD966>게이트</color> G 봉쇄  O 열기   P 다음 방\n" +
             "<color=#FFD966>보스</color> B 등장  N 피격  V 큰 피격\n" +
-            "<color=#FFD966>창</color> K 스킬트리  I 인벤  Tab 지도  T 대화  ESC\n" +
+            "<color=#FFD966>창</color> Tab 상태창(1~4 탭)  K 캐릭터  M 지도  T 대화  ESC\n" +
             "<color=#FFD966>화면</color> F2 사망  F3 게이트파괴  F4 끝  F5 타이틀\n" +
             "<color=#FFD966>v0.7</color> F6 지역이름 F7 상호작용 F8 화면밖화살표\n" +
+            "<color=#FFD966>상점</color> 옆 상인에게 F (임시 포션 상점)\n" +
             "<color=#FFD966>전투</color> Z 공격 C 치명 W 약점 L 연타\n" +
             "       D 장판(지속) Y 빗나감  적 클릭";
 
@@ -65,13 +66,16 @@ namespace OZ.UI.EditorTools
             var sandbox = new GameObject("Sandbox (Dummy Gameplay)");
             var player = sandbox.AddComponent<DummyPlayer>();
             player.classData = OZSampleData.Load<ClassData>("Class_Sword");
-            player.skillTree = OZSampleData.Load<SkillTreeData>("SkillTree_Main");
+            // 스킬 트리는 계열 데이터(Class_Sword.skillTree)에서 가져옴 (v0.9)
             player.quickItems = new[]
             {
                 OZSampleData.Load<ItemData>("Item_Heal"), OZSampleData.Load<ItemData>("Item_Attack"),
                 OZSampleData.Load<ItemData>("Item_Defense"), OZSampleData.Load<ItemData>("Item_Speed"),
             };
-            player.extraItems = new[] { OZSampleData.Load<ItemData>("Item_GateKey") };
+            // v1.0 기획서 v0.5 기술 6종 아이콘 (예전 계열 스킬 아이콘 재사용)
+            string[] skillIcons = { "Skill_SwordQ", "Skill_SwordE", "Skill_SwordR", "Skill_MagicQ", "Skill_MagicE", "Skill_MagicR" };
+            for (int k = 0; k < player.skillOffers.Length && k < skillIcons.Length; k++)
+                player.skillOffers[k].icon = AssetDatabase.LoadAssetAtPath<Sprite>($"{OZPaths.UI}/Art/Icons/{skillIcons[k]}.png");
 
             var boss = sandbox.AddComponent<DummyBoss>();
             boss.data = OZSampleData.Load<BossData>("Boss_Stage1");
@@ -109,6 +113,16 @@ namespace OZ.UI.EditorTools
                 e.maxHP = sp.hp;
                 e.elite = sp.elite;
                 combat.enemies.Add(e);
+            }
+
+            // v1.0 임시 상점 NPC — 플레이어 바로 오른쪽 (F로 상점, DummyPlayer가 포인트·구매 처리)
+            var shopData = OZSampleData.EnsureShop();
+            if (shopData != null)
+            {
+                var avatarSprite = avatar.GetComponent<SpriteRenderer>().sprite;
+                float avatarH = (avatarSprite != null ? avatarSprite.bounds.size.y : 0.35f) * avatar.transform.localScale.y;
+                var npc = OZShopNpcBuilder.Create(new Vector3(-3.4f, -3f, 0f), avatarH, shopData);
+                npc.GetComponent<InteractPromptLink>().radius = 2.6f;
             }
 
             BuildHelpOverlay();
@@ -165,7 +179,7 @@ namespace OZ.UI.EditorTools
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
 
             var bg = UIB.Solid("Background", go.transform, new Color(0, 0, 0, 0.55f));
-            bg.rectTransform.Place(1, 1, -8, -84, 206, 112);
+            bg.rectTransform.Place(1, 1, -8, -84, 236, 124);
             var t = UIB.Small10("Text", bg.transform, HelpText, TextAlignmentOptions.TopLeft, Color.white);
             t.richText = true;
             t.rectTransform.Stretch(6, 6, 4, 4);

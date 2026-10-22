@@ -70,7 +70,7 @@ namespace OZ.UI
             if (progression != null) progression.Bind(UISources.Progression);
             if (gate != null) gate.Bind(UISources.Gate);
             if (quests != null) quests.BindGate(UISources.Gate);
-            if (skills != null) skills.Bind(UISources.Skills);
+            if (skills != null) { skills.Bind(UISources.Skills); skills.BindLoadout(UISources.Loadout); }
             if (items != null) items.Bind(UISources.Items);
             if (buffs != null) buffs.Bind(UISources.Items);
             if (banner != null) banner.Bind(UISources.Gate);

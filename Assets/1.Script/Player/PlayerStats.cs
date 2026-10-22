@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OZ.UI.Contracts;
+using System;
 using UnityEngine;
 
 
@@ -27,7 +28,7 @@ public struct StatConfig
 // 구매(가격, 포인트 차감)는 상점이 담당하고, 스탯은 레벨을 올려 달라는 요청만 받는다.
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(PlayerHealth))]
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IStatSource
 {
     [Header("Stat Config")]
     [SerializeField] private StatConfig _strength = new StatConfig(20f, 3f, 5);    // 물리 공격력 20, +3, 최대 5
@@ -47,10 +48,26 @@ public class PlayerStats : MonoBehaviour
     // 레벨이 바뀐 스탯 (상태창 갱신용)
     public event Action<StatType> StatChanged;
 
+    // 같은 이름으로 형식만 다른 이벤트 두 개는 못 만듦
+    private event Action<StatKind> _uiStatChanged;
+    event Action<StatKind> IStatSource.StatChanged
+    {
+        add { _uiStatChanged += value; }   // UI가 += 하면 여기로
+        remove { _uiStatChanged -= value; } // UI가 -= 하면 여기로
+    }
+
     public float PhysicalAttack { get { return GetValue(StatType.Strength); } }
     public float BonusMaxHP { get { return GetValue(StatType.Vitality); } }
     public float AgilityBonus { get { return GetValue(StatType.Agility); } } // 0.09 = +9%
     public float MagicAttack { get { return GetValue(StatType.Magic); } }
+
+    private static StatType ToType(StatKind kind) { return (StatType)(int)kind; }
+    private static StatKind ToKind(StatType type) { return (StatKind)(int)type; }
+
+    public int GetStatLevel(StatKind stat) { return GetLevel(ToType(stat)); }
+    public int GetStatMaxLevel(StatKind stat) { return GetMaxLevel(ToType(stat)); }
+    public float GetStatValue(StatKind stat) { return GetValue(ToType(stat)); }
+    public float GetStatNextValue(StatKind stat) { return GetNextValue(ToType(stat)); }
 
     private void Awake()
     {
@@ -62,6 +79,16 @@ public class PlayerStats : MonoBehaviour
             _punchAttack = GetComponent<PunchAttack>();
         }
     }
+    private void OnEnable()
+    {
+        GameUI.Bind(this);
+    }
+
+    private void OnDisable()
+    {
+        GameUI.Unbind(this);
+    }
+
 
     // 다른 컴포넌트의 Awake(체력 초기화 등)가 끝난 뒤 적용
     private void Start()
@@ -112,7 +139,7 @@ public class PlayerStats : MonoBehaviour
 
         _levels[(int)type]++;
         Apply(type);
-        StatChanged?.Invoke(type);
+        NotifyStatChanged(type);
         return true;
     }
 
@@ -139,8 +166,14 @@ public class PlayerStats : MonoBehaviour
         ApplyAll();
         foreach (StatType type in Enum.GetValues(typeof(StatType)))
         {
-            StatChanged?.Invoke(type);
+            NotifyStatChanged(type);
         }
+    }
+
+    private void NotifyStatChanged(StatType type)
+    {
+        StatChanged?.Invoke(type);
+        _uiStatChanged?.Invoke(ToKind(type));
     }
 
     // 상점이 생기기 전 테스트용: 플레이 중 인스펙터의 컴포넌트 ⋮ 메뉴에서 실행
