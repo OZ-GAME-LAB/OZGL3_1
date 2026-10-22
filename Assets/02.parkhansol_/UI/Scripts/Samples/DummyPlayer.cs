@@ -384,6 +384,12 @@ namespace OZ.UI.Samples
         {
             var item = GetItem(slotIndex);
             if (item == null) return;
+            // 기획데이터 9장: 종류별 최대 보유 수 (item.maxStack, 기본 5)
+            if (GetCount(slotIndex) + amount > Mathf.Max(1, item.maxStack))
+            {
+                GameUI.Notify.Toast($"{item.displayName}은(는) {item.maxStack}개까지 가질 수 있다", ToastType.Warning);
+                return;
+            }
             for (int i = 0; i < _inv.Length; i++)
                 if (_inv[i].Item == item && _inv[i].Count < item.maxStack) { _inv[i] = new ItemStack(item, _inv[i].Count + amount); Notify(slotIndex); return; }
             for (int i = 0; i < _inv.Length; i++)

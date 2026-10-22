@@ -86,7 +86,7 @@ namespace OZ.UI.Samples
         };
 
         static SkillOffer Skill(string id, string name, string desc, SkillDamageKind kind, int price, float coef, float cd) =>
-            new SkillOffer { id = id, displayName = name, description = desc, damageKind = kind, price = price, coefficient = coef, cooldown = cd, ranks = PlaceholderRanks(price) };
+            new SkillOffer { id = id, displayName = name, description = desc, damageKind = kind, price = price, coefficient = coef, cooldown = cd, ranks = new SkillRank[0] }; // 기획데이터 5장: 1회 구매 · 강화 없음
 
         /// <summary>v1.1 임시 단계: 1단계 = 배우기(기획 가격), 2·3단계 = 기능 추가 (가격·기능은 기획 확정 전 자리)</summary>
         static SkillRank[] PlaceholderRanks(int learnPrice) => new[]
@@ -116,6 +116,26 @@ namespace OZ.UI.Samples
             _nodes.Add(new StageNode { id = "boss1", displayName = "1스테이지 보스", isBoss = true, mainGoal = "보스 처치 후 보스 게이트 봉쇄", lockCondition = "1스테이지 메인 완료" });
             _nodes.Add(new StageNode { id = "stage2", displayName = "2스테이지", mainGoal = "일반 게이트 4개 직접 봉쇄", lockCondition = "1스테이지 보스 완료" });
             _nodes.Add(new StageNode { id = "boss2", displayName = "2스테이지 보스", isBoss = true, mainGoal = "보스 처치 후 보스 게이트 봉쇄", lockCondition = "2스테이지 메인 완료" });
+        }
+
+        /// <summary>
+        /// 테스트·디버그: 성장 상태를 각성 직후로 (포인트 1000, 스탯·기술·장착·노드 처음). 퀘스트 보상 지급 기록은 유지 (기획서: 첫 완료만 지급).
+        /// 실제 게임에는 없음 — 사망·재도전은 ResetAll이고 구매는 그대로 남는다.
+        /// </summary>
+        public void ResetGrowth()
+        {
+            UnbindPathRule();
+            InitGrowth();
+            BindPathRule();
+            float prev = _hp;
+            _hp = Mathf.Min(_hp, MaxHP);
+            PointsChanged?.Invoke(_gp, 0);
+            foreach (StatKind s in Enum.GetValues(typeof(StatKind))) StatChanged?.Invoke(s);
+            for (int i = 0; i < 3; i++) SlotChanged?.Invoke((SkillSlot)i);
+            NodesChanged?.Invoke();
+            PathChanged?.Invoke();
+            ShopChanged?.Invoke();
+            HealthChanged?.Invoke(new HealthChange(prev, _hp, MaxHP));
         }
 
         void Start()
