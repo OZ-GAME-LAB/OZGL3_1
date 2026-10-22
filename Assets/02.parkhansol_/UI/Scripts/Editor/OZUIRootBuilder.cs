@@ -29,6 +29,10 @@ namespace OZ.UI.EditorTools
                 var sfx = root.AddComponent<UISoundPlayer>(); // v0.6 UI 효과음
                 sfx.soundSet = AssetDatabase.LoadAssetAtPath<UISoundSet>(OZUISoundSetup.SetPath) ?? OZUISoundSetup.Run();
                 var mapCtrl = root.AddComponent<MapController>();
+                // v1.3 튜토리얼 (GameUI.Tutorial) — 화면은 실행 중 코드로 만든다. 여기선 글꼴만 지정
+                var tutorial = root.AddComponent<TutorialDirector>();
+                tutorial.titleFont = UIB.Title; tutorial.bodyFont = UIB.Body; tutorial.smallFont = UIB.Small;
+                tutorial.panelSprite = UIB.Px("Panels/Blue/Panel");
 
                 // UIManager.Awake가 레이어를 만들지만, 프리팹 안에서 미리 배치하려고 직접 생성
                 Transform hudLayer = Layer(root.transform, UILayer.HUD);
@@ -364,6 +368,7 @@ namespace OZ.UI.EditorTools
             var mmFrame = UIB.Panel("Minimap", hudRt, "Panels/Blue/Panel");
             mmFrame.raycastTarget = false;
             mmFrame.rectTransform.Place(1, 1, -8, -8, 104, 70);
+            hud.minimapRoot = mmFrame.rectTransform; // v1.3 HudPart.Minimap
             var minimap = MapView(mmFrame.transform, 6f, true, 4);
             hud.systemAlarm = BuildSystemAlarm(hudRt);
             _systemAlarm = hud.systemAlarm;

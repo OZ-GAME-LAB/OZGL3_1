@@ -18,7 +18,7 @@ MonoBehaviour:
     \uC2DC\uAC04 \uAC31\uC2E0."
   icon: {fileID: 21300000, guid: 2e5a7cd51cd579c4799a12ee0bd90243, type: 3}
   slotIndex: 2
-  maxStack: 9
+  maxStack: 5
   effectType: 2
   effectPercent: 25
   buffDuration: 10

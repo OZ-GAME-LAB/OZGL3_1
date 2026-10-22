@@ -20,6 +20,8 @@ namespace OZ.UI.Contracts
     ///   GameUI.Prompt.Show(door, "열기");                  // "[F] 열기" (v0.7, InteractPromptLink)
     ///   GameUI.Shop.Open(shopData);                        // 상점 창 (v1.0, 보통은 ShopkeeperLink가 부름)
     ///   GameUI.Status.Open(StatusTab.Character);           // 상태창 (v1.1 캐릭터·퀘스트·상점·지도, Tab)
+    ///   GameUI.Tutorial.PlayStatusTour(onDone);            // 튜토리얼 화면 정지 + 강조 (v1.3)
+    ///   GameUI.HUD.SetParts(HudPart.All, false);           // HUD 부위별 숨김/등장 (v1.3)
     ///
     /// UI가 씬에 없으면 Null 구현이 대신 받아서 아무 일도 하지 않는다 (에러 없음).
     /// </summary>
@@ -40,6 +42,7 @@ namespace OZ.UI.Contracts
         static IPromptApi _prompt;
         static IShopApi _shop;
         static IStatusApi _status;
+        static ITutorialApi _tutorial;
 
         public static IHudApi HUD => _hud ?? NullHudApi.Instance;
         public static IBossApi Boss => _boss ?? NullBossApi.Instance;
@@ -64,6 +67,8 @@ namespace OZ.UI.Contracts
         public static IShopApi Shop => _shop ?? NullShopApi.Instance;
         /// <summary>[v1.0] 상태창 (스탯·퀘스트·상점·스킬·지도). Tab 키</summary>
         public static IStatusApi Status => _status ?? NullStatusApi.Instance;
+        /// <summary>[v1.3] 튜토리얼: 화면 정지 + 강조 설명 · 각성 카드 (기획서 3장)</summary>
+        public static ITutorialApi Tutorial => _tutorial ?? NullTutorialApi.Instance;
 
         /// <summary>UI가 씬에 올라와 있는지</summary>
         public static bool IsReady => _screens != null;
@@ -88,6 +93,7 @@ namespace OZ.UI.Contracts
         internal static void Register(IPromptApi api) => _prompt = api;
         internal static void Register(IShopApi api) => _shop = api;
         internal static void Register(IStatusApi api) => _status = api;
+        internal static void Register(ITutorialApi api) => _tutorial = api;
 
         internal static void Unregister(object api)
         {
@@ -106,13 +112,14 @@ namespace OZ.UI.Contracts
             if (ReferenceEquals(_prompt, api)) _prompt = null;
             if (ReferenceEquals(_shop, api)) _shop = null;
             if (ReferenceEquals(_status, api)) _status = null;
+            if (ReferenceEquals(_tutorial, api)) _tutorial = null;
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatics()
         {
             _hud = null; _boss = null; _screens = null; _notify = null; _map = null; _dialogue = null; _damage = null; _flow = null; _quest = null; _sound = null;
-            _area = null; _indicators = null; _prompt = null; _shop = null; _status = null;
+            _area = null; _indicators = null; _prompt = null; _shop = null; _status = null; _tutorial = null;
         }
     }
 }

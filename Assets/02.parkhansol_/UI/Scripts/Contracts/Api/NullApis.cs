@@ -35,6 +35,29 @@ namespace OZ.UI.Contracts
             onFinished?.Invoke();
         }
         public void SetPortrait(Sprite portrait) { }
+        public void SetParts(HudPart parts, bool visible, bool animate = true) => NullLog.Once("HUD.SetParts");
+        public HudPart VisibleParts => HudPart.All | HudPart.Alarm;
+    }
+
+    /// <summary>[v1.3] UI가 없을 때: 튜토리얼 설명은 건너뛰고 콜백만 바로 부른다 (진행이 막히지 않게)</summary>
+    internal sealed class NullTutorialApi : ITutorialApi
+    {
+        public static readonly NullTutorialApi Instance = new NullTutorialApi();
+        public bool IsShowing => false;
+        public bool IsAwakening => false;
+        public int StepIndex => -1;
+        public int StepCount => 0;
+        public event Action<int> StepChanged { add { } remove { } }
+        public void Show(TutorialStep step, Action onNext = null) { NullLog.Once("Tutorial.Show"); onNext?.Invoke(); }
+        public void Play(IReadOnlyList<TutorialStep> steps, Action onFinished = null) { NullLog.Once("Tutorial.Play"); onFinished?.Invoke(); }
+        public void PlayStatusTour(Action onFinished = null) { NullLog.Once("Tutorial.PlayStatusTour"); onFinished?.Invoke(); }
+        public void Next() { }
+        public void Stop() { }
+        public void ShowAwakening(int points = 1000, HunterRank rank = HunterRank.F, Action onFinished = null, bool revealHud = true)
+        {
+            NullLog.Once("Tutorial.ShowAwakening");
+            onFinished?.Invoke();
+        }
     }
 
     internal sealed class NullDamageFxApi : IDamageFxApi
