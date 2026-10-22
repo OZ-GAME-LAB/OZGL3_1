@@ -13,15 +13,38 @@ namespace OZ.UI.Samples
     /// 사망·재도전(ResetAll)으로 포인트·구매·장착이 사라지지 않는다 (기획서 8장).
     /// 실제 게임에서는 PlayerStats / PlayerSkill + 코어 포인트·상점 로직이 같은 인터페이스를 구현하면 된다.
     /// </summary>
-    public partial class DummyPlayer : IPointsSource, IStatSource, ISkillLoadoutSource, IGrowthShopSource, IStageMapSource, ICombatPathSource
+    public partial class DummyPlayer : IPointsSource, IStatSource, ISkillLoadoutSource, IGrowthShopSource, IStageMapSource
     {
-        [Header("v1.1 계열 · 기술 단계")]
-        [Tooltip("계열(물리/마법)을 고른 뒤 바꿀 수 있나 (기획 미정 — 기본 false)")]
+        [Header("v1.2 계열 · 기술 단계 (기획데이터 v0.5: 계열 자유 · 기술 1회 구매)")]
+        [Tooltip("켜면 처음 찍은 쪽(물리/마법)으로 고정, 반대쪽 잠김 (기획서 기본은 자유 → 끔)")]
+        [SerializeField] internal bool lockCombatPath = false;
+        [Tooltip("계열 고정을 켰을 때, 정한 뒤에도 바꿀 수 있나")]
         [SerializeField] internal bool allowPathChange = false;
-        [Tooltip("기술에 단계 목록(ranks)이 비어 있으면 임시 3단계를 채운다 (기획 확정 전 확인용)")]
-        [SerializeField] internal bool fillPlaceholderRanks = true;
+        [Tooltip("기술에 단계 목록(ranks)이 비어 있으면 임시 3단계를 채운다 (단계형 확인용. 기획서 기본은 1회 구매 → 끔)")]
+        [SerializeField] internal bool placeholderSkillRanks = false;
         CombatPath _path;
         public event Action PathChanged;
+        PathRule _pathRule;
+
+        /// <summary>계열 고정 규칙 (lockCombatPath 켤 때만 ICombatPathSource 로 등록)</summary>
+        sealed class PathRule : ICombatPathSource
+        {
+            readonly DummyPlayer _p;
+            public PathRule(DummyPlayer p) { _p = p; }
+            public CombatPath Path => _p._path;
+            public bool CanChangePath => _p.allowPathChange || _p._path == CombatPath.None;
+            public ShopBuyResult TrySetPath(CombatPath path) => _p.TrySetPath(path);
+            public event Action PathChanged { add => _p.PathChanged += value; remove => _p.PathChanged -= value; }
+        }
+
+        void BindPathRule()
+        {
+            if (!lockCombatPath) return;
+            if (_pathRule == null) _pathRule = new PathRule(this);
+            GameUI.Bind(_pathRule);
+        }
+
+        void UnbindPathRule() { if (_pathRule != null) GameUI.Unbind(_pathRule); }
 
         [Header("v1.0 기획서 v0.5 성장 (상태창)")]
         [Tooltip("끄면 예전 방식(계열 스킬 트리·레벨)으로 Q/E/R 동작")]
@@ -63,7 +86,7 @@ namespace OZ.UI.Samples
         };
 
         static SkillOffer Skill(string id, string name, string desc, SkillDamageKind kind, int price, float coef, float cd) =>
-            new SkillOffer { id = id, displayName = name, description = desc, damageKind = kind, price = price, coefficient = coef, cooldown = cd, ranks = PlaceholderRanks(price) };
+            new SkillOffer { id = id, displayName = name, description = desc, damageKind = kind, price = price, coefficient = coef, cooldown = cd, ranks = new SkillRank[0] }; // 기획데이터 5장: 1회 구매 · 강화 없음
 
         /// <summary>v1.1 임시 단계: 1단계 = 배우기(기획 가격), 2·3단계 = 기능 추가 (가격·기능은 기획 확정 전 자리)</summary>
         static SkillRank[] PlaceholderRanks(int learnPrice) => new[]
@@ -81,7 +104,7 @@ namespace OZ.UI.Samples
             Array.Clear(_statLv, 0, _statLv.Length);
             _skillRank.Clear();
             _path = CombatPath.None;
-            if (fillPlaceholderRanks && skillOffers != null)
+            if (placeholderSkillRanks && skillOffers != null)
                 for (int i = 0; i < skillOffers.Length; i++)
                     if (skillOffers[i].ranks == null || skillOffers[i].ranks.Length == 0) skillOffers[i].ranks = PlaceholderRanks(skillOffers[i].price);
             if (startOwnedSkills != null) foreach (var id in startOwnedSkills) if (!string.IsNullOrEmpty(id)) _skillRank[id] = 1;
@@ -93,6 +116,26 @@ namespace OZ.UI.Samples
             _nodes.Add(new StageNode { id = "boss1", displayName = "1스테이지 보스", isBoss = true, mainGoal = "보스 처치 후 보스 게이트 봉쇄", lockCondition = "1스테이지 메인 완료" });
             _nodes.Add(new StageNode { id = "stage2", displayName = "2스테이지", mainGoal = "일반 게이트 4개 직접 봉쇄", lockCondition = "1스테이지 보스 완료" });
             _nodes.Add(new StageNode { id = "boss2", displayName = "2스테이지 보스", isBoss = true, mainGoal = "보스 처치 후 보스 게이트 봉쇄", lockCondition = "2스테이지 메인 완료" });
+        }
+
+        /// <summary>
+        /// 테스트·디버그: 성장 상태를 각성 직후로 (포인트 1000, 스탯·기술·장착·노드 처음). 퀘스트 보상 지급 기록은 유지 (기획서: 첫 완료만 지급).
+        /// 실제 게임에는 없음 — 사망·재도전은 ResetAll이고 구매는 그대로 남는다.
+        /// </summary>
+        public void ResetGrowth()
+        {
+            UnbindPathRule();
+            InitGrowth();
+            BindPathRule();
+            float prev = _hp;
+            _hp = Mathf.Min(_hp, MaxHP);
+            PointsChanged?.Invoke(_gp, 0);
+            foreach (StatKind s in Enum.GetValues(typeof(StatKind))) StatChanged?.Invoke(s);
+            for (int i = 0; i < 3; i++) SlotChanged?.Invoke((SkillSlot)i);
+            NodesChanged?.Invoke();
+            PathChanged?.Invoke();
+            ShopChanged?.Invoke();
+            HealthChanged?.Invoke(new HealthChange(prev, _hp, MaxHP));
         }
 
         void Start()
@@ -230,12 +273,12 @@ namespace OZ.UI.Samples
         // ───────────── 계열 (v1.1) ─────────────
 
         public CombatPath Path => _path;
-        public bool CanChangePath => allowPathChange || _path == CombatPath.None;
 
-        public ShopBuyResult TrySetPath(CombatPath path)
+        ShopBuyResult TrySetPath(CombatPath path)
         {
             if (path == _path) return ShopBuyResult.Success;
-            if (!CanChangePath) return ShopBuyResult.Unavailable;
+            if (!lockCombatPath) return ShopBuyResult.Unavailable;
+            if (!(allowPathChange || _path == CombatPath.None)) return ShopBuyResult.Unavailable;
             _path = path;
             // 다른 계열 기술은 장착에서 뺀다 (그 계열만 작동)
             for (int i = 0; i < 3; i++)
@@ -250,7 +293,7 @@ namespace OZ.UI.Samples
         /// <summary>계열 미선택일 때 힘·물리 기술(또는 마력·마법 기술)에 투자하면 그쪽으로 정해진다</summary>
         void AutoPath(CombatPath p)
         {
-            if (_path == CombatPath.None && p != CombatPath.None) TrySetPath(p);
+            if (lockCombatPath && _path == CombatPath.None && p != CombatPath.None) TrySetPath(p);
         }
 
         public string GetEquipped(SkillSlot slot) => _equipped[(int)slot];

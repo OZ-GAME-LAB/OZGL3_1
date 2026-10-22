@@ -1,9 +1,22 @@
-# OZGL3_1 (Project M) — UI/UX 설계 v0.9
+# OZGL3_1 (Project M) — UI/UX 설계 v1.3
 
 작성: 박한솔 (UI/UX) · 2026-10-15 · 공유 문서: https://claude.ai/code/artifact/f8497896-e61f-4266-a194-7db47a969bdb
 기준: 기획서 v0.2 (10/15 재배포본) · Unity 6000.3 · URP 17.3 · uGUI 2.0(TMP) · Input System 1.20 · DOTween 무료판
 
 UI 화면 13종 + 계열별 스킬 트리 + 게임 흐름(로딩·페이드·스테이지 띠), HUD 양손 분리·퀘스트 목록·지도 아래 시스템 알림·UI 효과음. 브랜치 `parkhansol_ui_261015` + `develop`.
+
+## v1.3 — 기획서 v0.5 3장 튜토리얼 연출 (2026-10-22)
+| 영역 | 내용 | 호출 |
+|---|---|---|
+| HUD 부위별 숨김·등장 | 체력·미니맵·아이템·퀘스트·스킬·버프를 따로 끄고 켬. 등장은 0.12초 간격으로 하나씩 내려앉음. 알림(방송)은 숨겨도 남음 | `GameUI.HUD.SetParts(HudPart.All, false)` |
+| 각성 카드 | 화면 번쩍 + 가운데 카드 "SYSTEM · 상태창 / 각성을 확인했습니다 / 헌터 랭크 F급 · 능력 상태창 / +1,000P(올라가며)" → HUD 등장 → 콜백. 게임 안 멈춤 | `GameUI.Tutorial.ShowAwakening(1000, HunterRank.F, cb)` |
+| 강조 설명 | 화면 정지 + 어둡게 덮고 한 곳만 밝힘(청록 테두리 깜빡) + 설명 칸(아래→위→옆 자동 배치). 대상: 없음·HUD 부위·상태창 탭·월드 오브젝트·아무 UI. [Space]/[Enter]/패드 A/클릭 = 다음 | `GameUI.Tutorial.Play(steps, cb)` |
+| 상태창 설명 | 상태창 열기 → 소개 → 탭 순서대로 → 포인트 → 상점 탭에서 열린 채 끝 (첫 구매). 설명 중 상태창 버튼 잠금 | `GameUI.Tutorial.PlayStatusTour(cb)` |
+| 안전장치 | 설명 중 ESC·Tab·K·M 무시, 0.3초 연타 보호, 끝 콜백은 다음 프레임(마지막 Space가 점프로 안 읽힘), UI 없는 씬은 콜백만 바로 | — |
+
+코드: `Contracts/Api/ITutorialApi.cs` · `Runtime/Tutorial/TutorialDirector.cs` · `TutorialWindow.cs` · `HudView.SetParts`. 화면은 실행 중 코드로 만들어서 UIRoot 프리팹을 다시 만들지 않아도 동작 (UIManager가 Director 자동 부착). 셀프 테스트 "HUD 부위 숨김·각성 카드·튜토리얼 강조 (v1.3)" 추가. 팀원용: `Docs/UI_Integration.md` 1-3.
+
+기획서 v0.5 대비 남은 UI: 말풍선 3종 색 구분(방송 빨강·상태창 청록·인물 중립 + 이름) · 봉쇄 가능 게이트 강조 · 서브 퀘스트 회차 표시 · 사망 문구(안전 구역 복귀) · 아이템 파밍 전환(상점 포션·최대 9개 → 파밍·최대 5개) · 계열 선택 화면·레벨 코드 정리 · CombatPathLock 유지 여부.
 
 ## 0. v0.9 — 기획서 기준으로 맞춤 (2026-10-15)
 | 영역 | 바뀐 점 | 기획서 근거 |

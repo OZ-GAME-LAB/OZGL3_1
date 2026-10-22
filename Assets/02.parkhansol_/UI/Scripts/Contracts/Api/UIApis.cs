@@ -20,6 +20,16 @@ namespace OZ.UI.Contracts
         void ShowBanner(string title, string subtitle = null, float holdSeconds = 2f, Action onFinished = null);
         /// <summary>HP 바 옆 초상화 칸 이미지 (null이면 기본 초상화)</summary>
         void SetPortrait(Sprite portrait);
+
+        /// <summary>
+        /// [v1.3] HUD 부위별로 숨기기/보이기 (기획서 v0.5 3장: UI 없는 화면으로 시작 → 각성 때 HUD 등장).
+        ///   GameUI.HUD.SetParts(HudPart.All, false, animate: false);          // 시작: 전부 숨김 (알림은 남음)
+        ///   GameUI.HUD.SetParts(HudPart.Health | HudPart.Quests, true);       // 일부만 등장 (부드럽게)
+        /// Visible(전체)과 따로 동작한다. 숨긴 동안에도 데이터는 계속 갱신된다.
+        /// </summary>
+        void SetParts(HudPart parts, bool visible, bool animate = true);
+        /// <summary>[v1.3] 지금 보이는 부위</summary>
+        HudPart VisibleParts { get; }
     }
 
     /// <summary>보스 체력바 + 등장/페이즈/처치 연출</summary>
