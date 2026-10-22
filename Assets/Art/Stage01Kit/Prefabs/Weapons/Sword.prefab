@@ -133,11 +133,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bf9361c7a893844aae3513553e678ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketWeapon
   _kind: 0
   _gripEuler: {x: 0, y: 0, z: 90}
   _gripPosition: {x: 0, y: 0.045, z: 0}
-  _animationOverride: {fileID: 22100000, guid: 236f9fd6f6989744991931a77e48e6f5, type: 2}
-  _basicAttackClip: {fileID: 277525627537474026, guid: 9567914dd7b826f43bbb37a0599ec8be, type: 3}
+  _animationOverride: {fileID: 0}
+  _basicAttackClip: {fileID: 0}
   _attackContactNormalized: 0.78

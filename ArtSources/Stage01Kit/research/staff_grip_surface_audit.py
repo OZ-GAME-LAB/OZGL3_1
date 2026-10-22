@@ -1,5 +1,6 @@
 """Read-only geometry measurements of actual Unity BakeMesh probe exports; writes audit JSON only."""
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import re
@@ -7,7 +8,10 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[3]
 RESEARCH = ROOT / 'ArtSources/Stage01Kit/research'
-PROBE = RESEARCH / 'StaffGripProbe_Calibrated'
+CAPTURE_REPORT = ROOT / 'ArtSources/Characters/Protagonist01/v007-compact-action/review-report.json'
+CAPTURE = json.loads(CAPTURE_REPORT.read_text(encoding='utf-8-sig'))
+STAFF_CAPTURE = next(m for m in CAPTURE['motions'] if m['name'] == 'Staff_Cast_Forward')
+PROBE = Path(STAFF_CAPTURE['framesDirectory']).parents[1] / 'GripProbe'
 
 
 def vec(rows):
@@ -44,6 +48,13 @@ def rays_to_actual_faces(origins, directions, faces):
 
 def sample_probe(path, grip):
     d = json.loads(path.read_text(encoding='utf8'))
+    actual_hand_mesh = ROOT / d['sourceMesh']
+    captured = next((row for row in CAPTURE['motions'] if row['name'] == d['clip']), None)
+    if d['clip'] in ('Sword_Horizontal_Slash', 'Staff_Cast_Forward'):
+        if captured is None or sha(actual_hand_mesh) != captured.get('sourceMeshSHA256'):
+            raise RuntimeError('Actual probe and captured weapon mesh SHA disagree: ' + str(path))
+        if d['prefab'] != captured.get('sourcePrefab'):
+            raise RuntimeError('Actual probe and captured fixed weapon prefab disagree: ' + str(path))
     snapshot = next(s for s in d['snapshots'] if s['grip'] == grip)
     p = vec(snapshot['vertices'])
     base = vec(d['sourceBindHandMetres'])
@@ -112,6 +123,23 @@ def sample_probe(path, grip):
         'finger_proxy': (sampled_base[:, 1] > .070) & (sampled_base[:, 2] < .065) & (influence > .8),
         'thumb_proxy': (sampled_base[:, 2] > .065) & (sampled_base[:, 1] > .060) & (sampled_base[:, 1] < .110) & (influence > .8),
     }
+    original_ids = np.array(d['sourceVertexIds'])
+    added_faces = np.all(original_ids[triangles] >= 7101, axis=1)
+    if added_faces.any():
+        masks['authored_weapon_hand_and_connector'] = np.repeat(added_faces, len(bary))
+        masks['retained_original_wrist_or_cloth'] = ~np.repeat(added_faces, len(bary))
+        # Authored helper emits three unique vertices per face, in a documented
+        # stable order:132 palm,4x160 finger bands,128 thumb; remaining faces cuff.
+        # These are construction components, unlike the legacy coordinate proxies.
+        authored_face = (original_ids[triangles].min(axis=1) - 7101) // 3
+        for name, start, end in [('authored_palm', 0, 132),
+                                 ('authored_finger_band_0', 132, 292),
+                                 ('authored_finger_band_1', 292, 452),
+                                 ('authored_finger_band_2', 452, 612),
+                                 ('authored_finger_band_3', 612, 772),
+                                 ('authored_opposed_thumb', 772, 900)]:
+            masks[name] = np.repeat(added_faces & (authored_face >= start) & (authored_face < end), len(bary))
+        masks['authored_cuff'] = np.repeat(added_faces & (authored_face >= 900), len(bary))
     rows = {}
     for name, mask in masks.items():
         valid = mask & finite
@@ -143,6 +171,7 @@ def sample_probe(path, grip):
         'occupiedFingerContactAngleBins30deg': sorted(set(np.floor((angle_values[contact_mask] + np.pi) / (np.pi / 6)).astype(int).tolist())),
     }
     return {'probe': path.name, 'probeSHA256': sha(path), 'clip': d['clip'], 'time': d['timeSeconds'], 'grip': grip,
+            'prefab': d['prefab'], 'handMesh': d['sourceMesh'], 'handMeshSHA256': sha(actual_hand_mesh),
             'mountEuler': d['mountEuler'], 'surface': part['mesh'], 'barycentricSamplesPerTriangle': len(bary),
             'axisClosestTriangleCriticalPoints': critical, 'rows': rows}
 
@@ -212,10 +241,45 @@ def verify_weight_rule(original, variant):
         'changedVertexCountAbove1eMinus6': int((delta > 1e-6).sum()),
         'verticesOutsideRuleUnchangedWithin1eMinus7': bool(np.max(np.abs(after[~apply] - before[~apply])) < 1e-7),
         'allLeftHandBoneInfluencesExact': bool(np.array_equal(after[:, 11], before[:, 11])),
-        'additionalInterpolatedVertices': int(len(after_full) - len(before)),
+        'additionalAuthoredVertices': int(len(after_full) - len(before)),
         'additionalWeightSumsWithin1eMinus6': bool(np.max(np.abs(after_full[len(before):].sum(axis=1) - 1)) < 1e-6) if len(after_full) > len(before) else True,
         'additionalMaximumBonesPerVertex': int(np.max((after_full[len(before):] > 0).sum(axis=1))) if len(after_full) > len(before) else 0,
         'statement': 'v007 weights are not identical to v006. The prior documented smooth distal right-hand correction is retained; this check verifies that exact rule and unchanged vertices outside it.'
+    }
+
+
+def weapon_variant_preservation(original, variant, mask_path):
+    mask = json.loads(mask_path.read_text(encoding='utf8'))
+    count = int(mask['sourceVertexCount'])
+    source, stream0, tr0, bp0 = frames(original, count)
+    target, stream1, tr1, bp1 = frames(variant, count)
+    def indices(path, text_hex):
+        fmt = int(re.search(r'm_IndexFormat: (\d+)', path.read_text(encoding='utf8')).group(1))
+        return np.frombuffer(bytes.fromhex(text_hex), dtype='<u2' if fmt == 0 else '<u4').reshape(-1, 3)
+    original_faces, variant_faces = indices(original, tr0), indices(variant, tr1)
+    keep = np.ones(len(original_faces), dtype=bool)
+    keep[np.array(mask['removedTriangleIndices'])] = False
+    kept = original_faces[keep]
+    added = variant_faces[len(kept):]
+    compare = [('Right75', source[0], target[0]), ('Right100', source[1], target[1]),
+               ('Left75', source[2], target[4]), ('Left100', source[3], target[5])]
+    return {
+        'mesh': str(variant.relative_to(ROOT)), 'meshSHA256': sha(variant),
+        'originalVertexPrefixPositionNormalTangentUVExact': stream0 == stream1,
+        'originalBindposesExact': bp0 == bp1,
+        'original75And100IndexedRecordsExact': {name: a['existingVertexRecordSHA256'] == b['existingVertexRecordSHA256'] and
+                                               a['existingVertexRecordCount'] == b['existingVertexRecordCount']
+                                               for name, a, b in compare},
+        'new150OriginalPrefixEqualsRight100': target[2]['existingVertexRecordSHA256'] == source[1]['existingVertexRecordSHA256'],
+        'new175OriginalPrefixEqualsRight100': target[3]['existingVertexRecordSHA256'] == source[1]['existingVertexRecordSHA256'],
+        'newHandVerticesHaveNoBlendshapeDeltas': all(f['vertices'] == f['existingVertexRecordCount'] for f in target),
+        'removedOriginalRightSkinTriangleCount': int((~keep).sum()),
+        'allOtherOriginalFacesRetainedInOrderExact': bool(np.array_equal(variant_faces[:len(kept)], kept)),
+        'addedClosedHandTriangleCount': len(added),
+        'allAddedTrianglesUseOnlyNewVertices': bool(len(added) > 0 and np.all(added >= count)),
+        'skinSelectionSHA256': sha(mask_path),
+        'skinWeightRuleVerification': verify_weight_rule(original, variant),
+        'statement': 'This weapon-only mesh intentionally replaces the original right-hand skin471-face component. Original sleeve/body/left-hand triangle prefix remains exact. Original unused hand vertices and75/100 records are preserved. Newly modelled closed skin and an independently closed dark cuff use fixed geometry, with averaged source-cuff weights blending to the hand. Exact19-point seam stitching is intentionally not used.'
     }
 
 
@@ -223,9 +287,11 @@ def main():
     requests = [('Idle_Fists_0000ms.json', 150), ('Staff_Cast_Forward_0000ms.json', 150),
                 ('Staff_Cast_Forward_0240ms.json', 150), ('Sword_Horizontal_Slash_0000ms.json', 175),
                 ('Sword_Horizontal_Slash_0240ms.json', 175)]
-    rows = [sample_probe(PROBE / name, grip) for name, grip in requests]
-    original = ROOT / 'Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset'
-    variant = ROOT / 'Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset'
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        rows = list(pool.map(lambda request: sample_probe(PROBE / request[0], request[1]), requests))
+    build_report = json.loads((RESEARCH / 'staff-cylinder-grip-build.json').read_text(encoding='utf8'))
+    original = ROOT / build_report['source']
+    variant = ROOT / build_report['output']
     original_count = int(re.search(r'm_VertexCount: (\d+)', original.read_text()).group(1))
     variant_count = int(re.search(r'm_VertexCount: (\d+)', variant.read_text()).group(1))
     source, stream0, tr0, bp0 = frames(original, original_count)
@@ -246,14 +312,19 @@ def main():
                                         'Checks refer to the original vertex prefix. A local wrist patch adds interpolated vertices and conforming triangles; index buffer and full frame counts intentionally differ. This topology candidate requires explicit actual visual/contact approval.')},
         'newFrames': target[2:4],
         'skinWeightRuleVerification': verify_weight_rule(original, variant),
-        'staff150Isolation': 'The175 path clones target as Vector3[] before any changes; its fairing/contact and normal calculation operate on the clone. No archived pre175 frame record is available for an independent historical byte comparison.',
+        'weaponMeshVariants': [weapon_variant_preservation(original, ROOT / build_report[key], ROOT / build_report['skinSelection'])
+                               for key in ('swordOutput', 'staffOutput') if key in build_report],
+        'staff150Isolation': 'Base150 and175 original-vertex deltas both equal sourceRight100. Sword and Staff are separately authored fixed closed-hand mesh variants; no former contact projection, wrist corrective or subdivision paths are active.',
+        'assetSelection': 'Neutral, SwordGrip and StaffGrip use separate fixed-mesh prefabs. Actual probe JSON records the instantiated prefab and selected mesh; animation object-reference mesh keys are not used.',
+        'captureReportSHA256': sha(CAPTURE_REPORT), 'probeDirectory': str(PROBE),
         'samples': rows,
     }
     report = RESEARCH / 'staff-grip-actual-surface-audit.json'
     report.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf8')
     sequence_files = sorted((PROBE / 'Sequence30').glob('*.json'))
     if sequence_files:
-        sequence = [sample_probe(path, 175 if path.name.startswith('Sword') else 150) for path in sequence_files]
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            sequence = list(pool.map(lambda path: sample_probe(path, 175 if path.name.startswith('Sword') else 150), sequence_files))
         summaries = []
         for clip in sorted({row['clip'] for row in sequence}):
             subset = [row for row in sequence if row['clip'] == clip]
@@ -270,7 +341,9 @@ def main():
                               'posesWithGridPenetrationBelowMinus0p1mm': sum(row['rows']['all_exported_hand_triangles']['penetratingSamplesBelowMinus0p1mm'] > 0 for row in subset),
                               'posesWithCriticalPenetrationBelowMinus0p1mm': sum(row['axisClosestTriangleCriticalPoints']['negativeTrianglesBelowMinus0p1mm'] > 0 for row in subset)})
         sequence_report = {'method': result['method'], 'limits': result['limits'],
-                           'variantMeshSHA256': result['variantMeshSHA256'], 'sampleCount': len(sequence),
+                           'baseVariantMeshSHA256': result['variantMeshSHA256'],
+                           'weaponMeshSHA256': {item['mesh']: item['meshSHA256'] for item in result['weaponMeshVariants']},
+                           'captureReportSHA256': result['captureReportSHA256'], 'probeDirectory': str(PROBE), 'sampleCount': len(sequence),
                            'summaries': summaries, 'samples': sequence}
         (RESEARCH / 'staff-grip-sequence-surface-audit.json').write_text(json.dumps(sequence_report, indent=2) + '\n', encoding='utf8')
     print(json.dumps({'framePreservation': result['unchangedOriginalFrameRecords'], 'baseStreamsExact': stream0 == stream1,

@@ -1,0 +1,381 @@
+{
+  "recordedUTC": "2026-10-22T05:51:05.6668727Z",
+  "target": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi",
+  "status": "removed-to-recycle-bin",
+  "reason": "V1 encoded correctly but root actual physical testing found fingers crossing shorts/waist. This is not a motion-quality acceptance. Original BeforeRunRevision and all source captures are retained for corrected V2.",
+  "captureReportSHA256": "062d85dc80f5a29abf5b790d2d75a9911c29f16d6a560d18ab446eb69d2dc329",
+  "fileCount": 74,
+  "bytes": 31936017,
+  "files": [
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\delivery-validation.json",
+      "bytes": 33430,
+      "sha256": "0c3d4be6136990f6d7e6b8268798ffc1bb1e9b6ac8070b0090405578c1ce88fe"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\export-manifest.json",
+      "bytes": 186825,
+      "sha256": "a0260c801ac189abe78d39551561162d5582ca2bf446e60463c9df80a1e8c79b"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\index.html",
+      "bytes": 15240,
+      "sha256": "731ebdc52264476377b610c61ddf80b37c89664cd5244ed06d082613814955ee"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\README_ko.txt",
+      "bytes": 1827,
+      "sha256": "7d0f626906398d73dd9b27058a0724fc024c2e6015f62b4ee6e7a49e5c2c0b64"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Auxiliary\\Jump_Apex_Loop.gif",
+      "bytes": 27750,
+      "sha256": "ec6892fb73fde87b2178c8dc497fd8e94aad1ca099ab25ae0c97259bc47b1680"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Auxiliary\\Jump_Fall_Loop.gif",
+      "bytes": 27540,
+      "sha256": "c9ce6912c5efb82bfcdf8fc32a4bbc983907cdee0096b2f7fd16dfde1e9ee9e1"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Auxiliary\\Jump_Land.gif",
+      "bytes": 273642,
+      "sha256": "84a19c2b220329b780bc0b5ff350701eb322f084ef9e21b9c3f2a01164130df2"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Auxiliary\\Jump_Rise_Loop.gif",
+      "bytes": 27777,
+      "sha256": "eaaf1a6b1efe5924f77eabfa6c8335481ef7a5c010e3d59356f2ca6873565ba6"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Auxiliary\\Jump_Takeoff.gif",
+      "bytes": 113429,
+      "sha256": "64efc0433e0f7966893e97841ba9e3ee7e03734dada300050d88833fd2d18b57"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Dash_Forward.png",
+      "bytes": 81870,
+      "sha256": "e53f8a614ddf1e12786acf3d66d0164726a17719d6e5e10d5ef686666b8f5401"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Hit_Reaction.png",
+      "bytes": 77667,
+      "sha256": "57b40e66233b1c3d7be5327e34dc16608a52c8a15fa15825b9dd91f57a53e095"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Idle_Fists.png",
+      "bytes": 98839,
+      "sha256": "5e1ea93711940f32798b68457874f6d8380554a08aab9b571c82d9ce346b5ae1"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Interact_Reach.png",
+      "bytes": 83035,
+      "sha256": "7c1c3277d497d22188c36bea9ca759107040164919c8656bb022f378b924ca6e"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Item_Throw_Overhand.png",
+      "bytes": 88901,
+      "sha256": "57ab44967e70af4941a148318bc8f1324842f4c626de663d8fdbefdf3d409610"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Jump_Apex_Loop.png",
+      "bytes": 42685,
+      "sha256": "182ff162bfe8d1dede3302a173e0e0a738107a5f22d2f84691f7c20230887a0b"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Jump_Fall_Loop.png",
+      "bytes": 41496,
+      "sha256": "27357a3d821d188ae8d07f319cbb3d7719cc07d24f2e0051251f953916fa1150"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Jump_Full.png",
+      "bytes": 93811,
+      "sha256": "4551901e9d8a1377c4200fa3155b869c7a011c29ec8d0aefb44532419c4c4aa4"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Jump_Land.png",
+      "bytes": 87865,
+      "sha256": "810b5c9ec735d97907cc617e29c20319cf73b5b5cb6eacf4f37726446c8f0d5d"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Jump_Rise_Loop.png",
+      "bytes": 42069,
+      "sha256": "cc04abd25665d0777ffd4c80a2385f141ca1f8216c5b6dd5affaef01cb99424c"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Jump_Takeoff.png",
+      "bytes": 67187,
+      "sha256": "5dacf63129079038569564bdf14fa91ab7390e16dd796f185ad47323758fa3a7"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Pickup_Low.png",
+      "bytes": 81559,
+      "sha256": "99b8e668b32aba8b4dc8184432b8c47e94d54cfe59dcd847adb5343a42d99a28"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Potion_Drink.png",
+      "bytes": 85567,
+      "sha256": "44a8fb266df362db039b19a005a08406714f82875b7e86bd177e53c5d9d5d842"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Run_Fists.png",
+      "bytes": 113155,
+      "sha256": "b65f7facc5541ef0488cefa063a69ccdf46b17d9c6fd9965f44ecca88cc5a3c4"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Contacts\\Walk_Fists.png",
+      "bytes": 111323,
+      "sha256": "e3894cdd345ea04baa869c5ff01d7305a7a9274623ab32a1ca51d7b59bcfd568"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Dash_Forward.gif",
+      "bytes": 419227,
+      "sha256": "ba0004a029c3928f8c25b91b1b64387063745d49e2bb900e4b3ac3eda56a0fee"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Hit_Reaction.gif",
+      "bytes": 420411,
+      "sha256": "0c156186085de084f7eb67842a02fb8e324090c95cbbb04542e081076a2b8f35"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Idle_Fists.gif",
+      "bytes": 3842379,
+      "sha256": "194fb35512ccfd5df9a682eed6be2231b7e41634b349e2e49c912bdb2d332f15"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Interact_Reach.gif",
+      "bytes": 556124,
+      "sha256": "56f4980f422274a0a8a89c3ca6b9c191205e60b7e1a72a9a34f7ed5dc9d3539a"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Item_Throw_Overhand.gif",
+      "bytes": 833307,
+      "sha256": "e53af775852040e9551b065a8e6cb3096acaac53f32c2f1b17c13a792a739839"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Jump_Full.gif",
+      "bytes": 815060,
+      "sha256": "777607aefa45f047a83025a2dea07d72936aea7025c04afefb9bc4c0dffd4648"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Pickup_Low.gif",
+      "bytes": 733648,
+      "sha256": "5574df73f43964d9d16585e77358c1c32c34816a507283bbd1b6af80f29e453d"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Potion_Drink.gif",
+      "bytes": 1122400,
+      "sha256": "c3c2ade5df49b017c67571ac782fdd4cec63ceab7bb3aeb38e9699461f80149d"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Run_Fists.gif",
+      "bytes": 900833,
+      "sha256": "277ac746429dcb35fb5260422ce6ce0c6381439ba3345c7572b0851beed37ee4"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\GIF\\Walk_Fists.gif",
+      "bytes": 1215160,
+      "sha256": "3fc028807f95784a12c707d14d4d9cbfdec4dee66399d770b2c976775917ae4b"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\01_Locomotion.gif",
+      "bytes": 6672637,
+      "sha256": "6d980af25feb24541bf32952041561b5ec4b2f38c929505fac5f923289ee0b4e"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\01_Locomotion.png",
+      "bytes": 114991,
+      "sha256": "973ae96235a8e4ae6a4aeae87f5a5110ac3125f081dcea230a251da54ef394ad"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\02_Reaction.gif",
+      "bytes": 189807,
+      "sha256": "a43728c62ce57d5b6d82312c7abb47273fded3e8bb7be1e292459254ad72a78c"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\02_Reaction.png",
+      "bytes": 23753,
+      "sha256": "3f8bb44e36dfc6c6c287cdd8d7c7413956cc0c383d60a72ebd5966dfe01c60db"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\03_Utility.gif",
+      "bytes": 2350718,
+      "sha256": "80413689c9360bf0dc829a68ed677462e851513d9bd9b1caf9b8e682cbba4152"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\03_Utility.png",
+      "bytes": 90049,
+      "sha256": "71664c672ac95bedefde71e0673ffca9cef34f90674baec62ac567f53bf46796"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\04_Air_Phases.gif",
+      "bytes": 743288,
+      "sha256": "187dd2c212018f27ebcd4a087618cea65636f35ddef7e0c49c8f45b0ed137d5a"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Groups\\04_Air_Phases.png",
+      "bytes": 113909,
+      "sha256": "59433db0c15f0db91a75b62b8c79d81d3cecb752e2b2388c625a42fd310c53ff"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Dash_Forward\\0000.png",
+      "bytes": 167478,
+      "sha256": "57fc8beb70fab71ba509defc4b73be305436e986e22e05a0124b7c7afae0dbd2"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Hit_Reaction\\0000.png",
+      "bytes": 158126,
+      "sha256": "fdb9041ecc6e60949427c5b98e74f8634da467df16ec422bf85582a7bade6dde"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Idle_Fists\\0000.png",
+      "bytes": 230190,
+      "sha256": "1b44378ad7ec896f5caa6d6250dcd316d094764c4400827121033ebf50c1537a"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Idle_Fists\\0036.png",
+      "bytes": 224222,
+      "sha256": "c518653163049d259b0177bac98768733d32eaba31c72698a579771cd6bf1314"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Idle_Fists\\0072.png",
+      "bytes": 232515,
+      "sha256": "2cdad2253474034ff13aeb56ee1087f6bc04d6e87848187e989c42dfa198e163"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Idle_Fists\\0108.png",
+      "bytes": 221335,
+      "sha256": "f96912722bed813f5495d8cf93e734d33b14ecbda8adf4da7ef16c5d2b4c0ad7"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Idle_Fists\\0144.png",
+      "bytes": 151516,
+      "sha256": "efd57b605cb40459eeec945b1606b9e98e53314b31f0fcdc723ad6ad996bc594"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Interact_Reach\\0000.png",
+      "bytes": 199369,
+      "sha256": "fa2c09163414374e3ccc32eb622dff63c84d42f372097deab1219195aefd0995"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Item_Throw_Overhand\\0000.png",
+      "bytes": 279686,
+      "sha256": "670a374b954dd32d66a070dca8a6ae9e95d2d292ba3023fab13f33c82b0c0b8e"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Item_Throw_Overhand\\0036.png",
+      "bytes": 33397,
+      "sha256": "de0cab375d5cd5cf199e0f0bbf61889e7342fe850e66b9930f56a7eb1f4b4fac"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Apex_Loop\\0000.png",
+      "bytes": 33299,
+      "sha256": "3959da3484fc4d6537ee27238e64b1e77de26376c57b0788eb9735fe460a6456"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Fall_Loop\\0000.png",
+      "bytes": 47023,
+      "sha256": "e08e7d3672f6a4554dc0600b78e9fe8bc914794d1ebb60585af77579df74a48c"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Full\\0000.png",
+      "bytes": 284588,
+      "sha256": "b5e010965ce88db2c86188b301f30cf62629018ca849a755cdc623eb7c9bdbf3"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Full\\0036.png",
+      "bytes": 30439,
+      "sha256": "707145afe7bc8758ac562ceaec82d0559b22b7db84910d1335d8ba040ad3746a"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Land\\0000.png",
+      "bytes": 104267,
+      "sha256": "8043f719264cc91548c40e1974bfc7c4baf39b590f2bd69279d038ca7e35b275"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Rise_Loop\\0000.png",
+      "bytes": 47390,
+      "sha256": "8dc94f000f4c1b9f77de068823da6d47afc3df543df07ce789506830fd930220"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Jump_Takeoff\\0000.png",
+      "bytes": 44905,
+      "sha256": "e65d64fa3a8b4336fc5233889ff1e14540e3abb086143769c733fe3b1f589fe2"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Pickup_Low\\0000.png",
+      "bytes": 249801,
+      "sha256": "942a294ddfb9906c8f4aada22d98f58161c519d6540794f62359ce369d1320c1"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Pickup_Low\\0036.png",
+      "bytes": 33020,
+      "sha256": "681e1975f376653a00c5c3e702eefc71652e64a3d99b97296c97180bb306a1ff"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Potion_Drink\\0000.png",
+      "bytes": 193171,
+      "sha256": "9c460a666a0bdf798aeb36b8605be10d38929fc1ad501bf7197854810c8b44a3"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Potion_Drink\\0036.png",
+      "bytes": 198058,
+      "sha256": "4b6514358ff183749c260d295fef73648d4ed74868687bffc925d0d942aae9ec"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Run_Fists\\0000.png",
+      "bytes": 322079,
+      "sha256": "d9f23f0fe161c9010c172f214de3711f3025ebd4be48282152e5fef634fc581e"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Run_Fists\\0036.png",
+      "bytes": 25960,
+      "sha256": "9808b37bbc5fb53d4bbba282e655321b84215022526aedeb60c175fc203c071a"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Walk_Fists\\0000.png",
+      "bytes": 316287,
+      "sha256": "1cb0c5dcfee41eca64924ed7e184c90706974a728c7f6612f7d3e8cde50faa5c"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\QA\\Walk_Fists\\0036.png",
+      "bytes": 146695,
+      "sha256": "7e09febfc2b43df4d89590f1e2a33d16ee5c2f079ac9c5c8de961a0a4a15f012"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\Move_Dash_Recover.gif",
+      "bytes": 3498143,
+      "sha256": "5f981634650fad0093c89ae07b3e5407f06d44a9cd82f80d381231794d009f71"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\Contacts\\Move_Dash_Recover.png",
+      "bytes": 112778,
+      "sha256": "d58a2de5ac6a613bce23ea98322698592888676c1b3265820bd7c36c71afe961"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\QA\\Move_Dash_Recover\\0000.png",
+      "bytes": 292667,
+      "sha256": "b084dc8b401663e4651e513122ea611cf1fcb9f49aaa7adb109e4de5de395846"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\QA\\Move_Dash_Recover\\0036.png",
+      "bytes": 317015,
+      "sha256": "302ebec7e638eea92c5212d82c93e4397e810fd16dddfdfa99a8baf93af560bf"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\QA\\Move_Dash_Recover\\0072.png",
+      "bytes": 325206,
+      "sha256": "97f482229d3e3e1f319b222bbb72e30f3377411845b979eabbf2918156c7d619"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\QA\\Move_Dash_Recover\\0108.png",
+      "bytes": 284727,
+      "sha256": "32a7871f3be1e083010fa6fb8e1dff53d58f5759f6d53e7bb5a4bb19370c6254"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\FinalChibi\\Transitions\\QA\\Move_Dash_Recover\\0144.png",
+      "bytes": 68475,
+      "sha256": "aa6ded4ad387fc46477c8c2c21c468b6b5fde1c538f3a4b09e6e0f789fce4c98"
+    }
+  ]
+}

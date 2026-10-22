@@ -235,21 +235,26 @@ sealed class SoleProbe : IDisposable
         readonly SkinnedMeshRenderer[] skins;
         readonly Mesh[] meshes;
         readonly int[][] left, right, rightHand;
+        readonly Mesh[] sampledMeshes;
+        readonly Transform leftBone, rightBone, handBone;
         readonly List<Vector3> l = new List<Vector3>(), r = new List<Vector3>(), hand = new List<Vector3>();
         public Vector3 RightHandLowest=>hand.OrderBy(p=>p.y).First();
         public SoleProbe(SkinnedMeshRenderer[] skins, Transform lf, Transform rf, Transform rh)
         {
             this.skins = skins; meshes = skins.Select(s => new Mesh()).ToArray();
+            leftBone = lf; rightBone = rf; handBone = rh;
+            sampledMeshes = skins.Select(s => s.sharedMesh).ToArray();
             left = skins.Select(s => Indices(s, lf)).ToArray(); right = skins.Select(s => Indices(s, rf)).ToArray();rightHand=skins.Select(s=>Indices(s,rh)).ToArray();
         }
         static int[] Indices(SkinnedMeshRenderer skin, Transform foot)
         {
             var bones = skin.bones; var weights = skin.sharedMesh.boneWeights; var result = new List<int>();
+            var rendered = new HashSet<int>(skin.sharedMesh.triangles);
             bool Match(int i) => i >= 0 && i < bones.Length && bones[i] && (bones[i] == foot || bones[i].IsChildOf(foot));
             for (int i = 0; i < weights.Length; i++)
             {
                 var w = weights[i]; float sum = (Match(w.boneIndex0) ? w.weight0 : 0) + (Match(w.boneIndex1) ? w.weight1 : 0) + (Match(w.boneIndex2) ? w.weight2 : 0) + (Match(w.boneIndex3) ? w.weight3 : 0);
-                if (sum > .35f) result.Add(i);
+                if (sum > .35f && rendered.Contains(i)) result.Add(i);
             }
             return result.ToArray();
         }
@@ -258,6 +263,11 @@ sealed class SoleProbe : IDisposable
             l.Clear(); r.Clear();hand.Clear();
             for (int i = 0; i < skins.Length; i++)
             {
+                if (sampledMeshes[i] != skins[i].sharedMesh)
+                {
+                    left[i] = Indices(skins[i], leftBone); right[i] = Indices(skins[i], rightBone);
+                    rightHand[i] = Indices(skins[i], handBone); sampledMeshes[i] = skins[i].sharedMesh;
+                }
                 skins[i].BakeMesh(meshes[i]); var vertices = meshes[i].vertices;
                 foreach (int j in left[i]) l.Add(skins[i].transform.TransformPoint(vertices[j]));
                 foreach (int j in right[i]) r.Add(skins[i].transform.TransformPoint(vertices[j]));

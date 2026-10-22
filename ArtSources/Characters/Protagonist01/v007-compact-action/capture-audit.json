@@ -1,5 +1,5 @@
 {
-  "sourceSHA256": "fa7d9b7556d6a072bbc85c1393c5324cec3572582b032b33d8ceab78991236c8",
+  "sourceSHA256": "6be5c606ce31013a62a27f430e3652aac31be21a75b589a315ab480839bc7174",
   "scope": "Numerical skin/pose and preservation measurements; visual review is separately recorded in qa-review.txt. Offline previews do not validate runtime input/physics.",
   "passed": true,
   "checks": [
@@ -30,7 +30,7 @@
       "name": "Walk_Fists: no skin sole penetration",
       "passed": true,
       "evidence": {
-        "minimumYMetres": 0.0028960031922906637
+        "minimumYMetres": 0.002896029269322753
       }
     },
     {
@@ -44,7 +44,7 @@
       "name": "Run_Fists: no skin sole penetration",
       "passed": true,
       "evidence": {
-        "minimumYMetres": 0.0025393979158252478
+        "minimumYMetres": 0.00253912596963346
       }
     },
     {
@@ -184,7 +184,7 @@
       "name": "Move_Dash_Recover: no skin sole penetration",
       "passed": true,
       "evidence": {
-        "minimumYMetres": 0.0025394733529537916
+        "minimumYMetres": 0.002539172535762191
       }
     },
     {
@@ -449,19 +449,124 @@
       ]
     },
     {
-      "name": "Preserved v005/v006 and VFX assets are byte-identical",
+      "name": "Retained chibi source and VFX assets are byte-identical; requested legacy removals match inventory",
       "passed": true,
       "evidence": {
-        "filesCompared": 130,
-        "changed": []
+        "filesCompared": 79,
+        "legacyFilesRemovedAsRequested": 51,
+        "retiredPaths": [
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Prefabs.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\README_ko.txt",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\README_ko.txt.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Dash_Forward.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Dash_Forward.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Hit_Reaction.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Hit_Reaction.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Idle_Fists.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Idle_Fists.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Interact_Reach.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Interact_Reach.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Item_Throw_Overhand.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Item_Throw_Overhand.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Jump_Full.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Jump_Full.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Pickup_Low.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Pickup_Low.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Potion_Drink.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Potion_Drink.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Punch_Right_Jab.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Punch_Right_Jab.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Run_Fists.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Run_Fists.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Staff_Cast_Forward.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Staff_Cast_Forward.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Sword_Aerial_Plunge.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Sword_Aerial_Plunge.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Sword_Horizontal_Slash.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Sword_Horizontal_Slash.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Walk_Fists.anim",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Clips\\Walk_Fists.anim.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Prefabs\\Protagonist01_MotionReview.prefab",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Prefabs\\Protagonist01_MotionReview.prefab.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Drink_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Drink_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Idle_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Idle_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Jump_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Jump_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Punch_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Punch_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Run_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Run_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Slash_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Slash_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Staff_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Staff_Candidate.fbx.meta",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Walk_Candidate.fbx",
+          "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\MotionNatural_v005\\Sources\\Walk_Candidate.fbx.meta"
+        ],
+        "unexpectedChanges": []
       }
     },
     {
-      "name": "Unchanged motion clips and sword prefab are byte-identical",
+      "name": "Historical motion curves preserved with separately verified mesh keys and bounded gait normalization",
       "passed": true,
       "evidence": {
-        "filesCompared": 17,
-        "changed": []
+        "audit": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\research\\cleanup-final-curve-audit.json",
+        "checks": {
+          "all16HistoricalBaselineSHAsVerified": true,
+          "all18ObjectReferenceCurvesAbsent": true,
+          "threeFixedPrefabMeshesCorrect": true,
+          "all14NonGaitNonweaponMotionPayloadsExact": true,
+          "bothWeaponMotionPayloadsExactToHEAD": true,
+          "bothGaitsMatchApprovedTinyQuaternionDifference": true
+        },
+        "staleClips": []
+      }
+    },
+    {
+      "name": "All 18 actual clips and 2 grip captures identify current saved mesh and clip bytes",
+      "passed": true,
+      "evidence": {
+        "staleCaptures": []
+      }
+    },
+    {
+      "name": "Self-contained chibi gait and explicitly retired preview/weapon links",
+      "passed": true,
+      "evidence": {
+        "sourceGaitClipsCompared": 3,
+        "skeletonTransforms": 29,
+        "clearedLegacyWeaponReferences": [
+          {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+            "componentPath": "root",
+            "property": "_animationOverride",
+            "retiredGuid": "236f9fd6f6989744991931a77e48e6f5"
+          },
+          {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+            "componentPath": "root",
+            "property": "_basicAttackClip",
+            "retiredGuid": "9567914dd7b826f43bbb37a0599ec8be"
+          },
+          {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+            "componentPath": "root",
+            "property": "_animationOverride",
+            "retiredGuid": "fc18c44014680e94e9108f1bb63d7688"
+          },
+          {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+            "componentPath": "root",
+            "property": "_basicAttackClip",
+            "retiredGuid": "9567914dd7b826f43bbb37a0599ec8be"
+          }
+        ],
+        "gameplayScenesModified": false,
+        "runtimeAnimationConnected": false
       }
     }
   ]

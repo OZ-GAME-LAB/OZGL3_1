@@ -198,8 +198,8 @@ MonoBehaviour:
   _kind: 1
   _gripEuler: {x: 0, y: 0, z: 90}
   _gripPosition: {x: 0, y: 0.045, z: 0}
-  _animationOverride: {fileID: 22100000, guid: fc18c44014680e94e9108f1bb63d7688, type: 2}
-  _basicAttackClip: {fileID: 1226351774899546166, guid: 9567914dd7b826f43bbb37a0599ec8be, type: 3}
+  _animationOverride: {fileID: 0}
+  _basicAttackClip: {fileID: 0}
   _attackContactNormalized: 0.73
 --- !u!1 &8012193543217360774
 GameObject:

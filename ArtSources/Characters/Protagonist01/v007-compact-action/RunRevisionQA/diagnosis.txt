@@ -1,0 +1,14 @@
+Run_Fists targeted failure diagnosis, 2026-10-22
+Reviewer: chibi_model_pipeline. Read-only production scope; no Unity execution.
+Source reviewed: CaptureRuns/20261022_051454560/Frames/Run_Fists, all38 actual side frames. Also inspected original720-square frames0002/0008/0013/0017. Current loop fails the intended torso-clear arm/hand requirement. Prior broad contact-screen acceptance of Run is withdrawn.
+
+Canonical actor coordinates were reconstructed from the report after the fixed90-degree actor rotation. PositiveX is the right side in this actual skeleton. Both wrists cross the actor centre at the forward extreme:
+LH F0000 +.0042m; F0016 +.0007; F0017 +.0061; F0018 +.0079.
+RH F0006 -.0062m; F0007 -.0129; F0008 -.0173; F0009 -.0162; F0010 -.0068.
+RH F0007-9 is atY .513-.529m,Z +.099-.118m, i.e. the chest/abdomen centre, while its elbow stays atX +.084-.088m. LH F0016-18 is atY .546-.555m,Z +.089-.103m while its elbow staysX -.102-.104m. Forearms therefore turn diagonally inward through the body envelope, rather than merely being naturally occluded behind the character. The actual side image shows hands emerging at the belly/chest while the sleeve/forearm blends into the torso. A separate current front/skin-envelope capture is needed to certify the exact surface gap; this diagnosis does not invent one.
+
+Underlying code: Rig.SourceLocomotion samples the retained AI skeleton and applies localRotation deltas atamplitude .72. It remaps/IK-corrects feet, then calls Fist to align wrists, but applies no arm-length/body-width reach correction to the chibi arms. The target character is shorter-armed and wider through the torso than the retained source. Fist changes orientation, not the penetrative wrist trajectory. The generic Hand method has a downward/outward/backward IK hint, but SourceLocomotion does not call Hand for its arms.
+
+Minimal correction recommendation: leave source gait hips/legs/body and timing untouched. Add a Run-only arm post-pass using the sampledY/Z phase, signed lateral wrist clearance derived from the coat plus the real closed-fist envelope, and an outward/downward elbow hint in actor coordinates. Root selectedsigned225mm wristX and a soft shoulder-relative lower-height floor, with actual BakeMesh forearm/hand envelope checks. Do not modify common Hand behavior or other approved clips.
+
+New actual acceptance checks: all38 front and side frames; both hands remain on their own side outside the coat; closed fists retain compact run proportions; elbows do not flare into a chicken-wing pose; no arm-reach straight lock; soft floors remain continuous; last-to-first loop seam remains natural. Physical gaps must come from actual skin/proxy data and not just joint centres. The user requested only Run correction and deletion of three attack clips; no broad reanimation is authorized by this diagnosis.

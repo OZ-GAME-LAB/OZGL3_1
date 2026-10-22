@@ -1,0 +1,1000 @@
+{
+  "method": "Actual complete Unity BakeMesh world triangles, actor lateral=-worldZ. Non-arm body faces require every vertex combined upper/lower/hand arm influence<.2, with centroidY from hips-.065 to max shoulderY+.035. Distal arm faces require every vertex forearm+hand influence>.65. Exact noncoplanar edge/triangle tests use both triangle edge sets after3D AABB broad phase; same-height/depth rays measure outermost actual body-face lateral clearance at each selected distal arm vertex.",
+  "limits": "A validated selected-surface scope, not a whole-character or continuous-time guarantee. Intentional shoulder attachment and transition-weight boundary faces are outside this distal-arm test. Empty selections raise errors. Coplanar candidates are reported unresolved. Positive ray gaps are lateral distances, not Euclidean distances. Arms outside bodyY/depth may have no matching ray; they still undergo the triangle-crossing test.",
+  "probeDirectory": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunArmProbe",
+  "runOnlyReviewSHA256": "8b184c57f6661670ffed9700d52fe65f3134e1197cca85b2b5db00e63d306867",
+  "captureReportSHA256": "16359018c3a0e9d14a176f3b80182c46763a2f3f8aa00e7afe2fca62368b256d",
+  "schemaSHA256": "b5d1e3a4dc840e63af88806eabd763763001d4daaf0dbd6bcec9c7e55c9a577d",
+  "clipSHA256": "7dc2277627be4965100403f9ed77b37ae49ffe951481671408429723110b376a",
+  "frameCount": 38,
+  "rows": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "probeSHA256": "d81915db26f0cc776f58e313ac5ba54902409796ec44e4f9614892bdb20c3cda",
+      "bodyTriangleCount": 1599,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 462,
+          "minimumLateralGapM": 0.03193914361335931,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 621,
+          "minimumLateralGapM": 0.006901310096320362,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 1,
+      "time": 0.03333333507180214,
+      "probeSHA256": "b96969ddfd9d1b4be80762801c9032b91c79eae4908ac02a4bb1fba66062de4e",
+      "bodyTriangleCount": 1674,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 530,
+          "minimumLateralGapM": 0.029588638583893073,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 626,
+          "minimumLateralGapM": 0.021762064347281812,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 2,
+      "time": 0.06666667014360428,
+      "probeSHA256": "8c09ac22f64ca95dea5d645b6c48b8ca24bfbfc274cd14d1611ab17dab346b45",
+      "bodyTriangleCount": 1737,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 597,
+          "minimumLateralGapM": 0.042242873605926934,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 560,
+          "minimumLateralGapM": 0.015045562559178244,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 3,
+      "time": 0.10000000149011612,
+      "probeSHA256": "5657ad3cf86bb168a7a09bd3010da03d161e12b613db1fc3f3bc5b0a3fcca42c",
+      "bodyTriangleCount": 1767,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 3,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 618,
+          "minimumLateralGapM": 0.052496072177641295,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 291,
+          "minimumLateralGapM": 0.013197848738460305,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 4,
+      "time": 0.13333334028720856,
+      "probeSHA256": "b1ed36b4b8bd17024fde6f1164472054a4e61b5281cf77443df623cc29ec7f17",
+      "bodyTriangleCount": 1721,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 2,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 608,
+          "minimumLateralGapM": 0.04016651774014057,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 213,
+          "minimumLateralGapM": 0.029994071514241577,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 5,
+      "time": 0.1666666716337204,
+      "probeSHA256": "f7915f8014296a3b4dbb263a6273261c5d492c5444fb899b466992e66503fa2f",
+      "bodyTriangleCount": 1595,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 607,
+          "minimumLateralGapM": 0.01506433165332216,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 173,
+          "minimumLateralGapM": 0.04110749771848596,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 6,
+      "time": 0.20000000298023224,
+      "probeSHA256": "ad3dde96b7d6ab7e401c7b93bd2a682b10ab4c53f1fee78393de998291ebaaa2",
+      "bodyTriangleCount": 1612,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 610,
+          "minimumLateralGapM": 0.0187924791054751,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 191,
+          "minimumLateralGapM": 0.04547742670392471,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 7,
+      "time": 0.23333333432674408,
+      "probeSHA256": "88d819c47180022a0b4af6de7955fde5a9fa7a70c8528ed024e2abb9e7db92d6",
+      "bodyTriangleCount": 1626,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 606,
+          "minimumLateralGapM": 0.012546635436151365,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 246,
+          "minimumLateralGapM": 0.03882983358982747,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 8,
+      "time": 0.2666666805744171,
+      "probeSHA256": "da4afc9d7ad0a883d0e9554dd160b2895fcdabc88f2cdf92b1f1b79abd5b528b",
+      "bodyTriangleCount": 1617,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 4,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 606,
+          "minimumLateralGapM": 0.008391960707856194,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 274,
+          "minimumLateralGapM": 0.036628097950328786,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "time": 0.30000001192092896,
+      "probeSHA256": "e59cd3ad1d0d8cc3413b40dcac0006bb980663710358c01dd1cb6ca6179534a4",
+      "bodyTriangleCount": 1587,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 5,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 614,
+          "minimumLateralGapM": 0.00984698223300487,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 312,
+          "minimumLateralGapM": 0.03905254453092036,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 10,
+      "time": 0.3333333432674408,
+      "probeSHA256": "cf658a50c46852c7d085411d1b55715d5f54440ebc94c419ef1572c2b4a882eb",
+      "bodyTriangleCount": 1530,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 26,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 617,
+          "minimumLateralGapM": 0.020206025100065,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 374,
+          "minimumLateralGapM": 0.027503536606055617,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 11,
+      "time": 0.36666667461395264,
+      "probeSHA256": "68a24411302af65e6d36e0cdae0c7c8c25d5a4f6d2800f223801cec039d2e6ac",
+      "bodyTriangleCount": 1529,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 30,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 620,
+          "minimumLateralGapM": 0.008818068826865089,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 528,
+          "minimumLateralGapM": 0.03853408786852755,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "time": 0.4000000059604645,
+      "probeSHA256": "62ba6a0f5590183cdcf4f696200a96b861fc8840c89c533ac3a783f5d1168915",
+      "bodyTriangleCount": 1530,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 26,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 522,
+          "minimumLateralGapM": 0.024094639065519452,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 618,
+          "minimumLateralGapM": 0.04199020068515902,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 13,
+      "time": 0.4333333373069763,
+      "probeSHA256": "0dcdd9798713e99f6c2beaf9f0a008725bca6b7ec56dcdd6d7e6d2dfa1dd3826",
+      "bodyTriangleCount": 1482,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 16,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 308,
+          "minimumLateralGapM": 0.007844850334923298,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 618,
+          "minimumLateralGapM": 0.032960582025558016,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 14,
+      "time": 0.46666666865348816,
+      "probeSHA256": "525165689eb5fa1117a5f0f23b81bf5bfefaef0bbb8b71250b04701b91075f22",
+      "bodyTriangleCount": 1497,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 6,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 234,
+          "minimumLateralGapM": 0.025460501562403537,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 614,
+          "minimumLateralGapM": 0.02883337004694586,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "time": 0.5,
+      "probeSHA256": "8a12ff8e6eef358a2dd40697caaa9bb8ad515d564eec4d61f57458eb8947bd40",
+      "bodyTriangleCount": 1531,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 205,
+          "minimumLateralGapM": 0.04527105426612285,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 614,
+          "minimumLateralGapM": 0.01406495878288161,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 16,
+      "time": 0.5333333611488342,
+      "probeSHA256": "c4c0a39d098ecea377aa57825d0ff20d0ad1b502da3592c2d12513ecd1e98106",
+      "bodyTriangleCount": 1536,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 235,
+          "minimumLateralGapM": 0.05223271943659211,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 602,
+          "minimumLateralGapM": 0.015019175349396618,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "time": 0.5666666626930237,
+      "probeSHA256": "f88724dc36303bc0f886ea4ed079879bf1f871039241ab9442a9a0b1f932b727",
+      "bodyTriangleCount": 1544,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 4,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 277,
+          "minimumLateralGapM": 0.04765668651012095,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 601,
+          "minimumLateralGapM": 0.013411818861627622,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 18,
+      "time": 0.6000000238418579,
+      "probeSHA256": "03a644ee097e46709a2c878604393a5e0b87ac8443a458afe7fd7b2b5bf2189d",
+      "bodyTriangleCount": 1527,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 344,
+          "minimumLateralGapM": 0.05682192977718989,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 616,
+          "minimumLateralGapM": 0.01193707269829486,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 19,
+      "time": 0.6333333253860474,
+      "probeSHA256": "4e0f12c39a0a53b514d7c8d420445fa2d4680acbc260bca1eb2953ea6a58888f",
+      "bodyTriangleCount": 1599,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 462,
+          "minimumLateralGapM": 0.03193914361335931,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 621,
+          "minimumLateralGapM": 0.006901310096320362,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 20,
+      "time": 0.6666666865348816,
+      "probeSHA256": "e7ec8d72ffc56090f378e7f9dccdaee3489d998872212fe028fb5251d202f133",
+      "bodyTriangleCount": 1674,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 530,
+          "minimumLateralGapM": 0.029588662067603855,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 626,
+          "minimumLateralGapM": 0.021762011299756523,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 21,
+      "time": 0.699999988079071,
+      "probeSHA256": "ff1487f9dfadf6c2e30efb18cbbec04141f12f24b1e41eaee3ac6b9c1933cd82",
+      "bodyTriangleCount": 1737,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 597,
+          "minimumLateralGapM": 0.042242917661819146,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 560,
+          "minimumLateralGapM": 0.01504554765801705,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 22,
+      "time": 0.7333333492279053,
+      "probeSHA256": "944b10bed2195e18d2df147782530d59d1ff30d03c3ab2b43d3f0df5a891e23c",
+      "bodyTriangleCount": 1767,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 3,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 618,
+          "minimumLateralGapM": 0.052496132456125694,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 291,
+          "minimumLateralGapM": 0.013197781985849727,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 23,
+      "time": 0.7666666507720947,
+      "probeSHA256": "c853237938d02fad08a1259147355b78bf2974ac89e4eb979df535613f7e424a",
+      "bodyTriangleCount": 1721,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 2,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 608,
+          "minimumLateralGapM": 0.04016650895658325,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 213,
+          "minimumLateralGapM": 0.029994035587973755,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 24,
+      "time": 0.800000011920929,
+      "probeSHA256": "63ae2eff1908ad5e1086793f7e688960671860aaa845db476b5d890d3dc57c68",
+      "bodyTriangleCount": 1595,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 607,
+          "minimumLateralGapM": 0.015064316816371992,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 173,
+          "minimumLateralGapM": 0.04110744612785647,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "time": 0.8333333134651184,
+      "probeSHA256": "70ed205c76f031606ca0034d841595c0062f0ed8a577c8013426baf2b009de7b",
+      "bodyTriangleCount": 1612,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 610,
+          "minimumLateralGapM": 0.01879246914220911,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 191,
+          "minimumLateralGapM": 0.04547738328474801,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 26,
+      "time": 0.8666666746139526,
+      "probeSHA256": "d504d68321e7997aa1c8cb886bac92596bd7afb5fbc7e788bfe4dde73e1bdebb",
+      "bodyTriangleCount": 1626,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 0,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 606,
+          "minimumLateralGapM": 0.012546579267791597,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 246,
+          "minimumLateralGapM": 0.038829819208843125,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 27,
+      "time": 0.8999999761581421,
+      "probeSHA256": "3454880e3a0116bcc0eefde1155f2b356da92dc19bb77a50513fe639c11c55e4",
+      "bodyTriangleCount": 1617,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 4,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 606,
+          "minimumLateralGapM": 0.008392026162364563,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 274,
+          "minimumLateralGapM": 0.036628065734108955,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 28,
+      "time": 0.9333333373069763,
+      "probeSHA256": "143658d65f95a5e734fe7cb2176e5e70d45090c5eb509838f632f11a4b5149f5",
+      "bodyTriangleCount": 1587,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 5,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 614,
+          "minimumLateralGapM": 0.00984698223300487,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 312,
+          "minimumLateralGapM": 0.03905254453092036,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 29,
+      "time": 0.9666666388511658,
+      "probeSHA256": "c6373916e7a2b9d35f5d9339a2ac006de57a43bb968413a924cd47b35841bb99",
+      "bodyTriangleCount": 1530,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 26,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 617,
+          "minimumLateralGapM": 0.02020590689112514,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 374,
+          "minimumLateralGapM": 0.02750354129614402,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "time": 1.0,
+      "probeSHA256": "4c37aacd6c018a80f68e03eb98a053f133bb545f2600699b37c95aae5b12a365",
+      "bodyTriangleCount": 1529,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 30,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 620,
+          "minimumLateralGapM": 0.008818068826865089,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 528,
+          "minimumLateralGapM": 0.03853408786852755,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 31,
+      "time": 1.0333333015441895,
+      "probeSHA256": "22712dfc2e086b9461ccd77358e10d66ae39d659278103efec19c6f77a39ebea",
+      "bodyTriangleCount": 1530,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 26,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 522,
+          "minimumLateralGapM": 0.024094762071801834,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 618,
+          "minimumLateralGapM": 0.04199019134500359,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 32,
+      "time": 1.0666667222976685,
+      "probeSHA256": "04f6c810edb8043eab95077ca4ec50afb96aebd1f1e4091a9c0ebe69b3f65e7f",
+      "bodyTriangleCount": 1482,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 16,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 308,
+          "minimumLateralGapM": 0.007844865429910669,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 618,
+          "minimumLateralGapM": 0.03296061505650141,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 33,
+      "time": 1.100000023841858,
+      "probeSHA256": "f5b032028206b0b66797c832464ee7559d4ede2e3ab2298c4041258ea251e01d",
+      "bodyTriangleCount": 1497,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 6,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 234,
+          "minimumLateralGapM": 0.025460474753107892,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 614,
+          "minimumLateralGapM": 0.028833287127724122,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 34,
+      "time": 1.1333333253860474,
+      "probeSHA256": "45304014ab279a8a7a165b6062bd685c181dabb042aff1c2cc8c9c6e4a48969b",
+      "bodyTriangleCount": 1531,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 205,
+          "minimumLateralGapM": 0.04527105426612285,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 614,
+          "minimumLateralGapM": 0.01406495878288161,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "time": 1.1666666269302368,
+      "probeSHA256": "b038fa29471e7a509876174207860b63fc63b8421547864f73d958f328123b49",
+      "bodyTriangleCount": 1536,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 235,
+          "minimumLateralGapM": 0.052232721873115645,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 602,
+          "minimumLateralGapM": 0.01501919617337591,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "time": 1.2000000476837158,
+      "probeSHA256": "4933d1e59a3e6a549a5b359d87966a21ddbe493fa80988fb4c8e2b47bc40c9da",
+      "bodyTriangleCount": 1544,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 4,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 277,
+          "minimumLateralGapM": 0.04765670904274269,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 601,
+          "minimumLateralGapM": 0.013411727936020412,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    },
+    {
+      "frame": 37,
+      "time": 1.2333333492279053,
+      "probeSHA256": "6fcb3667aa1ba06abe6ec5f110633ae0f12945d19066eb3bd5ea17b823601166",
+      "bodyTriangleCount": 1527,
+      "distalArmTriangleCount": 1496,
+      "aabbCandidatePairs": 1,
+      "noncoplanarTriangleCrossingPairs": 0,
+      "coplanarCandidatePairsUnresolved": 0,
+      "crossingBodyTriangleIds": [],
+      "crossingArmTriangleIds": [],
+      "gaps": {
+        "left": {
+          "selectedVertices": 630,
+          "matchingBodyRays": 344,
+          "minimumLateralGapM": 0.05682192977718989,
+          "negativeRaysBelowMinus0p1mm": 0
+        },
+        "right": {
+          "selectedVertices": 634,
+          "matchingBodyRays": 616,
+          "minimumLateralGapM": 0.01193707269829486,
+          "negativeRaysBelowMinus0p1mm": 0
+        }
+      }
+    }
+  ]
+}

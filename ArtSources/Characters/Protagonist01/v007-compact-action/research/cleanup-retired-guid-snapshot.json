@@ -1,0 +1,298 @@
+[
+  {
+    "guid": "fcab890c8ba80974e9ccde5d5c3ee503",
+    "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Protagonist01_Staff_Equipped.prefab"
+  },
+  {
+    "guid": "3e970826b9677fe4c95707cf94077e9c",
+    "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Protagonist01_Sword_Equipped.prefab"
+  },
+  {
+    "guid": "480b73bbcb3edf44e90a53299b69311d",
+    "path": "Assets/Art/Characters/Protagonist01/protagonist01-v001.fbx"
+  },
+  {
+    "guid": "1763004a0eef55741a1d59633b0afc69",
+    "path": "Assets/Art/Characters/Protagonist01/protagonist01-v001_base_color.png"
+  },
+  {
+    "guid": "c4ff6d502f2cb924b902958f55880ecb",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/README_ko.txt"
+  },
+  {
+    "guid": "db571be1e051ebb4abc52117963d5a0c",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/README_ko.txt"
+  },
+  {
+    "guid": "e35ac131c75af224793d16098902e7b7",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Actions.fbx"
+  },
+  {
+    "guid": "9567914dd7b826f43bbb37a0599ec8be",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_ExtendedActions.fbx"
+  },
+  {
+    "guid": "adeca340cff4e074b9762218fe527e48",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_GripMesh.asset"
+  },
+  {
+    "guid": "dc099bc5ec699084abe2e3bb9cf36915",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab"
+  },
+  {
+    "guid": "7872e305c5595004bb5af0771689388a",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Playground.unity"
+  },
+  {
+    "guid": "cb8120a628081894e9407093b6830ae0",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Rig.fbx"
+  },
+  {
+    "guid": "83972f2188fc80d41a8fa95eddaec809",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Run.fbx"
+  },
+  {
+    "guid": "a831606a30f348e43a419b82fa936f42",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_SkillMotion.anim"
+  },
+  {
+    "guid": "fc18c44014680e94e9108f1bb63d7688",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Staff.overrideController"
+  },
+  {
+    "guid": "236f9fd6f6989744991931a77e48e6f5",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Sword.overrideController"
+  },
+  {
+    "guid": "142253e0e707fd24188eb961231bed9f",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unarmed.controller"
+  },
+  {
+    "guid": "99136c3d0b898e74293d0849f30d9dd9",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unlit.mat"
+  },
+  {
+    "guid": "d9b1f2875f337084f9dd0d7bb8b53900",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Visual.prefab"
+  },
+  {
+    "guid": "d87e947e65a39274886755bc8d48133f",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Walk.fbx"
+  },
+  {
+    "guid": "0e53875267a3f554aa437386f1db7a50",
+    "path": "Assets/Art/Characters/Protagonist01/Runtime/사용안내.txt"
+  },
+  {
+    "guid": "c644df1771571004786cb11ac76c2060",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Dash_Forward.anim"
+  },
+  {
+    "guid": "b0db68e8885362b4b96c33f1c05065bf",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Hit_Reaction.anim"
+  },
+  {
+    "guid": "2cd71caf79f86b24abfbef9e0672679f",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Idle_Fists.anim"
+  },
+  {
+    "guid": "a31ff829f8177734b9323a0ef8d13e43",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Interact_Reach.anim"
+  },
+  {
+    "guid": "b7566f6afeef27949a4a2559d57c49b2",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Item_Throw_Overhand.anim"
+  },
+  {
+    "guid": "0ad60c82366f52144a5f5966d720f81e",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Jump_Full.anim"
+  },
+  {
+    "guid": "c4654bb89ed91d643bfeb848d4401771",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Pickup_Low.anim"
+  },
+  {
+    "guid": "0ce0fbf90aa33e54bad61181c56c9ce2",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Potion_Drink.anim"
+  },
+  {
+    "guid": "b18fd597f5a1e0f4fa03e407ea81c7d3",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Punch_Right_Jab.anim"
+  },
+  {
+    "guid": "d46d79a40b0fdf84b8fdcd8508121536",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Run_Fists.anim"
+  },
+  {
+    "guid": "0fe9d4533ee78e743ab440870dd4d358",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Staff_Cast_Forward.anim"
+  },
+  {
+    "guid": "df0b442c07894944d96adae30cec5204",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Sword_Aerial_Plunge.anim"
+  },
+  {
+    "guid": "11a2fd27bf6fef34b87e3f80c10cbb38",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Sword_Horizontal_Slash.anim"
+  },
+  {
+    "guid": "3a33dc60f6e73d645a6cfc0b071425a7",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Clips/Walk_Fists.anim"
+  },
+  {
+    "guid": "76ef167abf77f4a4ca82e5c1e3306255",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Meshes/Protagonist01_PolishedHands.asset"
+  },
+  {
+    "guid": "95cfb1967c3b38a439701d64b89064a0",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Prefabs/Protagonist01_MotionReview.prefab"
+  },
+  {
+    "guid": "273d8055e1cf9c6409fd5f03b6e2cbea",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Dash_Forward.fbx"
+  },
+  {
+    "guid": "2797de358de0ebc4fb5b25dc750e99e6",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Hit_Reaction.fbx"
+  },
+  {
+    "guid": "bf287e048096a43479500a2978f5816a",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Idle_Fists.fbx"
+  },
+  {
+    "guid": "7053895b0bc6770479ae8d9eca441f4f",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Interact_Reach.fbx"
+  },
+  {
+    "guid": "03ea37f28fdd67f439d0cee094df9f5b",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Item_Throw_Overhand.fbx"
+  },
+  {
+    "guid": "ad70ffa9b87225346b0a0f20d37b2d83",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Jump_Full.fbx"
+  },
+  {
+    "guid": "7079dd8cd97c63647b75716227e4f8e6",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Pickup_Low.fbx"
+  },
+  {
+    "guid": "30cce33beb705ba4e9bc2d63dff590f0",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Potion_Drink.fbx"
+  },
+  {
+    "guid": "1c54934edb38fa24f9d398d26180f724",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Punch_Right_Jab.fbx"
+  },
+  {
+    "guid": "4640e8d9228553546a4290df48196c13",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Run_Fists.fbx"
+  },
+  {
+    "guid": "b7e551fb4f0c0e64b8c5fbbdbd4de82b",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Staff_Cast_Forward.fbx"
+  },
+  {
+    "guid": "13d1bbb27986ff74a9e6f79db53cbd01",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Sword_Aerial_Plunge.fbx"
+  },
+  {
+    "guid": "85cdd1e79f407a646984c25119078560",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Sword_Horizontal_Slash.fbx"
+  },
+  {
+    "guid": "e1edf26c211ecbc42b705992921f8e21",
+    "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Sources/Walk_Fists.fbx"
+  },
+  {
+    "guid": "3a1a989e186deeb44bfd2febac423ab7",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Dash_Forward.anim"
+  },
+  {
+    "guid": "e56de9695470a1a499ad07ceec71faa9",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Hit_Reaction.anim"
+  },
+  {
+    "guid": "ceb0fe00d5c7bd24c982d0cdfe407c0d",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Idle_Fists.anim"
+  },
+  {
+    "guid": "82fafd827cacd664faa2e6877cd8c829",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Interact_Reach.anim"
+  },
+  {
+    "guid": "ac7c2970021e9184dbaa7442983eee5b",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Item_Throw_Overhand.anim"
+  },
+  {
+    "guid": "7bf5ab7911e7a444697337e8ab671a51",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Jump_Full.anim"
+  },
+  {
+    "guid": "6400aec53c8de974bbdcd2e2f4112a10",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Pickup_Low.anim"
+  },
+  {
+    "guid": "6e7ac56b9e4de5a41bef2692b3763bdd",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Potion_Drink.anim"
+  },
+  {
+    "guid": "dbbea2c5a00bcf947bc6f2cc0e7896c1",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Punch_Right_Jab.anim"
+  },
+  {
+    "guid": "bb2483efd9359a848918b7ec0587c25a",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Run_Fists.anim"
+  },
+  {
+    "guid": "c2bbb566510a72e42999aab29924c3b2",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Staff_Cast_Forward.anim"
+  },
+  {
+    "guid": "74b235c72e2f4724dbfd39b6ceb46c41",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Sword_Aerial_Plunge.anim"
+  },
+  {
+    "guid": "01e09dba387d153438e834d37082598c",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Sword_Horizontal_Slash.anim"
+  },
+  {
+    "guid": "1c0ed7eede7f2a341a8e0fccaaa2a9d5",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Walk_Fists.anim"
+  },
+  {
+    "guid": "2066d4ea210fe8b4d8a9d37e77a0b3ef",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Prefabs/Protagonist01_MotionReview.prefab"
+  },
+  {
+    "guid": "516e8e0d56907ea44bf1154b2f2b8489",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Drink_Candidate.fbx"
+  },
+  {
+    "guid": "f02e0713b0efd6343b8ca3b20a431f4b",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Idle_Candidate.fbx"
+  },
+  {
+    "guid": "d0c74ef47ebc621498b5534152abbf88",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Jump_Candidate.fbx"
+  },
+  {
+    "guid": "4b9dd0cb52ba2ba449697b9517f0ebd0",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Punch_Candidate.fbx"
+  },
+  {
+    "guid": "e23ecfc5c5d022440aeda43c82ec595b",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Run_Candidate.fbx"
+  },
+  {
+    "guid": "64e9cbe5a3f48dc428424f873929e464",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Slash_Candidate.fbx"
+  },
+  {
+    "guid": "a2221751ac0f41644b985da225528a6c",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Staff_Candidate.fbx"
+  },
+  {
+    "guid": "7d631cdbc829ae643a818c331d65f7ee",
+    "path": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Sources/Walk_Candidate.fbx"
+  }
+]

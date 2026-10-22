@@ -17,11 +17,18 @@ public static class ChibiGripProbe
 
 public static partial class ChibiMotionSet
 {
-    const string GripProbeOutput = "ArtSources/Stage01Kit/research/StaffGripProbe_Calibrated";
+    static string GripProbeOutput;
     const string GripProbeStaff = "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab";
 
     public static void ExportStaffGripForensics()
     {
+        if(CombatSet().Length==0){Debug.Log("CHIBI_GRIP_PROBE_SKIPPED_ATTACKS_RETIRED");return;}
+        var bundle=JsonUtility.FromJson<CaptureBundle>(File.ReadAllText(Report+"/review-report.json"));
+        var staff=bundle.motions.First(m=>m.name=="Staff_Cast_Forward");
+        GripProbeOutput=Path.GetFullPath(Path.Combine(staff.framesDirectory,"..","..","GripProbe"));
+        string expectedRoot=Path.GetFullPath(Report+"/CaptureRuns")+Path.DirectorySeparatorChar;
+        if(!GripProbeOutput.StartsWith(expectedRoot,StringComparison.OrdinalIgnoreCase))
+            throw new InvalidOperationException("Probe must stay within the actual reviewed capture session.");
         Directory.CreateDirectory(GripProbeOutput);
         foreach (var entry in new[] { ("Idle_Fists", 0f), ("Staff_Cast_Forward", 0f), ("Staff_Cast_Forward", .24f),
             ("Sword_Horizontal_Slash", 0f), ("Sword_Horizontal_Slash", .24f) })
@@ -41,19 +48,20 @@ public static partial class ChibiMotionSet
             // The diagnostic is local to the hand; a floor would hide the underside in orthographic closeups.
             foreach (var sceneRoot in stage.scene.GetRootGameObjects())
                 if (sceneRoot.name == "Plane") sceneRoot.SetActive(false);
-            var actor = Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath));
+            string propKind=clipName.StartsWith("Sword")?"Sword":clipName.StartsWith("Staff")?"Staff":"";
+            string sourcePrefab=ReviewPrefabForProp(propKind);
+            var actor = Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(sourcePrefab));
             SceneManager.MoveGameObjectToScene(actor, stage.scene);
             actor.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
             var skin = actor.GetComponentInChildren<SkinnedMeshRenderer>(true);
-            var calibrated = AssetDatabase.LoadAssetAtPath<Mesh>(ChibiCylinderGripBuilder.MeshPath);
-            if (!calibrated) throw new InvalidOperationException("Calibrated grip mesh must be built before this diagnostic.");
-            skin.sharedMesh = calibrated;
-            var original = skin.sharedMesh;
             var rh = skin.bones.First(b => b.name == "RightHand");
             int handIndex = Array.IndexOf(skin.bones, rh);
             var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(Root + "/Clips/" + clipName + ".anim");
             if (!clip) throw new InvalidOperationException("Missing forensic source clip " + clipName);
-            clip.SampleAnimation(actor, seconds);
+            SampleSavedClip(actor, clip, seconds);
+            var expected=AssetDatabase.LoadAssetAtPath<Mesh>(ChibiCylinderGripBuilder.MeshForProp(propKind));
+            if(!expected||skin.sharedMesh!=expected)throw new InvalidOperationException("Saved prefab does not contain its fixed hand mesh: "+sourcePrefab);
+            var original = skin.sharedMesh;
 
             float[] influence = new float[original.vertexCount];
             var allWeights = new List<GripProbeWeight>[original.vertexCount];
@@ -79,8 +87,10 @@ public static partial class ChibiMotionSet
             bool Thenar(int i) => influence[i] >= .30f && allBind[i].y > .005f && allBind[i].y < .050f &&
                 allBind[i].z > .035f && allBind[i].z < .100f;
             var selectedTriangles = new List<int>();
+            var wristBoundary = new HashSet<int>(JsonUtility.FromJson<GripBoundarySelection>(File.ReadAllText(
+                "ArtSources/Stage01Kit/research/right-hand-skin-selection.json")).boundaryOrderedSourceVertexIDs);
             for (int t = 0; t < sourceTriangles.Length; t += 3)
-                if (Enumerable.Range(0, 3).Any(k => influence[sourceTriangles[t + k]] >= .50f || sourceTriangles[t + k] >= originalVertexCount || Thenar(sourceTriangles[t + k])))
+                if (Enumerable.Range(0, 3).Any(k => wristBoundary.Contains(sourceTriangles[t + k]) || influence[sourceTriangles[t + k]] >= .50f || sourceTriangles[t + k] >= originalVertexCount || Thenar(sourceTriangles[t + k])))
                     selectedTriangles.AddRange(new[] { sourceTriangles[t], sourceTriangles[t + 1], sourceTriangles[t + 2] });
             int[] selected = selectedTriangles.Distinct().OrderBy(i => i).ToArray();
             var remap = selected.Select((v, i) => new { v, i }).ToDictionary(x => x.v, x => x.i);
@@ -139,7 +149,7 @@ public static partial class ChibiMotionSet
                 string name = clipName + "_" + Mathf.RoundToInt(seconds * 1000).ToString("D4") + "ms";
                 var report = new GripProbeSample
                 {
-                    clip = clipName, timeSeconds = seconds, prefab = PrefabPath,
+                    clip = clipName, timeSeconds = seconds, prefab = sourcePrefab,
                     sourceMesh = AssetDatabase.GetAssetPath(original), handBoneIndex = handIndex,
                     bones = skin.bones.Select(b => b.name).ToArray(),
                     method = "Actual saved clip sampled, Grip_R overridden only on disposable instance, SkinnedMeshRenderer.BakeMesh. Hand-metre coordinates = inverse(RightHand.worldRotation)*(worldVertex-RightHand.worldPosition), including actual skin weights. Selected triangles have a vertex with RightHand influence>=.50, or the corrected thenar region(sourceY.005..050/Z.035..100/influence>=.30), or additional topology; adjacent vertices retained. No mesh or clip assets are changed.",
@@ -200,6 +210,7 @@ public static partial class ChibiMotionSet
     }
 
     [Serializable] sealed class GripProbeWeight { public int bone; public float weight; }
+    [Serializable] sealed class GripBoundarySelection { public int[] boundaryOrderedSourceVertexIDs; }
     [Serializable] sealed class GripProbeWeightSet { public GripProbeWeight[] values; }
     [Serializable] sealed class GripProbeSnapshot { public float grip; public Vector3[] vertices, normals; }
     [Serializable] sealed class GripProbePart { public string name, mesh; public Vector3[] vertices, normals; public int[] triangles; }

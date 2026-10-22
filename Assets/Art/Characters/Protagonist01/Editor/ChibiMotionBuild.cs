@@ -30,7 +30,7 @@ public static partial class ChibiMotionSet
     }
     public static void BuildReferenceRevision()
     {
-        try{ChibiCylinderGripBuilder.Build();Build();CaptureAll();ExportStaffGripForensics();}
+        try{ChibiCylinderGripBuilder.Build();Build();CaptureAll();if(CombatSet().Length>0)ExportStaffGripForensics();}
         catch(Exception e){Debug.LogException(e);if(Application.isBatchMode)EditorApplication.Exit(1);else throw;}
     }
     public static void Build()
@@ -58,11 +58,22 @@ public static partial class ChibiMotionSet
                     }
                 }
                 bool saved;PrefabUtility.SaveAsPrefabAsset(actor,PrefabPath,out saved);if(!saved)throw new Exception("Cannot save v007 prefab");
+                foreach(string prop in new[]{"Sword","Staff"})
+                {
+                    foreach(var skin in skins)
+                    {
+                        skin.sharedMesh=AssetDatabase.LoadAssetAtPath<Mesh>(ChibiCylinderGripBuilder.MeshForProp(prop));
+                        SetGrip(skin,"Grip_R",prop=="Sword"?175:150);SetGrip(skin,"Grip_L",100);
+                    }
+                    PrefabUtility.SaveAsPrefabAsset(actor,ReviewPrefabForProp(prop),out saved);
+                    if(!saved)throw new Exception("Cannot save fixed weapon hand prefab: "+prop);
+                }
+                foreach(var skin in skins){skin.sharedMesh=AssetDatabase.LoadAssetAtPath<Mesh>(FistsPath);SetGrip(skin,"Grip_R",100);SetGrip(skin,"Grip_L",100);}
                 var all=new List<MotionInfo>();var main=Definitions();
                 foreach(var m in main)all.Add(BakeMotion(actor,rig,m,false));
                 foreach(var m in AuxiliaryDefinitions(main))all.Add(BakeMotion(actor,rig,m,true));
                 AssetDatabase.SaveAssets();
-                File.WriteAllText(Report+"/build-report.json",JsonUtility.ToJson(new BuildInfo{prefab=PrefabPath,
+                WriteReviewText(Report+"/build-report.json",JsonUtility.ToJson(new BuildInfo{prefab=PrefabPath,
                     method="New chibi neutral; compact per-action pose editing; preserved AI gait structure adapted to new limb lengths; 60Hz Generic curves. Durations align to the 30fps review grid with a uniform author-time map.",
                     mainMotions=main.Length,auxiliaryClips=all.Count-main.Length,bakeRate=BakeRate,gameplayChanged=false,vfxChanged=false,motions=all.ToArray()},true));
             }

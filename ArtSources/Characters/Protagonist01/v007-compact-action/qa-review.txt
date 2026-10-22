@@ -1,42 +1,4 @@
-v007 Compact Action — 요청 수정 검수 기록
-2026-10-21
-
-현재 전달 세트
-기본 13개 + 점프/착지 보조 5개 + 별도 검수 전환 2개.
-내려찍기 본 클립과 파생 낙하/착지 클립, 관련 전환 프리뷰는 활성 세트에서 제거했습니다.
-변경 전 자료는 QAHistory/before-requested-tweaks에 이력으로 보존했습니다.
-
-횡베기
-몸 안쪽 → 바깥쪽으로 단 한 번 허리 높이의 수평 절단을 수행합니다.
-실제 렌더 0004~0007의 검 끝-손 방향 yaw는 -48.9 → -23.0 → +26.1 → +55.3도로 한 방향입니다.
-회수는 칼날을 아래로 접어 낮은 궤도로 돌아옵니다. 복귀 중 최저 검 끝 높이 약 .139m로 바닥을 찍지 않습니다.
-검의 수평 공격 궤적을 반대로 반복하지 않아 두 번째 베기로 읽히는 동작을 줄였습니다.
-
-캐스팅
-기존 준비/발사/회수의 반복적인 정지와 .23~.30초 고정 구간을 없앴습니다.
-손, 지팡이 각도, 몸통을 위치·속도·가속도가 이어지는 곡선으로 연결했습니다.
-클립 길이 .667초와 작은 동작 범위는 유지합니다. 내부 기준은 원 저작 시간 .11/.24/.32/.46/.65초입니다.
-실제 30fps 렌더의 발사-회수 구간에 고정된 손 프레임이 없으며, 손목/무기/얼굴의 경계를 원본 화면에서 재검수했습니다.
-
-스태프
-Staff.prefab의 뾰족한 머리를 직경 .190m, 80면의 로우폴리 수정구로 교체했습니다.
-기존 머리 가로폭 .212m보다 약 10% 작고, 손잡이에서 .045m 떠 있는 간격은 유지합니다.
-실제 alpha blend .40~.61의 반투명 표면입니다. 별도 화면 굴절이나 추가 텍스처 없이 투명 패스 1개를 사용합니다.
-손잡이의 원본 vertex/normal/color 스트림과 SocketWeapon 장착 메타데이터는 보존했습니다.
-스태프 총 삼각형 수는 957 → 915이며 렌더러는 본체/구체 2개입니다. EffectTip은 새 구체 위쪽에 맞췄습니다.
-실제 사이드뷰에서 구형 실루엣, 떠 있는 틈, 얼굴과의 여유, 재질 오류 유무를 확인했습니다.
-기하/재질 기록은 ArtSources/Stage01Kit/staff-orb-refinement.json 및 StaffOrbReview에 있습니다.
-
-검수와 보존
-저장한 .anim을 Unity에서 다시 읽어 실제 skin과 소품을 고정 2.5D 카메라로 렌더했습니다.
-720x720 / 30fps / 1배속. 유한 기본 동작 끝의 8프레임은 끝자세 확인용이며 .anim 길이에 포함되지 않습니다.
-capture-audit.json의 52개 수치 검사가 모두 통과했습니다. 이 값은 시각적 완성도 점수가 아닙니다.
-검사에는 발 접지, 닫힌 주먹 기본 자세, 루프 경계, 공통 복귀 자세, 손/소품 접촉, 횡베기 방향, 캐스팅 중 정지 유무를 포함합니다.
-나머지 모션 16개 파일과 검 프리팹 1개의 SHA256은 변경 전과 동일합니다.
-보존 대상 v005/v006 및 VFX 130개 파일도 변경되지 않았습니다.
-현재 캡처 해시는 capture-audit.json의 sourceSHA256에 있습니다.
-
-범위
-게임 플레이 코드/Animator Controller/VFX는 변경하거나 연결하지 않았습니다.
-전환 GIF는 별도 검수 장면의 클립 혼합이며 게임의 입력/물리/공격 캔슬을 시험한 결과는 아닙니다.
-추가 Meshy/Comfy 크레딧 사용: 0.
+SUPERSEDED: the previous broad visual approval missed Run_Fists arm/body clipping.
+Current targeted result: run-revision-qa.txt / run-revision-qa.json.
+Current gallery: ReviewOutput/FinalChibi/index.html.
+Only Run_Fists was revised; three requested attacks were removed and fourteen other clips retained.

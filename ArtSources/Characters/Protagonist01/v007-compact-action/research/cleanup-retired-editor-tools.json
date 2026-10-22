@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-22",
+  "scope": "Retire seven unused old model/animation Editor tools whose old visual dependencies were removed; no gameplay or chibi scripts removed.",
+  "removalMethod": "Windows Recycle Bin",
+  "status": "removed-to-recycle-bin",
+  "targets": [
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBake.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBake.cs.meta",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBuilder.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBuilder.cs.meta",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishReviewCapture.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishReviewCapture.cs.meta",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBake.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBake.cs.meta",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBuilder.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBuilder.cs.meta",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionCapture.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionCapture.cs.meta",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionProbe.cs",
+    "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionProbe.cs.meta"
+  ],
+  "files": [
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBake.cs",
+      "bytes": 26430,
+      "sha256": "13b112ecaa83239e26ffb9bdf3483cddc368ea89c114e0eb9b56acdbbf677e87"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBake.cs.meta",
+      "bytes": 59,
+      "sha256": "045938a51be023c6b69e7603cd68648719e1af38aa11543538b415e0000c0f8c"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBuilder.cs",
+      "bytes": 8752,
+      "sha256": "5aecfbeff7f63cbc9888e775532f94d4449d751dfd5ae0cad3b9f503201fd2f3"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishBuilder.cs.meta",
+      "bytes": 59,
+      "sha256": "1070d1660e3a62ec8207841a1a5b509fe4f4e09dc0ef2540f7baf8ba8283d078"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishReviewCapture.cs",
+      "bytes": 55269,
+      "sha256": "22e546335d173af4ece8cc611543a855d2cb46ee16cfaaf309edf4317b6ea888"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\MotionPolishReviewCapture.cs.meta",
+      "bytes": 59,
+      "sha256": "dc06fcb0be4adea38905230c1f565f07bead0b630dd8e364067a141f644e60d2"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBake.cs",
+      "bytes": 38577,
+      "sha256": "3733c758f181f58e2c6888ca317bb040ac5569cfa362a13c4af93171d9db1582"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBake.cs.meta",
+      "bytes": 59,
+      "sha256": "ed515c23474d88ac97022170dac5b4f98cac64d6c6f469f03e181f3b14011d31"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBuilder.cs",
+      "bytes": 7405,
+      "sha256": "1e7c0a016a72420ff12e47b74202335a393012bf8882b39bdeaaedd8f92d656a"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionBuilder.cs.meta",
+      "bytes": 59,
+      "sha256": "bd1e09b636e0bf9ec360d024d2b3bc0c5203d8b6ccb4f499eeb8b2db67382e36"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionCapture.cs",
+      "bytes": 63014,
+      "sha256": "d5195c7b2955f5d6ecdfa10c2447d0c9ed735ef2cf6f9f3a758502c6723752b5"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionCapture.cs.meta",
+      "bytes": 59,
+      "sha256": "a2984e69d1ed50dac8e2636e35efc3810bcf80aeba08bd47149b6390a78e8254"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionProbe.cs",
+      "bytes": 5903,
+      "sha256": "c471aa3b7b677533ddb648ccae1dd58704deb9e7ed9bec8cd09fcf18d7d0d03e"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\NaturalMotionProbe.cs.meta",
+      "bytes": 59,
+      "sha256": "0e1b15fb07c59ed6fa57a1da51b9cd2ddb6e4cdd8b12eeed60a2b763fe386c9b"
+    }
+  ],
+  "totalBytes": 205763.0
+}

@@ -2,6 +2,7 @@
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -125,15 +126,66 @@ def main():
           all(n not in motions and not (clip_root / (n + '.anim')).exists() for n in removed)
           and not any(m['name'] == 'Jump_Sword_Plunge' for m in report['transitions']), removed)
     baseline = json.loads((ROOT / 'preserved-assets-baseline.json').read_text(encoding='utf-8-sig'))
-    changed = [x['path'] for x in baseline if not Path(x['path']).is_file() or
-               hashlib.sha256(Path(x['path']).read_bytes()).hexdigest() != x['sha256']]
-    check('Preserved v005/v006 and VFX assets are byte-identical', not changed,
-          {'filesCompared': len(baseline), 'changed': changed})
-    unchanged = json.loads((ROOT / 'targeted-revision-baseline.json').read_text(encoding='utf-8'))
-    changed = [x['path'] for x in unchanged if not Path(x['path']).is_file() or
-               hashlib.sha256(Path(x['path']).read_bytes()).hexdigest() != x['sha256']]
-    check('Unchanged motion clips and sword prefab are byte-identical', not changed,
-          {'filesCompared': len(unchanged), 'changed': changed})
+    retired = {}
+    for inventory in (ROOT / 'research').glob('cleanup-retired-*.json'):
+        record = json.loads(inventory.read_text(encoding='utf-8-sig'))
+        if isinstance(record, dict) and record.get('status') == 'removed-to-recycle-bin':
+            retired.update({str(Path(x['path'])).casefold(): x['sha256'] for x in record['files']})
+    kept, removed_as_requested, changed = [], [], []
+    for x in baseline:
+        path = Path(x['path'])
+        if not path.exists() and retired.get(str(path).casefold()) == x['sha256']:
+            removed_as_requested.append(x['path'])
+        else:
+            kept.append(x['path'])
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != x['sha256']:
+                changed.append(x['path'])
+    check('Retained chibi source and VFX assets are byte-identical; requested legacy removals match inventory', not changed,
+          {'filesCompared': len(kept), 'legacyFilesRemovedAsRequested': len(removed_as_requested),
+           'retiredPaths': removed_as_requested, 'unexpectedChanges': changed})
+    # Every clip now has an intentional saved mesh-reference key. Compare motion
+    # payloads with immutable historical blobs, then bind that audit to current bytes.
+    curve_path = ROOT / 'research/cleanup-final-curve-audit.json'
+    curve_audit = json.loads(curve_path.read_text(encoding='utf-8')) if curve_path.exists() else {}
+    curve_rows = curve_audit.get('clips', [])
+    stale_curves = [x['name'] for x in curve_rows if
+                    hashlib.sha256((clip_root / (x['name'] + '.anim')).read_bytes()).hexdigest() != x['currentSHA256']]
+    check('Historical motion curves preserved with separately verified mesh keys and bounded gait normalization',
+          curve_audit.get('passed', False) and len(curve_rows) == 18 and not stale_curves,
+          {'audit': str(curve_path), 'checks': curve_audit.get('checks', {}), 'staleClips': stale_curves})
+    mesh_root = WORKSPACE / 'Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes'
+    mesh_names = {'Sword': 'Protagonist_Chibi_SwordClosedGrip.asset',
+                  'Staff': 'Protagonist_Chibi_StaffClosedGrip.asset'}
+    provenance_failures = []
+    for capture in list(motions.values()) + details:
+        clip_name = ('Sword_Horizontal_Slash' if capture['prop'] == 'Sword' else 'Staff_Cast_Forward') if capture in details else capture['name']
+        expected_mesh = mesh_root / mesh_names.get(capture['prop'], 'Protagonist_Chibi_CylinderGrip.asset')
+        if (capture.get('sourceMeshSHA256') != hashlib.sha256(expected_mesh.read_bytes()).hexdigest() or
+            capture.get('sourceClipSHA256') != hashlib.sha256((clip_root / (clip_name + '.anim')).read_bytes()).hexdigest()):
+            provenance_failures.append(capture['name'])
+    check('All 18 actual clips and 2 grip captures identify current saved mesh and clip bytes',
+          not provenance_failures, {'staleCaptures': provenance_failures})
+    migration_path = ROOT / 'source-gait-migration.json'
+    if migration_path.exists():
+        migration = json.loads(migration_path.read_text(encoding='utf-8-sig'))
+        skeleton = WORKSPACE / migration['skeleton']
+        class_ids = set(re.findall(r'^--- !u!(\d+)', skeleton.read_text(encoding='utf-8'), re.M))
+        copies_match = all(hashlib.sha256((WORKSPACE / c['target']).read_bytes()).hexdigest() == c['sourceSha256']
+                           and c['byteIdentical'] for c in migration['clips'])
+        old_guids = ['9567914dd7b826f43bbb37a0599ec8be', '236f9fd6f6989744991931a77e48e6f5', 'fc18c44014680e94e9108f1bb63d7688']
+        weapon_text = ''.join((WORKSPACE / ('Assets/Art/Stage01Kit/Prefabs/Weapons/' + name + '.prefab')).read_text(encoding='utf-8')
+                              for name in ['Sword', 'Staff'])
+        check('Self-contained chibi gait and explicitly retired preview/weapon links',
+              class_ids == {'1', '4'} and copies_match and len(migration['clips']) == 3
+              and hashlib.sha256(skeleton.read_bytes()).hexdigest() == migration['skeletonSha256']
+              and migration['exactHierarchyAfterReload'] and migration['skeletonHasOnlyTransforms']
+              and migration['weaponVisualsAndMountMetadataPreserved']
+              and migration['previewEnvironmentComponentsPreserved'] and migration['previewLightingSettingsPreserved']
+              and not migration['gameplayScenesModified'] and not migration['runtimeAnimationConnected']
+              and not any(guid in weapon_text for guid in old_guids),
+              {'sourceGaitClipsCompared': len(migration['clips']), 'skeletonTransforms': migration['transformCount'],
+               'clearedLegacyWeaponReferences': migration['clearedWeaponReferences'],
+               'gameplayScenesModified': migration['gameplayScenesModified'], 'runtimeAnimationConnected': migration['runtimeAnimationConnected']})
     result = {'sourceSHA256': hashlib.sha256(source.read_bytes()).hexdigest(),
               'scope': 'Numerical skin/pose and preservation measurements; visual review is separately recorded in qa-review.txt. Offline previews do not validate runtime input/physics.',
               'passed': all(x['passed'] for x in checks), 'checks': checks}

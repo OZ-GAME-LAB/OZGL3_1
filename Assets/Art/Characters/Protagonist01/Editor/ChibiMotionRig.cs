@@ -56,6 +56,26 @@ public static partial class ChibiMotionSet
             var sourceDirection=right?rForearmNeutral:lForearmNeutral;
             hand.rotation=Quaternion.FromToRotation(sourceDirection,(hand.position-elbow.position).normalized)*(right?rhRotation:lhRotation);
         }
+        // Run-only correction. Preserve the source leg/body timing and forward arm
+        // swing, but keep the short chibi arms on their own side of the coat.
+        // The resulting saved clip is checked with the separate full-mesh probe.
+        public void ClearRunArms()
+        {
+            var right=rh.position;var left=lh.position;
+            float SoftFloor(float value,float floor)
+                =>.5f*(value+floor+Mathf.Sqrt((value-floor)*(value-floor)+.000025f));
+            right.x=hips.position.x+rightSign*.260f;left.x=hips.position.x+leftSign*.268f;
+            right.y=SoftFloor(right.y,rua.position.y-.145f);
+            left.y=SoftFloor(left.y,lua.position.y-.145f);
+            void Solve(bool isRight,Vector3 target)
+            {
+                var a=isRight?rua:lua;var b=isRight?rla:lla;var c=isRight?rh:lh;
+                float sign=isRight?rightSign:leftSign;
+                IK(a,b,c,target,a.position+new Vector3(sign*.18f,-.075f,-.035f));Fist(isRight);
+            }
+            Solve(true,right);Solve(false,left);
+        }
+
         public void HandFrame(bool right,Vector3 bladeDirection,Vector3 planeNormal)
         {
             var x=(right?-bladeDirection:bladeDirection).normalized;
@@ -133,7 +153,7 @@ public static partial class ChibiMotionSet
         public readonly float legLength;
         public SourceBank(Scene scene)
         {
-            actor=Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Art/Characters/Protagonist01/MotionNatural_v005/Prefabs/Protagonist01_MotionReview.prefab"));
+            actor=Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Skeleton.prefab"));
             SceneManager.MoveGameObjectToScene(actor,scene);actor.transform.SetPositionAndRotation(Vector3.zero,Quaternion.identity);
             foreach(var a in actor.GetComponentsInChildren<Animator>())a.enabled=false;
             foreach(var r in actor.GetComponentsInChildren<Renderer>())r.enabled=false;
@@ -146,7 +166,7 @@ public static partial class ChibiMotionSet
         }
         AnimationClip Load(string name)
         {
-            if(!clips.TryGetValue(name,out var clip)){clip=AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/"+name+".anim");clips[name]=clip;}
+            if(!clips.TryGetValue(name,out var clip)){clip=AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/"+name+".anim");clips[name]=clip;}
             if(!clip)throw new Exception("Missing preserved source clip "+name);return clip;
         }
         public void Sample(string name,float phase)

@@ -85,6 +85,7 @@ public static partial class ChibiMotionSet
     static void EvaluateChibiRun(Rig r, float t)
     {
         r.SourceLocomotion("Run_Fists", Mathf.Repeat(t / ChibiRunDuration, 1), .72f);
+        r.ClearRunArms();
         r.Fist(true); r.Fist(false);
         r.Gaze();
         r.Grip();
