@@ -92,6 +92,7 @@ namespace OZ.UI.EditorTools
                 await Suite("풀에서 꺼내는 적 체력바 (v0.5)", PooledEnemyBar);
                 await Suite("UI Link 컴포넌트 (v0.5)", Links);
                 await Suite("지역 이름·저체력·화면 밖 화살표·상호작용 (v0.7)", V07);
+                await Suite("HUD 부위 숨김·각성 카드·튜토리얼 강조 (v1.3)", TutorialSuite);
             }
             catch (Exception e)
             {
@@ -183,6 +184,134 @@ namespace OZ.UI.EditorTools
             UIManager.Instance.CloseAll();
             Time.timeScale = 1f;
             await Wait(0.6f);
+        }
+
+        // ───────────────────────────── v1.3 HUD 부위 숨김·각성 카드·튜토리얼 강조 (기획서 v0.5 3장) ─────────────────────────────
+        static bool Contains(Rect outer, Vector2 p) => p.x >= outer.xMin - 0.5f && p.x <= outer.xMax + 0.5f && p.y >= outer.yMin - 0.5f && p.y <= outer.yMax + 0.5f;
+
+        static async Task TutorialSuite()
+        {
+            await ToCombat();
+            var hud = Hud;
+            var dir = Find<TutorialDirector>();
+            Check("튜토리얼 연결 (GameUI.Tutorial)", dir != null && ReferenceEquals(GameUI.Tutorial, dir));
+            if (dir == null || hud == null) return;
+
+            // ── HUD 부위 숨김 ──
+            var parts = new[] { HudPart.Health, HudPart.Minimap, HudPart.Items, HudPart.Quests, HudPart.Skills };
+            var before = new Dictionary<HudPart, Vector3>();
+            foreach (var p in parts) { var r = hud.PartRoot(p); Check($"부위 찾기: {p}", r != null); if (r != null) before[p] = r.position; }
+            GameUI.HUD.SetParts(HudPart.All, false, animate: false);
+            await Wait(0.1f);
+            bool allHidden = true, posKept = true;
+            foreach (var p in parts)
+            {
+                var g = hud.Gate(p);
+                if (g == null || g.alpha > 0.01f) allHidden = false;
+                var r = hud.PartRoot(p);
+                if (r != null && before.TryGetValue(p, out var pos) && (r.position - pos).sqrMagnitude > 0.01f) posKept = false;
+            }
+            Check("SetParts(All, false) → 전투 HUD 전부 숨김", allHidden);
+            Check("감싸도 HUD 배치 그대로", posKept);
+            Check("알림은 남음 (VisibleParts = Alarm)", GameUI.HUD.VisibleParts == HudPart.Alarm, GameUI.HUD.VisibleParts.ToString());
+            GameUI.Notify.System("방송", "현재 12번 지구에서 던전 브레이크가 터졌습니다.");
+            await Wait(0.4f);
+            Check("HUD 숨김 중에도 방송 알림은 뜸", hud.systemAlarm != null && hud.systemAlarm.VisibleCount > 0);
+
+            GameUI.HUD.SetParts(HudPart.Health | HudPart.Quests, true);
+            await Wait(1.2f);
+            Check("일부만 등장 (체력·퀘스트)", hud.Gate(HudPart.Health).alpha > 0.99f && hud.Gate(HudPart.Quests).alpha > 0.99f && hud.Gate(HudPart.Items).alpha < 0.01f);
+            GameUI.HUD.SetParts(HudPart.All, false, animate: false);
+
+            // ── 각성 카드 ──
+            float hold = dir.awakeningHold;
+            dir.awakeningHold = 0.4f;
+            bool awakeDone = false;
+            GameUI.Tutorial.ShowAwakening(1000, HunterRank.F, () => awakeDone = true);
+            await Wait(0.6f);
+            Check("각성 카드 등장", GameUI.Tutorial.IsAwakening && dir.CardGroup != null && dir.CardGroup.alpha > 0.9f, dir.CardGroup != null ? $"alpha {dir.CardGroup.alpha:0.00}" : "카드 없음");
+            await Wait(0.9f);
+            Eq("포인트 올라가며 표시", dir.CardPoints.text, "+1,000P");
+            await Wait(2.2f);
+            Check("끝나면 콜백 + 카드 꺼짐", awakeDone && !GameUI.Tutorial.IsAwakening && !dir.Card.gameObject.activeSelf);
+            bool shownAll = true;
+            foreach (var p in parts) if (hud.Gate(p).alpha < 0.99f) shownAll = false;
+            Check("각성 뒤 HUD 전부 등장", shownAll && (GameUI.HUD.VisibleParts & HudPart.All) == HudPart.All);
+            dir.awakeningHold = hold;
+
+            // ── 강조 설명 (화면 정지) ──
+            bool done = false;
+            int changes = 0;
+            Action<int> onStep = _ => changes++;
+            GameUI.Tutorial.StepChanged += onStep;
+            GameUI.Tutorial.Play(new[]
+            {
+                TutorialStep.World(P.transform, "기본 공격", "좌클릭으로 주먹 공격. 공격은 커서 방향을 따릅니다."),
+                TutorialStep.Hud(HudPart.Quests, "현재 목표", "게이트 소속 몬스터를 전부 잡아야 봉쇄할 수 있습니다."),
+                TutorialStep.Message("게이트", "가까이 가서 [F]로 직접 닫습니다."),
+            }, () => done = true);
+            await Wait(0.2f);
+            var win = dir.Window;
+            Check("설명 창 열림 + 1단계", GameUI.Tutorial.IsShowing && GameUI.Tutorial.StepIndex == 0 && GameUI.Tutorial.StepCount == 3);
+            Check("화면 정지 + 전투 입력 차단", Mathf.Approximately(Time.timeScale, 0f) && UIState.IsGameplayInputBlocked);
+            if (Camera.main != null) Check("월드 대상 밝힘", win.HasHole);
+            Eq("아래 글자", win.footerText.text, "[Space] 다음   1/3");
+            win.RaiseNext();
+            Check("바로 연타 → 무시 (입력 보호)", GameUI.Tutorial.StepIndex == 0);
+            var router = Find<UIInputRouter>();
+            Check("설명 중 ESC·Tab 단축키 막힘", router != null && (bool)Call(router, "HotkeysBlocked", UIManager.Instance));
+
+            GameUI.Tutorial.Next();
+            await Wait(0.2f);
+            var qr = hud.PartRoot(HudPart.Quests);
+            Check("2단계: 퀘스트 목록 밝힘", GameUI.Tutorial.StepIndex == 1 && win.HasHole && qr != null);
+            if (qr != null)
+            {
+                var want = win.FromRect(qr, 0f);
+                Check("밝힌 칸이 퀘스트 목록을 덮음", want.HasValue && Contains(win.Hole, want.Value.center));
+            }
+            var root = (RectTransform)win.transform;
+            Rect cr = new Rect(win.callout.anchoredPosition, win.callout.sizeDelta);
+            Check("설명 칸이 화면 안", cr.xMin >= root.rect.xMin && cr.xMax <= root.rect.xMax && cr.yMin >= root.rect.yMin && cr.yMax <= root.rect.yMax,
+                $"{cr} / {root.rect}");
+            GameUI.Tutorial.Next();
+            await Wait(0.1f);
+            Check("3단계: 대상 없음 → 화면 전체 어둡게", GameUI.Tutorial.StepIndex == 2 && !win.HasHole);
+            Eq("마지막은 '확인'", win.footerText.text, "[Space] 확인   3/3");
+            GameUI.Tutorial.Next();
+            await Wait(0.3f);
+            Check("끝 → 콜백 + 창 닫힘 + 게임 재개", done && !win.IsOpen && Time.timeScale > 0.99f && !UIState.IsGameplayInputBlocked);
+            Check("단계 이벤트 3번", changes == 3, changes.ToString());
+            GameUI.Tutorial.StepChanged -= onStep;
+
+            // ── 상태창 설명 (3장 6단계) ──
+            var sw = UIManager.Instance.GetWindow(ScreenId.Status) as StatusWindow;
+            Check("상태창 있음", sw != null);
+            if (sw == null) return;
+            int pages = 0;
+            foreach (var pg in sw.pages) if (pg != null) pages++;
+            bool tourDone = false;
+            GameUI.Tutorial.PlayStatusTour(() => tourDone = true);
+            await Wait(0.4f);
+            var swGroup = sw.GetComponent<CanvasGroup>();
+            Check("상태창 열림 + 설명 중엔 버튼 잠금", sw.IsOpen && swGroup != null && !swGroup.interactable);
+            Check("단계 수 = 소개 + 탭 수 + 포인트", GameUI.Tutorial.StepCount == pages + 2, $"{GameUI.Tutorial.StepCount} ≠ {pages + 2}");
+            GameUI.Tutorial.Next(); // 첫 탭
+            GameUI.Tutorial.Next(); // 둘째 탭 (퀘스트)
+            await Wait(0.3f);
+            Check("탭 단계 → 그 탭으로 바뀜", sw.CurrentTab == StatusTab.Quests, sw.CurrentTab.ToString());
+            if (sw.tabButtons.Length > 1 && sw.tabButtons[1] != null)
+            {
+                var tb = win.FromRect((RectTransform)sw.tabButtons[1].transform, 0f);
+                Check("탭 버튼을 밝힘", tb.HasValue && win.HasHole && Contains(win.Hole, tb.Value.center));
+            }
+            while (GameUI.Tutorial.IsShowing) { GameUI.Tutorial.Next(); await Wait(0.05f); }
+            await Wait(0.3f);
+            Check("끝 → 콜백 · 상태창은 열린 채 상점 탭 · 버튼 다시 켜짐", tourDone && sw.IsOpen && sw.CurrentTab == StatusTab.Shop && swGroup.interactable,
+                $"done {tourDone}, open {sw.IsOpen}, tab {sw.CurrentTab}, interactable {swGroup.interactable}");
+            UIManager.Instance.CloseAll();
+            await Wait(0.3f);
+            Check("상태창 닫으면 게임 재개", Time.timeScale > 0.99f);
         }
 
         // ───────────────────────────── v0.7 지역 이름·저체력·화면 밖 화살표·상호작용 ─────────────────────────────

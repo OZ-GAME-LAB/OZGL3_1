@@ -152,8 +152,8 @@ namespace OZ.UI.Samples
         }
 
         // 바인딩은 UISourceBinder 컴포넌트가 해도 되고, 이렇게 직접 해도 된다.
-        void OnEnable() => GameUI.Bind(this);
-        void OnDisable() => GameUI.Unbind(this);
+        void OnEnable() { GameUI.Bind(this); BindPathRule(); }
+        void OnDisable() { UnbindPathRule(); GameUI.Unbind(this); }
 
         /// <summary>스테이지 시작 상태로 복구 (재도전 예시)</summary>
         public void ResetAll()

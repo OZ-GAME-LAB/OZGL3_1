@@ -57,6 +57,9 @@ namespace OZ.UI
             foreach (var w in GetComponentsInChildren<UIWindow>(true))
                 RegisterWindow(w);
 
+            // v1.3 튜토리얼 (GameUI.Tutorial): 예전 UIRoot 프리팹에도 자동으로 붙임 — 화면은 코드로 만든다
+            if (GetComponent<TutorialDirector>() == null) gameObject.AddComponent<TutorialDirector>();
+
             EnsureEventSystem();
             UISettingsApplier.Hook(); // 저장된 볼륨·화면 설정 적용
             GameUI.Register((IScreenApi)this);

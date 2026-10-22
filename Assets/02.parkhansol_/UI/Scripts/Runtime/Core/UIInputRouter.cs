@@ -10,6 +10,7 @@ namespace OZ.UI
     ///   Tab / 게임패드 Select : 상태창 토글 (v1.0 기획서 v0.5 — 스탯·퀘스트·상점·스킬·지도)
     ///   K : 상태창 스킬 탭 / M · D-Pad↑ : 상태창 지도 탭 (상태창이 없는 예전 프리팹이면 스킬 트리·지도 창)
     ///   (I 인벤토리: v0.9 기획서 범위 밖 → 기본 키 없음. inventoryBinding을 채우면 다시 켜짐)
+    ///   v1.3: 튜토리얼 설명(GameUI.Tutorial)이 떠 있으면 ESC·Tab·K·M 모두 무시 (설명 도중 창이 닫히거나 바뀌지 않게)
     /// Q/E/R, 1~4 같은 전투 입력은 플레이어 담당이 처리하고, UI는 이벤트(ISkillSource/IItemSource)만 받는다.
     /// </summary>
     [AddComponentMenu("OZ/UI/UI Input Router")]
@@ -90,6 +91,7 @@ namespace OZ.UI
 
         bool HotkeysBlocked(UIManager ui)
         {
+            if (ui.IsOpen(ScreenId.Tutorial)) return true;
             foreach (var id in hotkeyBlockingScreens)
                 if (ui.IsOpen(id)) return true;
             return false;
@@ -99,6 +101,7 @@ namespace OZ.UI
         {
             var ui = UIManager.Instance;
             if (ui == null) return;
+            if (ui.IsOpen(ScreenId.Tutorial)) return; // 설명 중엔 ESC로 아래 창(상태창)도 안 닫힘
             if (ui.Back()) return;
             if (HotkeysBlocked(ui)) return;
             ui.Open(ScreenId.Pause);

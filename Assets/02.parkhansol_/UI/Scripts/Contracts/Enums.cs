@@ -46,6 +46,8 @@ namespace OZ.UI.Contracts
         Shop = 12,
         /// <summary>[v1.0 · 기획서 v0.5] 상태창 (Tab) — 스탯·퀘스트·상점·스킬·지도</summary>
         Status = 13,
+        /// <summary>[v1.3 · 기획서 v0.5 3장] 튜토리얼 강조 설명 (GameUI.Tutorial) — 화면 정지</summary>
+        Tutorial = 14,
     }
 
     /// <summary>피해 숫자 종류 (GameUI.Damage.Show)</summary>
