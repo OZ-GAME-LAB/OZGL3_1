@@ -11,6 +11,7 @@ public enum PlayerState
     Dash,   // 회피 대시 (짧은 무적)
     Attack,
     Skill, //Q/E/R 스킬 시전
+    Ladder, // 사다리 매달림 (W/S)
     Hit,
     Dead
 }
@@ -72,6 +73,11 @@ public abstract class PlayerState_Base : IPlayerState
         if (player.IsAttackRequested)
         {
             player.ChangeState(PlayerState.Attack);
+            return true;
+        }
+        if (player.CanGrabLadder)
+        {
+            player.ChangeState(PlayerState.Ladder);
             return true;
         }
         if (player.IsJumpRequested)
@@ -193,6 +199,11 @@ public class PlayerState_Air : PlayerState_Base
         if (player.IsAttackRequested)
         {
             player.ChangeState(PlayerState.Attack);
+            return;
+        }
+        if (player.CanGrabLadder)
+        {
+            player.ChangeState(PlayerState.Ladder);
             return;
         }
         if (player.IsGrounded)
@@ -373,7 +384,86 @@ public class PlayerState_Skill : PlayerState_Base
     }
 }
 
+public class PlayerState_Ladder : PlayerState_Base
+{
+    public override void EnterState(PlayerController player)
+    {
+        base.EnterState(player);
 
+        _rigidbody.useGravity = false;            // 안 끄면 손을 놓지 않아도 아래로 미끄러짐
+        _rigidbody.linearVelocity = Vector3.zero; // 점프 중 잡았을 때 남은 속도로 튀지 않게
+        player.ResetAirDash();                    // 사다리를 잡으면 땅을 밟은 것처럼 공중 대시 회복
+
+        // 사다리 가장자리에서 잡아도 몸이 사다리 중앙에 붙어 보이게
+        Ladder ladder = player.CurrentLadder;
+        Vector3 pos = _rigidbody.position;
+        pos.x = ladder.CenterX;
+
+        float hangY = ladder.TopY - player.LadderTopOffset - 0.05f;
+        if (pos.y > hangY)
+        {
+            pos.y = hangY;
+        }
+        _rigidbody.position = pos;
+        player.FaceLadder();
+
+        _animator.SetBool("Climb", true);
+    }
+
+    public override void UpdateState(PlayerController player)
+    {
+        Ladder ladder = player.CurrentLadder;
+
+        // 트리거 밖으로 벗어남 (옆으로 밀렸거나 사다리가 사라짐)
+        if (ladder == null)
+        {
+            player.ChangeToDefaultState();
+            return;
+        }
+
+        // 뛰어내리기.
+        if (player.IsJumpRequested)
+        {
+            player.BlockLadderGrab(); // W를 누른 채 점프하면 바로 다시 붙어버리는 것 방지
+            player.ChangeState(PlayerState.Jump);
+            return;
+        }
+
+        float inputY = player.Input.MoveInput.y;
+        float feetY = player.transform.position.y;
+
+        // 꼭대기 도착 -> 발판 위로 올려놓음
+        if (inputY > 0f && feetY >= ladder.TopY - player.LadderTopOffset)
+        {
+            _rigidbody.position = ladder.TopExitPosition;
+            _rigidbody.linearVelocity = Vector3.zero;
+            player.ChangeState(PlayerState.Idle);
+            return;
+        }
+
+        // 바닥 도착. 
+        // 발판 모서리에 GroundCheck가 닿아 바로 내려지는 것 방지
+        if (inputY < 0f && player.IsGrounded && feetY <= ladder.BottomY + 0.3f)
+        {
+            player.ChangeState(PlayerState.Idle);
+        }
+        _animator.SetFloat("ClimbSpeed", inputY);
+    }
+
+    public override void FixedUpdateState(PlayerController player)
+    {
+        float inputY = player.Input.MoveInput.y;
+        _rigidbody.linearVelocity = new Vector3(0f, inputY * player.ClimbSpeed, 0f);
+    }
+
+    public override void ExitState(PlayerController player)
+    {
+        // 점프·피격·사망 등 어떤 이유로 나가도 중력이 꺼진 채 남지 않게
+        _rigidbody.useGravity = true;
+        _animator.SetBool("Climb", false);
+        player.LookAtImmediately(player.FacingX);
+    }
+}
 
 
 

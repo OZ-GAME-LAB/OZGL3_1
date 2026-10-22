@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _attackDuration = 0.4f; // IPlayerAttack이 없을 때 기본값
     [SerializeField] private float _hitStunTime = 0.3f;
 
+    [Header("Ladder")]
+    [SerializeField] private float _climbSpeed = 3f;
+    [SerializeField] private float _ladderRegrabDelay = 0.3f;
+    [SerializeField] private float _ladderTopOffset = 0.9f; // 발이 꼭대기보다 이 수치만큼 아래면 바로 올라감
+
     [Header("Debug")]
     [SerializeField] private PlayerState _currentStateType;
     [SerializeField] private float _debugWalkSpeed; // 인스펙터 확인용. 민첩·신속 버프가 곱해진 최종 걷기 속도
@@ -55,11 +60,16 @@ public class PlayerController : MonoBehaviour
     private float _moveSpeedBonus; // 민첩 스탯 보너스. 0.03 = +3%
     private float _walkInputMultiplier = 1f;
 
+    private Ladder _currentLadder;
+    private float _nextLadderGrabTime;
+
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
     public PlayerSkill Skills { get { return _skills; } } //PlayerState_Skill이 장착 스킬·쿨다운을 읽기 위해
     public PlayerState CurrentStateType { get { return _currentStateType; } }
-
+    public Ladder CurrentLadder { get { return _currentLadder; } }
+    public float ClimbSpeed { get { return _climbSpeed; } }
+    public float LadderTopOffset { get { return _ladderTopOffset; } }
 
     public bool IsGrounded { get { return Physics.CheckSphere(_groundCheck.position, _groundRadius, _groundLayer); } }
     public bool IsJumpRequested { get; private set; }
@@ -85,6 +95,22 @@ public class PlayerController : MonoBehaviour
                 return true;
             }
             return _canAirDash && !_airDashUsed;
+        }
+    }
+
+    public bool CanGrabLadder
+    {
+        get
+        {
+            if (_currentLadder == null || Time.time < _nextLadderGrabTime)
+            {
+                return false;
+            }
+            float inputY = _inputManager.MoveInput.y;
+            float feetY = transform.position.y;
+            if (inputY > 0.5f) return feetY < _currentLadder.TopY - 0.05f;
+            if (inputY < -0.5f) return feetY > _currentLadder.BottomY + 0.3f;
+            return false;
         }
     }
 
@@ -178,6 +204,7 @@ public class PlayerController : MonoBehaviour
             {PlayerState.Dash, new PlayerState_Dash() },
             {PlayerState.Attack, new PlayerState_Attack() },
             {PlayerState.Skill, new PlayerState_Skill() },
+            {PlayerState.Ladder, new PlayerState_Ladder() },
             {PlayerState.Hit, new PlayerState_Hit() },
             {PlayerState.Dead, new PlayerState_Dead() }
         };
@@ -378,4 +405,30 @@ public class PlayerController : MonoBehaviour
         _rigidbody.rotation = Quaternion.LookRotation(_facingX > 0 ? Vector3.right : Vector3.left);
     }
 
+    public void BlockLadderGrab()
+    {
+        _nextLadderGrabTime = Time.time + _ladderRegrabDelay;
+    }
+
+    public void FaceLadder()
+    {
+        _rigidbody.rotation = Quaternion.LookRotation(Vector3.forward);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Ladder ladder))
+        {
+            _currentLadder = ladder;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // 사다리 두 개가 붙어 있을 때 먼저 나간 쪽이 지금 사다리를 지우지 않게
+        if (other.TryGetComponent(out Ladder ladder) && ladder == _currentLadder)
+        {
+            _currentLadder = null;
+        }
+    }
 }
