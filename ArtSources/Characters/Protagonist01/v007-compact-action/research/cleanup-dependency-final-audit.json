@@ -1,0 +1,103 @@
+{
+  "audited_utc": "2026-10-22T04:22:28.973941+00:00",
+  "scope": "Serialized GUID references to 74 retired non-code assets plus actually deleted legacy Editor C# GUIDs, in Assets and ProjectSettings. Historical raw strings in migration code are not active serialized object references.",
+  "retired_noncode_guids_checked": 74,
+  "additional_deleted_editor_guids": [
+    {
+      "guid": "5238b61ee20368e42ab7fd4422992068",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/MotionPolishBake.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "26ea84b84b94cdb4590ecaa84997e356",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/MotionPolishBuilder.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "c7588e91fe6bd1c4bb738da777ea8bb2",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/MotionPolishReviewCapture.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "cc8d23ced6e0a5a479f6f8903bc1c4e9",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/NaturalMotionBake.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "85a695767197b4e40bb9211588f67d68",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/NaturalMotionBuilder.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "d6b2ff591f602fc4e997597a458d46ce",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/NaturalMotionCapture.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "ba425cea7d86a214196ebc1155f24dd5",
+      "path": "Assets/Art/Characters/Protagonist01/Editor/NaturalMotionProbe.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    },
+    {
+      "guid": "664938e9426e33b4fbdedf602c3e9e46",
+      "path": "Assets/Art/Characters/Protagonist01/MotionPolish_v004/Editor/MotionPolishHandBuilder.cs",
+      "kind": "Retired legacy editor support code; meta read from git HEAD after approved deletion."
+    }
+  ],
+  "retired_guids_total": 82,
+  "files_scanned": 7018,
+  "dangling_retired_guid_referrers": [],
+  "retired_paths_still_present": [],
+  "runtime_support_code": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/ProtagonistHandGrip.cs",
+      "exists": true,
+      "meta_exists": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/ProtagonistPlaygroundCamera.cs",
+      "exists": true,
+      "meta_exists": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/ProtagonistVisualGrounding.cs",
+      "exists": true,
+      "meta_exists": true
+    }
+  ],
+  "build_scenes": [
+    "Assets/Scenes/MainScene.unity"
+  ],
+  "missing_build_scene_paths": [],
+  "source_gait_report_sha256": "a30aba6dbcee363a0362d505146ccca8112067b9c5004b1d4af5e7cdcc89a9c3",
+  "source_gait_clips": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Idle_Fists.anim",
+      "sha256": "49c4e24fae60aadcc6bde841a163851bc78d17b3f8a3015f62d98ac91ca0c822",
+      "expected_sha256": "49c4e24fae60aadcc6bde841a163851bc78d17b3f8a3015f62d98ac91ca0c822",
+      "preserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Walk_Fists.anim",
+      "sha256": "3240c03dab6ac3835e3dd41bc74e164ba347cceb0426243c6cd459e2dca94c76",
+      "expected_sha256": "3240c03dab6ac3835e3dd41bc74e164ba347cceb0426243c6cd459e2dca94c76",
+      "preserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Run_Fists.anim",
+      "sha256": "4aa637acd5d04a420cbb63a814322a8e6b3c89d5491cc52ac1ac9191fe5c183b",
+      "expected_sha256": "4aa637acd5d04a420cbb63a814322a8e6b3c89d5491cc52ac1ac9191fe5c183b",
+      "preserved": true
+    }
+  ],
+  "source_skeleton": {
+    "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Skeleton.prefab",
+    "sha256": "735a6700ab25f79e74e1aed3e83a1826565e358e0f5dd451fe644986ec705f6b",
+    "expected_sha256": "735a6700ab25f79e74e1aed3e83a1826565e358e0f5dd451fe644986ec705f6b",
+    "hash_preserved": true,
+    "only_gameobjects_and_transforms": true,
+    "transform_count": 29,
+    "nonzero_serialized_external_guids": []
+  },
+  "passed": true
+}

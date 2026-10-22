@@ -1,0 +1,75 @@
+{
+  "version": "v006-chibi-cap",
+  "created_local_date": "2026-10-21",
+  "request": "New original short cute approximately three-head protagonist inspired by the supplied hat character reference, with a springier action direction.",
+  "references": [
+    "https://www.youtube.com/shorts/ujVLoPdd1Pg",
+    "https://x.com/cartridge102"
+  ],
+  "previous_version_preserved": "v005-natural-motion",
+  "concept": {
+    "provider": "built-in image_gen",
+    "file": "Protagonist_ChibiCap_Concept.png",
+    "prompt_file": "concept-prompt.txt"
+  },
+  "model_generation": {
+    "task_id": "01a15d2b-ee91-7588-8dd9-041192a87f0b",
+    "task_type": "image-to-3d",
+    "ai_model": "meshy-t2.5",
+    "model_type": "smart-topology",
+    "target_polycount": 8000,
+    "pose_mode": "t-pose",
+    "target_formats": [
+      "fbx",
+      "glb"
+    ],
+    "should_texture": true,
+    "enable_pbr": false,
+    "texture_resolution": "2k",
+    "image_enhancement": false,
+    "expected_credits": 15,
+    "status": "SUCCEEDED",
+    "consumed_credits": 15,
+    "actual_triangles": 8079,
+    "actual_geometry_vertices": 4225,
+    "material_count": 1
+  },
+  "rigging": {
+    "task_id": "01a15d31-2ce9-7463-a3d7-392b1ba82785",
+    "input_task_id": "01a15d2b-ee91-7588-8dd9-041192a87f0b",
+    "height_meters": 1.2,
+    "expected_credits": 5,
+    "status": "SUCCEEDED",
+    "consumed_credits": 5,
+    "bone_count": 24
+  },
+  "authorization": "User previously authorized efficient generation without repeated confirmation and unlimited necessary resources; this turn explicitly requests a new model.",
+  "scope": {
+    "model_count": 1,
+    "gameplay_integration": false,
+    "vfx_changes": false,
+    "old_model_overwritten": false
+  },
+  "total_meshy_credits": 20,
+  "status": "COMPLETE",
+  "validation": {
+    "actual_unity_views": [
+      "Front",
+      "ThreeQuarter",
+      "Side_Orthographic",
+      "Side_2p5D",
+      "Back"
+    ],
+    "static_model_height_m": 1.2,
+    "rigged_bones": 24,
+    "fist_morphs": [
+      "Grip_R",
+      "Grip_L"
+    ],
+    "elastic_preview_clip": "Punch_Elastic_Preview",
+    "elastic_preview_seconds": 1.2,
+    "old_fourteen_motions_migrated": false,
+    "gameplay_connected": false,
+    "vfx_changed": false
+  }
+}

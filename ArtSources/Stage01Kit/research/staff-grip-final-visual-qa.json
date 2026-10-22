@@ -1,0 +1,772 @@
+{
+  "verdict": "PASS within the stated actual capture, surface-sampling and visual-review scope",
+  "session": "20261022_051454560",
+  "captureReport": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\review-report.json",
+  "captureReportSHA256": "6be5c606ce31013a62a27f430e3652aac31be21a75b589a315ab480839bc7174",
+  "actualSurfaceAuditSHA256": "0afbc7a8db7ae8630cca17752837383f6f4e084124e0786ba37942b9c8cc1a8b",
+  "sequenceSurfaceAuditSHA256": "692b50194ca78150a5f18f5305f3a8cb967771b2fe693d46de6a928acfa41a17",
+  "baseMeshSHA256": "e474f2b2a4fc8e8dff7625db29d497e1b9549558713a132304a152852a48f8f4",
+  "weaponMeshes": [
+    {
+      "mesh": "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_SwordClosedGrip.asset",
+      "meshSHA256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f",
+      "addedClosedHandTriangleCount": 1044
+    },
+    {
+      "mesh": "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_StaffClosedGrip.asset",
+      "meshSHA256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53",
+      "addedClosedHandTriangleCount": 1044
+    }
+  ],
+  "surfaceSummaries": [
+    {
+      "clip": "Staff_Cast_Forward",
+      "sampleCount": 21,
+      "times": [
+        0.0,
+        0.03333333507180214,
+        0.06666667014360428,
+        0.10000000149011612,
+        0.13333334028720856,
+        0.1666666716337204,
+        0.20000000298023224,
+        0.23333333432674408,
+        0.2666666805744171,
+        0.30000001192092896,
+        0.3333333432674408,
+        0.36666667461395264,
+        0.4000000059604645,
+        0.4333333373069763,
+        0.46666666865348816,
+        0.5,
+        0.5333333611488342,
+        0.5666666626930237,
+        0.6000000238418579,
+        0.6333333253860474,
+        0.6666666865348816
+      ],
+      "gridMinimumRadialGapM": 0.001699701677235186,
+      "gridWorstTime": 0.0,
+      "gridWorstSourceTriangle": [
+        10125,
+        10126,
+        10127
+      ],
+      "criticalMinimumRadialGapM": 0.0017366154461594605,
+      "criticalWorstTime": 0.0,
+      "criticalWorstSourceTriangle": [
+        10125,
+        10126,
+        10127
+      ],
+      "posesWithGridPenetrationBelowMinus0p1mm": 0,
+      "posesWithCriticalPenetrationBelowMinus0p1mm": 0
+    },
+    {
+      "clip": "Sword_Horizontal_Slash",
+      "sampleCount": 21,
+      "times": [
+        0.0,
+        0.03333333507180214,
+        0.06666667014360428,
+        0.10000000149011612,
+        0.13333334028720856,
+        0.1666666716337204,
+        0.20000000298023224,
+        0.23333333432674408,
+        0.2666666805744171,
+        0.30000001192092896,
+        0.3333333432674408,
+        0.36666667461395264,
+        0.4000000059604645,
+        0.4333333373069763,
+        0.46666666865348816,
+        0.5,
+        0.5333333611488342,
+        0.5666666626930237,
+        0.6000000238418579,
+        0.6333333253860474,
+        0.6666666865348816
+      ],
+      "gridMinimumRadialGapM": 0.0012278948416678502,
+      "gridWorstTime": 0.6666666865348816,
+      "gridWorstSourceTriangle": [
+        9813,
+        9814,
+        9815
+      ],
+      "criticalMinimumRadialGapM": 0.0012278948416678502,
+      "criticalWorstTime": 0.6666666865348816,
+      "criticalWorstSourceTriangle": [
+        9813,
+        9814,
+        9815
+      ],
+      "posesWithGridPenetrationBelowMinus0p1mm": 0,
+      "posesWithCriticalPenetrationBelowMinus0p1mm": 0
+    }
+  ],
+  "visualReview": {
+    "all56DetailFrames": [
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 0,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0000.png",
+        "sha256": "abeb1c301a6c08b359e5bfe1971f8044197ab6ad544c6463253d158365178025",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 1,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0001.png",
+        "sha256": "5c1e1a8c06b1ae8a00e5761cc98c1fdd8dc2dcf88894ae03846c19745c36fc78",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 2,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0002.png",
+        "sha256": "20da69ab45f42d2c4d04af24955d34d7b5858df2754623bb7df76860cd09341f",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 3,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0003.png",
+        "sha256": "1b26394d29eba32a4d48c1fc8ac71b05dc9565b4acb5a068c1b4c3a52d460e14",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 4,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0004.png",
+        "sha256": "448675d0988392d4e326a9dd2151a0afd014a58f97dd54823b41cd3cdffc7fe4",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 5,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0005.png",
+        "sha256": "f4ea518ba4bfb9ae8c13e6fcbe1f73a3f07620aa637ed04e52b36bd96133bc14",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 6,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0006.png",
+        "sha256": "159276bd8344625426487062a9cb4ce1848a324e6d787065649b52acba385392",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 7,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0007.png",
+        "sha256": "6f6ed2a7035474ddba6bcad05ade5417128a952c641ed67f3e781e17568fdc0c",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 8,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0008.png",
+        "sha256": "297078834adbb2e8d640e04ed6965ef92207354d51484582bc768d5237d97b76",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 9,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0009.png",
+        "sha256": "2cbdcc4162b5a1fa8c74db4689b5a046e4976f04811255bd675f65023b67f437",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 10,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0010.png",
+        "sha256": "428c904316554f72d68dd8ddd15318816866f51b5c95ca95f6674d337b320795",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 11,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0011.png",
+        "sha256": "0881737e0286a8e170d4f5c0d1bbfab3cf1381b1aa24580175115979b0ce2cb8",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 12,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0012.png",
+        "sha256": "3646e6fea4c1402ce1791da07cd60823062ec59694707b40b80c71697bfbbb93",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 13,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0013.png",
+        "sha256": "e1c483a98ec24c580d3ccd0f8edcf4fd342a8d4db4bf981a3312a86f5df01855",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 14,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0014.png",
+        "sha256": "f9bbf91630f3c7922a1d97af3a0de82993eafd0b8c0c89b33a8567ec7d2bcec0",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 15,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0015.png",
+        "sha256": "83ac7ac80ac40bdd815aab16b43f6a5da7e4bb246dfd0f70507aeaa2d2612118",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 16,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0016.png",
+        "sha256": "5cc54f48655b3d8576da545e9bdca465b53cfed1ae3aae9467e5af29ab32a3e4",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 17,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0017.png",
+        "sha256": "42cbc3df213fda2d55733d19e94bf5540a2477b6847864c4387a8d1f0be6b98f",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 18,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0018.png",
+        "sha256": "fb755e502bc0d960fe31f62edca6a229094eb8ae2a22c0fea673fd858b20f65a",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 19,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0019.png",
+        "sha256": "867708d95fc394904f45f587948edc8fa29802aeb02b1a39d06ef2787316eec8",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 20,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0020.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 21,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0021.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 22,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0022.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 23,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0023.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 24,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0024.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 25,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0025.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 26,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0026.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Sword_Grip_Side_25D",
+        "frame": 27,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D\\0027.png",
+        "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 0,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0000.png",
+        "sha256": "c3c7372d27daa7b2d70bd4bf2953f2c4870f0bf9fa4527172c6ce80d9822caa2",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 1,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0001.png",
+        "sha256": "a25e23c2100f57077c0ca5df1c0ceb10a91614521ea6abd74d189fb80313d5ba",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 2,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0002.png",
+        "sha256": "0a0b32e2ce673daf7c4de407d177c1199dc982f6912547506e40b2a1731eef3c",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 3,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0003.png",
+        "sha256": "b5b67f740544cb3e3ce26416401c0450a4b740585e1c03612b319db04630f33f",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 4,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0004.png",
+        "sha256": "8d89283267ae64cd7c944e3d7b6f72c6f5fc687c0ab3788a2dd3e8cea38f4472",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 5,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0005.png",
+        "sha256": "5b337291d1451208a1fa84c65faa13c5b41bf4f957e94784bc469cde268ef0c0",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 6,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0006.png",
+        "sha256": "63838fe57e78df3562485a3b531d988982c89dfbbee05a52d5234ccac82d9149",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 7,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0007.png",
+        "sha256": "0ac705034f24248b68cad3bc2cf6c8c27f392ef8e254d4c743b3fe80952edb14",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 8,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0008.png",
+        "sha256": "59291083b209faaadd06df1da5b5537cffffd2d58484fa7ff4069e821c4fe61d",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 9,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0009.png",
+        "sha256": "645baacc1e70fea5b5f0925a6c09ea5f11cf145ce68ae4a573d1027de1353898",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 10,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0010.png",
+        "sha256": "bbc636caf3f12980d5f58582af731bd4c2c95bfb477654742d20a4aee203ec9e",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 11,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0011.png",
+        "sha256": "dd7fa8647ff711188149dacff63bef8214a4f8122be64f7d2cc41196575ace1f",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 12,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0012.png",
+        "sha256": "691ec96dd6d2cbeea9455223d0a5d47f40fa5a0d8b53075c99d778700eb1dd0c",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 13,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0013.png",
+        "sha256": "ae08064de01ee46374d451bcfe12b27c6cd0457d6075209b102f7745003b241c",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 14,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0014.png",
+        "sha256": "13a44a6c37939738e1008a76f372df0dbcf122cc63dc85603d5fddbe2c5754af",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 15,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0015.png",
+        "sha256": "9c5ce02b0309b4e073a3e965b6df9bdac9a425d6c0a31934e1fea0d3fc2d2e57",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 16,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0016.png",
+        "sha256": "5dcb009db5639270459863ff27597b3ffa290cee89d7d7c12958fb6d34dbb2ce",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 17,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0017.png",
+        "sha256": "5bb42b77654b73733abcfeeaf879519d9d0126186864fa0bea20061a1d6ad6ab",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 18,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0018.png",
+        "sha256": "950105c359517f3b3b3bda542478e2e64734ee857721de965031a0a7e9f61d6f",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 19,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0019.png",
+        "sha256": "a303a75c57e4871cf97fc4e96c3a54b38460fa991aa9c91f369bce7c456c09cd",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 20,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0020.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 21,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0021.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 22,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0022.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 23,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0023.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 24,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0024.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 25,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0025.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 26,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0026.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      },
+      {
+        "name": "Staff_Grip_Side_25D",
+        "frame": 27,
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D\\0027.png",
+        "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13",
+        "resolution": [
+          720,
+          720
+        ]
+      }
+    ],
+    "native720DetailFramesAdditionallyViewed": {
+      "Sword": [
+        0,
+        8,
+        19,
+        20
+      ],
+      "Staff": [
+        0,
+        8,
+        20
+      ]
+    },
+    "threeOrthographicAxesAtFourUsedPoses": [
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Sword_Horizontal_Slash_0000ms_Grip175_XY.png",
+        "sha256": "55694931f47d8385ff252aa91507dc1a7ae1351cb78200997d8590ca6ae65bc6"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Sword_Horizontal_Slash_0000ms_Grip175_YZ.png",
+        "sha256": "e66817459df49032d7f5b52f712f87d133f9b7568730b3d708d82319f9d9eb87"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Sword_Horizontal_Slash_0000ms_Grip175_XZ.png",
+        "sha256": "0448391f1cce273752f4192ad33cff7e5f582c071c67fdf0449a1bb33404badb"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Sword_Horizontal_Slash_0240ms_Grip175_XY.png",
+        "sha256": "a69ed233e7d12cef9fc83cbaecfd116101a903c3551b0892688c0548fd7ea777"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Sword_Horizontal_Slash_0240ms_Grip175_YZ.png",
+        "sha256": "d2c389c20725f4d032c631c56b37d35fc31f3c1eedfbcce2a2e899bb41530e38"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Sword_Horizontal_Slash_0240ms_Grip175_XZ.png",
+        "sha256": "aa8f3d4a3b83d5df4ea9f7fa3c0a5af309f97d6d6baf9d1d109c8608be18e85d"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Staff_Cast_Forward_0000ms_Grip150_XY.png",
+        "sha256": "1981da8d69e67360fcd6fe9d10d4cfe8758af545a741613a236edce8f04fa6e8"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Staff_Cast_Forward_0000ms_Grip150_YZ.png",
+        "sha256": "fdd3e05f5818babc7a534b61fa2cde2568913a99174fa47dcf952c2a34eaa300"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Staff_Cast_Forward_0000ms_Grip150_XZ.png",
+        "sha256": "83f287f0337595eefedc869ddf8dfbef76665ace64613cba10849b114b5884c5"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Staff_Cast_Forward_0240ms_Grip150_XY.png",
+        "sha256": "1a5c8886d86be559b037b1ef3acd8fc85dab0ebf8f1b00117b19548c5369769d"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Staff_Cast_Forward_0240ms_Grip150_YZ.png",
+        "sha256": "2de40d9f47b565b7783af9d18cb418e02be8cc352cb37b2a0c2052a2a1ddce11"
+      },
+      {
+        "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripProbe\\Staff_Cast_Forward_0240ms_Grip150_XZ.png",
+        "sha256": "dfc52f44ee0451e7c1da7ee7a5c5d9e4b71e6d99a5de462f7c88154b009a4387"
+      }
+    ],
+    "mainContextFramesPerWeapon": [
+      0,
+      8,
+      20
+    ],
+    "finding": "Compact fingers enclose the handle; the opposed thumb closes across the finger mass. The discarded large skin plate, torn connector and wrist spikes are absent in the reviewed rendered sequence. The original sleeve has tiny retained light atlas flecks visible in close-up, not a new geometric hole; they do not read in the game-scale view. The dark cuff is an intentional overlapping sleeve extension, not exact19-point seam stitching."
+  },
+  "preservationRegression": {
+    "regression": [
+      {
+        "clip": "Sword_Horizontal_Slash",
+        "baselineSession": "20261022_050241555",
+        "currentSession": "20261022_051454560",
+        "baselineProbeSHA256": "5a7250c7e229e1944bcd20c0e6b2423e6df4d00946f3154d254b20f2c2d7e979",
+        "currentProbeSHA256": "33c332f9936196eabc70a9ed9757c888944bee8241096b9d9d32d1639f184a20",
+        "authoredBodyVertexCount": 2700,
+        "authoredBodyTriangleCount": 900,
+        "bindPositionsAndWeightsExact": true,
+        "bodyTriangleSourceIndicesExact": true
+      },
+      {
+        "clip": "Staff_Cast_Forward",
+        "baselineSession": "20261022_050241555",
+        "currentSession": "20261022_051454560",
+        "baselineProbeSHA256": "2d57d05f6cd5af6915222f0570db38e14b15d677a8543394aa5bcbe04ce37dd7",
+        "currentProbeSHA256": "2d57d05f6cd5af6915222f0570db38e14b15d677a8543394aa5bcbe04ce37dd7",
+        "authoredBodyVertexCount": 2700,
+        "authoredBodyTriangleCount": 900,
+        "bindPositionsAndWeightsExact": true,
+        "bodyTriangleSourceIndicesExact": true
+      }
+    ],
+    "staffMeshByteIdenticalToPreviousDarkCuffCandidate": true,
+    "staffMeshSHA256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53",
+    "swordMeshSHA256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f"
+  },
+  "limits": "Finite15-barycentric samples plus one projected-axis closest point per exported triangle. Signed radial distance to actual mounted prop faces, not Euclidean closest distance or proof over continuous time. Positive clearance does not prove pressure contact. Thumb contacts/opposes the finger volume, rather than needing direct shaft contact. Probe selection includes every appended triangle and selected original wrist/cloth, not the entire body. ForcedIdle150 is diagnostic and excluded from the42 used weapon poses. The sequence submits21 times from0 to20/30 seconds, each limited to the actual saved clip length. No runtime controller, gameplay integration or VFX is certified here."
+}

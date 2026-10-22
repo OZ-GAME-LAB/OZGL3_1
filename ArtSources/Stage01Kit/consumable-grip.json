@@ -1,0 +1,71 @@
+{
+    "success": true,
+    "method": "Both hands evaluated through the actual root Mecanim Animator controller, never a standalone AnimationClipPlayable. Right-facing Drink .22-.65 sampled at 173 normalized poses with FacingLeft=false. Head world position + up*.05 + forward*.15 estimates mouth. Minimize abs(socket grip-to-mouth distance-.154m). A fixed right mount plus hand-local X reflection is stored. Contact is rechecked with FacingLeft=true at the same normalized pose; bones, wrist animation and IK remain unchanged.",
+    "clip": "Drink",
+    "socket": "RightHand/WeaponSocket",
+    "normalizedTime": 0.6274999380111694,
+    "handToMouthDistance": 0.13217882812023164,
+    "targetDistance": 0.15400001406669618,
+    "bottleMouthError": 0.021821362897753717,
+    "localPosition": {
+        "x": -0.06642366945743561,
+        "y": 0.041924431920051578,
+        "z": -0.04967329651117325
+    },
+    "gripLocal": {
+        "x": 0.0,
+        "y": 0.04500000178813934,
+        "z": 0.0
+    },
+    "mouthTargetWorld": {
+        "x": -0.014316923916339875,
+        "y": 1.2532960176467896,
+        "z": 0.09460266679525376
+    },
+    "gripWorld": {
+        "x": 0.05503266304731369,
+        "y": 1.3631834983825684,
+        "z": 0.07038247585296631
+    },
+    "bottleMouthWorld": {
+        "x": -0.02576569654047489,
+        "y": 1.235154628753662,
+        "z": 0.09860110282897949
+    },
+    "localRotation": {
+        "x": 0.415555477142334,
+        "y": 0.0,
+        "z": -0.55568528175354,
+        "w": 0.720088541507721
+    },
+    "potionPrefabs": [
+        "Potion_Health",
+        "Potion_Attack",
+        "Potion_Defense",
+        "Potion_Speed"
+    ],
+    "mirroredPoseChecked": true,
+    "mirroredSocket": "LeftHand/WeaponSocket_Left",
+    "mirroredBottleMouthError": 0.021101251244544984,
+    "mirroredLocalPosition": {
+        "x": 0.06642366945743561,
+        "y": 0.041924431920051578,
+        "z": -0.04967329651117325
+    },
+    "mirroredMouthTargetWorld": {
+        "x": 0.019720854237675668,
+        "y": 1.255466103553772,
+        "z": 0.09698094427585602
+    },
+    "mirroredBottleMouthWorld": {
+        "x": 0.03416714817285538,
+        "y": 1.2401163578033448,
+        "z": 0.09795701503753662
+    },
+    "mirroredLocalRotation": {
+        "x": 0.415555477142334,
+        "y": 0.0,
+        "z": 0.55568528175354,
+        "w": 0.720088541507721
+    }
+}

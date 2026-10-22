@@ -1,0 +1,50 @@
+{
+    "source": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset",
+    "sourceSha256": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+    "output": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset",
+    "swordOutput": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_SwordClosedGrip.asset",
+    "staffOutput": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_StaffClosedGrip.asset",
+    "method": "Base preserves original7101 streams/topology and original75/100 records;150/175 use sourceRight100 without failed hand warps. Weapon variants remove only the independently UV-validated right-hand skin component and append a compact authored closed hand with an independently closed dark cuff overlapping inside the source sleeve. Original sleeve/body/left-hand indices remain. Source wrist-boundary data supplies only averaged-weight metadata; its nonplanar skin topology is not stitched into the new cuff. Distal hand uses RightHand only. Fixed neutral, SwordGrip and StaffGrip prefabs select their respective mesh; no animation object-reference mesh keys or gameplay code are connected.",
+    "skinSelection": "ArtSources/Stage01Kit/research/right-hand-skin-selection.json",
+    "skinSelectionSha256": "585eecf9865e737dea00e4f5a694578d4a82e68fd5e50ebf5e24a92220abfb0b",
+    "skinSelectionMethod": "Read-only decode of original v006 Unity Mesh inline streams. RightHand bone index15 bindpose gives local metres. Candidate face: max RightHand weight >0.25, all three localY within (-0.12,0.22), atlas UV-centroid sRGB R>90 (nearest pixel, V flipped). Largest welded-edge-connected candidate component only, with position weld at 1 micrometre rounding. This retains two isolated skin-colored cuff triangles and removes all connected hand including grey baked finger/nail shadows. No geometry or source asset mutated.",
+    "weightRule": "Retain the prior222-vertex distal RightHand correction: original influence>=.5, bindY.025..19, smoothstepY.025..065 to weight1; other influences renormalize proportionally. Vertices outside this rule and all left-hand weights unchanged. Closed cuff blends averaged original final source-cuff weights toward RightHand; no exact seam stitching. Distal closed-hand vertices use RightHand only.",
+    "baseMeshSha256": "e474f2b2a4fc8e8dff7625db29d497e1b9549558713a132304a152852a48f8f4",
+    "swordMeshSha256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f",
+    "staffMeshSha256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53",
+    "sourceUnchanged": true,
+    "requiresVisualApproval": true,
+    "originalVertexCount": 7101,
+    "originalTriangleCount": 8079,
+    "baseVertexCount": 7101,
+    "baseTriangleCount": 8079,
+    "swordVertexCount": 10233,
+    "swordTriangleCount": 8652,
+    "staffVertexCount": 10233,
+    "staffTriangleCount": 8652,
+    "removedRightHandSkinTriangles": 471,
+    "changedWeightVertices": 222,
+    "maximumAddedHandWeight": 0.22249829769134522,
+    "skinUv": {
+        "x": 0.27063995599746706,
+        "y": 0.5803614854812622
+    },
+    "gripCenterMetres": {
+        "x": -0.024000000208616258,
+        "y": 0.06800000369548798,
+        "z": -0.020500000566244127
+    },
+    "mountRotationEuler": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "axisHandMetres": {
+        "x": 0.0,
+        "y": 0.7071067094802856,
+        "z": 0.7071068286895752
+    },
+    "propScale": 0.699999988079071,
+    "cylindricalGripFrameWeight": 150.0,
+    "swordGripFrameWeight": 175.0
+}

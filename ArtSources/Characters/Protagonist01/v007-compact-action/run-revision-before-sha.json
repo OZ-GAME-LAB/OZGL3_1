@@ -1,0 +1,2131 @@
+{
+  "workspace": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1",
+  "reportSHA256": "6be5c606ce31013a62a27f430e3652aac31be21a75b589a315ab480839bc7174",
+  "sourceSession": "20261022_051454560",
+  "files": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips.meta",
+      "sha256": "1f8820f98e335098872b2c0049700fbf159e21210dbe096b818e38674f1f0c00",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes.meta",
+      "sha256": "1f2fbd6629995ba86ac13cf05c1ca3b136091e2bffcf7c4e56aeb3d29b370a1b",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs.meta",
+      "sha256": "a92267cb1f7b6b4a48146ddbe20e482a2f9504249ab6ad65d0d7b538b2a0d467",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/README_ko.txt",
+      "sha256": "47020aafb152b3568914e67460bab77e2ba2f08cadfc97ddac4a5e0e77496ac1",
+      "bytes": 8688,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/README_ko.txt.meta",
+      "sha256": "dc9a572d672e1598ffa1e345c860f81315ac98d678593c1d03a2adbbbd1c3579",
+      "bytes": 158,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait.meta",
+      "sha256": "64e8f18a216ed7468f0b6a3b9740617ee012de7cff4d573aef56904626647568",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim",
+      "sha256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "bytes": 1716866,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim.meta",
+      "sha256": "2fbc08e095b4fdaf24eedd2eeb22ef44b5808159a7b46f0237506b155aa774b5",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim",
+      "sha256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "bytes": 1737171,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim.meta",
+      "sha256": "f60e84e5b169e315a5b5bf3a5f8bfada186549e5a615967bb648962441ecb6e0",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim",
+      "sha256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "bytes": 6386349,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim.meta",
+      "sha256": "3f061f28b7c054d698198b7294540ab90b276cc3d442d65fc8a8ff01f24a583a",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim",
+      "sha256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "bytes": 2314367,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim.meta",
+      "sha256": "71bb4870b89894e835af7aaf04fd46292d9df2edbceed0148a66cebdb587edbb",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim",
+      "sha256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "bytes": 3179810,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim.meta",
+      "sha256": "cfae7c27c6da68f0cac9e4b8187cdcc173bb9e6acdeb6916963034ac4107ae1f",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim",
+      "sha256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "bytes": 319448,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim.meta",
+      "sha256": "cc9a3faf83d0e88f4c7b17aedf6898e6bdc15ea79fa4e2f3dd48f08b01f7074d",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "sha256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "bytes": 319918,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim.meta",
+      "sha256": "c94201867bbf7161dd4f5f294f283a229c8ff96b32ea080eb983db5ec2ea5441",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim",
+      "sha256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "bytes": 2908617,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim.meta",
+      "sha256": "58aa2af74270bad16518d614b6eb8e8bdba402a1dc28c6f2b043f2c6d22f2724",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim",
+      "sha256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "bytes": 1225279,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim.meta",
+      "sha256": "4db3cf7b9547b7e94303622d13009cc9b7d9b21b29d4241227697dbbf4a4be3b",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "sha256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "bytes": 319666,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim.meta",
+      "sha256": "172035a91b144d9aac2b65cc3c72d43c3ac99073c6a696598cf4bf7e81811900",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim",
+      "sha256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "bytes": 656854,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim.meta",
+      "sha256": "880b805b7586712a6f7ebba3a3dbf4cba442679d8e947dcd5aba18a56014998d",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim",
+      "sha256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "bytes": 3365968,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim.meta",
+      "sha256": "14a325a669c569ceda4f6abfec01b66d8fb88ecdde1398f969cfe11e972f19b3",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim",
+      "sha256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "bytes": 3798054,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim.meta",
+      "sha256": "914abf6070769e0bc6aabb08da2fe936f31aae1b1cc85ac94f8523cebd445600",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Punch_Right_Jab.anim",
+      "sha256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "bytes": 1471164,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Punch_Right_Jab.anim.meta",
+      "sha256": "f29d4f5dc8ed24933afe7efb23c0b689dce47458f353de7a1869f7a380456159",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim",
+      "sha256": "6e60b2828969595b84e8bbe37b9c07da87422a49d135a6072ca9e070755c0a72",
+      "bytes": 2068246,
+      "allowChange": true,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim.meta",
+      "sha256": "5814417666bb340f140ecb251409aeb7c07b61bd415f356bf889e7a265b95ca3",
+      "bytes": 188,
+      "allowChange": true,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Staff_Cast_Forward.anim",
+      "sha256": "2203a5017f63d1847e096354d8a4a90a31d28ac52b0c5250eca5f63b1ddf9ec2",
+      "bytes": 1769388,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Staff_Cast_Forward.anim.meta",
+      "sha256": "a02283b15ba63647c4a5a98ffb2d930bc30ef445fe0ecc290de45e07b142d5d0",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Sword_Horizontal_Slash.anim",
+      "sha256": "82059ad24c603cce3cfeba42fcc4f80a5995647192cf723c4f7d75c36de24a83",
+      "bytes": 1766334,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Sword_Horizontal_Slash.anim.meta",
+      "sha256": "cc1ea0e87cc8fa422c2f44c9fdbf765ddaa0d671e483dbc243aa3b28fe1818b8",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim",
+      "sha256": "ff96b55f7212b1aa614e0d40cf4aac73438545614f1f85de0339548a137d253c",
+      "bytes": 2731868,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim.meta",
+      "sha256": "294100361195f1d12e5128ab052b3ceb17bc0021067d141ea6d89c456bd84169",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset",
+      "sha256": "e474f2b2a4fc8e8dff7625db29d497e1b9549558713a132304a152852a48f8f4",
+      "bytes": 1652510,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset.meta",
+      "sha256": "8b1f0a5acfdff42d4f91fa23aab7b3acf4fe19fef3c083c754576ea2f167281e",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_StaffClosedGrip.asset",
+      "sha256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53",
+      "bytes": 2160522,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_StaffClosedGrip.asset.meta",
+      "sha256": "c6b9939f8dbe4efaca6b0476a2d4497e607f692944eabd9d4fbc9945e9c096c3",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_SwordClosedGrip.asset",
+      "sha256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f",
+      "bytes": 2160524,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_SwordClosedGrip.asset.meta",
+      "sha256": "194477fc85c3b473fde379a6006c3786c8dd89a813087b902feffa6001f60a97",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "sha256": "8fc93bc285f7e8807961864fba709c03dd16262151cdee9dcd17376a932bf8f6",
+      "bytes": 32972,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab.meta",
+      "sha256": "a756df63787a6eb918194d56ac2dcc53c38dad9cb19728135c96cf7c4ff39eb2",
+      "bytes": 154,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_StaffGrip.prefab",
+      "sha256": "52ac32a47005cf2280f038307c2457bfa12ffb8323bc941f59ebf78cef3f2ad2",
+      "bytes": 32991,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_StaffGrip.prefab.meta",
+      "sha256": "e44742c63c0c28b1aa28cf0c6ee5b485d3ebe3963312d30bf2c8b4000a425929",
+      "bytes": 154,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab",
+      "sha256": "4b1a2dc4bad3b413767a793fd4636a3ac8c6faa097fb339a03e9d74f3ab1fd04",
+      "bytes": 32968,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab.meta",
+      "sha256": "20a9375f0dea67160c81feab0d58d2966d886babaed5bc1eb51535edcf580183",
+      "bytes": 154,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips.meta",
+      "sha256": "0d8c047c4f090531c6c112a117184ed9b6cd449e65bd233cd98ea651f838aedf",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Skeleton.prefab",
+      "sha256": "735a6700ab25f79e74e1aed3e83a1826565e358e0f5dd451fe644986ec705f6b",
+      "bytes": 28666,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Skeleton.prefab.meta",
+      "sha256": "b3db03d63c15f9d5a3854c69022d74089a8391b2f719c5e5c1298152a1b397aa",
+      "bytes": 154,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Idle_Fists.anim",
+      "sha256": "49c4e24fae60aadcc6bde841a163851bc78d17b3f8a3015f62d98ac91ca0c822",
+      "bytes": 19420197,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Idle_Fists.anim.meta",
+      "sha256": "a6b724acf3139387ed8612f21a5862fe3b1ddeed04007237a73f5400a22e94e3",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Run_Fists.anim",
+      "sha256": "4aa637acd5d04a420cbb63a814322a8e6b3c89d5491cc52ac1ac9191fe5c183b",
+      "bytes": 3770230,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Run_Fists.anim.meta",
+      "sha256": "162d2c16bf2ac77d19078191742e4bf0082bb3d80621ef3e58cac3ffa2e75b25",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Walk_Fists.anim",
+      "sha256": "3240c03dab6ac3835e3dd41bc74e164ba347cceb0426243c6cd459e2dca94c76",
+      "bytes": 4899906,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Walk_Fists.anim.meta",
+      "sha256": "7be6ec5830563b800522397e2ef8136a0d00142383ec9109fb1a0fa09d5b6ca6",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Clips.meta",
+      "sha256": "847d078fe29072e4de4957097ea5040114e400a9aab219f97a195c58207be617",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials.meta",
+      "sha256": "326b3bf85f812b5992d612c0494a30000cf33759589d12ce62500eceae3fc6d7",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes.meta",
+      "sha256": "b061093c94821e5bbb56ae4756efbe237217907aa3e83b74ee9b805492bdb37a",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Model.meta",
+      "sha256": "bc7073ccfa5f789d7febe799c4152c4ba4c8828481de78b2f8f51a3efc60904f",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs.meta",
+      "sha256": "3736e54bec0ba75954a96d7ad9215d8dff4cee5e558c5ef70e687b3598e30d57",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/README_ko.txt",
+      "sha256": "337885830ee9bd692b14b99e1dac24b9cdfed17be1c41a527a57090dcccf800b",
+      "bytes": 4087,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/README_ko.txt.meta",
+      "sha256": "d16297426dca60f01f75407cb2a01168f2222ddf3f675de55b68166254887fc5",
+      "bytes": 158,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig.meta",
+      "sha256": "ead8f77e006f92c75cf3bd032f149088131fbae128b1bbbf23ed216b8cc1e459",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures.meta",
+      "sha256": "29c3294713b8aa0ed3acd92d613068e15abe25e54043b4be9d345960d3205c57",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Clips/Punch_Elastic_Preview.anim",
+      "sha256": "b99fdb58c1ae675698769cba5825797a6d23f356b45288a6e00ac70ff73e4d69",
+      "bytes": 3194362,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Clips/Punch_Elastic_Preview.anim.meta",
+      "sha256": "da7530d1bc97d592ff90e34c8da3650c28d454ce9ac086239b90315651ceff9c",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat",
+      "sha256": "30b017c1d0604ff730c04ee19d3b45c2c374e2c54c3c7e3a4e094f65806e3dfd",
+      "bytes": 1997,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat.meta",
+      "sha256": "3feb5f82d9d34a9e55ac769ede77bdcbc0f422fca5c566387aea292902361ef3",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset",
+      "sha256": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+      "bytes": 1522049,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset.meta",
+      "sha256": "f98366155b55f4fe4429f546733413a6cc2764e38b3755d57879e28898ef7093",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Model/Protagonist_ChibiCap.fbx",
+      "sha256": "4d4aa02ef830ad90d1c9f0bad7d8068b8dfc8c7095c499f38b8657045bec31e4",
+      "bytes": 4965596,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Model/Protagonist_ChibiCap.fbx.meta",
+      "sha256": "496d8354e4f025d8485d924f6476a814682d5e306b7b2050ac65ec9b277ac4c8",
+      "bytes": 2891,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Model.prefab",
+      "sha256": "493d0c1012c924990ae77b800046ad0f2ffb5b7de965b93ee3977b039da95cd7",
+      "bytes": 3656,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Model.prefab.meta",
+      "sha256": "8fca5dc63bb02f1ea075e9549491b0ec0a1d8911cb851a2f1f3a964bbf90e468",
+      "bytes": 154,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Rig.prefab",
+      "sha256": "f79e8b32c931349fbdf1d72e8b07162a8fdde991086310f7cfe2ec990a965712",
+      "bytes": 31061,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Rig.prefab.meta",
+      "sha256": "e812cd43e258f2f1b3a7b65be6b425f827dfa40347ed810c48305bfe4acc0000",
+      "bytes": 154,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx",
+      "sha256": "8b2a204b7f9df23fa2a0780f3c0939e2da650a7513d787c2fda2fd8cb60f7950",
+      "bytes": 3125980,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx.meta",
+      "sha256": "0c9c8a5e68ad1a50cb455743a5565189f1c3ccb3e8b56e63c2fb3af0ed3121d6",
+      "bytes": 2891,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png",
+      "sha256": "a2b78743110cc57387498fec3b70a775c33b888d11d874614d54e036460055e3",
+      "bytes": 4646330,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png.meta",
+      "sha256": "e2e2a932a6c7d8b54b4b9759c7467bdaf774fa78fe14bbd8e40ed237da36394b",
+      "bytes": 3362,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/ConsumableHandProp.cs",
+      "sha256": "66c9dffaba82c8e96316411c50301aaec6e572233f7da85f236f9d72ecb3ba31",
+      "bytes": 1758,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/ConsumableHandProp.cs.meta",
+      "sha256": "4b767920751336ca4709b343c9a38ddb504a9c450e78d3bcfacfc8ddf4e3bc29",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor.meta",
+      "sha256": "7758cd29204034c17aba4cbe7d429200333a6d0f7d4e61f0e0b6aed3c175f4b3",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/HandSocketEquipment.cs",
+      "sha256": "a77a9d95f52aa01b58140c9f92fa762783213c94482b54cffd458b3d1060876d",
+      "bytes": 6424,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/HandSocketEquipment.cs.meta",
+      "sha256": "2180a04054cc60a48a9898142036c1d16f16b0be68f103be4cd58fa4e79b04d4",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials.meta",
+      "sha256": "5bd644d07ca457cb3f0a9c282fd628b2b734e28ed286889f2b137cff89ca734f",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes.meta",
+      "sha256": "4b029034fa8fffaaf431ae8e5a3ee6806752505bee9a5fa6959b317bde11faee",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models.meta",
+      "sha256": "bdbdb128deb586334039a83ad18eb26baf0eb919aff161e146bf11ce3311570b",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs.meta",
+      "sha256": "a5bfc7a0800f95d74c6a9c3a4ebb54aaeaa485d76cd4920e7d27dcb0007c591b",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/SocketWeapon.cs",
+      "sha256": "80832ba2b1f79d4efab74cb4b6003d435aaa4f35f784cf7cd3d9c08addf8fb5f",
+      "bytes": 1766,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/SocketWeapon.cs.meta",
+      "sha256": "18c2fc779bfb4bf15e1c19f630f23ec82d85da33896ba5352f43db8e8b278747",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/UrbanKitPreviewControls.cs",
+      "sha256": "186304f207836e4c10b48d4e6c2e134b909a5f2e17206c20c4489c37004f1629",
+      "bytes": 2912,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/UrbanKitPreviewControls.cs.meta",
+      "sha256": "8e20e848abbe7509074e5daae9bea80474a710e0f22d4aa4b23c528354fa04b6",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/UrbanKit_Preview.unity",
+      "sha256": "f4977d2bdffeae67d872bc81d8ab5d6adc70549841e25242bbf8fb56d35110ac",
+      "bytes": 12768,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/UrbanKit_Preview.unity.meta",
+      "sha256": "022e35e9df68c5a18482e402214de26dc18951f40f0b22f852e3632d1d2792c8",
+      "bytes": 152,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/UrbanPreviewThrownProp.cs",
+      "sha256": "77fb504467f632ccb7365ec71d1a3dca09c13428e32363f9d2e76aadf2058a81",
+      "bytes": 627,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/UrbanPreviewThrownProp.cs.meta",
+      "sha256": "c191fbaa8286437532797d34c8a02b791d08486331557371cfa0bbe05575f0f3",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/\uc0ac\uc6a9\uc548\ub0b4.txt",
+      "sha256": "8ec315e7eefbfed62d3168a847f4dafe1ccccde0f38c7e6d6ab71af6535e8244",
+      "bytes": 18821,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/\uc0ac\uc6a9\uc548\ub0b4.txt.meta",
+      "sha256": "0c2a3531721b3c316d424a561be19549c818920a2811a11d99321876eb7fb6a8",
+      "bytes": 155,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/ChibiStaffOrbBuilder.cs",
+      "sha256": "c287274f72a1de99fa5ae722ad2b2b84e7e396ee74a5d7e1ae86ed87045f7a06",
+      "bytes": 11617,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/ChibiStaffOrbBuilder.cs.meta",
+      "sha256": "8a981255920f09730bb9366e14babfc62cba99dbe57c1c9c4fa96a3dfd239781",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewAnimationRefinement.cs",
+      "sha256": "4624a4d758095f23bb1ee8b3e28f36e1098b16c38a1b1415a5c18bb5d7b32c59",
+      "bytes": 15964,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewAnimationRefinement.cs.meta",
+      "sha256": "e2cc6a4b5d5baff12d2bf1c5427cba0e4d3241edcd4a02559207b14a8f3bcf8c",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewContactCalibration.cs",
+      "sha256": "9c794e14a3b21ef5205e94a94dddafde6ad39579c156b151565a4d8e75bb133b",
+      "bytes": 12190,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewContactCalibration.cs.meta",
+      "sha256": "a2eee41c641b978e64b56229e6da65b8186880e259e40b787c1e71c85743020e",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewMotionDiagnostics.cs",
+      "sha256": "18e33893e4b160c50c5c3267a5f4fc791920a8f6e01af5edb54ce5b18fe2c89e",
+      "bytes": 19251,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewMotionDiagnostics.cs.meta",
+      "sha256": "920065d7ee4d09f79b7df2b2bd66dcfd2f9e71aa698b390bc01ecf682f6c2861",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewOrientationProbe.cs",
+      "sha256": "c3e64b974bf2298cea99d22b6c8dbcb33203ad4946e98e1af90e25083faae12d",
+      "bytes": 16451,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewOrientationProbe.cs.meta",
+      "sha256": "ec671f43403fa66591a625080909d2fd6580820dae0435de7656b8df329efb4c",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewReviewCapture.cs",
+      "sha256": "35350519ee5c5174dd60535f2553f0f31c645e237e98c119a526c603997ff12d",
+      "bytes": 45219,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/SideviewReviewCapture.cs.meta",
+      "sha256": "c222e9192cef3f3e63b70b8dbafe2394df8ab4adc92e2fb7543b28bb373ef752",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanCharacterCapture.cs",
+      "sha256": "951d578e688c3f15c707b4c4264ca5d34362f3814465b7a341ba8db081d7fec0",
+      "bytes": 19335,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanCharacterCapture.cs.meta",
+      "sha256": "d57c589ee2c7eb5e5e9c129770b6eaab737394f57088f1604ea84add79024320",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanConsumableBuilder.cs",
+      "sha256": "f5eec539ceaf69af7f5ef640183f085bdef2d9fbd787fcbdc9c2d79f38aef84e",
+      "bytes": 11247,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanConsumableBuilder.cs.meta",
+      "sha256": "568ffc622b4273b628d0e487dfbbcb34b871b51645ecb7c27dcd5fde8e41dfbd",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanKitSetup.cs",
+      "sha256": "d708e6dd8fe641fb85e90ca1cdf2dca2150bf571d13e052f54408e80a06f4753",
+      "bytes": 17730,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanKitSetup.cs.meta",
+      "sha256": "de41cf1a63b8e41f503e3822e0c10c55d387e5e63cf6efe568718034223d204e",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanModuleBuilder.cs",
+      "sha256": "528e62fd0c6007a4b15b8a8ea347593987667c521f3b0e90efca8a108ad1bcd3",
+      "bytes": 39836,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanModuleBuilder.cs.meta",
+      "sha256": "2385840dea64529883b6460be4da8b86d1df2dc1fd1276d8edf437a5a5bca2aa",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanPropBuilder.cs",
+      "sha256": "088783ffcf4f2f6cbba79a1b8dc9d41941494cb235641724381ca76b07bde7c7",
+      "bytes": 19484,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanPropBuilder.cs.meta",
+      "sha256": "4b6bc91a9e464ad016cb362e49138322c3544932796e1d169cacf16da8f11d41",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanWeaponBuilder.cs",
+      "sha256": "36a8c80e0764c29cfd7debf0459cb81251cfe60a37c3abaef58ba8f9b7ca31cf",
+      "bytes": 10106,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanWeaponBuilder.cs.meta",
+      "sha256": "61838d67312018d379958603c297b297f8464369af59d1a9871ae77f667ffd45",
+      "bytes": 59,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/StaffOrb.meta",
+      "sha256": "85bd30eebb4712da005d5052935209fd77e06d5123c9bba6042fcef54719e8a2",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+      "sha256": "4e2ce141a053bb79fff8c2a32ac420e9a9adc0c9dbd44a7ea52e53d810b4b39c",
+      "bytes": 925,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat.meta",
+      "sha256": "ce91f4cd61785a75d4978c076b88d242b261dd8b0776f38a166d65d21a212296",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/Urban_VertexColor.shader",
+      "sha256": "28b2be356cd44f6994dde39082972ee4369fc20f1774f72f897a36b12362b45f",
+      "bytes": 7656,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/Urban_VertexColor.shader.meta",
+      "sha256": "2c4b4d67f9177c0f02d53c6ec915b03686ae89f64121b64b6f255471fc55be17",
+      "bytes": 201,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset",
+      "sha256": "1046c0409876926b1d29586f90fb1cb30d4f4f67e0037613d7711c8b6b0480e1",
+      "bytes": 643322,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset.meta",
+      "sha256": "6249752a3d34c24738d404cc956cef8a50084eb3ffd719b7c585b11156cfda09",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset",
+      "sha256": "6b9e4e5ecbbdd460c67839ae7909b7d59804334972cceccf660151643c6613ec",
+      "bytes": 220173,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset.meta",
+      "sha256": "375346a2c26b9c9d9054102239a301fd24714208177f37187e43500bc2a8ed92",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset",
+      "sha256": "9615251ec49470d1152f7a68fde1fd4c84b7199a2fa3e8443fad3ec37d7549fe",
+      "bytes": 290345,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset.meta",
+      "sha256": "44ad89801f455c14ba5d7e8f11a625d9c0df0b1aa83520c42940a5461bf186a4",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset",
+      "sha256": "51020be10e2e730be179953d567a57724868e4e0a66c2ea1fdfbb3cdf1bc4a53",
+      "bytes": 112840,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset.meta",
+      "sha256": "425ed07e7ca9734a10f719ef8aefaa3d7bae4eaa8f7eaf8895d3bac89b6e9f84",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset",
+      "sha256": "c19e5ab326fb2fe4786ae07667bbcca750f78ecd96ed42948f6a23a6535adeb6",
+      "bytes": 114909,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset.meta",
+      "sha256": "6e70ae9d424eb476a0486aa7206714d376672998f9ce6490db2cca7160196631",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset",
+      "sha256": "2f5d98e5a9cec913b24280d8a4c51e554b7d6198699a55c8a38b4b3f0e5ac4a6",
+      "bytes": 46772,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset.meta",
+      "sha256": "7626cef697b4bbc5e0d1a1d3c416b87ac67918d2302a23a6c09bb0ba5cdd2e38",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+      "sha256": "3e3e263e0c21d617c867ac3b2e2fdd4a96f285840b8c090bc3e20ff4dae0971d",
+      "bytes": 104584,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset.meta",
+      "sha256": "27f373cad716ee8d9eb170c12393c6c335adea02a58eaa463b145a4e491e2601",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+      "sha256": "0ae72081c791ca81cbc2a5fd8c36fda40e955a60ed70ebad91c1f06808564c4b",
+      "bytes": 36465,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset.meta",
+      "sha256": "7560ac8fcd682ab53bf02fca4fb5155a5e359c89ca6594d66f1bbab697394d7f",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset",
+      "sha256": "a6726acaa5c9afe47aa0e5cd52fd6106a440a537e13935e0d1d8e98acfeb6b9f",
+      "bytes": 81921,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset.meta",
+      "sha256": "ec0e48f8d64e24ce9488aa322a72e8730a029aa2a041e484021b86108eaf3696",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset",
+      "sha256": "617cccfaf13cd15b759d17f5107edf5b48b3b638aae967c95806ed1698c294ee",
+      "bytes": 28192,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset.meta",
+      "sha256": "d76ba58e21d7c14e95f8e3495b94db3d9a4f57e8be2a278ee664e2be7e48af4c",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset",
+      "sha256": "708ce2972c60f2490b7c34cd857265a4677edfb607f7955d09ee0d6fd149e65f",
+      "bytes": 50907,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset.meta",
+      "sha256": "e5148d721e0f1ce72f2a5ab10d5738476667871e7cf09fd950a28c0182a1c8c1",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+      "sha256": "1591da4e2517f3d77fa2a8b25026aa1b1a5e5ba4c2b17a5f4e9cb06c3156555e",
+      "bytes": 18679,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset.meta",
+      "sha256": "b1dedbaf0f38932692a59c23025f571a5a5981c2441c82bf2d324e842840efc8",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props.meta",
+      "sha256": "15f6c3dbb39e19d8b548a8ef620c0d6835dc76c3276507161fb98d7c2191f02c",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+      "sha256": "a6330df213f7e33b94a3fcb0a4cab64cb8781d5f199f406ed5f8676d6fc8b58f",
+      "bytes": 24051,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset.meta",
+      "sha256": "fa9cd59e8b5c0a549cce360590f1254c4323260a5a7ad03f1f507dfc63ad74e7",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+      "sha256": "872be3eb3e55481cb181efd9ca52b43f5162d72155331fe4c2687fcb3235800f",
+      "bytes": 47353,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset.meta",
+      "sha256": "ddd1ba40407d67c41eb384b57e670045b5fb1890af6e9b858535fdc98a794a9b",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset",
+      "sha256": "0897949d1716f64841e5be57edd1a0220f193d2c14706d480dd09f9ec5dae744",
+      "bytes": 44723,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset.meta",
+      "sha256": "67dc485ae34ef0d73a98645c2cb3927aee7175b84863804b8a104fb6b1f4e4bd",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset",
+      "sha256": "ab6c83331d8e8aee6767e7c28286afabe76d65d085937c1f202f25cc237d0132",
+      "bytes": 81896,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset.meta",
+      "sha256": "dbeabd585b61536b2234dcae2f061418a567870aa136e13faa740fc959f17edd",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset",
+      "sha256": "c487973c0335fe1689ceea87428d9f3d3de45218f62885b7ff3cb6153601ee71",
+      "bytes": 30289,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset.meta",
+      "sha256": "741c4aa2d6b459ca4c55c13bef5c05b5bf897793a7255a649c28c23506214074",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset",
+      "sha256": "acdaeca20f64ccf2e694fa729a985598cd5791815e96861c2edeb8dee9b4c186",
+      "bytes": 58655,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset.meta",
+      "sha256": "da5b8b9e090a36c9b93438b550f0ccb72383ddf91061a0005020d3ec25710cbc",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+      "sha256": "222dde38a651d25b4c06f9472b1dcbd2f460c2ab3ce80af582d809fb7d72599d",
+      "bytes": 137583,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset.meta",
+      "sha256": "51793656b895cd643319c1f3b67241f20ecc754e9dc8b64c32f6049a4fa8b098",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset",
+      "sha256": "d8fb3f853b7e287517202ec5b2d36d9e672b450a2d4385af5affef9c854dd75f",
+      "bytes": 26115,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset.meta",
+      "sha256": "ddf1f0d38f7a85fd09b6b8fbc36e6f9d399467daf4fbc77b869ae66cef6d4fba",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons.meta",
+      "sha256": "6850e5ee59acc7c37ea5722d694a1e7a64ca10504b33a987693f16023c590eda",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/ACUnit.fbx",
+      "sha256": "646eb854badf640819488f7fb1e492e268edd13152559ffb0c9491408c96e2db",
+      "bytes": 21020,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/ACUnit.fbx.meta",
+      "sha256": "de5cd3ad548213aebb5b842526485ea7061d506aefce7a9a93b4e8539881df01",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Bench.fbx",
+      "sha256": "a3daad3f2eb1e0c903273f08ff0f2de650489dad1f71f33bed5390e92bf030bd",
+      "bytes": 30380,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Bench.fbx.meta",
+      "sha256": "e97c582132e74f97069dfaa8c246138dcb12629c2c8b4127156e56a960377531",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/GatePylon.fbx",
+      "sha256": "8b5e5e09bddaaff383bb405c1f662767ae69242b3d4de0c1842529aca393f252",
+      "bytes": 34668,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/GatePylon.fbx.meta",
+      "sha256": "af6293305e7a650fd060d685060c5f7dae4a971a31a098ca19d07e0c05044159",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Staff.fbx",
+      "sha256": "21156c6df112e7be5194995a17fd8a8668b795ea59524d040af2a045b335a373",
+      "bytes": 37180,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Staff.fbx.meta",
+      "sha256": "224f95168039a5bf187228630db2b5b1142634ead65ca764a1209cf74d35b844",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/StreetLamp.fbx",
+      "sha256": "d7c7a48c0e60447905db73dc987a6bfb03ff0d906b68e94d9da491e938d841cd",
+      "bytes": 29836,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/StreetLamp.fbx.meta",
+      "sha256": "6a4f2ee418b836b8647504644290f338fb7bd571277a3c9278a3aee1968b0a63",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/StreetTree.fbx",
+      "sha256": "b735229b4eb27d5e4ff7ac8857dcb224ca3937d5bc67b25dc353cb7d93797959",
+      "bytes": 37228,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/StreetTree.fbx.meta",
+      "sha256": "b991f8a16e34b23757edd2b4c0121639e73b319ec9275bdadf350d8069aa8677",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Sword.fbx",
+      "sha256": "9a87a7aa5d1d3573bd89582fda70899da65d1838fe0484182144f8965803181f",
+      "bytes": 30924,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Sword.fbx.meta",
+      "sha256": "0c9852fb08281ec2ac73de36993d6dd9d5fcecb4b1a93f62d2398e52a655f999",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/TrashBin.fbx",
+      "sha256": "e008e0536144d1b8cb86a9b0468afb35b629a82a0bc9af3da54804ec6fdaddae",
+      "bytes": 22972,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/TrashBin.fbx.meta",
+      "sha256": "dca47069392b943898937265a83c03c3365e1b0e8a9561ca420f5ef4528f3757",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/VendingMachine.fbx",
+      "sha256": "e84d58512e98ab06f8205fe5ff7ff0c4bfaeb23f205fefa1075ddad206c57173",
+      "bytes": 37916,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/VendingMachine.fbx.meta",
+      "sha256": "1aaece2aa1262433453d2d4b2978c1964f04b2d8770ab1ceaa73f66d8dbb2c42",
+      "bytes": 2883,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks.meta",
+      "sha256": "ea27af8c4e7b195738fb83de3954b88c541da1368c474ce71301a4211c887f60",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules.meta",
+      "sha256": "f0e177820b86957f46b30f48ceedbd94f01a3075b7fa4f04fc9156778b0d6995",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props.meta",
+      "sha256": "1867700cf6b94f7cfe6d04cb77058761e0b80be8e3db75fea0493790eb999c67",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons.meta",
+      "sha256": "1ed2b9267478edcc18a16b9b8699df601a223ad0e68131b40db6c0394c12459e",
+      "bytes": 169,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab",
+      "sha256": "36de3ac33c9fa4b02d418f98a7ca22986fd20998e976ee3ea987c435357a86ca",
+      "bytes": 173607,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab.meta",
+      "sha256": "063cfd31b34418cfa23fd815605ace0ece05d57f146013a8d20f1533944296a3",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab",
+      "sha256": "9b57ace40762e84b5102296ec1734f35f6c9e8f4fe1d92f3354b2e1bce8a5f90",
+      "bytes": 93559,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab.meta",
+      "sha256": "e8c1e3aef0812a50466cd1c5b7d9ff2e0a5d72790b831fe1b9eee773465ae36d",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab",
+      "sha256": "5d13fa0e7506ac0c14e5bf3223428b2468637cf5783a73259946c25518fb48e8",
+      "bytes": 12102,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab.meta",
+      "sha256": "7c85b12dbc5d398083545aa5b0e14ef503335269999323e18343c8cc49efc756",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab",
+      "sha256": "deb0227830b542051fe3b5be4411ddc9c4cd74d59445aaea788d07496c20fbde",
+      "bytes": 12076,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab.meta",
+      "sha256": "ba2a409561f5468a22e28c2addea5b4c94d98240f0d5b03b959b958222d38643",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab",
+      "sha256": "0920fa02f2c959fca2820c8bae63f135b0a4cb337c43d6a2465b963f9d3bd12d",
+      "bytes": 12082,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab.meta",
+      "sha256": "69318b7ec8b8322132604d8717c9b132fa9cbb108678b1a37b3197247162cc72",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab",
+      "sha256": "d3bf8b6789b53239073c493ac7121184be04887288733d8ec246326125fb3558",
+      "bytes": 12083,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab.meta",
+      "sha256": "8d91c333910244c6260cdec4f7d3e5b7069f8780299e181470308e600bdc2bd4",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab",
+      "sha256": "81542c3020e6af7cd64c569a8bdafc77f180fd295c9e4ab3b70359452b04604b",
+      "bytes": 23642,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab.meta",
+      "sha256": "dae8dd539e8c955294ca27184d807a455399760ee03056c246adb7edadc89ecf",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab",
+      "sha256": "f1a19ab386d0e4f24096a06983400a4b0f276aed642def79b32d9687ec69d22f",
+      "bytes": 6301,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab.meta",
+      "sha256": "156b15a425162ac5f59fba1d379a5d610f8e23af8070178aa20c188a1088eff7",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab",
+      "sha256": "25a9861cf49ba35a3bb5b1d26dbf87f6a7f2a024bdf50ad895dbe730ffbbef12",
+      "bytes": 5393,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab.meta",
+      "sha256": "aa55c9f0991cd469f9ef78d85fa4f98bd30b4c45a5cf8b14caf9df1f1d7b5420",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab",
+      "sha256": "f5c1a0a478017986f1e6f4d4ee534942977d01d542a6d4393d153712b05478f9",
+      "bytes": 3552,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab.meta",
+      "sha256": "2a096b19f8b128f1b55e6f56d9921c75f3073302c589f60b412699051aa43e82",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab",
+      "sha256": "5172f38fca7ccfc397c000de2436563b49cf77dfcc1b4aaac750036c7c3354dd",
+      "bytes": 3555,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab.meta",
+      "sha256": "fba940de93cb572370c81da653511278c8dd404c42ba706e2a93d515cd5756a3",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab",
+      "sha256": "b007f7159354af2361138eaf7fe93bd01ef6403a645eaf12c584ac2c04d57ea2",
+      "bytes": 7823,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab.meta",
+      "sha256": "be2e6448f6125bc274245fab4faadd42238378c72161b2b7645cc2b9427aa1f1",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab",
+      "sha256": "5abb3b96861f64d71468457476457875a069453bbe9f05828c959cb9fcdff570",
+      "bytes": 3549,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab.meta",
+      "sha256": "17f31ed220876c17d8e76bd992bdbadad82042e4705517ab4024fa901819ebbb",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab",
+      "sha256": "db310c97d54003d1ab37393eec5c94b2b71e6bcf66a3d5909fd7759ceb97f96d",
+      "bytes": 7827,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab.meta",
+      "sha256": "d3d1cf27f5c870fe8f15c25c06b19afd93e59e70e5e71bdb8c012561a5e5375a",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab",
+      "sha256": "e2c3ad228cd99a6f6f78b20cc821007a5311602f46898f047413cc563ee2191d",
+      "bytes": 5973,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab.meta",
+      "sha256": "ed82ba9906230155c873c2a51c7564da74c72f4d53a31a65200f05ac92f62bc6",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab",
+      "sha256": "70c97f37eaae44ac283eb81acdd2c19d8414cadd5b0d4dec13020bdf981da22b",
+      "bytes": 3558,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab.meta",
+      "sha256": "978427435169e97585ac029ca1d27017af94d15e10cdecdb4afcf39de6c4cb03",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab",
+      "sha256": "3b4ff0beecc21640aec14fcf907ca74be3e6dd9c3955bfbf15911f39e9f5c22c",
+      "bytes": 7822,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab.meta",
+      "sha256": "98ec9757e9f7cf69d43767384a2452c18f6e6863494ae98c2334e753fa394549",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab",
+      "sha256": "0d3b5bdf854d5b3bccaf6598cbafa6c8db982d3f89ae351524721a3bbd3c76f6",
+      "bytes": 3547,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab.meta",
+      "sha256": "28e056594dd136e182c671af7412bc7934bde84cbd3800587cff2365a8eaaff5",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab",
+      "sha256": "387f634e97852f650085457e1df20aa5e6108b3af414bf97b272a26d46e23ed8",
+      "bytes": 3547,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab.meta",
+      "sha256": "8d25e62ce5d5f6c2d6c6f12d46870c09340959baa0b72a1aa4312b26583e0820",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+      "sha256": "6d6b07ff1d6dbfe41eb2cc6869f37c2b68878fdf9bf46cdeaf4e7a7f4ff8e5fa",
+      "bytes": 3549,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab.meta",
+      "sha256": "b98326a55b5ccff498522a9dcf3d6a7c86ad96b7292d10f3a0a18d92186185d0",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+      "sha256": "64fc0c7ad605afbc0d40c23951c1777d6590a0f9ac6fd407c43074dc8fdac50b",
+      "bytes": 3553,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab.meta",
+      "sha256": "9a7b1f91e53a62b5b66995dbd1c480eea5d27ae8941e41d91432680dfda23dc7",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab",
+      "sha256": "64dbbfc18bf4bd9222871f3081006034357e61e2d0f9d2503a81225d1bb2e573",
+      "bytes": 4151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab.meta",
+      "sha256": "642517028e36937bacbb19a9781bb41a3e590f058a26658087a346307d0a6528",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab",
+      "sha256": "663d899e62fdc1f7e24a7673ce3874589af24aa9f3ae59003528ee7cf20ccad1",
+      "bytes": 4152,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab.meta",
+      "sha256": "e0a0ff61dacfb94a0863434ff431ad5c1ca6548a1dcf2d5d7d62b31c91367f07",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab",
+      "sha256": "dcd09f3540ef1395b0588daaf12afb60480cf4a5ea746c268fedbd312d851d0d",
+      "bytes": 4151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab.meta",
+      "sha256": "ca30aa76c94cf5f83ee888de293f70d772e0a28ecacaac2245cb13ddcc979fb0",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab",
+      "sha256": "3f4a410cf22a2b0993f32d95838152d292812f8c1094d7ad79a19fb7a837d92a",
+      "bytes": 4144,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab.meta",
+      "sha256": "a39dd7a8e82fdfaff6a26ce624c1fa8047dc8d4c6261db57de3ca737e4dffc0c",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab",
+      "sha256": "546978e0da0991c6e9b477e2e43a1708fa1b337dd140207bc2666003449dfee5",
+      "bytes": 3544,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab.meta",
+      "sha256": "c466441b64a06d2f76ea883edad242adc08a1441eec875e3863f46d56802566e",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+      "sha256": "2a938b17487e59e93527814eabcc2b8211ee3a4c082f3a69268df3394ead91be",
+      "bytes": 3551,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab.meta",
+      "sha256": "ca4c43dde229ec49941f040875d2945a4a26f848bd07eaa2fb5c1d27f2a2a4ca",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+      "sha256": "7214b48b7250de7e29de9cf518d16310cb32b33b89c5b0e7cba20170cd0b098b",
+      "bytes": 4161,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab.meta",
+      "sha256": "c39b5baa0a35e38db4bfb724c36a30e42944d24df5c5620d6c5a42b37e5843bd",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+      "sha256": "3710d1bf6fbc6cf22efdd9717eb20b8780200c9731502ac083c184c444c81943",
+      "bytes": 4165,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab.meta",
+      "sha256": "d15e018721afc96f0b10a5b78c8601f27ea741ade835f179a51cbedb8d2ba187",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+      "sha256": "997af7e6592ad5658dd123086d68d09d9578b6044fcc53e605d987a42dd2827a",
+      "bytes": 6923,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab.meta",
+      "sha256": "2f35fe069a9bae8035293c4f60859345776ebff4b42c28aa87c9218e12014979",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+      "sha256": "e313c9db1c1055734f70107f4b6e7f2404c5c647902123c09131b209848c117b",
+      "bytes": 4183,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab.meta",
+      "sha256": "98e269fc2737caa2496559cc8e6b53fd343867b498d955f9f0f5a394fba8fbef",
+      "bytes": 151,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset",
+      "sha256": "dfea6d7e0039249127c655abbc8b959dab6ba1e5227e40acfbb7bd632e97e8bf",
+      "bytes": 122661,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset.meta",
+      "sha256": "6efaa002bf77e9fc0d85e075dee299f62bcad49084a2acf3438ea4fd1f301307",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+      "sha256": "1a708fe45b519d3166eee5ee5b652f2445c29be4dc2a24501d5d8ce8213d65f8",
+      "bytes": 158678,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset.meta",
+      "sha256": "f3c320e6660075eaa166c8e9347edf611143835fd54a08e9da1aad86dfc4d931",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+      "sha256": "5346f4c4d5c7daeb19814b107622b813e17deb1a80d6b1301292665cf46311a7",
+      "bytes": 197516,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset.meta",
+      "sha256": "9d3442dddc879c03f9008842510688b51e61235726bf0f95356663847b479c8a",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Attack.asset",
+      "sha256": "39949619c50348adba49ce85fcfa8ac936733df626f575abcff68b512688be1c",
+      "bytes": 49851,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Attack.asset.meta",
+      "sha256": "c4c7d67695b9d0f75ad7077104d6b999c78331488a13e0feb8e228b1ad907966",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Defense.asset",
+      "sha256": "5f442015217b19c601feaf91990c9e3f2368298a9d49aabfc9cce50138b6ac6d",
+      "bytes": 49852,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Defense.asset.meta",
+      "sha256": "660ba8012f29e17d6b704cb454644608c962d814756d867ceb59d3c4bffd488e",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Health.asset",
+      "sha256": "89ec6b90c66098c0ebb51e3bdfd1979487ea4bd4d46e7292b83e102f2e21cb88",
+      "bytes": 52875,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Health.asset.meta",
+      "sha256": "dd54c4cf5c1fa2f1c5ef0df00e91294f473f2738bc2476fa3e459936fbd2ccb7",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Speed.asset",
+      "sha256": "2daf4087b623201f3abf2cde7d3b4a491083e7f325778a5100b908fb88425c02",
+      "bytes": 49850,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Speed.asset.meta",
+      "sha256": "b255f0e2e43e5f6e27cd03ad86c41208196ba47f929a63d4f9cbd16b6cfe2e04",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+      "sha256": "7f28d72e558cc248c4a8fc2f66d5c5d65a7d74e9bdc212bc923d67a8ef3ebd2d",
+      "bytes": 165771,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset.meta",
+      "sha256": "bf62c9d0f62557b9346b4b4d974fc9968667faec9c3408f6464ca3bb3e3266b9",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+      "sha256": "5d980b95b2a342da2fa0a966794beb177a3f795f6d23bab55657a9339f79c7bc",
+      "bytes": 219476,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset.meta",
+      "sha256": "b342b0becebef3ce8d9ad8ecebd1da372a5f91954202077829b1ec86629907a1",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+      "sha256": "71daad0ff3a9d519b3bbdd641921f983a04f207a3bb25b452b0d5a5fbd76ff1d",
+      "bytes": 102769,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset.meta",
+      "sha256": "eb7e3cecdf5b83e89ca109fda6d58f65bb3d8d083f31766e4392b2717555eb1b",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset",
+      "sha256": "98459ff12b38760108cf5a9e71a8f36c35c2145e12b3759d58018fb79b9121d8",
+      "bytes": 508236,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset.meta",
+      "sha256": "bddf33b1a66da803a08aeecc346aad84412afc659c3c3ce926b9c0bb51c66b07",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Staff.asset",
+      "sha256": "2dc3192d78668147a3303e5a8d33d1be75f7228e364d5470853f4df04e292fa9",
+      "bytes": 244707,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Staff.asset.meta",
+      "sha256": "1def48f465e20095f5f82c8eb14995c977550f06ab1ab87e3f33e9219367a4d5",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb.meta",
+      "sha256": "36099cf17f07ed450d2e1c069fa42e9b46d9e8a24f90a83165ad1908837dd0d7",
+      "bytes": 172,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+      "sha256": "2c8c0d653814b87c3f9b2edb0a66f4cf7187fd307e9b32195bc504796aaf610d",
+      "bytes": 184426,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset.meta",
+      "sha256": "f1e9d07d9578e13ccbe94b5339b8a8eb3cb6c0a3fd1857b0bd7afa6c47c9134a",
+      "bytes": 185,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_CrystalOrb_80Faces.asset",
+      "sha256": "e8057680c163a30408c425287e16f03eafa5b34eeb608d39769850e31bf74b08",
+      "bytes": 23600,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_CrystalOrb_80Faces.asset.meta",
+      "sha256": "e4b199a38517b8068b0b0c81fe6ca4907dd18350ed99f59107eebe21f76a7ad2",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+      "sha256": "d2a7e1e37f214f10152f15f399b7f2faea9c422c142b965c0734bb439a7b9e24",
+      "bytes": 213950,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset.meta",
+      "sha256": "4ab355caf94172591d64138718e97aeb0509856e4269522e332d2f022fe918a9",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/StaffOrb/StaffOrb_FacetedTransparent.shader",
+      "sha256": "8d9287a27175a9e0d26756ce19a078e6341873f3c6c0b0909e30490a2220ae21",
+      "bytes": 3530,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/StaffOrb/StaffOrb_FacetedTransparent.shader.meta",
+      "sha256": "40df56059efdf8badaa966a65b0b6d5f1eb47ebe0c32be8292adfa09a7b068c5",
+      "bytes": 204,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/StaffOrb/Staff_CrystalOrb_TransparentTeal.mat",
+      "sha256": "0d3f3d580f9a143245b9c97740a09cadc387ceda86599a1a53d627b0af7429b1",
+      "bytes": 901,
+      "allowChange": false,
+      "retire": false
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Materials/StaffOrb/Staff_CrystalOrb_TransparentTeal.mat.meta",
+      "sha256": "07f63d9f5b4f78a8fe50ec60f2815f215a65f7d76bc82b9c363f3d641fd65622",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": false
+    }
+  ],
+  "retire": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Punch_Right_Jab.anim",
+      "sha256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "bytes": 1471164,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Punch_Right_Jab.anim.meta",
+      "sha256": "f29d4f5dc8ed24933afe7efb23c0b689dce47458f353de7a1869f7a380456159",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Staff_Cast_Forward.anim",
+      "sha256": "2203a5017f63d1847e096354d8a4a90a31d28ac52b0c5250eca5f63b1ddf9ec2",
+      "bytes": 1769388,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Staff_Cast_Forward.anim.meta",
+      "sha256": "a02283b15ba63647c4a5a98ffb2d930bc30ef445fe0ecc290de45e07b142d5d0",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Sword_Horizontal_Slash.anim",
+      "sha256": "82059ad24c603cce3cfeba42fcc4f80a5995647192cf723c4f7d75c36de24a83",
+      "bytes": 1766334,
+      "allowChange": false,
+      "retire": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Sword_Horizontal_Slash.anim.meta",
+      "sha256": "cc1ea0e87cc8fa422c2f44c9fdbf765ddaa0d671e483dbc243aa3b28fe1818b8",
+      "bytes": 188,
+      "allowChange": false,
+      "retire": true
+    }
+  ],
+  "preservedActiveClipCount": 14
+}

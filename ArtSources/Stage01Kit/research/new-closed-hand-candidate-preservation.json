@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_SwordClosedGrip.asset",
+    "meshSHA256": "a47aeeae2083209d40512f8343d795c2f5849c7dc05c7c161950993ea7b6bb75",
+    "originalVertexPrefixPositionNormalTangentUVExact": true,
+    "originalBindposesExact": true,
+    "original75And100IndexedRecordsExact": {
+      "Right75": true,
+      "Right100": true,
+      "Left75": true,
+      "Left100": true
+    },
+    "new150OriginalPrefixEqualsRight100": true,
+    "new175OriginalPrefixEqualsRight100": true,
+    "newHandVerticesHaveNoBlendshapeDeltas": true,
+    "removedOriginalRightSkinTriangleCount": 471,
+    "allOtherOriginalFacesRetainedInOrderExact": true,
+    "addedClosedHandTriangleCount": 1014,
+    "allAddedTrianglesUseOnlyNewVertices": true,
+    "skinSelectionSHA256": "585eecf9865e737dea00e4f5a694578d4a82e68fd5e50ebf5e24a92220abfb0b",
+    "skinWeightRuleVerification": {
+      "ruleMaximumAbsoluteWeightError": 5.193776864143018e-08,
+      "ruleWithinFloatTolerance5eMinus7": true,
+      "changedVertexCountAbove1eMinus6": 222,
+      "verticesOutsideRuleUnchangedWithin1eMinus7": true,
+      "allLeftHandBoneInfluencesExact": true,
+      "additionalInterpolatedVertices": 3042,
+      "additionalWeightSumsWithin1eMinus6": true,
+      "additionalMaximumBonesPerVertex": 2,
+      "statement": "v007 weights are not identical to v006. The prior documented smooth distal right-hand correction is retained; this check verifies that exact rule and unchanged vertices outside it."
+    },
+    "statement": "This weapon-only mesh intentionally replaces the original right-hand skin471-face component. Original sleeve/body/left-hand triangle prefix remains exact. Original unused hand vertices and75/100 records are preserved, while newly modelled closed skin uses fixed hand geometry and an inherited-weight wrist seam."
+  },
+  {
+    "mesh": "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_StaffClosedGrip.asset",
+    "meshSHA256": "af7b4dcfaf1b9b667a90d95891d2b1d419ef32ea737d7210053742d116e942ab",
+    "originalVertexPrefixPositionNormalTangentUVExact": true,
+    "originalBindposesExact": true,
+    "original75And100IndexedRecordsExact": {
+      "Right75": true,
+      "Right100": true,
+      "Left75": true,
+      "Left100": true
+    },
+    "new150OriginalPrefixEqualsRight100": true,
+    "new175OriginalPrefixEqualsRight100": true,
+    "newHandVerticesHaveNoBlendshapeDeltas": true,
+    "removedOriginalRightSkinTriangleCount": 471,
+    "allOtherOriginalFacesRetainedInOrderExact": true,
+    "addedClosedHandTriangleCount": 1014,
+    "allAddedTrianglesUseOnlyNewVertices": true,
+    "skinSelectionSHA256": "585eecf9865e737dea00e4f5a694578d4a82e68fd5e50ebf5e24a92220abfb0b",
+    "skinWeightRuleVerification": {
+      "ruleMaximumAbsoluteWeightError": 5.193776864143018e-08,
+      "ruleWithinFloatTolerance5eMinus7": true,
+      "changedVertexCountAbove1eMinus6": 222,
+      "verticesOutsideRuleUnchangedWithin1eMinus7": true,
+      "allLeftHandBoneInfluencesExact": true,
+      "additionalInterpolatedVertices": 3042,
+      "additionalWeightSumsWithin1eMinus6": true,
+      "additionalMaximumBonesPerVertex": 2,
+      "statement": "v007 weights are not identical to v006. The prior documented smooth distal right-hand correction is retained; this check verifies that exact rule and unchanged vertices outside it."
+    },
+    "statement": "This weapon-only mesh intentionally replaces the original right-hand skin471-face component. Original sleeve/body/left-hand triangle prefix remains exact. Original unused hand vertices and75/100 records are preserved, while newly modelled closed skin uses fixed hand geometry and an inherited-weight wrist seam."
+  }
+]

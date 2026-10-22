@@ -1,0 +1,79 @@
+{
+    "method": "Preserve only the exact legacy transform hierarchy and three unchanged generic gait clips; remove only explicitly identified retired animation links from two weapon props and old player/follow-camera from the art preview scene.",
+    "sourcePrefab": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Prefabs/Protagonist01_MotionReview.prefab",
+    "skeleton": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Skeleton.prefab",
+    "skeletonSha256": "735a6700ab25f79e74e1aed3e83a1826565e358e0f5dd451fe644986ec705f6b",
+    "utc": "2026-10-22T04:10:30.5702656Z",
+    "sourceRootLabel": "Protagonist01_MotionReview",
+    "preservedRootLabel": "Skeleton",
+    "transformCount": 29,
+    "removedComponentCount": 2,
+    "previewPlayersRemoved": 1,
+    "previewCameraComponentsRemoved": 1,
+    "exactHierarchyAfterStripping": true,
+    "exactHierarchyAfterReload": true,
+    "skeletonHasOnlyTransforms": true,
+    "weaponVisualsAndMountMetadataPreserved": true,
+    "previewEnvironmentComponentsPreserved": true,
+    "previewLightingSettingsPreserved": true,
+    "skeletonDependencies": [],
+    "clips": [
+        {
+            "name": "Idle_Fists",
+            "source": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Idle_Fists.anim",
+            "target": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Idle_Fists.anim",
+            "sourceSha256": "49c4e24fae60aadcc6bde841a163851bc78d17b3f8a3015f62d98ac91ca0c822",
+            "targetSha256": "49c4e24fae60aadcc6bde841a163851bc78d17b3f8a3015f62d98ac91ca0c822",
+            "bytes": 19420197,
+            "byteIdentical": true
+        },
+        {
+            "name": "Walk_Fists",
+            "source": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Walk_Fists.anim",
+            "target": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Walk_Fists.anim",
+            "sourceSha256": "3240c03dab6ac3835e3dd41bc74e164ba347cceb0426243c6cd459e2dca94c76",
+            "targetSha256": "3240c03dab6ac3835e3dd41bc74e164ba347cceb0426243c6cd459e2dca94c76",
+            "bytes": 4899906,
+            "byteIdentical": true
+        },
+        {
+            "name": "Run_Fists",
+            "source": "Assets/Art/Characters/Protagonist01/MotionNatural_v005/Clips/Run_Fists.anim",
+            "target": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Run_Fists.anim",
+            "sourceSha256": "4aa637acd5d04a420cbb63a814322a8e6b3c89d5491cc52ac1ac9191fe5c183b",
+            "targetSha256": "4aa637acd5d04a420cbb63a814322a8e6b3c89d5491cc52ac1ac9191fe5c183b",
+            "bytes": 3770230,
+            "byteIdentical": true
+        }
+    ],
+    "clearedWeaponReferences": [
+        {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+            "componentPath": "root",
+            "property": "_animationOverride",
+            "retiredGuid": "236f9fd6f6989744991931a77e48e6f5"
+        },
+        {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+            "componentPath": "root",
+            "property": "_basicAttackClip",
+            "retiredGuid": "9567914dd7b826f43bbb37a0599ec8be"
+        },
+        {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+            "componentPath": "root",
+            "property": "_animationOverride",
+            "retiredGuid": "fc18c44014680e94e9108f1bb63d7688"
+        },
+        {
+            "prefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+            "componentPath": "root",
+            "property": "_basicAttackClip",
+            "retiredGuid": "9567914dd7b826f43bbb37a0599ec8be"
+        }
+    ],
+    "previewSceneBeforeSha256": "821e37533839cbeeb2422af86d0b59018ce77343bdf313f86a6c02e6eb58ccde",
+    "previewSceneAfterSha256": "f4977d2bdffeae67d872bc81d8ab5d6adc70549841e25242bbf8fb56d35110ac",
+    "gameplayScenesModified": false,
+    "runtimeAnimationConnected": false
+}

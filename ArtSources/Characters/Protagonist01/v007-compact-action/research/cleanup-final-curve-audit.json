@@ -1,0 +1,963 @@
+{
+  "auditedUTC": "2026-10-22T05:17:32.868019+00:00",
+  "method": "Read-only git HEAD blobs and current saved Unity YAML. No Unity execution, clip rewriting, source restoration, or baseline replacement. All 18 shared clips must contain zero PPtr curves/bindings. Static mesh selection is verified in three fixed art review prefabs, with no game/controller integration claim.",
+  "expectedClipCount": 18,
+  "actualClipCount": 18,
+  "exactClipSet": true,
+  "meshes": {
+    "base": {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_CylinderGrip.asset",
+      "guid": "b66aab8cfeff92141834a0afea673c70",
+      "sha256": "e474f2b2a4fc8e8dff7625db29d497e1b9549558713a132304a152852a48f8f4"
+    },
+    "sword": {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_SwordClosedGrip.asset",
+      "guid": "77e8d6b8c2d1c6f47ab67b7a14796501",
+      "sha256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f"
+    },
+    "staff": {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_StaffClosedGrip.asset",
+      "guid": "87a79bb4486ec2d4b8ad334eae051bfc",
+      "sha256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53"
+    }
+  },
+  "fixedPrefabChecks": {
+    "base": {
+      "passed": true,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_MotionReview.prefab",
+      "prefabSHA256": "8fc93bc285f7e8807961864fba709c03dd16262151cdee9dcd17376a932bf8f6",
+      "skinnedMeshRendererCount": 1,
+      "savedMeshReferences": [
+        {
+          "fileID": 4300000,
+          "guid": "b66aab8cfeff92141834a0afea673c70",
+          "type": 2
+        }
+      ],
+      "expectedMeshReference": {
+        "fileID": 4300000,
+        "guid": "b66aab8cfeff92141834a0afea673c70",
+        "type": 2
+      }
+    },
+    "sword": {
+      "passed": true,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_SwordGrip.prefab",
+      "prefabSHA256": "4b1a2dc4bad3b413767a793fd4636a3ac8c6faa097fb339a03e9d74f3ab1fd04",
+      "skinnedMeshRendererCount": 1,
+      "savedMeshReferences": [
+        {
+          "fileID": 4300000,
+          "guid": "77e8d6b8c2d1c6f47ab67b7a14796501",
+          "type": 2
+        }
+      ],
+      "expectedMeshReference": {
+        "fileID": 4300000,
+        "guid": "77e8d6b8c2d1c6f47ab67b7a14796501",
+        "type": 2
+      }
+    },
+    "staff": {
+      "passed": true,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_StaffGrip.prefab",
+      "prefabSHA256": "52ac32a47005cf2280f038307c2457bfa12ffb8323bc941f59ebf78cef3f2ad2",
+      "skinnedMeshRendererCount": 1,
+      "savedMeshReferences": [
+        {
+          "fileID": 4300000,
+          "guid": "87a79bb4486ec2d4b8ad334eae051bfc",
+          "type": 2
+        }
+      ],
+      "expectedMeshReference": {
+        "fileID": 4300000,
+        "guid": "87a79bb4486ec2d4b8ad334eae051bfc",
+        "type": 2
+      }
+    }
+  },
+  "checks": {
+    "all16HistoricalBaselineSHAsVerified": true,
+    "all18ObjectReferenceCurvesAbsent": true,
+    "threeFixedPrefabMeshesCorrect": true,
+    "all14NonGaitNonweaponMotionPayloadsExact": true,
+    "bothWeaponMotionPayloadsExactToHEAD": true,
+    "bothGaitsMatchApprovedTinyQuaternionDifference": true
+  },
+  "clips": [
+    {
+      "name": "Dash_Forward",
+      "gitHEADSHA256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "recordedCleanupBaselineSHA256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "bbc33b5e14ee3b92123d320afbb811d6ee3f39de0d768fc463ddcd6b64755ba6",
+      "newMotionCurvePayloadSHA256": "bbc33b5e14ee3b92123d320afbb811d6ee3f39de0d768fc463ddcd6b64755ba6",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Hit_Reaction",
+      "gitHEADSHA256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "recordedCleanupBaselineSHA256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "1e6b5e4ae82238942a353cfc27263e5c51cbc00771622b808a6a93ced358e9da",
+      "newMotionCurvePayloadSHA256": "1e6b5e4ae82238942a353cfc27263e5c51cbc00771622b808a6a93ced358e9da",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Idle_Fists",
+      "gitHEADSHA256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "recordedCleanupBaselineSHA256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "ca6f53826f3be0b2bbd36a6424085f1172d450e054142c555e9d470c99dd0e8e",
+      "newMotionCurvePayloadSHA256": "ca6f53826f3be0b2bbd36a6424085f1172d450e054142c555e9d470c99dd0e8e",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Interact_Reach",
+      "gitHEADSHA256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "recordedCleanupBaselineSHA256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "6f23148f17a69bd450405fb5725f0a351c45291917ab95ecae5a4f26df649d91",
+      "newMotionCurvePayloadSHA256": "6f23148f17a69bd450405fb5725f0a351c45291917ab95ecae5a4f26df649d91",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Item_Throw_Overhand",
+      "gitHEADSHA256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "recordedCleanupBaselineSHA256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "7e223c43c833f7f2caf8b3e121b877b917c448ae9ef71eb019fc985240d81cc0",
+      "newMotionCurvePayloadSHA256": "7e223c43c833f7f2caf8b3e121b877b917c448ae9ef71eb019fc985240d81cc0",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Jump_Apex_Loop",
+      "gitHEADSHA256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "recordedCleanupBaselineSHA256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "4e526cc7cdc2dc451d471a8ab22feb6dfac455a4bfa9ffab8f5b08f85eace750",
+      "newMotionCurvePayloadSHA256": "4e526cc7cdc2dc451d471a8ab22feb6dfac455a4bfa9ffab8f5b08f85eace750",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Jump_Fall_Loop",
+      "gitHEADSHA256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "recordedCleanupBaselineSHA256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "3c128c6cfac0e7c3a75af9132f0d01c0f8c00556c6492aa59c71256516e32af3",
+      "newMotionCurvePayloadSHA256": "3c128c6cfac0e7c3a75af9132f0d01c0f8c00556c6492aa59c71256516e32af3",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Jump_Full",
+      "gitHEADSHA256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "recordedCleanupBaselineSHA256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "2cdd81017d9629ab76a81cee54e932f5e5c690dabfa4fde5aeccad1fa3b211e1",
+      "newMotionCurvePayloadSHA256": "2cdd81017d9629ab76a81cee54e932f5e5c690dabfa4fde5aeccad1fa3b211e1",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Jump_Land",
+      "gitHEADSHA256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "recordedCleanupBaselineSHA256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "61b5147769bc6338ec6d1e49fa13836a8381ba0c168b2a937a7772d0593e06ea",
+      "newMotionCurvePayloadSHA256": "61b5147769bc6338ec6d1e49fa13836a8381ba0c168b2a937a7772d0593e06ea",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Jump_Rise_Loop",
+      "gitHEADSHA256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "recordedCleanupBaselineSHA256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "09be6a1d90b0390f692cb353a8a8c2706ca82d714ac8d39f7baecaa9eef3d079",
+      "newMotionCurvePayloadSHA256": "09be6a1d90b0390f692cb353a8a8c2706ca82d714ac8d39f7baecaa9eef3d079",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Jump_Takeoff",
+      "gitHEADSHA256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "recordedCleanupBaselineSHA256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "8aa1a3303604e98bafd2313ce94493f82de78bcd730e260fbe2276e678b828ac",
+      "newMotionCurvePayloadSHA256": "8aa1a3303604e98bafd2313ce94493f82de78bcd730e260fbe2276e678b828ac",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Pickup_Low",
+      "gitHEADSHA256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "recordedCleanupBaselineSHA256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "4f21258ccc2a9e6150d4df7bbc93f8e535f6a25f3bd425d8ae22fafee4291ee4",
+      "newMotionCurvePayloadSHA256": "4f21258ccc2a9e6150d4df7bbc93f8e535f6a25f3bd425d8ae22fafee4291ee4",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Potion_Drink",
+      "gitHEADSHA256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "recordedCleanupBaselineSHA256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "1ba838505eece4d79b8b85d7d752678474b4a8aade2482ae6caec4f7b9e25e1a",
+      "newMotionCurvePayloadSHA256": "1ba838505eece4d79b8b85d7d752678474b4a8aade2482ae6caec4f7b9e25e1a",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Punch_Right_Jab",
+      "gitHEADSHA256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "recordedCleanupBaselineSHA256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "48849555aada7bcad8f9cc5f0ea598fdd224e04346448e6eac5d318c59bc617e",
+      "newMotionCurvePayloadSHA256": "48849555aada7bcad8f9cc5f0ea598fdd224e04346448e6eac5d318c59bc617e",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Run_Fists",
+      "gitHEADSHA256": "1283740abfb83282e8803180f81e24a8d7bec2cd11df829ddb76fe7652d58a43",
+      "recordedCleanupBaselineSHA256": "1283740abfb83282e8803180f81e24a8d7bec2cd11df829ddb76fe7652d58a43",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "6e60b2828969595b84e8bbe37b9c07da87422a49d135a6072ca9e070755c0a72",
+      "sameFileBytes": false,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": false,
+      "oldMotionCurvePayloadSHA256": "dbdeb6f53c2549452496f2bdd5c335da15e529bb4e963a37224c4131b2880c2f",
+      "newMotionCurvePayloadSHA256": "3758313c4d8098e51553449153063988bbb3087f287075e4cc5e0a74db3e6837",
+      "gaitRegression": {
+        "passed": true,
+        "sameApprovedPreMeshCurvePayload": true,
+        "approvedPreMeshFileSHA256": "6e60b2828969595b84e8bbe37b9c07da87422a49d135a6072ca9e070755c0a72",
+        "approvedPreMeshCurvePayloadSHA256": "3758313c4d8098e51553449153063988bbb3087f287075e4cc5e0a74db3e6837",
+        "positionScaleGripAndKeyTimeExact": true,
+        "bindingStructureAndNonrotationMetadataExact": true,
+        "maximumQuaternionKeyAngle": {
+          "angleDegrees": 0.0002623350894933661,
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+          "keyIndex": 20,
+          "time": 0.33333334
+        },
+        "quaternionAngleLimitDegrees": 0.001,
+        "groups": {
+          "m_RotationCurves": {
+            "bindings": 27,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": false,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 3823,
+            "maxNumericLeafDifference": {
+              "delta": 3.4000000000089514e-05,
+              "path": "/4/curve/m_Curve/21/outSlope/x",
+              "before": 1.3433254,
+              "after": 1.3433594
+            },
+            "nonnumericDifferences": []
+          },
+          "m_CompressedRotationCurves": {
+            "bindings": 0,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_EulerCurves": {
+            "bindings": 0,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_PositionCurves": {
+            "bindings": 27,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_ScaleCurves": {
+            "bindings": 27,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_FloatCurves": {
+            "bindings": 2,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_EditorCurves": {
+            "bindings": 272,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": false,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 3811,
+            "maxNumericLeafDifference": {
+              "delta": 3.4000000000089514e-05,
+              "path": "/46/curve/m_Curve/21/outSlope",
+              "before": 1.3433254,
+              "after": 1.3433594
+            },
+            "nonnumericDifferences": []
+          },
+          "m_EulerEditorCurves": {
+            "bindings": 81,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": false,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 2516,
+            "maxNumericLeafDifference": {
+              "delta": 0.2169799999999995,
+              "path": "/42/curve/m_Curve/29/outSlope",
+              "before": 20.206587,
+              "after": 20.423567
+            },
+            "nonnumericDifferences": []
+          }
+        },
+        "scope": "Serialized quaternion keys and curve metadata, not continuous Unity playback. Euler-editor derivative differences are explicitly recorded; the complete motion payload must equal the approved pre-mesh payload. Actual saved-clip pose/capture regression is a separate audit."
+      },
+      "passed": true
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "gitHEADSHA256": "2203a5017f63d1847e096354d8a4a90a31d28ac52b0c5250eca5f63b1ddf9ec2",
+      "recordedCleanupBaselineSHA256": null,
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "weapon motion compared to immutable git HEAD blob; no separate historical SHA was recorded",
+      "currentSHA256": "2203a5017f63d1847e096354d8a4a90a31d28ac52b0c5250eca5f63b1ddf9ec2",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "42fd43cca68c9b3f2994811b18a851ee845db4e426b4cfb427e62f8ad9b2e766",
+      "newMotionCurvePayloadSHA256": "42fd43cca68c9b3f2994811b18a851ee845db4e426b4cfb427e62f8ad9b2e766",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "gitHEADSHA256": "82059ad24c603cce3cfeba42fcc4f80a5995647192cf723c4f7d75c36de24a83",
+      "recordedCleanupBaselineSHA256": null,
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "weapon motion compared to immutable git HEAD blob; no separate historical SHA was recorded",
+      "currentSHA256": "82059ad24c603cce3cfeba42fcc4f80a5995647192cf723c4f7d75c36de24a83",
+      "sameFileBytes": true,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": true,
+      "oldMotionCurvePayloadSHA256": "fb5532160cede1ac0f0fcbfb163d2b8fe384cb989ee73a10beefb64083e471ba",
+      "newMotionCurvePayloadSHA256": "fb5532160cede1ac0f0fcbfb163d2b8fe384cb989ee73a10beefb64083e471ba",
+      "curveGroupsExact": {
+        "m_RotationCurves": true,
+        "m_CompressedRotationCurves": true,
+        "m_EulerCurves": true,
+        "m_PositionCurves": true,
+        "m_ScaleCurves": true,
+        "m_FloatCurves": true,
+        "m_EditorCurves": true,
+        "m_EulerEditorCurves": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Walk_Fists",
+      "gitHEADSHA256": "8587180b8be889761cbd1bd21593840e0149c5fb7ea943f55c00a2a09237b055",
+      "recordedCleanupBaselineSHA256": "8587180b8be889761cbd1bd21593840e0149c5fb7ea943f55c00a2a09237b055",
+      "gitHEADMatchesRecordedBaseline": true,
+      "baselineScope": "cleanup baseline SHA verified",
+      "currentSHA256": "ff96b55f7212b1aa614e0d40cf4aac73438545614f1f85de0339548a137d253c",
+      "sameFileBytes": false,
+      "objectReferenceCurvesAbsent": {
+        "passed": true,
+        "curveCount": 0,
+        "curves": [],
+        "objectReferenceBindingCount": 0,
+        "objectReferenceMappingCount": 0
+      },
+      "oldMeshCurveCount": 0,
+      "staticMetadataAndBindingTablesExact": true,
+      "staticDifferences": {
+        "numericLeafDifferences": 0,
+        "maxNumericLeafDifference": null,
+        "nonnumericDifferences": []
+      },
+      "motionCurvePayloadExact": false,
+      "oldMotionCurvePayloadSHA256": "d4b2bdfbe3175dae6b93e43f682b43b9bd17d21ef9d4c20d7086e1f5870c5e84",
+      "newMotionCurvePayloadSHA256": "cb2fdc6e05730220f25beedbc9453f22bf3c77a3f5ccd89602fc933526735974",
+      "gaitRegression": {
+        "passed": true,
+        "sameApprovedPreMeshCurvePayload": true,
+        "approvedPreMeshFileSHA256": "ff96b55f7212b1aa614e0d40cf4aac73438545614f1f85de0339548a137d253c",
+        "approvedPreMeshCurvePayloadSHA256": "cb2fdc6e05730220f25beedbc9453f22bf3c77a3f5ccd89602fc933526735974",
+        "positionScaleGripAndKeyTimeExact": true,
+        "bindingStructureAndNonrotationMetadataExact": true,
+        "maximumQuaternionKeyAngle": {
+          "angleDegrees": 0.00021500408051315978,
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+          "keyIndex": 8,
+          "time": 0.13333334
+        },
+        "quaternionAngleLimitDegrees": 0.001,
+        "groups": {
+          "m_RotationCurves": {
+            "bindings": 27,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": false,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 4910,
+            "maxNumericLeafDifference": {
+              "delta": 6.437000000003579e-05,
+              "path": "/4/curve/m_Curve/31/outSlope/x",
+              "before": 0.73533416,
+              "after": 0.73539853
+            },
+            "nonnumericDifferences": []
+          },
+          "m_CompressedRotationCurves": {
+            "bindings": 0,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_EulerCurves": {
+            "bindings": 0,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_PositionCurves": {
+            "bindings": 27,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_ScaleCurves": {
+            "bindings": 27,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_FloatCurves": {
+            "bindings": 2,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": true,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 0,
+            "maxNumericLeafDifference": null,
+            "nonnumericDifferences": []
+          },
+          "m_EditorCurves": {
+            "bindings": 272,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": false,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 4894,
+            "maxNumericLeafDifference": {
+              "delta": 6.434999999993529e-05,
+              "path": "/46/curve/m_Curve/31/outSlope",
+              "before": 0.73533475,
+              "after": 0.7353991
+            },
+            "nonnumericDifferences": []
+          },
+          "m_EulerEditorCurves": {
+            "bindings": 81,
+            "bindingsExact": true,
+            "keyTimesAndCountsExact": true,
+            "contentExact": false,
+            "onlyPermittedRotationValueSlopeDifferences": true,
+            "numericLeafDifferences": 3232,
+            "maxNumericLeafDifference": {
+              "delta": 0.10162400000000105,
+              "path": "/27/curve/m_Curve/38/outSlope",
+              "before": -116.243706,
+              "after": -116.34533
+            },
+            "nonnumericDifferences": []
+          }
+        },
+        "scope": "Serialized quaternion keys and curve metadata, not continuous Unity playback. Euler-editor derivative differences are explicitly recorded; the complete motion payload must equal the approved pre-mesh payload. Actual saved-clip pose/capture regression is a separate audit."
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,18 @@
+Run_Fists final targeted revision: independent visual QA
+Date: 2026-10-22. Reviewer: chibi_model_pipeline.
+Verdict: PASS for compact, natural Run appearance in the inspected2.5D/front preview. Supersedes all earlier Run candidates.
+
+Actual source session: 20261022_060003093.
+Run-only review SHA256: 8b184c57f6661670ffed9700d52fe65f3134e1197cca85b2b5db00e63d306867.
+Capture report SHA256: 16359018c3a0e9d14a176f3b80182c46763a2f3f8aa00e7afe2fca62368b256d.
+Saved Run clip SHA256: 7dc2277627be4965100403f9ed77b37ae49ffe951481671408429723110b376a.
+Actual base mesh SHA256: e474f2b2a4fc8e8dff7625db29d497e1b9549558713a132304a152852a48f8f4.
+Actual PNGs: CaptureRuns/20261022_060003093/Frames/Run_Fists and RunFrontQA, as recorded in run-only-review.json.
+
+Read all38 actual side and38 actual front frames, total76, in chronological contact sheets. Additionally inspected original720-square frames0000/0004/0008/0012/0016 in each view, total10 full-resolution images.
+
+The final run keeps both closed fists and forearms on their own side of the torso. The earlier disappearing/centre-crossing hand appearance is absent in the new front and side sequence. Far-hand side occlusion is checked against the front view rather than treated as proof of clearance. The restored elbow hint gives bent running arms instead of the rejected palms-up/tray-carrying impression. The extra8mm left clearance does not introduce an exaggerated winged silhouette, disconnected sleeve, new wrist flip or visible loop snap. The compact counterphase arm motion remains compatible with the preserved leg/body running pattern. No additional visible blocking defect was found.
+
+Separate physical evidence: run-actual-lateral-audit.json identifies this exact session/report/clip. Its selected distal forearm+hand versus non-arm torso/waist surface audit covers38 sampled actual BakeMesh frames and records0 noncoplanar triangle crossings,0 unresolved coplanar candidates and0 negative lateral rays; minimum matching-ray gaps are left+7.84mm and right+6.90mm. These results belong to the independent geometry audit, not this reviewer's visual inference. They do not guarantee every transition-weight shoulder face, whole-character geometry or continuous time between samples. The earlier empty torso-weight selection is not used as clearance evidence.
+
+run-revision-preservation.json separately verifies saved assets and unchanged Run body/legs markers. This review author did not modify production models, other animations, gameplay code or VFX, and did not execute Unity. Scope is the Run-only correction; attack deletion and GIF packaging are separate root-owned changes. No further animation changes are requested by this visual QA.

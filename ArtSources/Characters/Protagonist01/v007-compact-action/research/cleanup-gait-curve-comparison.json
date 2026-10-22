@@ -1,0 +1,572 @@
+{
+  "audited_utc": "2026-10-22T04:20:00.855003+00:00",
+  "method": "Read git HEAD blobs only; require exact cleanup-baseline SHA match, then compare serialized Unity keyframe curves to current files without modifying clips or baseline. No Unity evaluation.",
+  "clips": [
+    {
+      "name": "Walk_Fists",
+      "baseline_git_sha256": "8587180b8be889761cbd1bd21593840e0149c5fb7ea943f55c00a2a09237b055",
+      "recorded_cleanup_baseline_sha256": "8587180b8be889761cbd1bd21593840e0149c5fb7ea943f55c00a2a09237b055",
+      "baseline_verified": true,
+      "current_sha256": "ff96b55f7212b1aa614e0d40cf4aac73438545614f1f85de0339548a137d253c",
+      "same_bytes": false,
+      "same_binding_structure": true,
+      "same_key_times_and_counts": true,
+      "static_serialized_metadata_equal": true,
+      "numeric_leaf_differences": 13036,
+      "nonnumeric_differences": [],
+      "overall_largest_numeric_delta": {
+        "field": "/m_EulerEditorCurves/27/curve/m_Curve/38/inSlope",
+        "before": -116.243706,
+        "after": -116.34533,
+        "absolute_delta": 0.10162400000000105
+      },
+      "groups": [
+        {
+          "group": "m_RotationCurves",
+          "before_bindings": 27,
+          "after_bindings": 27,
+          "before_keys": 1176,
+          "bindings_with_numeric_changes": 22
+        },
+        {
+          "group": "m_PositionCurves",
+          "before_bindings": 27,
+          "after_bindings": 27,
+          "before_keys": 105,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_ScaleCurves",
+          "before_bindings": 27,
+          "after_bindings": 27,
+          "before_keys": 54,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_EulerCurves",
+          "before_bindings": 0,
+          "after_bindings": 0,
+          "before_keys": 0,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_FloatCurves",
+          "before_bindings": 2,
+          "after_bindings": 2,
+          "before_keys": 4,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_EditorCurves",
+          "before_bindings": 272,
+          "after_bindings": 272,
+          "before_keys": 5083,
+          "bindings_with_numeric_changes": 80
+        },
+        {
+          "group": "m_EulerEditorCurves",
+          "before_bindings": 81,
+          "after_bindings": 81,
+          "before_keys": 3528,
+          "bindings_with_numeric_changes": 66
+        }
+      ],
+      "numeric_keyfield_differences": {
+        "m_RotationCurves/value": {
+          "different_numeric_components": 1482,
+          "maximum": {
+            "absolute_delta": 1.4300000000244673e-06,
+            "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+            "attribute": "",
+            "key_index": 15,
+            "time": 0.25,
+            "component": "x",
+            "before": 0.47418827,
+            "after": 0.47418684
+          }
+        },
+        "m_RotationCurves/inSlope": {
+          "different_numeric_components": 1714,
+          "maximum": {
+            "absolute_delta": 6.437000000003579e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "",
+            "key_index": 31,
+            "time": 0.51666665,
+            "component": "x",
+            "before": 0.73533416,
+            "after": 0.73539853
+          }
+        },
+        "m_RotationCurves/outSlope": {
+          "different_numeric_components": 1714,
+          "maximum": {
+            "absolute_delta": 6.437000000003579e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "",
+            "key_index": 31,
+            "time": 0.51666665,
+            "component": "x",
+            "before": 0.73533416,
+            "after": 0.73539853
+          }
+        },
+        "m_EditorCurves/inSlope": {
+          "different_numeric_components": 1706,
+          "maximum": {
+            "absolute_delta": 6.434999999993529e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "m_LocalRotation.x",
+            "key_index": 31,
+            "time": 0.51666665,
+            "component": null,
+            "before": 0.73533475,
+            "after": 0.7353991
+          }
+        },
+        "m_EditorCurves/outSlope": {
+          "different_numeric_components": 1706,
+          "maximum": {
+            "absolute_delta": 6.434999999993529e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "m_LocalRotation.x",
+            "key_index": 31,
+            "time": 0.51666665,
+            "component": null,
+            "before": 0.73533475,
+            "after": 0.7353991
+          }
+        },
+        "m_EditorCurves/value": {
+          "different_numeric_components": 1482,
+          "maximum": {
+            "absolute_delta": 1.4300000000244673e-06,
+            "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+            "attribute": "m_LocalRotation.x",
+            "key_index": 15,
+            "time": 0.25,
+            "component": null,
+            "before": 0.47418827,
+            "after": 0.47418684
+          }
+        },
+        "m_EulerEditorCurves/value": {
+          "different_numeric_components": 1114,
+          "maximum": {
+            "absolute_delta": 0.0008399999999966212,
+            "path": "Visual/Armature/Hips/RightUpLeg/RightLeg/RightFoot",
+            "attribute": "localEulerAngles.y",
+            "key_index": 37,
+            "time": 0.6166667,
+            "component": null,
+            "before": -77.82991,
+            "after": -77.83075
+          }
+        },
+        "m_EulerEditorCurves/inSlope": {
+          "different_numeric_components": 1063,
+          "maximum": {
+            "absolute_delta": 0.10162400000000105,
+            "path": "Visual/Armature/Hips/RightUpLeg/RightLeg/RightFoot",
+            "attribute": "localEulerAngles.x",
+            "key_index": 38,
+            "time": 0.6333333,
+            "component": null,
+            "before": -116.243706,
+            "after": -116.34533
+          }
+        },
+        "m_EulerEditorCurves/outSlope": {
+          "different_numeric_components": 1055,
+          "maximum": {
+            "absolute_delta": 0.10162400000000105,
+            "path": "Visual/Armature/Hips/RightUpLeg/RightLeg/RightFoot",
+            "attribute": "localEulerAngles.x",
+            "key_index": 38,
+            "time": 0.6333333,
+            "component": null,
+            "before": -116.243706,
+            "after": -116.34533
+          }
+        }
+      },
+      "maximum_normalized_quaternion_key_angle": {
+        "degrees": 0.00021500183558699522,
+        "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+        "key_index": 8,
+        "time": 0.13333334,
+        "before": [
+          0.49894184,
+          -0.044258032,
+          0.25705123,
+          0.826452
+        ],
+        "after": [
+          0.49894044,
+          -0.044258207,
+          0.25705066,
+          0.8264531
+        ]
+      },
+      "maximum_position_key_distance": {
+        "units": 0.0
+      },
+      "static_metadata_differences": [],
+      "serialized_change_summary": "Same bindings, key times/counts, position keys and static clip metadata. Small quaternion value/tangent differences with corresponding editor Euler curve differences; evaluated pose regression remains a separate Unity capture check."
+    },
+    {
+      "name": "Run_Fists",
+      "baseline_git_sha256": "1283740abfb83282e8803180f81e24a8d7bec2cd11df829ddb76fe7652d58a43",
+      "recorded_cleanup_baseline_sha256": "1283740abfb83282e8803180f81e24a8d7bec2cd11df829ddb76fe7652d58a43",
+      "baseline_verified": true,
+      "current_sha256": "6e60b2828969595b84e8bbe37b9c07da87422a49d135a6072ca9e070755c0a72",
+      "same_bytes": false,
+      "same_binding_structure": true,
+      "same_key_times_and_counts": true,
+      "static_serialized_metadata_equal": true,
+      "numeric_leaf_differences": 10150,
+      "nonnumeric_differences": [],
+      "overall_largest_numeric_delta": {
+        "field": "/m_EulerEditorCurves/42/curve/m_Curve/29/outSlope",
+        "before": 20.206587,
+        "after": 20.423567,
+        "absolute_delta": 0.2169799999999995
+      },
+      "groups": [
+        {
+          "group": "m_RotationCurves",
+          "before_bindings": 27,
+          "after_bindings": 27,
+          "before_keys": 868,
+          "bindings_with_numeric_changes": 21
+        },
+        {
+          "group": "m_PositionCurves",
+          "before_bindings": 27,
+          "after_bindings": 27,
+          "before_keys": 91,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_ScaleCurves",
+          "before_bindings": 27,
+          "after_bindings": 27,
+          "before_keys": 54,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_EulerCurves",
+          "before_bindings": 0,
+          "after_bindings": 0,
+          "before_keys": 0,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_FloatCurves",
+          "before_bindings": 2,
+          "after_bindings": 2,
+          "before_keys": 4,
+          "bindings_with_numeric_changes": 0
+        },
+        {
+          "group": "m_EditorCurves",
+          "before_bindings": 272,
+          "after_bindings": 272,
+          "before_keys": 3837,
+          "bindings_with_numeric_changes": 78
+        },
+        {
+          "group": "m_EulerEditorCurves",
+          "before_bindings": 81,
+          "after_bindings": 81,
+          "before_keys": 2604,
+          "bindings_with_numeric_changes": 61
+        }
+      ],
+      "numeric_keyfield_differences": {
+        "m_RotationCurves/inSlope": {
+          "different_numeric_components": 1328,
+          "maximum": {
+            "absolute_delta": 3.4000000000089514e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "",
+            "key_index": 21,
+            "time": 0.35,
+            "component": "x",
+            "before": 1.3433254,
+            "after": 1.3433594
+          }
+        },
+        "m_RotationCurves/outSlope": {
+          "different_numeric_components": 1328,
+          "maximum": {
+            "absolute_delta": 3.4000000000089514e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "",
+            "key_index": 21,
+            "time": 0.35,
+            "component": "x",
+            "before": 1.3433254,
+            "after": 1.3433594
+          }
+        },
+        "m_RotationCurves/value": {
+          "different_numeric_components": 1167,
+          "maximum": {
+            "absolute_delta": 1.7299999999775828e-06,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "",
+            "key_index": 20,
+            "time": 0.33333334,
+            "component": "x",
+            "before": 0.44467878,
+            "after": 0.44467705
+          }
+        },
+        "m_EditorCurves/inSlope": {
+          "different_numeric_components": 1322,
+          "maximum": {
+            "absolute_delta": 3.4000000000089514e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "m_LocalRotation.x",
+            "key_index": 21,
+            "time": 0.35,
+            "component": null,
+            "before": 1.3433254,
+            "after": 1.3433594
+          }
+        },
+        "m_EditorCurves/outSlope": {
+          "different_numeric_components": 1322,
+          "maximum": {
+            "absolute_delta": 3.4000000000089514e-05,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "m_LocalRotation.x",
+            "key_index": 21,
+            "time": 0.35,
+            "component": null,
+            "before": 1.3433254,
+            "after": 1.3433594
+          }
+        },
+        "m_EditorCurves/value": {
+          "different_numeric_components": 1167,
+          "maximum": {
+            "absolute_delta": 1.7299999999775828e-06,
+            "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+            "attribute": "m_LocalRotation.x",
+            "key_index": 20,
+            "time": 0.33333334,
+            "component": null,
+            "before": 0.44467878,
+            "after": 0.44467705
+          }
+        },
+        "m_EulerEditorCurves/value": {
+          "different_numeric_components": 881,
+          "maximum": {
+            "absolute_delta": 0.0005139999999954625,
+            "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder",
+            "attribute": "localEulerAngles.x",
+            "key_index": 28,
+            "time": 0.46666667,
+            "component": null,
+            "before": -89.237404,
+            "after": -89.23689
+          }
+        },
+        "m_EulerEditorCurves/inSlope": {
+          "different_numeric_components": 814,
+          "maximum": {
+            "absolute_delta": 0.03295900000000174,
+            "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder",
+            "attribute": "localEulerAngles.x",
+            "key_index": 28,
+            "time": 0.46666667,
+            "component": null,
+            "before": -25.114725,
+            "after": -25.147684
+          }
+        },
+        "m_EulerEditorCurves/outSlope": {
+          "different_numeric_components": 821,
+          "maximum": {
+            "absolute_delta": 0.2169799999999995,
+            "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder",
+            "attribute": "localEulerAngles.x",
+            "key_index": 29,
+            "time": 0.48333332,
+            "component": null,
+            "before": 20.206587,
+            "after": 20.423567
+          }
+        }
+      },
+      "maximum_normalized_quaternion_key_angle": {
+        "degrees": 0.0002623517359411828,
+        "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+        "key_index": 20,
+        "time": 0.33333334,
+        "before": [
+          0.44467878,
+          0.04461946,
+          -0.25834644,
+          0.85646194
+        ],
+        "after": [
+          0.44467705,
+          0.04461961,
+          -0.25834554,
+          0.85646313
+        ]
+      },
+      "maximum_position_key_distance": {
+        "units": 0.0
+      },
+      "static_metadata_differences": [],
+      "serialized_change_summary": "Same bindings, key times/counts, position keys and static clip metadata. Small quaternion value/tangent differences with corresponding editor Euler curve differences; evaluated pose regression remains a separate Unity capture check."
+    }
+  ],
+  "limitation": "These are serialized key and tangent differences, not evaluated skin/foot trajectories or perceptual approval. Quaternion angles normalize both stored keys and ignore equivalent signs. Hermite tangent changes require final Unity sampling to verify evaluated motion.",
+  "animator_hypothesis": {
+    "historical_prefab_source": "git HEAD:Assets/Art/Characters/Protagonist01/MotionNatural_v005/Prefabs/Protagonist01_MotionReview.prefab",
+    "historical_settings": {
+      "m_Enabled": 1,
+      "m_Avatar_fileID": 0,
+      "m_Controller_fileID": 0,
+      "m_CullingMode": 0,
+      "m_UpdateMode": 0,
+      "m_ApplyRootMotion": 0,
+      "m_HasTransformHierarchy": 1,
+      "m_AllowConstantClipSamplingOptimization": 1,
+      "m_KeepAnimatorStateOnDisable": 0,
+      "m_WriteDefaultValuesOnDisable": 0
+    },
+    "old_sourcebank_disabled_animators_before_sampling": true,
+    "conclusion": "Animator presence is a plausible initialization/sampling-path difference, not a proven cause. Public Unity documentation and C# binding delegate to native SampleAnimation without specifying this quaternion normalization behavior. No Animator or sampling code was changed for this analysis.",
+    "primary_sources": [
+      "https://docs.unity3d.com/6000.3/Documentation/ScriptReference/AnimationClip.SampleAnimation.html",
+      "https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/Animation/ScriptBindings/AnimationClip.bindings.cs"
+    ]
+  },
+  "all_recorded_nonweapon_clip_hash_comparison": [
+    {
+      "name": "Dash_Forward",
+      "baseline_sha256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "current_sha256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "exact": true
+    },
+    {
+      "name": "Hit_Reaction",
+      "baseline_sha256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "current_sha256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "exact": true
+    },
+    {
+      "name": "Idle_Fists",
+      "baseline_sha256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "current_sha256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "exact": true
+    },
+    {
+      "name": "Interact_Reach",
+      "baseline_sha256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "current_sha256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "exact": true
+    },
+    {
+      "name": "Item_Throw_Overhand",
+      "baseline_sha256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "current_sha256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "exact": true
+    },
+    {
+      "name": "Jump_Apex_Loop",
+      "baseline_sha256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "current_sha256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "exact": true
+    },
+    {
+      "name": "Jump_Fall_Loop",
+      "baseline_sha256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "current_sha256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "exact": true
+    },
+    {
+      "name": "Jump_Full",
+      "baseline_sha256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "current_sha256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "exact": true
+    },
+    {
+      "name": "Jump_Land",
+      "baseline_sha256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "current_sha256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "exact": true
+    },
+    {
+      "name": "Jump_Rise_Loop",
+      "baseline_sha256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "current_sha256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "exact": true
+    },
+    {
+      "name": "Jump_Takeoff",
+      "baseline_sha256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "current_sha256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "exact": true
+    },
+    {
+      "name": "Pickup_Low",
+      "baseline_sha256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "current_sha256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "exact": true
+    },
+    {
+      "name": "Potion_Drink",
+      "baseline_sha256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "current_sha256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "exact": true
+    },
+    {
+      "name": "Punch_Right_Jab",
+      "baseline_sha256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "current_sha256": "589e14609f90d36e01a3d5849b50acaa234de0a933dc4ddfa0f2c4c4f9e288da",
+      "exact": true
+    },
+    {
+      "name": "Run_Fists",
+      "baseline_sha256": "1283740abfb83282e8803180f81e24a8d7bec2cd11df829ddb76fe7652d58a43",
+      "current_sha256": "6e60b2828969595b84e8bbe37b9c07da87422a49d135a6072ca9e070755c0a72",
+      "exact": false
+    },
+    {
+      "name": "Walk_Fists",
+      "baseline_sha256": "8587180b8be889761cbd1bd21593840e0149c5fb7ea943f55c00a2a09237b055",
+      "current_sha256": "ff96b55f7212b1aa614e0d40cf4aac73438545614f1f85de0339548a137d253c",
+      "exact": false
+    }
+  ],
+  "exact_other_nonweapon_clips": [
+    "Dash_Forward",
+    "Hit_Reaction",
+    "Idle_Fists",
+    "Interact_Reach",
+    "Item_Throw_Overhand",
+    "Jump_Apex_Loop",
+    "Jump_Fall_Loop",
+    "Jump_Full",
+    "Jump_Land",
+    "Jump_Rise_Loop",
+    "Jump_Takeoff",
+    "Pickup_Low",
+    "Potion_Drink",
+    "Punch_Right_Jab"
+  ],
+  "nonexact_nonweapon_clips": [
+    "Run_Fists",
+    "Walk_Fists"
+  ],
+  "sampling_code_changed_by_this_analysis": false,
+  "baseline_modified": false
+}

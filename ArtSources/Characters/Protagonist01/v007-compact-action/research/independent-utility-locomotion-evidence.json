@@ -1,0 +1,135 @@
+{
+  "saved_utc": "2026-10-21T09:33:01.361631+00:00",
+  "method": "Visual review of actual consecutive Unity render sheets and selected full-resolution720px PNGs. Source/code/Unity/VFX not modified during QA.",
+  "review_report_sha256_at_evidence_save": "bd0506828fde0669721568fc6415f695a9e8e2816d5b142cc1b2d36c9809660a",
+  "source_report_changed_after_first_Pass4_visual_review": true,
+  "note": "The report changed after the first Pass4 inspection while Root completed selected corrections. Final evidence uses the immutable final report and fresh Final_Potion_Drink contacts. Pickup/Dash/Jump Pass4 contacts and final Potion contacts all match the current source PNGs pixel-for-pixel.",
+  "rechecked_pass4_frames": {
+    "Pickup_Low": 48,
+    "Potion_Drink": 68,
+    "Dash_Forward": 28,
+    "Jump_Full": 44
+  },
+  "reviewed_motions": [
+    {
+      "name": "Idle_Fists",
+      "source_frame_count": 168,
+      "loop": true,
+      "source_sequence_sha256": "8d3285e631eee62fc6131bb795bdfd5cf3daac46c87b9cb5d7ab597ef78e38eb",
+      "tail8_unique_hash_count": 8
+    },
+    {
+      "name": "Walk_Fists",
+      "source_frame_count": 52,
+      "loop": true,
+      "source_sequence_sha256": "36bd0c84eeb7ed4109a8061427a0e93bc51ea5f0b621b5423c659ca7a9f03a2b",
+      "tail8_unique_hash_count": 8
+    },
+    {
+      "name": "Run_Fists",
+      "source_frame_count": 38,
+      "loop": true,
+      "source_sequence_sha256": "33ccd51399b13ec44e286addd37dbf8aa23e55589380fdd08543f76c0b288e1a",
+      "tail8_unique_hash_count": 8
+    },
+    {
+      "name": "Jump_Full",
+      "source_frame_count": 44,
+      "loop": false,
+      "source_sequence_sha256": "7c9d156b574636d09ba80a42d04a99300debef67f64730f69d7406b7c3c05c34",
+      "tail8_unique_hash_count": 1
+    },
+    {
+      "name": "Dash_Forward",
+      "source_frame_count": 28,
+      "loop": false,
+      "source_sequence_sha256": "415e57a01720b31280567ebb59739ea491721516ec9f33d9b9f3ef4aa12e715b",
+      "tail8_unique_hash_count": 1
+    },
+    {
+      "name": "Potion_Drink",
+      "source_frame_count": 68,
+      "loop": false,
+      "source_sequence_sha256": "035f9d54f924e331caf428a0601f68df9cb12c35773f3ebf576f2cfc2599f2dc",
+      "tail8_unique_hash_count": 1
+    },
+    {
+      "name": "Item_Throw_Overhand",
+      "source_frame_count": 47,
+      "loop": false,
+      "source_sequence_sha256": "41cc1c738a1e833f2e2c671a4f99dea4a5a1bf7a94f837f98d26b52eae746920",
+      "tail8_unique_hash_count": 1
+    },
+    {
+      "name": "Hit_Reaction",
+      "source_frame_count": 28,
+      "loop": false,
+      "source_sequence_sha256": "9ec5a32b0c8a429ffe482cd6017342e398773fb8f7bb0d4bbfab24c9f8415553",
+      "tail8_unique_hash_count": 1
+    },
+    {
+      "name": "Interact_Reach",
+      "source_frame_count": 36,
+      "loop": false,
+      "source_sequence_sha256": "0079c3b63271298267e141f27836ada925a469b9065f8207b893566b403efa6f",
+      "tail8_unique_hash_count": 1
+    },
+    {
+      "name": "Pickup_Low",
+      "source_frame_count": 48,
+      "loop": false,
+      "source_sequence_sha256": "8b185b763fbd3ef50aede544f33a8991fbaa6d6a8d20a47952cbaf812da3869d",
+      "tail8_unique_hash_count": 1
+    }
+  ],
+  "result": "No additional blocking visual defect identified within the reviewed final preview intervals. This is not a naturalness score or gameplay approval.",
+  "final_review_contact_sheets": [
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Pass4_Pickup_Low_0000.png",
+      "sha256": "ea17b52249ae84529ecaeae385b712b034a7ba425a646abbc68259423abbb48a"
+    },
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Pass4_Pickup_Low_0036.png",
+      "sha256": "bae63d1616a246adf9658724dbae4e46c79e177d7aa8e79e4659612ebfd8ab4b"
+    },
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Pass4_Dash_Forward_0000.png",
+      "sha256": "56e11b2a9ab980df49e58b430dce2860b35137802e7dce6d3636ea97e004e5a9"
+    },
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Pass4_Jump_Full_0000.png",
+      "sha256": "fa2f92636924feb9033ea484e0f49d6c743ff8a6c909ca52fb4a1c3765034642"
+    },
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Pass4_Jump_Full_0036.png",
+      "sha256": "d361afb9552d94618def1a71faecfb29fd64fe21b9745cae20ce8bf4b947078a"
+    },
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Final_Potion_Drink_0000.png",
+      "sha256": "37660cfeec8d37b15b688df5d64d80a7a76545686cd96b5d03e016a0694a0a83"
+    },
+    {
+      "file": "ArtSources\\Characters\\Protagonist01\\v007-compact-action\\ReviewOutput\\IndependentQA\\Final_Potion_Drink_0036.png",
+      "sha256": "f7e533bbbdf630a32241ae41a0aeba3ab9bf385a3cb30a7c4154f116889ccbde"
+    }
+  ],
+  "final_source_contact_identity_checks": [
+    {
+      "name": "Pickup_Low",
+      "current_frames_identical_to_final_reviewed_contact": 48
+    },
+    {
+      "name": "Dash_Forward",
+      "current_frames_identical_to_final_reviewed_contact": 28
+    },
+    {
+      "name": "Jump_Full",
+      "current_frames_identical_to_final_reviewed_contact": 44
+    },
+    {
+      "name": "Potion_Drink",
+      "current_frames_identical_to_final_reviewed_contact": 68
+    }
+  ],
+  "final_potion_recheck": "Final whole Unity run used40degree shoulder protraction; reviewed all68actual consecutive PNGs plus full720px0021/0027/0059/0067; no additional blocking visual defect found."
+}

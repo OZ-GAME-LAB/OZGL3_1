@@ -1,0 +1,824 @@
+{
+  "verdict": "PASS for the stated38-frame selected-surface and76-image visual review",
+  "sourceSession": "20261022_060003093",
+  "reportSHA256": "16359018c3a0e9d14a176f3b80182c46763a2f3f8aa00e7afe2fca62368b256d",
+  "runClipSHA256": "7dc2277627be4965100403f9ed77b37ae49ffe951481671408429723110b376a",
+  "surfaceAuditSHA256": "1bcbb33c78a034436eeb3094d0b6074f8ce087e7b543a9d3088c73a5a3b93a8c",
+  "preservationReportSHA256": "486cf0f591fc0edbfffc96c671c0a46fbfdf88a2c28c868b7ea3e6d9847a8001",
+  "retirementInventorySHA256": "0f8d9d7e2f909c1e702244d32e7ae4c8bbfb2fcba5b48b6f7199124b3f1cd86f",
+  "originalBeforeInventorySHA256": "98986b4a9bc0788267842b03856b80e537e3eef46af5823b518f28c9a2cd21b2",
+  "frameCount": 38,
+  "crossingSelectedTrianglePairs": 0,
+  "coplanarCandidatesUnresolved": 0,
+  "negativeSameYZRays": 0,
+  "minimumLateralGapM": {
+    "left": 0.007844850334923298,
+    "right": 0.006901310096320362
+  },
+  "nonemptyBodyTriangleCountRange": [
+    1482,
+    1767
+  ],
+  "selectedDistalArmTriangles": 1496,
+  "maskMethod": "Actual complete Unity BakeMesh world triangles, actor lateral=-worldZ. Non-arm body faces require every vertex combined upper/lower/hand arm influence<.2, with centroidY from hips-.065 to max shoulderY+.035. Distal arm faces require every vertex forearm+hand influence>.65. Exact noncoplanar edge/triangle tests use both triangle edge sets after3D AABB broad phase; same-height/depth rays measure outermost actual body-face lateral clearance at each selected distal arm vertex.",
+  "limits": "A validated selected-surface scope, not a whole-character or continuous-time guarantee. Intentional shoulder attachment and transition-weight boundary faces are outside this distal-arm test. Empty selections raise errors. Coplanar candidates are reported unresolved. Positive ray gaps are lateral distances, not Euclidean distances. Arms outside bodyY/depth may have no matching ray; they still undergo the triangle-crossing test.",
+  "visualFinding": "Reviewed both38-frame side/front contact sheets and native720px final front8/side27. Hands and distal sleeves remain outside the waist/pants region; prior selected intersections are absent. Run body/leg timing and the closed-fist silhouette remain consistent. Front view is diagnostic; the delivery motion remains2.5D side view.",
+  "frames": [
+    {
+      "view": "side",
+      "frame": 0,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0000.png",
+      "sha256": "6d93a64c1a55db4ec87d1ba9e8dcf25731cb29171e8fd6cab2fcfff42a974750",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 1,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0001.png",
+      "sha256": "412dd51e69d70dad9f53a4763b8105a7fb78faa2aeca83beebfc41868fa4d01a",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 2,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0002.png",
+      "sha256": "d3717081bde07837e4c5c57fcafb8295d6275b2af1385d6dd9104c398478e7b2",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 3,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0003.png",
+      "sha256": "cec76ae79bebc0595ac5e6b3de38eac82a769cee3257ad64ddadc41ba1b4cd8e",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 4,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0004.png",
+      "sha256": "918f7e85bc325246b19112ab67544c5218f485fa8c09f0c95a591ac87ec1e0ac",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 5,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0005.png",
+      "sha256": "508c0fe3b28cc42854e81b998e5074f6c78e6c04c956f050a34a9031c77dd930",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 6,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0006.png",
+      "sha256": "6bd86b9295ade6f6485bad647bda443710ed6fda0184719e66e195b1876a47e3",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 7,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0007.png",
+      "sha256": "fe9ae808025c93f297d27468f9de20e2a3688ed9e8bb9ad75853562ef4f012ee",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 8,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0008.png",
+      "sha256": "27538d5f8cccc781c3435f79b30479b1f5e349bf70adb6bca2d24673f9e97ecb",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 9,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0009.png",
+      "sha256": "5e1a667851e816efba6e9b5b4252816452e5f3ac82e5b35ce02bf995b38a7809",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 10,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0010.png",
+      "sha256": "2e80d3981b5935486cc9984e3e4355b5e5e112f230bff82c2818163c90bd92a2",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 11,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0011.png",
+      "sha256": "8fd93f3d87c2cf5a344820561db2517edb9fd24bcc0181e5688f84da69440b29",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 12,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0012.png",
+      "sha256": "5d2572da812acf21e1d4fe9a4b9bc8e0b00a32fccfc6c4d74a1a31744eb681b9",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 13,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0013.png",
+      "sha256": "df2bd05eabbc160f52a4dd4ac0f4e4c9de4fca2caf653050bc2ec2cb681188b6",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 14,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0014.png",
+      "sha256": "a6781a0a02490cbb3e14d35428184db9378e0babeb457a85bb3ea60c20965757",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 15,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0015.png",
+      "sha256": "8a237db0cc1273423a494f75dee002378d1800b8ffa67b94b36ecd852db9a2c9",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 16,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0016.png",
+      "sha256": "1470b4f3eb3a49ff7b6f011e4125642024aaa38ab075f736cc0802001a8a122d",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 17,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0017.png",
+      "sha256": "74395af9dfab10b4e369ee84d669ece0cd39be20769d0573e7d37e59f2a1da81",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 18,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0018.png",
+      "sha256": "547438fc38623a26c51afad8de583c4d9b88b72672dc3a06989caf70488bf9c6",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 19,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0019.png",
+      "sha256": "6d93a64c1a55db4ec87d1ba9e8dcf25731cb29171e8fd6cab2fcfff42a974750",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 20,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0020.png",
+      "sha256": "b83422b7f9577b90a38e2aa0c93cc0bf6c874020f28c8d89408119e175cc4839",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 21,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0021.png",
+      "sha256": "8cbeda8946db8496589456c7e97e26f926f03323001d4346db2f86d921366f32",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 22,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0022.png",
+      "sha256": "166d67a67a754b049a0da78e615b0a8038d6a3ae8ea189f1eba6897e37021fe7",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 23,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0023.png",
+      "sha256": "d3fcfc2ef599f16144d1ea6dfb1c542e645d64335b9ff6b2a41e1f536b4dad98",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 24,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0024.png",
+      "sha256": "167fd7045e4c9f77515faf475360134f241dc3fd43edebee1abaa29c100deca1",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 25,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0025.png",
+      "sha256": "ba66a34c66190a28a32f2fcf73331f6aa37922849323e12e4f92afdf5b6150c6",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 26,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0026.png",
+      "sha256": "22896b1409232f35d2755de67f81c1fe30d2138efd6f43ae5eeddb3cf692f6a0",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 27,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0027.png",
+      "sha256": "8e5bbe6f5253c183f01325f92dfd6bad1accddbd0852b89e8c12df6545013fc0",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 28,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0028.png",
+      "sha256": "5e1a667851e816efba6e9b5b4252816452e5f3ac82e5b35ce02bf995b38a7809",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 29,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0029.png",
+      "sha256": "8bd20bf843b72c5693ad61814f57ea0070e87e3e6cb4c89d66569400fc403f54",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 30,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0030.png",
+      "sha256": "8fd93f3d87c2cf5a344820561db2517edb9fd24bcc0181e5688f84da69440b29",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 31,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0031.png",
+      "sha256": "073d38a0c1218acc1c84f907e8c43ca095ca1e01fa388a7e682bd3efba65bdb3",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 32,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0032.png",
+      "sha256": "d1f27db77074c2ea1c3f6db27e0b8179aa9089f70e17bd8ec21ad8c066e5fb74",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 33,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0033.png",
+      "sha256": "faaa420971dd9a04e1e0798702ed2b2d4973a92f899792ff7e354a7d2c37260b",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 34,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0034.png",
+      "sha256": "8a237db0cc1273423a494f75dee002378d1800b8ffa67b94b36ecd852db9a2c9",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 35,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0035.png",
+      "sha256": "829975b69293bd5953561664822018400c8bb2286e43f9d885e5ceea9f72e339",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 36,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0036.png",
+      "sha256": "b1c6ef1ff8cf4056b7a9936728bbf31ff8a2e1ab272f904b1cb7d0a46d2643b6",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "side",
+      "frame": 37,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\Frames\\Run_Fists\\0037.png",
+      "sha256": "547438fc38623a26c51afad8de583c4d9b88b72672dc3a06989caf70488bf9c6",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 0,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0000.png",
+      "sha256": "802fa7bb8dee01e3a3de5912d5c236334e7f96e50dc516de3fe1892813b5fa53",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0001.png",
+      "sha256": "aa68c95c8a94b20caf5106b062a524c522e52e02bf035817e531053dbc452b07",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0002.png",
+      "sha256": "b3e2a066439e4db3e05df3b50331c7138e8cf9a5e73c10bba063f25b30e3f9c9",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0003.png",
+      "sha256": "98943696eca9431f007f013b2e4902119754bf49b3af815a081d0505dd6da0ce",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0004.png",
+      "sha256": "dad40fe43166242d6bb7b4a16d394badbfc1a18a6c29fcf4a724ce773a66bd90",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 5,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0005.png",
+      "sha256": "d23c916eae451f1adfb59e611822e03a1faeeee8b0aef424a625585313e04622",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 6,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0006.png",
+      "sha256": "1914faab2ae0141e26584c6ce22ab949bdd4a5d6312ce2a61122bfef9ff908f9",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 7,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0007.png",
+      "sha256": "b59a9c39cc12c2df9ea7089e2b875a25c809184d3e65e80db2eb52f69748f5ea",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 8,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0008.png",
+      "sha256": "21701ce40c03edfbb51da29666ee7c8bae09e48625847343da69adeb456c095d",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 9,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0009.png",
+      "sha256": "c7647545e805dfe8d34dca6db677666ae4d5ecd5e5f7a642291332a12c451c9c",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 10,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0010.png",
+      "sha256": "28e1365617d081e012e9b945715b4e77de9e5d4573d730052ff909d3ec0f4102",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 11,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0011.png",
+      "sha256": "369d5c855dea24dafca2250854b0e172c4c9797307f5195798ab5d289f2aaa33",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 12,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0012.png",
+      "sha256": "65594790f3e1f1afcd1272322e85a7e172a11726470bf3250f15a9dc4906ca2e",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 13,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0013.png",
+      "sha256": "10829aea249fae5e83749d1f64110e6927d9f4c49f77a7ec80e1a17d4380fb76",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 14,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0014.png",
+      "sha256": "37772bee26caa8678bad9c1c1d64cd1e0403acf628a6ccc50cc9ae78ae528761",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 15,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0015.png",
+      "sha256": "a6d3ce132e77078bb5cbc0137372db3f2b7cde72853970a79aeddd595b4057a1",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 16,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0016.png",
+      "sha256": "2dde23d88d89f8c41594d42819c1a7adb09bae328674362898020f1eb0914e7d",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 17,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0017.png",
+      "sha256": "7a94f39a439df1f452f483d521a2516acf37812f22b7019961576dc615960d0f",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 18,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0018.png",
+      "sha256": "19ad979583a743a3a18b9582c7ba3457960226c10c2aca004b60aeb740995611",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 19,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0019.png",
+      "sha256": "802fa7bb8dee01e3a3de5912d5c236334e7f96e50dc516de3fe1892813b5fa53",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 20,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0020.png",
+      "sha256": "a6eeafafc20e8a9a4b01bd9e48f257f6d74152f6b579766877d3829ce409b000",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 21,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0021.png",
+      "sha256": "b3e2a066439e4db3e05df3b50331c7138e8cf9a5e73c10bba063f25b30e3f9c9",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 22,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0022.png",
+      "sha256": "37a01cde15a9ca39555a79c01f498e9467454a56121d92f745f3274c606ce428",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 23,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0023.png",
+      "sha256": "7d8241e31552b4d2cb9314b7b8956c526ebfd8d19a98737e4851b5633e3102ad",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 24,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0024.png",
+      "sha256": "dc65df6dce28342a1e8a84aba47b6f43601821c65e29c3b2444165477c2cd213",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 25,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0025.png",
+      "sha256": "fff904f87cd7e2b003098c42ebdfe928bc85bbf695955b82d899b151c1a99abc",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 26,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0026.png",
+      "sha256": "792e66bfab734836b468d8886b9f43a2079cb954f71d11b8296bd758bd4abeca",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 27,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0027.png",
+      "sha256": "0199260a3ac34116e314c23888a52b90fe8253fe8cdbe505acd4f6dc0c917868",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 28,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0028.png",
+      "sha256": "c7647545e805dfe8d34dca6db677666ae4d5ecd5e5f7a642291332a12c451c9c",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 29,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0029.png",
+      "sha256": "44a0944413698ef3cad706df67cd62c1bdde329de858551747956fecacdf4344",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 30,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0030.png",
+      "sha256": "369d5c855dea24dafca2250854b0e172c4c9797307f5195798ab5d289f2aaa33",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 31,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0031.png",
+      "sha256": "22ae2796919b8737f9069db49d95a4bfdcf7b4ebfd15f14a586c6be9866b3e6e",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 32,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0032.png",
+      "sha256": "6d25c285852445d495b7059ec0d57f2398d3adada0a33454c3d3495149ccdb8d",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 33,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0033.png",
+      "sha256": "0b05439c643632d3b8c5c4b444ffecf1f74dcd042e94df5069c01a5aa6e42532",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 34,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0034.png",
+      "sha256": "a6d3ce132e77078bb5cbc0137372db3f2b7cde72853970a79aeddd595b4057a1",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 35,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0035.png",
+      "sha256": "17b1666ebd00a380977e19f87532a52aaf29a94a669a0a8537ec110c236da58a",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 36,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0036.png",
+      "sha256": "a07b6ddc55eb3bcb241067c19e0a365049fff706bef92a5af1c67d1e950f048b",
+      "resolution": [
+        720,
+        720
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 37,
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_060003093\\RunFrontQA\\0037.png",
+      "sha256": "19ad979583a743a3a18b9582c7ba3457960226c10c2aca004b60aeb740995611",
+      "resolution": [
+        720,
+        720
+      ]
+    }
+  ],
+  "retiredClips": [
+    "Punch_Right_Jab",
+    "Sword_Horizontal_Slash",
+    "Staff_Cast_Forward"
+  ],
+  "retirement": "Exactly3.anim plus their3.meta files sent to Recycle Bin after absolute-workspace/path/hash checks. Weapon models/prefabs and Hit_Reaction remain. Active inventory15 clips,1 Move_Dash_Recover transition, no weapon detail rows or Jump_Attack_Dash.",
+  "preservation": {
+    "other14ClipBytesUnchanged": true,
+    "bakeTimeSavedFilesUnchanged": 289,
+    "finalSavedFilesByteIdentical": 288,
+    "authorizedDocumentationChanges": [
+      {
+        "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/README_ko.txt",
+        "beforeSHA256": "47020aafb152b3568914e67460bab77e2ba2f08cadfc97ddac4a5e0e77496ac1",
+        "afterSHA256": "0d8c49920d73a0280a113b499b40f99e4a606dbc8178b71ff5b43fb15cff4a53",
+        "reason": "Active inventory corrected after retiring three attacks; no asset behavior change"
+      }
+    ],
+    "unmodifiedRunBodyFieldsMaximumAbsoluteDifference": {
+      "time": 0.0,
+      "hips": 0.0,
+      "head": 0.0,
+      "faceForward": 0.0,
+      "leftFoot": 0.0,
+      "rightFoot": 0.0,
+      "leftSoleY": 0.0,
+      "rightSoleY": 0.0,
+      "leftToe": 0.0,
+      "rightToe": 0.0,
+      "rightShoulder": 0.0,
+      "leftShoulder": 0.0,
+      "gripL": 0.0,
+      "gripR": 0.0
+    }
+  },
+  "futureRunOnlyReadmeException": "Editor verifies only the exact README_ko.txt path, its original baseline SHA and recorded current SHA. No wildcard exception and original before-SHA inventory is not rewritten."
+}

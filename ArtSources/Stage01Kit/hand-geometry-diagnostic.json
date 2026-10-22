@@ -1,0 +1,49 @@
+{
+  "read_only": true,
+  "source": "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Rig.fbx",
+  "source_control_points": 7446,
+  "source_triangles": 6087,
+  "units": "FBX cm; not yet Unity-imported local axes",
+  "hands": [
+    {
+      "bone": "LeftHand",
+      "weighted_vertices_gt_0_5": 495,
+      "rigid_vertices_eq_1": 297,
+      "local_bounds_cm": {
+        "min": [
+          -3.7561365168198506,
+          1.8749040119068354,
+          -4.084901237565255
+        ],
+        "max": [
+          3.671571354660557,
+          21.097399546664015,
+          10.199030756026467
+        ]
+      },
+      "transform_is_inverse_transformLink_max_error": 2.842170943040401e-14,
+      "finger_candidate_y_gt_12cm_count": 226,
+      "thumb_candidate_z_gt_5cm_count": 73
+    },
+    {
+      "bone": "RightHand",
+      "weighted_vertices_gt_0_5": 476,
+      "rigid_vertices_eq_1": 264,
+      "local_bounds_cm": {
+        "min": [
+          -3.7190463499338478,
+          2.318340161030015,
+          -4.104744666404869
+        ],
+        "max": [
+          3.651233531858381,
+          19.721951863225726,
+          9.790831608880758
+        ]
+      },
+      "transform_is_inverse_transformLink_max_error": 1.4210854715202004e-14,
+      "finger_candidate_y_gt_12cm_count": 200,
+      "thumb_candidate_z_gt_5cm_count": 73
+    }
+  ]
+}

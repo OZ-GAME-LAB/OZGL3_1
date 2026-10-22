@@ -1,0 +1,29 @@
+{
+  "regression": [
+    {
+      "clip": "Sword_Horizontal_Slash",
+      "baselineSession": "20261022_050241555",
+      "currentSession": "20261022_051454560",
+      "baselineProbeSHA256": "5a7250c7e229e1944bcd20c0e6b2423e6df4d00946f3154d254b20f2c2d7e979",
+      "currentProbeSHA256": "33c332f9936196eabc70a9ed9757c888944bee8241096b9d9d32d1639f184a20",
+      "authoredBodyVertexCount": 2700,
+      "authoredBodyTriangleCount": 900,
+      "bindPositionsAndWeightsExact": true,
+      "bodyTriangleSourceIndicesExact": true
+    },
+    {
+      "clip": "Staff_Cast_Forward",
+      "baselineSession": "20261022_050241555",
+      "currentSession": "20261022_051454560",
+      "baselineProbeSHA256": "2d57d05f6cd5af6915222f0570db38e14b15d677a8543394aa5bcbe04ce37dd7",
+      "currentProbeSHA256": "2d57d05f6cd5af6915222f0570db38e14b15d677a8543394aa5bcbe04ce37dd7",
+      "authoredBodyVertexCount": 2700,
+      "authoredBodyTriangleCount": 900,
+      "bindPositionsAndWeightsExact": true,
+      "bodyTriangleSourceIndicesExact": true
+    }
+  ],
+  "staffMeshByteIdenticalToPreviousDarkCuffCandidate": true,
+  "staffMeshSHA256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53",
+  "swordMeshSHA256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f"
+}

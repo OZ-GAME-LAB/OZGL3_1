@@ -1,0 +1,39 @@
+{
+  "sourceTexture": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png",
+  "sourceTextureSHA256": "a2b78743110cc57387498fec3b70a775c33b888d11d874614d54e036460055e3",
+  "sourceMeshSHA256": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+  "sourceRetainedTriangleIndex": 1908,
+  "barycentric": [
+    0.1,
+    0.2,
+    0.7
+  ],
+  "uv": {
+    "x": 0.8273589968681334,
+    "y": 0.7614722907543182
+  },
+  "pixelXYTopLeftOrigin": [
+    1694,
+    488
+  ],
+  "textureResolution": [
+    2048,
+    2048
+  ],
+  "sampleRGBsRGB": [
+    43,
+    43,
+    55
+  ],
+  "centered33PixelSquareRGBMin": [
+    41,
+    41,
+    55
+  ],
+  "centered33PixelSquareRGBMax": [
+    43,
+    44,
+    56
+  ],
+  "method": "Read-only decode of original v006 UV0. Enumerated barycentric interior points of retained triangles adjacent to the isolated 471-triangle RH skin patch. Selected an existing black/navy cuff point with stable 33x33 pixel neighborhood and no skin/blue-band mixture. Source atlas and original cloth geometry were not modified. Constant UV is intended only for appended closed cuff extension; final lighting/geometry still requires actual render inspection."
+}

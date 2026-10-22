@@ -10,7 +10,7 @@ public sealed class ProtagonistPlaygroundCamera : MonoBehaviour
     private void LateUpdate()
     {
         if (_target == null) return;
-        transform.position = _target.position + new Vector3(0f, 3.3f, -11f);
+        transform.position = _target.position + new Vector3(1.3f, 2.65f, -11f);
         transform.LookAt(_target.position + new Vector3(0f, 1.3f, 0f));
     }
 }

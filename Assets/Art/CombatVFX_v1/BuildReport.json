@@ -1,0 +1,54 @@
+{
+    "previewOnly": true,
+    "gameplayIntegration": false,
+    "meshGenerationCredits": false,
+    "unity": "6000.3.21f1",
+    "renderPipeline": "URP 17.3",
+    "simulation": "Native ParticleSystem, fixed 60 Hz; deterministic seeds; no VFX Graph, depth texture, dynamic lights, collision or texture downloads.",
+    "effects": [
+        {
+            "name": "DashBurst",
+            "prefab": "Assets/Art/CombatVFX_v1/Prefabs/DashBurst.prefab",
+            "duration": 0.6000000238418579,
+            "travelSpeed": 14.0,
+            "travelDuration": 0.2199999988079071,
+            "particleSystems": 1,
+            "maximumParticles": 14,
+            "meshRenderers": 5,
+            "meshTriangles": 132
+        },
+        {
+            "name": "SlashWave",
+            "prefab": "Assets/Art/CombatVFX_v1/Prefabs/SlashWave.prefab",
+            "duration": 0.949999988079071,
+            "travelSpeed": 7.5,
+            "travelDuration": 0.5799999833106995,
+            "particleSystems": 1,
+            "maximumParticles": 12,
+            "meshRenderers": 6,
+            "meshTriangles": 180
+        },
+        {
+            "name": "MagicMissile",
+            "prefab": "Assets/Art/CombatVFX_v1/Prefabs/MagicMissile.prefab",
+            "duration": 1.0499999523162842,
+            "travelSpeed": 8.5,
+            "travelDuration": 0.6800000071525574,
+            "particleSystems": 1,
+            "maximumParticles": 16,
+            "meshRenderers": 5,
+            "meshTriangles": 136
+        },
+        {
+            "name": "Explosion",
+            "prefab": "Assets/Art/CombatVFX_v1/Prefabs/Explosion.prefab",
+            "duration": 1.5499999523162842,
+            "travelSpeed": 0.0,
+            "travelDuration": 0.0,
+            "particleSystems": 3,
+            "maximumParticles": 61,
+            "meshRenderers": 4,
+            "meshTriangles": 152
+        }
+    ]
+}

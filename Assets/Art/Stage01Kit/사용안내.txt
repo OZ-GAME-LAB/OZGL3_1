@@ -1,0 +1,199 @@
+Project M — 튜토리얼·1스테이지 도시 아트 키트 사용안내
+작성일: 2026-10-19
+기준 환경: Unity 6000.3.21f1 / Universal Render Pipeline 17.3.0
+아래 파일 경로는 프로젝트 루트 기준입니다.
+
+사이드뷰 개정 기준
+전체 진행 축은 X, 높이는 Y이며 플레이어의 물리 이동은 Z를 고정합니다. 카메라는 -Z 쪽에서 횡스크롤을 보되 약한 수평·수직 각도로 지붕과 소품의 두께를 보여 주는 2.5D 구성을 사용합니다. 이동·전투·상호작용 모션과 소품 배치는 이 게임 축을 기준으로 검수합니다.
+
+1. 먼저 열어 볼 씬
+Assets/Art/Stage01Kit/UrbanKit_Preview.unity
+
+Unity에서 이 씬을 열면 도시 블록과 주인공을 함께 확인할 수 있습니다. 튜토리얼 블록과 1스테이지 블록을 나란히 배치한 별도 프리뷰입니다. 원본 MainScene은 변경하지 않았습니다.
+실행 조작 확인은 아래 키를 사용합니다. 프리뷰 키는 UrbanKitPreviewControls가 담당하며 일반 플레이어 프리팹에 포함하지 않습니다.
+
+조작                      키
+이동 / 기본 달리기        A·D 또는 좌우 방향키
+느린 걷기                 Ctrl을 누른 상태로 이동
+점프                      Space
+기본 공격                 마우스 왼쪽 버튼 — 커서 방향 조준
+대시                      Shift
+검 장착                   F1
+지팡이 장착               F2
+맨손 복귀                 F3
+물약 마시기 동작          숫자 5
+던지기 동작               숫자 6
+상호작용 동작             숫자 7
+줍기 동작                 숫자 8
+
+마시기·던지기·상호작용·줍기는 지면에 서서 멈춘 상태에서 요청하세요. 이동·점프·피격·대시 등으로 동작이 취소될 수 있습니다. 5번은 확인용 물약을 카메라에 가까운 손에 보여 줍니다. 6번은 같은 손에 든 물약을 투척 시점에 놓고 진행 방향의 포물선 경로로 날려 보냅니다. 이는 프리뷰용 시각 투척으로, 아이템 소비·적 타격·폭발·상태이상 효과는 실행하지 않습니다.
+기본 이동 속도는 5m/s, Ctrl 걷기는 2.2m/s입니다. Walk/Run의 발 구름 재생 속도도 이 실제 이동 속도에 맞추며 이동 거리는 기존 Rigidbody 컨트롤러가 담당합니다.
+F1/F2/F3은 아트 확인용 자유 장착입니다. 튜토리얼 후 무기 1회 구매·자동 장착·다른 무기 구매 차단이라는 게임 규칙은 이 프리뷰 입력에 연결되어 있지 않습니다.
+
+2. 들어 있는 자산
+개별 아트 프리팹은 총 29종입니다. 도시 모듈 16종 + 일반 소품 7종 + 물약 4종 + 무기 2종입니다. 조립된 블록 2종과 무기 장착 플레이어 2종은 이 29종과 별도입니다.
+
+도시 모듈 — Assets/Art/Stage01Kit/Prefabs/Modules/
+• Building_ShopLow: 낮은 상가, 옥상 높이 4
+• Building_OfficeMid: 중층 사무실, 옥상 높이 8
+• Building_ApartmentTall: 높은 주거 건물, 옥상 높이 12
+• Building_RooftopArena: 옥상 전투 구역 건물, 옥상 높이 4
+• Road_Straight_12m: 도로 직선 12m
+• Sidewalk_Straight_8m: 보도 직선 8m
+• Rooftop_Bridge_6m: 옥상 연결 다리 6m
+• Exterior_Stairs_Rise3m: 외부 계단, 높이 차 3m
+• Ladder_4m: 사다리 4m
+• Guardrail_4m: 난간 4m
+• Rooftop_Hut: 옥탑 구조물
+• Rooftop_WaterTank: 옥상 물탱크
+• Rooftop_Billboard: 옥상 간판
+• Utility_Box: 설비함
+• Planter_Shrubs: 화단
+• Road_Barrier: 도로 차단물
+
+일반 소품 — Assets/Art/Stage01Kit/Prefabs/Props/
+StreetLamp / StreetTree / VendingMachine / Bench / TrashBin / ACUnit / GatePylon
+각각 가로등 / 가로수 / 자판기 / 벤치 / 쓰레기통 / 실외기 / 게이트 기둥입니다.
+
+물약 — 같은 Props 폴더
+Potion_Health / Potion_Attack / Potion_Defense / Potion_Speed
+회복 / 공격 / 방어 / 신속을 구별하는 모델입니다. 회복량·버프 효과·보유 수량·소비 처리는 호출하는 게임 코드에서 연결해야 합니다.
+
+무기 — Assets/Art/Stage01Kit/Prefabs/Weapons/
+Sword.prefab / Staff.prefab
+검과 지팡이는 몸과 분리된 일반 메시입니다. 별도 무기 리깅 없이 카메라에 가까운 손 소켓을 따라갑니다. 오른쪽 진행은 오른손 WeaponSocket, 왼쪽 진행은 왼손 WeaponSocket_Left를 사용하며 방향 전환 시 자동으로 옮깁니다.
+지팡이 위쪽 수정은 기존보다 15% 작게 조정했고, 몸체와 수정 사이에 4.5cm 간격을 둬 분리되어 떠 있는 형상으로 만들었습니다.
+손 길이 축과 무기 축을 분리한 그립 회전을 저장했습니다. 개별 손가락 뼈를 추가하는 대신 원본 스킨을 복사한 Protagonist01_GripMesh의 Grip_R/Grip_L blendshape로 손가락을 오므립니다. 손목·엄지·팔·원본 UV·스킨 웨이트·재질은 유지합니다. 무기 장착과 동작에 맞춰 가까운 손을 사용하고 맨손 주먹 공격은 양손을 쥡니다. 투척 시점에는 손을 펼칩니다.
+
+장착 상태를 저장한 플레이어 — 같은 Weapons 폴더
+Protagonist01_Sword_Equipped.prefab
+Protagonist01_Staff_Equipped.prefab
+
+맨손 기본 플레이어
+Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab
+
+3. 블록 배치와 보행면
+Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab
+Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab
+
+두 블록은 기획을 검토하기 위한 배치 시안입니다. 튜토리얼 퀘스트·몬스터 생성·게이트 봉쇄·보스 진행은 아직 연결하지 않았습니다. GatePylon은 시각 소품이며 그 자체가 기존 Gate 또는 StageGate의 동작을 대신하지 않습니다.
+
+튜토리얼 블록 앵커:
+PlayerSpawn / TutorialMonsterAnchor / TutorialGateAnchor / Stage01Exit
+
+1스테이지 블록 앵커:
+PlayerSpawn / NormalGate_1 / NormalGate_2 / NormalGate_3 / BossArenaAnchor / BossGateAnchor
+
+도로·보도·다리는 SnapLeft, SnapRight, WalkableSurface 앵커를 사용해 이어 붙일 수 있습니다. 건물에는 RoofSurface, RoofLeft, RoofRight, GroundFront 앵커가 있습니다. 앵커는 위치 정보이며 몬스터·이동·퀘스트를 자동 실행하지 않습니다.
+보행용 지면은 Ground 레이어 6의 BoxCollider를 사용합니다. 장식 소품에는 필요하지 않은 충돌을 생략했습니다. 캐릭터 Ground Check의 마스크에도 레이어 6이 포함되어야 합니다.
+사다리는 모델과 ClimbBottom/ClimbTop 앵커만 제공합니다. 사다리 트리거·오르기 입력·클라임 애니메이션은 구현하지 않았습니다. 계단과 옥상의 배치·접근 가능 여부는 실제 이동 컨트롤러를 적용한 레벨에서 추가 조정하세요.
+
+4. 메시·재질·LOD
+환경·소품·무기는 정리된 메시의 버텍스 컬러를 공용 URP 재질 하나로 표시합니다.
+재질: Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat
+셰이더: Assets/Art/Stage01Kit/Materials/Urban_VertexColor.shader
+
+환경은 어두운 청회색 콘크리트·금속과 저채도 식생으로 우중충한 도시 분위기를 구성합니다. 보행면과 옥상 테두리는 밝기 차를 남겨 경로를 구별할 수 있게 합니다. 일부 창문·가로등·자판기와 게이트 중심·지팡이 수정에만 작은 발광 포인트를 사용합니다. 발광은 버텍스 컬러로 같은 불투명 셰이더에서 처리하므로 별도 투명 패스나 발광 전용 재질을 늘리지 않습니다. 환경광·주광·그림자는 실제 씬 조명을 반영합니다.
+
+건물 4종은 각각 LOD0/LOD1을 갖고 LODGroup이 거리에 따라 전환합니다. 한 시점에 하나의 LOD가 표시됩니다. 검증 보고서의 건물 triangles 값은 두 LOD 메시의 합이므로, 그 수치가 매 프레임 동시에 그려지는 삼각형 수라는 뜻은 아닙니다.
+공유 재질·LOD·단순 충돌은 성능을 고려한 구성입니다. GTX 1650 개발 PC 또는 최종 출시 기기에서의 프레임 성능을 보장하는 측정 결과는 아닙니다.
+레벨 수정본은 별도 씬이나 Prefab Variant에서 관리하세요. 재생성 메뉴는 생성된 메시·재질·프리팹·프리뷰 씬을 갱신합니다.
+
+5. 무기 장착 API
+파일: Assets/Art/Stage01Kit/HandSocketEquipment.cs
+파일: Assets/Art/Stage01Kit/SocketWeapon.cs
+
+플레이어 루트의 HandSocketEquipment에 SocketWeapon 프리팹 컴포넌트를 넘깁니다.
+
+    HandSocketEquipment equipment = player.GetComponent<HandSocketEquipment>();
+    SocketWeapon sword = swordPrefab.GetComponent<SocketWeapon>();
+    bool equipped = equipment.Equip(sword);
+
+Equip은 성공 여부를 bool로 반환합니다. SocketWeapon의 그립 위치·회전을 가까운 손 소켓에 적용하며 왼손에는 반사된 그립을 사용합니다. NearHandSocket 또는 GetNearHandSocket()으로 현재 소켓을 얻고 UsesLeftHand로 왼손 여부를 확인할 수 있습니다. 위치를 조정할 때 캐릭터 손 뼈를 임의로 바꾸기보다 무기 프리팹의 그립 설정을 조정하세요.
+장착 시 Animator Override Controller가 공통 기본 공격 Punch를 검의 SwordSlash 또는 지팡이의 MagicCast로 교체합니다. Unequip()은 무기를 제거하고 맨손 컨트롤러와 주먹 재생 속도 설정을 복원합니다.
+FacingLeft Animator bool은 진행 방향에 맞춰 상태의 Humanoid 미러링을 전환합니다. 포션과 무기도 같은 방향 규칙을 사용합니다. 섭취·투척·상호작용·줍기 동안에는 무기를 잠시 숨겨 손의 소품과 겹치지 않게 하고, 사망 상태에서도 무기를 숨깁니다.
+이 API는 장착 모델과 모션을 처리합니다. 실제 검 공격 판정, 마력탄 발사, 스킬 계열 제한, 가격·구매 포인트·1회 구매 확정·저장은 구매/전투 코드의 책임입니다. 지팡이를 들었다고 기존 주먹 판정이 자동으로 원거리 마법 판정으로 바뀌지는 않습니다.
+
+6. 추가 동작 API와 콜백
+파일: Assets/1.Script/Player/ProtagonistActionAnimator.cs
+
+추가한 6개 동작:
+Drink(마시기), Throw(던지기), SwordSlash(검 베기), MagicCast(마법 시전), Interact(상호작용), Pickup(줍기)
+기존 이동·주먹·점프와 피격·사망·대시·착지 애니메이션도 함께 사용합니다.
+점프는 상승·정점·하강 포즈와 착지 상태를 나눠 실제 수직 속도에 맞춰 표시합니다.
+
+공통 호출:
+    bool started = actions.TryPlay(action, onCommit, onCompleted, duration);
+
+예를 들어 Drink는 다음처럼 요청할 수 있습니다. 아래 주석 부분에 실제 인벤토리 코드를 연결하세요.
+
+    ProtagonistActionAnimator actions = player.GetComponent<ProtagonistActionAnimator>();
+    bool started = actions.TryDrink(
+        consume: () => { /* 수량·사용 조건 재확인 후 소비와 효과 적용 */ },
+        completed: () => { /* 정상 종료 후 표시 정리 */ });
+
+간편 호출: TryDrink / TryThrow / TryInteract / TryPickup
+검 베기·마법 시전 직접 요청: TryPlay(ProtagonistExtraAction.SwordSlash, ...) 또는 MagicCast
+duration을 생략하거나 음수로 두면 프리팹에 설정된 기본 재생 시간을 사용합니다.
+
+started=true는 요청 수락을 뜻합니다. 실제 완료를 뜻하지 않습니다.
+onCommit은 설정된 동작 진행 지점에 도달했을 때 1회 호출됩니다. 아이템 소비·투사체 생성·실제 상호작용 등은 호출자가 이 콜백에 연결합니다. TryPlay 시점과 onCommit 시점에 같은 처리를 중복 실행하지 마세요.
+물약은 ConsumableHandProp.AttachTo(equipment.NearHandSocket, equipment.UsesLeftHand)로 장착합니다. 투척용 손잡이는 AttachForThrow(socket, mirrored)를 사용합니다. UrbanConsumableBuilder는 실제 루트 Mecanim 컨트롤러의 Drink 상태를 평가해 병 몸통 중심을 손에 두고 입구를 입 쪽으로 맞춘 고정 위치·회전을 계산합니다. 왼쪽 진행의 실제 미러 포즈에서도 반사된 위치·회전의 접촉 오차를 확인합니다. Drink의 최종 소비 시점은 이 보정값으로 갱신되며 ArtSources/Stage01Kit/consumable-grip.json에 기록됩니다. 소모 처리를 호출해도 시각용 병은 동작 완료나 취소까지 유지할 수 있습니다.
+onCompleted는 정상 완료 때 호출됩니다. 취소 때 정리가 필요하면 Cancelled 이벤트에 연결하고, 필요에 따라 Cancel()로 취소할 수 있습니다. 이미 onCommit에서 적용한 게임 효과는 이후 취소해도 이 컴포넌트가 되돌리지 않습니다.
+물약 수량·대상 유효성·스킬 사용 가능 여부·대상 중복 처리·저장 데이터는 호출자가 관리합니다. 모션 프리팹에는 게임 효과를 직접 실행하는 가져온 Animation Event를 넣지 않았습니다.
+
+기본 공격은 입력 즉시 판정을 실행하지 않고 ProtagonistAnimationDriver와 무기에 설정된 공격 접촉 지점까지 기다렸다가 IPlayerAttack.Execute를 한 번 호출합니다. 접촉 전에 피격·사망 등으로 공격 상태를 벗어나면 예약 판정은 실행되지 않습니다. 접촉 후 이미 적용된 피해는 취소로 되돌리지 않습니다. 공격력·피해 계수·히트박스 자체는 기존 전투 구현을 사용합니다.
+접촉 지점은 실제 Mecanim 포즈의 손·무기 끝 이동을 측정해 맨손 0.82, 검 0.78, 지팡이 0.73으로 맞췄습니다. 검은 원본 연속 베기에서 첫 베기와 회수만 사용해 짧은 기본 공격에서 두 번 베기가 지나치게 압축되지 않게 했습니다. 측정 원본은 SideviewReview/contact-diagnostics.json에 기록합니다.
+
+런타임 시각 접지
+파일: Assets/Art/Characters/Protagonist01/Runtime/ProtagonistVisualGrounding.cs
+리타깃으로 발이 지면 안에 들어가거나 뜨는 문제는 적은 수의 스킨 표본으로 보정합니다. 지상 동작은 발바닥 표본, 사망은 전신 표본의 최저점을 사용해 시각 브랜치만 위아래로 맞춥니다. 공중에서는 높이 보정을 해제하며 Dash/Hit의 기존 방향 오차도 시각 브랜치에서 보정합니다. 매 프레임 전체 메시 BakeMesh를 호출하지 않고 물리 루트·콜라이더·점프 궤적·판정 위치는 바꾸지 않습니다. 손 소켓과 장착 소품도 같은 브랜치를 따라 움직입니다.
+ProtagonistHandGrip과 ProtagonistVisualGrounding은 중첩 Visual에서 중복 실행되지 않도록 구성합니다. 수동 포즈 캡처 시에는 Grounding.ResetPreview() → Animator.Play/Update → HandGrip.ApplyPreview() → Grounding.ApplyPreview(grounded, dead) 순서를 사용합니다.
+
+7. 다시 생성하기
+Unity 메뉴: Tools > Project M > Build Tutorial and Stage 1 Art Kit
+호출 메서드: UrbanKitSetup.Build()
+
+저장 확인 후 실행하면 로컬에 있는 원본 모델과 생성 코드를 이용해 키트, 추가 동작 설정, 블록, 장착 플레이어, 프리뷰 씬을 다시 만듭니다. 이 메뉴 자체가 Meshy 모델을 새로 요청하지는 않습니다.
+이번 도시 키트·추가 모션 생성에 사용한 Meshy 크레딧은 실제 총 63입니다. 모델 9개 45크레딧 + 추가 동작 6개 18크레딧입니다. 도시 모듈 16종과 물약 변형 4종은 로컬 제작이며 추가 생성 크레딧을 사용하지 않았습니다.
+이번 사이드뷰 검수·수정 개정에는 새 Meshy 크레딧을 사용하지 않았습니다. 기존 생성물의 메시 분리·팔레트·그립·임포트·재생 속도·런타임 표시를 로컬에서 수정합니다.
+
+8. 검증 기록과 VFX 조사
+사이드뷰 검수 렌더:
+ArtSources/Stage01Kit/SideviewReview/GIF/
+실제 주인공 프리팹과 루트 Mecanim 상태를 재생하고 같은 런타임 그립·접지 보정을 적용해 Unity 카메라로 렌더합니다. 기본 검수 동작은 Idle / Walk / Run / Punch / Jump / Land / Dash / Hit / Dead / Drink / Throw / SwordSlash / MagicCast / Interact / Pickup의 15개입니다. 좌향 주요 동작, 지팡이 장착 상태의 보조 동작, 검·지팡이 양방향 기본 공격을 더해 개별 GIF 28개를 만드는 구성입니다. 이 숫자는 추가 검수 조건을 포함한 영상 개수이며 새로 생성한 애니메이션 수를 뜻하지 않습니다.
+
+한눈에 보는 모션 GIF:
+ArtSources/Stage01Kit/SideviewReview/01_movement.gif
+ArtSources/Stage01Kit/SideviewReview/02_combat.gif
+ArtSources/Stage01Kit/SideviewReview/03_actions.gif
+ArtSources/Stage01Kit/SideviewReview/04_left_facing.gif
+환경의 실제 게임 축 렌더:
+ArtSources/Stage01Kit/SideviewReview/Environment/
+소품·플랫폼 건물·옥상 설비·튜토리얼 배치·1스테이지 옥상을 같은 2.5D 사이드뷰로 확인합니다.
+
+사이드뷰 상세 기록:
+ArtSources/Stage01Kit/SideviewReview/motion-review.json
+ArtSources/Stage01Kit/SideviewReview/environment-review.json
+ArtSources/Stage01Kit/SideviewReview/animation-refinement.json
+ArtSources/Stage01Kit/hand-grip-build.json
+ArtSources/Stage01Kit/visual-grounding-build.json
+ArtSources/Stage01Kit/consumable-grip.json
+최종 재생 시간·렌더 프레임·좌우 소켓·접촉 오차·접지 보정값은 최신 생성 보고서를 확인하세요. GIF 포즈 렌더 검수와 아래의 실제 Play Mode 입력·콜백·전투 판정 검증은 각각 확인합니다.
+
+도시 키트 검증:
+ArtSources/Stage01Kit/unity-kit-validation.json
+셰이더 컴파일, 개별 자산 수, 공유 재질, 검/지팡이 소켓 부착, 공격 모션 Override, 맨손 복원, 옥상 보행면 검사가 통과한 기록입니다.
+
+추가 동작 검증:
+ArtSources/Characters/Protagonist01/v003-extended/validation.json
+Humanoid 클립·상태·트리거·콜백 설정과 프리팹 연결의 에디터 검사 및 실제 Play Mode 검사가 통과했습니다. 검→지팡이→맨손 복구, 공격 클립·재생 속도 변경, 마시기·투척의 실행/완료 콜백 각 1회, 이동 취소 후 소비 콜백 0회를 확인했습니다. 검증 종료 후 임시 입력 설정도 원복합니다. 최신 보고서의 playModeExecuted, playPassed와 playChecks를 확인하세요.
+
+모델·크레딧 기록:
+ArtSources/Stage01Kit/meshy-generation.json
+ArtSources/Characters/Protagonist01/v003-extended/generation.json
+
+폭발·스킬·상태이상 VFX 조사와 제작 계획:
+ArtSources/Stage01Kit/vfx-plan.txt
+ArtSources/Stage01Kit/vfx-research.json
+VFX 파일은 조사·제작 제안입니다. 실제 VFX 프리팹이나 중독·화상·둔화 전투 시스템이 추가된 것은 아니며, 문서의 입자 수·시간·성능 예산도 실측값이 아닙니다.
