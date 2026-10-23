@@ -6,7 +6,7 @@ public class SpinSlashSkill : PlayerSkillBase
 {
     [Header("Skill")]
     [SerializeField] private Vector3 _hitBoxSize = new Vector3(3.5f, 2f, 2f); // 플레이어 중심 좌우 범위
-    [SerializeField] private float _hitBoxHeight = 1f;
+    [SerializeField] private float _hitBoxHeight = 0.65f;
     [SerializeField] private LayerMask _enemyLayer;
     [SerializeField] private SkillAutoRelease _slashVfx; // 회전 궤적 연출 (선택)
     public override void Execute(PlayerController player, Vector3 aimPoint, float damage)

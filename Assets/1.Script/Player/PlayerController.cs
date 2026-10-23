@@ -36,7 +36,11 @@ public class PlayerController : MonoBehaviour
     [Header("Ladder")]
     [SerializeField] private float _climbSpeed = 3f;
     [SerializeField] private float _ladderRegrabDelay = 0.3f;
-    [SerializeField] private float _ladderTopOffset = 0.9f; // 발이 꼭대기보다 이 수치만큼 아래면 바로 올라감
+    [SerializeField] private float _ladderTopOffset = 0.6f; // 발이 꼭대기보다 이 수치만큼 아래면 바로 올라감
+
+    [Header("Drop Through")]
+    [SerializeField] private float _dropMinTime = 0.25f; // 최소 이 시간은 충돌을 꺼 둠 (한 프레임 만에 다시 올라타는 것 방지)
+    [SerializeField] private float _dropStartSpeed = 2f; // 내려가기 시작할 때 아래로 주는 속도 (발판에 걸려 멈칫하지 않게)
 
     [Header("Debug")]
     [SerializeField] private PlayerState _currentStateType;
@@ -63,6 +67,13 @@ public class PlayerController : MonoBehaviour
     private Ladder _currentLadder;
     private float _nextLadderGrabTime;
 
+    // 아랫점프
+    // 모델,무기 등 자식 콜라이더도 있을 수 있음 -> 루트 하나만 끄면 자식이 발판에 걸림
+    private Collider[] _bodyColliders;
+    private readonly Collider[] _groundHits = new Collider[8];
+    private OneWayPlatform _droppingPlatform; // 지금 통과 중인 발판 (null이면 통과 중 아님)
+    private float _dropMinEndTime;
+
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
     public PlayerSkill Skills { get { return _skills; } } //PlayerState_Skill이 장착 스킬·쿨다운을 읽기 위해
@@ -71,7 +82,8 @@ public class PlayerController : MonoBehaviour
     public float ClimbSpeed { get { return _climbSpeed; } }
     public float LadderTopOffset { get { return _ladderTopOffset; } }
 
-    public bool IsGrounded { get { return Physics.CheckSphere(_groundCheck.position, _groundRadius, _groundLayer); } }
+    // 통과 중인 발판은 바닥으로 치지 않음 -> 내려가는 도중 바로 Land로 돌아가지 않게
+    public bool IsGrounded { get { return CheckGround(out _); } }
     public bool IsJumpRequested { get; private set; }
     public bool IsDashRequested { get; private set; }
     public bool IsAttackRequested { get; private set; }
@@ -145,6 +157,7 @@ public class PlayerController : MonoBehaviour
         _attack = GetComponent<IPlayerAttack>();
         _skills = GetComponent<PlayerSkill>();
         _buffs = GetComponent<PlayerBuffs>();
+        _bodyColliders = CollectBodyColliders();
         _rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         InitStateDictionary();
     }
@@ -166,6 +179,9 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        // 상태보다 먼저 -> 발판을 빠져나간 프레임에 바로 충돌이 복구돼야 착지 판정이 맞음
+        UpdateDropThrough();
+
         _debugWalkSpeed = WalkSpeed;
         _currentState.UpdateState(this);
 
@@ -186,6 +202,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         ClearRequests();
+        EndDropThrough(); // 통과 중에 꺼지면 충돌이 꺼진 채로 남지 않게
         _inputManager.OnJumpAction -= OnJump;
         _inputManager.OnDashAction -= OnDash;
         _inputManager.OnAttackAction -= OnAttack;
@@ -327,6 +344,7 @@ public class PlayerController : MonoBehaviour
         _invincibleEndTime = 0f;
         _nextDashTime = 0f;
         _airDashUsed = false;
+        EndDropThrough(); // 통과 중 사망 -> 재시작 위치에서 발판을 뚫고 떨어지지 않게
         ClearRequests();
         ChangeState(PlayerState.Idle);
     }
@@ -414,6 +432,161 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody.rotation = Quaternion.LookRotation(Vector3.forward);
     }
+
+    // 지상 상태에서 점프 입력이 들어왔을 때 호출. 내려갔으면 true -> 상태는 Air로 바꿔야 함
+    public bool TryDropThrough()
+    {
+        if (_inputManager.MoveInput.y > -0.5f)
+        {
+            return false;
+        }
+
+        if (!CheckGround(out OneWayPlatform platform) || platform == null)
+        {
+            return false;
+        }
+
+        IsJumpRequested = false; // 같은 입력으로 점프까지 나가지 않게
+        SetPlatformCollision(platform, false);
+        _droppingPlatform = platform;
+        _dropMinEndTime = Time.time + _dropMinTime;
+
+        // 발판 위에 가만히 서 있으면 중력만으로는 한 프레임 늦게 떨어져 멈칫해 보임
+        Vector3 velocity = _rigidbody.linearVelocity;
+        velocity.y = -_dropStartSpeed;
+        _rigidbody.linearVelocity = velocity;
+        return true;
+    }
+
+    // 발밑 바닥 검사. 통과 중인 발판은 제외.
+    // 발밑이 통과 발판"만"이면 그 발판, 일반 바닥이 하나라도 있으면 null
+    private bool CheckGround(out OneWayPlatform onlyPlatform)
+    {
+        onlyPlatform = null;
+        int count = Physics.OverlapSphereNonAlloc(_groundCheck.position, _groundRadius, _groundHits, _groundLayer);
+
+        bool grounded = false;
+        bool onSolid = false;
+
+        for (int i = 0; i < count; i++)
+        {
+            OneWayPlatform platform = _groundHits[i].GetComponentInParent<OneWayPlatform>();
+
+            if (platform != null && platform == _droppingPlatform)
+            {
+                continue;
+            }
+
+            grounded = true;
+
+            if (platform == null)
+            {
+                onSolid = true;
+            }
+            else
+            {
+                onlyPlatform = platform;
+            }
+        }
+
+        if (onSolid)
+        {
+            onlyPlatform = null;
+        }
+
+        return grounded;
+    }
+
+    private void UpdateDropThrough()
+    {
+        if (_droppingPlatform == null)
+        {
+            return;
+        }
+
+        if (Time.time < _dropMinEndTime)
+        {
+            return;
+        }
+
+        // 아직 몸이 발판과 겹쳐 있을 때 충돌을 켜면 물리 엔진이 밀어내면서 위로 튕겨 올라감
+        // -> 완전히 빠져나간 뒤에 복구
+        if (IsOverlapping(_droppingPlatform))
+        {
+            return;
+        }
+
+        EndDropThrough();
+    }
+
+    private void EndDropThrough()
+    {
+        if (_droppingPlatform == null)
+        {
+            return;
+        }
+
+        SetPlatformCollision(_droppingPlatform, true);
+        _droppingPlatform = null;
+    }
+
+    private void SetPlatformCollision(OneWayPlatform platform, bool enable)
+    {
+        foreach (Collider platformCol in platform.Colliders)
+        {
+            if (platformCol == null)
+            {
+                continue;
+            }
+
+            foreach (Collider bodyCol in _bodyColliders)
+            {
+                Physics.IgnoreCollision(bodyCol, platformCol, !enable);
+            }
+        }
+    }
+
+    private bool IsOverlapping(OneWayPlatform platform)
+    {
+        foreach (Collider platformCol in platform.Colliders)
+        {
+            if (platformCol == null)
+            {
+                continue;
+            }
+
+            foreach (Collider bodyCol in _bodyColliders)
+            {
+                if (bodyCol.bounds.Intersects(platformCol.bounds))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // 트리거(사다리 감지 등)는 원래 발판을 막지 않으므로 제외하고 실제 몸 콜라이더만
+    private Collider[] CollectBodyColliders()
+    {
+        List<Collider> result = new List<Collider>();
+
+        foreach (Collider col in GetComponentsInChildren<Collider>(true))
+        {
+            if (!col.isTrigger)
+            {
+                result.Add(col);
+            }
+        }
+
+        if (result.Count == 0)
+        {
+            Debug.LogError("[Player:CollectBodyColliders] 플레이어 몸 콜라이더가 없습니다. 아랫점프가 동작하지 않습니다.");
+        }
+
+        return result.ToArray();
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

@@ -5,7 +5,7 @@ public class SwordWaveSkill : PlayerSkillBase
 {
     [Header("Skill")]
     [SerializeField] private SkillProjectile _projectilePrefab; // _pierce = true, 짧은 사거리로 세팅
-    [SerializeField] private Vector3 _spawnOffset = new Vector3(0.6f, 1f, 0f); // x는 바라보는 방향 기준
+    [SerializeField] private Vector3 _spawnOffset = new Vector3(0.6f, 0.65f, 0f); // x는 바라보는 방향 기준
     [SerializeField] private bool _horizontalOnly = false; // true: 좌우로만 발사 / false: 커서 각도 그대로
 
     public override void Execute(PlayerController player, Vector3 aimPoint, float damage)

@@ -6,7 +6,7 @@ public class MagicBoltSkill : PlayerSkillBase
 {
     [Header("Skill")]
     [SerializeField] private SkillProjectile _projectilePrefab; // _explosionRadius > 0, _explodeAtEnd = true로 세팅
-    [SerializeField] private float _spawnHeight = 1.2f;
+    [SerializeField] private float _spawnHeight = 0.8f;
     [SerializeField] private float _spawnForward = 0.5f;
     [SerializeField] private bool _horizontalOnly = false; // true: 좌우로만 발사 / false: 커서 각도 그대로
 

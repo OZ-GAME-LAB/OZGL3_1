@@ -15,8 +15,8 @@ public class PunchAttack : MonoBehaviour, IPlayerAttack
 
     [Header("Hit Box")]
     [SerializeField] private Vector3 _hitBoxSize = new Vector3(1.0f, 1.0f, 1f);
-    [SerializeField] private float _hitBoxForward = 0.7f; // 플레이어 중심에서 앞쪽 거리
-    [SerializeField] private float _hitBoxHeight = 1f;    // 발밑 기준 높이
+    [SerializeField] private float _hitBoxForward = 0.6f; // 플레이어 중심에서 앞쪽 거리
+    [SerializeField] private float _hitBoxHeight = 0.65f;    // 발밑 기준 높이
     [SerializeField] private LayerMask _enemyLayer;
 
 
