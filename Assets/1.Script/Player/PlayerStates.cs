@@ -82,6 +82,12 @@ public abstract class PlayerState_Base : IPlayerState
         }
         if (player.IsJumpRequested)
         {
+            // S를 누른 채 통과 발판 위에서 점프 -> 아랫점프
+            if (player.TryDropThrough())
+            {
+                player.ChangeState(PlayerState.Air);
+                return true;
+            }
             player.ChangeState(PlayerState.Jump);
             return true;
         }
