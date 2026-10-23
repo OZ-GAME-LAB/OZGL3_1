@@ -16,8 +16,8 @@ namespace OZ.UI.Contracts
 
         [Tooltip("퀵슬롯 번호 0~3 (화면 1~4). -1이면 퀵슬롯 없음 (인벤토리 전용)")]
         [Range(-1, 3)] public int slotIndex;
-        [Tooltip("인벤토리 한 칸 최대 수량")]
-        [Min(1)] public int maxStack = 9;
+        [Tooltip("최대 보유 수 (기획데이터 9장: 소모품 종류별 최대 5개)")]
+        [Min(1)] public int maxStack = 5;
 
         public ItemEffectType effectType;
         [Tooltip("효과 수치(%) — 회복 30, 공격 20, 방어 25, 신속 20 (검증값)")]

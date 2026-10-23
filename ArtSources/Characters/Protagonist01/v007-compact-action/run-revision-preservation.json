@@ -1,0 +1,53 @@
+{
+  "reportSHA256": "16359018c3a0e9d14a176f3b80182c46763a2f3f8aa00e7afe2fca62368b256d",
+  "runClipSHA256": "7dc2277627be4965100403f9ed77b37ae49ffe951481671408429723110b376a",
+  "sourceSession": "20261022_060003093",
+  "savedAssetsChecked": 288,
+  "savedAssetsUnchanged": true,
+  "failures": [],
+  "separatelyRecordedDocumentationChanges": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/README_ko.txt",
+      "beforeSHA256": "47020aafb152b3568914e67460bab77e2ba2f08cadfc97ddac4a5e0e77496ac1",
+      "afterSHA256": "0d8c49920d73a0280a113b499b40f99e4a606dbc8178b71ff5b43fb15cff4a53",
+      "reason": "Active inventory corrected after retiring three attacks; no asset behavior change"
+    }
+  ],
+  "runFramesCompared": 38,
+  "unmodifiedRunBodyFieldsMaximumAbsoluteDifference": {
+    "time": 0.0,
+    "hips": 0.0,
+    "head": 0.0,
+    "faceForward": 0.0,
+    "leftFoot": 0.0,
+    "rightFoot": 0.0,
+    "leftSoleY": 0.0,
+    "rightSoleY": 0.0,
+    "leftToe": 0.0,
+    "rightToe": 0.0,
+    "rightShoulder": 0.0,
+    "leftShoulder": 0.0,
+    "gripL": 0.0,
+    "gripR": 0.0
+  },
+  "approved14ClipNames": [
+    "Dash_Forward",
+    "Hit_Reaction",
+    "Idle_Fists",
+    "Interact_Reach",
+    "Item_Throw_Overhand",
+    "Jump_Apex_Loop",
+    "Jump_Fall_Loop",
+    "Jump_Full",
+    "Jump_Land",
+    "Jump_Rise_Loop",
+    "Jump_Takeoff",
+    "Pickup_Low",
+    "Potion_Drink",
+    "Walk_Fists"
+  ],
+  "activeMotionCount": 15,
+  "activeTransitionCount": 1,
+  "details": 0,
+  "documentationNote": "289 saved files were unchanged at bake. Final delivery preserves 288 exactly and separately records one README inventory correction."
+}

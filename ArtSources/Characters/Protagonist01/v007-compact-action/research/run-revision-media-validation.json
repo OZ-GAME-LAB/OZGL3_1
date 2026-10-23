@@ -1,0 +1,102 @@
+{
+  "captureReportSHA256": "16359018c3a0e9d14a176f3b80182c46763a2f3f8aa00e7afe2fca62368b256d",
+  "other14GIFByteExact": true,
+  "other14SourcePNGSequencesExact": true,
+  "untouchedGIFs": [
+    {
+      "name": "Idle_Fists",
+      "previousSHA256": "194fb35512ccfd5df9a682eed6be2231b7e41634b349e2e49c912bdb2d332f15",
+      "currentSHA256": "194fb35512ccfd5df9a682eed6be2231b7e41634b349e2e49c912bdb2d332f15",
+      "sourceOrderedSHA256": "5083df69ddb22db37e69f6058560df5c0c49f1cc8b6bedfefd4e1ebbecc806ef"
+    },
+    {
+      "name": "Walk_Fists",
+      "previousSHA256": "3fc028807f95784a12c707d14d4d9cbfdec4dee66399d770b2c976775917ae4b",
+      "currentSHA256": "3fc028807f95784a12c707d14d4d9cbfdec4dee66399d770b2c976775917ae4b",
+      "sourceOrderedSHA256": "f6b489cf20d4fe4bd95ad3e41ed892b36c96b6fcfe22c70f2c88820616c5a84f"
+    },
+    {
+      "name": "Jump_Full",
+      "previousSHA256": "777607aefa45f047a83025a2dea07d72936aea7025c04afefb9bc4c0dffd4648",
+      "currentSHA256": "777607aefa45f047a83025a2dea07d72936aea7025c04afefb9bc4c0dffd4648",
+      "sourceOrderedSHA256": "0fe5627e92aec2b80355c1f90e2be81b3ccc18e350d5ac62bf15e481c100a03d"
+    },
+    {
+      "name": "Dash_Forward",
+      "previousSHA256": "ba0004a029c3928f8c25b91b1b64387063745d49e2bb900e4b3ac3eda56a0fee",
+      "currentSHA256": "ba0004a029c3928f8c25b91b1b64387063745d49e2bb900e4b3ac3eda56a0fee",
+      "sourceOrderedSHA256": "e2bcc94a869cb209fd15334a573673e4838dfee7598f895c4c985221ea5dae8b"
+    },
+    {
+      "name": "Potion_Drink",
+      "previousSHA256": "c3c2ade5df49b017c67571ac782fdd4cec63ceab7bb3aeb38e9699461f80149d",
+      "currentSHA256": "c3c2ade5df49b017c67571ac782fdd4cec63ceab7bb3aeb38e9699461f80149d",
+      "sourceOrderedSHA256": "e32e2c1f908430c5ce56fc206d961d1abf854b4a4fd748e761cd1bcc72ad7421"
+    },
+    {
+      "name": "Item_Throw_Overhand",
+      "previousSHA256": "e53af775852040e9551b065a8e6cb3096acaac53f32c2f1b17c13a792a739839",
+      "currentSHA256": "e53af775852040e9551b065a8e6cb3096acaac53f32c2f1b17c13a792a739839",
+      "sourceOrderedSHA256": "464798cf213f9ad6fda40b2ee7a7fae3aaf81919da70bc5435777880d99d925f"
+    },
+    {
+      "name": "Hit_Reaction",
+      "previousSHA256": "0c156186085de084f7eb67842a02fb8e324090c95cbbb04542e081076a2b8f35",
+      "currentSHA256": "0c156186085de084f7eb67842a02fb8e324090c95cbbb04542e081076a2b8f35",
+      "sourceOrderedSHA256": "2ab9486162c4392dc0e53a28bd8273bc7f3b223984a795aa1edd8973e44e2cd0"
+    },
+    {
+      "name": "Interact_Reach",
+      "previousSHA256": "56f4980f422274a0a8a89c3ca6b9c191205e60b7e1a72a9a34f7ed5dc9d3539a",
+      "currentSHA256": "56f4980f422274a0a8a89c3ca6b9c191205e60b7e1a72a9a34f7ed5dc9d3539a",
+      "sourceOrderedSHA256": "69e3befe554207207b14f611c35d2e52de3e93472337fe574bc964edffccecf9"
+    },
+    {
+      "name": "Pickup_Low",
+      "previousSHA256": "5574df73f43964d9d16585e77358c1c32c34816a507283bbd1b6af80f29e453d",
+      "currentSHA256": "5574df73f43964d9d16585e77358c1c32c34816a507283bbd1b6af80f29e453d",
+      "sourceOrderedSHA256": "2072dc20326d071bff1bf0c244d5aa967aa78e855125b99223b058261fe7e781"
+    },
+    {
+      "name": "Jump_Takeoff",
+      "previousSHA256": "64efc0433e0f7966893e97841ba9e3ee7e03734dada300050d88833fd2d18b57",
+      "currentSHA256": "64efc0433e0f7966893e97841ba9e3ee7e03734dada300050d88833fd2d18b57",
+      "sourceOrderedSHA256": "7139655d087d48513ec8d73aeabaefc04029228d11b481218a4bfb83c70f103f"
+    },
+    {
+      "name": "Jump_Rise_Loop",
+      "previousSHA256": "eaaf1a6b1efe5924f77eabfa6c8335481ef7a5c010e3d59356f2ca6873565ba6",
+      "currentSHA256": "eaaf1a6b1efe5924f77eabfa6c8335481ef7a5c010e3d59356f2ca6873565ba6",
+      "sourceOrderedSHA256": "ad7e773ec36fa9f01c49ac4827ca244a1f78564fdf09e504791a399f0b2658cc"
+    },
+    {
+      "name": "Jump_Apex_Loop",
+      "previousSHA256": "ec6892fb73fde87b2178c8dc497fd8e94aad1ca099ab25ae0c97259bc47b1680",
+      "currentSHA256": "ec6892fb73fde87b2178c8dc497fd8e94aad1ca099ab25ae0c97259bc47b1680",
+      "sourceOrderedSHA256": "d94897a914d836a559a676f6e8ad4a046d1c4d7d26bd0d6a41b72d6603af4893"
+    },
+    {
+      "name": "Jump_Fall_Loop",
+      "previousSHA256": "c9ce6912c5efb82bfcdf8fc32a4bbc983907cdee0096b2f7fd16dfde1e9ee9e1",
+      "currentSHA256": "c9ce6912c5efb82bfcdf8fc32a4bbc983907cdee0096b2f7fd16dfde1e9ee9e1",
+      "sourceOrderedSHA256": "483747c967505de095400d028ed1bfe9c6eabff105c236b0040aa2da3778601e"
+    },
+    {
+      "name": "Jump_Land",
+      "previousSHA256": "84a19c2b220329b780bc0b5ff350701eb322f084ef9e21b9c3f2a01164130df2",
+      "currentSHA256": "84a19c2b220329b780bc0b5ff350701eb322f084ef9e21b9c3f2a01164130df2",
+      "sourceOrderedSHA256": "aa858e9cb71c715cadc016dcfa583ab03083ed811f76f6d22a68629ebd7c7101"
+    }
+  ],
+  "GIFCount": 20,
+  "finalRunClipSHA256": "7dc2277627be4965100403f9ed77b37ae49ffe951481671408429723110b376a",
+  "scope": "14 approved other motions copied without GIF or source PNG re-encoding. Only Run, its dependent Move transition, Locomotion montage, and new one-clip Reaction montage are newly encoded.",
+  "postCleanupValidationChecks": 284,
+  "postCleanupDeliverySuccess": true,
+  "QAFileLinksPresent": true,
+  "retiredNamesAbsentInGallery": true,
+  "targetedCleanupTargets": 13,
+  "other14GIFBytesStillExactAfterCleanup": true,
+  "canonicalRedirectActive": true,
+  "timingCSVClipCount": 15
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "researched_on": "2026-10-19",
+  "timezone": "Asia/Seoul",
+  "language": "ko",
+  "scope": "로우폴리 치비 2.5D 액션의 폭발·스킬·상태 표시 VFX 조사와 제작 계획",
+  "implementation_status": {
+    "research_complete": true,
+    "vfx_prefabs_created": false,
+    "combat_wiring_changed": false,
+    "unity_batch_run_by_this_task": false,
+    "performance_measured": false,
+    "note": "아래 입자 수·시간·밀리초·드로 수는 초기 설계 목표이며 성능 실측 또는 출시 보장이 아니다."
+  },
+  "project_context": {
+    "unity": "6000.3.21f1",
+    "urp": "17.3.0",
+    "vfx_graph_package_in_manifest": false,
+    "developer_gpu_reported_by_user": "NVIDIA GeForce GTX 1650",
+    "shipping_platform": "미정",
+    "pc_pipeline_asset": {
+      "path": "Assets/Settings/PC_RPAsset.asset",
+      "depth_texture": true,
+      "opaque_texture": true,
+      "srp_batcher": true
+    },
+    "mobile_pipeline_asset": {
+      "path": "Assets/Settings/Mobile_RPAsset.asset",
+      "depth_texture": false,
+      "opaque_texture": false,
+      "srp_batcher": true
+    }
+  },
+  "repository_observations": [
+    {
+      "path": "Assets/1.Script/CoreSystem/PoolManager.cs",
+      "finding": "Rent/Return과 프리팹 소유자·대여 집합을 사용한다. 등록된 프리팹만 대여하며 Rent가 즉시 활성화한다. 목록은 monsterPrefabs다.",
+      "recommendation": "VFX 별도 풀을 사용한다. 표시 설정 전에 OnEnable에서 자동 재생하지 않는다."
+    },
+    {
+      "path": "Assets/1.Script/CoreSystem/MonsterSpawner.cs",
+      "finding": "현재 몬스터 풀의 인덱스와 Monster 컴포넌트를 전제로 한다.",
+      "recommendation": "VFX 프리팹을 같은 몬스터 등록 목록에 섞지 않는다."
+    },
+    {
+      "path": "Assets/1.Script/Player/PlayerSkillBase.cs",
+      "finding": "Execute(player, aimPoint, damage)가 스킬 실행 확장 지점이다.",
+      "recommendation": "전투가 실제 발생·적중·틱 이벤트를 정하고 시각 레이어는 해당 이벤트를 표시한다."
+    },
+    {
+      "path": "Assets/1.Script/Player/TestLogSkill.cs",
+      "finding": "현재 등록된 스킬 뼈대는 로그를 출력하며 실제 판정은 없다.",
+      "recommendation": "VFX 계획을 이미 구현된 스킬 동작으로 보고하지 않는다."
+    },
+    {
+      "path": "Assets/02.parkhansol_/UI/Scripts/Runtime/DamageFx/DamageFxController.cs",
+      "finding": "숫자·작은 타격 스파크·체력바를 풀링한다. GameUI.Damage.Show가 숫자와 스파크를 함께 표시할 수 있다.",
+      "recommendation": "새 월드 적중 VFX와 UI 스파크 중 주강조를 하나로 정해 중복 연출을 줄인다."
+    },
+    {
+      "path": "Assets/02.parkhansol_/UI/Scripts/Runtime/DamageFx/DamageNumberStyle.cs",
+      "finding": "DamageOverTime 스타일에 mergeWindow=0.4가 있고 기본 스파크를 지정하지 않는다.",
+      "recommendation": "지속 피해마다 큰 폭발을 추가하지 않고 기존 숫자 합산을 활용한다."
+    },
+    {
+      "path": "planning/Project_M_기획데이터.txt",
+      "finding": "v0.5는 여섯 스킬의 계수·쿨다운과 총피해 원칙을 정의한다. 중독·화상·둔화 수치는 정의하지 않는다.",
+      "precedence": "이후 사용자의 무기 선택·계열 제한 지시가 예전 혼합 장착 제안보다 우선한다."
+    },
+    {
+      "path": "planning/Project_M_상세기획서.docx",
+      "read_method": "zip의 word/document.xml을 메모리에서 읽음; 원본 수정 없음",
+      "finding": "검기는 짧은 방향 공격, 회전 베기는 근거리 다수, 연속 참격은 집중 연타, 마력탄은 목표 위치 폭발, 마력장은 지속 장판, 연쇄 폭발은 넓은 연속 공격이다."
+    },
+    {
+      "path": "Library/PackageCache/com.unity.render-pipelines.universal@8aa8d736cba6/Shaders/Particles/ParticlesUnlit.shader",
+      "finding": "설치된 URP17.3에 multi_compile_instancing과 procedural:ParticleInstancingSetup 경로가 있다.",
+      "limitation": "소스 경로 존재는 실제 드로가 인스턴싱되었다는 측정 결과가 아니다."
+    }
+  ],
+  "recommended_stack": {
+    "primary": "Unity Particle System / Shuriken",
+    "geometry": "저삼각형 링·초승달·파편 메시",
+    "trails": "짧은 TrailRenderer 또는 Particle Trails",
+    "material": "URP/Particles/Unlit 중심, 공용 알파·Additive·불투명/클립 재질",
+    "animation_texture": "512x512, 4x4 16프레임 플립북에서 시작",
+    "vfx_graph": "최종 플랫폼·API 및 대규모 환경 입자 요구가 확정되면 별도 프로파일링 후 도입 검토",
+    "avoid_in_initial_style": ["실사 볼륨 연기", "지속적인 화면 왜곡", "화면을 채우는 반투명 연무", "매 입자의 실제 광원·충돌·그림자"],
+    "reasoning_type": "현재 프로젝트 규모·호환성·스타일을 고려한 제작 제안이며 특정 GPU의 벤치마크 결론이 아니다"
+  },
+  "effect_families": [
+    {"id": "impact_small", "name": "작은 타격/폭발", "layers": ["중심 별", "각진 링", "파편", "짧은 연기"], "suggested_seconds": [0.25, 0.55], "space": "world"},
+    {"id": "blast_large", "name": "큰 폭발/연쇄 폭발", "layers": ["중심 섬광", "링", "불꽃", "각진 파편", "연기 조각"], "suggested_seconds": [0.45, 0.9], "space": "world"},
+    {"id": "slash", "name": "검기/참격", "layers": ["초승달 메시", "속도 선", "적중 스파크"], "suggested_seconds": [0.12, 0.3], "space": "XY 공격면/방향 정렬"},
+    {"id": "spin", "name": "회전 베기", "layers": ["끊긴 링", "전면 호", "작은 선"], "suggested_seconds": [0.2, 0.45], "space": "시전자 중심"},
+    {"id": "magic_projectile", "name": "마력탄", "layers": ["코어", "짧은 꼬리", "작은 입자", "적중에 impact_small 재사용"], "lifetime": "실제 투사체 이벤트에 따름", "space": "projectile attached"},
+    {"id": "magic_field", "name": "마력장", "layers": ["읽히는 경계", "바닥 문양", "저밀도 상승 입자"], "lifetime": "전투 지속시간", "space": "world"},
+    {"id": "status_poison", "name": "중독", "layers": ["물방울/해골 아이콘", "방울"], "lifetime": "상태 활성 시간", "mechanics_implemented": false},
+    {"id": "status_burn", "name": "화상", "layers": ["불꽃 아이콘", "뾰족한 불꽃 조각", "재"], "lifetime": "상태 활성 시간", "mechanics_implemented": false},
+    {"id": "status_slow", "name": "둔화", "layers": ["느린 발 아이콘", "발목의 끊긴 띠", "작은 결정"], "lifetime": "상태 활성 시간", "mechanics_implemented": false},
+    {"id": "status_indicator", "name": "기절/회복 프리셋", "presets": {"stun": "머리 위 회전 별", "heal": "위로 오르는 십자"}, "mechanics_status": {"stun": "미구현", "heal": "PlayerHealth.Heal과 UI Heal 스타일 존재; 이 문서가 제안하는 월드 회복 VFX는 미구현"}}
+  ],
+  "skill_mapping_from_design_v05": [
+    {"name": "검기", "damage_type": "physical", "total_coefficient": 1.8, "cooldown_seconds": 4, "effect_ids": ["slash", "impact_small"]},
+    {"name": "회전 베기", "damage_type": "physical", "total_coefficient": 2.1, "cooldown_seconds": 7, "effect_ids": ["spin", "impact_small"]},
+    {"name": "연속 참격", "damage_type": "physical", "total_coefficient": 3.75, "cooldown_seconds": 12, "effect_ids": ["slash"]},
+    {"name": "마력탄", "damage_type": "magic", "total_coefficient": 1.65, "cooldown_seconds": 5, "effect_ids": ["magic_projectile", "impact_small", "blast_large"]},
+    {"name": "마력장", "damage_type": "magic", "total_coefficient": 4, "cooldown_seconds": 9, "effect_ids": ["magic_field"]},
+    {"name": "연쇄 폭발", "damage_type": "magic", "total_coefficient": 3.45, "cooldown_seconds": 13, "effect_ids": ["blast_large"]}
+  ],
+  "unresolved_gameplay_values_not_invented": ["상태이상 지속시간·틱 피해·중첩·면역", "연쇄 폭발의 개수·간격·개별 범위", "마력장의 지속·틱 수", "마력탄의 이동 방식·유도 여부"],
+  "design_targets_not_measurements": {
+    "baseline_test": {"resolution": "1920x1080", "fps": 60, "whole_frame_ms": 16.67, "hardware_role": "개발 PC 기준; 출시 최소 사양 미정"},
+    "small_effect": {"systems": [2, 4], "live_particles": [12, 48]},
+    "large_explosion": {"live_particles": [48, 96], "sum_max_particles_start_target": 128},
+    "status_per_target_per_type": {"live_particles": [8, 20], "instances": 1},
+    "debris": {"triangles_per_piece": [8, 32], "pieces_per_regular_effect": [8, 16]},
+    "shared_materials": [3, 4],
+    "flipbook_fps": [12, 20],
+    "stress_case": {"concurrent_explosions": 10, "targets_with_status": 20},
+    "visible_particles_typical": 500,
+    "visible_particles_peak": 1000,
+    "additional_vfx_gpu_ms": 1,
+    "additional_vfx_cpu_ms": 0.5,
+    "additional_vfx_render_passes_or_draws_start_target": 60,
+    "interpretation": "수량만으로 성능을 보장하지 않는다. 실제 화면의 투명 면적 중첩·재질·렌더 패스·플랫폼으로 재조정한다."
+  },
+  "pool_contract_proposal_not_implemented": {
+    "acquire": ["Rent", "위치·회전·크기·색·소유자 설정", "남은 입자와 트레일 초기화", "명시적 Play"],
+    "auto_play_on_enable": false,
+    "normal_completion": "모든 자식 파티클 IsAlive(true)==false 및 메시/트레일 잔광 완료 후 한 번 Return",
+    "return_reset": ["StopEmittingAndClear(true)", "TrailRenderer.Clear", "색·스케일 초기화", "예약 작업/이벤트 해제", "대여 세대/토큰 검증"],
+    "status_cleanup": ["상태 종료", "정화", "대상 사망", "대상 풀 반납", "스테이지 해제"],
+    "damage_authority": "기존 전투 코드; 입자 충돌·수명·아이콘으로 피해/스킬 사용 가능 여부를 계산하지 않음"
+  },
+  "sources": [
+    {"id": "U1", "kind": "official_documentation", "title": "Unity 6.3 — Choosing your particle system solution", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/ChoosingYourParticleSystem.html", "supports": "Shuriken의 C# 제어·URP 호환과 GPU 기반 VFX Graph 비교"},
+    {"id": "U2", "kind": "official_documentation", "title": "Visual Effect Graph 17.3 — Requirements and compatibility", "url": "https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@17.3/manual/System-Requirements.html", "supports": "Compute/SSBO 요구, URP·모바일 지원 범위와 OpenGL ES 미지원"},
+    {"id": "U3", "kind": "official_documentation", "title": "Unity 6.3 — Renderer module reference", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysRendererModule.html", "supports": "View/Local 등 정렬, Billboard/Mesh, Mesh GPU Instancing 조건"},
+    {"id": "U4", "kind": "official_documentation", "title": "Unity 6.3 — Texture Sheet Animation module", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysTexSheetAnimModule.html", "supports": "그리드 플립북, FPS/Lifetime 샘플링"},
+    {"id": "U5", "kind": "official_documentation", "title": "Unity 6.3 — URP Particles Unlit shader", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/urp/particles-unlit-shader.html", "supports": "투명 재질과 플립북 블렌딩, Soft Particles의 Depth Texture 요구"},
+    {"id": "U6", "kind": "official_documentation", "title": "Unity 6.3 — Apply GPU instancing for a Particle System in the Built-In Render Pipeline", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysInstancing.html", "supports": "Mesh 모드·호환 셰이더·Renderer instancing 옵션의 조건", "caveat": "Built-in용 셰이더 예시를 URP에 직접 사용하지 않음. URP 지원 경로는 설치된 소스에서 보조 확인."},
+    {"id": "U7", "kind": "official_documentation", "title": "Unity — Choose a method for optimizing draw calls", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/optimizing-draw-calls-choose-method.html", "supports": "재질 공유와 SRP Batcher/GPU instancing 등 최적화 방식 구분"},
+    {"id": "U8", "kind": "official_api", "title": "Unity 6.3 — ObjectPool<T>", "url": "https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Pool.ObjectPool_1.html", "supports": "반복 생성·파괴를 줄이는 풀과 대여·반납 콜백"},
+    {"id": "U9", "kind": "official_api", "title": "Unity 6.3 — OnParticleSystemStopped", "url": "https://docs.unity3d.com/6000.3/Documentation/ScriptReference/MonoBehaviour.OnParticleSystemStopped.html", "supports": "새 입자 생성 종료와 생존 입자 소멸 후 콜백; stopAction Callback 필요"},
+    {"id": "U10", "kind": "official_documentation", "title": "Unity 6.3 — URP Rendering Debugger reference", "url": "https://docs.unity3d.com/6000.3/Documentation/Manual/urp/features/rendering-debugger-reference.html", "supports": "Overdraw 디버그 뷰로 중첩 확인"},
+    {"id": "U11", "kind": "official_api", "title": "Unity 6.3 — ParticleSystem.IsAlive", "url": "https://docs.unity3d.com/6000.3/Documentation/ScriptReference/ParticleSystem.IsAlive.html", "supports": "withChildren으로 자식 포함 생존/생성 여부 확인"},
+    {"id": "M1", "kind": "first_party_design_guidance", "title": "Microsoft XAG 103 — Additional channels for visual and audio cues", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/103", "supports": "색 외에 형태·패턴·아이콘·텍스트 등으로 상태 의미 전달"}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "success": true,
+    "originalMeshStreamsPreserved": true,
+    "originalFbxUntouched": true,
+    "source": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Rig.fbx",
+    "mesh": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_GripMesh.asset",
+    "vertexCount": 7427,
+    "triangles": 6087,
+    "blendShapes": 2,
+    "curlDegrees": 110.0,
+    "knuckleStartMetres": 0.11500000208616257,
+    "hands": [
+        {
+            "bone": "RightHand",
+            "shape": "Grip_R",
+            "sign": -1.0,
+            "metresPerBoneUnit": 0.9999998211860657,
+            "fingerLengthMetres": 0.08221951872110367,
+            "minimumChangedYMetres": 0.11523234099149704,
+            "maximumDisplacementMetres": 0.07077953219413758,
+            "changedVertices": 209,
+            "thumbAndWristUntouched": true
+        },
+        {
+            "bone": "LeftHand",
+            "shape": "Grip_L",
+            "sign": 1.0,
+            "metresPerBoneUnit": 1.0000001192092896,
+            "fingerLengthMetres": 0.0959739163517952,
+            "minimumChangedYMetres": 0.1156969964504242,
+            "maximumDisplacementMetres": 0.08298245072364807,
+            "changedVertices": 241,
+            "thumbAndWristUntouched": true
+        }
+    ]
+}

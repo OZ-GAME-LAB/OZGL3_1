@@ -74,8 +74,8 @@ namespace OZ.UI.EditorTools
                 await Wait(1.0f);
                 await Suite("해상도 배율", Scale);
                 await Suite("체력", Health);
-                await Suite("레벨·경험치·랭크", Progression);
-                await Suite("스킬 슬롯·스킬 창", Skills);
+                await Suite("랭크 (레벨·경험치 없음 — 기획서 v0.5 4·8장)", Progression);
+                await Suite("기술 구매·Q/E/R 장착·스탯 구매 (기획데이터 4·5장)", Skills);
                 await Suite("아이템·버프", Items);
                 await Suite("게이트 → 퀘스트 목록 (v0.6)", Gate);
                 await Suite("HUD 배치: 양손 분리·지도 아래 알림·보스 바 (v0.6)", HudLayout);
@@ -92,6 +92,7 @@ namespace OZ.UI.EditorTools
                 await Suite("풀에서 꺼내는 적 체력바 (v0.5)", PooledEnemyBar);
                 await Suite("UI Link 컴포넌트 (v0.5)", Links);
                 await Suite("지역 이름·저체력·화면 밖 화살표·상호작용 (v0.7)", V07);
+                await Suite("HUD 부위 숨김·각성 카드·튜토리얼 강조 (v1.3)", TutorialSuite);
             }
             catch (Exception e)
             {
@@ -177,12 +178,141 @@ namespace OZ.UI.EditorTools
             var dir = Find<SandboxDirector>();
             ClassData data = null;
             foreach (var c in dir.classes) if (c != null && c.playerClass == cls) data = c;
+            P.ResetGrowth(); // v1.3: 포인트 1000 · 스탯·기술·장착 처음 (각성 직후)
             P.SetClass(data);
             GameUI.HUD.Visible = true;
             GameUI.Dialogue.Stop();
             UIManager.Instance.CloseAll();
             Time.timeScale = 1f;
             await Wait(0.6f);
+        }
+
+        // ───────────────────────────── v1.3 HUD 부위 숨김·각성 카드·튜토리얼 강조 (기획서 v0.5 3장) ─────────────────────────────
+        static bool Contains(Rect outer, Vector2 p) => p.x >= outer.xMin - 0.5f && p.x <= outer.xMax + 0.5f && p.y >= outer.yMin - 0.5f && p.y <= outer.yMax + 0.5f;
+
+        static async Task TutorialSuite()
+        {
+            await ToCombat();
+            var hud = Hud;
+            var dir = Find<TutorialDirector>();
+            Check("튜토리얼 연결 (GameUI.Tutorial)", dir != null && ReferenceEquals(GameUI.Tutorial, dir));
+            if (dir == null || hud == null) return;
+
+            // ── HUD 부위 숨김 ──
+            var parts = new[] { HudPart.Health, HudPart.Minimap, HudPart.Items, HudPart.Quests, HudPart.Skills };
+            var before = new Dictionary<HudPart, Vector3>();
+            foreach (var p in parts) { var r = hud.PartRoot(p); Check($"부위 찾기: {p}", r != null); if (r != null) before[p] = r.position; }
+            GameUI.HUD.SetParts(HudPart.All, false, animate: false);
+            await Wait(0.1f);
+            bool allHidden = true, posKept = true;
+            foreach (var p in parts)
+            {
+                var g = hud.Gate(p);
+                if (g == null || g.alpha > 0.01f) allHidden = false;
+                var r = hud.PartRoot(p);
+                if (r != null && before.TryGetValue(p, out var pos) && (r.position - pos).sqrMagnitude > 0.01f) posKept = false;
+            }
+            Check("SetParts(All, false) → 전투 HUD 전부 숨김", allHidden);
+            Check("감싸도 HUD 배치 그대로", posKept);
+            Check("알림은 남음 (VisibleParts = Alarm)", GameUI.HUD.VisibleParts == HudPart.Alarm, GameUI.HUD.VisibleParts.ToString());
+            GameUI.Notify.System("방송", "현재 12번 지구에서 던전 브레이크가 터졌습니다.");
+            await Wait(0.4f);
+            Check("HUD 숨김 중에도 방송 알림은 뜸", hud.systemAlarm != null && hud.systemAlarm.VisibleCount > 0);
+
+            GameUI.HUD.SetParts(HudPart.Health | HudPart.Quests, true);
+            await Wait(1.2f);
+            Check("일부만 등장 (체력·퀘스트)", hud.Gate(HudPart.Health).alpha > 0.99f && hud.Gate(HudPart.Quests).alpha > 0.99f && hud.Gate(HudPart.Items).alpha < 0.01f);
+            GameUI.HUD.SetParts(HudPart.All, false, animate: false);
+
+            // ── 각성 카드 ──
+            float hold = dir.awakeningHold;
+            dir.awakeningHold = 0.4f;
+            bool awakeDone = false;
+            GameUI.Tutorial.ShowAwakening(1000, HunterRank.F, () => awakeDone = true);
+            await Wait(0.6f);
+            Check("각성 카드 등장", GameUI.Tutorial.IsAwakening && dir.CardGroup != null && dir.CardGroup.alpha > 0.9f, dir.CardGroup != null ? $"alpha {dir.CardGroup.alpha:0.00}" : "카드 없음");
+            await Wait(0.9f);
+            Eq("포인트 올라가며 표시", dir.CardPoints.text, "+1,000P");
+            await Wait(2.2f);
+            Check("끝나면 콜백 + 카드 꺼짐", awakeDone && !GameUI.Tutorial.IsAwakening && !dir.Card.gameObject.activeSelf);
+            bool shownAll = true;
+            foreach (var p in parts) if (hud.Gate(p).alpha < 0.99f) shownAll = false;
+            Check("각성 뒤 HUD 전부 등장", shownAll && (GameUI.HUD.VisibleParts & HudPart.All) == HudPart.All);
+            dir.awakeningHold = hold;
+
+            // ── 강조 설명 (화면 정지) ──
+            bool done = false;
+            int changes = 0;
+            Action<int> onStep = _ => changes++;
+            GameUI.Tutorial.StepChanged += onStep;
+            GameUI.Tutorial.Play(new[]
+            {
+                TutorialStep.World(P.transform, "기본 공격", "좌클릭으로 주먹 공격. 공격은 커서 방향을 따릅니다."),
+                TutorialStep.Hud(HudPart.Quests, "현재 목표", "게이트 소속 몬스터를 전부 잡아야 봉쇄할 수 있습니다."),
+                TutorialStep.Message("게이트", "가까이 가서 [F]로 직접 닫습니다."),
+            }, () => done = true);
+            await Wait(0.2f);
+            var win = dir.Window;
+            Check("설명 창 열림 + 1단계", GameUI.Tutorial.IsShowing && GameUI.Tutorial.StepIndex == 0 && GameUI.Tutorial.StepCount == 3);
+            Check("화면 정지 + 전투 입력 차단", Mathf.Approximately(Time.timeScale, 0f) && UIState.IsGameplayInputBlocked);
+            if (Camera.main != null) Check("월드 대상 밝힘", win.HasHole);
+            Eq("아래 글자", win.footerText.text, "[Space] 다음   1/3");
+            win.RaiseNext();
+            Check("바로 연타 → 무시 (입력 보호)", GameUI.Tutorial.StepIndex == 0);
+            var router = Find<UIInputRouter>();
+            Check("설명 중 ESC·Tab 단축키 막힘", router != null && (bool)Call(router, "HotkeysBlocked", UIManager.Instance));
+
+            GameUI.Tutorial.Next();
+            await Wait(0.2f);
+            var qr = hud.PartRoot(HudPart.Quests);
+            Check("2단계: 퀘스트 목록 밝힘", GameUI.Tutorial.StepIndex == 1 && win.HasHole && qr != null);
+            if (qr != null)
+            {
+                var want = win.FromRect(qr, 0f);
+                Check("밝힌 칸이 퀘스트 목록을 덮음", want.HasValue && Contains(win.Hole, want.Value.center));
+            }
+            var root = (RectTransform)win.transform;
+            Rect cr = new Rect(win.callout.anchoredPosition, win.callout.sizeDelta);
+            Check("설명 칸이 화면 안", cr.xMin >= root.rect.xMin && cr.xMax <= root.rect.xMax && cr.yMin >= root.rect.yMin && cr.yMax <= root.rect.yMax,
+                $"{cr} / {root.rect}");
+            GameUI.Tutorial.Next();
+            await Wait(0.1f);
+            Check("3단계: 대상 없음 → 화면 전체 어둡게", GameUI.Tutorial.StepIndex == 2 && !win.HasHole);
+            Eq("마지막은 '확인'", win.footerText.text, "[Space] 확인   3/3");
+            GameUI.Tutorial.Next();
+            await Wait(0.3f);
+            Check("끝 → 콜백 + 창 닫힘 + 게임 재개", done && !win.IsOpen && Time.timeScale > 0.99f && !UIState.IsGameplayInputBlocked);
+            Check("단계 이벤트 3번", changes == 3, changes.ToString());
+            GameUI.Tutorial.StepChanged -= onStep;
+
+            // ── 상태창 설명 (3장 6단계) ──
+            var sw = UIManager.Instance.GetWindow(ScreenId.Status) as StatusWindow;
+            Check("상태창 있음", sw != null);
+            if (sw == null) return;
+            int pages = 0;
+            foreach (var pg in sw.pages) if (pg != null) pages++;
+            bool tourDone = false;
+            GameUI.Tutorial.PlayStatusTour(() => tourDone = true);
+            await Wait(0.4f);
+            var swGroup = sw.GetComponent<CanvasGroup>();
+            Check("상태창 열림 + 설명 중엔 버튼 잠금", sw.IsOpen && swGroup != null && !swGroup.interactable);
+            Check("단계 수 = 소개 + 탭 수 + 포인트", GameUI.Tutorial.StepCount == pages + 2, $"{GameUI.Tutorial.StepCount} ≠ {pages + 2}");
+            GameUI.Tutorial.Next(); // 첫 탭
+            GameUI.Tutorial.Next(); // 둘째 탭 (퀘스트)
+            await Wait(0.3f);
+            Check("탭 단계 → 그 탭으로 바뀜", sw.CurrentTab == StatusTab.Quests, sw.CurrentTab.ToString());
+            if (sw.tabButtons.Length > 1 && sw.tabButtons[1] != null)
+            {
+                var tb = win.FromRect((RectTransform)sw.tabButtons[1].transform, 0f);
+                Check("탭 버튼을 밝힘", tb.HasValue && win.HasHole && Contains(win.Hole, tb.Value.center));
+            }
+            while (GameUI.Tutorial.IsShowing) { GameUI.Tutorial.Next(); await Wait(0.05f); }
+            await Wait(0.3f);
+            Check("끝 → 콜백 · 상태창은 열린 채 상점 탭 · 버튼 다시 켜짐", tourDone && sw.IsOpen && sw.CurrentTab == StatusTab.Shop && swGroup.interactable,
+                $"done {tourDone}, open {sw.IsOpen}, tab {sw.CurrentTab}, interactable {swGroup.interactable}");
+            UIManager.Instance.CloseAll();
+            await Wait(0.3f);
+            Check("상태창 닫으면 게임 재개", Time.timeScale > 0.99f);
         }
 
         // ───────────────────────────── v0.7 지역 이름·저체력·화면 밖 화살표·상호작용 ─────────────────────────────
@@ -261,6 +391,7 @@ namespace OZ.UI.EditorTools
 
             // 쿨타임: 어둡게 + 도는 바늘 + 완료 점멸 (스킬·아이템)
             var qv = Hud.skills.slots[0];
+            ((IGrowthShopSource)P).TryBuySkill("sword_wave"); await Wait(0.2f); // v1.3: 기술은 사야 Q에 장착됨 (검기 4초)
             P.UseSkill(SkillSlot.Q); await Wait(0.3f);
             Check("스킬 대기 중 → 아이콘 어둡게", qv.cooldown.IsDimmed && qv.icon.color.r < 0.5f, $"r {qv.icon.color.r:0.00}");
             Check("스킬 대기 중 → 도는 바늘 표시", qv.cooldown.sweepHand != null && qv.cooldown.sweepHand.gameObject.activeSelf);
@@ -279,7 +410,7 @@ namespace OZ.UI.EditorTools
 
             // 사용 불가도 어둡게
             var ev = Hud.skills.slots[1];
-            if (P.GetRank(SkillSlot.E) <= 0) Check("미습득 스킬 → 어둡게", ev.icon.color.r < 0.5f, $"r {ev.icon.color.r:0.00}");
+            if (P.GetEquipped(SkillSlot.E) == null) Check("빈 스킬 칸 → 어둡게", ev.icon.color.r < 0.5f, $"r {ev.icon.color.r:0.00}");
             while (P.GetCount(0) > 0) { P.UseItem(0); await Wait(1.6f); }
             await Wait(1.0f);
             Check("수량 0 아이템 → 어둡게 (쿨타임 끝나도 유지)", Hud.items.slots[0].icon.color.r < 0.5f, $"r {Hud.items.slots[0].icon.color.r:0.00}");
@@ -351,9 +482,11 @@ namespace OZ.UI.EditorTools
                 Check("Hide → 사라짐", !pr.IsVisible);
 
                 Check("플레이어 표시(UIPlayerTag) 있음", UIPlayerTag.Current != null);
-                link.transform.position = P.transform.position; await Wait(0.5f);
+                // 플레이어 표시(UIPlayerTag)는 아바타에 있음 — 게임 로직 오브젝트(P) 자리가 아님
+                Vector3 me = UIPlayerTag.Current != null ? UIPlayerTag.Current.position : P.transform.position;
+                link.transform.position = me; await Wait(0.5f);
                 Check("InteractPromptLink: 플레이어가 가까우면 표시", GameUI.Prompt.Current == link.transform);
-                link.transform.position = P.transform.position + new Vector3(50f, 0f, 0f); await Wait(0.5f);
+                link.transform.position = me + new Vector3(50f, 0f, 0f); await Wait(0.5f);
                 Check("InteractPromptLink: 멀어지면 숨김", GameUI.Prompt.Current == null);
 
                 // F 누름
@@ -371,7 +504,7 @@ namespace OZ.UI.EditorTools
 
                 int used = 0;
                 link.onInteract.AddListener(() => used++);
-                link.transform.position = P.transform.position; await Wait(0.6f);
+                link.transform.position = me; await Wait(0.6f);
                 pr.Press(); await Wait(0.1f);
                 Check("InteractPromptLink.onInteract 호출", used == 1);
             }
@@ -623,28 +756,15 @@ namespace OZ.UI.EditorTools
         {
             await ToCombat();
             var v = Hud.progression;
-            Eq("시작 Lv.1", v.levelText.text, "Lv.1");
-            Check("HUD에 SP 표시 없음 (삭제됨)", v.pointsHint == null && v.pointsText == null);
-
-            P.AddExp(40); await Wait(1.0f);
-            Near("경험치 40/100 → 바 0.4", v.expBar.fill.fillAmount, 0.4f);
-
-            P.AddExp(70); await Wait(1.0f);
-            Eq("110 누적 → Lv.2", v.levelText.text, "Lv.2");
-            Near("남은 경험치 10 → 바 0.1", v.expBar.Value, 0.1f);
-
-            P.AddExp(10000); await Wait(1.0f);
-            Eq("상한 Lv.7에서 멈춤 (기획서 검증값)", v.levelText.text, "Lv.7");
-            Near("최대 레벨 → 바 가득", v.expBar.Value, 1f);
-            Check("Lv.7까지 스킬 포인트 6", P.SkillPoints == 6, "SP " + P.SkillPoints);
-            P.AddExp(100); await Wait(0.3f);
-            Eq("Lv.7 이후 경험치 무시", v.levelText.text, "Lv.7");
-
+            Check("HUD에 레벨·경험치 없음 (기획서 4장: 레벨·경험치 시스템 없음)", v.levelText == null && v.expBar == null);
+            Check("HUD에 SP 표시 없음", v.pointsHint == null && v.pointsText == null);
+            int points = ((IPointsSource)P).Points;
             Eq("랭크 F급", v.rankText.text, "F급");
             P.PromoteRank(); await Wait(0.3f);
-            Eq("승급 → E급", v.rankText.text, "E급");
+            Eq("승급 → E급 (1스테이지 보스)", v.rankText.text, "E급");
             P.PromoteRank(); await Wait(0.3f);
-            Eq("승급 → D급", v.rankText.text, "D급");
+            Eq("승급 → D급 (2스테이지 보스)", v.rankText.text, "D급");
+            Check("랭크는 기록일 뿐 — 포인트·스탯 변화 없음 (8장)", ((IPointsSource)P).Points == points && P.GetStatLevel(StatKind.Strength) == 0);
         }
 
         static async Task Skills()
@@ -652,112 +772,85 @@ namespace OZ.UI.EditorTools
             await ToCombat();
             var bar = Hud.skills;
             SkillSlotView q = bar.slots[0], e = bar.slots[1], r = bar.slots[2];
-            Check("Q 시작 습득(잠금 해제)", !q.lockOverlay.activeSelf);
-            Check("E 미습득 잠금", e.lockOverlay.activeSelf);
-            Check("R 미습득 잠금", r.lockOverlay.activeSelf);
-            Check("아이콘 표시(검술 Q)", q.icon.enabled && q.icon.sprite != null);
+            var lo = (ISkillLoadoutSource)P;
+            var shop = (IGrowthShopSource)P;
+            int Pts() => ((IPointsSource)P).Points;
+
+            // 기획데이터 1·5장: 각성 1000P, 시작 기술 없음, 기술 6종
+            Check("각성 포인트 1000", Pts() == 1000, "P " + Pts());
+            Check("시작 기술 없음 → Q/E/R 빈 칸 (잠금 표시)", q.lockOverlay.activeSelf && e.lockOverlay.activeSelf && r.lockOverlay.activeSelf);
+            int phys = 0, magic = 0;
+            for (int i = 0; i < lo.SkillCount; i++) { if (lo.GetSkill(i).damageKind == SkillDamageKind.Magic) magic++; else phys++; }
+            Check("기술 6종 (물리 3 · 마법 3)", lo.SkillCount == 6 && phys == 3 && magic == 3, $"{lo.SkillCount} ({phys}/{magic})");
+            SkillOffer O(string id) { for (int i = 0; i < lo.SkillCount; i++) if (lo.GetSkill(i).id == id) return lo.GetSkill(i); return default; }
+            Check("가격 500 / 600 / 800", O("sword_wave").price == 500 && O("spin_slash").price == 600 && O("combo_slash").price == 800 && O("mana_bolt").price == 500 && O("chain_blast").price == 800);
+            Check("기본 쿨다운 4·7·12 / 5·9·13초", Mathf.Approximately(O("sword_wave").cooldown, 4f) && Mathf.Approximately(O("combo_slash").cooldown, 12f) && Mathf.Approximately(O("chain_blast").cooldown, 13f));
+            Check("강화 단계 없음 (1회 구매)", O("sword_wave").MaxRank == 1 && O("mana_field").MaxRank == 1);
+            Check("총피해 = 공격력 20 × 계수: 검기 36 · 마력장 80 · 연속 참격 75", P.GetDamage("sword_wave") == 36 && P.GetDamage("mana_field") == 80 && P.GetDamage("combo_slash") == 75);
 
             int fails = 0; SkillUseFailReason last = default;
-            Action<SkillSlot, SkillUseFailReason> onFail = (s, why) => { fails++; last = why; };
+            Action<SkillSlot, SkillUseFailReason> onFail = (sl, why) => { fails++; last = why; };
             P.SkillUseFailed += onFail;
-
-            P.UseSkill(SkillSlot.Q); await Wait(0.1f);
-            Check("Q 사용 → 쿨타임 오버레이 표시", q.cooldown.overlay.enabled);
-            Near("오버레이 거의 가득", q.cooldown.overlay.fillAmount, 1f, 0.05f);
-            Eq("남은 초 5", q.cooldown.label.text, "5");
-            await Wait(1.1f);
-            Eq("1초 뒤 4", q.cooldown.label.text, "4");
-            Near("오버레이 0.78 근처", q.cooldown.overlay.fillAmount, 0.78f, 0.05f);
-
-            P.UseSkill(SkillSlot.Q); await Wait(0.05f);
-            Check("쿨타임 중 재사용 → 실패(Cooldown)", fails == 1 && last == SkillUseFailReason.Cooldown);
-            P.UseSkill(SkillSlot.E); await Wait(0.05f);
-            Check("미습득 E 사용 → 실패(NotLearned)", fails == 2 && last == SkillUseFailReason.NotLearned);
-
-            await Wait(4.2f);
-            Check("쿨타임 끝 → 오버레이 꺼짐", !q.cooldown.overlay.enabled);
-            Eq("쿨타임 끝 → 숫자 지움", q.cooldown.label.text, "");
-
-            // 스킬 창 / 투자 규칙
-            string reason;
-            Check("Lv.1에서 E 투자 불가(포인트 없음 또는 레벨)", !P.CanInvest(SkillSlot.E, out reason));
-            P.AddExp(150); await Wait(0.2f); // Lv.2, SP 1 (ISkillSource 호환 규칙 = 트리의 다음 노드)
-            Check("Lv.2·SP1 → E 습득 가능", P.CanInvest(SkillSlot.E, out _));
-            Check("Lv.2 → R은 레벨 부족", !P.CanInvest(SkillSlot.R, out reason) && reason == "Lv.4 필요", "사유: " + reason);
-
-            // 스킬 트리 창 (K) — v0.9 기획서: 계열 트리 · Q/E/R × 3단계 · 단계당 1P · 최대 Lv.7 · 초기화 없음 · 시간 정지
-            GameUI.Screens.Open(ScreenId.SkillWindow); await Wait(0.4f);
-            var win = Find<SkillTreeWindow>();
-            var tree = P.Tree;
-            SkillNodeView V(string id) { foreach (var nv in win.Views) if (nv.Node.id == id) return nv; return null; }
-            Check("스킬 창 열림 → 시간 정지", Time.timeScale == 0f, "timeScale " + Time.timeScale);
-            Eq("트리 창 포인트 1", win.pointsText.text, "스킬 포인트  1");
-            Eq("제목 = 계열 트리", win.titleText.text, "검술 스킬");
-            Check("노드 9개 (3스킬 × 3단계)", win.Views.Count == 9 && tree.nodes.Count == 9, $"{win.Views.Count} / {tree.nodes.Count}");
-            Check("데이터 오류 없음", tree.Validate().Count == 0, string.Join(", ", tree.Validate()));
-            Check("다른 계열 노드 없음", V("magic_q") == null && V("magic_e") == null);
-            Check("패시브 없음", tree.nodes.TrueForAll(n => n.kind != SkillNodeKind.Passive));
-            Check("전부 찍는 데 9P (시작 Q 포함) → Lv.7의 6P로는 골라 찍기", tree.MaxSpendablePoints() == 9, "P " + tree.MaxSpendablePoints());
-            Check("시작 Q 해금 상태", V("sword_q").State == SkillNodeState.Unlocked);
-            Check("Q 강화 가능 (Lv.2·1P)", V("sword_q_2").State == SkillNodeState.Available);
-            Check("E 습득 가능", V("sword_e").State == SkillNodeState.Available);
-            Check("R은 Lv.4 전까지 잠김", V("sword_r").State == SkillNodeState.Locked);
-            Check("초기화 버튼 숨김 (기획서에 없음)", win.resetButton == null || !win.resetButton.gameObject.activeSelf);
-
-            V("sword_e").button.onClick.Invoke(); await Wait(0.3f);
-            Check("E 습득", P.IsUnlocked("sword_e"));
-            Eq("포인트 0", win.pointsText.text, "스킬 포인트  0");
-            Check("HUD E = 검술 E 아이콘", e.icon.sprite == P.GetSkill(SkillSlot.E).icon && P.GetSkill(SkillSlot.E).playerClass == PlayerClass.Sword);
-            Check("HUD E 잠금 해제", !e.lockOverlay.activeSelf);
-            Eq("HUD E 단계 점 1개", e.rankText.text, "·");
-
-            V("sword_e_2").button.onClick.Invoke(); await Wait(0.3f);
-            Check("포인트 없으면 거부", !P.IsUnlocked("sword_e_2"));
-            Eq("거부 사유 표시", win.detailStatus.text, "포인트 부족");
-            Check("설명 칸에 다음 효과", win.detailDesc.text.Contains("다음 효과") && win.detailDesc.text.Contains("→"), win.detailDesc.text);
-
-            P.AddExp(10000); await Wait(0.3f); // Lv.7, SP 5
-            Eq("Lv.7 (최대) 표시", win.levelText.text, "Lv.7  (최대)");
-            Eq("포인트 5", win.pointsText.text, "스킬 포인트  5");
-            V("sword_e_2").button.onClick.Invoke(); await Wait(0.1f);
-            V("sword_e_3").button.onClick.Invoke(); await Wait(0.3f);
-            Check("E 3단계", P.GetRank(SkillSlot.E) == 3);
-            Eq("HUD E 단계 점 3개", e.rankText.text, "···");
-            Check("ISkillSource 호환: 최대 단계 투자 거부", !P.TryInvest(SkillSlot.E));
-            V("sword_r").button.onClick.Invoke(); await Wait(0.1f);
-            V("sword_r_2").button.onClick.Invoke(); await Wait(0.3f);
-            Check("R 2단계", P.GetRank(SkillSlot.R) == 2);
-            Eq("남은 포인트 1 (Q·R 3단계 중 하나만 더)", win.pointsText.text, "스킬 포인트  1");
-            Check("Q 2단계 / R 3단계 둘 다 찍을 수 있음", V("sword_q_2").State == SkillNodeState.Available && V("sword_r_3").State == SkillNodeState.Available);
-            GameUI.Screens.Close(ScreenId.SkillWindow); await Wait(0.3f);
-            Check("스킬 창 닫힘 → 시간 다시 흐름", Time.timeScale == 1f, "timeScale " + Time.timeScale);
-
-            // 데이터 에셋 수치 변경 → UI 반영
-            var qData = P.GetSkill(SkillSlot.Q);
-            var backup = qData.ranks[0];
             try
             {
-                var changed = backup; changed.cooldown = 2f;
-                qData.ranks[0] = changed;
-                P.UseSkill(SkillSlot.Q); await Wait(0.1f);
-                Eq("SkillData 쿨타임 5→2 수정 → HUD 2초", q.cooldown.label.text, "2");
-            }
-            finally
-            {
-                qData.ranks[0] = backup; // 에셋 원복
-                EditorUtility.SetDirty(qData);
-            }
-            P.SkillUseFailed -= onFail;
-            await Wait(2.2f);
+                P.UseSkill(SkillSlot.Q); await Wait(0.05f);
+                Check("빈 Q 사용 → 실패(NotLearned)", fails == 1 && last == SkillUseFailReason.NotLearned);
 
-            // 계열 변경 → 아이콘 교체
-            await ToCombat(PlayerClass.Magic);
-            Check("마법 계열 → Q 아이콘 교체", q.icon.sprite == P.GetSkill(SkillSlot.Q).icon && P.GetSkill(SkillSlot.Q).playerClass == PlayerClass.Magic);
-            GameUI.Screens.Open(ScreenId.SkillWindow); await Wait(0.4f);
-            var mwin = Find<SkillTreeWindow>();
-            Eq("마법 계열 → 마법 트리", mwin.titleText.text, "마법 스킬");
-            Check("마법 트리: 검술 노드 없음", mwin.Views.Count == 9 && !P.Tree.nodes.Exists(n => n.skill != null && n.skill.playerClass != PlayerClass.Magic));
-            GameUI.Screens.Close(ScreenId.SkillWindow); await Wait(0.3f);
+                Check("검기 구매", shop.TryBuySkill("sword_wave") == ShopBuyResult.Success); await Wait(0.2f);
+                Check("1000 → 500P", Pts() == 500, "P " + Pts());
+                Check("처음 산 기술은 빈 칸(Q)에 바로 장착", lo.GetEquipped(SkillSlot.Q) == "sword_wave" && !q.lockOverlay.activeSelf);
+                Check("HUD Q 아이콘", q.icon.enabled && q.icon.sprite != null);
+                Eq("강화 단계 점 없음", q.rankText.text, "");
+                Check("같은 기술 다시 구매 불가 (영구 보유)", shop.TryBuySkill("sword_wave") == ShopBuyResult.LimitReached && Pts() == 500);
+
+                P.UseSkill(SkillSlot.Q); await Wait(0.1f);
+                Check("Q 사용 → 쿨타임 오버레이", q.cooldown.overlay.enabled);
+                Near("오버레이 거의 가득", q.cooldown.overlay.fillAmount, 1f, 0.05f);
+                Eq("남은 초 4 (검기 4초)", q.cooldown.label.text, "4");
+                await Wait(1.1f);
+                Eq("1초 뒤 3", q.cooldown.label.text, "3");
+                P.UseSkill(SkillSlot.Q); await Wait(0.05f);
+                Check("쿨타임 중 재사용 → 실패(Cooldown)", fails == 2 && last == SkillUseFailReason.Cooldown);
+
+                // 물리·마법 섞어 장착 (6장 기본안: 직업 선택 없음)
+                Check("마력탄 구매 → 빈 칸(E)에 장착", shop.TryBuySkill("mana_bolt") == ShopBuyResult.Success && lo.GetEquipped(SkillSlot.E) == "mana_bolt"); await Wait(0.2f);
+                Check("물리(Q) + 마법(E) 함께 장착", O(lo.GetEquipped(SkillSlot.Q)).damageKind == SkillDamageKind.Physical && O(lo.GetEquipped(SkillSlot.E)).damageKind == SkillDamageKind.Magic);
+                Check("포인트 0 → 회전 베기(600) 구매 거부", shop.TryBuySkill("spin_slash") == ShopBuyResult.NotEnoughCurrency && !lo.IsOwned("spin_slash") && Pts() == 0);
+
+                // 같은 기술은 한 칸만 · 장착을 바꿔도 남은 쿨다운 유지 (5·6장)
+                lo.TryEquip(SkillSlot.R, "sword_wave"); await Wait(0.2f);
+                Check("같은 기술은 한 칸만 (Q → R로 옮겨짐)", lo.GetEquipped(SkillSlot.Q) == null && lo.GetEquipped(SkillSlot.R) == "sword_wave");
+                Check("장착을 옮겨도 남은 쿨다운 유지", lo.GetCooldownRemaining(SkillSlot.R) > 1.5f && r.cooldown.overlay.enabled, $"{lo.GetCooldownRemaining(SkillSlot.R):0.0}s");
+                Check("빈 Q 다시 잠금 표시", q.lockOverlay.activeSelf);
+            }
+            finally { P.SkillUseFailed -= onFail; }
+
+            // 스탯 (기획데이터 4장)
+            P.AddPoints(2000); await Wait(0.1f);
+            Check("힘 첫 가격 200", P.GetStatPrice(StatKind.Strength) == 200);
+            Check("힘 구매", P.TryBuyStat(StatKind.Strength) == ShopBuyResult.Success);
+            Check("물리 공격력 20 → 23, 다음 가격 250", Mathf.Approximately(P.GetStatValue(StatKind.Strength), 23f) && P.GetStatPrice(StatKind.Strength) == 250);
+            Check("검기 피해 36 → 41 (23 × 1.8 반올림)", P.GetDamage("sword_wave") == 41, "피해 " + P.GetDamage("sword_wave"));
+            Check("마법 피해는 그대로 (마력탄 33)", P.GetDamage("mana_bolt") == 33);
+            P.ChangeHP(-30); await Wait(0.2f);
+            Check("체력 구매", P.TryBuyStat(StatKind.Vitality) == ShopBuyResult.Success); await Wait(0.5f);
+            Eq("최대 HP +12, 현재 HP는 늘어난 만큼만 (70/100 → 82/112)", Hud.health.valueText.text, "82/112");
+            for (int i = 0; i < 3; i++) P.TryBuyStat(StatKind.Agility);
+            Check("민첩 상한 3회 → 더 못 삼", P.TryBuyStat(StatKind.Agility) == ShopBuyResult.LimitReached && P.GetStatLevel(StatKind.Agility) == 3);
+            Near("민첩 추가 효과 +9%", P.GetStatValue(StatKind.Agility), 0.09f, 0.001f);
+            Check("남은 포인트 2000 − 200 − 200 − 750 = 850", Pts() == 850, "P " + Pts());
+
+            // 사망·재도전에도 구매·장착 유지 (8장)
+            P.ResetAll(); await Wait(0.3f);
+            Check("재도전(ResetAll) 후에도 기술·장착·포인트·스탯 유지", lo.IsOwned("sword_wave") && lo.GetEquipped(SkillSlot.R) == "sword_wave" && Pts() == 850 && P.GetStatLevel(StatKind.Strength) == 1);
+
+            // K → 상태창 캐릭터 탭 (스킬 트리 창 대신)
+            var router = Find<UIInputRouter>();
+            Call(router, "ToggleStatus", (StatusTab?)StatusTab.Character); await Wait(0.4f);
+            var sw = UIManager.Instance.GetWindow(ScreenId.Status) as StatusWindow;
+            Check("K → 상태창 캐릭터 탭 + 시간 정지", sw != null && sw.IsOpen && sw.CurrentTab == StatusTab.Character && Time.timeScale == 0f, sw != null ? $"{sw.IsOpen} {sw.CurrentTab} ts {Time.timeScale}" : "상태창 없음");
+            UIManager.Instance.CloseAll(); await Wait(0.3f);
+            Check("상태창 닫힘 → 시간 다시 흐름", Time.timeScale == 1f);
         }
 
         static async Task Items()
@@ -796,6 +889,10 @@ namespace OZ.UI.EditorTools
             P.UseItem(0); await Wait(1.0f);
             Eq("회복은 최대 체력 초과 안 함", Hud.health.valueText.text, "100/100");
             P.ItemUseFailed -= onFail;
+            for (int i = 0; i < 8; i++) P.AddItem(2);
+            await Wait(0.2f);
+            Eq("종류별 최대 5개 (기획데이터 9장)", items.slots[2].countText.text, "5");
+            P.ResetAll(); await Wait(0.2f);
         }
 
         static int BuffCount()
@@ -887,7 +984,8 @@ namespace OZ.UI.EditorTools
             Check("최대 4줄까지만 표시", visible == Hud.quests.maxRows, "보이는 줄 " + visible);
             foreach (var id in new[] { "kill", "talk", "a", "b", "c" }) GameUI.Quest.Remove(id);
             await Wait(0.3f);
-            Check("Remove → 게이트·보스 2줄만 남음", Hud.quests.Rows.Count == 2);
+            Check("Remove → 게이트·보스·서브(근접형 처치) 3줄만 남음", Hud.quests.Rows.Count == 3 && QRow("gate") != null && QRow("boss") != null && QRow("sub_melee") != null,
+                "줄 " + Hud.quests.Rows.Count);
         }
 
         static async Task HudLayout()
@@ -967,21 +1065,35 @@ namespace OZ.UI.EditorTools
             await ToCombat();
             var sa = Hud.systemAlarm;
             sa.ClearAll();
-            P.AddExp(600); await Wait(0.5f);
-            Check("연속 레벨업 → 알림 1장", sa.VisibleCount == 1, "장 수 " + sa.VisibleCount);
-            var card = sa.Cards[0];
-            Check("'레벨 업' + 'Lv.a → Lv.b' 형식", card.kind.text == "레벨 업" && card.main.text.Contains("→"), card.main.text);
-            Check("스킬 포인트 합산 표시", card.sub.text.StartsWith("스킬 포인트 +"));
-            Near("카드가 마스크 안 첫 자리(y 0)", card.rt.anchoredPosition.y, 0f, 1f);
-            GameUI.Notify.System("랭크 승급", "F급 → E급", "새 스킬 해금"); await Wait(0.4f);
-            GameUI.Notify.System("획득", "게이트 키", null); await Wait(0.4f);
+            int Pts() => ((IPointsSource)P).Points;
+            int before = Pts();
+            // 기획서 5장: 포인트는 퀘스트 완료 보상으로만 · 첫 완료에만 지급
+            GameUI.Quest.SetProgress("sub_melee", 6); await Wait(0.5f);
+            Check("서브 퀘스트 완료 → 알림 1장", sa.VisibleCount == 1, "장 수 " + sa.VisibleCount);
+            if (sa.Cards.Count > 0)
+            {
+                var card = sa.Cards[0];
+                Check("'상태창' + '… 완료' 형식", card.kind.text == "상태창" && card.main.text.Contains("완료"), card.kind.text + " / " + card.main.text);
+                Eq("보상 표시", card.sub.text, "+150 포인트");
+                Near("카드가 마스크 안 첫 자리(y 0)", card.rt.anchoredPosition.y, 0f, 1f);
+            }
+            Check("보상 150P 지급", Pts() == before + 150, $"{before} → {Pts()}");
+            GameUI.Quest.Set("sub_melee", "근접형 처치 (1회차)", 0, 6, QuestState.Active, null, 10); await Wait(0.2f);
+            GameUI.Quest.SetProgress("sub_melee", 6); await Wait(0.3f);
+            Check("같은 퀘스트 다시 완료 → 다시 지급 안 함", Pts() == before + 150, $"{before} → {Pts()}");
+
+            GameUI.Notify.System("상태창", "합치기 1", null, "selftest_merge"); await Wait(0.2f);
+            GameUI.Notify.System("상태창", "합치기 2", null, "selftest_merge"); await Wait(0.3f);
+            Check("같은 mergeKey → 새로 안 쌓고 내용만 바뀜", sa.VisibleCount == 2 && HasAlarm("상태창", "합치기 2") && !HasAlarm("상태창", "합치기 1"), "장 수 " + sa.VisibleCount);
+            GameUI.Notify.System("방송", "주변 시민은 가까운 대피소로 이동해 주십시오.", null); await Wait(0.4f);
             Check("다른 알림은 아래로 쌓임 (3장)", sa.VisibleCount == 3);
             Near("두 번째 카드 위치", sa.Cards[1].rt.anchoredPosition.y, -(sa.cardHeight + sa.gap), 1f);
             GameUI.Notify.System("테스트", "4번째", null); await Wait(0.6f);
             Check("최대 3장 유지", sa.VisibleCount <= 3);
             await Wait(sa.holdSeconds * 3 + 2f);
             Check("시간이 지나면 모두 지도 뒤로 사라짐", sa.VisibleCount == 0);
-            Check("토스트(우하단)엔 레벨업이 안 쌓임", !ToastTexts().Contains("레벨 업"));
+            Check("토스트(우하단)엔 상태창 알림이 안 쌓임", !ToastTexts().Contains("완료"));
+            GameUI.Quest.Set("sub_melee", "근접형 처치 (1회차)", 0, 6, QuestState.Active, null, 10);
             P.ResetAll(); await Wait(0.3f);
         }
 
@@ -1200,13 +1312,15 @@ namespace OZ.UI.EditorTools
             bool prevSetting = UISettings.ShowDamageNumbers;
             UISettings.ShowDamageNumbers = true;
 
-            normal.TakeHit(23, false); await Wait(0.05f);
+            normal.TakeHit(23, false);
+            bool sparked = Get<List<HitSparkView>>(fx, "_sparks").Exists(s => s.active);
+            await Wait(0.05f);
             var nums = Get<List<DamageNumberView>>(fx, "_numbers");
             DamageNumberView last = Newest(nums);
             Check("일반 피해 → 숫자 1개", fx.ActiveNumberCount == 1 && last != null);
             Eq("일반 숫자 = 23", last.text.text, "23");
             Check("일반 숫자: 흰색, 12px, 라벨 없음", last.text.color == Color.white && Mathf.Approximately(last.text.fontSize, 12f) && !last.label.gameObject.activeSelf);
-            Check("타격 이펙트 재생", Get<List<HitSparkView>>(fx, "_sparks").Exists(s => s.active));
+            Check("타격 이펙트 재생", sparked);
             var bar = Get<Dictionary<IEnemyHealthSource, EnemyHealthBarView>>(fx, "_bars")[normal];
             await Wait(0.15f);
             Check("맞으면 일반 적 체력바 나타남", bar.group.alpha > 0.9f);

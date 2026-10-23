@@ -1,0 +1,55 @@
+{
+    "success": true,
+    "playerDriverConfigured": true,
+    "visualDriverConfigured": false,
+    "unity": "6000.3.21f1",
+    "controller": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unarmed.controller",
+    "skillMotion": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_SkillMotion.anim",
+    "sourceNotes": "Punch is mirrored into a right-hand jab and imports source Left_Jab_from_Guard from 0 through .62 of its full default take. AirRise/AirFall are one-frame-wide looping pose imports at Regular_Jump fractions .30/.65. All intervals are computed from default source takes each run, preventing cumulative trimming. Jab and every Regular_Jump-derived import use keepOriginalOrientation=false/lockRootRotation=false to align body orientation with the movement axis while ignoring extracted root motion. Existing clip names are retained; only the two new air pose names are appended. Extra-action import/trim is owned by ProtagonistExtendedAnimationSetup.",
+    "playbackNotes": "FacingLeft mirrors all states, paired with the near-hand socket selection. Air blends AirFall/AirApex/AirRise at VelocityY -2/0/+2. Walk and Run time scales match 2.2/5 m/s to raw low-stance backwards-foot median speed measured in motion-diagnostics.json. Skill uses a dedicated Humanoid clone so weapon skill overrides cannot replace Idle. SkillSpeed follows equipped skill CastDuration, fallback .5 s. This setup exposes attack contact timing but does not alter attack damage execution or purchase rules.",
+    "walkNaturalStrideSpeed": 1.1518100500106812,
+    "runNaturalStrideSpeed": 3.3198890686035158,
+    "walkTimeScale": 1.9100371599197388,
+    "runTimeScale": 1.5060744285583497,
+    "defaultAttackContactNormalized": 0.8199999928474426,
+    "mirroredStates": 16,
+    "clips": [
+        {
+            "name": "Punch",
+            "sourceTake": "Left_Jab_from_Guard",
+            "originalFirstFrame": 0.0,
+            "originalLastFrame": 52.0,
+            "importedFirstFrame": 0.0,
+            "importedLastFrame": 32.2400016784668,
+            "seconds": 1.0746667385101319,
+            "humanoid": true,
+            "mirror": true
+        },
+        {
+            "name": "AirRise",
+            "sourceTake": "Regular_Jump",
+            "originalFirstFrame": 0.0,
+            "originalLastFrame": 56.0,
+            "importedFirstFrame": 16.80000114440918,
+            "importedLastFrame": 17.80000114440918,
+            "seconds": 0.03333330154418945,
+            "humanoid": true,
+            "mirror": false
+        },
+        {
+            "name": "AirFall",
+            "sourceTake": "Regular_Jump",
+            "originalFirstFrame": 0.0,
+            "originalLastFrame": 56.0,
+            "importedFirstFrame": 36.39999771118164,
+            "importedLastFrame": 37.39999771118164,
+            "seconds": 0.03333330154418945,
+            "humanoid": true,
+            "mirror": false
+        }
+    ],
+    "weaponOverrides": [
+        "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Sword.overrideController",
+        "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Staff.overrideController"
+    ]
+}

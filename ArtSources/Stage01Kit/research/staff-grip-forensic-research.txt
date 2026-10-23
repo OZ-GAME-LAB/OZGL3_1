@@ -1,0 +1,114 @@
+Staff grip forensic research — 2026-10-21
+
+Status and correction to the earlier review
+
+The previous orb review verified the head silhouette, floating gap, face clearance, rendering, and preserved shaft geometry. It did not verify that the hand physically enclosed the shaft. Treating that review as approval of the grip was insufficient. A socket or marker matching the hand bone proves a transform relationship, not palm/finger/thumb contact. No corrective asset, clip, or game code has been edited during this investigation. The only new code is the explicitly authorized read-only ChibiGripProbe.cs diagnostic; the root agent owns its Unity execution.
+
+Confirmed local source evidence
+
+1. Assets/Art/Characters/Protagonist01/Editor/ChibiMotionCapture.cs, ReviewProp:
+   Current non-potion mount uses physical hand offset (.040,.025,0) m, local Z rotation 90 degrees, and world scale .70. Consequently staff local +Y becomes hand local -X. The staff axis in normalized hand-metre coordinates is approximately (x variable, y .025, z 0), rather than passing through the curled fingers. This path bypasses SocketWeapon.AttachTo and its serialized grip position; inspecting Staff.prefab's SocketWeapon alone does not inspect the actual review mount.
+
+2. Assets/Art/Characters/Protagonist01/Editor/ChibiCapHandBuilder.cs:
+   Grip_R=75 is an independently authored 160-degree weapon frame, not 75% of the closed-fist displacement. Grip_R=100 is the 260-degree closed fist. Four finger columns span hand Z, at -.040,-.019,.002,+.023 m; the flexion centreline lies in hand XY and bends toward -X for the right hand. The metacarpal ridge is Y=.068 m. The 75-weight thumb target is (-.043,.090,.020) m. These are the builder's anatomical proxies, not anatomical labels guaranteed by finger bones. This rig has 24 bones and no finger joints.
+
+3. Actual serialized mesh extraction, independent of the builder's summary:
+   Source mesh: Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset. RightHand is bone index 15. The actual Grip_R frame75 contains 321 sparse vertex deltas. Applying those deltas to base vertices, then the real RightHand bindpose matrix, confirms the curled hand is mainly in negative X and positive Y. The four finger rows run across Z; the current shaft is oriented along the curl direction X. Thus there is a concrete axis mismatch as well as an offset mismatch.
+   For all 370 source vertices with RightHand influence >= .55, the frame75 hand-local centroid is (-.028625,.074243,-.002348) m. The builder's high-influence frame75 bounds are X[-.073635,+.027363], Y[.046507,.127670], Z[-.054100,.038298] m. A whole-hand centroid or AABB is not the empty gripping channel and must not itself become the new mount.
+
+4. Region samples from the actual frame75 mesh, using explicit source-bind masks:
+   Palm-core proxy: RightHand weight>=.55, source Y .030..068, source Z<.038; 38 vertices. Mean (.008856,.048415,-.013698) m.
+   Proximal-finger proxy: weight>=.9, source Y .068..110, source Z<.038; 90 vertices. Mean (-.020054,.088308,-.009254) m.
+   Distal-finger proxy: weight>=.9, source Y>=.110, source Z<.038; 145 vertices. Mean (-.051866,.075438,-.007871) m.
+   Thumb proxy: weight>=.55, source Z>.065, source Y .065..135; 33 vertices. Mean (-.029124,.083299,.016365) m. Current shaft-axis radial distance of those thumb vertices is .043585 minimum / .061139 median / .073648 maximum m. This is vertex evidence, not a complete signed distance of the thumb triangle surface.
+   Example original vertex IDs: palm 389,419,449,693,1807,1835,5311,6694; proximal fingers 135,400,431,453,476,5313,6608,7083; distal fingers 398,4406,4427,5303,6153,6669,7040,7094; thumb 655,660,665,669,674,1120,1125,6697. Preserve IDs to compare identical points between poses.
+
+5. Actual shaft diameter requires triangle slicing, not filtering nearby vertices:
+   The shaft has long triangles and no vertices inside original axial Y[-.12,+.12] m. Selecting vertices around the grip therefore gives an empty set. Intersect the triangles with original shaft Y=0 (also checked Y=-.04,+.04). The 24 resulting cross-section points have X[-.0240877,+.0240877], Z[-.0219303,+.0262452] m. At review scale .70, maximum radial extent is .0188631 m and radial95=.0188145 m: approximately 37.7 mm effective diameter. Comparing only a hand-bone marker or an assumed thin cylinder would miss this geometry.
+
+6. Changing only the mount direction is not yet a validated fix:
+   The initial physically sensible axis candidate follows the finger columns, approximately hand Z, with an oblique fit allowed. However, actual Grip75 triangles sliced at hand Z=-.035,-.020,0,+.020 do not establish a free 18.86 mm-radius channel. For example, at tentative XY=(-.025,.090) m the nearest section-surface distances are approximately 4.49,3.92,10.42,3.06 mm. These are unsigned distances; outside/inside and thumb-web intersections still need classification. They show why a guessed new offset must not be called a successful grip. The generic 75 morph was not authored around this staff's actual cross-section; a dedicated StaffGrip corrective may be needed.
+
+7. Skin-weight drift is a separate issue:
+   The original right thumb is only about .72..845 hand-weighted in its selected region; the forearm contributes to its skinning. A wrist rotation can therefore change the thumb's shape in hand-local space even when Grip_R stays 75. Strongly hand-weighted finger vertices are more rigid relative to the hand. Fitting only the bind-space morph can appear correct in one frame and lose contact at the cast extreme. The actual saved clip must be sampled and CPU-skinned at ready, preparation, execution, recovery, and end. No claim about live skinning is based on the bind-space measurements above.
+
+Exact read-only probe and calculations
+
+Root Unity method: ChibiGripProbe.Run(). Outputs ArtSources/Stage01Kit/research/StaffGripProbe. It samples the actual v007 review prefab with saved Idle_Fists0, Staff_Cast_Forward0, and Staff_Cast_Forward.24s. Each pose is BakeMesh'd at Grip_R 0,75,100 on disposable instances. It exports source vertex IDs, per-bone weights, source bind-hand positions, live deformed normals/vertices, remapped hand triangles, all current staff mesh geometry under the exact ReviewProp transform, and XY/YZ/XZ orthographic closeups with orange diagnostic shaft. No SaveAssets, SavePrefab, importer, or clip mutation is present.
+
+World skinning is conceptually p_world=sum_i(weight_i * boneWorld_i * bindpose_i * blendedMeshVertex). Use the actual BakeMesh result to include Unity's blendshape and skinning semantics. Convert a baked vertex to physical hand metres with p_hand = inverse(hand.worldRotation) * (renderer.TransformPoint(bakedVertex)-hand.worldPosition). A bone InverseTransformPoint alone can return scaled bone units; explicitly check lossyScale and units. Probe snapshots use the orthonormal world-rotation definition. For normals use the corresponding world normal transformed by inverse hand rotation; do not infer the palm's anatomical normal from a global sign.
+
+Recommended calibration, to be implemented only after the probe is inspected:
+
+* Determine the palm support patch, four curled finger pad regions, thumb pad, and thumb web from actual mesh/texture and source vertex IDs. The region masks above are starting proxies. Inspect all three orthographic views and at least one oblique view. Fit a local palm patch using normals/PCA; identify the opposition direction from the actual curl and thumb surface.
+* Slice the actual shaft into the exact cross-section at the intended axial grip span. Fit a cylinder or the true faceted cross-section through the empty channel across multiple finger columns. Do not minimise distance to all hand points indiscriminately, which can select a skin-intersecting or exterior-air solution. Check actual triangle intersections and radial first-hit distances around the channel, allowing only a small contact tolerance. A hollow gap, deep shaft burial in the palm, or thumb on the same side as the fingers is a failure even if some nearest distance is zero.
+* Let fitted hand-space channel centre be c and axis a. With original weapon grip pivot g, object scale s and rotation Q mapping weapon +Y to a, the physical hand-space root position is c-Q*(s*g). Here g is currently zero. The offset and rotation must be derived together. Roll should preserve the staff hardware's intended presentation. Do not reuse (.040,.025,0) or assume an unchanged Z90 rotation.
+* The existing HandFrame maps hand -X to world blade direction. A staff channel approximately along hand Z needs its own hand-to-staff basis; otherwise rotating the mount changes the cast direction or forces an implausible wrist. Check the wrist and forearm silhouette under the calibrated physical grip. This is preview/baked animation calibration, not a request for runtime IK code.
+* If no adequate channel exists at the actual 37.7 mm shaft diameter, author an object-specific grip corrective around the measured shaft surface. Keep the existing full fist and other prop grips separate. Confirm fingers wrap, the thumb opposes them, and pads lie on the shaft surface; don't shrink/move the rod merely to make a marker pass. Recheck thumb drift between the identical probe vertices at Staff0 and Staff.24s before deciding whether mount adjustment alone is enough.
+* Re-render native side/2.5D plus closeups for the entire cast, including the stable end. Test transitions with the same attached prop. Validate surface contact, wrist shape, continuous attachment and cast direction separately. Numerical alignment alone is not a naturalness score.
+
+Primary research and what it supports
+
+A. Unity Animation Rigging 1.3 Multi-Parent Constraint:
+https://docs.unity3d.com/Packages/com.unity.animation.rigging@1.3/manual/constraints/MultiParentConstraint.html
+Read official page. It describes transform following and retention of initial position/rotation offsets; it does not make the child conform to a hand mesh. Relevance: following a bone with a maintained offset does not establish a physically valid grip. A calibrated object-space relationship is required before attachment.
+
+B. Blender 4.3 Child Of Constraint manual:
+https://docs.blender.org/manual/en/4.3/animation/constraints/relationship/child_of.html
+Read indexed official documentation; direct re-open failed. Set Inverse preserves an already posed object's relationship when the parent constraint is assigned. Relevance: first pose the hand/weapon relationship correctly, then preserve it; parenting is not a shape-fitting operation. Do not attribute anatomical grip instructions to this source.
+
+C. Meta Interaction SDK, Create a Hand Grab Pose (Mac):
+https://developers.meta.com/vr/documentation/unity/unity-isdk-create-handgrab-poses-mac/
+Read the indexed official tutorial; direct re-open timed out. The illustrated workflow places a ghost hand around a specific object, adjusts its position and individual finger handles, and creates poses for different hand sizes. CylinderGrabSurface is explicitly provided for cylindrical items. Relevance: an object-specific hand pose is paired with an attach pose and surface, rather than relying on generic closure plus a wrist offset. The indexed page describes its demonstrations; the actual embedded images/video were not independently opened, so no frame-level observation of that media is claimed.
+
+D. Meta, Grab usage and Grab specs:
+https://developers.meta.com/vr/design/grab_usage/
+https://developers.meta.com/vr/design/grab_specs/
+Official guidance distinguishes whole-hand/palm grasping for larger tools from thumb/index pinches, and recommends a virtual hand pose matching the grabbed object's shape. Relevance: the visible staff should read as a power grip with wrapped fingers and opposing thumb; a pinched or hovering rod is a different interaction. These XR principles guide our offline pose authoring; no XR package installation is proposed.
+
+E. Adobe, Mixamo rigging and animation:
+https://helpx.adobe.com/creative-cloud/help/mixamo-rigging-animation.html
+https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html
+Official docs describe skeleton mapping/animation application and humanoid rigging requirements. They do not establish object-specific finger contact for our particular staff. The 24-bone limitation here is measured from the local model, not inferred from all Mixamo rigs. Re-targeting a body clip is therefore not evidence that this hand encloses this weapon.
+
+F. Dr. Ted Gambordella, Mastering the Staff, printed page5, Holding the Staff:
+https://www.shaolinkempoqld.com.au/wp-content/uploads/2013/04/Mastering-The-Staff.pdf
+Alternative indexed mirror:
+https://themartialscholar.yolasite.com/resources/Mastering%20The%20Staff.pdf
+The indexed book page identifies its author and describes/illustrates a one-hand staff grip in front of the body and at the side: fingers around the shaft, thumb either on top or over the fingers, unequal staff length on either side of the hand. Both direct PDF fetches timed out, so this is text-index evidence of the demonstrated reference, not an independently viewed photograph. Use it as grip anatomy/context and not as an exact fantasy casting pose or a medical claim.
+
+Research conclusion
+
+The primary workflows agree on a specific object-fitting hand pose plus a correctly calibrated attach transform. Our local failures are concrete: mismatched shaft/channel axis, wrist-side generic offset, a generic morph not fitted to the staff diameter, and potential partial-thumb-weight drift during wrist motion. Fixing these requires actual live geometry and closeup review. Additional AI body animation generation would not, by itself, correct this hand-to-prop relationship.
+
+Subsequent authorized implementation and live-probe evidence
+
+The root ran the baseline probe. All 18 native 720px diagnostic views and three geometry JSONs were exported. Actual XY/YZ/XZ inspection shows the orange shaft crossing the underside/wrist rather than filling the C-shaped finger opening. The identical thumb proxy vertices drift between Staff0 and Staff.24s by median .0185504 m and maximum .0212137 m in live hand-local space. The original finger columns also have different source X centres (rough medians .023681,.007503,.005846,-.016063 m); the former curl used global X thickness without removing that fan, so the rows do not share one cylindrical channel.
+
+The root then authorized a new isolated v007 mesh builder, ChibiCylinderGripBuilder.Build. It leaves v006 unchanged and creates Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset. The mount contract is centre(-.024,.068,-.0085)m, rotationX90, scale.70, shaft axis handZ. The variant measures the actual shaft profile, normalizes each source finger row's transverse range, folds around that measured profile, opposes the thumb, and applies triangle clearance constraints. Distal hand weights blend smoothly toward RightHand while retaining the wrist transition. This is a candidate requiring actual render inspection, not approved geometry merely because constraints ran.
+
+Compatibility correction: the new cylindrical pose is appended as Grip_R150. Original Grip_R75, Grip_R100, and all Grip_L frames are copied without changing their vertex/normal/tangent deltas. Weapon clips can select150 while utility props retain75. This avoids silently replacing the bottle/throw grip when fixing the staff. The local hand-weight correction still affects physical skinning of the preserved original frames, so unarmed and utility hands require follow-up visual checks. The calibrated probe now records 0/75/100/150 and saves three orthographic views for75/100/150 into StaffGripProbe_Calibrated, keeping the baseline evidence intact. The root owns all Unity runs and animation/frame-basis integration. No final approval is implied before those actual images are inspected.
+
+First candidate was rejected after actual inspection
+
+The first axisZ candidate enclosed the shaft more than the baseline, but actual Staff hand detail and calibrated XY/YZ/XZ images showed thin plate-like finger surfaces, a flattened thumb crossing and a needle-shaped web edge. Its reported zero profile intrusion did not make it visually acceptable. Identical source edges5292-5294 and1119-1122 grew from about6.08/5.44 mm to26.23/23.04 mm. The generic per-column X envelope included longitudinal fan drift, compressing a local finger section into too little radial thickness. Live source(Y,Z) ray sections showed median X thickness41.38 mm across222 usable distal-finger samples, versus full-column envelopes up to76.32 mm. In addition, independently projected UV-seam duplicates could diverge during triangle corrections, producing cracks and spikes.
+
+The subsequent candidate changes ONLY Grip_R150, keeping the original75/100 frame deltas and the prior weight correction fixed. It measures each source vertex's actual(Y,Z) triangle-ray X span; it welds identical source positions for correction and regularizes edge stretch. The shaft/palm relationship is now diagonal: mount rotationX45, axis(0,.707107,.707107), radialY(0,.707107,-.707107), with the same physical centre and scale. Shape deformation and collision checks use that basis. The 45-degree value is a character-specific candidate design, not an angle prescribed by a reference. A perpendicular rod/palm basis combined with the desired forward aim had forced excessive wrist bend in the first candidate, so hand shape and forearm orientation must be evaluated together. Native closeups and a new probe are required before this second candidate can be judged.
+
+
+2026-10-22 — source100 proximal closed-volume correction, actual evidence
+The 45degree center-fit fixed sword wrist placement, but was not a cosmetic approval. Root and independent motion reviewer rejected the visible dorsal/thenar plate in actual720px detail. Pixel-to-source projection identified faces680/681/682,680/685/683,687/684/683 and691/688/687. Bind regionY=.0118..0695m,Z=.0308..0883m. Comparison of actual saved-pose BakeMesh snapshots showed source680 closes16.38mm more at100 than75, and681 closes13.37mm more. Source688, however, is identical at75/100(Y61.6mm), while the previous175 cylindrical mapping lifted it to95.5mm. The problem was therefore not only75 residue: projecting a proximal MCP/web onto the45degree cylinder axis made a tall plate.
+Bounded new candidate starts150/175 from source100, preserves proximal thenar/palm/web atZ>=.010m, blends laterally overZ-.020..+.010m, and transitions distally overY.055..100m into handle curl/opposition. Existing7101 vertices/topology/original75/100 records and weights remain fixed. Actual image approval is still required; mathematical closure is insufficient. Staff's separate negative-Z MCP contact deficit448/449/451 is addressed by extending the existing1.6mm maximum local pad compensation fade toY.090..120m; no extra collision iteration is added.
+Primary anatomy/animation references, opened and visually inspected by parent: https://anatomy4sculptors.com/blog/hand-anatomy-for-artists/ describes thenar mass from wrist to thumb and changing volume, a palm arch, and continuous web connection. https://www.animationmentor.com/blog/tutorial-how-to-animate-hand-gestures/ stresses shaped hand silhouettes and thumb articulation rather than flat spatula-like hands. These support the review criteria; exact character-specific pivot/coordinates above are measured design choices, not prescribed values from those articles.
+
+
+2026-10-22 — final weapon-hand remodelling and actual capture selection
+The earlier cylindrical warps, strong wrist correctives and wrist subdivisions were all removed from the active builder. UV analysis measured449 vertices with RightHand influence>=.25, including86 cloth vertices; influence alone is therefore not a safe hand-skin mask. The independently validated right-hand skin component consists of471 faces. A separate two-face skin-coloured cuff island is retained. The source7101 vertex streams, body/sleeve/left-hand face ordering, bindposes and original75/100 indexed morph records remain exact. The previously documented222-vertex distal-hand weight correction remains explicit rather than being described as unchanged weights.
+
+The replacement uses a compact authored900-triangle palm/four-finger/opposed-thumb volume. First attempts to stitch a new wrist to the source19-point cut loop were rejected visually. That source loop spans116mm along hand-local Z and is nonplanar. Actual240ms projection identified76 connector-side faces extending from screenY147 to327 while the compact hand occupiesY284..428. Their longest actual edge was75.24mm. A start cap also mixed a Hand-only centre with mixed-weight rim points. Removing that cap and interpolating the connector weights did not remove all long skin plates and torn facets, so that approach was discarded.
+
+The new design keeps the original cloth unchanged and overlaps a separately closed, regular dark cuff inside the sleeve. Source19-point data now provides averaged proximal skin weights only; it is not a seam-coincidence or topology constraint. The cuff uses a validated source-cloth swatch UV(.8273589969,.7614722908), RGB43,43,55, within a33px homogeneous cloth region. The skin uses UV(.2706399609,.5803615046). This remains one atlas material and one skinned mesh, with at most two influences on the newly authored vertices in the inspected build.
+
+Project tests of animation object-reference mesh keys failed to select the saved weapon mesh in the review samplers. The probe rejected those captures instead of certifying the wrong geometry. The final asset structure uses separate fixed-mesh Neutral/SwordGrip/StaffGrip prefabs and shared bone/Grip animation clips, matching the game's permanent single-weapon purchase rule. Actual probe prefab and mesh hashes must agree with the captured prefab metadata before surface tests run. No claim about universal Unity Animator object-reference support is inferred from this project-specific failure.
+
+Actual full session20261022_050241555 visually removed the prior skin plate and torn connector. The first42-pose audit of its independent cuff found a small Sword pommel/cuff overlap at original new-vertex9814: maximum signed radial gap-.6746mm, at ready/recovery only. Staff and the authored grip body were positive. This was not excused because the cuff is dark or partly hidden; a local Sword-only cuff trim was prepared. The current final QA record and current actual-surface audit, rather than this historical entry, determine the final approval and hashes. Geometry constraints and positive distances do not replace actual silhouette inspection.

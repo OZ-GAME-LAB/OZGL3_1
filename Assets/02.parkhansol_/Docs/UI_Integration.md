@@ -1,4 +1,4 @@
-# UI 연결 가이드 (팀원용) — v0.7
+# UI 연결 가이드 (팀원용) — v1.3
 
 작성: 박한솔 (UI/UX) · 2026-10-12
 대상: 팀 설계 `GameManager → StageManager / SpawnManager / PoolManager`, `StageManager → GateManager → Gate → GateSpawner → SpawnManager`
@@ -149,6 +149,25 @@ GameUI.Sound.Play(UISound.Confirm);                   // UI 효과음 — 버튼
 - 안내가 보이는 동안 **F(패드 X)를 누르면** 키 칸이 눌리는 연출 + 확인음 → `InteractPromptLink`의 **On Interact** 이벤트 (인스펙터에서 문 열기 등 연결) / 코드는 `GameUI.Prompt.Pressed += target => ...`. 1회용이면 `Disable After Use`.
 - 상호작용이 끝나 더 못 쓰게 되면 `link.SetAvailable(false)`.
 - 확인: UI_Sandbox에서 **F6 지역 이름 · F7 상호작용 안내 · F8 화면 밖 화살표 · H 연타(저체력)**
+
+## 1-3. v1.3 추가 — 튜토리얼 연출 (기획서 v0.5 3장)
+
+튜토리얼 흐름을 만드는 쪽(코어)이 순서대로 부르기만 하면 됩니다. 씬·프리팹에 따로 놓을 것 없음 (UIRoot가 알아서 붙임).
+
+| 기획서 3장 | 호출 | 하는 일 |
+|---|---|---|
+| 1 일상과 경보 (UI 없는 화면) | `GameUI.HUD.SetParts(HudPart.All, false, animate: false);` | 전투 HUD 전부 숨김. 미니맵 아래 알림은 남음 |
+| 1 대피 방송 | `GameUI.Notify.System("방송", "현재 12번 지구에서 던전 브레이크가 …");` | HUD를 숨겨도 뜸 |
+| 2 각성 + 상태창 첫 등장 | `GameUI.Tutorial.ShowAwakening(1000, HunterRank.F, () => 다음());` | 번쩍 → "각성 · F급 · 상태창 · +1,000P" 카드 → HUD가 하나씩 등장 → 콜백. 게임은 안 멈춤. **포인트 지급은 코어가** |
+| 3 첫 게이트·전투 설명 | `GameUI.Tutorial.Play(new[]{ TutorialStep.World(monster.transform, "기본 공격", "좌클릭으로 주먹 공격"), TutorialStep.Hud(HudPart.Quests, "현재 목표", "…") }, () => 전투시작());` | 화면 정지 + 그곳만 밝히고 설명. [Space]/[Enter]/패드 A로 다음 |
+| 5 봉쇄 안내 | `GameUI.Tutorial.Show(TutorialStep.World(gate.transform, "게이트 봉쇄", "가까이 가서 [F]로 닫습니다", 56f));` | 한 단계만 |
+| 6 상태창 설명·첫 구매 | `GameUI.Tutorial.PlayStatusTour(() => Stage1노드해금());` | 상태창 열기 → 탭 순서대로 강조 → 포인트 → 끝나면 **상태창은 열린 채** 상점 탭 |
+
+- 설명이 떠 있는 동안: `Time.timeScale = 0`, `UIState.IsGameplayInputBlocked = true`, ESC·Tab 단축키 무시. 상태창 버튼도 잠김 (Space가 구매로 새지 않게).
+- 끝 콜백은 창이 닫힌 **다음 프레임**에 옴 → 마지막 [Space]가 점프로 안 읽힘.
+- 강조 대상: `TutorialStep.Message`(대상 없음) · `Hud(HudPart)` · `Tab(StatusTab)` · `World(Transform)` · `Ui(RectTransform)`. 인스펙터에서 `TutorialStep[]`로 채워도 됨.
+- 부위 이름: `Health` 체력 · `Minimap` · `Items` 1~4 · `Quests` · `Skills` Q/E/R · `Buffs` · (`Alarm` 알림, All에 없음). 일부만: `SetParts(HudPart.Health | HudPart.Quests, true)`.
+- UI가 없는 씬: 설명은 건너뛰고 콜백만 바로 불림 (튜토리얼 진행이 막히지 않음).
 
 ## 2. 한눈에 보기
 

@@ -1,0 +1,15 @@
+{
+  "scope": "One new model plus one elastic punch direction preview; no runtime integration.",
+  "model_triangles": 8079,
+  "materials": 1,
+  "rig_bones": 24,
+  "grip_applied": true,
+  "frames": 36,
+  "fps": 30,
+  "duration_seconds": 1.2000000476837158,
+  "left_sole_min_y": 0.0029893554747104645,
+  "right_sole_min_y": 0.002603683387860656,
+  "maximum_face_pitch_degrees": 1.1000344337875627,
+  "final_report_sha256": "c3c3a44347471c51216bd133064ae9e64144a4924985464f92286732209ce0c4",
+  "note": "Contact and continuity diagnostics are not a naturalness score. Actual final frames reviewed separately."
+}

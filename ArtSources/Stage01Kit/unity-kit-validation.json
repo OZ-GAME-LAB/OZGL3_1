@@ -1,0 +1,225 @@
+{
+    "success": true,
+    "unity": "6000.3.21f1",
+    "modularPrefabs": 16,
+    "props": 11,
+    "weapons": 2,
+    "sharedEnvironmentMaterials": 1,
+    "shaderSupported": true,
+    "shaderErrors": false,
+    "swordSocketBound": true,
+    "staffSocketBound": true,
+    "attackOverridesBound": true,
+    "unarmedRestore": true,
+    "platformRoofsValidated": true,
+    "blocks": [
+        "Tutorial_Block",
+        "Stage01_Block"
+    ],
+    "scene": "Assets/Art/Stage01Kit/UrbanKit_Preview.unity",
+    "assets": [
+        {
+            "name": "Building_ApartmentTall",
+            "triangles": 4980,
+            "renderers": 2,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Building_OfficeMid",
+            "triangles": 2304,
+            "renderers": 2,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Building_RooftopArena",
+            "triangles": 900,
+            "renderers": 2,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Building_ShopLow",
+            "triangles": 780,
+            "renderers": 2,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Exterior_Stairs_Rise3m",
+            "triangles": 456,
+            "renderers": 1,
+            "colliders": 12,
+            "vertexColors": true
+        },
+        {
+            "name": "Guardrail_4m",
+            "triangles": 144,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Ladder_4m",
+            "triangles": 276,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Planter_Shrubs",
+            "triangles": 72,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Road_Barrier",
+            "triangles": 120,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Road_Straight_12m",
+            "triangles": 248,
+            "renderers": 1,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Rooftop_Billboard",
+            "triangles": 240,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Rooftop_Bridge_6m",
+            "triangles": 456,
+            "renderers": 1,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Rooftop_Hut",
+            "triangles": 156,
+            "renderers": 1,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Rooftop_WaterTank",
+            "triangles": 276,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Sidewalk_Straight_8m",
+            "triangles": 780,
+            "renderers": 1,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Utility_Box",
+            "triangles": 132,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "ACUnit",
+            "triangles": 473,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Bench",
+            "triangles": 616,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "GatePylon",
+            "triangles": 770,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Potion_Attack",
+            "triangles": 184,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Potion_Defense",
+            "triangles": 184,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Potion_Health",
+            "triangles": 196,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Potion_Speed",
+            "triangles": 184,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "StreetLamp",
+            "triangles": 644,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "StreetTree",
+            "triangles": 857,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "TrashBin",
+            "triangles": 394,
+            "renderers": 1,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "VendingMachine",
+            "triangles": 2003,
+            "renderers": 1,
+            "colliders": 1,
+            "vertexColors": true
+        },
+        {
+            "name": "Staff",
+            "triangles": 957,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        },
+        {
+            "name": "Sword",
+            "triangles": 718,
+            "renderers": 1,
+            "colliders": 0,
+            "vertexColors": true
+        }
+    ]
+}

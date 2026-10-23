@@ -11,8 +11,10 @@ namespace OZ.UI
     /// <summary>
     /// [v1.1] 상태창 1번 "캐릭터" 탭 = 스탯 + 스킬.
     ///   위: 계열 [물리] [마법] — 한쪽을 찍으면 그 계열 스탯(힘/마력)·기술만 작동, 다른 쪽은 잠김 (ICombatPathSource)
+    ///       ICombatPathSource가 없으면 '계열 자유' (기획데이터 v0.5 5장: 물리·마법을 섞어 Q/E/R 최대 3개) — 버튼 숨김
     ///   왼쪽: 스탯 4줄, 각 줄 [+] = 성장 포인트로 1단계 투자 (IGrowthShopSource.TryBuyStat)
     ///   가운데·오른쪽: 물리 기술 / 마법 기술, 각 줄 [+] = 다음 단계 (0→1 배우기). 단계 수 = SkillOffer.ranks 길이
+    ///       ranks가 비면 1단계 = 한 번 구매로 영구 보유 (기획데이터 v0.5 5장 기본값)
     ///   아래: Q/E/R 장착 — 기술을 고르고 Q/E/R, X = 그 기술 빼기
     /// 조작: 방향키 고르기 (←→ 열 이동 · ↑↓ 줄 이동) · Enter/[+] 투자 · Q/E/R 장착 · X 빼기
     /// </summary>
@@ -45,6 +47,7 @@ namespace OZ.UI
         readonly List<string> _physIds = new List<string>();
         readonly List<string> _magIds = new List<string>();
         int _col, _row;
+        float? _pathTextX;
         InputAction _left, _right, _up, _down, _q, _e, _r, _x;
 
         internal override string Hint => "[방향키] 고르기   [Enter]/[+] 투자   [Q/E/R] 장착   [X] 빼기";
@@ -239,7 +242,7 @@ namespace OZ.UI
                 int rank = lo.GetRank(o.id);
                 var res = shop.TryBuySkill(o.id);
                 string ok = rank == 0 ? $"{o.displayName} 배움 — Q/E/R로 장착" : $"{o.displayName} {rank + 1}단계";
-                if (Owner.Report(res, ok, limitText: $"{o.displayName}은(는) 최대 단계다")) Current?.transform.GetComponent<RectTransform>().Punch(0.12f);
+                if (Owner.Report(res, ok, limitText: o.MaxRank <= 1 ? $"{o.displayName}은(는) 이미 배웠다" : $"{o.displayName}은(는) 최대 단계다")) Current?.transform.GetComponent<RectTransform>().Punch(0.12f);
             }
             Refresh();
             Focus();
@@ -308,8 +311,17 @@ namespace OZ.UI
             // 계열
             if (physicalMark != null) physicalMark.enabled = path == CombatPath.Physical;
             if (magicMark != null) magicMark.enabled = path == CombatPath.Magic;
+            bool pathRule = Owner != null && Owner.Path != null;
+            if (physicalButton != null) physicalButton.gameObject.SetActive(pathRule);
+            if (magicButton != null) magicButton.gameObject.SetActive(pathRule);
             if (pathText != null)
-                pathText.text = Owner == null || Owner.Path == null ? "계열 소스 없음 (ICombatPathSource)"
+            {
+                if (_pathTextX == null) _pathTextX = pathText.rectTransform.anchoredPosition.x;
+                var ap = pathText.rectTransform.anchoredPosition;
+                pathText.rectTransform.anchoredPosition = new Vector2(pathRule ? _pathTextX.Value : 28f, ap.y);
+            }
+            if (pathText != null)
+                pathText.text = !pathRule ? "자유 — 물리·마법 기술을 섞어 Q/E/R에 최대 3개 장착"
                     : path == CombatPath.None ? "계열 미선택 — 힘·물리 기술 또는 마력·마법 기술에 투자하면 그쪽으로 정해진다"
                     : $"{CombatPathRules.Name(path)} 계열 — {(path == CombatPath.Physical ? "마력·마법 기술" : "힘·물리 기술")} 잠김";
 
@@ -336,8 +348,13 @@ namespace OZ.UI
 
             // 기술
             var lo = Lo;
+            anyRanks = false;
             DrawSkills(lo, _physIds, _cols[1], 1, path, points);
             DrawSkills(lo, _magIds, _cols[2], 2, path, points);
+            // 단계형 기술이 하나라도 있으면 "단계마다 기능 추가", 아니면 기획서 기본 "한 번 구매·영구 보유"
+            string hdr = anyRanks ? "[+] 단계마다 기능 추가" : "[+] 구매 · 영구 보유";
+            if (physicalHeader != null) physicalHeader.text = "물리 기술  " + hdr;
+            if (magicHeader != null) magicHeader.text = "마법 기술  " + hdr;
             if (physicalHeader != null) physicalHeader.alpha = CombatPathRules.IsLocked(path, SkillDamageKind.Physical) ? 0.45f : 1f;
             if (magicHeader != null) magicHeader.alpha = CombatPathRules.IsLocked(path, SkillDamageKind.Magic) ? 0.45f : 1f;
             if (emptyText != null) emptyText.gameObject.SetActive(lo == null);
@@ -352,11 +369,13 @@ namespace OZ.UI
                 {
                     float remain = lo.GetCooldownRemaining(slot);
                     slotCards[i].Set(o.icon, StatusShopPage.FirstChar(o.displayName), StatusColors.Skill(o.damageKind), $"{slot}  {o.displayName}",
-                        remain > 0.05f ? $"쿨 {remain:0.0}초" : $"{lo.GetRank(o.id)}단계 · 피해 {lo.GetDamage(o.id)}", "", 0, 0, "빼기", true, false);
+                        remain > 0.05f ? $"쿨 {remain:0.0}초" : (o.MaxRank > 1 ? $"{lo.GetRank(o.id)}단계 · " : "") + $"피해 {lo.GetDamage(o.id)}", "", 0, 0, "빼기", true, false);
                 }
                 else slotCards[i].Set(null, slot.ToString(), StatusColors.Dim, $"{slot}  비어 있음", "기술 고르고 " + slot, "", 0, 0, null, false, false);
             }
         }
+
+        bool anyRanks;
 
         void DrawSkills(ISkillLoadoutSource lo, List<string> ids, List<GrowthCardView> cards, int colIndex, CombatPath path, int points)
         {
@@ -371,11 +390,12 @@ namespace OZ.UI
                 string next = maxed ? "" : o.RankDescription(rank + 1);
                 string sub = locked ? $"{StatusText.DamageKind(o.damageKind)} 계열 전용 · 잠김"
                     : rank == 0 ? $"피해 {lo.GetDamage(o.id)} · 쿨 {o.cooldown:0.#}초"
-                    : maxed ? $"최대 단계 · 피해 {lo.GetDamage(o.id)}"
+                    : maxed ? (max <= 1 ? $"보유 · 피해 {lo.GetDamage(o.id)} · 쿨 {o.cooldown:0.#}초" : $"최대 단계 · 피해 {lo.GetDamage(o.id)}")
                     : $"{rank + 1}단계: {(string.IsNullOrEmpty(next) ? "[추가 기능]" : next)}";
-                string act = locked ? "잠김" : maxed ? "최대" : $"+ {price:N0}P";
+                string act = locked ? "잠김" : maxed ? (max <= 1 ? "보유" : "최대") : $"+ {price:N0}P";
+                if (max > 1) anyRanks = true;
                 cards[i].Set(o.icon, StatusShopPage.FirstChar(o.displayName), StatusColors.Skill(o.damageKind), title, sub, "",
-                    rank, max, act, !locked && !maxed && price <= points, _col == colIndex && _row == i);
+                    max > 1 ? rank : 0, max > 1 ? max : 0, act, !locked && !maxed && price <= points, _col == colIndex && _row == i);
                 cards[i].SetLocked(locked);
             }
         }

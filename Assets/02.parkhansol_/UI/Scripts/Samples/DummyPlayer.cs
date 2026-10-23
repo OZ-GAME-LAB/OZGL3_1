@@ -152,8 +152,8 @@ namespace OZ.UI.Samples
         }
 
         // 바인딩은 UISourceBinder 컴포넌트가 해도 되고, 이렇게 직접 해도 된다.
-        void OnEnable() => GameUI.Bind(this);
-        void OnDisable() => GameUI.Unbind(this);
+        void OnEnable() { GameUI.Bind(this); BindPathRule(); }
+        void OnDisable() { UnbindPathRule(); GameUI.Unbind(this); }
 
         /// <summary>스테이지 시작 상태로 복구 (재도전 예시)</summary>
         public void ResetAll()
@@ -384,6 +384,12 @@ namespace OZ.UI.Samples
         {
             var item = GetItem(slotIndex);
             if (item == null) return;
+            // 기획데이터 9장: 종류별 최대 보유 수 (item.maxStack, 기본 5)
+            if (GetCount(slotIndex) + amount > Mathf.Max(1, item.maxStack))
+            {
+                GameUI.Notify.Toast($"{item.displayName}은(는) {item.maxStack}개까지 가질 수 있다", ToastType.Warning);
+                return;
+            }
             for (int i = 0; i < _inv.Length; i++)
                 if (_inv[i].Item == item && _inv[i].Count < item.maxStack) { _inv[i] = new ItemStack(item, _inv[i].Count + amount); Notify(slotIndex); return; }
             for (int i = 0; i < _inv.Length; i++)

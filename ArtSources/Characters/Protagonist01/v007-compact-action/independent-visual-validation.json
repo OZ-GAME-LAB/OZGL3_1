@@ -1,0 +1,620 @@
+{
+  "reviewer": "chibi_model_pipeline",
+  "date": "2026-10-22",
+  "scope": "visible offline 2.5D preview; no hidden-surface zero-intersection claim",
+  "reportSHA256": "6be5c606ce31013a62a27f430e3652aac31be21a75b589a315ab480839bc7174",
+  "session": "20261022_051454560",
+  "visibleVerdict": "PASS with documented tiny cuff pinprick cosmetic limitation",
+  "sourceCaptures": [
+    {
+      "name": "Sword_Horizontal_Slash",
+      "framesDirectory": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\Frames\\Sword_Horizontal_Slash",
+      "sourcePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab",
+      "sourceMeshSHA256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "framesDirectory": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\Frames\\Staff_Cast_Forward",
+      "sourcePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_StaffGrip.prefab",
+      "sourceMeshSHA256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "framesDirectory": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Sword_Grip_Side_25D",
+      "sourcePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab",
+      "sourceMeshSHA256": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "framesDirectory": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action\\CaptureRuns\\20261022_051454560\\GripDetails\\Staff_Grip_Side_25D",
+      "sourcePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_StaffGrip.prefab",
+      "sourceMeshSHA256": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53"
+    }
+  ],
+  "reviewed112CombatDetailPNGHashes": [
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0000.png",
+      "sha256": "7e6692058a62ec566ef43970d5310aa6e19c1e4cc57920d68a651693e308d2e6"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0001.png",
+      "sha256": "02c14e4ad1ca1bcbfafbfa8d253c47b661b08e69dd7802b62ffb7b41846a6dee"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0002.png",
+      "sha256": "977810230b62e5711e2204961aef1d2cc27093f2ceb6343ab49ac2490e388640"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0003.png",
+      "sha256": "70e106d3dc685ab52c846850187417236b0accd0852b5db5f9a741c0b389317c"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0004.png",
+      "sha256": "db2a6583c502c8d0ae7da48be5ab2349208de7e1b0f11fd950062c100eb378bf"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0005.png",
+      "sha256": "d43f9f0aac3b7fb69a532622ea4c524f6c6db06c1798388dec488b1164a941de"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0006.png",
+      "sha256": "4fbb8be064b10c385f453ba17fbc8e89b196281aab8d5618ea296fc1c223d97c"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0007.png",
+      "sha256": "d809d6f603ea03a98ed3c88449155136b7eb026a4e572e53cb23ff21de770f7e"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0008.png",
+      "sha256": "8a9d72b1dd59216c80d909706678805e3b1779f24fd3b2d0cacf89ce8caacf8b"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0009.png",
+      "sha256": "4029714d6b6dcc16a1fef1dd8444119f0c40739cdb02809cca4f76c5af08e537"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0010.png",
+      "sha256": "cc80c5b733f7bc4fe2d8ef4373c5c37dfd3c6d7ac1840c80203615dddc4a42e2"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0011.png",
+      "sha256": "baa727ff8c6599fb3cb56b7659854b29f3c660cd2ae6267fbb64f1ab9dc93f02"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0012.png",
+      "sha256": "1c25d0dbf855e14ad56dcb9b85b971c8aae951473864b60261dc6436d46f2944"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0013.png",
+      "sha256": "9e07a1b737a33025443da338f18869c08a0be17491bf71124bd69cf29408cddf"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0014.png",
+      "sha256": "a6fb1e1b17347821e8276ad1a4ad6c47f78382645b4803d23eaa6638bc4b1a67"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0015.png",
+      "sha256": "57eaac9038de96c58ed5c1297ad5ac13f1881669b3644d6afd5864be821f6326"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0016.png",
+      "sha256": "b614cac2463fdf0e4af64715e0ae912c8c4cbb40e7de545514b884e605b006c9"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0017.png",
+      "sha256": "8229c432686e1969c0cbddda36c6b886d484b413b889977a67fcaaf50271f924"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0018.png",
+      "sha256": "c97a7746ed8d06fddd4d8e94302b5ce15e996a943d44683026e6bf2dde0e72c9"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0019.png",
+      "sha256": "5966e8b4b0a4203d021e9df67caa1b0e832b801d03e65c8ad34721aa6e9528e5"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0020.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0021.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0022.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0023.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0024.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0025.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0026.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Sword_Horizontal_Slash",
+      "frame": "0027.png",
+      "sha256": "528d7782ede03fa3b2f77036a511ed478a76dc809c3ac6063f08b71f1cbc9519"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0000.png",
+      "sha256": "123662003f51bd251209f7a4f9a42e95cfe53abc57fdef28af32b4b3a6294653"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0001.png",
+      "sha256": "be30cdf6502b8926a5a035db5ce2915dd484233d92c2441a714028b9d0868e95"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0002.png",
+      "sha256": "b1aa8d334f12f64bf5694a90d967a39fd55420550ebda2819e900249bd75b995"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0003.png",
+      "sha256": "93f591160dc23e1c9f0691fef3db7308a9992f6b2dc9c328fccc7cc2eea80c2d"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0004.png",
+      "sha256": "06175f5d0948612ae915e7f0e2e69972c905baa8449dca3c25a2102eca495770"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0005.png",
+      "sha256": "e5d04e66c3155e6b9867083ef536315f0328a70b3c8bdf589e1c3bddcff8e700"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0006.png",
+      "sha256": "d2a1050636b00b30e1d51e27f0393ec2da37ed0822e23753e4be5fea89edefe4"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0007.png",
+      "sha256": "a9c6225bacf813d7ea519b505f201e5073bc2f0824f0f41b055eb8757b734d85"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0008.png",
+      "sha256": "1186030177c8cd3aefd8e5fb7691acf9a9bb34210e4227ac011a835a068f45d1"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0009.png",
+      "sha256": "6bd3f1bcb4957b43f6c81eac9aadcb109125b90a824dccf775c2d8ed5745aa25"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0010.png",
+      "sha256": "5c05c4c38177516191e80f2cb3a75f7cd02cb2bcd70f4162cdd93010fabc6132"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0011.png",
+      "sha256": "bd1a78fd543c38da9824dbca5060c71d3d81ed6fa3df844bf298a43ba9a5263c"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0012.png",
+      "sha256": "06339313f9fda89c500fa303e40089180a7bb758327fabf9f8211cfd097bc5e6"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0013.png",
+      "sha256": "0c8d692bc907a3684c599ed12107b0fa5a426497b42bfe8b2ab7dda7e9723bdc"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0014.png",
+      "sha256": "65a9106c2c38c7751884ba0800b429f021e881eabfe12bca285f3d2d2e60c166"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0015.png",
+      "sha256": "bc68a8ac4792be70a3cdf54f72ae0758955a4954bda597d0d3bb6c18f96976e6"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0016.png",
+      "sha256": "b8e7d2e9b0bf0ad808a4c4f20adfec4d78de61c8d45dd4aaf0cbbf61864a4a41"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0017.png",
+      "sha256": "96d63579eb9a6dca49e33116c1a80bf3e0897c4f1bedb5fc044f99f087a23cfe"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0018.png",
+      "sha256": "f7e85aeb31e647243f3ca628c29e20fc2bd5b3eefac5ef4b880acc5314992098"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0019.png",
+      "sha256": "553f6a0c381175fc43983341a4222925992f142f091c3f9570e1265a7dbc40d2"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0020.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0021.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0022.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0023.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0024.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0025.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0026.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Staff_Cast_Forward",
+      "frame": "0027.png",
+      "sha256": "4f8033c1c0c6ea3eaaf70c2cfff06296a0450b5f6ecd477859955b4c454a9d04"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0000.png",
+      "sha256": "abeb1c301a6c08b359e5bfe1971f8044197ab6ad544c6463253d158365178025"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0001.png",
+      "sha256": "5c1e1a8c06b1ae8a00e5761cc98c1fdd8dc2dcf88894ae03846c19745c36fc78"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0002.png",
+      "sha256": "20da69ab45f42d2c4d04af24955d34d7b5858df2754623bb7df76860cd09341f"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0003.png",
+      "sha256": "1b26394d29eba32a4d48c1fc8ac71b05dc9565b4acb5a068c1b4c3a52d460e14"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0004.png",
+      "sha256": "448675d0988392d4e326a9dd2151a0afd014a58f97dd54823b41cd3cdffc7fe4"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0005.png",
+      "sha256": "f4ea518ba4bfb9ae8c13e6fcbe1f73a3f07620aa637ed04e52b36bd96133bc14"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0006.png",
+      "sha256": "159276bd8344625426487062a9cb4ce1848a324e6d787065649b52acba385392"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0007.png",
+      "sha256": "6f6ed2a7035474ddba6bcad05ade5417128a952c641ed67f3e781e17568fdc0c"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0008.png",
+      "sha256": "297078834adbb2e8d640e04ed6965ef92207354d51484582bc768d5237d97b76"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0009.png",
+      "sha256": "2cbdcc4162b5a1fa8c74db4689b5a046e4976f04811255bd675f65023b67f437"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0010.png",
+      "sha256": "428c904316554f72d68dd8ddd15318816866f51b5c95ca95f6674d337b320795"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0011.png",
+      "sha256": "0881737e0286a8e170d4f5c0d1bbfab3cf1381b1aa24580175115979b0ce2cb8"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0012.png",
+      "sha256": "3646e6fea4c1402ce1791da07cd60823062ec59694707b40b80c71697bfbbb93"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0013.png",
+      "sha256": "e1c483a98ec24c580d3ccd0f8edcf4fd342a8d4db4bf981a3312a86f5df01855"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0014.png",
+      "sha256": "f9bbf91630f3c7922a1d97af3a0de82993eafd0b8c0c89b33a8567ec7d2bcec0"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0015.png",
+      "sha256": "83ac7ac80ac40bdd815aab16b43f6a5da7e4bb246dfd0f70507aeaa2d2612118"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0016.png",
+      "sha256": "5cc54f48655b3d8576da545e9bdca465b53cfed1ae3aae9467e5af29ab32a3e4"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0017.png",
+      "sha256": "42cbc3df213fda2d55733d19e94bf5540a2477b6847864c4387a8d1f0be6b98f"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0018.png",
+      "sha256": "fb755e502bc0d960fe31f62edca6a229094eb8ae2a22c0fea673fd858b20f65a"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0019.png",
+      "sha256": "867708d95fc394904f45f587948edc8fa29802aeb02b1a39d06ef2787316eec8"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0020.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0021.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0022.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0023.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0024.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0025.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0026.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Sword_Grip_Side_25D",
+      "frame": "0027.png",
+      "sha256": "46cd4b60989e002941e896ed16b4d8ca74674a4b293b6a35125fac381423c1a5"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0000.png",
+      "sha256": "c3c7372d27daa7b2d70bd4bf2953f2c4870f0bf9fa4527172c6ce80d9822caa2"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0001.png",
+      "sha256": "a25e23c2100f57077c0ca5df1c0ceb10a91614521ea6abd74d189fb80313d5ba"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0002.png",
+      "sha256": "0a0b32e2ce673daf7c4de407d177c1199dc982f6912547506e40b2a1731eef3c"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0003.png",
+      "sha256": "b5b67f740544cb3e3ce26416401c0450a4b740585e1c03612b319db04630f33f"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0004.png",
+      "sha256": "8d89283267ae64cd7c944e3d7b6f72c6f5fc687c0ab3788a2dd3e8cea38f4472"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0005.png",
+      "sha256": "5b337291d1451208a1fa84c65faa13c5b41bf4f957e94784bc469cde268ef0c0"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0006.png",
+      "sha256": "63838fe57e78df3562485a3b531d988982c89dfbbee05a52d5234ccac82d9149"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0007.png",
+      "sha256": "0ac705034f24248b68cad3bc2cf6c8c27f392ef8e254d4c743b3fe80952edb14"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0008.png",
+      "sha256": "59291083b209faaadd06df1da5b5537cffffd2d58484fa7ff4069e821c4fe61d"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0009.png",
+      "sha256": "645baacc1e70fea5b5f0925a6c09ea5f11cf145ce68ae4a573d1027de1353898"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0010.png",
+      "sha256": "bbc636caf3f12980d5f58582af731bd4c2c95bfb477654742d20a4aee203ec9e"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0011.png",
+      "sha256": "dd7fa8647ff711188149dacff63bef8214a4f8122be64f7d2cc41196575ace1f"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0012.png",
+      "sha256": "691ec96dd6d2cbeea9455223d0a5d47f40fa5a0d8b53075c99d778700eb1dd0c"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0013.png",
+      "sha256": "ae08064de01ee46374d451bcfe12b27c6cd0457d6075209b102f7745003b241c"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0014.png",
+      "sha256": "13a44a6c37939738e1008a76f372df0dbcf122cc63dc85603d5fddbe2c5754af"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0015.png",
+      "sha256": "9c5ce02b0309b4e073a3e965b6df9bdac9a425d6c0a31934e1fea0d3fc2d2e57"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0016.png",
+      "sha256": "5dcb009db5639270459863ff27597b3ffa290cee89d7d7c12958fb6d34dbb2ce"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0017.png",
+      "sha256": "5bb42b77654b73733abcfeeaf879519d9d0126186864fa0bea20061a1d6ad6ab"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0018.png",
+      "sha256": "950105c359517f3b3b3bda542478e2e64734ee857721de965031a0a7e9f61d6f"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0019.png",
+      "sha256": "a303a75c57e4871cf97fc4e96c3a54b38460fa991aa9c91f369bce7c456c09cd"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0020.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0021.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0022.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0023.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0024.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0025.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0026.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    },
+    {
+      "name": "Staff_Grip_Side_25D",
+      "frame": "0027.png",
+      "sha256": "f3f95075d03caadf7e5128ed863fa662a75bf7483ca17d11e3065c28b085dd13"
+    }
+  ],
+  "freshFullResolutionDetails": {
+    "Sword_Grip_Side_25D": [
+      0,
+      8,
+      19,
+      20
+    ],
+    "Staff_Grip_Side_25D": [
+      8
+    ]
+  },
+  "priorWholeSetContactScreening": {
+    "session": "20261022_050241555",
+    "motions": 18,
+    "transitions": 2,
+    "maxActualPosesPerTarget": 12,
+    "comparisonPerformedBeforeOldSessionCleanup": true,
+    "currentMetadataMatchedExceptSwordMeshSHA": true,
+    "unchangedMotionCount": 17,
+    "unchangedTransitionCount": 2,
+    "exactPNGMatches": 896,
+    "PNGHashMismatches": 0,
+    "olderSourceFilesRemovedAfterComparison": true
+  }
+}

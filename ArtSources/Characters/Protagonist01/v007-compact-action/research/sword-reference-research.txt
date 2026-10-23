@@ -1,0 +1,143 @@
+Sword reference research — evidence before authoring
+Research date: 2026-10-21 KST
+Scope: right-handed single horizontal inside-to-outside/backhand cut, stable weapon grip, compact game recovery.
+No code, animation assets, prefabs, staff assets, VFX, or Unity execution were changed during this research.
+
+Evidence status and limits
+- The web tool successfully read the primary written teaching pages below.
+- YouTube playback fetch was throttled; the available CUA browser inventory in this subagent was empty.
+- Therefore this note does NOT claim to have watched the cited videos, and supplies no invented video timestamps or observed video frames.
+- Exact written section names/paragraph locations are the verified references. Parent may add actual UI playback observations independently.
+- Search hits from Reddit, anonymous advice, copied GitHub skill pages, AI SEO tutorials and general media coverage were excluded as evidence.
+
+1. Strongest direct reference: single-cut recovery
+Owner/author: Academy of Historical Fencing (its own training course).
+URL: https://swordfight.uk/the-six-cuts/
+Publication date: not displayed; accessed 2026-10-21.
+Precise locations: numbered Cut 6; preceding recovery-to-guard section; introductory cutting mechanics paragraphs.
+Verified written content, paraphrased:
+For a right-hander, cut 6 begins at outside guard, puts the point to the left at shoulder level, cuts horizontally left-to-right, then raises the point back to outside guard after passing the target. Separately practicing each cut with return to guard is explicitly supported. It should become one uninterrupted gesture. Edge alignment matters; a complete cut passes through its target rather than stopping at it. Unnecessary arm lifting is discouraged.
+Use: the requested backhand direction and a purposeful return have an actual anatomical sequence. This source does not prescribe arbitrary downward wrist folding. Its target is shoulder height, so adapting it to the game's waist-height cut is an adaptation, not an exact historical copy.
+Associated original video references, playback NOT verified here:
+https://www.youtube.com/watch?v=EC4SO8yudd0 — official page's cut-5/cut-6/timing lesson.
+https://www.youtube.com/watch?v=7AjQHkBX9OQ — official page's six-cut drill.
+Precise timecodes: unavailable here; do not fabricate them.
+
+2. Grip must be designed around the physical hilt
+Owner: Academy of Historical Fencing.
+URL: https://swordfight.uk/hold-the-sword/
+Publication date: not displayed; accessed 2026-10-21.
+Precise locations: first illustrated grip comparison; final control/finger paragraph.
+Verified written content, paraphrased:
+Grip choice depends on weapon weight, curvature and available grip space. Hammer grip retains securely but reduces mobility. Thumb/index control the sword; other fingers relax or contract for the action. Excessively tight gripping and an extended pistol-like default grip are discouraged.
+Image references supplied by that primary page (identified, not a claim of video observation):
+https://swordfight.uk/wp-content/uploads/2026/01/Sabre-guide-Le-Marchant-grip--1024x666.png
+https://swordfight.uk/wp-content/uploads/2026/01/Sabre-guide-Nick-grips--1024x398.png
+Use/inference: the chibi mesh needs visible palm-to-hilt contact and an opposed thumb. A constant pre-existing fist morph plus a parent socket is insufficient proof of gripping. A stable hold does not mean globally freezing the wrist; fingers and forearm must remain mechanically compatible with the hilt.
+
+3. Feet, balance and compact reach
+Owner: Academy of Historical Fencing.
+URL: https://swordfight.uk/basic-footwork/
+Publication date: not displayed; accessed 2026-10-21.
+Precise locations: initial stance/body-weighting paragraphs and final lunge paragraph.
+Verified written content, paraphrased:
+Lead foot points toward the opponent; stance stays consistent across guards. Centre or rear weighting is common. The off-hand stays safely clear. An attacking extension should not reach or step so far that recovery becomes slow.
+Use/inference: borrow grounded support and restrained reach, not the entire historical lunge. The game is a small-motion 3-head side-view platformer; a large fencing step would unnecessarily alter silhouette and movement distance.
+
+4. What the ready guard actually means
+Owner: Academy of Historical Fencing.
+URL: https://swordfight.uk/the-guards/
+Publication date: not displayed; accessed 2026-10-21.
+Precise locations: outside-guard and inside-guard sections; illustrated variants explicitly note different elbow tuck.
+Verified written content, paraphrased:
+The two guards differ in the true edge's facing and use a raised point; historical examples allow different point heights and elbow positions.
+Use/inference: choose one compact, comfortable guard for this model, then return to that recognizable guard. Do not chase a mathematically convenient blade direction while allowing the fist or elbow to become strained.
+
+5. Professional sword animation planning and contact polish
+Owner: Animation Mentor; tutorial by Natasha Krinsky.
+URL: https://www.animationmentor.com/blog/tutorial-animate-sword-fights-battle-sequences/
+Date on source: 2026-01-08.
+Precise written locations: reference/weapon-weight planning, blocking/timing a sword duel, and contact/clipping polish sections.
+Verified article description, NOT independently watched video:
+Choose a reference prop with a comparable weight. Match reference poses and timing in the first blocking pass, then retime for screen impact. Check elbows, hand poses, grip slipping and weapon intersections as distinct polish problems. Different weapon mass needs different drag/spacing. Resistance at an actual target is conveyed with spacing rather than universally smooth movement.
+Original associated video: https://www.youtube.com/watch?v=IhJor3glwYo
+Use/inference: this is a light basic cut, not a cinematic giant-sword finisher. First establish anatomically plausible grip and five readable poses. C2 curves alone cannot repair a physically implausible hand-to-hilt orientation.
+
+6. Why uniformly smooth motion can still look awkward
+Owner: Animation Mentor; direct interviews with Erik Morgansen and Justin Owens, plus David Tart's workflow.
+URL: https://content.animationmentor.com/pdfs/AnimationMentor_TipsTricks_EveryAnimator.pdf
+Copyright date: 2018.
+Precise references: printed page 8 (PDF index7), page16 (index15), pages45–46 (indices44–45).
+Verified text:
+Moving pelvis, chest and arms together, underdeveloped anticipation/follow-through and body parts stuck in space are common problems. Choose the driver of an action and give parts distinct timing. Game anticipation may need to stay subtle for input response. During polish, record exact problem frame ranges, write concrete solutions and fix parent/body motion before dependent arm motion.
+Use/inference: do not manufacture elasticity by independently wiggling wrist and sword. Let a small weight shift/torso turn drive arm travel; settle torso/upper arm/forearm in an intentional sequence. Compare reference silhouette and hand contact at every key pose, not only ground clearance.
+
+7. Actual small 2D attack teaching
+Owner: GDQuest, Nathan (teacher/founder).
+URL: https://www.gdquest.com/library/juicy_attack/
+Date on source: 2025-10-09.
+Precise written references: sword-attack animation section, anticipation paragraph and responsiveness note.
+Verified article content, video NOT watched here:
+A very short backward preparation precedes a fast attack. Long anticipation reduces perceived response. Spacing/easing decelerates the end of the swing. The example uses only a few animation frames.
+Use/inference: maintain short anticipation and a clearly faster strike than recovery. Trail, particles and time-freeze are outside this revision; they must not hide weak body mechanics.
+
+8. Game-camera suitability is a separate check
+Owner: GAME ANIM / book author Jonathan Cooper's own site.
+URL: https://www.gameanim.com/2020/04/04/the-five-fundamentals-of-video-game-animation/
+Date: 2020-04-04.
+Precise references: readability, fluidity and elegance sections.
+Verified written definitions group game-camera posing/silhouette/balance, settling/transitions, and simple economical design as distinct concerns.
+Use/inference: inspect actual 2.5D side view for the game's final silhouette AND use a diagnostic 3/4 view to check whether the hand really encloses the grip. Passing a foot-minimum metric does not establish motion quality.
+
+9. First-person game animator's explanation of weight and recovery
+Owner/animator: Denys Antipenko; own Reaver portfolio.
+URL: https://umych.com/animations/combat/
+Date: not stated; accessed 2026-10-21.
+Precise written locations: separate light attacks and chained light attacks descriptions.
+Verified author text: each separate light attack transitions back to idle; chained swings shift weight and recapture balance to sell the oversized sword's mass.
+Image/GIF playback was not supported by the web tool here, so no frames were independently observed and no timing was extracted.
+Use/inference: recovery should express regaining balance and ready control, not a disconnected weapon flourish. Reaver's oversized weapon/root-motion amplitude is not appropriate to copy literally.
+
+Concrete proposed pose sheet — DESIGN INFERENCE, not a source transcription
+Target total: approximately .60–.67s; parent should validate in actual side-view frames before finalizing.
+At 30fps, suggested landmarks:
+F0: upright ready with stable palm/thumb/hilt fit; wrist near a comfortable forearm continuation. No bent-back spine.
+F1–F3 (~.03–.10s): small inside preparation. Hilt travels across the FRONT of the body toward the off-hand side, elbow remains comfortable, blade and forearm stay mechanically related. Pelvis/support foot initiate a small rotational weight change.
+F4–F6 (~.13–.20s): one fast inside-to-outside horizontal cut at the chosen waist target height. Wrist transports the secured hilt; it must not separately spin the weapon. Torso/upper arm assist; palm/contact stays fixed.
+F7–F9 (~.23–.30s): short continuation past the target and controlled deceleration, not a dead complete-body freeze. The point remains on the outward side. No second reverse attack.
+F10–F14 (~.33–.47s): shoulder relaxes and elbow bends to retract the HILT; follow the source's modest point-raising return toward the ready guard. Maintain hand contact and comfortable wrist. Do not dip the blade toward the floor or add a showy lower loop.
+F15–F20 (~.50–.67s): torso and arm settle into the same ready guard; return is slower and smaller than the strike. Avoid repeating the attack arc at equal speed. Slight lag is permissible only where actual body mechanics support it.
+These frame counts, waist target, small pelvis motion and constrained amplitudes are project-specific recommendations. The academy's shoulder-height guard and lunge must not be represented as if they prescribed these numbers.
+
+Acceptance evidence for the next implementation
+A. Before curves: full 3/4 and game-side-view pose stills of ready/inside/through/outside/recovered. The visible fist must enclose the actual hilt, with thumb opposition and no gap/shaft piercing.
+B. At strike: mounted blade crosses inside→outside ONCE; horizontal active section is readable. True edge/fist orientation remains consistent and no wrist flip compensates for the socket.
+C. At follow-through: supported weight transfer and clear outside finish; no arbitrary blade folding. Return follows hilt/elbow/guard mechanics with an understandable intent.
+D. At recovery: source-ready match, stable ground support, no second-hit silhouette, no face/torso intersections. Inspect every 30fps image and the real-speed loop.
+E. Separate objective checks (mesh penetration, hand contact distances, clipping, floor clearance) from visual judgement (believability, intent, compactness). Do not label them interchangeable passes.
+
+Prior QA correction
+The earlier report approved the down-folding recovery because it had no observed floor penetration and did not look like a second horizontal swing. That did not establish an evidence-based or comfortable sword recovery. Its motion-quality approval is superseded by this research requirement. The next recovery must be judged against a selected physical sequence and grip reference, not merely clearance values or smooth interpolation.
+
+
+Forum case supplement — first-hand reported corrections, added2026-10-21
+These are original problem reports and responses by the people working on the rigs. They are not proof that an AI generator caused our issue, and they do not prescribe numeric wrist angles for our model.
+
+10. Prop follows the hand position but has an unstable rotation
+Primary forum source: cppadawan040 (original project owner), tested answer by Lauloque.
+URL: https://blender.stackexchange.com/questions/330732/gun-rotation-issue-on-my-first-person-rig-is-the-rotation-axis-mixed-up
+Date:2025-02-05; original question14:52, answer19:20, owner confirmation20:14 as printed on the page.
+Precise evidence: the original report says changing hand vertex-group assignment changes gun rotation. The answer identifies the vertex-group attachment as carrying position without a reliable full transform, demonstrates a corrected hand-IK-bone target and discusses a predictable attachment point plus an offset controller. The project owner explicitly thanks the responder for testing and says it provided the required no-manual-engine-offset workflow.
+Observed status: written explanation and author confirmation read. Embedded before/after motion was not independently played here. This is a first-hand corrective case, not a measured guarantee of universal success.
+Our inference: calibrate and store a full grip transform, not only a contact point or guessed axis. In our Unity offline rig there is no Blender vertex-group parent, so the exact defect is different; the comparable failure is assuming two local frames mean the same orientation. Stable attachment must be checked while the prop rotates.
+
+11. Retargeting looked correct globally but damaged finger shape; matching reference poses corrected it
+Primary forum source: Epic Developer Community, original experiment by Leomerya12, post17 dated2023-10-02; reply18 acknowledges it. The same thread contains differing experiences and earlier fixes that failed for other users.
+URL: https://forums.unrealengine.com/t/metahumans-fingers-distorted-after-retargeting/210334/17
+Thread fallback: https://forums.unrealengine.com/t/metahumans-fingers-distorted-after-retargeting/210334
+Precise evidence: post17 identifies straight fingers in one retarget reference versus curled fingers in the other, changes the reference-pose selection and supplies labelled before/after images. Earlier post14's metacarpal-mapping change was confirmed by Nico_Steyl in post15 but another user reported remaining distortion in post16. Thus one forum answer is not a universal recipe.
+Observed status: the original author's written before/after description and attachment labels were read; attachment pixels were not independently inspected by this subagent.
+Our inference: the target's own bind/reference pose and real hand topology must be the calibration baseline. Do not import a wrist or grip convention from another skeleton and expect global smoothing to repair it. Our24-bone Meshy rig lacks individual finger/metacarpal chains, so disabling MetaHuman metacarpal mapping is NOT an applicable project fix. The relevant lesson is to compare actual poses and geometry, then correct the appropriate frame/morph rather than following an unrelated setting.
+
+Excluded as a strong solved case:
+https://polycount.com/discussion/50331/rigging-a-weapon-to-two-hands (2007) directly describes different local wrist/weapon axes and weapon penetration, but the final read contains further unresolved axis complaints, not an independently verified finished result. It is useful symptom context and was not promoted to a proven corrected outcome.

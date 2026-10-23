@@ -1,0 +1,141 @@
+{
+    "success": true,
+    "sourceStreamsPreserved": true,
+    "sourceMesh": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx",
+    "outputMesh": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset",
+    "method": "Clone the original skin streams. Finger phalanges fold from the new-hand .068m metacarpal ridge (read-only GLB bind-space inspection) along a three-stage C1 centreline (MCP/PIP/DIP), with separately measured lengths across four finger columns. Full fist flexion is 85+105+70=260 degrees, so the distal pads return to the palm instead of stopping in a C-shaped cup; the weapon frame uses 65+70+25=160 degrees. The thumb is opposed and axially shortened to its actual target over the folded index/middle fingers, rather than using target direction alone. Smooth spatial/influence masks preserve the wrist and soften the thumb web. Morph normal/tangent deltas follow the local numerical deformation Jacobian.",
+    "use": "Independent review mesh only. Set Grip_R and Grip_L to 100 for closed fists; 75 is a separately authored weapon-grip frame, not merely 75 percent of the fist vertex displacement. The builder does not modify any renderer/prefab/controller or apply the mesh in game. The root review-prefab builder owns default weights and visual QA. This 24-bone rig has no finger joints; these are bounded mesh morphs, not added finger animation or a new rig.",
+    "vertexCount": 7101,
+    "triangles": 8079,
+    "blendShapes": 2,
+    "shapes": [
+        {
+            "hand": "RightHand",
+            "shape": "Grip_R",
+            "frameWeight": 75.0,
+            "totalFingerFlexionDegrees": 160.0,
+            "maximumDisplacementMetres": 0.13613417744636537,
+            "changedVertices": 321,
+            "thumbVertices": 64,
+            "closedMinimum": {
+                "x": -0.07363542914390564,
+                "y": 0.0465068519115448,
+                "z": -0.05409987270832062
+            },
+            "closedMaximum": {
+                "x": 0.027362581342458726,
+                "y": 0.12766997516155244,
+                "z": 0.03829789161682129
+            },
+            "thumbTipTarget": {
+                "x": -0.0430000014603138,
+                "y": 0.09000000357627869,
+                "z": 0.019999999552965165
+            },
+            "thumbMinimumHandInfluence": 0.7196053862571716,
+            "thumbMaximumHandInfluence": 1.0,
+            "fingerLengthsMetres": [
+                0.07862402498722077,
+                0.09517517685890198,
+                0.10036982595920563,
+                0.09294168651103974
+            ]
+        },
+        {
+            "hand": "RightHand",
+            "shape": "Grip_R",
+            "frameWeight": 100.0,
+            "totalFingerFlexionDegrees": 260.0,
+            "maximumDisplacementMetres": 0.1424461305141449,
+            "changedVertices": 321,
+            "thumbVertices": 64,
+            "closedMinimum": {
+                "x": -0.07178361713886261,
+                "y": 0.02590223401784897,
+                "z": -0.05226072669029236
+            },
+            "closedMaximum": {
+                "x": 0.023295734077692033,
+                "y": 0.11964929103851319,
+                "z": 0.036703553050756457
+            },
+            "thumbTipTarget": {
+                "x": -0.02500000037252903,
+                "y": 0.054999999701976779,
+                "z": 0.004999999888241291
+            },
+            "thumbMinimumHandInfluence": 0.7196053862571716,
+            "thumbMaximumHandInfluence": 1.0,
+            "fingerLengthsMetres": [
+                0.07862402498722077,
+                0.09517517685890198,
+                0.10036982595920563,
+                0.09294168651103974
+            ]
+        },
+        {
+            "hand": "LeftHand",
+            "shape": "Grip_L",
+            "frameWeight": 75.0,
+            "totalFingerFlexionDegrees": 160.0,
+            "maximumDisplacementMetres": 0.14692460000514985,
+            "changedVertices": 359,
+            "thumbVertices": 61,
+            "closedMinimum": {
+                "x": -0.011810049414634705,
+                "y": 0.04576076567173004,
+                "z": -0.058778323233127597
+            },
+            "closedMaximum": {
+                "x": 0.07788791507482529,
+                "y": 0.1314058005809784,
+                "z": 0.04064695164561272
+            },
+            "thumbTipTarget": {
+                "x": 0.0430000014603138,
+                "y": 0.09000000357627869,
+                "z": 0.019999999552965165
+            },
+            "thumbMinimumHandInfluence": 0.5972831845283508,
+            "thumbMaximumHandInfluence": 1.0,
+            "fingerLengthsMetres": [
+                0.08130095899105072,
+                0.10259990394115448,
+                0.10810749232769013,
+                0.10076308250427246
+            ]
+        },
+        {
+            "hand": "LeftHand",
+            "shape": "Grip_L",
+            "frameWeight": 100.0,
+            "totalFingerFlexionDegrees": 260.0,
+            "maximumDisplacementMetres": 0.14869333803653718,
+            "changedVertices": 359,
+            "thumbVertices": 61,
+            "closedMinimum": {
+                "x": -0.013224812224507332,
+                "y": 0.023459389805793763,
+                "z": -0.058076824992895129
+            },
+            "closedMaximum": {
+                "x": 0.07509457319974899,
+                "y": 0.1254570037126541,
+                "z": 0.03800414502620697
+            },
+            "thumbTipTarget": {
+                "x": 0.02500000037252903,
+                "y": 0.054999999701976779,
+                "z": 0.004999999888241291
+            },
+            "thumbMinimumHandInfluence": 0.5972831845283508,
+            "thumbMaximumHandInfluence": 1.0,
+            "fingerLengthsMetres": [
+                0.08130095899105072,
+                0.10259990394115448,
+                0.10810749232769013,
+                0.10076308250427246
+            ]
+        }
+    ]
+}

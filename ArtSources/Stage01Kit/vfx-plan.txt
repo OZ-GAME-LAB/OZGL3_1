@@ -1,0 +1,100 @@
+Project M — 스테이지 1 VFX 조사와 제작 계획
+작성일: 2026-10-19 / 기준: Unity 6000.3.21f1, URP 17.3.0
+문서 상태: 조사·설계 제안. 실제 VFX 프리팹 제작·전투 연결·성능 측정은 수행하지 않았다.
+
+추천 방향
+Particle System(Shuriken) + 얇은 로우폴리 메시 + 짧은 TrailRenderer를 기본으로 쓴다. 하얀 중심 섬광, 색이 있는 큰 형태, 소량의 파편, 빠른 소멸을 겹치면 치비 캐릭터와 잘 어울린다. 모델의 면과 윤곽이 읽히도록 큰 불투명/알파 클립 형태를 먼저 잡고, 반투명 연기와 빛은 작은 보조층으로 둔다.
+폭발은 Meshy로 완성된 덩어리 하나를 만드는 것보다, 링·파편 메시와 2D 플립북을 Unity에서 조합하는 편이 크기·색·타이밍을 바꾸기 쉽다. 사실적인 볼륨 연기, 화면을 가득 채우는 반투명 안개, 지속적인 왜곡은 초기 스타일에서 제외한다.
+
+1. 현재 프로젝트에서 확인한 점
+• Packages/manifest.json: URP 17.3.0과 ParticleSystem 모듈 사용. VFX Graph 패키지는 등록되어 있지 않다.
+• PC_RPAsset은 Depth/Opaque Texture가 켜져 있고 Mobile_RPAsset은 둘 다 꺼져 있다. 두 프로파일의 SRP Batcher는 켜져 있다. 효과 기본형은 두 텍스처 없이도 읽히게 만든다.
+• PlayerController는 Z 이동을 고정하는 2.5D 구조다. 기본 주먹 판정은 Physics.OverlapBoxNonAlloc이며 화면용 입자가 판정을 만들지 않는다.
+• PlayerSkillBase.Execute(player, aimPoint, damage)는 연결 지점이지만 현재 TestLogSkill은 로그만 출력한다. 여섯 스킬의 실제 공격과 상태이상 시스템은 아직 없다.
+• UI의 GameUI.Damage.Show는 숫자와 작은 타격 스파크를 이미 풀링한다. 신규 월드 VFX와 기존 UI 스파크를 동시에 크게 터뜨리지 않는다.
+• 기획데이터 v0.5는 검기/회전 베기/연속 참격/마력탄/마력장/연쇄 폭발을 정의한다. 무기 선택·사용 가능 계열은 이후 사용자의 무기 확정 지시를 우선하며, 예전 문서의 물리·마법 혼합 장착 문장을 새 규칙으로 취급하지 않는다.
+• 중독·화상·둔화·기절의 피해량, 중첩, 지속시간은 현 기획/코드에 정의되어 있지 않다. 아래는 이들이 추가될 때 사용할 시각 표현 제안이다.
+
+2. Particle System과 VFX Graph 선택
+공식 Unity 6.3 비교 문서는 Shuriken의 C# 제어와 URP 지원, VFX Graph의 GPU 기반 대규모 입자 처리를 구분한다[U1]. 공식 VFX Graph 17.3 요구사항은 Compute Shader/SSBO 지원이 필요하고 URP·모바일 지원 범위가 제한되며 OpenGL ES를 지원하지 않는다고 명시한다[U2].
+현재처럼 효과당 수십 개 입자, 짧은 참격과 폭발, 캐릭터 부착 상태 표시가 중심이면 Shuriken으로 시작한다. GTX 1650은 개발 PC의 측정 기준이며 출시 최소 사양으로 확정하지 않는다. 최종 플랫폼과 그래픽 API가 정해지고 화면 전체 환경 입자량이 커지면 VFX Graph를 별도 비교한다. GPU 방식이라는 이유만으로 더 빠르다고 판단하지 않는다.
+
+3. 재사용할 효과 10종 — 아래 개수·시간은 제작 시작값
+효과                         구성과 읽히는 모양                                     재생/부착
+01 작은 타격/폭발             중심 별 1 + 각진 링 1 + 파편 8~16 + 연기 조각 2~4        월드 고정, 0.25~0.55초
+02 큰 폭발/연쇄 폭발          중심 1 + 링 1~2 + 불꽃 6~10 + 파편 16~24 + 연기 3~6    월드 고정, 0.45~0.9초
+03 검기/참격                 얇은 초승달 메시 1 + 짧은 선 4~8 + 적중 스파크          공격면/진행방향 정렬, 0.12~0.3초
+04 회전 베기                 바닥 근처 끊어진 링 1 + 전면 호 1~2 + 작은 선           시전자 중심, 0.2~0.45초
+05 마력탄                    작은 코어 메시 1 + 꼬리 1 + 입자 6~12; 적중에 01 재사용 실제 투사체를 따라감, 적중 후 잔광
+06 마력장                    경계선/바닥 띠 1 + 중심 문양 1 + 저밀도 상승 입자 8~16  월드 고정, 지속시간은 전투 데이터
+07 중독 표시                 물방울/해골 아이콘 + 위로 오르는 각진 방울 6~10          몸통/머리, 상태 활성 중만
+08 화상 표시                 불꽃 아이콘 + 작은 불꽃 조각 8~16 + 재 2~4             몸통/발, 상태 활성 중만
+09 둔화 표시                 느린 발 아이콘 + 발목을 감싸는 끊긴 띠 1 + 결정 4~8     발 근처, 상태 활성 중만
+10 기절/회복 표시            기절: 머리 위 별 2~3 회전 / 회복: 십자 4~8 상승          같은 표시 틀의 두 프리셋
+
+색은 원래 캐릭터 팔레트에서 뽑는다. 물리 참격은 아이보리/옅은 노랑, 마법은 청록/보라, 폭발은 아이보리→노랑→주황→짙은 잔재로 구성한다. 중독은 방울/해골, 화상은 뾰족한 불꽃, 둔화는 발목 띠, 기절은 회전 별로 구별한다. 색과 함께 형태·위치·아이콘이 의미를 전달하게 한다[M1]. 회복의 녹색은 중독 방울과 다른 십자·상승 형태로 구분한다.
+
+4. 기존 여섯 스킬에 적용
+기술          기획 역할                         사용할 시각 블록             고정 계수 / 쿨다운
+검기          짧은 검기로 방향 공격             03 + 적중 01                물리 1.8 / 4초
+회전 베기     가까운 여러 적 공격               04 + 적중마다 작은 01       물리 2.1 / 7초
+연속 참격     빈틈에 여러 참격 집중             03의 방향·시점 변주          물리 3.75 / 12초
+마력탄        목표 위치의 적을 폭발로 공격      05 + 목표 적중 01/02        마법 1.65 / 5초
+마력장        적을 유도하는 지속 장판           06 + 유효 틱의 작은 점멸    마법 4 / 9초
+연쇄 폭발     넓은 구역에 연속 공격             02를 실제 공격 순서로       마법 3.45 / 13초
+출처: planning/Project_M_기획데이터.txt와 상세기획서. 총피해는 한 대상에게 전부 적중했을 때 해당 공격력×계수다. 연타/장판 피해는 실제 타수·틱으로 분배하며 VFX 수만큼 총피해를 반복 적용하지 않는다.
+마력탄의 이동 궤적, 연쇄 폭발의 개수·간격·위치, 마력장의 지속·틱 수는 아직 확정값이 아니다. 시각 프리팹의 기본값을 전투 규칙으로 사용하지 않는다.
+
+5. 폭발·스킬의 시간 구조
+예고 → 발생 → 적중/범위 활성 → 잔상 → 소멸을 분리한다. 예고 링은 공격 범위를 보여주고, 실제 판정 프레임에 섬광·스파크·피해 숫자·타격음을 맞춘다. 장판의 경계는 잔광보다 오래 읽혀야 한다.
+작은 폭발의 시작안: 0~0.05초 중심 확대, 0.03~0.16초 링 확장, 0.05~0.35초 각진 파편, 0.15~0.55초 연기 소멸. 이는 연출 시작값이며 실제 타격/피해 시점은 전투 쪽에서 전달한다.
+연속 공격에서는 큰 화면 섬광을 매 타격마다 반복하지 않는다. 첫 타격과 마지막 강조를 남기고 중간 타격은 작은 스파크로 표현한다. 기존 CombatFeedback.md의 지속 피해 무히트스톱·무화면흔들림과 숫자 합산 규칙을 따른다. 문서와 실제 UI 스타일의 세부 값이 다를 경우 현재 UI 담당 설정을 확인한다.
+
+6. 2.5D 카메라·플립북·가림 처리
+• 별/폭발 플립북은 Billboard + Render Alignment View로 카메라 평면을 향하게 한다[U3]. 이동 방향이 중요한 검기/참격은 XY 공격면의 메시 또는 Local 정렬로 방향을 고정한다.
+• 바닥 경계는 실제 지면에 붙인다. 횡스크롤 카메라에서 원형 바닥 링은 얇게 보일 수 있으므로 외곽 띠와 짧은 수직 기둥/점으로 양 끝을 읽히게 한다. 공중 적도 맞는 범위라면 해당 높이의 별도 표시를 준다.
+• 실제 3D 깊이 검사를 유지한다. Sorting Layer/Sorting Fudge만으로 불투명 캐릭터 뒤·앞 관계가 해결된다고 가정하지 않는다. 작은 카메라 방향 오프셋은 표면 겹침 방지에만 쓰고 벽을 관통해 항상 보이게 만들지 않는다.
+• 공용 마스크 아틀라스 512×512에서 시작한다. 애니메이션은 4×4의 16프레임 플립북(프레임당 128×128), 12~20fps를 시험한다. Texture Sheet Animation은 Grid/FPS 재생을 지원한다[U4]. 프레임 패딩·색 확장을 주고 mip/축소 시 테두리 번짐을 검사한다.
+• 거친 그림체는 낮은 프레임 수와 분명한 실루엣으로 맞춘다. 기본은 Flipbook Blending을 끄고, 포인트/바이리니어 필터를 실제 카메라 크기에서 비교한다. 모든 텍스처에 포인트 필터를 강제하지 않는다.
+• URP/Particles/Unlit을 기본 재질로 사용한다. 알파 블렌드는 연기/플립북, 작은 Additive는 밝은 중심/스파크, 불투명/클립은 파편·링에 사용한다. Soft Particles는 지면 교차가 보이는 효과에만 선택적으로 켠다. Depth Texture 요구가 있어 PC/Mobile 프로파일을 함께 검사한다[U5].
+
+7. 성능 예산 — 실측 결과가 아닌 초기 설계 목표
+목표 시험 조건: 우선 개발 PC GTX 1650에서 1920×1080, 60fps(전체 프레임 16.67ms)를 비교한다. 최종 플랫폼은 미정이다.
+• 일반 단발 효과: 자식 ParticleSystem 2~4개, 살아 있는 입자 12~48개, 0.6초 안팎.
+• 큰 폭발: 살아 있는 입자 48~96개, 초기 Max Particles 합계 128 이하.
+• 캐릭터 부착 상태: 상태 하나당 입자 8~20개. 동일 상태는 캐릭터당 한 표시를 재사용하고 재적용은 지속 표시만 갱신한다.
+• 파편 메시: 한 개 8~32삼각형, 일반 효과당 8~16개에서 시작. 트레일은 1~2줄, 짧은 수명으로 시작한다.
+• 공용 머티리얼은 알파/Additive/불투명 중심 3~4종. Renderer.material로 매번 복제하지 않는다. Particle Start Color/Custom Data 등으로 개체 색을 바꾼다.
+• 최악 상황 시험: 동시 폭발 10개 + 상태 표시 대상 20체. 화면 내 입자는 보통 500 이하, 순간 1,000 이하를 시작 목표로 잡고 넘으면 장식 입자부터 줄인다. 게임의 의미를 전달하는 범위선/상태 아이콘은 유지한다.
+• VFX 추가 비용 목표는 GPU 1ms 이내 / CPU 0.5ms 이내, 추가 렌더 패스/드로 약 60 이하부터 검토한다. 보장 수치가 아니며 실제 빌드·카메라·플랫폼에 맞춰 수정한다. 파티클 수보다 큰 반투명 면적의 중첩을 먼저 확인한다.
+• 기본형은 동적 광원/실시간 그림자/입자 충돌/지속 왜곡을 사용하지 않는다. 중요한 폭발만 짧은 무그림자 광원 하나를 별도 비교한다.
+• SRP Batcher는 전역 유지한다. 같은 재질 사용은 중요하지만 Batcher를 켰다고 ParticleSystemRenderer가 자동으로 합쳐진다고 보지 않는다. Mesh 파티클의 GPU instancing은 Renderer 옵션·호환 셰이더·플랫폼을 확인해 별도 시험한다[U3, U6]. 일반 MeshRenderer의 SRP Batcher와 GPU instancing을 같은 최적화로 계산하지 않는다[U7]. URP를 위해 Built-in의 Particles/Standard Surface 셰이더로 바꾸지 않는다.
+
+8. 풀링 연결 계획 — 구현하지 않음
+현재 PoolManager는 등록된 프리팹을 Rent/Return하고 활성화한다. 내부는 범용이지만 등록 목록 이름은 monsterPrefabs이며 MonsterSpawner가 해당 인덱스의 Monster를 기대한다. VFX를 몬스터 목록에 섞지 않고 별도 VFX 풀을 둔다. 같은 Rent/Return 계약을 쓰거나 UnityEngine.Pool.ObjectPool<T>를 사용한다[U8].
+대여: 위치/회전 배치 → 크기/색/소유자 설정 → 모든 파티클·트레일 초기화 → Play. playOnAwake는 끄고 명시적으로 시작한다. 기존 Rent는 곧바로 SetActive(true)하므로 OnEnable에서 자동 재생하지 않아야 설정 전 한 프레임이 보이지 않는다.
+종료: 방출 중단 → 자식까지 IsAlive(true)가 false이고 메시/트레일 잔광도 끝나면 한 번 Return한다. 단일 자식의 OnParticleSystemStopped만으로 전체 복합 효과를 반납하지 않는다. Callback을 쓸 경우 stopAction=Callback이 필요하다[U9].
+반납/대상 사망/스테이지 해제: StopEmittingAndClear(true), TrailRenderer.Clear, 색/스케일/위치 초기화, 예약 호출·비동기 작업·이벤트 구독 해제. 풀 대상이 다시 대여될 때 이전 상태 표시나 늦은 종료 콜백이 새 대상을 건드리지 않도록 대여 세대/토큰을 확인한다.
+상태 아이콘은 상태 시작/갱신/종료에 반응하고 남은 시간은 전투 데이터에서 읽는다. 중독/화상은 실제 DOT 틱에 작은 점멸만 주고, 둔화는 이동 변화가 유지되는 동안 띠를 유지한다. 정화·사망·풀 반납으로 즉시 종료한다. 스킬 쿨다운 UI와 대상 상태 지속시간은 별도 값이다.
+
+9. 검증과 제작 순서
+1) 작은 타격·검기·폭발 3종으로 화면 크기, 캐릭터 얼굴 가림, 좌/우 반전을 결정.
+2) 마력탄/회전/장판은 같은 재질·링·스파크를 재사용해 여섯 스킬의 형태를 구분.
+3) 중독/화상/둔화 아이콘과 부착 연출은 전투 상태 데이터가 확정된 뒤 연결.
+4) 1→5→10개 폭발, 상태 20체, 큰 적 뒤/앞, 카메라 이동, 일시정지·재개, 풀 재대여를 시험.
+5) Development Build에서 Unity Profiler/Frame Debugger로 CPU·GPU·GC·실제 드로를 기록. Rendering Debugger의 Overdraw로 중첩을 확인한다[U10]. VFX를 끈 동일 장면과 비교하고 워밍업 이후 반복 생성에 의한 GC Alloc이 없는지 확인.
+6) PC/Mobile 렌더 프로파일과 최종 최소 사양에서 각각 재시험. 이 문서는 제작/성능 완료를 뜻하지 않는다.
+
+공식 조사 출처
+[U1] Unity 6.3 Particle System 선택: https://docs.unity3d.com/6000.3/Documentation/Manual/ChoosingYourParticleSystem.html
+[U2] VFX Graph 17.3 요구사항: https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@17.3/manual/System-Requirements.html
+[U3] Unity 6.3 Particle Renderer 모듈: https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysRendererModule.html
+[U4] Unity 6.3 Texture Sheet Animation: https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysTexSheetAnimModule.html
+[U5] Unity 6.3 URP Particles Unlit: https://docs.unity3d.com/6000.3/Documentation/Manual/urp/particles-unlit-shader.html
+[U6] Unity 6.3 Particle GPU Instancing 설명(Built-in용 셰이더 예시는 URP에 직접 적용하지 않음): https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysInstancing.html
+[U7] Unity Draw Call 최적화 선택: https://docs.unity3d.com/6000.3/Documentation/Manual/optimizing-draw-calls-choose-method.html
+[U8] Unity ObjectPool<T>: https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Pool.ObjectPool_1.html
+[U9] Unity OnParticleSystemStopped: https://docs.unity3d.com/6000.3/Documentation/ScriptReference/MonoBehaviour.OnParticleSystemStopped.html
+[U10] Unity 6.3 URP Rendering Debugger: https://docs.unity3d.com/6000.3/Documentation/Manual/urp/features/rendering-debugger-reference.html
+[M1] Microsoft XAG 103, 색 외 형태·아이콘 등 시각 정보: https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/103
+보조 확인: 로컬 URP 17.3 ParticlesUnlit.shader에 instancing variant, ParticlesUnlitForwardPass.hlsl에 UNITY_PARTICLE_INSTANCING_ENABLED 경로가 존재한다. 실제 사용 효과의 인스턴싱 여부는 Frame Debugger로 검증해야 한다.
