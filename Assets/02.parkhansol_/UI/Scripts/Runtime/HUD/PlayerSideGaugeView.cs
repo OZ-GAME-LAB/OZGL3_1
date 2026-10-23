@@ -17,6 +17,8 @@ namespace OZ.UI
     ///    └───┘
     ///
     ///   · 위치: 플레이어 등 뒤 쪽(바라보는 반대편). 방향을 바꾸면 그 즉시 반대쪽으로 넘어감 → 공격 방향을 안 가림
+    ///   · 높이: [v0.9] 휴머노이드 모델이면 엉덩이 뼈(Hips)를 따라감 → 사다리·점프 등 동작으로 몸이 떠도 몸 옆에 붙음.
+    ///     휴머노이드 Animator가 없으면 예전처럼 발밑 + worldOffset.
     ///   · 표시(Auto): 맞음·회복·대시 직후, 체력이 가득이 아닐 때, 대시 대기 중일 때만 보이고 평소엔 숨김
     ///   · 창(일시정지·인벤토리 등)이 열렸거나 HUD가 꺼져 있거나 플레이어가 화면 밖이면 숨김
     ///
@@ -42,6 +44,10 @@ namespace OZ.UI
         [Header("위치")]
         [Tooltip("배터리 세로 가운데 기준점 (플레이어 발밑 기준 월드 오프셋)")]
         [SerializeField] internal Vector3 worldOffset = new Vector3(0f, 1.0f, 0f);
+        [Tooltip("[v0.9] 켜면 휴머노이드 모델의 엉덩이 뼈(Hips) 높이를 따라감 (사다리 등에서 몸이 떠도 맞춰짐). 뼈가 없으면 worldOffset 사용")]
+        [SerializeField] internal bool followHipsBone = true;
+        [Tooltip("[v0.9] 엉덩이 뼈 기준 배터리 세로 가운데 위치 (월드). 서 있을 때 발밑+1.0과 비슷하게 0.25")]
+        [SerializeField] internal Vector3 hipsOffset = new Vector3(0f, 0.25f, 0f);
         [Tooltip("플레이어 중심에서 배터리 안쪽 끝까지 거리 (UI px, 640×360 기준)")]
         [SerializeField, Min(0f)] internal float sideDistance = 10f;
         [Tooltip("켜면 바라보는 반대쪽(등 뒤)에 표시")]
@@ -101,6 +107,7 @@ namespace OZ.UI
 
         IHealthSource _health;
         Camera _cam;
+        Transform _boneOwner, _hips;  // _hips를 찾은 대상 (대상이 바뀌면 다시 찾음)
         int _segCount, _lit;
         float _seenHp = -1f, _seenMax = -1f; // 이벤트 없이 값이 바뀐 경우 대비
         float _alpha, _lastEventTime = -99f, _shakeT;
@@ -307,7 +314,7 @@ namespace OZ.UI
             if (_cam == null || !_cam.isActiveAndEnabled) _cam = Camera.main;
             if (_cam == null || _area == null) return false;
 
-            Vector3 sp = _cam.WorldToScreenPoint(target.position + worldOffset);
+            Vector3 sp = _cam.WorldToScreenPoint(AnchorPoint(target));
             if (sp.z < 0f) return false;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_area, sp, null, out var local);
             var r = _area.rect;
@@ -320,6 +327,21 @@ namespace OZ.UI
             float shake = _shakeT > 0f ? (Mathf.Repeat(Time.unscaledTime * 40f, 2f) < 1f ? 1f : -1f) : 0f;
             _rt.anchoredPosition = new Vector2(Mathf.Round(local.x + shake), Mathf.Round(local.y));
             return true;
+        }
+
+        /// <summary>배터리 세로 가운데가 올 월드 위치. X·Z는 플레이어 기준, Y는 엉덩이 뼈(있으면)</summary>
+        Vector3 AnchorPoint(Transform target)
+        {
+            Vector3 basePos = target.position + worldOffset;
+            if (!followHipsBone) return basePos;
+            if (_boneOwner != target)
+            {
+                _boneOwner = target;
+                var anim = target.GetComponentInChildren<Animator>();
+                _hips = anim != null && anim.isHuman ? anim.GetBoneTransform(HumanBodyBones.Hips) : null;
+            }
+            if (_hips == null) return basePos;
+            return new Vector3(basePos.x, _hips.position.y + hipsOffset.y, basePos.z);
         }
 
         // ── 크기 (px) ──
