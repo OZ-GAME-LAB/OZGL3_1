@@ -52,3 +52,7 @@ MonoBehaviour:
   _skillQAction: {fileID: -5008104167107976978, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
   _skillEAction: {fileID: -5678953964994720841, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
   _skillRAction: {fileID: 2460400594048943012, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
+  _item1Action: {fileID: -7741882129263328653, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
+  _item2Action: {fileID: 4811686506944786621, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
+  _item3Action: {fileID: 7830388025059190999, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}
+  _item4Action: {fileID: -4433804798775259094, guid: edbde72e12c0a474bba5dcd675db7063, type: 3}

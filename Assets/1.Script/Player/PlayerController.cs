@@ -1,6 +1,7 @@
 ﻿using OZ.UI.Contracts;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 
 [RequireComponent(typeof(Animator))]
@@ -168,6 +169,7 @@ public class PlayerController : MonoBehaviour
         _inputManager.OnDashAction += OnDash;
         _inputManager.OnAttackAction += OnAttack;
         _inputManager.OnSkillAction += OnSkill;
+        _inputManager.OnItemAction += OnItem;
 
         ChangeState(PlayerState.Idle);
     }
@@ -207,6 +209,7 @@ public class PlayerController : MonoBehaviour
         _inputManager.OnDashAction -= OnDash;
         _inputManager.OnAttackAction -= OnAttack;
         _inputManager.OnSkillAction -= OnSkill;
+        _inputManager.OnItemAction -= OnItem;
     }
 
     private void InitStateDictionary()
@@ -263,6 +266,20 @@ public class PlayerController : MonoBehaviour
         }
         IsSkillRequested = true;
         RequestedSkillSlot = slot;
+    }
+
+    private void OnItem(int slotIndex)
+    {
+        if (IsDead)
+        {
+            return;
+        }
+        if (UIState.IsGameplayInputBlocked)
+        {
+            return;
+        }
+        // TODO: 한솔님 IItemSource.UseItem 추가 + useNumberKeys=false 반영 후 주석 해제
+        // UISources.Items?.UseItem(slotIndex);
     }
 
     public void ChangeState(PlayerState newState)
