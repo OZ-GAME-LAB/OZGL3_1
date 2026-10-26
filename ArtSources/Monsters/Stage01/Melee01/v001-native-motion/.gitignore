@@ -1,0 +1,11 @@
+__pycache__/
+QA/UnityProject/Library/
+QA/UnityProject/Temp/
+QA/UnityProject/Logs/
+QA/UnityProject/UserSettings/
+QA/UnityProject/obj/
+QA/UnityProject/*.csproj
+QA/UnityProject/*.sln
+*.blend1
+*.log
+*.err

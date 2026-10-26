@@ -1,0 +1,58 @@
+1스테이지 근접형 샘플 에셋 조사 및 원본 모션 선택
+조사일 2026-10-26 / Asia/Seoul / 가격 USD, 세금 별도 가능
+
+이번 제작의 선택
+Kay Lousberg의 공식 GitHub 저장소 KayKit Character Pack Skeletons 1.0의 Skeleton_Minion.glb를 사용한다. 같은 파일에 포함된 원래 스킨·리그·95개 액션 중 네 개를 선택한다. 종족과 무기는 역할명에서 확정된 기획 사실이 아니라 이번 검수 샘플의 아트 제안이다. 다른 체형에 모션을 옮기지 않고 원래 모델과 원래 리그·모션을 함께 사용한다.
+
+영어 납품 클립 이름 / 실제 원본 액션
+Idle / Idle_Combat
+Move / Running_A
+Attack / 1H_Melee_Attack_Chop
+Hit / Hit_A
+
+원본 GLB를 직접 읽어 위 액션의 존재를 확인했다. 포함된 95개 액션에는 정적 자세와 추가 동작도 있으므로 95개를 모두 필요한 게임 동작이나 검수 완료 모션으로 세지 않는다. 전체 이름은 source-provenance.json에 기록한다. 점프·회전·사망·등장은 이번 샘플에 자동 추가하지 않는다. 주인공의 레그돌 사망 방식을 적용하지 않는다.
+
+Blender는 GLB의 실제 스킨·뼈·베이크 모션을 가져와 편집용 .blend로 저장하고, 클립 선택·이름 변경·내보내기·렌더·검증에 자동화를 사용한다. 코드로 새로운 관절 궤적을 합성하지 않는다. 납품 .blend는 가져온 데이터로 만든 편집용 파일이며, 제작자가 판매하는 원래 .blend 원본 또는 원래 제어 리그를 확보했다는 뜻이 아니다. 원본 GLB/FBX·텍스처·라이선스를 SourceAssets에 보존한다.
+
+비교 결과
+
+1 KayKit
+사용한 1.0 공식 저장소는 4개 모델과 90개 이상 애니메이션, FBX/GLTF를 제공한다. 선택한 모델에 실제로 95개 액션이 들어 있다. 단순한 면·큰 머리·짧은 팔다리의 비율이 이번 치비 프로젝트에 적합하며 모델과 동일 리그의 원본 모션을 사용해 리타게팅을 피할 수 있다. 무료 CC0이며 이번 비용은 $0이다.
+공식 저장소 https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0
+공식 라이선스 https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/blob/main/LICENSE.txt
+CC0 https://creativecommons.org/publicdomain/zero/1.0/
+
+현재 itch에는 Skeletons 1.1과 별도 Character Animations 1.1도 있다. 모델 4종의 무료 FBX/GLTF, Rig_Medium/Rig_Large 모션 세트와 도구·전투 모션이 제공된다. 이번 샘플에는 1.1 모션을 혼합하지 않았다. 조사용 무료 1.1 ZIP의 GLB 데이터에서 Idle_A/B, Walking_A/B/C, Running_A/B, Hit_A/B, Melee_1H_Attack_Chop, Melee_1H_Attack_Slice_Diagonal/Horizontal, Melee_1H_Attack_Stab의 이름을 확인했다. 이 목록은 파일 존재 확인이며 본 샘플에 적용해 시각 검수했다는 뜻이 아니다. 웹의 전체 모션 개수 표시는 파일 버전과 다를 수 있으므로 실제 내려받은 액션을 기준으로 삼는다.
+
+현재 1.1 Skeleton SOURCE .blend $5.97, 통상 $11.95. Animation SOURCE .blend $7.49, 통상 $14.99. 양쪽 원래 소스 구입 합계 현재 $13.46, 통상 $26.94. 원래 제어 리그로 추가 수정을 진행할 때의 선택지이며 이번에 구매하지 않았다. CC0 출처 표기는 의무가 아니지만 이 프로젝트에는 제작자와 출처를 보존한다. 판매 페이지의 미수정 복제본 재판매·자작 주장 자제 요청도 존중한다.
+https://kaylousberg.itch.io/kaykit-skeletons
+https://kaylousberg.itch.io/kaykit-character-animations
+
+2 Quaternius Ultimate Monsters
+50개 완성 몬스터와 애니메이션, FBX/OBJ/Blend/glTF를 제공한다. CC0·무료 $0이며 .blend 원본 확보 가능성이 장점이다. 비인간형은 각자의 원래 리그·모션을 사용할 수 있다. 다만 이번 조사에서는 개별 몬스터 파일을 내려받아 클립 이름·타이밍·스킨 변형을 검증하지 않았으므로 공격·피격 클립 구성을 확정하지 않았다. 외형 후보와 공개 영상만으로 동작 품질을 통과 처리하지 않는다.
+https://quaternius.com/packs/ultimatemonsters.html
+공식 다운로드 폴더 https://drive.google.com/drive/folders/18m4KpzpEzhC9wl7jzr6dUc0N8Jozr79C
+
+3 Mixamo
+Adobe ID로 사용하는 무료 $0 인간형 모델·리깅·애니메이션 서비스이며 상업 게임 사용이 가능하다. 자동리깅·애니메이션 라이브러리는 이족 인간형 대상이다. Adobe 문서는 과도한 비율 변형, 큰 부속·꼬리·날개, 분리된 신체 등에 제약이 있다고 설명한다. 이번 조사에서는 로그인하거나 특정 클립을 확보하지 않았으므로 정확한 제공 클립 이름·개수는 미확인이다. 원래 모델에 적용된 뼈 모션은 편집 가능하지만 짧은 팔·다리와 큰 머리로 옮기면 어깨·팔꿈치·손목, 머리 관통, 발 접지, 무기 파지를 별도 보정해야 한다. 원본 에셋을 공개 재배포할 권한으로 해석하지 않는다.
+https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html
+https://helpx.adobe.com/creative-cloud/help/mixamo-rigging-animation.html
+https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Mixamo-Addl-Terms-en_US-20210623.pdf
+
+4 ActorCore
+실제 뼈 모션을 외부 엔진용으로 내려받는 모델·모션 서비스다. 무료 공개 목록에는 Idle, Run To Blast, Magic Spell Cast 05 등이 보인다. 예시 Hand to Hand Combat은 68개 모션 $149, H1-Attack-Punches·H1-Hit-Punches 각 $4.50. 목록은 공식 웹 표시 확인이며 구매·FBX 실파일 검수는 하지 않았다. 캐릭터와 모션을 별도로 선택해야 하며 이번 치비·단순 면 스타일의 완성 모델 조합으로 확인된 것은 아니다. 외부 엔진·게임 사용에는 Standard License가 필요하다. 원본·독립 모션 재배포에는 제한이 있으므로 프로젝트 내 게임 사용과 공개 소스 패키지 배포를 구분한다.
+https://actorcore.reallusion.com/3d-motion/free?motionTech=Mocap&saleType=Items
+https://actorcore.reallusion.com/3d-motion/pack/studio-mocap-hand-to-hand-combat?asset=h1-hit-punches
+https://www.reallusion.com/license/content.html
+https://www.reallusion.com/Content/EULA/EULA.htm
+
+5 상용 대안 Infinity PBR Low Poly Monster Bundle 1
+원래 리그·애니메이션을 가진 20개 몬스터 팩. Goblin, Skeleton Warrior, Slime, Rock Monster 등과 모듈·형태 변형·색 변경 기능을 제공한다. POLYGON 계열의 면 처리와 다양성이 장점이다. 현재 번들 $49.50, 통상 $99. Low Poly Goblin 단품 현재 $17.50, 통상 $35. 공개 페이지는 각 개체에 애니메이션이 있다고 설명하지만 정확한 개별 클립 이름은 열거하지 않으므로 준비·타격·회수, 피격, 루프의 실제 품질은 구매 전 데모 또는 판매자 확인이 필요하다. 이번에는 구매·다운로드하지 않았다. Unity Asset Store 표준 라이선스에 따라 게임 제작용으로 사용하고 원본 에셋을 공개 판매·재배포하지 않는 방식으로 검토한다.
+https://infinitypbr.com/packs/low-poly-monster-bundle-1
+https://infinitypbr.com/low-poly
+https://unity.com/legal/as-terms
+
+품질과 편집 한계
+네이티브 모션을 사용해도 실루엣·준비 시간·체중 이동·발 미끄러짐·어깨와 팔꿈치 변형·파지의 시각 검수는 별도다. 해시 일치와 액션 이름 존재는 동작 품질의 증거를 대체하지 않는다. 실제 검수 내용과 미확인 항목은 QA 및 Review 결과를 따른다. 제자리 이동 클립의 발은 가상의 지면에 대해 뒤로 움직이는 것이 정상이며, 실제 게임 이동 속도와 보폭·주기를 맞춰야 한다. 검수용 스크립트가 기존 인게임 이동 코드를 수정하는 근거가 되지는 않는다.
+
+원본 모션으로도 목표에 맞는 공격 판독성·파지·접지를 확보하지 못하면 같은 방식의 반복 생성을 중단한다. 다음 단계는 KayKit 원래 SOURCE 제어 리그 구입 후 애니메이터가 네 개 클립을 수작업으로 수정하거나, 정해진 2.5D 카메라·주인공 배율·원래 스킨을 제공해 외주로 수정하는 것이다. 외주는 사전·타격·회수 주요 자세와 양 측면 전체 동작, 저장 후 재열기 및 Unity 임포트 검수까지 계약 범위에 넣는다. 외주 견적은 이번 조사에서 받지 않았으며 임의 가격을 제시하지 않는다. 이 샘플에는 AI 영상 생성 또는 AI 모션 생성·유료 자동리깅을 사용하지 않았다.

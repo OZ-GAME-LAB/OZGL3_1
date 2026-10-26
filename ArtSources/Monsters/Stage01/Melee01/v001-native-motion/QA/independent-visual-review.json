@@ -1,0 +1,103 @@
+{
+  "status": "sample_ready_with_integration_limits",
+  "reviewer": "independent_visual_review",
+  "sourceFBXSHA256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0",
+  "savedPrefabSHA256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf",
+  "method": "Visual inspection of actual rendered skinned model in frame-by-frame contact pages and selected full-resolution frames. Numbers were not used as visual approval. GIF timing and endpoint handling were separately inspected.",
+  "inspected": {
+    "UnitySideEveryFrame": {
+      "Idle": [
+        0,
+        128
+      ],
+      "Move": [
+        0,
+        24
+      ],
+      "Attack": [
+        0,
+        32
+      ],
+      "Hit": [
+        0,
+        20
+      ]
+    },
+    "UnityAttackEveryFrameOtherViews": [
+      "Front",
+      "Opposite",
+      "Back"
+    ],
+    "UnityOtherClipAuxiliaryViews": "8 key poses in Front/Opposite/Back per clip",
+    "connections": "all six raw endpoints and frames around 0.12 second preview blends",
+    "sourceBlender": "selected final four-view attack key poses and static same-scale protagonist comparison; final complete comparison GIF packaging remains root responsibility"
+  },
+  "resolved_findings": [
+    "Initial weapon shaft used wrong accessory axis; final corrected weapon rises vertically then chops forward, with grip aligned in real skinned model.",
+    "Initial synchronous Unity capture kept skinned pose cached while weapon moved. Final captures force per-render matrix recalculation and visibly move head, torso, pelvis and arms coherently.",
+    "Constant Move and Attack root-height corrections remove obvious below-ground toe penetration at intended Y=0 marks.",
+    "Source timing is 30fps; corrected combat Idle clip is present. GIF playback omits inclusive duplicate terminal sample while PNG contacts retain it."
+  ],
+  "visual_findings": {
+    "attack": "Preparation approx0-0.53s, rapid strike approx0.53-0.67s and recovery through1.067s are distinguishable in both side directions. Torso/head/hip changes accompany arm motion. No visible reverse elbows, wrist flip, grip separation or shoulder/cloak collapse in inspected final frames.",
+    "idle": "Foot positions remain visually stable and sway changes continuously through the loop.",
+    "move": "Bouncy native run with alternating legs, brief toe support and airborne phases; no abrupt loop pose jump observed. Ground markers, rather than lowered opaque floor, were used for contact review.",
+    "hit": "Short subtle upper-body response returns coherently; no visible mesh explosion or pose discontinuity.",
+    "connections": "Raw clip endpoints differ, especially movement to attack. The isolated0.12s blends showed no visible limb inversion or grip break; these are preview-only transitions."
+  },
+  "minor_limits": [
+    "Large head partly hides the far weapon hand during opposite-side preparation; blade tip and front chopping arc remain readable.",
+    "Run is intentionally bouncy and support is brief; game travel-speed matching, terrain foot locking and stopping behavior have not been tested.",
+    "Unity atlas preview cloak is very dark; actual scene lighting and material readability need integration review.",
+    "No gameplay Animator transitions, hitboxes, VFX, root travel or controller behavior were changed/tested.",
+    "No humanoid retarget claim is made; this is native Generic rig reuse.",
+    "Human real-time viewing at preferred playback speed remains user feedback; review used every sampled frame and verified1x/0.5x timing rather than claiming live playback perception."
+  ],
+  "prefabAnimator": {
+    "enabled": true,
+    "controller": null,
+    "applyRootMotion": false
+  },
+  "gifTimingMilliseconds": {
+    "Idle": {
+      "Side": {
+        "frames": 128,
+        "duration": 4270
+      },
+      "Side_Slow": {
+        "frames": 128,
+        "duration": 8530
+      }
+    },
+    "Move": {
+      "Side": {
+        "frames": 24,
+        "duration": 800
+      },
+      "Side_Slow": {
+        "frames": 24,
+        "duration": 1600
+      }
+    },
+    "Attack": {
+      "Side": {
+        "frames": 32,
+        "duration": 1070
+      },
+      "Side_Slow": {
+        "frames": 32,
+        "duration": 2130
+      }
+    },
+    "Hit": {
+      "Side": {
+        "frames": 20,
+        "duration": 670
+      },
+      "Side_Slow": {
+        "frames": 20,
+        "duration": 1330
+      }
+    }
+  }
+}

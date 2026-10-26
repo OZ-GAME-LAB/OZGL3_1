@@ -1,0 +1,2233 @@
+{
+  "objects": [
+    {
+      "name": "Rig",
+      "type": "ARMATURE",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        1.302865743637085,
+        1.3098869323730469,
+        1.3960356712341309
+      ],
+      "bones": [
+        {
+          "name": "root",
+          "head": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tail": [
+            0.0,
+            1.028623408672047e-08,
+            0.30051636695861816
+          ],
+          "parent": null
+        },
+        {
+          "name": "hips",
+          "head": [
+            0.0,
+            1.3885260941037814e-08,
+            0.4056633710861206
+          ],
+          "tail": [
+            0.0,
+            2.0456369043131417e-08,
+            0.597640872001648
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "spine",
+          "head": [
+            0.0,
+            2.0456369043131417e-08,
+            0.597640872001648
+          ],
+          "tail": [
+            0.0,
+            3.329165565446601e-08,
+            0.9726287722587585
+          ],
+          "parent": "hips"
+        },
+        {
+          "name": "chest",
+          "head": [
+            0.0,
+            3.3291652101752334e-08,
+            0.9726287126541138
+          ],
+          "tail": [
+            0.0,
+            4.18787529099518e-08,
+            1.2235043048858643
+          ],
+          "parent": "spine"
+        },
+        {
+          "name": "upperarm.l",
+          "head": [
+            0.2120073288679123,
+            -4.4073573235436925e-08,
+            1.106760859489441
+          ],
+          "tail": [
+            0.45350733399391174,
+            0.013859587721526623,
+            1.106760859489441
+          ],
+          "parent": "chest"
+        },
+        {
+          "name": "lowerarm.l",
+          "head": [
+            0.4535072445869446,
+            0.013859586790204048,
+            1.106760859489441
+          ],
+          "tail": [
+            0.7131815552711487,
+            -3.166496753692627e-08,
+            1.1067609786987305
+          ],
+          "parent": "upperarm.l"
+        },
+        {
+          "name": "wrist.l",
+          "head": [
+            0.7131814360618591,
+            -3.440471729732053e-08,
+            1.1067607402801514
+          ],
+          "tail": [
+            0.7870073318481445,
+            -3.357964928341062e-08,
+            1.1067607402801514
+          ],
+          "parent": "lowerarm.l"
+        },
+        {
+          "name": "hand.l",
+          "head": [
+            0.7870073318481445,
+            -3.357961730898751e-08,
+            1.1067606210708618
+          ],
+          "tail": [
+            0.8990175724029541,
+            -3.191053465911864e-08,
+            1.1067606210708618
+          ],
+          "parent": "wrist.l"
+        },
+        {
+          "name": "handslot.l",
+          "head": [
+            0.8831324577331543,
+            -2.1290299301313098e-08,
+            1.0492606163024902
+          ],
+          "tail": [
+            0.8831324577331543,
+            -0.11201024800539017,
+            1.0492606163024902
+          ],
+          "parent": "hand.l"
+        },
+        {
+          "name": "upperarm.r",
+          "head": [
+            -0.2120073288679123,
+            -4.407359099900532e-08,
+            1.106760859489441
+          ],
+          "tail": [
+            -0.45350733399391174,
+            0.013859587721526623,
+            1.106760859489441
+          ],
+          "parent": "chest"
+        },
+        {
+          "name": "lowerarm.r",
+          "head": [
+            -0.4535072445869446,
+            0.013859586790204048,
+            1.106760859489441
+          ],
+          "tail": [
+            -0.7131815552711487,
+            -3.166496753692627e-08,
+            1.1067609786987305
+          ],
+          "parent": "upperarm.r"
+        },
+        {
+          "name": "wrist.r",
+          "head": [
+            -0.7131814360618591,
+            -3.440471729732053e-08,
+            1.1067607402801514
+          ],
+          "tail": [
+            -0.7870073318481445,
+            -3.357964928341062e-08,
+            1.1067607402801514
+          ],
+          "parent": "lowerarm.r"
+        },
+        {
+          "name": "hand.r",
+          "head": [
+            -0.7870073318481445,
+            -3.357961730898751e-08,
+            1.1067606210708618
+          ],
+          "tail": [
+            -0.8990175724029541,
+            -3.191053465911864e-08,
+            1.1067606210708618
+          ],
+          "parent": "wrist.r"
+        },
+        {
+          "name": "handslot.r",
+          "head": [
+            -0.8831324577331543,
+            -2.1290299301313098e-08,
+            1.0492606163024902
+          ],
+          "tail": [
+            -0.8831324577331543,
+            -0.11201024800539017,
+            1.0492606163024902
+          ],
+          "parent": "hand.r"
+        },
+        {
+          "name": "head",
+          "head": [
+            0.0,
+            4.2492160901019815e-08,
+            1.2414252758026123
+          ],
+          "tail": [
+            0.0,
+            5.107926170921928e-08,
+            1.4923007488250732
+          ],
+          "parent": "chest"
+        },
+        {
+          "name": "upperleg.l",
+          "head": [
+            0.17094504833221436,
+            6.5973204677050035e-09,
+            0.5192506313323975
+          ],
+          "tail": [
+            0.17094501852989197,
+            -0.007889259606599808,
+            0.29231026768684387
+          ],
+          "parent": "hips"
+        },
+        {
+          "name": "lowerleg.l",
+          "head": [
+            0.17094501852989197,
+            -0.007889281027019024,
+            0.29231029748916626
+          ],
+          "tail": [
+            0.17094501852989197,
+            0.01858590543270111,
+            0.14523719251155853
+          ],
+          "parent": "upperleg.l"
+        },
+        {
+          "name": "foot.l",
+          "head": [
+            0.17094500362873077,
+            0.01858590543270111,
+            0.14523719251155853
+          ],
+          "tail": [
+            0.17094500362873077,
+            -0.09639275819063187,
+            0.025990217924118042
+          ],
+          "parent": "lowerleg.l"
+        },
+        {
+          "name": "toes.l",
+          "head": [
+            0.17094500362873077,
+            -0.09639275819063187,
+            0.025990217924118042
+          ],
+          "tail": [
+            0.17094500362873077,
+            -0.2620427906513214,
+            0.025990203022956848
+          ],
+          "parent": "foot.l"
+        },
+        {
+          "name": "upperleg.r",
+          "head": [
+            -0.17094504833221436,
+            6.597310697742387e-09,
+            0.5192506313323975
+          ],
+          "tail": [
+            -0.17094501852989197,
+            -0.007889259606599808,
+            0.29231026768684387
+          ],
+          "parent": "hips"
+        },
+        {
+          "name": "lowerleg.r",
+          "head": [
+            -0.17094501852989197,
+            -0.007889281027019024,
+            0.29231029748916626
+          ],
+          "tail": [
+            -0.17094501852989197,
+            0.01858590543270111,
+            0.14523719251155853
+          ],
+          "parent": "upperleg.r"
+        },
+        {
+          "name": "foot.r",
+          "head": [
+            -0.17094500362873077,
+            0.01858590543270111,
+            0.14523719251155853
+          ],
+          "tail": [
+            -0.17094500362873077,
+            -0.09639275819063187,
+            0.025990217924118042
+          ],
+          "parent": "lowerleg.r"
+        },
+        {
+          "name": "toes.r",
+          "head": [
+            -0.17094500362873077,
+            -0.09639275819063187,
+            0.025990217924118042
+          ],
+          "tail": [
+            -0.17094500362873077,
+            -0.2620427906513214,
+            0.025990203022956848
+          ],
+          "parent": "foot.r"
+        },
+        {
+          "name": "kneeIK.l",
+          "head": [
+            0.17094500362873077,
+            -0.5758122205734253,
+            0.2923102080821991
+          ],
+          "tail": [
+            0.17094500362873077,
+            -0.8763285875320435,
+            0.29231026768684387
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "control-toe-roll.l",
+          "head": [
+            0.17094503343105316,
+            -0.2457893192768097,
+            0.025990262627601624
+          ],
+          "tail": [
+            0.17094501852989197,
+            0.11704334616661072,
+            0.025990324094891548
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "control-heel-roll.l",
+          "head": [
+            0.17094503343105316,
+            0.11704322695732117,
+            0.025990324094891548
+          ],
+          "tail": [
+            0.17094504833221436,
+            -0.0963929146528244,
+            0.025990288704633713
+          ],
+          "parent": "control-toe-roll.l"
+        },
+        {
+          "name": "control-foot-roll.l",
+          "head": [
+            0.17094503343105316,
+            -0.09639279544353485,
+            0.025990288704633713
+          ],
+          "tail": [
+            0.17094503343105316,
+            0.018585890531539917,
+            0.1452372819185257
+          ],
+          "parent": "control-heel-roll.l"
+        },
+        {
+          "name": "heelIK.l",
+          "head": [
+            0.17094504833221436,
+            0.018585816025733948,
+            0.14523720741271973
+          ],
+          "tail": [
+            0.17094504833221436,
+            0.1842358559370041,
+            0.14523723721504211
+          ],
+          "parent": "control-foot-roll.l"
+        },
+        {
+          "name": "IK-foot.l",
+          "head": [
+            0.17094506323337555,
+            0.01858583651483059,
+            0.14523722231388092
+          ],
+          "tail": [
+            0.17094506323337555,
+            -0.09639283269643784,
+            0.025990232825279236
+          ],
+          "parent": "control-foot-roll.l"
+        },
+        {
+          "name": "IK-toe.l",
+          "head": [
+            0.17094503343105316,
+            0.11704321950674057,
+            0.025990324094891548
+          ],
+          "tail": [
+            0.17094503343105316,
+            -0.096392922103405,
+            0.025990288704633713
+          ],
+          "parent": "control-heel-roll.l"
+        },
+        {
+          "name": "kneeIK.r",
+          "head": [
+            -0.17094498872756958,
+            -0.5758122205734253,
+            0.2923102080821991
+          ],
+          "tail": [
+            -0.17094498872756958,
+            -0.8763285875320435,
+            0.29231026768684387
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "control-toe-roll.r",
+          "head": [
+            -0.17094503343105316,
+            -0.2457893192768097,
+            0.025990255177021027
+          ],
+          "tail": [
+            -0.17094504833221436,
+            0.11704334616661072,
+            0.02599031664431095
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "control-heel-roll.r",
+          "head": [
+            -0.17094503343105316,
+            0.11704322695732117,
+            0.02599031664431095
+          ],
+          "tail": [
+            -0.17094501852989197,
+            -0.0963929146528244,
+            0.025990281254053116
+          ],
+          "parent": "control-toe-roll.r"
+        },
+        {
+          "name": "control-foot-roll.r",
+          "head": [
+            -0.17094504833221436,
+            -0.09639279544353485,
+            0.025990281254053116
+          ],
+          "tail": [
+            -0.17094504833221436,
+            0.018585890531539917,
+            0.1452372670173645
+          ],
+          "parent": "control-heel-roll.r"
+        },
+        {
+          "name": "heelIK.r",
+          "head": [
+            -0.17094504833221436,
+            0.018585816025733948,
+            0.14523720741271973
+          ],
+          "tail": [
+            -0.17094504833221436,
+            0.1842358559370041,
+            0.14523723721504211
+          ],
+          "parent": "control-foot-roll.r"
+        },
+        {
+          "name": "IK-foot.r",
+          "head": [
+            -0.17094504833221436,
+            0.0185858141630888,
+            0.14523723721504211
+          ],
+          "tail": [
+            -0.17094504833221436,
+            -0.09639285504817963,
+            0.02599024772644043
+          ],
+          "parent": "control-foot-roll.r"
+        },
+        {
+          "name": "IK-toe.r",
+          "head": [
+            -0.17094503343105316,
+            0.11704321950674057,
+            0.02599031664431095
+          ],
+          "tail": [
+            -0.17094503343105316,
+            -0.096392922103405,
+            0.025990281254053116
+          ],
+          "parent": "control-heel-roll.r"
+        },
+        {
+          "name": "elbowIK.l",
+          "head": [
+            0.45350730419158936,
+            0.5888594388961792,
+            1.106760859489441
+          ],
+          "tail": [
+            0.45350730419158936,
+            0.8893758058547974,
+            1.106760859489441
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "handIK.l",
+          "head": [
+            0.7131814956665039,
+            -9.010469170789293e-08,
+            1.106760859489441
+          ],
+          "tail": [
+            1.013697862625122,
+            -5.428035620980154e-08,
+            1.106760859489441
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "elbowIK.r",
+          "head": [
+            -0.45350730419158936,
+            0.588859498500824,
+            1.106760859489441
+          ],
+          "tail": [
+            -0.45350730419158936,
+            0.8893758654594421,
+            1.106760859489441
+          ],
+          "parent": "root"
+        },
+        {
+          "name": "handIK.r",
+          "head": [
+            -0.7131815552711487,
+            -7.254827494307392e-08,
+            1.106760859489441
+          ],
+          "tail": [
+            -1.013697862625122,
+            -1.0837261044116531e-07,
+            1.106760859489441
+          ],
+          "parent": "root"
+        }
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_ArmLeft",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.5522416234016418,
+        0.2902510464191437,
+        0.6351158618927002
+      ],
+      "vertices": 406,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_ArmRight",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.5340425968170166,
+        0.3584655523300171,
+        0.626413881778717
+      ],
+      "vertices": 406,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_Body",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.7421454787254333,
+        0.6857125759124756,
+        1.048367977142334
+      ],
+      "vertices": 1833,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_Cloak",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.8790308237075806,
+        0.7432383298873901,
+        0.5141618847846985
+      ],
+      "vertices": 344,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_Eyes",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.45950984954833984,
+        0.08426739275455475,
+        0.12756896018981934
+      ],
+      "vertices": 80,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "Glow"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_Head",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.875393271446228,
+        0.9132871627807617,
+        0.8491863012313843
+      ],
+      "vertices": 595,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_Jaw",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.45497262477874756,
+        0.4010311961174011,
+        0.3216865062713623
+      ],
+      "vertices": 176,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_LegLeft",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.3420453667640686,
+        0.3808615207672119,
+        0.5253686308860779
+      ],
+      "vertices": 509,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Skeleton_Minion_LegRight",
+      "type": "MESH",
+      "parent": "Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.28180578351020813,
+        0.39680325984954834,
+        0.5218263268470764
+      ],
+      "vertices": 509,
+      "groups": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "upperarm.l",
+        "lowerarm.l",
+        "wrist.l",
+        "hand.l",
+        "handslot.l",
+        "upperarm.r",
+        "lowerarm.r",
+        "wrist.r",
+        "hand.r",
+        "handslot.r",
+        "head",
+        "upperleg.l",
+        "lowerleg.l",
+        "foot.l",
+        "toes.l",
+        "upperleg.r",
+        "lowerleg.r",
+        "foot.r",
+        "toes.r",
+        "kneeIK.l",
+        "control-toe-roll.l",
+        "control-heel-roll.l",
+        "control-foot-roll.l",
+        "heelIK.l",
+        "IK-foot.l",
+        "IK-toe.l",
+        "kneeIK.r",
+        "control-toe-roll.r",
+        "control-heel-roll.r",
+        "control-foot-roll.r",
+        "heelIK.r",
+        "IK-foot.r",
+        "IK-toe.r",
+        "elbowIK.l",
+        "handIK.l",
+        "elbowIK.r",
+        "handIK.r"
+      ],
+      "materials": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "Icosphere",
+      "type": "MESH",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        1.9021157026290894,
+        1.9999998807907104,
+        2.0
+      ],
+      "vertices": 42,
+      "groups": [],
+      "materials": []
+    }
+  ],
+  "actions": [
+    {
+      "name": "1H_Melee_Attack_Chop",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Melee_Attack_Jump_Chop",
+      "range": [
+        0.0,
+        32.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Melee_Attack_Slice_Diagonal",
+      "range": [
+        0.0,
+        24.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Melee_Attack_Slice_Horizontal",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Melee_Attack_Stab",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Ranged_Aiming",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Ranged_Reload",
+      "range": [
+        0.0,
+        28.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Ranged_Shoot",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "1H_Ranged_Shooting",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Melee_Attack_Chop",
+      "range": [
+        0.0,
+        39.20000076293945
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Melee_Attack_Slice",
+      "range": [
+        0.0,
+        26.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Melee_Attack_Spin",
+      "range": [
+        0.0,
+        57.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Melee_Attack_Spinning",
+      "range": [
+        0.0,
+        16.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Melee_Attack_Stab",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Melee_Idle",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Ranged_Aiming",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Ranged_Reload",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Ranged_Shoot",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "2H_Ranged_Shooting",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Block",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Block_Attack",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Block_Hit",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Blocking",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Cheer",
+      "range": [
+        0.0,
+        40.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_A",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_A_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_B",
+      "range": [
+        0.0,
+        63.20000457763672
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_B_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_C_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_C_Skeletons",
+      "range": [
+        0.0,
+        48.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Death_C_Skeletons_Resurrect",
+      "range": [
+        0.0,
+        64.80000305175781
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dodge_Backward",
+      "range": [
+        0.0,
+        9.600000381469727
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dodge_Forward",
+      "range": [
+        0.0,
+        9.600000381469727
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dodge_Left",
+      "range": [
+        0.0,
+        9.600000381469727
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dodge_Right",
+      "range": [
+        0.0,
+        9.600000381469727
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dualwield_Melee_Attack_Chop",
+      "range": [
+        0.0,
+        30.399999618530273
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dualwield_Melee_Attack_Slice",
+      "range": [
+        0.0,
+        28.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Dualwield_Melee_Attack_Stab",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Hit_A",
+      "range": [
+        0.0,
+        16.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Hit_B",
+      "range": [
+        0.0,
+        20.799999237060547
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Idle",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Idle_B",
+      "range": [
+        0.0,
+        51.20000457763672
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Idle_Combat",
+      "range": [
+        0.0,
+        102.40000915527344
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Interact",
+      "range": [
+        0.0,
+        31.19999885559082
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Jump_Full_Long",
+      "range": [
+        0.0,
+        56.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Jump_Full_Short",
+      "range": [
+        0.0,
+        28.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Jump_Idle",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Jump_Land",
+      "range": [
+        0.0,
+        16.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Jump_Start",
+      "range": [
+        0.0,
+        14.40000057220459
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Lie_Down",
+      "range": [
+        0.0,
+        72.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Lie_Idle",
+      "range": [
+        0.0,
+        64.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Lie_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Lie_StandUp",
+      "range": [
+        0.0,
+        56.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "PickUp",
+      "range": [
+        0.0,
+        31.19999885559082
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Running_A",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Running_B",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Running_C",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Running_Strafe_Left",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Running_Strafe_Right",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Chair_Down",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Chair_Idle",
+      "range": [
+        0.0,
+        86.39999389648438
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Chair_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Chair_StandUp",
+      "range": [
+        0.0,
+        19.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Floor_Down",
+      "range": [
+        0.0,
+        24.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Floor_Idle",
+      "range": [
+        0.0,
+        96.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Floor_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Sit_Floor_StandUp",
+      "range": [
+        0.0,
+        27.200000762939453
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Skeleton_Inactive_Standing_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Skeletons_Awaken_Floor",
+      "range": [
+        0.0,
+        55.19999694824219
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Skeletons_Awaken_Floor_Long",
+      "range": [
+        0.0,
+        92.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Skeletons_Awaken_Standing",
+      "range": [
+        0.0,
+        24.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Skeletons_Inactive_Floor_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spawn_Air",
+      "range": [
+        0.0,
+        31.19999885559082
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spawn_Ground",
+      "range": [
+        0.0,
+        31.19999885559082
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spawn_Ground_Skeletons",
+      "range": [
+        0.0,
+        85.5999984741211
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spellcast_Long",
+      "range": [
+        0.0,
+        60.79999923706055
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spellcast_Raise",
+      "range": [
+        0.0,
+        50.39999771118164
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spellcast_Shoot",
+      "range": [
+        0.0,
+        22.399999618530273
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spellcast_Summon",
+      "range": [
+        0.0,
+        103.20000457763672
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Spellcasting",
+      "range": [
+        0.0,
+        16.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "T-Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Taunt",
+      "range": [
+        0.0,
+        24.799999237060547
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Taunt_Longer",
+      "range": [
+        0.0,
+        72.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Throw",
+      "range": [
+        0.0,
+        32.79999923706055
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Unarmed_Idle",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Unarmed_Melee_Attack_Kick",
+      "range": [
+        0.0,
+        22.399999618530273
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Unarmed_Melee_Attack_Punch_A",
+      "range": [
+        0.0,
+        35.20000076293945
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Unarmed_Melee_Attack_Punch_B",
+      "range": [
+        0.0,
+        40.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Unarmed_Pose",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Use_Item",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Walking_A",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Walking_B",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Walking_Backwards",
+      "range": [
+        0.0,
+        25.60000228881836
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Walking_C",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    },
+    {
+      "name": "Walking_D_Skeletons",
+      "range": [
+        0.0,
+        38.400001525878906
+      ],
+      "slots": [
+        "OBRig"
+      ]
+    }
+  ]
+}

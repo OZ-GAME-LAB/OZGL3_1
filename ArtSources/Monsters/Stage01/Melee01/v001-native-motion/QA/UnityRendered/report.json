@@ -1,0 +1,189 @@
+{
+    "unity": "6000.3.21f1",
+    "method": "Saved/reloaded native Generic FBX clips and independent prefab. Actual SkinnedMeshRenderer rendered by Unity Camera.Render into RenderTexture at 30fps in four fixed views. AnimationClip.SampleAnimation and an offline Playables mixer only; no bone-pose corrections or gameplay transition changes. World-space audit uses BakeMesh(mesh,true) to compensate FBX renderer scale.",
+    "fbx": "Assets/Art/Monsters/Stage01/Melee01/v001/FBX/Stage01_Melee01.fbx",
+    "prefab": "Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab",
+    "fbxSHA256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0",
+    "prefabSHA256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf",
+    "success": true,
+    "gameplayIntegrated": false,
+    "controllerCreated": false,
+    "visualApproval": false,
+    "width": 960,
+    "height": 540,
+    "rate": 30,
+    "skins": 9,
+    "bones": 41,
+    "skinBoneBindings": 369,
+    "vertices": 5706,
+    "worldBounds": {
+        "m_Center": {
+            "x": 0.23567336797714234,
+            "y": 0.6637750267982483,
+            "z": -0.16814756393432618
+        },
+        "m_Extent": {
+            "x": 0.677687406539917,
+            "y": 0.6642111539840698,
+            "z": 0.6210834383964539
+        }
+    },
+    "cameraPositions": [
+        {
+            "x": 0.23567336797714234,
+            "y": 0.8642111420631409,
+            "z": -7.168147563934326
+        },
+        {
+            "x": 7.235673427581787,
+            "y": 0.7642111778259277,
+            "z": -0.16814756393432618
+        },
+        {
+            "x": 0.23567336797714234,
+            "y": 0.8642111420631409,
+            "z": 6.831852436065674
+        },
+        {
+            "x": -6.764326572418213,
+            "y": 0.7642111778259277,
+            "z": -0.16814756393432618
+        }
+    ],
+    "views": [
+        "Side",
+        "Front",
+        "Opposite",
+        "Back"
+    ],
+    "orthographicSize": 0.8236218094825745,
+    "opaqueFloorTopY": -0.05000000074505806,
+    "groundReferenceY": 0.0,
+    "clips": [
+        {
+            "name": "Idle",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Idle.anim",
+            "seconds": 4.266666889190674,
+            "frames": 129,
+            "curves": 378,
+            "loop": true,
+            "endpointMeshDifference": 0.0,
+            "minimumGroundY": -0.00003318704693811014,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Move",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Move.anim",
+            "seconds": 0.800000011920929,
+            "frames": 25,
+            "curves": 378,
+            "loop": true,
+            "endpointMeshDifference": 0.0,
+            "minimumGroundY": -5.710899131372571e-8,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Attack",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Attack.anim",
+            "seconds": 1.0666667222976685,
+            "frames": 33,
+            "curves": 378,
+            "loop": false,
+            "endpointMeshDifference": 3.816559512870299e-7,
+            "minimumGroundY": 0.005237168166786432,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Hit",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Hit.anim",
+            "seconds": 0.6666666865348816,
+            "frames": 21,
+            "curves": 378,
+            "loop": false,
+            "endpointMeshDifference": 0.0,
+            "minimumGroundY": -0.00043615075992420316,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    ],
+    "connections": [
+        {
+            "first": "Idle",
+            "second": "Idle",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.0,
+            "frames": 26
+        },
+        {
+            "first": "Move",
+            "second": "Move",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.0,
+            "frames": 26
+        },
+        {
+            "first": "Idle",
+            "second": "Move",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.7421022057533264,
+            "frames": 26
+        },
+        {
+            "first": "Move",
+            "second": "Attack",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.49218669533729555,
+            "frames": 26
+        },
+        {
+            "first": "Attack",
+            "second": "Idle",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.4588358998298645,
+            "frames": 26
+        },
+        {
+            "first": "Hit",
+            "second": "Idle",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.45803648233413699,
+            "frames": 26
+        }
+    ],
+    "scope": "Rendered output must be visually reviewed. Opaque floor is deliberately lowered to Y=-0.05m; amber off-actor markers indicate intended ground Y=0 so toe penetration and running airborne phases remain visible. Endpoint displacement and finite-vertex measurements are diagnostics only. Connections use explicit preview-only 0.12s blends and do not certify in-game Animator integration."
+}
