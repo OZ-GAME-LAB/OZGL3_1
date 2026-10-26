@@ -1,0 +1,682 @@
+{
+  "originalBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+  "canonicalBlendSHA256": "aa9726296cfcbcc4f804017870879026b6fb82e4f4b938daf85f2a8f69a09087",
+  "editableActionCount": 6,
+  "preservedExportObjects": [
+    "Protagonist_KayKit_v018",
+    "Hero_KayKit_Rig",
+    "Chibi_Body_v009",
+    "Mitten_R",
+    "Mitten_L",
+    "WeaponRoot",
+    "BladeBase",
+    "BladeTip",
+    "Grip_L",
+    "CTRL_Left_Wrist",
+    "Grip_R",
+    "CTRL_Right_Wrist",
+    "Longsword"
+  ],
+  "staticDataIdentical": true,
+  "all60HzPoseAndSkinSamplesIdentical": true,
+  "sampleCount": 123,
+  "samples": [
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 1,
+      "evaluatedPoseAndGeometrySHA256": "46ab71ff6b6b2473d6e90a8f58fae59c8e853866ed2bcf520b5c37c409c8df4e"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 2,
+      "evaluatedPoseAndGeometrySHA256": "9b1d5822bbebad76313aeffadcab8981160aa9f42ba79b12a84de267449df05d"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 3,
+      "evaluatedPoseAndGeometrySHA256": "1f08268335fccd7ac1fb17560561543726abfc460d6be63f43ba2eeb17d1ef1b"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 4,
+      "evaluatedPoseAndGeometrySHA256": "16965978f68b0740d0db10274c02ad45f16175991fe4bc8da48e702b15c11f28"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 5,
+      "evaluatedPoseAndGeometrySHA256": "c7133c4bc21537f399b087349785a482e0be9a58819c3efd3a2b45f7494467d2"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 6,
+      "evaluatedPoseAndGeometrySHA256": "dd80516b7f647714279b7b3a0544a5c750b13868e84485aa6bd0ba83946508f3"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 7,
+      "evaluatedPoseAndGeometrySHA256": "d7e150ecf4aa0a9f2b7f5c8d7debbe0921380524f2956a0d9e0b1f4da6ba486a"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 8,
+      "evaluatedPoseAndGeometrySHA256": "9919e3c26693efb400b5e69e04ccf06ed077532b72f16337ab8f108354cac297"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 9,
+      "evaluatedPoseAndGeometrySHA256": "70dfba2401564797fd94ff163178ecbbd7f63b51db1ec4bc80401fe94f0ad374"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 10,
+      "evaluatedPoseAndGeometrySHA256": "cad1734aa2e289b64347be451bef3c3e14e7825d0b2a6db166d19865c1b125f6"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 11,
+      "evaluatedPoseAndGeometrySHA256": "ea86cb48d26d67aeb9b017326083b2a38dcdae4c79c9f1de69e88a50cdd892a8"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 12,
+      "evaluatedPoseAndGeometrySHA256": "53a903cd374d903e23b4068bd87c41331acc810414bcbae97c2a0aa7c9c679ea"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 13,
+      "evaluatedPoseAndGeometrySHA256": "5b58b942a0db30e0ef00e4acfab42dafafdc7cfc1f2576b56ba9f6ee2c34f9d4"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 14,
+      "evaluatedPoseAndGeometrySHA256": "1bda45dd32fbebc660126c2ccf53137856b66abb1a166490d8ed6f3eb8dcecc2"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 15,
+      "evaluatedPoseAndGeometrySHA256": "cb56aa1183d6b4f0c451878ada233120d55e8b9f8882842546d6c8e13e436d8d"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 16,
+      "evaluatedPoseAndGeometrySHA256": "b4ec942a87721cb0fd191b4f25d04682b09f00d2c77b7d1c2c21c3171888d73c"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 17,
+      "evaluatedPoseAndGeometrySHA256": "bf311d85e1a915bd03c5add4ea1cb1739761cd1e1c0f337474802f64865148fa"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 18,
+      "evaluatedPoseAndGeometrySHA256": "2cdd236806ec97ef6e4219ff345724ada18351d11af0e9e57acb58b6aa3698aa"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 19,
+      "evaluatedPoseAndGeometrySHA256": "1baa034de863218b9b7ab4794b1d8548181d53eaec359788e2a67441aa76f0ff"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 20,
+      "evaluatedPoseAndGeometrySHA256": "db9dc9260c09ebadb2d8ad2b1a1cbf8761555da63449cafcf4623d70288f9921"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 21,
+      "evaluatedPoseAndGeometrySHA256": "70f945fe25c7848f9b463011571cf278a45682404615d15a54b0b8bb98cdaf43"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 22,
+      "evaluatedPoseAndGeometrySHA256": "daf1a069a62b484e33ab811d379353b07de30d129abe3668ac520399f8c92213"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 23,
+      "evaluatedPoseAndGeometrySHA256": "23b6d85e2001f4333aab3731814ac077ea70b354dac861e38dfe89128df75bb3"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 24,
+      "evaluatedPoseAndGeometrySHA256": "9fdb1134ed75f8381a6e5f9aff9f2fd56a0f27bd82a0552d99bdf3a2fbe2bd90"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 25,
+      "evaluatedPoseAndGeometrySHA256": "89182cf8810e1fef523abfaf633bcfc736fe5512810d032f7fdebc5e0d50cb32"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 26,
+      "evaluatedPoseAndGeometrySHA256": "0d2a1545429b8e778c235e30bf439d034c1adcfe37e04a829307662ca9c365c7"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 27,
+      "evaluatedPoseAndGeometrySHA256": "80077b7c97e2299ff3e84b4c6ee7552b2f0eaa25d8ab6f30a413017e6a55be75"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 28,
+      "evaluatedPoseAndGeometrySHA256": "a9e7112e5ce4fb40e33930d23bfd527b9fb237d20f73476314fa2c26c4f918b8"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 29,
+      "evaluatedPoseAndGeometrySHA256": "ab14040c925c54670720199ec1fe6bfbf73ebcac20d09b43b41db782b9e2ea10"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 30,
+      "evaluatedPoseAndGeometrySHA256": "01e36bc1d73437cdfe105b9582bd2108c89c42cd3bec784980998eaa9cd1b728"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 31,
+      "evaluatedPoseAndGeometrySHA256": "47ea1ef16eec3c6363949dfd428f7b389b20c853f97952848de0dc3168ad8fa4"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 32,
+      "evaluatedPoseAndGeometrySHA256": "2923bc1a2c3b3020443a7ca884908532f21f016df6690b999218df8db284e5e3"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 33,
+      "evaluatedPoseAndGeometrySHA256": "9495721360137b1311000cc0200fb2167ddf639917042d13adec4be26aaf7d23"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 34,
+      "evaluatedPoseAndGeometrySHA256": "0c3e2fb27be65549194a34f015811db8ecfd5497c8ec9ccb2bcbdb4ca47708a7"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 35,
+      "evaluatedPoseAndGeometrySHA256": "6f535a0c42d429e2db9b4166f7bedcecd31c8c7c2d3c9ff1a5215f54839ae075"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 36,
+      "evaluatedPoseAndGeometrySHA256": "08ac5549a4fb7e4b9b8a00da564993e1a57b699519c7061137a37027d719f133"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 37,
+      "evaluatedPoseAndGeometrySHA256": "a6547e6c14be5f2f132d63ef7b50073bce83b1f2e96e3baebb60c079c46b8177"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 38,
+      "evaluatedPoseAndGeometrySHA256": "07d4d4438f2fc457cd497f02c85281dd8f784fa92a6283192b138448a2044b2f"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 39,
+      "evaluatedPoseAndGeometrySHA256": "f4e34d0e8f25f6e071b3cee2ae58c41dde560101d86a4df2d7a3db172b25cab2"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 40,
+      "evaluatedPoseAndGeometrySHA256": "e60b9658b70d86b313d4a3ff5b4321459b55e10a7075626828473c497e6b9840"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 41,
+      "evaluatedPoseAndGeometrySHA256": "5e17458d000ca7e7bd3d46c543002ada66f39f771d5803b3ddaa45377bdd96b1"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 42,
+      "evaluatedPoseAndGeometrySHA256": "e6bbe76bdb5f2aca9489d6b7433cf5d886e5a2df5200bd9f5748e3ed86f9cd0d"
+    },
+    {
+      "clip": "Longsword_Attack_Chop",
+      "frame": 43,
+      "evaluatedPoseAndGeometrySHA256": "46ab71ff6b6b2473d6e90a8f58fae59c8e853866ed2bcf520b5c37c409c8df4e"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 1,
+      "evaluatedPoseAndGeometrySHA256": "b872daf4d037dde8e7d2be1051e19bf8e5d05502965b60e86bbd4ecbd1b0bfdc"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 2,
+      "evaluatedPoseAndGeometrySHA256": "eafec6760a0a423f4a11027692fa5d9bdd8b1c3abf0d919d3f06279bc3eca8fb"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 3,
+      "evaluatedPoseAndGeometrySHA256": "c7f301af63cd9f01e36ed6e20d33b590899fbf54ee04f05a46a7cc175532565f"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 4,
+      "evaluatedPoseAndGeometrySHA256": "2ef050b3e032b1b90c1652e92bc02eac48f8a379eca74de5ea747fcec921a514"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 5,
+      "evaluatedPoseAndGeometrySHA256": "0b1b1516be96540d96e752967a4a66230b91d78ffe97c6240eb94d7acddc0617"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 6,
+      "evaluatedPoseAndGeometrySHA256": "0504307d36c28afcf21d04cee1303dc91b3e3b5d8d18e4183a96191a7723b1cc"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 7,
+      "evaluatedPoseAndGeometrySHA256": "c73283fd9e83eff16d1cadc39080eff86d6d2e31d3b156fd078bc67d2733c42c"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 8,
+      "evaluatedPoseAndGeometrySHA256": "5e0f24b536e5d282123e0404e1087ed196a986bfe764f35cc580021e9227561b"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 9,
+      "evaluatedPoseAndGeometrySHA256": "861fbe56e05c8c6ac38a12677cb35c9faed3c81c61c17d337efa3072b4c711a6"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 10,
+      "evaluatedPoseAndGeometrySHA256": "a508cdb96ba698813abbc15cb59ca8357b5f86a572ef159d2580fac49f2ec73f"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 11,
+      "evaluatedPoseAndGeometrySHA256": "d22a5ab0087e0f21d8f9dcc650ee7c6b4df7c8caba4e8abcb79740736ecd02f9"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 12,
+      "evaluatedPoseAndGeometrySHA256": "4b03920fc27dc93b9005060ade39ef9f0a715a94c723ae7f2722a97f9a3b1bcf"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 13,
+      "evaluatedPoseAndGeometrySHA256": "87e82f952f22a25e583ae2fe41c23a3f9670161f75c054731286c80823f03194"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 14,
+      "evaluatedPoseAndGeometrySHA256": "1dda7ef86545ae6e024257da675b16ab2eb101bcd7f86d32f3498ff089d8aca5"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 15,
+      "evaluatedPoseAndGeometrySHA256": "3ba1af6a04c7b23e9d85fd8a2554657e1cb3bdb4e6cbf0be335235bbbc36dd01"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 16,
+      "evaluatedPoseAndGeometrySHA256": "e587d90bedf14111b87e7114613f5a202b375648c631c614f1b07527c857e8ca"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 17,
+      "evaluatedPoseAndGeometrySHA256": "13c6300ec2912fa4307e21ae3956bfc30541bd5159934241c498d716194d78bd"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 18,
+      "evaluatedPoseAndGeometrySHA256": "38ab0851719afba28bcfeabf3e6115d2a7ee15e8a995c52d2d7b0686e5a6d6d0"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 19,
+      "evaluatedPoseAndGeometrySHA256": "4d4dbac2dcb71d045e3d41bf9355781a0b8717f3807bce98455f75cacbd39e41"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 20,
+      "evaluatedPoseAndGeometrySHA256": "ae742ab07cb5f1a2cf761b1f97ed5b5866ad08793300770f0891d4ce676423c0"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 21,
+      "evaluatedPoseAndGeometrySHA256": "c68b2ca21e0819df8b31ed95ecfc174e3d294300112cbc7e0bad5e15fa0c4ed8"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 22,
+      "evaluatedPoseAndGeometrySHA256": "0d8d74954aaeb7cfe2968cc2ab693763c2bda4602cd24fe649e5f7587005f056"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 23,
+      "evaluatedPoseAndGeometrySHA256": "ee947ee65f3fd23757fbb8204f79a67ea07b01b382e7465efd1cc779ed899420"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 24,
+      "evaluatedPoseAndGeometrySHA256": "45600a65763c6693b6b2716e6d602052f725ed927175e4bbb5821c50f9d9c31a"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 25,
+      "evaluatedPoseAndGeometrySHA256": "033aa73675a3e2d71ea87674987590c742f8bf26ae09d9e0b379bf4fe7e97511"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 26,
+      "evaluatedPoseAndGeometrySHA256": "ca7f8cc6afb5d691d1d23de3479053a122b3fc1e2015adf890c0f1335bb478cb"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 27,
+      "evaluatedPoseAndGeometrySHA256": "498ee6dc7da85610cd12d1795450c449503a1e205c480d04748ec835d170d083"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 28,
+      "evaluatedPoseAndGeometrySHA256": "e6b1cb1ac55bf74dd862f17885ac9247a613d9d25bdb8736e5f378320571674f"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 29,
+      "evaluatedPoseAndGeometrySHA256": "da280d0dd0ff8ecbaeafd6a45b3743a378f471019e01781bd4806a235bc78f8c"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 30,
+      "evaluatedPoseAndGeometrySHA256": "d61c575e365d9f686ef1054dedf973efaa6fbe723e411c199f1c257d808a404f"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 31,
+      "evaluatedPoseAndGeometrySHA256": "ce19d478a5b64c8667c2f61b0c8f093de39ea698ecfbd98e7b22c3c5a8da95b3"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 32,
+      "evaluatedPoseAndGeometrySHA256": "71e548918e73606b695686944b7ae79c5bd7da6fb3106a2491b461b98c9701d3"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 33,
+      "evaluatedPoseAndGeometrySHA256": "0359707ec302338d191e1397812b2bb9f0ca14c43472061c4205c926664ab9e2"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 34,
+      "evaluatedPoseAndGeometrySHA256": "1b20266a27e978ad4050a39dbaf3ccf7247bf2b1dba3713852cdbc426c0d7602"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 35,
+      "evaluatedPoseAndGeometrySHA256": "b5ab629bc859981617c2ff270f239d0b746de191cc92564fd6dd1d1d7bd70e08"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 36,
+      "evaluatedPoseAndGeometrySHA256": "e15e06e0a265d4a2ce94ebec4840f7c57d9fa70ef23f09720d854314fdda56fe"
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "frame": 37,
+      "evaluatedPoseAndGeometrySHA256": "b872daf4d037dde8e7d2be1051e19bf8e5d05502965b60e86bbd4ecbd1b0bfdc"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 1,
+      "evaluatedPoseAndGeometrySHA256": "3c965ff94adf596c31b48d2b0e089f7e40243bc2117653d05097d05635aef709"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 2,
+      "evaluatedPoseAndGeometrySHA256": "769854eae9b459cb48dcb1abced803c89404eebb8b805504ffe24967380e0f88"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 3,
+      "evaluatedPoseAndGeometrySHA256": "37a50ae42c6b6745cd1dde1d212f779788f6fb7d7f683bad3a11b49c077169fe"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 4,
+      "evaluatedPoseAndGeometrySHA256": "d3c56c54ae1725f0ebce64ad9eb39007f83af46bb0ec04475a8a99f8bc30fc4d"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 5,
+      "evaluatedPoseAndGeometrySHA256": "2c663efe282436b990e249136d5212dc362a54d12f42f28bf308f54ad180d060"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 6,
+      "evaluatedPoseAndGeometrySHA256": "1ff1778cbb2e9f57e595505eeb530a601d7d71a9c004dc2bb8661828804bb90c"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 7,
+      "evaluatedPoseAndGeometrySHA256": "7d93661921e4c54946acd8e257afe1d94a707d21c981fb0b449edfdc11179f3b"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 8,
+      "evaluatedPoseAndGeometrySHA256": "b7d5d47d95f071cfa6ff20a3c2b045d8f93c73d8052b419043479d1136cc2155"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 9,
+      "evaluatedPoseAndGeometrySHA256": "472b3780071e6cb004923749fca5faf343f6b0f4b59a3704f6a1494c471cb695"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 10,
+      "evaluatedPoseAndGeometrySHA256": "acbe0dd3ac8106e7ffde08fdfe69ff1157d05e0723443844702cb6333789bb7d"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 11,
+      "evaluatedPoseAndGeometrySHA256": "69414648e0ece2d97df69068ef39f29c1c84ea032654f851b5cfc895958e00a8"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 12,
+      "evaluatedPoseAndGeometrySHA256": "3fc2dada83184e661bcc4168cac6cd41863233c23c5501a4a9e44a2d23725df6"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 13,
+      "evaluatedPoseAndGeometrySHA256": "150d71f77763c605183320d088236dfb449ef67958deaefe65a1f74d92d94332"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 14,
+      "evaluatedPoseAndGeometrySHA256": "1f7fcc5ade6d77531166743a6127edfaf8f487d6613b708e533477d00aa9bc3f"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 15,
+      "evaluatedPoseAndGeometrySHA256": "892df3a0a73fa54b6bee4e9cdea80c76d41b575096940e5bc0f6b096fb8fc2c4"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 16,
+      "evaluatedPoseAndGeometrySHA256": "f48407c9579305b3cdcf6db52fdd16fac92dc1c0bee0040eeb0741d0d355f9a3"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 17,
+      "evaluatedPoseAndGeometrySHA256": "b7f6349cab82058e7b6711c611cb6f02f8be111263463ab013bb7de470ce354a"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 18,
+      "evaluatedPoseAndGeometrySHA256": "78a88df90bc84b335db4e366b54d8de008d158f081d509f86538414c701c6cef"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 19,
+      "evaluatedPoseAndGeometrySHA256": "d2f871f3e49845192fb6f765994b1191d2164f598b28eb5dfc19a94f034deed2"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 20,
+      "evaluatedPoseAndGeometrySHA256": "c6753c85051aea2d4d3ba4ca1f5d1dff0cba3f10ed1a0b5d0633a351fa1dd1c9"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 21,
+      "evaluatedPoseAndGeometrySHA256": "d40034bfc8a428c5b4f61f413ad873861c33894ccd65cb7397b9c2a0a94ace51"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 22,
+      "evaluatedPoseAndGeometrySHA256": "2dc5b0f4056eafff7b0d54d3e1c0c40b302fe83aa910c96c7c32dc63c4084c32"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 23,
+      "evaluatedPoseAndGeometrySHA256": "02ff6c9028d0e5542f38330124e5bba42428ef61878de961504e92e043c27254"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 24,
+      "evaluatedPoseAndGeometrySHA256": "9d38b19c6e80be948ed2b3538b1fba94f2aaceb492481feee2511200bbcf6094"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 25,
+      "evaluatedPoseAndGeometrySHA256": "be1651aa8b44572b51b9198e093a6f3bbc732a4d7d41746bf6de4980622b1407"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 26,
+      "evaluatedPoseAndGeometrySHA256": "3fcd235a9c29cd67a8c5a781bd0051eee22ab100f79da70197f489375c0e2f4a"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 27,
+      "evaluatedPoseAndGeometrySHA256": "2e60c74d5c9efab8f228e60f21a09e3eb0f435ca75ce3e74137bc646aad4aec0"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 28,
+      "evaluatedPoseAndGeometrySHA256": "a2806960d110e619c0dfa061912a76dd16598a0ac4dbc940c9721b9efe81b75d"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 29,
+      "evaluatedPoseAndGeometrySHA256": "b039e66d39389353d388e566b26d9f3107e04e608179e08ed22c0edfef1d64ea"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 30,
+      "evaluatedPoseAndGeometrySHA256": "d18722dece9928c226f2647f542dc32bd377366522d9f2f62ec3f9d14594700e"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 31,
+      "evaluatedPoseAndGeometrySHA256": "19d4e4e16544964a1c0e921780d3ec85a2a9e1ae05891b6f143b736789c5d5dc"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 32,
+      "evaluatedPoseAndGeometrySHA256": "e60e3c45bd35827394d3878bb6a569e1a8c25cd5db57b7dcb0a10be1344da19d"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 33,
+      "evaluatedPoseAndGeometrySHA256": "a347f5e6e712ba42cef221478623108f6176de2557633c73b9fe46d8845bec25"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 34,
+      "evaluatedPoseAndGeometrySHA256": "59ae0ef438d5eeff51ef57dbd9d30a4e7d89fbe1b94a2c790db92a1c9f1167e8"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 35,
+      "evaluatedPoseAndGeometrySHA256": "795a866b29769c172620d5dee614915d3c7e4a2359ec6beaf45935f708de9935"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 36,
+      "evaluatedPoseAndGeometrySHA256": "92d41ce3018baefca21b94f3677bb35f9a75ed1194cdec7675a98e0fb3701553"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 37,
+      "evaluatedPoseAndGeometrySHA256": "390d450f615a544c496f3d1a7bf4f1ca06bb57e1944e13d662f6138b480a4368"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 38,
+      "evaluatedPoseAndGeometrySHA256": "4b4013599222510e3b67fb146961443fab4e42e94ee645353fc139e56ad1f6de"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 39,
+      "evaluatedPoseAndGeometrySHA256": "08efee6b67b23b8611310994e5d3a097f6972f80ed5064994fbbcb6a85c7e4b8"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 40,
+      "evaluatedPoseAndGeometrySHA256": "3cdb8f52ed05ce3035affdc144969ab6db920067e1348fb723360767a8ab19a4"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 41,
+      "evaluatedPoseAndGeometrySHA256": "8baeceabefd367950c14aab22b38f0cb3865347d51b706446c1fbb0718a9c945"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 42,
+      "evaluatedPoseAndGeometrySHA256": "41edc219e6a4dc78ba0208f842a0aabcee11dc2d1c92592482d937f2d8eb1983"
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "frame": 43,
+      "evaluatedPoseAndGeometrySHA256": "3c965ff94adf596c31b48d2b0e089f7e40243bc2117653d05097d05635aef709"
+    }
+  ],
+  "oneFrameRenderMaxPixelDifference": 0.0,
+  "originalUnchanged": true,
+  "linkedLibraries": [],
+  "method": "Read original; record every 60 Hz baked frame including evaluated skin. Save clean canonical scene, reopen, repeat and demand exact hashes. Render same Chop impact frame before/after and demand identical pixel arrays.",
+  "texture": [
+    {
+      "name": "Image_0",
+      "relativePath": "Textures/Image_0.jpg",
+      "sha256": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+      "packed": true,
+      "bytes": 2583170
+    }
+  ],
+  "canonicalBlend": "Protagonist_Combat.blend",
+  "bladeRetouchEvidence": [
+    {
+      "clip": "Longsword_Attack_Chop",
+      "sampleCount240Hz": 169,
+      "bodyMatrixDiffMax": 0.0,
+      "keyedGripDriftMaxM": 6.322027276634104e-08,
+      "keyedTipDriftMaxM": 1.7943374184954607e-07,
+      "subframeGripDriftMaxM": 0.00012945324075170063,
+      "subframeTipDriftMaxM": 0.0004789183172179408,
+      "longAxisAngleDiffMaxDeg": 0.048456643664523236,
+      "edgeAlignmentBefore": 0.3181934238084865,
+      "edgeAlignmentAfter": 0.9827654650755886
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "sampleCount240Hz": 145,
+      "bodyMatrixDiffMax": 0.0,
+      "keyedGripDriftMaxM": 4.712160915387242e-08,
+      "keyedTipDriftMaxM": 1.6391277313232422e-07,
+      "subframeGripDriftMaxM": 0.0005936070624510018,
+      "subframeTipDriftMaxM": 0.002196326068889943,
+      "longAxisAngleDiffMaxDeg": 0.22641938360374753,
+      "edgeAlignmentBefore": 0.25817949978948385,
+      "edgeAlignmentAfter": 0.9991350046888063
+    }
+  ],
+  "visualReview": "Approved side GIFs and all original attack contact sheets were reviewed before cleanup. Canonical source impact render is pixel-identical to approved source and all 123 baked frames preserve exact evaluated skin and pose hashes.",
+  "canonicalTexturePathCorrection": "Repointed packed image to //Textures/Image_0.jpg after save-as relative-path remapping; pixels and motion are unchanged."
+}

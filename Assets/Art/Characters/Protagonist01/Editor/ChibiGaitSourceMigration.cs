@@ -22,7 +22,7 @@ public static class ChibiGaitSourceMigration
     const string PreviewScene = "Assets/Art/Stage01Kit/UrbanKit_Preview.unity";
     const string PlayerGuid = "dc099bc5ec699084abe2e3bb9cf36915";
     const string CameraScriptGuid = "30a64c383aef2824ead1df3555aaeb69";
-    const string ReportPath = "ArtSources/Characters/Protagonist01/v007-compact-action/source-gait-migration.json";
+    const string ReportPath = "ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring/source-gait-migration.json";
     static readonly string[] GaitNames = { "Idle_Fists", "Walk_Fists", "Run_Fists" };
     static readonly HashSet<string> RetiredWeaponAnimationGuids = new HashSet<string>
     {

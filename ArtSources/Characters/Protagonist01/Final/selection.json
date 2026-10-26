@@ -1,0 +1,152 @@
+{
+  "userSelection": "3 latest sword attacks + unchanged existing v007 nonattack clips",
+  "count": 18,
+  "runtimeIntegrated": false,
+  "rigCompatibility": "Two native Generic rigs. No direct common Animator compatibility; future retargeting is required for a single rig.",
+  "clips": [
+    {
+      "name": "Longsword_Attack_Chop",
+      "group": "attack",
+      "unityClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+      "rig": "KayKit23",
+      "gif": "Combat/Longsword_Attack_Chop_Side.gif"
+    },
+    {
+      "name": "Longsword_Attack_Slice",
+      "group": "attack",
+      "unityClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+      "rig": "KayKit23",
+      "gif": "Combat/Longsword_Attack_Slice_Side.gif"
+    },
+    {
+      "name": "Longsword_Attack_Stab",
+      "group": "attack",
+      "unityClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+      "rig": "KayKit23",
+      "gif": "Combat/Longsword_Attack_Stab_Side.gif"
+    },
+    {
+      "name": "Idle_Fists",
+      "group": "movement",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Idle_Fists.gif"
+    },
+    {
+      "name": "Walk_Fists",
+      "group": "movement",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Walk_Fists.gif"
+    },
+    {
+      "name": "Run_Fists",
+      "group": "movement",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Run_Fists.gif"
+    },
+    {
+      "name": "Jump_Full",
+      "group": "movement",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Jump_Full.gif"
+    },
+    {
+      "name": "Dash_Forward",
+      "group": "movement",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Dash_Forward.gif"
+    },
+    {
+      "name": "Potion_Drink",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Potion_Drink.gif"
+    },
+    {
+      "name": "Item_Throw_Overhand",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Item_Throw_Overhand.gif"
+    },
+    {
+      "name": "Hit_Reaction",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Hit_Reaction.gif"
+    },
+    {
+      "name": "Interact_Reach",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Interact_Reach.gif"
+    },
+    {
+      "name": "Pickup_Low",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Pickup_Low.gif"
+    },
+    {
+      "name": "Jump_Takeoff",
+      "group": "air",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Jump_Takeoff.gif"
+    },
+    {
+      "name": "Jump_Rise_Loop",
+      "group": "air",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Jump_Rise_Loop.gif"
+    },
+    {
+      "name": "Jump_Apex_Loop",
+      "group": "air",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Jump_Apex_Loop.gif"
+    },
+    {
+      "name": "Jump_Fall_Loop",
+      "group": "air",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Jump_Fall_Loop.gif"
+    },
+    {
+      "name": "Jump_Land",
+      "group": "air",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim",
+      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "rig": "Chibi24",
+      "gif": "../LegacyMotions/GIF/Jump_Land.gif"
+    }
+  ]
+}

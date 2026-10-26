@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Longsword_Attack_Chop",
+    "originalSourcePackageMember": "KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+    "originalSourceAction": "Melee_2H_Attack_Chop",
+    "originalSourceDurationSeconds": 1.6333333333333333,
+    "deliveredDurationSeconds": 0.7,
+    "sampleRateHz": 60,
+    "loop": false,
+    "nativeHierarchyRoot": "Protagonist_KayKit_v018",
+    "validatedSourceBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+    "adaptation": "Fitted 23-bone KayKit hierarchy and shared-hilt whole-arm contact. Chop/Slice retain the final selected blade-edge roll; Stab is the selected unchanged source-derived attack."
+  },
+  {
+    "name": "Longsword_Attack_Slice",
+    "originalSourcePackageMember": "KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+    "originalSourceAction": "Melee_2H_Attack_Slice",
+    "originalSourceDurationSeconds": 1.1,
+    "deliveredDurationSeconds": 0.6,
+    "sampleRateHz": 60,
+    "loop": false,
+    "nativeHierarchyRoot": "Protagonist_KayKit_v018",
+    "validatedSourceBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+    "adaptation": "Fitted 23-bone KayKit hierarchy and shared-hilt whole-arm contact. Chop/Slice retain the final selected blade-edge roll; Stab is the selected unchanged source-derived attack."
+  },
+  {
+    "name": "Longsword_Attack_Stab",
+    "originalSourcePackageMember": "KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+    "originalSourceAction": "Melee_2H_Attack_Stab",
+    "originalSourceDurationSeconds": 1.6,
+    "deliveredDurationSeconds": 0.7,
+    "sampleRateHz": 60,
+    "loop": false,
+    "nativeHierarchyRoot": "Protagonist_KayKit_v018",
+    "validatedSourceBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+    "adaptation": "Fitted 23-bone KayKit hierarchy and shared-hilt whole-arm contact. Chop/Slice retain the final selected blade-edge roll; Stab is the selected unchanged source-derived attack."
+  }
+]

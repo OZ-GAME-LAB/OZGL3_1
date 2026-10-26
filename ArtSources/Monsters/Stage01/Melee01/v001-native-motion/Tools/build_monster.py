@@ -6,7 +6,7 @@ from pathlib import Path
 from mathutils import Vector, Matrix
 ROOT=Path(__file__).resolve().parents[1]
 PROJECT=ROOT.parents[4]
-PROTAG=PROJECT/'ArtSources/Characters/Protagonist01/v016-overhead-arm-correction/Chibi_Longsword_OverheadCorrected.blend'
+PROTAG=PROJECT/'ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ComparisonReference.blend'
 
 def bounds(objects):
     dg=bpy.context.evaluated_depsgraph_get(); pts=[]

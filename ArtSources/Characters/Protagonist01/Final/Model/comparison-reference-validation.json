@@ -1,0 +1,53 @@
+{
+  "file": "Protagonist_ComparisonReference.blend",
+  "sha256": "d4f82d8f47b50ae5e5e784283f15e85224f599653807a68b21c958246e5baf74",
+  "sourceBlendSHA256": "3c01805cf9b53e10abdcf9c8267f9ae118fa187c212cc3bd30cf2cc714bd8a6b",
+  "method": "Existing monster loader exact object-selection, frame0, parent linking and +1.65 m root offset compared before/after. Frozen mesh deformation; all animations and unrelated objects removed.",
+  "expectedSelectedObjects": [
+    {
+      "name": "Longsword_Armature",
+      "type": "ARMATURE"
+    },
+    {
+      "name": "Longsword",
+      "type": "MESH"
+    },
+    {
+      "name": "Chibi_Body_v009",
+      "type": "MESH"
+    }
+  ],
+  "objectCount": 5,
+  "actionCount": 0,
+  "textures": [
+    {
+      "file": "Textures/Comparison_Image_0.jpg",
+      "sha256": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+      "packed": true
+    }
+  ],
+  "geometryChecks": [
+    {
+      "object": "Longsword",
+      "vertices": 57,
+      "worldVertexMaxDifferenceM": 2.384185791015625e-07,
+      "beforeOffsetMaxDifferenceM": 1.1920928955078125e-07,
+      "bitIdentical": false,
+      "expectedSHA256": "c74bdc66f81bc56f15a7edfaece8200fa6117febcd5169c8320575d001c20a3d",
+      "actualSHA256": "913a42de3e0fee7b8479e0b101a4a0ee113d1b647e94f38429a8c06243b1a52a"
+    },
+    {
+      "object": "Chibi_Body_v009",
+      "vertices": 6421,
+      "worldVertexMaxDifferenceM": 3.5762786865234375e-07,
+      "beforeOffsetMaxDifferenceM": 0.0,
+      "bitIdentical": false,
+      "expectedSHA256": "13bc4edb52cd3e48895fd3638fc21e795133513af0dd8667b48fc0fbfe8aa78a",
+      "actualSHA256": "d342bf3d133de815263263a11252da19e9d254d825b496986c458cb83e138795"
+    }
+  ],
+  "materialAssignmentsIdentical": true,
+  "originalUnchanged": true,
+  "noMonsterFileModified": true,
+  "passed": true
+}
