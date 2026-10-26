@@ -1,0 +1,61 @@
+{
+    "asset": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Rig.prefab",
+    "label": "V006_FistsSource",
+    "sha256": "f79e8b32c931349fbdf1d72e8b07162a8fdde991086310f7cfe2ec990a965712",
+    "meshes": [
+        {
+            "name": "char1",
+            "asset": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset",
+            "vertices": 7101,
+            "triangles": 8079,
+            "blendShapes": 2,
+            "bones": [
+                "Hips",
+                "Spine02",
+                "Spine01",
+                "Spine",
+                "neck",
+                "Head",
+                "head_end",
+                "headfront",
+                "LeftShoulder",
+                "LeftArm",
+                "LeftForeArm",
+                "LeftHand",
+                "RightShoulder",
+                "RightArm",
+                "RightForeArm",
+                "RightHand",
+                "LeftUpLeg",
+                "LeftLeg",
+                "LeftFoot",
+                "LeftToeBase",
+                "RightUpLeg",
+                "RightLeg",
+                "RightFoot",
+                "RightToeBase"
+            ],
+            "materials": [
+                "Protagonist_ChibiCap_Unlit"
+            ],
+            "shaders": [
+                "Universal Render Pipeline/Unlit"
+            ],
+            "missingBones": 0,
+            "missingMaterials": 0,
+            "invalidIndices": 0,
+            "nonFiniteRestVertices": 0
+        }
+    ],
+    "nonFiniteWorldVertices": 0,
+    "boundsCenter": {
+        "x": -0.03146442770957947,
+        "y": 0.6013759970664978,
+        "z": -0.011401116847991944
+    },
+    "boundsSize": {
+        "x": 0.7012826204299927,
+        "y": 1.1972525119781495,
+        "z": 0.63845294713974
+    }
+}

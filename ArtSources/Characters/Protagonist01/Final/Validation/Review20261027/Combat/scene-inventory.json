@@ -1,0 +1,844 @@
+{
+  "objects": [
+    {
+      "name": "BladeBase",
+      "type": "EMPTY",
+      "parent": "WeaponRoot",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "BladeTip",
+      "type": "EMPTY",
+      "parent": "WeaponRoot",
+      "location": [
+        0.0,
+        0.0,
+        0.5550000071525574
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Camera_Back",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        0.0,
+        4.0,
+        1.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_Closeup",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        1.5800000429153442,
+        -0.32999998331069946,
+        0.6699999570846558
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 0.4000000059604645
+    },
+    {
+      "name": "Camera_Front",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        0.0,
+        -4.0,
+        1.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_Opposite",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        4.0,
+        -0.5600000023841858,
+        1.350000023841858
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_RearQuarter",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        -3.0,
+        3.0,
+        1.399999976158142
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_Side",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        -4.0,
+        -0.5600000023841858,
+        1.350000023841858
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_ThreeQuarter",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        -3.0,
+        -3.0,
+        1.600000023841858
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_Top",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        0.0,
+        -0.20000000298023224,
+        5.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Camera_Under",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        -3.0,
+        -3.0,
+        -1.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.9500000476837158
+    },
+    {
+      "name": "Chibi_Body_v009",
+      "type": "MESH",
+      "parent": "Hero_KayKit_Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "QUATERNION",
+      "renderHidden": false,
+      "dimensions": [
+        0.782248318195343,
+        0.7028093934059143,
+        1.1328116655349731
+      ],
+      "modifiers": [
+        [
+          "Armature",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "vertices": 6421,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "CTRL_Left_Wrist",
+      "type": "EMPTY",
+      "parent": "Grip_L",
+      "location": [
+        0.0,
+        -0.05000000074505806,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "CTRL_Right_Wrist",
+      "type": "EMPTY",
+      "parent": "Grip_R",
+      "location": [
+        0.0,
+        -0.05000000074505806,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Fill",
+      "type": "LIGHT",
+      "parent": null,
+      "location": [
+        3.0,
+        -2.0,
+        3.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Grip_L",
+      "type": "EMPTY",
+      "parent": "WeaponRoot",
+      "location": [
+        0.0,
+        0.0,
+        -0.15000000596046448
+      ],
+      "rotationMode": "QUATERNION",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Grip_R",
+      "type": "EMPTY",
+      "parent": "WeaponRoot",
+      "location": [
+        0.0,
+        0.0,
+        -0.03999999910593033
+      ],
+      "rotationMode": "QUATERNION",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Hero_KayKit_Rig",
+      "type": "ARMATURE",
+      "parent": "Protagonist_KayKit_v018",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.5015369057655334,
+        0.356651246547699,
+        1.1020501852035522
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Key",
+      "type": "LIGHT",
+      "parent": null,
+      "location": [
+        -3.0,
+        -4.0,
+        5.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Longsword",
+      "type": "MESH",
+      "parent": "WeaponRoot",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.03200000524520874,
+        0.1600000113248825,
+        0.7496879696846008
+      ],
+      "modifiers": [],
+      "materials": [
+        "LS_Steel",
+        "LS_NavyGrip",
+        "LS_Guard",
+        "LS_Edge"
+      ],
+      "vertices": 57,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Mitten_L",
+      "type": "MESH",
+      "parent": "Hero_KayKit_Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.10075145959854126,
+        0.0760306715965271,
+        0.0757865309715271
+      ],
+      "modifiers": [
+        [
+          "Follow_Hand",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "LS_SimpleSkin"
+      ],
+      "vertices": 48,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Mitten_R",
+      "type": "MESH",
+      "parent": "Hero_KayKit_Rig",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.08724141120910645,
+        0.08521610498428345,
+        0.10174432396888733
+      ],
+      "modifiers": [
+        [
+          "Follow_Hand",
+          "ARMATURE"
+        ]
+      ],
+      "materials": [
+        "LS_SimpleSkin"
+      ],
+      "vertices": 48,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Protagonist_KayKit_v018",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Review_Floor",
+      "type": "MESH",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        10.0,
+        10.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [
+        "Review_Slate"
+      ],
+      "vertices": 4,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "Review_Front",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        0.0,
+        -4.0,
+        1.399999976158142
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.7799999713897705
+    },
+    {
+      "name": "Review_Side_2p5D",
+      "type": "CAMERA",
+      "parent": null,
+      "location": [
+        -4.0,
+        -0.5199999809265137,
+        1.5299999713897705
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": "ORTHO",
+      "orthoScale": 1.7799999713897705
+    },
+    {
+      "name": "Rim",
+      "type": "LIGHT",
+      "parent": null,
+      "location": [
+        1.0,
+        3.0,
+        4.0
+      ],
+      "rotationMode": "XYZ",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    },
+    {
+      "name": "WeaponRoot",
+      "type": "EMPTY",
+      "parent": "Hero_KayKit_Rig",
+      "location": [
+        -0.038019463419914246,
+        -0.039674222469329834,
+        0.004966601729393005
+      ],
+      "rotationMode": "QUATERNION",
+      "renderHidden": false,
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "modifiers": [],
+      "materials": [],
+      "vertices": null,
+      "cameraType": null,
+      "orthoScale": null
+    }
+  ],
+  "actions": [
+    {
+      "name": "KayKitAdapted__Longsword_Attack_Chop__Hero_KayKit_Rig",
+      "slots": [
+        "OBHero_KayKit_Rig"
+      ],
+      "range": [
+        1.0,
+        43.0
+      ]
+    },
+    {
+      "name": "KayKitAdapted__Longsword_Attack_Slice__Hero_KayKit_Rig",
+      "slots": [
+        "OBHero_KayKit_Rig"
+      ],
+      "range": [
+        1.0,
+        37.0
+      ]
+    },
+    {
+      "name": "KayKitAdapted__Longsword_Attack_Stab__Hero_KayKit_Rig",
+      "slots": [
+        "OBHero_KayKit_Rig"
+      ],
+      "range": [
+        1.0,
+        43.0
+      ]
+    },
+    {
+      "name": "KayKitAdapted__Longsword_Attack_Stab__WeaponRoot",
+      "slots": [
+        "OBWeaponRoot"
+      ],
+      "range": [
+        1.0,
+        43.0
+      ]
+    },
+    {
+      "name": "KayKitRetouch18__Longsword_Attack_Chop__WeaponRoot",
+      "slots": [
+        "OBWeaponRoot"
+      ],
+      "range": [
+        1.0,
+        43.0
+      ]
+    },
+    {
+      "name": "KayKitRetouch18__Longsword_Attack_Slice__WeaponRoot",
+      "slots": [
+        "OBWeaponRoot"
+      ],
+      "range": [
+        1.0,
+        37.0
+      ]
+    }
+  ],
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "length": 0.45403656363487244
+    },
+    {
+      "name": "hips",
+      "parent": "root",
+      "length": 0.05790376290678978
+    },
+    {
+      "name": "upperleg.r",
+      "parent": "hips",
+      "length": 0.16927850246429443
+    },
+    {
+      "name": "lowerleg.r",
+      "parent": "upperleg.r",
+      "length": 0.17281563580036163
+    },
+    {
+      "name": "foot.r",
+      "parent": "lowerleg.r",
+      "length": 0.1533854752779007
+    },
+    {
+      "name": "toes.r",
+      "parent": "foot.r",
+      "length": 0.045000020414590836
+    },
+    {
+      "name": "spine",
+      "parent": "hips",
+      "length": 0.05790367349982262
+    },
+    {
+      "name": "chest",
+      "parent": "spine",
+      "length": 0.05965830013155937
+    },
+    {
+      "name": "head",
+      "parent": "chest",
+      "length": 0.4208256006240845
+    },
+    {
+      "name": "upperarm.r",
+      "parent": "chest",
+      "length": 0.16614392399787903
+    },
+    {
+      "name": "lowerarm.r",
+      "parent": "upperarm.r",
+      "length": 0.17203238606452942
+    },
+    {
+      "name": "wrist.r",
+      "parent": "lowerarm.r",
+      "length": 0.029699325561523438
+    },
+    {
+      "name": "hand.r",
+      "parent": "wrist.r",
+      "length": 0.07636979222297668
+    },
+    {
+      "name": "handslot.r",
+      "parent": "hand.r",
+      "length": 0.05999999865889549
+    },
+    {
+      "name": "upperarm.l",
+      "parent": "chest",
+      "length": 0.15358461439609528
+    },
+    {
+      "name": "lowerarm.l",
+      "parent": "upperarm.l",
+      "length": 0.1815650463104248
+    },
+    {
+      "name": "wrist.l",
+      "parent": "lowerarm.l",
+      "length": 0.029718168079853058
+    },
+    {
+      "name": "hand.l",
+      "parent": "wrist.l",
+      "length": 0.07641815394163132
+    },
+    {
+      "name": "handslot.l",
+      "parent": "hand.l",
+      "length": 0.06000000610947609
+    },
+    {
+      "name": "upperleg.l",
+      "parent": "hips",
+      "length": 0.165884330868721
+    },
+    {
+      "name": "lowerleg.l",
+      "parent": "upperleg.l",
+      "length": 0.18117564916610718
+    },
+    {
+      "name": "foot.l",
+      "parent": "lowerleg.l",
+      "length": 0.14944005012512207
+    },
+    {
+      "name": "toes.l",
+      "parent": "foot.l",
+      "length": 0.04500000178813934
+    }
+  ],
+  "scene": {
+    "fps": 60,
+    "engine": "BLENDER_EEVEE",
+    "camera": "Camera_Side",
+    "resolution": [
+      480,
+      480
+    ],
+    "keys": [
+      "clips_json",
+      "export_objects_json",
+      "weapon_object_name",
+      "source_description",
+      "upstream_blend_sha256",
+      "source_license"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "date": "2026-10-27",
+  "method": "Actual view_image inspection of existing Unity skinned-render contact sheets whose source FBX/prefab and native blend hashes were revalidated against current retained files. This is frame-by-frame image review, not a claim of continuous GIF playback.",
+  "reviewedSheets": [
+    {
+      "path": "../../QA/Independent/Attack_Side_p0.jpg",
+      "sha256": "1e86ad79e187c54878f03c4581ed9455808cc9dd8e3a44f97ccc733d6420e9c7"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Side_p1.jpg",
+      "sha256": "ea249711c048cc2b248ee1937fffea14665e0b582d891afd1af5077bdfad49b5"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Front_p0.jpg",
+      "sha256": "5318f9124e175c431e59f0c7eb449283e9e66a082eb4b8745d5a4c7527e41121"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Front_p1.jpg",
+      "sha256": "891f32ef5c40db6ed30fad988b0e0129f112702a39dc885f1618a71331af313c"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Opposite_p0.jpg",
+      "sha256": "52f0d2b9cdbac82877617b90782e5470c040e0a0482e3d296493d0dd28df1292"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Opposite_p1.jpg",
+      "sha256": "ff157bdd713106fdc33dc7515dab93b2e6fa27f014e93c979bc0996c4f7d39ef"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Back_p0.jpg",
+      "sha256": "7da90415064b12ca88b9b472f2da716ba7be700f4238aeebe7eb8befe5b1ede6"
+    },
+    {
+      "path": "../../QA/Independent/Attack_Back_p1.jpg",
+      "sha256": "6fdc106e9efd984e72eb3c4b83d508aee1e642ac2248cb46be94ccb588dfc85a"
+    },
+    {
+      "path": "../../QA/Independent/Move_Side_p0.jpg",
+      "sha256": "acbf5c40a59320531ea1a2e58920abb219d7335d9efe5ddf9db143a50f0a57dc"
+    },
+    {
+      "path": "../../QA/Independent/Move_Side_p1.jpg",
+      "sha256": "4dda9e16fe252c738c51aecb0c0454d15f53dc6b940d5c05fc51078e43a4d7eb"
+    },
+    {
+      "path": "../../QA/Independent/Move_Front_p0.jpg",
+      "sha256": "3ab7754255014a512491dd88c0d322554bb72cadccbb5585e4ccfd15249e385d"
+    },
+    {
+      "path": "../../QA/Independent/Move_Front_p1.jpg",
+      "sha256": "bbd572606e42a4aaca0c4ed0ddb8ce20fafbd65bde07dc9c9dba610eb8df3a0b"
+    },
+    {
+      "path": "../../QA/Independent/Move_Opposite_p0.jpg",
+      "sha256": "a5ba4481a026d74d8cb2243fb354640743acce01d19626149225eb6c198c6deb"
+    },
+    {
+      "path": "../../QA/Independent/Move_Back_p0.jpg",
+      "sha256": "17736b1b69b8e27ab5581926e02e6a981fdf63136f690bf9e51293c96b443908"
+    },
+    {
+      "path": "../../QA/Independent/Hit_Side_p0.jpg",
+      "sha256": "1a20aff3356c952ced5e784811f302a31787ead5c786b2e2b73fa4247778b39f"
+    },
+    {
+      "path": "../../QA/Independent/Hit_Side_p1.jpg",
+      "sha256": "7ed677a06f326f8f44ed81c0fe6a705145f17ca15cd384d786beedd3da54870e"
+    },
+    {
+      "path": "../../QA/Independent/Hit_Front_p0.jpg",
+      "sha256": "51ee1a355e840c0634dbc8581aea9adb6310a73ca85c361ddbf06c9dd86ae3ab"
+    },
+    {
+      "path": "../../QA/Independent/Hit_Opposite_p0.jpg",
+      "sha256": "fe6b5108d8b0968d3e6931d246fd5cc13d31dce7a5802b1c48389915d285fd34"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p0.jpg",
+      "sha256": "0b7937b86ef75b41f35d5ee46e46d98a6e0e87a240260948b7e1d5c13b7f5773"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p1.jpg",
+      "sha256": "fb31540bb12ae0e8385ea5b3b61e234cadc0aceebc49dc0d9fec439ed752b5e6"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p2.jpg",
+      "sha256": "30388d1da97c473e7e495faa7c54db4c1ecbec9ab8bda639fb082f74494b068b"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p3.jpg",
+      "sha256": "685e1266d005eb6aa4197023539e9a95311ade45e660d8a397b1c8cd0f57f2da"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p4.jpg",
+      "sha256": "8607730ae24dd8b77cec1a899cf78ac52709dbea1b5dcaf39fe1ab2c69d0ff91"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p5.jpg",
+      "sha256": "db14fd854774c7569dd2ad85e9461706fce6dd6be59b6748684ce9c2ac479de8"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p6.jpg",
+      "sha256": "b3ea39ea5cfe303f48433895e2588fdd0175ecf0a3992bb3af7d2cee87aacf5b"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Side_p7.jpg",
+      "sha256": "1bbddee64049a2bec62699dc5575343bdeec71775ead3a3c883b009c3753519e"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Front_p0.jpg",
+      "sha256": "1101d71c6143ef5e80974073a081a57bd1e2826eefcafe02eefa77a06bf24d29"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Front_p3.jpg",
+      "sha256": "99a3f8409e134186429f40757ac56bcbbdf5f25d4a7fb38333d2b2785bd34a61"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Opposite_p0.jpg",
+      "sha256": "ed264f395b985cb2b5cb6906c77521c50e76efd878c31e18f0610389d2d97ef6"
+    },
+    {
+      "path": "../../QA/Independent/Idle_Back_p3.jpg",
+      "sha256": "18eb6534c5869e0fd1c09f237934b9fc46ebcb473ffe122ae9d7cc33c74938f0"
+    },
+    {
+      "path": "../../QA/Independent/Connection_Move_to_Attack.jpg",
+      "sha256": "eba236e70a04f1d598d10aa58024c8331e48f58694df931ea1c003ea777c722f"
+    },
+    {
+      "path": "../../QA/Independent/Connection_Attack_to_Idle.jpg",
+      "sha256": "d5b6c2ca3f6322ba594708062984aaa9e62cce9ef9269e1470e779f88ef6193a"
+    },
+    {
+      "path": "../../QA/Independent/Connection_Idle_to_Move.jpg",
+      "sha256": "98f2af365c28ccb13563932811c4ba4127c9aa37ce89642abd76b2a0a0253990"
+    },
+    {
+      "path": "../../QA/Independent/Connection_Hit_to_Idle.jpg",
+      "sha256": "de5ddec4ac04d1f57f57af12e25dc6654b200962c41e6cb1baeff7837a6b66fa"
+    }
+  ],
+  "coverage": {
+    "deliveredMonsterModels": 1,
+    "deliveredClips": 4,
+    "allSideFrames": {
+      "Idle": 129,
+      "Move": 25,
+      "Attack": 33,
+      "Hit": 21
+    },
+    "AttackOtherViews": "All frames in Front/Opposite/Back",
+    "otherViewSamples": "Move full Front plus first18 Opposite/Back; Hit first18 Front/Opposite; Idle first18 Front/Opposite and frames54-71 Front/Back.",
+    "connections": "Four preview-only 0.12s blends: Idle->Move, Move->Attack, Attack->Idle, Hit->Idle, with raw endpoints retained."
+  },
+  "findings": [
+    "Attack has legible rising preparation, fast downward strike with small body lift, and recovery; no visible weapon grip separation or joint inversion in the inspected views.",
+    "Move retains the native short support phase and airborne run phases; limbs remain distinct in front view and the loop endpoints match.",
+    "Idle preserves its native compact combat crouch and restrained breathing. No sudden shape or grip change is visible across all129 side frames.",
+    "Hit returns to its starting posture without a sampled limb or skin pop.",
+    "No missing surfaces, broken material, detached skin or gross stretch was found in the inspected actual mesh renders."
+  ],
+  "numericalSummary": [
+    {
+      "name": "Idle",
+      "frameRange": [
+        0.0,
+        128.0
+      ],
+      "seconds": 4.266666666666667,
+      "samples60Hz": 257,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -3.4469630918465555e-05,
+      "maximumBodyZ": 1.149999976158142,
+      "startEndMaxWorldVertexDifferenceM": 0.0
+    },
+    {
+      "name": "Move",
+      "frameRange": [
+        0.0,
+        24.0
+      ],
+      "seconds": 0.8,
+      "samples60Hz": 49,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -2.799060894176364e-08,
+      "maximumBodyZ": 1.3060739040374756,
+      "startEndMaxWorldVertexDifferenceM": 0.0
+    },
+    {
+      "name": "Attack",
+      "frameRange": [
+        0.0,
+        32.0
+      ],
+      "seconds": 1.0666666666666667,
+      "samples60Hz": 65,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -7.727066986262798e-09,
+      "maximumBodyZ": 1.327986240386963,
+      "startEndMaxWorldVertexDifferenceM": 0.0
+    },
+    {
+      "name": "Hit",
+      "frameRange": [
+        0.0,
+        20.0
+      ],
+      "seconds": 0.6666666666666666,
+      "samples60Hz": 41,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -0.00043615588219836354,
+      "maximumBodyZ": 1.2599118947982788,
+      "startEndMaxWorldVertexDifferenceM": 0.0
+    }
+  ],
+  "decision": "No proven blocking asset defect; no monster model, animation, material, or runtime modification is warranted by this audit.",
+  "limits": [
+    "Minimum Hit foot Z is -0.000436156m (0.436mm), and Idle -0.00003447m. These tiny existing deviations are disclosed; they are not visible major ground penetration and were not used as a reason to alter approved source motion.",
+    "Actual gameplay speed matching, slope/wall contact, AI transitions, hitboxes and target-device rendering performance remain integration tests.",
+    "Four connection previews use an explicit offline0.12s blend and do not certify the in-game Animator."
+  ],
+  "filesModifiedInAssetFamily": []
+}

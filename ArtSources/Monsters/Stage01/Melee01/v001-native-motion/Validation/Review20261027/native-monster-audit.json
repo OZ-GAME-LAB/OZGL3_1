@@ -1,0 +1,3515 @@
+{
+  "sourceBlendSHA256": "0a4a9ccbccf79f756a63a7637cd794034317e926ef22a614964e5edfb6a5e2b2",
+  "method": "Read-only reopened saved native monster source. Evaluated whole skinned body and feet at 60 Hz, all four selected clips including endpoints. No pose edits or render-time repairs.",
+  "rig": "Melee01_Rig",
+  "bones": 41,
+  "fps": 30,
+  "meshCount": 10,
+  "meshes": [
+    {
+      "name": "Skeleton_Minion_ArmLeft",
+      "vertices": 406,
+      "triangles": 644,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_ArmRight",
+      "vertices": 406,
+      "triangles": 644,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_Body",
+      "vertices": 1833,
+      "triangles": 1768,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_Cloak",
+      "vertices": 344,
+      "triangles": 348,
+      "materials": [
+        "Melee01_UrbanTeal"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_Eyes",
+      "vertices": 80,
+      "triangles": 132,
+      "materials": [
+        "Glow"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_Head",
+      "vertices": 595,
+      "triangles": 442,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_Jaw",
+      "vertices": 176,
+      "triangles": 106,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_LegLeft",
+      "vertices": 509,
+      "triangles": 602,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Skeleton_Minion_LegRight",
+      "vertices": 509,
+      "triangles": 602,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "target": "Melee01_Rig"
+        }
+      ],
+      "nonUnitWeightSumVertices": 0
+    },
+    {
+      "name": "Melee01_Blade",
+      "vertices": 245,
+      "triangles": 457,
+      "materials": [
+        "skeleton"
+      ],
+      "modifiers": [],
+      "nonUnitWeightSumVertices": 0
+    }
+  ],
+  "clips": [
+    {
+      "name": "Idle",
+      "frameRange": [
+        0.0,
+        128.0
+      ],
+      "seconds": 4.266666666666667,
+      "samples60Hz": 257,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -3.4469630918465555e-05,
+      "maximumBodyZ": 1.149999976158142,
+      "startEndMaxWorldVertexDifferenceM": 0.0,
+      "rows": [
+        {
+          "frame": 0.0,
+          "time": 0.0,
+          "finite": true,
+          "minimumFootZ": 4.380126483738422e-09,
+          "minimumBodyZ": 4.380126483738422e-09,
+          "maximumBodyZ": 1.149999976158142
+        },
+        {
+          "frame": 0.5,
+          "time": 0.016666666666666666,
+          "finite": true,
+          "minimumFootZ": -4.341709427535534e-07,
+          "minimumBodyZ": -4.341709427535534e-07,
+          "maximumBodyZ": 1.1498124599456787
+        },
+        {
+          "frame": 1.0,
+          "time": 0.03333333333333333,
+          "finite": true,
+          "minimumFootZ": -6.496484274975955e-07,
+          "minimumBodyZ": -6.496484274975955e-07,
+          "maximumBodyZ": 1.1496247053146362
+        },
+        {
+          "frame": 1.5,
+          "time": 0.05,
+          "finite": true,
+          "minimumFootZ": -2.449072781018913e-06,
+          "minimumBodyZ": -2.449072781018913e-06,
+          "maximumBodyZ": 1.149094820022583
+        },
+        {
+          "frame": 2.0,
+          "time": 0.06666666666666667,
+          "finite": true,
+          "minimumFootZ": -2.5976623874157667e-06,
+          "minimumBodyZ": -2.5976623874157667e-06,
+          "maximumBodyZ": 1.1485648155212402
+        },
+        {
+          "frame": 2.5,
+          "time": 0.08333333333333333,
+          "finite": true,
+          "minimumFootZ": -6.4557461882941425e-06,
+          "minimumBodyZ": -6.4557461882941425e-06,
+          "maximumBodyZ": 1.1477410793304443
+        },
+        {
+          "frame": 3.0,
+          "time": 0.1,
+          "finite": true,
+          "minimumFootZ": -5.900394171476364e-06,
+          "minimumBodyZ": -5.900394171476364e-06,
+          "maximumBodyZ": 1.1469175815582275
+        },
+        {
+          "frame": 3.5,
+          "time": 0.11666666666666667,
+          "finite": true,
+          "minimumFootZ": -1.1461677786428481e-05,
+          "minimumBodyZ": -1.1461677786428481e-05,
+          "maximumBodyZ": 1.1458489894866943
+        },
+        {
+          "frame": 4.0,
+          "time": 0.13333333333333333,
+          "finite": true,
+          "minimumFootZ": -9.989671525545418e-06,
+          "minimumBodyZ": -9.989671525545418e-06,
+          "maximumBodyZ": 1.1447806358337402
+        },
+        {
+          "frame": 4.5,
+          "time": 0.15,
+          "finite": true,
+          "minimumFootZ": -1.1288349924143404e-05,
+          "minimumBodyZ": -1.1288349924143404e-05,
+          "maximumBodyZ": 1.1435163021087646
+        },
+        {
+          "frame": 5.0,
+          "time": 0.16666666666666666,
+          "finite": true,
+          "minimumFootZ": -3.1556119211018085e-06,
+          "minimumBodyZ": -3.1556119211018085e-06,
+          "maximumBodyZ": 1.1422518491744995
+        },
+        {
+          "frame": 5.5,
+          "time": 0.18333333333333332,
+          "finite": true,
+          "minimumFootZ": -1.049215643433854e-05,
+          "minimumBodyZ": -1.049215643433854e-05,
+          "maximumBodyZ": 1.1408404111862183
+        },
+        {
+          "frame": 6.0,
+          "time": 0.2,
+          "finite": true,
+          "minimumFootZ": -7.032351277302951e-06,
+          "minimumBodyZ": -7.032351277302951e-06,
+          "maximumBodyZ": 1.139428734779358
+        },
+        {
+          "frame": 6.5,
+          "time": 0.21666666666666667,
+          "finite": true,
+          "minimumFootZ": -1.5932855603750795e-05,
+          "minimumBodyZ": -1.5932855603750795e-05,
+          "maximumBodyZ": 1.1379189491271973
+        },
+        {
+          "frame": 7.0,
+          "time": 0.23333333333333334,
+          "finite": true,
+          "minimumFootZ": -1.3390061212703586e-05,
+          "minimumBodyZ": -1.3390061212703586e-05,
+          "maximumBodyZ": 1.1364091634750366
+        },
+        {
+          "frame": 7.5,
+          "time": 0.25,
+          "finite": true,
+          "minimumFootZ": -2.2427826479543e-05,
+          "minimumBodyZ": -2.2427826479543e-05,
+          "maximumBodyZ": 1.1348497867584229
+        },
+        {
+          "frame": 8.0,
+          "time": 0.26666666666666666,
+          "finite": true,
+          "minimumFootZ": -2.0221254089847207e-05,
+          "minimumBodyZ": -2.0221254089847207e-05,
+          "maximumBodyZ": 1.133290410041809
+        },
+        {
+          "frame": 8.5,
+          "time": 0.2833333333333333,
+          "finite": true,
+          "minimumFootZ": -2.8730668418575078e-05,
+          "minimumBodyZ": -2.8730668418575078e-05,
+          "maximumBodyZ": 1.131730318069458
+        },
+        {
+          "frame": 9.0,
+          "time": 0.3,
+          "finite": true,
+          "minimumFootZ": -2.687379310373217e-05,
+          "minimumBodyZ": -2.687379310373217e-05,
+          "maximumBodyZ": 1.130170226097107
+        },
+        {
+          "frame": 9.5,
+          "time": 0.31666666666666665,
+          "finite": true,
+          "minimumFootZ": -3.4469630918465555e-05,
+          "minimumBodyZ": -3.4469630918465555e-05,
+          "maximumBodyZ": 1.128658413887024
+        },
+        {
+          "frame": 10.0,
+          "time": 0.3333333333333333,
+          "finite": true,
+          "minimumFootZ": -3.312098124297336e-05,
+          "minimumBodyZ": -3.312098124297336e-05,
+          "maximumBodyZ": 1.1271461248397827
+        },
+        {
+          "frame": 10.5,
+          "time": 0.35,
+          "finite": true,
+          "minimumFootZ": -3.334070788696408e-05,
+          "minimumBodyZ": -3.334070788696408e-05,
+          "maximumBodyZ": 1.1257314682006836
+        },
+        {
+          "frame": 11.0,
+          "time": 0.36666666666666664,
+          "finite": true,
+          "minimumFootZ": -2.6253728719893843e-05,
+          "minimumBodyZ": -2.6253728719893843e-05,
+          "maximumBodyZ": 1.1243162155151367
+        },
+        {
+          "frame": 11.5,
+          "time": 0.38333333333333336,
+          "finite": true,
+          "minimumFootZ": -3.076067514484748e-05,
+          "minimumBodyZ": -3.076067514484748e-05,
+          "maximumBodyZ": 1.123047113418579
+        },
+        {
+          "frame": 12.0,
+          "time": 0.4,
+          "finite": true,
+          "minimumFootZ": -2.9845126846339554e-05,
+          "minimumBodyZ": -2.9845126846339554e-05,
+          "maximumBodyZ": 1.1217777729034424
+        },
+        {
+          "frame": 12.5,
+          "time": 0.4166666666666667,
+          "finite": true,
+          "minimumFootZ": -3.3172407711390406e-05,
+          "minimumBodyZ": -3.3172407711390406e-05,
+          "maximumBodyZ": 1.1207035779953003
+        },
+        {
+          "frame": 13.0,
+          "time": 0.43333333333333335,
+          "finite": true,
+          "minimumFootZ": -3.289928281446919e-05,
+          "minimumBodyZ": -3.289928281446919e-05,
+          "maximumBodyZ": 1.1196287870407104
+        },
+        {
+          "frame": 13.5,
+          "time": 0.45,
+          "finite": true,
+          "minimumFootZ": -1.5120916941668838e-05,
+          "minimumBodyZ": -1.5120916941668838e-05,
+          "maximumBodyZ": 1.1187983751296997
+        },
+        {
+          "frame": 14.0,
+          "time": 0.4666666666666667,
+          "finite": true,
+          "minimumFootZ": 4.663146683014929e-06,
+          "minimumBodyZ": 4.663146683014929e-06,
+          "maximumBodyZ": 1.1179672479629517
+        },
+        {
+          "frame": 14.5,
+          "time": 0.48333333333333334,
+          "finite": true,
+          "minimumFootZ": 3.8022262742742896e-06,
+          "minimumBodyZ": 3.8022262742742896e-06,
+          "maximumBodyZ": 1.117429256439209
+        },
+        {
+          "frame": 15.0,
+          "time": 0.5,
+          "finite": true,
+          "minimumFootZ": 3.6942146834917367e-06,
+          "minimumBodyZ": 3.6942146834917367e-06,
+          "maximumBodyZ": 1.116890788078308
+        },
+        {
+          "frame": 15.5,
+          "time": 0.5166666666666667,
+          "finite": true,
+          "minimumFootZ": 3.4738186514005065e-06,
+          "minimumBodyZ": 3.4738186514005065e-06,
+          "maximumBodyZ": 1.1166942119598389
+        },
+        {
+          "frame": 16.0,
+          "time": 0.5333333333333333,
+          "finite": true,
+          "minimumFootZ": 3.3569667721167207e-06,
+          "minimumBodyZ": 3.3569667721167207e-06,
+          "maximumBodyZ": 1.1164971590042114
+        },
+        {
+          "frame": 16.5,
+          "time": 0.55,
+          "finite": true,
+          "minimumFootZ": 3.457251295913011e-06,
+          "minimumBodyZ": 3.457251295913011e-06,
+          "maximumBodyZ": 1.1166749000549316
+        },
+        {
+          "frame": 17.0,
+          "time": 0.5666666666666667,
+          "finite": true,
+          "minimumFootZ": 3.6719065974466503e-06,
+          "minimumBodyZ": 3.6719065974466503e-06,
+          "maximumBodyZ": 1.1168521642684937
+        },
+        {
+          "frame": 17.5,
+          "time": 0.5833333333333334,
+          "finite": true,
+          "minimumFootZ": 3.71957867173478e-06,
+          "minimumBodyZ": 3.71957867173478e-06,
+          "maximumBodyZ": 1.1173712015151978
+        },
+        {
+          "frame": 18.0,
+          "time": 0.6,
+          "finite": true,
+          "minimumFootZ": 4.674526280723512e-06,
+          "minimumBodyZ": 4.674526280723512e-06,
+          "maximumBodyZ": 1.1178901195526123
+        },
+        {
+          "frame": 18.5,
+          "time": 0.6166666666666667,
+          "finite": true,
+          "minimumFootZ": -1.512357994215563e-05,
+          "minimumBodyZ": -1.512357994215563e-05,
+          "maximumBodyZ": 1.1187019348144531
+        },
+        {
+          "frame": 19.0,
+          "time": 0.6333333333333333,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.119512915611267
+        },
+        {
+          "frame": 19.5,
+          "time": 0.65,
+          "finite": true,
+          "minimumFootZ": -3.321997064631432e-05,
+          "minimumBodyZ": -3.321997064631432e-05,
+          "maximumBodyZ": 1.1205686330795288
+        },
+        {
+          "frame": 20.0,
+          "time": 0.6666666666666666,
+          "finite": true,
+          "minimumFootZ": -2.9875482141505927e-05,
+          "minimumBodyZ": -2.9875482141505927e-05,
+          "maximumBodyZ": 1.1216235160827637
+        },
+        {
+          "frame": 20.5,
+          "time": 0.6833333333333333,
+          "finite": true,
+          "minimumFootZ": -3.07674563373439e-05,
+          "minimumBodyZ": -3.07674563373439e-05,
+          "maximumBodyZ": 1.1228737831115723
+        },
+        {
+          "frame": 21.0,
+          "time": 0.7,
+          "finite": true,
+          "minimumFootZ": -2.626136119943112e-05,
+          "minimumBodyZ": -2.626136119943112e-05,
+          "maximumBodyZ": 1.1241233348846436
+        },
+        {
+          "frame": 21.5,
+          "time": 0.7166666666666667,
+          "finite": true,
+          "minimumFootZ": -3.335555811645463e-05,
+          "minimumBodyZ": -3.335555811645463e-05,
+          "maximumBodyZ": 1.1255195140838623
+        },
+        {
+          "frame": 22.0,
+          "time": 0.7333333333333333,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.1269149780273438
+        },
+        {
+          "frame": 22.5,
+          "time": 0.75,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.1284077167510986
+        },
+        {
+          "frame": 23.0,
+          "time": 0.7666666666666667,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.129900336265564
+        },
+        {
+          "frame": 23.5,
+          "time": 0.7833333333333333,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.1314411163330078
+        },
+        {
+          "frame": 24.0,
+          "time": 0.8,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1329814195632935
+        },
+        {
+          "frame": 24.5,
+          "time": 0.8166666666666667,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.1345210075378418
+        },
+        {
+          "frame": 25.0,
+          "time": 0.8333333333333334,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1360604763031006
+        },
+        {
+          "frame": 25.5,
+          "time": 0.85,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.1375502347946167
+        },
+        {
+          "frame": 26.0,
+          "time": 0.8666666666666667,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.1390395164489746
+        },
+        {
+          "frame": 26.5,
+          "time": 0.8833333333333333,
+          "finite": true,
+          "minimumFootZ": -1.0515752364881337e-05,
+          "minimumBodyZ": -1.0515752364881337e-05,
+          "maximumBodyZ": 1.140430212020874
+        },
+        {
+          "frame": 27.0,
+          "time": 0.9,
+          "finite": true,
+          "minimumFootZ": -3.1909949029795825e-06,
+          "minimumBodyZ": -3.1909949029795825e-06,
+          "maximumBodyZ": 1.1418201923370361
+        },
+        {
+          "frame": 27.5,
+          "time": 0.9166666666666666,
+          "finite": true,
+          "minimumFootZ": -1.1287651432212442e-05,
+          "minimumBodyZ": -1.1287651432212442e-05,
+          "maximumBodyZ": 1.1430628299713135
+        },
+        {
+          "frame": 28.0,
+          "time": 0.9333333333333333,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1443047523498535
+        },
+        {
+          "frame": 28.5,
+          "time": 0.95,
+          "finite": true,
+          "minimumFootZ": -1.144445559475571e-05,
+          "minimumBodyZ": -1.144445559475571e-05,
+          "maximumBodyZ": 1.1453500986099243
+        },
+        {
+          "frame": 29.0,
+          "time": 0.9666666666666667,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.1463943719863892
+        },
+        {
+          "frame": 29.5,
+          "time": 0.9833333333333333,
+          "finite": true,
+          "minimumFootZ": -6.426926120184362e-06,
+          "minimumBodyZ": -6.426926120184362e-06,
+          "maximumBodyZ": 1.147193431854248
+        },
+        {
+          "frame": 30.0,
+          "time": 1.0,
+          "finite": true,
+          "minimumFootZ": -2.585977199487388e-06,
+          "minimumBodyZ": -2.585977199487388e-06,
+          "maximumBodyZ": 1.1479911804199219
+        },
+        {
+          "frame": 30.5,
+          "time": 1.0166666666666666,
+          "finite": true,
+          "minimumFootZ": -2.458276867400855e-06,
+          "minimumBodyZ": -2.458276867400855e-06,
+          "maximumBodyZ": 1.148494005203247
+        },
+        {
+          "frame": 31.0,
+          "time": 1.0333333333333334,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.1489958763122559
+        },
+        {
+          "frame": 31.5,
+          "time": 1.05,
+          "finite": true,
+          "minimumFootZ": -4.146641003899276e-07,
+          "minimumBodyZ": -4.146641003899276e-07,
+          "maximumBodyZ": 1.149153709411621
+        },
+        {
+          "frame": 32.0,
+          "time": 1.0666666666666667,
+          "finite": true,
+          "minimumFootZ": 1.9994331523776054e-08,
+          "minimumBodyZ": 1.9994331523776054e-08,
+          "maximumBodyZ": 1.1493099927902222
+        },
+        {
+          "frame": 32.5,
+          "time": 1.0833333333333333,
+          "finite": true,
+          "minimumFootZ": -4.146641003899276e-07,
+          "minimumBodyZ": -4.146641003899276e-07,
+          "maximumBodyZ": 1.1490893363952637
+        },
+        {
+          "frame": 33.0,
+          "time": 1.1,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.1488670110702515
+        },
+        {
+          "frame": 33.5,
+          "time": 1.1166666666666667,
+          "finite": true,
+          "minimumFootZ": -2.458276867400855e-06,
+          "minimumBodyZ": -2.458276867400855e-06,
+          "maximumBodyZ": 1.1482999324798584
+        },
+        {
+          "frame": 34.0,
+          "time": 1.1333333333333333,
+          "finite": true,
+          "minimumFootZ": -2.585977199487388e-06,
+          "minimumBodyZ": -2.585977199487388e-06,
+          "maximumBodyZ": 1.1477307081222534
+        },
+        {
+          "frame": 34.5,
+          "time": 1.15,
+          "finite": true,
+          "minimumFootZ": -6.426926120184362e-06,
+          "minimumBodyZ": -6.426926120184362e-06,
+          "maximumBodyZ": 1.1468651294708252
+        },
+        {
+          "frame": 35.0,
+          "time": 1.1666666666666667,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.145997405052185
+        },
+        {
+          "frame": 35.5,
+          "time": 1.1833333333333333,
+          "finite": true,
+          "minimumFootZ": -1.144445559475571e-05,
+          "minimumBodyZ": -1.144445559475571e-05,
+          "maximumBodyZ": 1.1448813676834106
+        },
+        {
+          "frame": 36.0,
+          "time": 1.2,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1437627077102661
+        },
+        {
+          "frame": 36.5,
+          "time": 1.2166666666666666,
+          "finite": true,
+          "minimumFootZ": -1.1287651432212442e-05,
+          "minimumBodyZ": -1.1287651432212442e-05,
+          "maximumBodyZ": 1.142444133758545
+        },
+        {
+          "frame": 37.0,
+          "time": 1.2333333333333334,
+          "finite": true,
+          "minimumFootZ": -3.1909949029795825e-06,
+          "minimumBodyZ": -3.1909949029795825e-06,
+          "maximumBodyZ": 1.1411224603652954
+        },
+        {
+          "frame": 37.5,
+          "time": 1.25,
+          "finite": true,
+          "minimumFootZ": -1.0515752364881337e-05,
+          "minimumBodyZ": -1.0515752364881337e-05,
+          "maximumBodyZ": 1.139648675918579
+        },
+        {
+          "frame": 38.0,
+          "time": 1.2666666666666666,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.1381714344024658
+        },
+        {
+          "frame": 38.5,
+          "time": 1.2833333333333334,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.1365901231765747
+        },
+        {
+          "frame": 39.0,
+          "time": 1.3,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1350044012069702
+        },
+        {
+          "frame": 39.5,
+          "time": 1.3166666666666667,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.1333621740341187
+        },
+        {
+          "frame": 40.0,
+          "time": 1.3333333333333333,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1317152976989746
+        },
+        {
+          "frame": 40.5,
+          "time": 1.35,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.1300610303878784
+        },
+        {
+          "frame": 41.0,
+          "time": 1.3666666666666667,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.1284013986587524
+        },
+        {
+          "frame": 41.5,
+          "time": 1.3833333333333333,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.1267846822738647
+        },
+        {
+          "frame": 42.0,
+          "time": 1.4,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.1251627206802368
+        },
+        {
+          "frame": 42.5,
+          "time": 1.4166666666666667,
+          "finite": true,
+          "minimumFootZ": -3.333755739731714e-05,
+          "minimumBodyZ": -3.333755739731714e-05,
+          "maximumBodyZ": 1.1236323118209839
+        },
+        {
+          "frame": 43.0,
+          "time": 1.4333333333333333,
+          "finite": true,
+          "minimumFootZ": -2.6232744858134538e-05,
+          "minimumBodyZ": -2.6232744858134538e-05,
+          "maximumBodyZ": 1.122096300125122
+        },
+        {
+          "frame": 43.5,
+          "time": 1.45,
+          "finite": true,
+          "minimumFootZ": -3.0748175049666315e-05,
+          "minimumBodyZ": -3.0748175049666315e-05,
+          "maximumBodyZ": 1.1207009553909302
+        },
+        {
+          "frame": 44.0,
+          "time": 1.4666666666666666,
+          "finite": true,
+          "minimumFootZ": -2.9875482141505927e-05,
+          "minimumBodyZ": -2.9875482141505927e-05,
+          "maximumBodyZ": 1.1192998886108398
+        },
+        {
+          "frame": 44.5,
+          "time": 1.4833333333333334,
+          "finite": true,
+          "minimumFootZ": -3.321997064631432e-05,
+          "minimumBodyZ": -3.321997064631432e-05,
+          "maximumBodyZ": 1.118088722229004
+        },
+        {
+          "frame": 45.0,
+          "time": 1.5,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.1168713569641113
+        },
+        {
+          "frame": 45.5,
+          "time": 1.5166666666666666,
+          "finite": true,
+          "minimumFootZ": -1.512357994215563e-05,
+          "minimumBodyZ": -1.512357994215563e-05,
+          "maximumBodyZ": 1.115893006324768
+        },
+        {
+          "frame": 46.0,
+          "time": 1.5333333333333334,
+          "finite": true,
+          "minimumFootZ": 4.674526280723512e-06,
+          "minimumBodyZ": 4.674526280723512e-06,
+          "maximumBodyZ": 1.1149088144302368
+        },
+        {
+          "frame": 46.5,
+          "time": 1.55,
+          "finite": true,
+          "minimumFootZ": 3.763016138691455e-06,
+          "minimumBodyZ": 3.763016138691455e-06,
+          "maximumBodyZ": 1.1142122745513916
+        },
+        {
+          "frame": 47.0,
+          "time": 1.5666666666666667,
+          "finite": true,
+          "minimumFootZ": 3.702713001985103e-06,
+          "minimumBodyZ": 3.702713001985103e-06,
+          "maximumBodyZ": 1.1135097742080688
+        },
+        {
+          "frame": 47.5,
+          "time": 1.5833333333333333,
+          "finite": true,
+          "minimumFootZ": 3.4726981539279222e-06,
+          "minimumBodyZ": 3.4726981539279222e-06,
+          "maximumBodyZ": 1.1131441593170166
+        },
+        {
+          "frame": 48.0,
+          "time": 1.6,
+          "finite": true,
+          "minimumFootZ": 3.3569667721167207e-06,
+          "minimumBodyZ": 3.3569667721167207e-06,
+          "maximumBodyZ": 1.1127725839614868
+        },
+        {
+          "frame": 48.5,
+          "time": 1.6166666666666667,
+          "finite": true,
+          "minimumFootZ": 3.457251295913011e-06,
+          "minimumBodyZ": 3.457251295913011e-06,
+          "maximumBodyZ": 1.112770438194275
+        },
+        {
+          "frame": 49.0,
+          "time": 1.6333333333333333,
+          "finite": true,
+          "minimumFootZ": 3.6719065974466503e-06,
+          "minimumBodyZ": 3.6719065974466503e-06,
+          "maximumBodyZ": 1.1131006479263306
+        },
+        {
+          "frame": 49.5,
+          "time": 1.65,
+          "finite": true,
+          "minimumFootZ": 3.71957867173478e-06,
+          "minimumBodyZ": 3.71957867173478e-06,
+          "maximumBodyZ": 1.1138052940368652
+        },
+        {
+          "frame": 50.0,
+          "time": 1.6666666666666667,
+          "finite": true,
+          "minimumFootZ": 4.674526280723512e-06,
+          "minimumBodyZ": 4.674526280723512e-06,
+          "maximumBodyZ": 1.1145038604736328
+        },
+        {
+          "frame": 50.5,
+          "time": 1.6833333333333333,
+          "finite": true,
+          "minimumFootZ": -1.512357994215563e-05,
+          "minimumBodyZ": -1.512357994215563e-05,
+          "maximumBodyZ": 1.1154909133911133
+        },
+        {
+          "frame": 51.0,
+          "time": 1.7,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.116471767425537
+        },
+        {
+          "frame": 51.5,
+          "time": 1.7166666666666666,
+          "finite": true,
+          "minimumFootZ": -3.321997064631432e-05,
+          "minimumBodyZ": -3.321997064631432e-05,
+          "maximumBodyZ": 1.1176915168762207
+        },
+        {
+          "frame": 52.0,
+          "time": 1.7333333333333334,
+          "finite": true,
+          "minimumFootZ": -2.9875482141505927e-05,
+          "minimumBodyZ": -2.9875482141505927e-05,
+          "maximumBodyZ": 1.1189056634902954
+        },
+        {
+          "frame": 52.5,
+          "time": 1.75,
+          "finite": true,
+          "minimumFootZ": -3.0748175049666315e-05,
+          "minimumBodyZ": -3.0748175049666315e-05,
+          "maximumBodyZ": 1.120309591293335
+        },
+        {
+          "frame": 53.0,
+          "time": 1.7666666666666666,
+          "finite": true,
+          "minimumFootZ": -2.6232744858134538e-05,
+          "minimumBodyZ": -2.6232744858134538e-05,
+          "maximumBodyZ": 1.1217073202133179
+        },
+        {
+          "frame": 53.5,
+          "time": 1.7833333333333334,
+          "finite": true,
+          "minimumFootZ": -3.333755739731714e-05,
+          "minimumBodyZ": -3.333755739731714e-05,
+          "maximumBodyZ": 1.123246431350708
+        },
+        {
+          "frame": 54.0,
+          "time": 1.8,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.124779224395752
+        },
+        {
+          "frame": 54.5,
+          "time": 1.8166666666666667,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.126404047012329
+        },
+        {
+          "frame": 55.0,
+          "time": 1.8333333333333333,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.1280230283737183
+        },
+        {
+          "frame": 55.5,
+          "time": 1.85,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.1296849250793457
+        },
+        {
+          "frame": 56.0,
+          "time": 1.8666666666666667,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1313410997390747
+        },
+        {
+          "frame": 56.5,
+          "time": 1.8833333333333333,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.132990837097168
+        },
+        {
+          "frame": 57.0,
+          "time": 1.9,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1346355676651
+        },
+        {
+          "frame": 57.5,
+          "time": 1.9166666666666667,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.1362249851226807
+        },
+        {
+          "frame": 58.0,
+          "time": 1.9333333333333333,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.1378087997436523
+        },
+        {
+          "frame": 58.5,
+          "time": 1.95,
+          "finite": true,
+          "minimumFootZ": -1.0515752364881337e-05,
+          "minimumBodyZ": -1.0515752364881337e-05,
+          "maximumBodyZ": 1.1392890214920044
+        },
+        {
+          "frame": 59.0,
+          "time": 1.9666666666666666,
+          "finite": true,
+          "minimumFootZ": -3.1909949029795825e-06,
+          "minimumBodyZ": -3.1909949029795825e-06,
+          "maximumBodyZ": 1.140763759613037
+        },
+        {
+          "frame": 59.5,
+          "time": 1.9833333333333334,
+          "finite": true,
+          "minimumFootZ": -1.1287651432212442e-05,
+          "minimumBodyZ": -1.1287651432212442e-05,
+          "maximumBodyZ": 1.1420857906341553
+        },
+        {
+          "frame": 60.0,
+          "time": 2.0,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1434029340744019
+        },
+        {
+          "frame": 60.5,
+          "time": 2.0166666666666666,
+          "finite": true,
+          "minimumFootZ": -1.144445559475571e-05,
+          "minimumBodyZ": -1.144445559475571e-05,
+          "maximumBodyZ": 1.1445186138153076
+        },
+        {
+          "frame": 61.0,
+          "time": 2.033333333333333,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.1456292867660522
+        },
+        {
+          "frame": 61.5,
+          "time": 2.05,
+          "finite": true,
+          "minimumFootZ": -6.426926120184362e-06,
+          "minimumBodyZ": -6.426926120184362e-06,
+          "maximumBodyZ": 1.1464899778366089
+        },
+        {
+          "frame": 62.0,
+          "time": 2.066666666666667,
+          "finite": true,
+          "minimumFootZ": -2.585977199487388e-06,
+          "minimumBodyZ": -2.585977199487388e-06,
+          "maximumBodyZ": 1.1473456621170044
+        },
+        {
+          "frame": 62.5,
+          "time": 2.0833333333333335,
+          "finite": true,
+          "minimumFootZ": -2.4557739379815757e-06,
+          "minimumBodyZ": -2.4557739379815757e-06,
+          "maximumBodyZ": 1.1479027271270752
+        },
+        {
+          "frame": 63.0,
+          "time": 2.1,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.1484551429748535
+        },
+        {
+          "frame": 63.5,
+          "time": 2.1166666666666667,
+          "finite": true,
+          "minimumFootZ": -4.2909232433885336e-07,
+          "minimumBodyZ": -4.2909232433885336e-07,
+          "maximumBodyZ": 1.1486600637435913
+        },
+        {
+          "frame": 64.0,
+          "time": 2.1333333333333333,
+          "finite": true,
+          "minimumFootZ": 1.9994331523776054e-08,
+          "minimumBodyZ": 1.9994331523776054e-08,
+          "maximumBodyZ": 1.1488606929779053
+        },
+        {
+          "frame": 64.5,
+          "time": 2.15,
+          "finite": true,
+          "minimumFootZ": -4.146641003899276e-07,
+          "minimumBodyZ": -4.146641003899276e-07,
+          "maximumBodyZ": 1.1486817598342896
+        },
+        {
+          "frame": 65.0,
+          "time": 2.1666666666666665,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.1484986543655396
+        },
+        {
+          "frame": 65.5,
+          "time": 2.183333333333333,
+          "finite": true,
+          "minimumFootZ": -2.4405744625255466e-06,
+          "minimumBodyZ": -2.4405744625255466e-06,
+          "maximumBodyZ": 1.1479690074920654
+        },
+        {
+          "frame": 66.0,
+          "time": 2.2,
+          "finite": true,
+          "minimumFootZ": -2.594104444142431e-06,
+          "minimumBodyZ": -2.594104444142431e-06,
+          "maximumBodyZ": 1.1474353075027466
+        },
+        {
+          "frame": 66.5,
+          "time": 2.216666666666667,
+          "finite": true,
+          "minimumFootZ": -6.419359124265611e-06,
+          "minimumBodyZ": -6.419359124265611e-06,
+          "maximumBodyZ": 1.1466045379638672
+        },
+        {
+          "frame": 67.0,
+          "time": 2.2333333333333334,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.1457698345184326
+        },
+        {
+          "frame": 67.5,
+          "time": 2.25,
+          "finite": true,
+          "minimumFootZ": -1.144445559475571e-05,
+          "minimumBodyZ": -1.144445559475571e-05,
+          "maximumBodyZ": 1.1446877717971802
+        },
+        {
+          "frame": 68.0,
+          "time": 2.2666666666666666,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1436020135879517
+        },
+        {
+          "frame": 68.5,
+          "time": 2.283333333333333,
+          "finite": true,
+          "minimumFootZ": -1.1275660654064268e-05,
+          "minimumBodyZ": -1.1275660654064268e-05,
+          "maximumBodyZ": 1.1423182487487793
+        },
+        {
+          "frame": 69.0,
+          "time": 2.3,
+          "finite": true,
+          "minimumFootZ": -3.1500094337388873e-06,
+          "minimumBodyZ": -3.1500094337388873e-06,
+          "maximumBodyZ": 1.1410311460494995
+        },
+        {
+          "frame": 69.5,
+          "time": 2.316666666666667,
+          "finite": true,
+          "minimumFootZ": -1.0508614650461823e-05,
+          "minimumBodyZ": -1.0508614650461823e-05,
+          "maximumBodyZ": 1.1395955085754395
+        },
+        {
+          "frame": 70.0,
+          "time": 2.3333333333333335,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.138156771659851
+        },
+        {
+          "frame": 70.5,
+          "time": 2.35,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.1366188526153564
+        },
+        {
+          "frame": 71.0,
+          "time": 2.3666666666666667,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1350784301757812
+        },
+        {
+          "frame": 71.5,
+          "time": 2.3833333333333333,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.1334880590438843
+        },
+        {
+          "frame": 72.0,
+          "time": 2.4,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1318954229354858
+        },
+        {
+          "frame": 72.5,
+          "time": 2.4166666666666665,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.1303026676177979
+        },
+        {
+          "frame": 73.0,
+          "time": 2.433333333333333,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.1287075281143188
+        },
+        {
+          "frame": 73.5,
+          "time": 2.45,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.1271620988845825
+        },
+        {
+          "frame": 74.0,
+          "time": 2.466666666666667,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.1256146430969238
+        },
+        {
+          "frame": 74.5,
+          "time": 2.4833333333333334,
+          "finite": true,
+          "minimumFootZ": -3.335555811645463e-05,
+          "minimumBodyZ": -3.335555811645463e-05,
+          "maximumBodyZ": 1.1241662502288818
+        },
+        {
+          "frame": 75.0,
+          "time": 2.5,
+          "finite": true,
+          "minimumFootZ": -2.626136119943112e-05,
+          "minimumBodyZ": -2.626136119943112e-05,
+          "maximumBodyZ": 1.1227160692214966
+        },
+        {
+          "frame": 75.5,
+          "time": 2.5166666666666666,
+          "finite": true,
+          "minimumFootZ": -3.076830762438476e-05,
+          "minimumBodyZ": -3.076830762438476e-05,
+          "maximumBodyZ": 1.1214145421981812
+        },
+        {
+          "frame": 76.0,
+          "time": 2.533333333333333,
+          "finite": true,
+          "minimumFootZ": -2.9849281418137252e-05,
+          "minimumBodyZ": -2.9849281418137252e-05,
+          "maximumBodyZ": 1.1201112270355225
+        },
+        {
+          "frame": 76.5,
+          "time": 2.55,
+          "finite": true,
+          "minimumFootZ": -3.315128560643643e-05,
+          "minimumBodyZ": -3.315128560643643e-05,
+          "maximumBodyZ": 1.1190063953399658
+        },
+        {
+          "frame": 77.0,
+          "time": 2.566666666666667,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.1179001331329346
+        },
+        {
+          "frame": 77.5,
+          "time": 2.5833333333333335,
+          "finite": true,
+          "minimumFootZ": -1.5123521734494716e-05,
+          "minimumBodyZ": -1.5123521734494716e-05,
+          "maximumBodyZ": 1.1170417070388794
+        },
+        {
+          "frame": 78.0,
+          "time": 2.6,
+          "finite": true,
+          "minimumFootZ": 4.660025297198445e-06,
+          "minimumBodyZ": 4.660025297198445e-06,
+          "maximumBodyZ": 1.1161820888519287
+        },
+        {
+          "frame": 78.5,
+          "time": 2.6166666666666667,
+          "finite": true,
+          "minimumFootZ": 3.7795398384332657e-06,
+          "minimumBodyZ": 3.7795398384332657e-06,
+          "maximumBodyZ": 1.1156196594238281
+        },
+        {
+          "frame": 79.0,
+          "time": 2.6333333333333333,
+          "finite": true,
+          "minimumFootZ": 3.702713001985103e-06,
+          "minimumBodyZ": 3.702713001985103e-06,
+          "maximumBodyZ": 1.1150563955307007
+        },
+        {
+          "frame": 79.5,
+          "time": 2.65,
+          "finite": true,
+          "minimumFootZ": 3.4726981539279222e-06,
+          "minimumBodyZ": 3.4726981539279222e-06,
+          "maximumBodyZ": 1.114840030670166
+        },
+        {
+          "frame": 80.0,
+          "time": 2.6666666666666665,
+          "finite": true,
+          "minimumFootZ": 3.3569667721167207e-06,
+          "minimumBodyZ": 3.3569667721167207e-06,
+          "maximumBodyZ": 1.1146228313446045
+        },
+        {
+          "frame": 80.5,
+          "time": 2.683333333333333,
+          "finite": true,
+          "minimumFootZ": 3.457251295913011e-06,
+          "minimumBodyZ": 3.457251295913011e-06,
+          "maximumBodyZ": 1.1147899627685547
+        },
+        {
+          "frame": 81.0,
+          "time": 2.7,
+          "finite": true,
+          "minimumFootZ": 3.6719065974466503e-06,
+          "minimumBodyZ": 3.6719065974466503e-06,
+          "maximumBodyZ": 1.1149569749832153
+        },
+        {
+          "frame": 81.5,
+          "time": 2.716666666666667,
+          "finite": true,
+          "minimumFootZ": 3.71957867173478e-06,
+          "minimumBodyZ": 3.71957867173478e-06,
+          "maximumBodyZ": 1.1154804229736328
+        },
+        {
+          "frame": 82.0,
+          "time": 2.7333333333333334,
+          "finite": true,
+          "minimumFootZ": 4.674526280723512e-06,
+          "minimumBodyZ": 4.674526280723512e-06,
+          "maximumBodyZ": 1.1160038709640503
+        },
+        {
+          "frame": 82.5,
+          "time": 2.75,
+          "finite": true,
+          "minimumFootZ": -1.512357994215563e-05,
+          "minimumBodyZ": -1.512357994215563e-05,
+          "maximumBodyZ": 1.1168347597122192
+        },
+        {
+          "frame": 83.0,
+          "time": 2.7666666666666666,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.1176656484603882
+        },
+        {
+          "frame": 83.5,
+          "time": 2.783333333333333,
+          "finite": true,
+          "minimumFootZ": -3.321997064631432e-05,
+          "minimumBodyZ": -3.321997064631432e-05,
+          "maximumBodyZ": 1.1187543869018555
+        },
+        {
+          "frame": 84.0,
+          "time": 2.8,
+          "finite": true,
+          "minimumFootZ": -2.9875482141505927e-05,
+          "minimumBodyZ": -2.9875482141505927e-05,
+          "maximumBodyZ": 1.1198430061340332
+        },
+        {
+          "frame": 84.5,
+          "time": 2.816666666666667,
+          "finite": true,
+          "minimumFootZ": -3.07674563373439e-05,
+          "minimumBodyZ": -3.07674563373439e-05,
+          "maximumBodyZ": 1.121139645576477
+        },
+        {
+          "frame": 85.0,
+          "time": 2.8333333333333335,
+          "finite": true,
+          "minimumFootZ": -2.626136119943112e-05,
+          "minimumBodyZ": -2.626136119943112e-05,
+          "maximumBodyZ": 1.1224361658096313
+        },
+        {
+          "frame": 85.5,
+          "time": 2.85,
+          "finite": true,
+          "minimumFootZ": -3.335555811645463e-05,
+          "minimumBodyZ": -3.335555811645463e-05,
+          "maximumBodyZ": 1.1238903999328613
+        },
+        {
+          "frame": 86.0,
+          "time": 2.8666666666666667,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.1253440380096436
+        },
+        {
+          "frame": 86.5,
+          "time": 2.8833333333333333,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.1269055604934692
+        },
+        {
+          "frame": 87.0,
+          "time": 2.9,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.1284657716751099
+        },
+        {
+          "frame": 87.5,
+          "time": 2.9166666666666665,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.130083441734314
+        },
+        {
+          "frame": 88.0,
+          "time": 2.933333333333333,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1316992044448853
+        },
+        {
+          "frame": 88.5,
+          "time": 2.95,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.13332200050354
+        },
+        {
+          "frame": 89.0,
+          "time": 2.966666666666667,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1349424123764038
+        },
+        {
+          "frame": 89.5,
+          "time": 2.9833333333333334,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.136518955230713
+        },
+        {
+          "frame": 90.0,
+          "time": 3.0,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.1380925178527832
+        },
+        {
+          "frame": 90.5,
+          "time": 3.0166666666666666,
+          "finite": true,
+          "minimumFootZ": -1.0508614650461823e-05,
+          "minimumBodyZ": -1.0508614650461823e-05,
+          "maximumBodyZ": 1.1395715475082397
+        },
+        {
+          "frame": 91.0,
+          "time": 3.033333333333333,
+          "finite": true,
+          "minimumFootZ": -3.1500094337388873e-06,
+          "minimumBodyZ": -3.1500094337388873e-06,
+          "maximumBodyZ": 1.1410470008850098
+        },
+        {
+          "frame": 91.5,
+          "time": 3.05,
+          "finite": true,
+          "minimumFootZ": -1.1275660654064268e-05,
+          "minimumBodyZ": -1.1275660654064268e-05,
+          "maximumBodyZ": 1.1423771381378174
+        },
+        {
+          "frame": 92.0,
+          "time": 3.066666666666667,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1437029838562012
+        },
+        {
+          "frame": 92.5,
+          "time": 3.0833333333333335,
+          "finite": true,
+          "minimumFootZ": -1.144445559475571e-05,
+          "minimumBodyZ": -1.144445559475571e-05,
+          "maximumBodyZ": 1.144832730293274
+        },
+        {
+          "frame": 93.0,
+          "time": 3.1,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.145957589149475
+        },
+        {
+          "frame": 93.5,
+          "time": 3.1166666666666667,
+          "finite": true,
+          "minimumFootZ": -6.419359124265611e-06,
+          "minimumBodyZ": -6.419359124265611e-06,
+          "maximumBodyZ": 1.1468358039855957
+        },
+        {
+          "frame": 94.0,
+          "time": 3.1333333333333333,
+          "finite": true,
+          "minimumFootZ": -2.594104444142431e-06,
+          "minimumBodyZ": -2.594104444142431e-06,
+          "maximumBodyZ": 1.1477082967758179
+        },
+        {
+          "frame": 94.5,
+          "time": 3.15,
+          "finite": true,
+          "minimumFootZ": -2.4405744625255466e-06,
+          "minimumBodyZ": -2.4405744625255466e-06,
+          "maximumBodyZ": 1.1482834815979004
+        },
+        {
+          "frame": 95.0,
+          "time": 3.1666666666666665,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.1488524675369263
+        },
+        {
+          "frame": 95.5,
+          "time": 3.183333333333333,
+          "finite": true,
+          "minimumFootZ": -4.146641003899276e-07,
+          "minimumBodyZ": -4.146641003899276e-07,
+          "maximumBodyZ": 1.1490734815597534
+        },
+        {
+          "frame": 96.0,
+          "time": 3.2,
+          "finite": true,
+          "minimumFootZ": 1.9994331523776054e-08,
+          "minimumBodyZ": 1.9994331523776054e-08,
+          "maximumBodyZ": 1.149287462234497
+        },
+        {
+          "frame": 96.5,
+          "time": 3.216666666666667,
+          "finite": true,
+          "minimumFootZ": -4.146641003899276e-07,
+          "minimumBodyZ": -4.146641003899276e-07,
+          "maximumBodyZ": 1.1491198539733887
+        },
+        {
+          "frame": 97.0,
+          "time": 3.2333333333333334,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.14894437789917
+        },
+        {
+          "frame": 97.5,
+          "time": 3.25,
+          "finite": true,
+          "minimumFootZ": -2.4405744625255466e-06,
+          "minimumBodyZ": -2.4405744625255466e-06,
+          "maximumBodyZ": 1.1484185457229614
+        },
+        {
+          "frame": 98.0,
+          "time": 3.2666666666666666,
+          "finite": true,
+          "minimumFootZ": -2.594104444142431e-06,
+          "minimumBodyZ": -2.594104444142431e-06,
+          "maximumBodyZ": 1.147884726524353
+        },
+        {
+          "frame": 98.5,
+          "time": 3.283333333333333,
+          "finite": true,
+          "minimumFootZ": -6.419359124265611e-06,
+          "minimumBodyZ": -6.419359124265611e-06,
+          "maximumBodyZ": 1.147047996520996
+        },
+        {
+          "frame": 99.0,
+          "time": 3.3,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.1462029218673706
+        },
+        {
+          "frame": 99.5,
+          "time": 3.316666666666667,
+          "finite": true,
+          "minimumFootZ": -1.144445559475571e-05,
+          "minimumBodyZ": -1.144445559475571e-05,
+          "maximumBodyZ": 1.1451032161712646
+        },
+        {
+          "frame": 100.0,
+          "time": 3.3333333333333335,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1439944505691528
+        },
+        {
+          "frame": 100.5,
+          "time": 3.35,
+          "finite": true,
+          "minimumFootZ": -1.1275660654064268e-05,
+          "minimumBodyZ": -1.1275660654064268e-05,
+          "maximumBodyZ": 1.1426790952682495
+        },
+        {
+          "frame": 101.0,
+          "time": 3.3666666666666667,
+          "finite": true,
+          "minimumFootZ": -3.1500094337388873e-06,
+          "minimumBodyZ": -3.1500094337388873e-06,
+          "maximumBodyZ": 1.1413545608520508
+        },
+        {
+          "frame": 101.5,
+          "time": 3.3833333333333333,
+          "finite": true,
+          "minimumFootZ": -1.0508614650461823e-05,
+          "minimumBodyZ": -1.0508614650461823e-05,
+          "maximumBodyZ": 1.1398723125457764
+        },
+        {
+          "frame": 102.0,
+          "time": 3.4,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.1383800506591797
+        },
+        {
+          "frame": 102.5,
+          "time": 3.4166666666666665,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.1367788314819336
+        },
+        {
+          "frame": 103.0,
+          "time": 3.433333333333333,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1351673603057861
+        },
+        {
+          "frame": 103.5,
+          "time": 3.45,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.1334959268569946
+        },
+        {
+          "frame": 104.0,
+          "time": 3.466666666666667,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1318142414093018
+        },
+        {
+          "frame": 104.5,
+          "time": 3.4833333333333334,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.1301215887069702
+        },
+        {
+          "frame": 105.0,
+          "time": 3.5,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.1284186840057373
+        },
+        {
+          "frame": 105.5,
+          "time": 3.5166666666666666,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.1267541646957397
+        },
+        {
+          "frame": 106.0,
+          "time": 3.533333333333333,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.1250792741775513
+        },
+        {
+          "frame": 106.5,
+          "time": 3.55,
+          "finite": true,
+          "minimumFootZ": -3.335555811645463e-05,
+          "minimumBodyZ": -3.335555811645463e-05,
+          "maximumBodyZ": 1.1234925985336304
+        },
+        {
+          "frame": 107.0,
+          "time": 3.566666666666667,
+          "finite": true,
+          "minimumFootZ": -2.626136119943112e-05,
+          "minimumBodyZ": -2.626136119943112e-05,
+          "maximumBodyZ": 1.1218955516815186
+        },
+        {
+          "frame": 107.5,
+          "time": 3.5833333333333335,
+          "finite": true,
+          "minimumFootZ": -3.076830762438476e-05,
+          "minimumBodyZ": -3.076830762438476e-05,
+          "maximumBodyZ": 1.120436429977417
+        },
+        {
+          "frame": 108.0,
+          "time": 3.6,
+          "finite": true,
+          "minimumFootZ": -2.9849281418137252e-05,
+          "minimumBodyZ": -2.9849281418137252e-05,
+          "maximumBodyZ": 1.1189676523208618
+        },
+        {
+          "frame": 108.5,
+          "time": 3.6166666666666667,
+          "finite": true,
+          "minimumFootZ": -3.315128560643643e-05,
+          "minimumBodyZ": -3.315128560643643e-05,
+          "maximumBodyZ": 1.1176867485046387
+        },
+        {
+          "frame": 109.0,
+          "time": 3.6333333333333333,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.1163959503173828
+        },
+        {
+          "frame": 109.5,
+          "time": 3.65,
+          "finite": true,
+          "minimumFootZ": -1.5123521734494716e-05,
+          "minimumBodyZ": -1.5123521734494716e-05,
+          "maximumBodyZ": 1.1157876253128052
+        },
+        {
+          "frame": 110.0,
+          "time": 3.6666666666666665,
+          "finite": true,
+          "minimumFootZ": 4.660025297198445e-06,
+          "minimumBodyZ": 4.660025297198445e-06,
+          "maximumBodyZ": 1.1152012348175049
+        },
+        {
+          "frame": 110.5,
+          "time": 3.683333333333333,
+          "finite": true,
+          "minimumFootZ": 3.7795398384332657e-06,
+          "minimumBodyZ": 3.7795398384332657e-06,
+          "maximumBodyZ": 1.1148947477340698
+        },
+        {
+          "frame": 111.0,
+          "time": 3.7,
+          "finite": true,
+          "minimumFootZ": 3.702713001985103e-06,
+          "minimumBodyZ": 3.702713001985103e-06,
+          "maximumBodyZ": 1.1145789623260498
+        },
+        {
+          "frame": 111.5,
+          "time": 3.716666666666667,
+          "finite": true,
+          "minimumFootZ": 3.4726981539279222e-06,
+          "minimumBodyZ": 3.4726981539279222e-06,
+          "maximumBodyZ": 1.1145920753479004
+        },
+        {
+          "frame": 112.0,
+          "time": 3.7333333333333334,
+          "finite": true,
+          "minimumFootZ": 3.3569667721167207e-06,
+          "minimumBodyZ": 3.3569667721167207e-06,
+          "maximumBodyZ": 1.1145963668823242
+        },
+        {
+          "frame": 112.5,
+          "time": 3.75,
+          "finite": true,
+          "minimumFootZ": 3.457251295913011e-06,
+          "minimumBodyZ": 3.457251295913011e-06,
+          "maximumBodyZ": 1.1149623394012451
+        },
+        {
+          "frame": 113.0,
+          "time": 3.7666666666666666,
+          "finite": true,
+          "minimumFootZ": 3.6719065974466503e-06,
+          "minimumBodyZ": 3.6719065974466503e-06,
+          "maximumBodyZ": 1.115319848060608
+        },
+        {
+          "frame": 113.5,
+          "time": 3.783333333333333,
+          "finite": true,
+          "minimumFootZ": 3.71957867173478e-06,
+          "minimumBodyZ": 3.71957867173478e-06,
+          "maximumBodyZ": 1.116006851196289
+        },
+        {
+          "frame": 114.0,
+          "time": 3.8,
+          "finite": true,
+          "minimumFootZ": 4.674526280723512e-06,
+          "minimumBodyZ": 4.674526280723512e-06,
+          "maximumBodyZ": 1.1166858673095703
+        },
+        {
+          "frame": 114.5,
+          "time": 3.816666666666667,
+          "finite": true,
+          "minimumFootZ": -1.512357994215563e-05,
+          "minimumBodyZ": -1.512357994215563e-05,
+          "maximumBodyZ": 1.1176456212997437
+        },
+        {
+          "frame": 115.0,
+          "time": 3.8333333333333335,
+          "finite": true,
+          "minimumFootZ": -3.290177119197324e-05,
+          "minimumBodyZ": -3.290177119197324e-05,
+          "maximumBodyZ": 1.118598222732544
+        },
+        {
+          "frame": 115.5,
+          "time": 3.85,
+          "finite": true,
+          "minimumFootZ": -3.321997064631432e-05,
+          "minimumBodyZ": -3.321997064631432e-05,
+          "maximumBodyZ": 1.1197832822799683
+        },
+        {
+          "frame": 116.0,
+          "time": 3.8666666666666667,
+          "finite": true,
+          "minimumFootZ": -2.9875482141505927e-05,
+          "minimumBodyZ": -2.9875482141505927e-05,
+          "maximumBodyZ": 1.1209616661071777
+        },
+        {
+          "frame": 116.5,
+          "time": 3.8833333333333333,
+          "finite": true,
+          "minimumFootZ": -3.07674563373439e-05,
+          "minimumBodyZ": -3.07674563373439e-05,
+          "maximumBodyZ": 1.1223244667053223
+        },
+        {
+          "frame": 117.0,
+          "time": 3.9,
+          "finite": true,
+          "minimumFootZ": -2.626136119943112e-05,
+          "minimumBodyZ": -2.626136119943112e-05,
+          "maximumBodyZ": 1.1236811876296997
+        },
+        {
+          "frame": 117.5,
+          "time": 3.9166666666666665,
+          "finite": true,
+          "minimumFootZ": -3.335555811645463e-05,
+          "minimumBodyZ": -3.335555811645463e-05,
+          "maximumBodyZ": 1.1251740455627441
+        },
+        {
+          "frame": 118.0,
+          "time": 3.933333333333333,
+          "finite": true,
+          "minimumFootZ": -3.313618071842939e-05,
+          "minimumBodyZ": -3.313618071842939e-05,
+          "maximumBodyZ": 1.126661777496338
+        },
+        {
+          "frame": 118.5,
+          "time": 3.95,
+          "finite": true,
+          "minimumFootZ": -3.4468728699721396e-05,
+          "minimumBodyZ": -3.4468728699721396e-05,
+          "maximumBodyZ": 1.1282376050949097
+        },
+        {
+          "frame": 119.0,
+          "time": 3.966666666666667,
+          "finite": true,
+          "minimumFootZ": -2.6871442969422787e-05,
+          "minimumBodyZ": -2.6871442969422787e-05,
+          "maximumBodyZ": 1.1298089027404785
+        },
+        {
+          "frame": 119.5,
+          "time": 3.9833333333333334,
+          "finite": true,
+          "minimumFootZ": -2.8717775421682745e-05,
+          "minimumBodyZ": -2.8717775421682745e-05,
+          "maximumBodyZ": 1.1314202547073364
+        },
+        {
+          "frame": 120.0,
+          "time": 4.0,
+          "finite": true,
+          "minimumFootZ": -2.0208324713166803e-05,
+          "minimumBodyZ": -2.0208324713166803e-05,
+          "maximumBodyZ": 1.1330276727676392
+        },
+        {
+          "frame": 120.5,
+          "time": 4.016666666666667,
+          "finite": true,
+          "minimumFootZ": -2.242693881271407e-05,
+          "minimumBodyZ": -2.242693881271407e-05,
+          "maximumBodyZ": 1.1346274614334106
+        },
+        {
+          "frame": 121.0,
+          "time": 4.033333333333333,
+          "finite": true,
+          "minimumFootZ": -1.3393604604061693e-05,
+          "minimumBodyZ": -1.3393604604061693e-05,
+          "maximumBodyZ": 1.1362240314483643
+        },
+        {
+          "frame": 121.5,
+          "time": 4.05,
+          "finite": true,
+          "minimumFootZ": -1.5945151972118765e-05,
+          "minimumBodyZ": -1.5945151972118765e-05,
+          "maximumBodyZ": 1.1377650499343872
+        },
+        {
+          "frame": 122.0,
+          "time": 4.066666666666666,
+          "finite": true,
+          "minimumFootZ": -7.0216337917372584e-06,
+          "minimumBodyZ": -7.0216337917372584e-06,
+          "maximumBodyZ": 1.1393036842346191
+        },
+        {
+          "frame": 122.5,
+          "time": 4.083333333333333,
+          "finite": true,
+          "minimumFootZ": -1.0508614650461823e-05,
+          "minimumBodyZ": -1.0508614650461823e-05,
+          "maximumBodyZ": 1.1407384872436523
+        },
+        {
+          "frame": 123.0,
+          "time": 4.1,
+          "finite": true,
+          "minimumFootZ": -3.1500094337388873e-06,
+          "minimumBodyZ": -3.1500094337388873e-06,
+          "maximumBodyZ": 1.1421711444854736
+        },
+        {
+          "frame": 123.5,
+          "time": 4.116666666666666,
+          "finite": true,
+          "minimumFootZ": -1.1275660654064268e-05,
+          "minimumBodyZ": -1.1275660654064268e-05,
+          "maximumBodyZ": 1.143452525138855
+        },
+        {
+          "frame": 124.0,
+          "time": 4.133333333333334,
+          "finite": true,
+          "minimumFootZ": -9.970150131266564e-06,
+          "minimumBodyZ": -9.970150131266564e-06,
+          "maximumBodyZ": 1.1447323560714722
+        },
+        {
+          "frame": 124.5,
+          "time": 4.15,
+          "finite": true,
+          "minimumFootZ": -1.1456715583335608e-05,
+          "minimumBodyZ": -1.1456715583335608e-05,
+          "maximumBodyZ": 1.1458126306533813
+        },
+        {
+          "frame": 125.0,
+          "time": 4.166666666666667,
+          "finite": true,
+          "minimumFootZ": -5.866786523256451e-06,
+          "minimumBodyZ": -5.866786523256451e-06,
+          "maximumBodyZ": 1.146891713142395
+        },
+        {
+          "frame": 125.5,
+          "time": 4.183333333333334,
+          "finite": true,
+          "minimumFootZ": -6.455164111685008e-06,
+          "minimumBodyZ": -6.455164111685008e-06,
+          "maximumBodyZ": 1.1477229595184326
+        },
+        {
+          "frame": 126.0,
+          "time": 4.2,
+          "finite": true,
+          "minimumFootZ": -2.594104444142431e-06,
+          "minimumBodyZ": -2.594104444142431e-06,
+          "maximumBodyZ": 1.1485539674758911
+        },
+        {
+          "frame": 126.5,
+          "time": 4.216666666666667,
+          "finite": true,
+          "minimumFootZ": -2.4680557544343174e-06,
+          "minimumBodyZ": -2.4680557544343174e-06,
+          "maximumBodyZ": 1.1490881443023682
+        },
+        {
+          "frame": 127.0,
+          "time": 4.233333333333333,
+          "finite": true,
+          "minimumFootZ": -6.590707926079631e-07,
+          "minimumBodyZ": -6.590707926079631e-07,
+          "maximumBodyZ": 1.1496220827102661
+        },
+        {
+          "frame": 127.5,
+          "time": 4.25,
+          "finite": true,
+          "minimumFootZ": -4.397370503284037e-07,
+          "minimumBodyZ": -4.397370503284037e-07,
+          "maximumBodyZ": 1.149811029434204
+        },
+        {
+          "frame": 128.0,
+          "time": 4.266666666666667,
+          "finite": true,
+          "minimumFootZ": 4.380126483738422e-09,
+          "minimumBodyZ": 4.380126483738422e-09,
+          "maximumBodyZ": 1.149999976158142
+        }
+      ]
+    },
+    {
+      "name": "Move",
+      "frameRange": [
+        0.0,
+        24.0
+      ],
+      "seconds": 0.8,
+      "samples60Hz": 49,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -2.799060894176364e-08,
+      "maximumBodyZ": 1.3060739040374756,
+      "startEndMaxWorldVertexDifferenceM": 0.0,
+      "rows": [
+        {
+          "frame": 0.0,
+          "time": 0.0,
+          "finite": true,
+          "minimumFootZ": 0.09435265511274338,
+          "minimumBodyZ": 0.09435265511274338,
+          "maximumBodyZ": 1.3060739040374756
+        },
+        {
+          "frame": 0.5,
+          "time": 0.016666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.08756978064775467,
+          "minimumBodyZ": 0.08756978064775467,
+          "maximumBodyZ": 1.3047796487808228
+        },
+        {
+          "frame": 1.0,
+          "time": 0.03333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.08125494420528412,
+          "minimumBodyZ": 0.08125494420528412,
+          "maximumBodyZ": 1.3034852743148804
+        },
+        {
+          "frame": 1.5,
+          "time": 0.05,
+          "finite": true,
+          "minimumFootZ": 0.06833257526159286,
+          "minimumBodyZ": 0.06833257526159286,
+          "maximumBodyZ": 1.2993667125701904
+        },
+        {
+          "frame": 2.0,
+          "time": 0.06666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.05968776345252991,
+          "minimumBodyZ": 0.05968776345252991,
+          "maximumBodyZ": 1.2952486276626587
+        },
+        {
+          "frame": 2.5,
+          "time": 0.08333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.05029238760471344,
+          "minimumBodyZ": 0.05029238760471344,
+          "maximumBodyZ": 1.2879549264907837
+        },
+        {
+          "frame": 3.0,
+          "time": 0.1,
+          "finite": true,
+          "minimumFootZ": 0.04493105039000511,
+          "minimumBodyZ": 0.04493105039000511,
+          "maximumBodyZ": 1.2806637287139893
+        },
+        {
+          "frame": 3.5,
+          "time": 0.11666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.039299800992012024,
+          "minimumBodyZ": 0.039299800992012024,
+          "maximumBodyZ": 1.269848108291626
+        },
+        {
+          "frame": 4.0,
+          "time": 0.13333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.03655754029750824,
+          "minimumBodyZ": 0.03655754029750824,
+          "maximumBodyZ": 1.2590383291244507
+        },
+        {
+          "frame": 4.5,
+          "time": 0.15,
+          "finite": true,
+          "minimumFootZ": 0.01898157224059105,
+          "minimumBodyZ": 0.01898157224059105,
+          "maximumBodyZ": 1.244437575340271
+        },
+        {
+          "frame": 5.0,
+          "time": 0.16666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.00678756320849061,
+          "minimumBodyZ": 0.00678756320849061,
+          "maximumBodyZ": 1.229832410812378
+        },
+        {
+          "frame": 5.5,
+          "time": 0.18333333333333332,
+          "finite": true,
+          "minimumFootZ": 0.0014262832701206207,
+          "minimumBodyZ": 0.0014262832701206207,
+          "maximumBodyZ": 1.221550464630127
+        },
+        {
+          "frame": 6.0,
+          "time": 0.2,
+          "finite": true,
+          "minimumFootZ": -2.799060894176364e-08,
+          "minimumBodyZ": -2.799060894176364e-08,
+          "maximumBodyZ": 1.213267207145691
+        },
+        {
+          "frame": 6.5,
+          "time": 0.21666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.00907191913574934,
+          "minimumBodyZ": 0.00907191913574934,
+          "maximumBodyZ": 1.228723168373108
+        },
+        {
+          "frame": 7.0,
+          "time": 0.23333333333333334,
+          "finite": true,
+          "minimumFootZ": 0.034825630486011505,
+          "minimumBodyZ": 0.034825630486011505,
+          "maximumBodyZ": 1.244189977645874
+        },
+        {
+          "frame": 7.5,
+          "time": 0.25,
+          "finite": true,
+          "minimumFootZ": 0.05526428669691086,
+          "minimumBodyZ": 0.05526428669691086,
+          "maximumBodyZ": 1.261786937713623
+        },
+        {
+          "frame": 8.0,
+          "time": 0.26666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.08425791561603546,
+          "minimumBodyZ": 0.08425791561603546,
+          "maximumBodyZ": 1.279390811920166
+        },
+        {
+          "frame": 8.5,
+          "time": 0.2833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.09347878396511078,
+          "minimumBodyZ": 0.09347878396511078,
+          "maximumBodyZ": 1.2838889360427856
+        },
+        {
+          "frame": 9.0,
+          "time": 0.3,
+          "finite": true,
+          "minimumFootZ": 0.10458029806613922,
+          "minimumBodyZ": 0.10458029806613922,
+          "maximumBodyZ": 1.2883881330490112
+        },
+        {
+          "frame": 9.5,
+          "time": 0.31666666666666665,
+          "finite": true,
+          "minimumFootZ": 0.10212074965238571,
+          "minimumBodyZ": 0.10212074965238571,
+          "maximumBodyZ": 1.2927125692367554
+        },
+        {
+          "frame": 10.0,
+          "time": 0.3333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.10032033175230026,
+          "minimumBodyZ": 0.10032033175230026,
+          "maximumBodyZ": 1.297033429145813
+        },
+        {
+          "frame": 10.5,
+          "time": 0.35,
+          "finite": true,
+          "minimumFootZ": 0.0944318175315857,
+          "minimumBodyZ": 0.0944318175315857,
+          "maximumBodyZ": 1.3002783060073853
+        },
+        {
+          "frame": 11.0,
+          "time": 0.36666666666666664,
+          "finite": true,
+          "minimumFootZ": 0.09331340342760086,
+          "minimumBodyZ": 0.09331340342760086,
+          "maximumBodyZ": 1.303519606590271
+        },
+        {
+          "frame": 11.5,
+          "time": 0.38333333333333336,
+          "finite": true,
+          "minimumFootZ": 0.09332018345594406,
+          "minimumBodyZ": 0.09332018345594406,
+          "maximumBodyZ": 1.3047972917556763
+        },
+        {
+          "frame": 12.0,
+          "time": 0.4,
+          "finite": true,
+          "minimumFootZ": 0.09431233257055283,
+          "minimumBodyZ": 0.09431233257055283,
+          "maximumBodyZ": 1.3060739040374756
+        },
+        {
+          "frame": 12.5,
+          "time": 0.4166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.08758901059627533,
+          "minimumBodyZ": 0.08758901059627533,
+          "maximumBodyZ": 1.3047796487808228
+        },
+        {
+          "frame": 13.0,
+          "time": 0.43333333333333335,
+          "finite": true,
+          "minimumFootZ": 0.08133465051651001,
+          "minimumBodyZ": 0.08133465051651001,
+          "maximumBodyZ": 1.3034852743148804
+        },
+        {
+          "frame": 13.5,
+          "time": 0.45,
+          "finite": true,
+          "minimumFootZ": 0.06863010674715042,
+          "minimumBodyZ": 0.06863010674715042,
+          "maximumBodyZ": 1.2993667125701904
+        },
+        {
+          "frame": 14.0,
+          "time": 0.4666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.06079329550266266,
+          "minimumBodyZ": 0.06079329550266266,
+          "maximumBodyZ": 1.2952486276626587
+        },
+        {
+          "frame": 14.5,
+          "time": 0.48333333333333334,
+          "finite": true,
+          "minimumFootZ": 0.05109149590134621,
+          "minimumBodyZ": 0.05109149590134621,
+          "maximumBodyZ": 1.2879549264907837
+        },
+        {
+          "frame": 15.0,
+          "time": 0.5,
+          "finite": true,
+          "minimumFootZ": 0.04523371905088425,
+          "minimumBodyZ": 0.04523371905088425,
+          "maximumBodyZ": 1.2806637287139893
+        },
+        {
+          "frame": 15.5,
+          "time": 0.5166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.03952150419354439,
+          "minimumBodyZ": 0.03952150419354439,
+          "maximumBodyZ": 1.269848108291626
+        },
+        {
+          "frame": 16.0,
+          "time": 0.5333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.03655775263905525,
+          "minimumBodyZ": 0.03655775263905525,
+          "maximumBodyZ": 1.2590383291244507
+        },
+        {
+          "frame": 16.5,
+          "time": 0.55,
+          "finite": true,
+          "minimumFootZ": 0.018981900066137314,
+          "minimumBodyZ": 0.018981900066137314,
+          "maximumBodyZ": 1.244437575340271
+        },
+        {
+          "frame": 17.0,
+          "time": 0.5666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.006787857972085476,
+          "minimumBodyZ": 0.006787857972085476,
+          "maximumBodyZ": 1.229832410812378
+        },
+        {
+          "frame": 17.5,
+          "time": 0.5833333333333334,
+          "finite": true,
+          "minimumFootZ": 0.0014264259953051805,
+          "minimumBodyZ": 0.0014264259953051805,
+          "maximumBodyZ": 1.221550464630127
+        },
+        {
+          "frame": 18.0,
+          "time": 0.6,
+          "finite": true,
+          "minimumFootZ": 4.0148734115064144e-08,
+          "minimumBodyZ": 4.0148734115064144e-08,
+          "maximumBodyZ": 1.213267207145691
+        },
+        {
+          "frame": 18.5,
+          "time": 0.6166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.00907185859978199,
+          "minimumBodyZ": 0.00907185859978199,
+          "maximumBodyZ": 1.228723168373108
+        },
+        {
+          "frame": 19.0,
+          "time": 0.6333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.0348254032433033,
+          "minimumBodyZ": 0.0348254032433033,
+          "maximumBodyZ": 1.244189977645874
+        },
+        {
+          "frame": 19.5,
+          "time": 0.65,
+          "finite": true,
+          "minimumFootZ": 0.05526398494839668,
+          "minimumBodyZ": 0.05526398494839668,
+          "maximumBodyZ": 1.261786937713623
+        },
+        {
+          "frame": 20.0,
+          "time": 0.6666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.08425748348236084,
+          "minimumBodyZ": 0.08425748348236084,
+          "maximumBodyZ": 1.279390811920166
+        },
+        {
+          "frame": 20.5,
+          "time": 0.6833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.09347831457853317,
+          "minimumBodyZ": 0.09347831457853317,
+          "maximumBodyZ": 1.2838889360427856
+        },
+        {
+          "frame": 21.0,
+          "time": 0.7,
+          "finite": true,
+          "minimumFootZ": 0.10457979142665863,
+          "minimumBodyZ": 0.10457979142665863,
+          "maximumBodyZ": 1.2883881330490112
+        },
+        {
+          "frame": 21.5,
+          "time": 0.7166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.10310202091932297,
+          "minimumBodyZ": 0.10310202091932297,
+          "maximumBodyZ": 1.2927125692367554
+        },
+        {
+          "frame": 22.0,
+          "time": 0.7333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.10167831927537918,
+          "minimumBodyZ": 0.10167831927537918,
+          "maximumBodyZ": 1.297033429145813
+        },
+        {
+          "frame": 22.5,
+          "time": 0.75,
+          "finite": true,
+          "minimumFootZ": 0.09631086885929108,
+          "minimumBodyZ": 0.09631086885929108,
+          "maximumBodyZ": 1.3002784252166748
+        },
+        {
+          "frame": 23.0,
+          "time": 0.7666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.09474463760852814,
+          "minimumBodyZ": 0.09474463760852814,
+          "maximumBodyZ": 1.3035199642181396
+        },
+        {
+          "frame": 23.5,
+          "time": 0.7833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.09366121888160706,
+          "minimumBodyZ": 0.09366121888160706,
+          "maximumBodyZ": 1.304797649383545
+        },
+        {
+          "frame": 24.0,
+          "time": 0.8,
+          "finite": true,
+          "minimumFootZ": 0.09435265511274338,
+          "minimumBodyZ": 0.09435265511274338,
+          "maximumBodyZ": 1.3060739040374756
+        }
+      ]
+    },
+    {
+      "name": "Attack",
+      "frameRange": [
+        0.0,
+        32.0
+      ],
+      "seconds": 1.0666666666666667,
+      "samples60Hz": 65,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -7.727066986262798e-09,
+      "maximumBodyZ": 1.327986240386963,
+      "startEndMaxWorldVertexDifferenceM": 0.0,
+      "rows": [
+        {
+          "frame": 0.0,
+          "time": 0.0,
+          "finite": true,
+          "minimumFootZ": 0.005943919066339731,
+          "minimumBodyZ": 0.005943919066339731,
+          "maximumBodyZ": 1.265825629234314
+        },
+        {
+          "frame": 0.5,
+          "time": 0.016666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.005943880882114172,
+          "minimumBodyZ": 0.005943880882114172,
+          "maximumBodyZ": 1.2658238410949707
+        },
+        {
+          "frame": 1.0,
+          "time": 0.03333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005943895783275366,
+          "minimumBodyZ": 0.005943895783275366,
+          "maximumBodyZ": 1.2658171653747559
+        },
+        {
+          "frame": 1.5,
+          "time": 0.05,
+          "finite": true,
+          "minimumFootZ": 0.005943596828728914,
+          "minimumBodyZ": 0.005943596828728914,
+          "maximumBodyZ": 1.2657746076583862
+        },
+        {
+          "frame": 2.0,
+          "time": 0.06666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005943975877016783,
+          "minimumBodyZ": 0.005943975877016783,
+          "maximumBodyZ": 1.2656961679458618
+        },
+        {
+          "frame": 2.5,
+          "time": 0.08333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.0059429011307656765,
+          "minimumBodyZ": 0.0059429011307656765,
+          "maximumBodyZ": 1.2655143737792969
+        },
+        {
+          "frame": 3.0,
+          "time": 0.1,
+          "finite": true,
+          "minimumFootZ": 0.0059440345503389835,
+          "minimumBodyZ": 0.0059440345503389835,
+          "maximumBodyZ": 1.2652555704116821
+        },
+        {
+          "frame": 3.5,
+          "time": 0.11666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005941662937402725,
+          "minimumBodyZ": 0.005941662937402725,
+          "maximumBodyZ": 1.264833688735962
+        },
+        {
+          "frame": 4.0,
+          "time": 0.13333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005944231059402227,
+          "minimumBodyZ": 0.005944231059402227,
+          "maximumBodyZ": 1.264299988746643
+        },
+        {
+          "frame": 4.5,
+          "time": 0.15,
+          "finite": true,
+          "minimumFootZ": 0.005939525086432695,
+          "minimumBodyZ": 0.005939525086432695,
+          "maximumBodyZ": 1.2635807991027832
+        },
+        {
+          "frame": 5.0,
+          "time": 0.16666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.005944435019046068,
+          "minimumBodyZ": 0.005944435019046068,
+          "maximumBodyZ": 1.2627326250076294
+        },
+        {
+          "frame": 5.5,
+          "time": 0.18333333333333332,
+          "finite": true,
+          "minimumFootZ": 0.005935818422585726,
+          "minimumBodyZ": 0.005935818422585726,
+          "maximumBodyZ": 1.2617312669754028
+        },
+        {
+          "frame": 6.0,
+          "time": 0.2,
+          "finite": true,
+          "minimumFootZ": 0.0059448303654789925,
+          "minimumBodyZ": 0.0059448303654789925,
+          "maximumBodyZ": 1.2611439228057861
+        },
+        {
+          "frame": 6.5,
+          "time": 0.21666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005928826052695513,
+          "minimumBodyZ": 0.005928826052695513,
+          "maximumBodyZ": 1.2613680362701416
+        },
+        {
+          "frame": 7.0,
+          "time": 0.23333333333333334,
+          "finite": true,
+          "minimumFootZ": 0.005945577286183834,
+          "minimumBodyZ": 0.005945577286183834,
+          "maximumBodyZ": 1.2614343166351318
+        },
+        {
+          "frame": 7.5,
+          "time": 0.25,
+          "finite": true,
+          "minimumFootZ": 0.0059116315096616745,
+          "minimumBodyZ": 0.0059116315096616745,
+          "maximumBodyZ": 1.2613555192947388
+        },
+        {
+          "frame": 8.0,
+          "time": 0.26666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.005924015771597624,
+          "minimumBodyZ": 0.005924015771597624,
+          "maximumBodyZ": 1.2611538171768188
+        },
+        {
+          "frame": 8.5,
+          "time": 0.2833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005777905695140362,
+          "minimumBodyZ": 0.005777905695140362,
+          "maximumBodyZ": 1.2608942985534668
+        },
+        {
+          "frame": 9.0,
+          "time": 0.3,
+          "finite": true,
+          "minimumFootZ": 0.0059357439167797565,
+          "minimumBodyZ": 0.0059357439167797565,
+          "maximumBodyZ": 1.2605565786361694
+        },
+        {
+          "frame": 9.5,
+          "time": 0.31666666666666665,
+          "finite": true,
+          "minimumFootZ": 0.005947323981672525,
+          "minimumBodyZ": 0.005947323981672525,
+          "maximumBodyZ": 1.2602739334106445
+        },
+        {
+          "frame": 10.0,
+          "time": 0.3333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.0059586819261312485,
+          "minimumBodyZ": 0.0059586819261312485,
+          "maximumBodyZ": 1.2599549293518066
+        },
+        {
+          "frame": 10.5,
+          "time": 0.35,
+          "finite": true,
+          "minimumFootZ": 0.005948337260633707,
+          "minimumBodyZ": 0.005948337260633707,
+          "maximumBodyZ": 1.2596758604049683
+        },
+        {
+          "frame": 11.0,
+          "time": 0.36666666666666664,
+          "finite": true,
+          "minimumFootZ": 0.00596024002879858,
+          "minimumBodyZ": 0.00596024002879858,
+          "maximumBodyZ": 1.2593252658843994
+        },
+        {
+          "frame": 11.5,
+          "time": 0.38333333333333336,
+          "finite": true,
+          "minimumFootZ": 0.005957447458058596,
+          "minimumBodyZ": 0.005957447458058596,
+          "maximumBodyZ": 1.2585371732711792
+        },
+        {
+          "frame": 12.0,
+          "time": 0.4,
+          "finite": true,
+          "minimumFootZ": 0.005941720679402351,
+          "minimumBodyZ": 0.005941720679402351,
+          "maximumBodyZ": 1.257143497467041
+        },
+        {
+          "frame": 12.5,
+          "time": 0.4166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005945207085460424,
+          "minimumBodyZ": 0.005945207085460424,
+          "maximumBodyZ": 1.255170464515686
+        },
+        {
+          "frame": 13.0,
+          "time": 0.43333333333333335,
+          "finite": true,
+          "minimumFootZ": 0.005923078861087561,
+          "minimumBodyZ": 0.005923078861087561,
+          "maximumBodyZ": 1.2525827884674072
+        },
+        {
+          "frame": 13.5,
+          "time": 0.45,
+          "finite": true,
+          "minimumFootZ": 0.005923426244407892,
+          "minimumBodyZ": 0.005923426244407892,
+          "maximumBodyZ": 1.2510570287704468
+        },
+        {
+          "frame": 14.0,
+          "time": 0.4666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005920297931879759,
+          "minimumBodyZ": 0.005920297931879759,
+          "maximumBodyZ": 1.2493327856063843
+        },
+        {
+          "frame": 14.5,
+          "time": 0.48333333333333334,
+          "finite": true,
+          "minimumFootZ": 0.004392741713672876,
+          "minimumBodyZ": 0.004392741713672876,
+          "maximumBodyZ": 1.2548224925994873
+        },
+        {
+          "frame": 15.0,
+          "time": 0.5,
+          "finite": true,
+          "minimumFootZ": 0.0052370973862707615,
+          "minimumBodyZ": 0.0052370973862707615,
+          "maximumBodyZ": 1.2602183818817139
+        },
+        {
+          "frame": 15.5,
+          "time": 0.5166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.012134593911468983,
+          "minimumBodyZ": 0.012134593911468983,
+          "maximumBodyZ": 1.273327350616455
+        },
+        {
+          "frame": 16.0,
+          "time": 0.5333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.018728038296103477,
+          "minimumBodyZ": 0.018728038296103477,
+          "maximumBodyZ": 1.2862106561660767
+        },
+        {
+          "frame": 16.5,
+          "time": 0.55,
+          "finite": true,
+          "minimumFootZ": 0.02474113740026951,
+          "minimumBodyZ": 0.02474113740026951,
+          "maximumBodyZ": 1.3038190603256226
+        },
+        {
+          "frame": 17.0,
+          "time": 0.5666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.031029941514134407,
+          "minimumBodyZ": 0.031029941514134407,
+          "maximumBodyZ": 1.3187098503112793
+        },
+        {
+          "frame": 17.5,
+          "time": 0.5833333333333334,
+          "finite": true,
+          "minimumFootZ": 0.03356402367353439,
+          "minimumBodyZ": 0.03356402367353439,
+          "maximumBodyZ": 1.3272448778152466
+        },
+        {
+          "frame": 18.0,
+          "time": 0.6,
+          "finite": true,
+          "minimumFootZ": 0.036187272518873215,
+          "minimumBodyZ": 0.036187272518873215,
+          "maximumBodyZ": 1.327986240386963
+        },
+        {
+          "frame": 18.5,
+          "time": 0.6166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.02175001986324787,
+          "minimumBodyZ": 0.02175001986324787,
+          "maximumBodyZ": 1.2990520000457764
+        },
+        {
+          "frame": 19.0,
+          "time": 0.6333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.010058383457362652,
+          "minimumBodyZ": 0.010058383457362652,
+          "maximumBodyZ": 1.2688274383544922
+        },
+        {
+          "frame": 19.5,
+          "time": 0.65,
+          "finite": true,
+          "minimumFootZ": -7.727066986262798e-09,
+          "minimumBodyZ": -7.727066986262798e-09,
+          "maximumBodyZ": 1.2375943660736084
+        },
+        {
+          "frame": 20.0,
+          "time": 0.6666666666666666,
+          "finite": true,
+          "minimumFootZ": 0.005906383972615004,
+          "minimumBodyZ": 0.005906383972615004,
+          "maximumBodyZ": 1.203648567199707
+        },
+        {
+          "frame": 20.5,
+          "time": 0.6833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005906385835260153,
+          "minimumBodyZ": 0.005906385835260153,
+          "maximumBodyZ": 1.2003173828125
+        },
+        {
+          "frame": 21.0,
+          "time": 0.7,
+          "finite": true,
+          "minimumFootZ": 0.005907735787332058,
+          "minimumBodyZ": 0.005907735787332058,
+          "maximumBodyZ": 1.1960567235946655
+        },
+        {
+          "frame": 21.5,
+          "time": 0.7166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005904351361095905,
+          "minimumBodyZ": 0.005904351361095905,
+          "maximumBodyZ": 1.1939160823822021
+        },
+        {
+          "frame": 22.0,
+          "time": 0.7333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.00591163570061326,
+          "minimumBodyZ": 0.00591163570061326,
+          "maximumBodyZ": 1.193291425704956
+        },
+        {
+          "frame": 22.5,
+          "time": 0.75,
+          "finite": true,
+          "minimumFootZ": 0.005901704542338848,
+          "minimumBodyZ": 0.005901704542338848,
+          "maximumBodyZ": 1.19585120677948
+        },
+        {
+          "frame": 23.0,
+          "time": 0.7666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005917597096413374,
+          "minimumBodyZ": 0.005917597096413374,
+          "maximumBodyZ": 1.198354959487915
+        },
+        {
+          "frame": 23.5,
+          "time": 0.7833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005899468436837196,
+          "minimumBodyZ": 0.005899468436837196,
+          "maximumBodyZ": 1.2039930820465088
+        },
+        {
+          "frame": 24.0,
+          "time": 0.8,
+          "finite": true,
+          "minimumFootZ": 0.00592551426962018,
+          "minimumBodyZ": 0.00592551426962018,
+          "maximumBodyZ": 1.2113425731658936
+        },
+        {
+          "frame": 24.5,
+          "time": 0.8166666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005894837900996208,
+          "minimumBodyZ": 0.005894837900996208,
+          "maximumBodyZ": 1.2206621170043945
+        },
+        {
+          "frame": 25.0,
+          "time": 0.8333333333333334,
+          "finite": true,
+          "minimumFootZ": 0.005928521975874901,
+          "minimumBodyZ": 0.005928521975874901,
+          "maximumBodyZ": 1.2285676002502441
+        },
+        {
+          "frame": 25.5,
+          "time": 0.85,
+          "finite": true,
+          "minimumFootZ": 0.005889963824301958,
+          "minimumBodyZ": 0.005889963824301958,
+          "maximumBodyZ": 1.2356088161468506
+        },
+        {
+          "frame": 26.0,
+          "time": 0.8666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005925304722040892,
+          "minimumBodyZ": 0.005925304722040892,
+          "maximumBodyZ": 1.240816593170166
+        },
+        {
+          "frame": 26.5,
+          "time": 0.8833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005876872688531876,
+          "minimumBodyZ": 0.005876872688531876,
+          "maximumBodyZ": 1.2442915439605713
+        },
+        {
+          "frame": 27.0,
+          "time": 0.9,
+          "finite": true,
+          "minimumFootZ": 0.005925255361944437,
+          "minimumBodyZ": 0.005925255361944437,
+          "maximumBodyZ": 1.2462615966796875
+        },
+        {
+          "frame": 27.5,
+          "time": 0.9166666666666666,
+          "finite": true,
+          "minimumFootZ": 0.005871455650776625,
+          "minimumBodyZ": 0.005871455650776625,
+          "maximumBodyZ": 1.2487003803253174
+        },
+        {
+          "frame": 28.0,
+          "time": 0.9333333333333333,
+          "finite": true,
+          "minimumFootZ": 0.00593311944976449,
+          "minimumBodyZ": 0.00593311944976449,
+          "maximumBodyZ": 1.2531625032424927
+        },
+        {
+          "frame": 28.5,
+          "time": 0.95,
+          "finite": true,
+          "minimumFootZ": 0.005870258901268244,
+          "minimumBodyZ": 0.005870258901268244,
+          "maximumBodyZ": 1.2561696767807007
+        },
+        {
+          "frame": 29.0,
+          "time": 0.9666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005936773028224707,
+          "minimumBodyZ": 0.005936773028224707,
+          "maximumBodyZ": 1.2589340209960938
+        },
+        {
+          "frame": 29.5,
+          "time": 0.9833333333333333,
+          "finite": true,
+          "minimumFootZ": 0.005878288298845291,
+          "minimumBodyZ": 0.005878288298845291,
+          "maximumBodyZ": 1.260938286781311
+        },
+        {
+          "frame": 30.0,
+          "time": 1.0,
+          "finite": true,
+          "minimumFootZ": 0.005940113216638565,
+          "minimumBodyZ": 0.005940113216638565,
+          "maximumBodyZ": 1.2628066539764404
+        },
+        {
+          "frame": 30.5,
+          "time": 1.0166666666666666,
+          "finite": true,
+          "minimumFootZ": 0.005902360659092665,
+          "minimumBodyZ": 0.005902360659092665,
+          "maximumBodyZ": 1.2639622688293457
+        },
+        {
+          "frame": 31.0,
+          "time": 1.0333333333333334,
+          "finite": true,
+          "minimumFootZ": 0.005942883901298046,
+          "minimumBodyZ": 0.005942883901298046,
+          "maximumBodyZ": 1.2650636434555054
+        },
+        {
+          "frame": 31.5,
+          "time": 1.05,
+          "finite": true,
+          "minimumFootZ": 0.005936546716839075,
+          "minimumBodyZ": 0.005936546716839075,
+          "maximumBodyZ": 1.2654482126235962
+        },
+        {
+          "frame": 32.0,
+          "time": 1.0666666666666667,
+          "finite": true,
+          "minimumFootZ": 0.005943919066339731,
+          "minimumBodyZ": 0.005943919066339731,
+          "maximumBodyZ": 1.265825629234314
+        }
+      ]
+    },
+    {
+      "name": "Hit",
+      "frameRange": [
+        0.0,
+        20.0
+      ],
+      "seconds": 0.6666666666666666,
+      "samples60Hz": 41,
+      "allSkinAndBoneValuesFinite": true,
+      "minimumFootZ": -0.00043615588219836354,
+      "maximumBodyZ": 1.2599118947982788,
+      "startEndMaxWorldVertexDifferenceM": 0.0,
+      "rows": [
+        {
+          "frame": 0.0,
+          "time": 0.0,
+          "finite": true,
+          "minimumFootZ": -0.00013350023073144257,
+          "minimumBodyZ": -0.00013350023073144257,
+          "maximumBodyZ": 1.2599118947982788
+        },
+        {
+          "frame": 0.5,
+          "time": 0.016666666666666666,
+          "finite": true,
+          "minimumFootZ": -0.0001823923666961491,
+          "minimumBodyZ": -0.0001823923666961491,
+          "maximumBodyZ": 1.2590992450714111
+        },
+        {
+          "frame": 1.0,
+          "time": 0.03333333333333333,
+          "finite": true,
+          "minimumFootZ": -0.00013269748887978494,
+          "minimumBodyZ": -0.00013269748887978494,
+          "maximumBodyZ": 1.2571983337402344
+        },
+        {
+          "frame": 1.5,
+          "time": 0.05,
+          "finite": true,
+          "minimumFootZ": -0.0003324419376440346,
+          "minimumBodyZ": -0.0003324419376440346,
+          "maximumBodyZ": 1.250710129737854
+        },
+        {
+          "frame": 2.0,
+          "time": 0.06666666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00016478222096338868,
+          "minimumBodyZ": -0.00016478222096338868,
+          "maximumBodyZ": 1.2405459880828857
+        },
+        {
+          "frame": 2.5,
+          "time": 0.08333333333333333,
+          "finite": true,
+          "minimumFootZ": -0.0003843775484710932,
+          "minimumBodyZ": -0.0003843775484710932,
+          "maximumBodyZ": 1.2360161542892456
+        },
+        {
+          "frame": 3.0,
+          "time": 0.1,
+          "finite": true,
+          "minimumFootZ": -0.0002301494823768735,
+          "minimumBodyZ": -0.0002301494823768735,
+          "maximumBodyZ": 1.2305030822753906
+        },
+        {
+          "frame": 3.5,
+          "time": 0.11666666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00037167384289205074,
+          "minimumBodyZ": -0.00037167384289205074,
+          "maximumBodyZ": 1.2324308156967163
+        },
+        {
+          "frame": 4.0,
+          "time": 0.13333333333333333,
+          "finite": true,
+          "minimumFootZ": -0.0003194527525920421,
+          "minimumBodyZ": -0.0003194527525920421,
+          "maximumBodyZ": 1.2298026084899902
+        },
+        {
+          "frame": 4.5,
+          "time": 0.15,
+          "finite": true,
+          "minimumFootZ": -0.0003989050164818764,
+          "minimumBodyZ": -0.0003989050164818764,
+          "maximumBodyZ": 1.2280369997024536
+        },
+        {
+          "frame": 5.0,
+          "time": 0.16666666666666666,
+          "finite": true,
+          "minimumFootZ": -0.00043615588219836354,
+          "minimumBodyZ": -0.00043615588219836354,
+          "maximumBodyZ": 1.2238599061965942
+        },
+        {
+          "frame": 5.5,
+          "time": 0.18333333333333332,
+          "finite": true,
+          "minimumFootZ": -0.0004235990927554667,
+          "minimumBodyZ": -0.0004235990927554667,
+          "maximumBodyZ": 1.2359358072280884
+        },
+        {
+          "frame": 6.0,
+          "time": 0.2,
+          "finite": true,
+          "minimumFootZ": -0.00040850858204066753,
+          "minimumBodyZ": -0.00040850858204066753,
+          "maximumBodyZ": 1.2449945211410522
+        },
+        {
+          "frame": 6.5,
+          "time": 0.21666666666666667,
+          "finite": true,
+          "minimumFootZ": -0.0003798531542997807,
+          "minimumBodyZ": -0.0003798531542997807,
+          "maximumBodyZ": 1.251449465751648
+        },
+        {
+          "frame": 7.0,
+          "time": 0.23333333333333334,
+          "finite": true,
+          "minimumFootZ": -0.00033417923259548843,
+          "minimumBodyZ": -0.00033417923259548843,
+          "maximumBodyZ": 1.2540645599365234
+        },
+        {
+          "frame": 7.5,
+          "time": 0.25,
+          "finite": true,
+          "minimumFootZ": -0.0002973388181999326,
+          "minimumBodyZ": -0.0002973388181999326,
+          "maximumBodyZ": 1.2534873485565186
+        },
+        {
+          "frame": 8.0,
+          "time": 0.26666666666666666,
+          "finite": true,
+          "minimumFootZ": -0.00026378966867923737,
+          "minimumBodyZ": -0.00026378966867923737,
+          "maximumBodyZ": 1.2572187185287476
+        },
+        {
+          "frame": 8.5,
+          "time": 0.2833333333333333,
+          "finite": true,
+          "minimumFootZ": -0.0002755563473328948,
+          "minimumBodyZ": -0.0002755563473328948,
+          "maximumBodyZ": 1.2578611373901367
+        },
+        {
+          "frame": 9.0,
+          "time": 0.3,
+          "finite": true,
+          "minimumFootZ": -0.0002436542126815766,
+          "minimumBodyZ": -0.0002436542126815766,
+          "maximumBodyZ": 1.2567509412765503
+        },
+        {
+          "frame": 9.5,
+          "time": 0.31666666666666665,
+          "finite": true,
+          "minimumFootZ": -0.00025490368716418743,
+          "minimumBodyZ": -0.00025490368716418743,
+          "maximumBodyZ": 1.255854845046997
+        },
+        {
+          "frame": 10.0,
+          "time": 0.3333333333333333,
+          "finite": true,
+          "minimumFootZ": -0.0002193841792177409,
+          "minimumBodyZ": -0.0002193841792177409,
+          "maximumBodyZ": 1.2546988725662231
+        },
+        {
+          "frame": 10.5,
+          "time": 0.35,
+          "finite": true,
+          "minimumFootZ": -0.00022874533897265792,
+          "minimumBodyZ": -0.00022874533897265792,
+          "maximumBodyZ": 1.2548167705535889
+        },
+        {
+          "frame": 11.0,
+          "time": 0.36666666666666664,
+          "finite": true,
+          "minimumFootZ": -0.00019481038907542825,
+          "minimumBodyZ": -0.00019481038907542825,
+          "maximumBodyZ": 1.2549335956573486
+        },
+        {
+          "frame": 11.5,
+          "time": 0.38333333333333336,
+          "finite": true,
+          "minimumFootZ": -0.00020357986795715988,
+          "minimumBodyZ": -0.00020357986795715988,
+          "maximumBodyZ": 1.2552419900894165
+        },
+        {
+          "frame": 12.0,
+          "time": 0.4,
+          "finite": true,
+          "minimumFootZ": -0.00017302308697253466,
+          "minimumBodyZ": -0.00017302308697253466,
+          "maximumBodyZ": 1.2555410861968994
+        },
+        {
+          "frame": 12.5,
+          "time": 0.4166666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00018223488586954772,
+          "minimumBodyZ": -0.00018223488586954772,
+          "maximumBodyZ": 1.2559645175933838
+        },
+        {
+          "frame": 13.0,
+          "time": 0.43333333333333335,
+          "finite": true,
+          "minimumFootZ": -0.00015513767721131444,
+          "minimumBodyZ": -0.00015513767721131444,
+          "maximumBodyZ": 1.2563681602478027
+        },
+        {
+          "frame": 13.5,
+          "time": 0.45,
+          "finite": true,
+          "minimumFootZ": -0.00016515882452949882,
+          "minimumBodyZ": -0.00016515882452949882,
+          "maximumBodyZ": 1.256831169128418
+        },
+        {
+          "frame": 14.0,
+          "time": 0.4666666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00014197410200722516,
+          "minimumBodyZ": -0.00014197410200722516,
+          "maximumBodyZ": 1.2572647333145142
+        },
+        {
+          "frame": 14.5,
+          "time": 0.48333333333333334,
+          "finite": true,
+          "minimumFootZ": -0.00015272581367753446,
+          "minimumBodyZ": -0.00015272581367753446,
+          "maximumBodyZ": 1.2577028274536133
+        },
+        {
+          "frame": 15.0,
+          "time": 0.5,
+          "finite": true,
+          "minimumFootZ": -0.00013371772365644574,
+          "minimumBodyZ": -0.00013371772365644574,
+          "maximumBodyZ": 1.258105993270874
+        },
+        {
+          "frame": 15.5,
+          "time": 0.5166666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00014434490003623068,
+          "minimumBodyZ": -0.00014434490003623068,
+          "maximumBodyZ": 1.2584741115570068
+        },
+        {
+          "frame": 16.0,
+          "time": 0.5333333333333333,
+          "finite": true,
+          "minimumFootZ": -0.00012977779260836542,
+          "minimumBodyZ": -0.00012977779260836542,
+          "maximumBodyZ": 1.2588071823120117
+        },
+        {
+          "frame": 16.5,
+          "time": 0.55,
+          "finite": true,
+          "minimumFootZ": -0.00013921508798375726,
+          "minimumBodyZ": -0.00013921508798375726,
+          "maximumBodyZ": 1.2590824365615845
+        },
+        {
+          "frame": 17.0,
+          "time": 0.5666666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00012923328904435039,
+          "minimumBodyZ": -0.00012923328904435039,
+          "maximumBodyZ": 1.2593281269073486
+        },
+        {
+          "frame": 17.5,
+          "time": 0.5833333333333334,
+          "finite": true,
+          "minimumFootZ": -0.00013621043763123453,
+          "minimumBodyZ": -0.00013621043763123453,
+          "maximumBodyZ": 1.2595081329345703
+        },
+        {
+          "frame": 18.0,
+          "time": 0.6,
+          "finite": true,
+          "minimumFootZ": -0.000130685162730515,
+          "minimumBodyZ": -0.000130685162730515,
+          "maximumBodyZ": 1.259667992591858
+        },
+        {
+          "frame": 18.5,
+          "time": 0.6166666666666667,
+          "finite": true,
+          "minimumFootZ": -0.00013443469651974738,
+          "minimumBodyZ": -0.00013443469651974738,
+          "maximumBodyZ": 1.259765386581421
+        },
+        {
+          "frame": 19.0,
+          "time": 0.6333333333333333,
+          "finite": true,
+          "minimumFootZ": -0.00013256404781714082,
+          "minimumBodyZ": -0.00013256404781714082,
+          "maximumBodyZ": 1.2598531246185303
+        },
+        {
+          "frame": 19.5,
+          "time": 0.65,
+          "finite": true,
+          "minimumFootZ": -0.00013343308819457889,
+          "minimumBodyZ": -0.00013343308819457889,
+          "maximumBodyZ": 1.259883165359497
+        },
+        {
+          "frame": 20.0,
+          "time": 0.6666666666666666,
+          "finite": true,
+          "minimumFootZ": -0.00013350023073144257,
+          "minimumBodyZ": -0.00013350023073144257,
+          "maximumBodyZ": 1.2599118947982788
+        }
+      ]
+    }
+  ],
+  "sourceUnchanged": true,
+  "scope": "Finite data, geometry existence, native clip timing, loop endpoints and ground reference. This is numerical evidence, not a naturalness score or a runtime collision/transition test."
+}

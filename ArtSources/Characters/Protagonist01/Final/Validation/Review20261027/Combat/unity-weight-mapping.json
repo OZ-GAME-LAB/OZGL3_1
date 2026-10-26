@@ -1,0 +1,19 @@
+{
+  "sourceVertices": 6421,
+  "unityVertices": 6422,
+  "nativeChangedAt1e8": 275,
+  "nativeChangedAt1e6": 275,
+  "patchedUnityVertices": 275,
+  "mappingAxisSigns": [
+    -1,
+    1,
+    1
+  ],
+  "maximumRestMappingDistanceM": 0.0,
+  "maximumCoincidentCandidateWeightDifference": 2.9103830456733704e-11,
+  "ambiguousVertices": [],
+  "maximumSourceWeightDelta": 0.10091078281402588,
+  "patchSHA256": "dea89555a74c0a5a4e0425cfe5778d250c916a14776c3d2970ffff5df2fe2124",
+  "restGeometryExact": true,
+  "method": "Position correspondence in native/exported rest coordinates, axis-sign convention measured across every vertex. All coincident source candidates checked for equivalent weights. Only source vertices with actually changed candidate weights are patched; all other Unity-imported weights remain untouched."
+}

@@ -1,0 +1,814 @@
+{
+  "date": "2026-10-27",
+  "method": "Actual view_image examination of eight labelled contact sheets compiled from freshly rendered Unity prefabs, every prefab in side and three-quarter view, followed by the full-size orb transparency witness. No image content was retouched; contact sheets only resize/place the original captures.",
+  "unityVersion": "6000.3.21f1",
+  "coverage": {
+    "retainedPrefabs": 31,
+    "sideViews": 31,
+    "threeQuarterViews": 31,
+    "transparencyWitness": 1,
+    "reviewedContactSheets": 8,
+    "uniqueMeshesNumericallyInspected": 34,
+    "inventoryMeshAssets": 35,
+    "meshCountExplanation": "The source inventory retains 35 generated mesh .asset files; 34 unique mesh objects are referenced by the 31 delivered prefabs. The remaining Weapons/Staff.asset is the original pre-orb source mesh retained for the editable orb builder, not another active staff head. Prefabs include variants and assembled blocks; they are not 31 unique models."
+  },
+  "numericalSummary": {
+    "prefabCount": 31,
+    "uniqueMeshesInspected": 34,
+    "totalUniqueVertices": 49202,
+    "totalUniqueTriangles": 20458,
+    "nonfiniteVertices": 0,
+    "invalidIndices": 0,
+    "degenerateTriangles": 0,
+    "unreadableMeshCount": 0,
+    "missingComponents": 0,
+    "materialIssues": [],
+    "issues": []
+  },
+  "visualFindings": [
+    "All 31 prefab silhouettes and assigned materials render. No missing/pink material, invisible asset, disconnected platform wall/roof mass, or gross corruption was observed in these two views.",
+    "The 16 modular pieces and the two assembled tutorial/stage blocks retain their subdued gray-blue urban palette. Static assembly review does not validate player collision or traversability.",
+    "The seven Meshy environmental props retain their intentionally faceted source shapes. The tree foliage and fine AC/vending-machine lines remain coarse low-poly detail; no additional mesh defect was established that warrants altering previously approved geometry.",
+    "All four potion variants render distinct palette values; health uses its cross symbol. The three buff bottles retain the simple existing mark. No design or icon changes were made.",
+    "The retained short Sword is straight with coherent grip/guard/blade. It is a separate source prop from the hero approved combat longsword.",
+    "The Staff has a smaller faceted sphere with a visible gap above the shaft. The yellow/blue witness remains clearly visible through the sphere with the expected tinted alpha blend; this verifies practical transparency rather than merely checking material alpha."
+  ],
+  "blockingDefectsFound": [],
+  "assetFixes": [],
+  "unchangedAssetProof": [
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab",
+      "before": "36de3ac33c9fa4b02d418f98a7ca22986fd20998e976ee3ea987c435357a86ca",
+      "after": "36de3ac33c9fa4b02d418f98a7ca22986fd20998e976ee3ea987c435357a86ca",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab",
+      "before": "9b57ace40762e84b5102296ec1734f35f6c9e8f4fe1d92f3354b2e1bce8a5f90",
+      "after": "9b57ace40762e84b5102296ec1734f35f6c9e8f4fe1d92f3354b2e1bce8a5f90",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab",
+      "before": "5d13fa0e7506ac0c14e5bf3223428b2468637cf5783a73259946c25518fb48e8",
+      "after": "5d13fa0e7506ac0c14e5bf3223428b2468637cf5783a73259946c25518fb48e8",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab",
+      "before": "deb0227830b542051fe3b5be4411ddc9c4cd74d59445aaea788d07496c20fbde",
+      "after": "deb0227830b542051fe3b5be4411ddc9c4cd74d59445aaea788d07496c20fbde",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab",
+      "before": "0920fa02f2c959fca2820c8bae63f135b0a4cb337c43d6a2465b963f9d3bd12d",
+      "after": "0920fa02f2c959fca2820c8bae63f135b0a4cb337c43d6a2465b963f9d3bd12d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab",
+      "before": "d3bf8b6789b53239073c493ac7121184be04887288733d8ec246326125fb3558",
+      "after": "d3bf8b6789b53239073c493ac7121184be04887288733d8ec246326125fb3558",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab",
+      "before": "81542c3020e6af7cd64c569a8bdafc77f180fd295c9e4ab3b70359452b04604b",
+      "after": "81542c3020e6af7cd64c569a8bdafc77f180fd295c9e4ab3b70359452b04604b",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab",
+      "before": "f1a19ab386d0e4f24096a06983400a4b0f276aed642def79b32d9687ec69d22f",
+      "after": "f1a19ab386d0e4f24096a06983400a4b0f276aed642def79b32d9687ec69d22f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab",
+      "before": "25a9861cf49ba35a3bb5b1d26dbf87f6a7f2a024bdf50ad895dbe730ffbbef12",
+      "after": "25a9861cf49ba35a3bb5b1d26dbf87f6a7f2a024bdf50ad895dbe730ffbbef12",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab",
+      "before": "f5c1a0a478017986f1e6f4d4ee534942977d01d542a6d4393d153712b05478f9",
+      "after": "f5c1a0a478017986f1e6f4d4ee534942977d01d542a6d4393d153712b05478f9",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab",
+      "before": "5172f38fca7ccfc397c000de2436563b49cf77dfcc1b4aaac750036c7c3354dd",
+      "after": "5172f38fca7ccfc397c000de2436563b49cf77dfcc1b4aaac750036c7c3354dd",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab",
+      "before": "b007f7159354af2361138eaf7fe93bd01ef6403a645eaf12c584ac2c04d57ea2",
+      "after": "b007f7159354af2361138eaf7fe93bd01ef6403a645eaf12c584ac2c04d57ea2",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab",
+      "before": "5abb3b96861f64d71468457476457875a069453bbe9f05828c959cb9fcdff570",
+      "after": "5abb3b96861f64d71468457476457875a069453bbe9f05828c959cb9fcdff570",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab",
+      "before": "db310c97d54003d1ab37393eec5c94b2b71e6bcf66a3d5909fd7759ceb97f96d",
+      "after": "db310c97d54003d1ab37393eec5c94b2b71e6bcf66a3d5909fd7759ceb97f96d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab",
+      "before": "e2c3ad228cd99a6f6f78b20cc821007a5311602f46898f047413cc563ee2191d",
+      "after": "e2c3ad228cd99a6f6f78b20cc821007a5311602f46898f047413cc563ee2191d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab",
+      "before": "70c97f37eaae44ac283eb81acdd2c19d8414cadd5b0d4dec13020bdf981da22b",
+      "after": "70c97f37eaae44ac283eb81acdd2c19d8414cadd5b0d4dec13020bdf981da22b",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab",
+      "before": "3b4ff0beecc21640aec14fcf907ca74be3e6dd9c3955bfbf15911f39e9f5c22c",
+      "after": "3b4ff0beecc21640aec14fcf907ca74be3e6dd9c3955bfbf15911f39e9f5c22c",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab",
+      "before": "0d3b5bdf854d5b3bccaf6598cbafa6c8db982d3f89ae351524721a3bbd3c76f6",
+      "after": "0d3b5bdf854d5b3bccaf6598cbafa6c8db982d3f89ae351524721a3bbd3c76f6",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab",
+      "before": "387f634e97852f650085457e1df20aa5e6108b3af414bf97b272a26d46e23ed8",
+      "after": "387f634e97852f650085457e1df20aa5e6108b3af414bf97b272a26d46e23ed8",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+      "before": "6d6b07ff1d6dbfe41eb2cc6869f37c2b68878fdf9bf46cdeaf4e7a7f4ff8e5fa",
+      "after": "6d6b07ff1d6dbfe41eb2cc6869f37c2b68878fdf9bf46cdeaf4e7a7f4ff8e5fa",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+      "before": "64fc0c7ad605afbc0d40c23951c1777d6590a0f9ac6fd407c43074dc8fdac50b",
+      "after": "64fc0c7ad605afbc0d40c23951c1777d6590a0f9ac6fd407c43074dc8fdac50b",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab",
+      "before": "64dbbfc18bf4bd9222871f3081006034357e61e2d0f9d2503a81225d1bb2e573",
+      "after": "64dbbfc18bf4bd9222871f3081006034357e61e2d0f9d2503a81225d1bb2e573",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab",
+      "before": "663d899e62fdc1f7e24a7673ce3874589af24aa9f3ae59003528ee7cf20ccad1",
+      "after": "663d899e62fdc1f7e24a7673ce3874589af24aa9f3ae59003528ee7cf20ccad1",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab",
+      "before": "dcd09f3540ef1395b0588daaf12afb60480cf4a5ea746c268fedbd312d851d0d",
+      "after": "dcd09f3540ef1395b0588daaf12afb60480cf4a5ea746c268fedbd312d851d0d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab",
+      "before": "3f4a410cf22a2b0993f32d95838152d292812f8c1094d7ad79a19fb7a837d92a",
+      "after": "3f4a410cf22a2b0993f32d95838152d292812f8c1094d7ad79a19fb7a837d92a",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab",
+      "before": "546978e0da0991c6e9b477e2e43a1708fa1b337dd140207bc2666003449dfee5",
+      "after": "546978e0da0991c6e9b477e2e43a1708fa1b337dd140207bc2666003449dfee5",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+      "before": "2a938b17487e59e93527814eabcc2b8211ee3a4c082f3a69268df3394ead91be",
+      "after": "2a938b17487e59e93527814eabcc2b8211ee3a4c082f3a69268df3394ead91be",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+      "before": "7214b48b7250de7e29de9cf518d16310cb32b33b89c5b0e7cba20170cd0b098b",
+      "after": "7214b48b7250de7e29de9cf518d16310cb32b33b89c5b0e7cba20170cd0b098b",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+      "before": "3710d1bf6fbc6cf22efdd9717eb20b8780200c9731502ac083c184c444c81943",
+      "after": "3710d1bf6fbc6cf22efdd9717eb20b8780200c9731502ac083c184c444c81943",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+      "before": "997af7e6592ad5658dd123086d68d09d9578b6044fcc53e605d987a42dd2827a",
+      "after": "997af7e6592ad5658dd123086d68d09d9578b6044fcc53e605d987a42dd2827a",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+      "before": "e313c9db1c1055734f70107f4b6e7f2404c5c647902123c09131b209848c117b",
+      "after": "e313c9db1c1055734f70107f4b6e7f2404c5c647902123c09131b209848c117b",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/ACUnit.fbx",
+      "before": "646eb854badf640819488f7fb1e492e268edd13152559ffb0c9491408c96e2db",
+      "after": "646eb854badf640819488f7fb1e492e268edd13152559ffb0c9491408c96e2db",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Bench.fbx",
+      "before": "a3daad3f2eb1e0c903273f08ff0f2de650489dad1f71f33bed5390e92bf030bd",
+      "after": "a3daad3f2eb1e0c903273f08ff0f2de650489dad1f71f33bed5390e92bf030bd",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/GatePylon.fbx",
+      "before": "8b5e5e09bddaaff383bb405c1f662767ae69242b3d4de0c1842529aca393f252",
+      "after": "8b5e5e09bddaaff383bb405c1f662767ae69242b3d4de0c1842529aca393f252",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Staff.fbx",
+      "before": "21156c6df112e7be5194995a17fd8a8668b795ea59524d040af2a045b335a373",
+      "after": "21156c6df112e7be5194995a17fd8a8668b795ea59524d040af2a045b335a373",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/StreetLamp.fbx",
+      "before": "d7c7a48c0e60447905db73dc987a6bfb03ff0d906b68e94d9da491e938d841cd",
+      "after": "d7c7a48c0e60447905db73dc987a6bfb03ff0d906b68e94d9da491e938d841cd",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/StreetTree.fbx",
+      "before": "b735229b4eb27d5e4ff7ac8857dcb224ca3937d5bc67b25dc353cb7d93797959",
+      "after": "b735229b4eb27d5e4ff7ac8857dcb224ca3937d5bc67b25dc353cb7d93797959",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/Sword.fbx",
+      "before": "9a87a7aa5d1d3573bd89582fda70899da65d1838fe0484182144f8965803181f",
+      "after": "9a87a7aa5d1d3573bd89582fda70899da65d1838fe0484182144f8965803181f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/TrashBin.fbx",
+      "before": "e008e0536144d1b8cb86a9b0468afb35b629a82a0bc9af3da54804ec6fdaddae",
+      "after": "e008e0536144d1b8cb86a9b0468afb35b629a82a0bc9af3da54804ec6fdaddae",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Models/VendingMachine.fbx",
+      "before": "e84d58512e98ab06f8205fe5ff7ff0c4bfaeb23f205fefa1075ddad206c57173",
+      "after": "e84d58512e98ab06f8205fe5ff7ff0c4bfaeb23f205fefa1075ddad206c57173",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset",
+      "before": "1046c0409876926b1d29586f90fb1cb30d4f4f67e0037613d7711c8b6b0480e1",
+      "after": "1046c0409876926b1d29586f90fb1cb30d4f4f67e0037613d7711c8b6b0480e1",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset",
+      "before": "6b9e4e5ecbbdd460c67839ae7909b7d59804334972cceccf660151643c6613ec",
+      "after": "6b9e4e5ecbbdd460c67839ae7909b7d59804334972cceccf660151643c6613ec",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset",
+      "before": "9615251ec49470d1152f7a68fde1fd4c84b7199a2fa3e8443fad3ec37d7549fe",
+      "after": "9615251ec49470d1152f7a68fde1fd4c84b7199a2fa3e8443fad3ec37d7549fe",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset",
+      "before": "51020be10e2e730be179953d567a57724868e4e0a66c2ea1fdfbb3cdf1bc4a53",
+      "after": "51020be10e2e730be179953d567a57724868e4e0a66c2ea1fdfbb3cdf1bc4a53",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset",
+      "before": "c19e5ab326fb2fe4786ae07667bbcca750f78ecd96ed42948f6a23a6535adeb6",
+      "after": "c19e5ab326fb2fe4786ae07667bbcca750f78ecd96ed42948f6a23a6535adeb6",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset",
+      "before": "2f5d98e5a9cec913b24280d8a4c51e554b7d6198699a55c8a38b4b3f0e5ac4a6",
+      "after": "2f5d98e5a9cec913b24280d8a4c51e554b7d6198699a55c8a38b4b3f0e5ac4a6",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+      "before": "3e3e263e0c21d617c867ac3b2e2fdd4a96f285840b8c090bc3e20ff4dae0971d",
+      "after": "3e3e263e0c21d617c867ac3b2e2fdd4a96f285840b8c090bc3e20ff4dae0971d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+      "before": "0ae72081c791ca81cbc2a5fd8c36fda40e955a60ed70ebad91c1f06808564c4b",
+      "after": "0ae72081c791ca81cbc2a5fd8c36fda40e955a60ed70ebad91c1f06808564c4b",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset",
+      "before": "a6726acaa5c9afe47aa0e5cd52fd6106a440a537e13935e0d1d8e98acfeb6b9f",
+      "after": "a6726acaa5c9afe47aa0e5cd52fd6106a440a537e13935e0d1d8e98acfeb6b9f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset",
+      "before": "617cccfaf13cd15b759d17f5107edf5b48b3b638aae967c95806ed1698c294ee",
+      "after": "617cccfaf13cd15b759d17f5107edf5b48b3b638aae967c95806ed1698c294ee",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset",
+      "before": "708ce2972c60f2490b7c34cd857265a4677edfb607f7955d09ee0d6fd149e65f",
+      "after": "708ce2972c60f2490b7c34cd857265a4677edfb607f7955d09ee0d6fd149e65f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+      "before": "1591da4e2517f3d77fa2a8b25026aa1b1a5e5ba4c2b17a5f4e9cb06c3156555e",
+      "after": "1591da4e2517f3d77fa2a8b25026aa1b1a5e5ba4c2b17a5f4e9cb06c3156555e",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset",
+      "before": "dfea6d7e0039249127c655abbc8b959dab6ba1e5227e40acfbb7bd632e97e8bf",
+      "after": "dfea6d7e0039249127c655abbc8b959dab6ba1e5227e40acfbb7bd632e97e8bf",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+      "before": "1a708fe45b519d3166eee5ee5b652f2445c29be4dc2a24501d5d8ce8213d65f8",
+      "after": "1a708fe45b519d3166eee5ee5b652f2445c29be4dc2a24501d5d8ce8213d65f8",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+      "before": "5346f4c4d5c7daeb19814b107622b813e17deb1a80d6b1301292665cf46311a7",
+      "after": "5346f4c4d5c7daeb19814b107622b813e17deb1a80d6b1301292665cf46311a7",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Attack.asset",
+      "before": "39949619c50348adba49ce85fcfa8ac936733df626f575abcff68b512688be1c",
+      "after": "39949619c50348adba49ce85fcfa8ac936733df626f575abcff68b512688be1c",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Defense.asset",
+      "before": "5f442015217b19c601feaf91990c9e3f2368298a9d49aabfc9cce50138b6ac6d",
+      "after": "5f442015217b19c601feaf91990c9e3f2368298a9d49aabfc9cce50138b6ac6d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Health.asset",
+      "before": "89ec6b90c66098c0ebb51e3bdfd1979487ea4bd4d46e7292b83e102f2e21cb88",
+      "after": "89ec6b90c66098c0ebb51e3bdfd1979487ea4bd4d46e7292b83e102f2e21cb88",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Speed.asset",
+      "before": "2daf4087b623201f3abf2cde7d3b4a491083e7f325778a5100b908fb88425c02",
+      "after": "2daf4087b623201f3abf2cde7d3b4a491083e7f325778a5100b908fb88425c02",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+      "before": "7f28d72e558cc248c4a8fc2f66d5c5d65a7d74e9bdc212bc923d67a8ef3ebd2d",
+      "after": "7f28d72e558cc248c4a8fc2f66d5c5d65a7d74e9bdc212bc923d67a8ef3ebd2d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+      "before": "5d980b95b2a342da2fa0a966794beb177a3f795f6d23bab55657a9339f79c7bc",
+      "after": "5d980b95b2a342da2fa0a966794beb177a3f795f6d23bab55657a9339f79c7bc",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+      "before": "71daad0ff3a9d519b3bbdd641921f983a04f207a3bb25b452b0d5a5fbd76ff1d",
+      "after": "71daad0ff3a9d519b3bbdd641921f983a04f207a3bb25b452b0d5a5fbd76ff1d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset",
+      "before": "98459ff12b38760108cf5a9e71a8f36c35c2145e12b3759d58018fb79b9121d8",
+      "after": "98459ff12b38760108cf5a9e71a8f36c35c2145e12b3759d58018fb79b9121d8",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+      "before": "a6330df213f7e33b94a3fcb0a4cab64cb8781d5f199f406ed5f8676d6fc8b58f",
+      "after": "a6330df213f7e33b94a3fcb0a4cab64cb8781d5f199f406ed5f8676d6fc8b58f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+      "before": "872be3eb3e55481cb181efd9ca52b43f5162d72155331fe4c2687fcb3235800f",
+      "after": "872be3eb3e55481cb181efd9ca52b43f5162d72155331fe4c2687fcb3235800f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset",
+      "before": "0897949d1716f64841e5be57edd1a0220f193d2c14706d480dd09f9ec5dae744",
+      "after": "0897949d1716f64841e5be57edd1a0220f193d2c14706d480dd09f9ec5dae744",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset",
+      "before": "ab6c83331d8e8aee6767e7c28286afabe76d65d085937c1f202f25cc237d0132",
+      "after": "ab6c83331d8e8aee6767e7c28286afabe76d65d085937c1f202f25cc237d0132",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset",
+      "before": "c487973c0335fe1689ceea87428d9f3d3de45218f62885b7ff3cb6153601ee71",
+      "after": "c487973c0335fe1689ceea87428d9f3d3de45218f62885b7ff3cb6153601ee71",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset",
+      "before": "acdaeca20f64ccf2e694fa729a985598cd5791815e96861c2edeb8dee9b4c186",
+      "after": "acdaeca20f64ccf2e694fa729a985598cd5791815e96861c2edeb8dee9b4c186",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+      "before": "222dde38a651d25b4c06f9472b1dcbd2f460c2ab3ce80af582d809fb7d72599d",
+      "after": "222dde38a651d25b4c06f9472b1dcbd2f460c2ab3ce80af582d809fb7d72599d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset",
+      "before": "d8fb3f853b7e287517202ec5b2d36d9e672b450a2d4385af5affef9c854dd75f",
+      "after": "d8fb3f853b7e287517202ec5b2d36d9e672b450a2d4385af5affef9c854dd75f",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Staff.asset",
+      "before": "2dc3192d78668147a3303e5a8d33d1be75f7228e364d5470853f4df04e292fa9",
+      "after": "2dc3192d78668147a3303e5a8d33d1be75f7228e364d5470853f4df04e292fa9",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_CrystalOrb_80Faces.asset",
+      "before": "e8057680c163a30408c425287e16f03eafa5b34eeb608d39769850e31bf74b08",
+      "after": "e8057680c163a30408c425287e16f03eafa5b34eeb608d39769850e31bf74b08",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+      "before": "d2a7e1e37f214f10152f15f399b7f2faea9c422c142b965c0734bb439a7b9e24",
+      "after": "d2a7e1e37f214f10152f15f399b7f2faea9c422c142b965c0734bb439a7b9e24",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+      "before": "2c8c0d653814b87c3f9b2edb0a66f4cf7187fd307e9b32195bc504796aaf610d",
+      "after": "2c8c0d653814b87c3f9b2edb0a66f4cf7187fd307e9b32195bc504796aaf610d",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/ChibiStaffOrbBuilder.cs",
+      "before": "c287274f72a1de99fa5ae722ad2b2b84e7e396ee74a5d7e1ae86ed87045f7a06",
+      "after": "c287274f72a1de99fa5ae722ad2b2b84e7e396ee74a5d7e1ae86ed87045f7a06",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanConsumableBuilder.cs",
+      "before": "f5eec539ceaf69af7f5ef640183f085bdef2d9fbd787fcbdc9c2d79f38aef84e",
+      "after": "f5eec539ceaf69af7f5ef640183f085bdef2d9fbd787fcbdc9c2d79f38aef84e",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanModuleBuilder.cs",
+      "before": "528e62fd0c6007a4b15b8a8ea347593987667c521f3b0e90efca8a108ad1bcd3",
+      "after": "528e62fd0c6007a4b15b8a8ea347593987667c521f3b0e90efca8a108ad1bcd3",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanPropBuilder.cs",
+      "before": "088783ffcf4f2f6cbba79a1b8dc9d41941494cb235641724381ca76b07bde7c7",
+      "after": "088783ffcf4f2f6cbba79a1b8dc9d41941494cb235641724381ca76b07bde7c7",
+      "identical": true
+    },
+    {
+      "path": "Assets/Art/Stage01Kit/Editor/UrbanWeaponBuilder.cs",
+      "before": "36a8c80e0764c29cfd7debf0459cb81251cfe60a37c3abaef58ba8f9b7ca31cf",
+      "after": "36a8c80e0764c29cfd7debf0459cb81251cfe60a37c3abaef58ba8f9b7ca31cf",
+      "identical": true
+    }
+  ],
+  "reviewedContacts": [
+    {
+      "path": "StaticContacts/Stage01_All_01.jpg",
+      "sha256": "f6a7ee575a89aaf83660e1ba2b20330adcc9a3b21882646d37132c77b1dd7009"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_02.jpg",
+      "sha256": "8b9c1788b8c214abc7ae73cac39ae7da138964fc3a6e672fa013a883dcd35ff3"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_03.jpg",
+      "sha256": "ad19c1f629c0e44a4c699bdfa0fc03d4f07624114269dae90b5bcbf7254db135"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_04.jpg",
+      "sha256": "892c32689b75b1b40415be7568a7608a36d714f89466eba2f2b36207cc16a476"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_05.jpg",
+      "sha256": "5313377bdc8becc162fd188712d45281e2e0f88a94c8466108681a067269ae0c"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_06.jpg",
+      "sha256": "b8f801717cabcff090492ae5c6f789300450cafc0fe394eb168416ab36982cc5"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_07.jpg",
+      "sha256": "790f9dba58e532379418261583221187497ea2ec3424edeaf3a582cb99193b6f"
+    },
+    {
+      "path": "StaticContacts/Stage01_All_08.jpg",
+      "sha256": "4ab028816ae775296b7c6495f98f5debd657a26748d0738a1a98b8b3f3374f38"
+    }
+  ],
+  "renderEvidence": [
+    {
+      "path": "StaticFrames/ACUnit_Side.png",
+      "sha256": "2576db166a488879e293820043fe4a559d6148ff7c19088eed4f0020a8a98958"
+    },
+    {
+      "path": "StaticFrames/ACUnit_ThreeQuarter.png",
+      "sha256": "361d8ad102663f003770c56ce7723a78a1659b392e934312e4ecb379a20bb0b9"
+    },
+    {
+      "path": "StaticFrames/Bench_Side.png",
+      "sha256": "4e25af3d2125966aefe276472e9eb29a1ec011cc0c14d4832eb18ef62da17cfa"
+    },
+    {
+      "path": "StaticFrames/Bench_ThreeQuarter.png",
+      "sha256": "a788fdfb94c13497fa56565188613a63d2b6353bd33e0dc43acbba61c743450f"
+    },
+    {
+      "path": "StaticFrames/Building_ApartmentTall_Side.png",
+      "sha256": "98c900c18f78d08787b5a8ff4429cffa24ef8ded3aec533efcee5dc2cb19a6f8"
+    },
+    {
+      "path": "StaticFrames/Building_ApartmentTall_ThreeQuarter.png",
+      "sha256": "0c95616078b9902b379d371c17ae7a1dafcbc128612ce601f10834116dc8164a"
+    },
+    {
+      "path": "StaticFrames/Building_OfficeMid_Side.png",
+      "sha256": "8e225588377904a277e1b562d26d598b211b085ea31d6f8869314ab626c079d8"
+    },
+    {
+      "path": "StaticFrames/Building_OfficeMid_ThreeQuarter.png",
+      "sha256": "283e76e828718536d2ae5963aca4ed117c2f6b0519b36f0d28c13b2895687c3a"
+    },
+    {
+      "path": "StaticFrames/Building_RooftopArena_Side.png",
+      "sha256": "37c252d45d8164bf169c518a71b174ea546ae4fe13261bd57b17954a78901a06"
+    },
+    {
+      "path": "StaticFrames/Building_RooftopArena_ThreeQuarter.png",
+      "sha256": "b005ead41e0ef906988a70d24f8d2bf886849a4ab020b159915f9f519d4248d8"
+    },
+    {
+      "path": "StaticFrames/Building_ShopLow_Side.png",
+      "sha256": "908c3952af00aa9a9de207ef246ea8803a0a228e37a26d32f40b3235f34486d0"
+    },
+    {
+      "path": "StaticFrames/Building_ShopLow_ThreeQuarter.png",
+      "sha256": "46603839eeadd13ac31575e405ab95e3bf28572faa9ae4c048bc3763000e071f"
+    },
+    {
+      "path": "StaticFrames/Exterior_Stairs_Rise3m_Side.png",
+      "sha256": "38839904fd381b725546acd27c92df36f53d1787f05fdea5eb759672e46649c4"
+    },
+    {
+      "path": "StaticFrames/Exterior_Stairs_Rise3m_ThreeQuarter.png",
+      "sha256": "eb020078020e89d92292dff73d1a70772a2cd5b55f6d35c35161fbd06f1ad41f"
+    },
+    {
+      "path": "StaticFrames/GatePylon_Side.png",
+      "sha256": "a3a30d84e6418e7da8bea7310dddb812a8e341b3f78c6e8ed36ec455a9a84782"
+    },
+    {
+      "path": "StaticFrames/GatePylon_ThreeQuarter.png",
+      "sha256": "666e457b51f675e63084de2c07df256732a33f323f8111115189bd1709c2bc63"
+    },
+    {
+      "path": "StaticFrames/Guardrail_4m_Side.png",
+      "sha256": "233e49d360bd96cce9a3be8993534d48270390d3137dee54e39c7e8fc4f0a256"
+    },
+    {
+      "path": "StaticFrames/Guardrail_4m_ThreeQuarter.png",
+      "sha256": "01b337412ebffc7ab4947006a016467f5f7f81e5874b2d115a241cf44236ee40"
+    },
+    {
+      "path": "StaticFrames/Ladder_4m_Side.png",
+      "sha256": "7a5b0e8873bee930a3a6b89f25c611d4d8ef3c9d6058ddb56123e9c52d7b316d"
+    },
+    {
+      "path": "StaticFrames/Ladder_4m_ThreeQuarter.png",
+      "sha256": "ed1173c68baf3d3e51c0cf9a6ad9575dbaecea65fc3f4e53dd824e362a17daa9"
+    },
+    {
+      "path": "StaticFrames/Planter_Shrubs_Side.png",
+      "sha256": "447c652733d5e073dc4a7e8b10b4060e5daa22416d69bcf1d30e148005c7a6c6"
+    },
+    {
+      "path": "StaticFrames/Planter_Shrubs_ThreeQuarter.png",
+      "sha256": "51d7211c525d9c558b1799910f093e59e96c100e2534ee130ab7e655673144cb"
+    },
+    {
+      "path": "StaticFrames/Potion_Attack_Side.png",
+      "sha256": "b1f9e1a70a4126aa19baf6e93227ce53e2091645082b9e33ef8a38f8064ee91d"
+    },
+    {
+      "path": "StaticFrames/Potion_Attack_ThreeQuarter.png",
+      "sha256": "ed4370a111f954655148c55d29cb5de794c88bcfbdae6d76056fa1beddcf2f1e"
+    },
+    {
+      "path": "StaticFrames/Potion_Defense_Side.png",
+      "sha256": "72f79f63be67a064546d7afa94e4aec16376c7f4f5a989a0a2093b9b03a69f91"
+    },
+    {
+      "path": "StaticFrames/Potion_Defense_ThreeQuarter.png",
+      "sha256": "512b19cb63e8b7746aaf7623a650f56deaf00f70e838359d93c5fc80d78eef0d"
+    },
+    {
+      "path": "StaticFrames/Potion_Health_Side.png",
+      "sha256": "f04f35618b0214fbd96a83a09cf1eede187514921eb86d6ad611999e4a74d344"
+    },
+    {
+      "path": "StaticFrames/Potion_Health_ThreeQuarter.png",
+      "sha256": "76a693453e80ed8ff9c4d74e8f3c1d2a25e17fefca9d685c6ad9482e2856f8c5"
+    },
+    {
+      "path": "StaticFrames/Potion_Speed_Side.png",
+      "sha256": "a7e67c89986c979be540b0681067a685563788b6bad93481d42504bb81c9da7c"
+    },
+    {
+      "path": "StaticFrames/Potion_Speed_ThreeQuarter.png",
+      "sha256": "6862c55916f17dfe40a2c167ee316d89ad7e141c05a1669376f149b1844f6742"
+    },
+    {
+      "path": "StaticFrames/Road_Barrier_Side.png",
+      "sha256": "f72329d2174276b36e60e2b7108d8fd4f095acbfbe9390d66e4d36fa1af61e24"
+    },
+    {
+      "path": "StaticFrames/Road_Barrier_ThreeQuarter.png",
+      "sha256": "87772e6743bf065a547ac365e2954373f1ac0988c9b4562a8a8ff3fab54f5b9e"
+    },
+    {
+      "path": "StaticFrames/Road_Straight_12m_Side.png",
+      "sha256": "057e47a367b0263a04a60b424920dec0d1b9c330d4fe7b5661fa6675905fed24"
+    },
+    {
+      "path": "StaticFrames/Road_Straight_12m_ThreeQuarter.png",
+      "sha256": "3d0f9720446288490603b89189a18dc5036d0795719afd98d1b1d3ad79eae011"
+    },
+    {
+      "path": "StaticFrames/Rooftop_Billboard_Side.png",
+      "sha256": "fa4eb84c96a4f5862d9f6c5cae696b0791c4733e235be68aa130e9b55d06076d"
+    },
+    {
+      "path": "StaticFrames/Rooftop_Billboard_ThreeQuarter.png",
+      "sha256": "395fb71e44790bc89040ed306e34b8eeebd68fbe53cda43a74db85bda21a3e63"
+    },
+    {
+      "path": "StaticFrames/Rooftop_Bridge_6m_Side.png",
+      "sha256": "81ac7d4356f0c9f1d084887e0bf3249dd899b15bca2cc7340628b05a8e60b986"
+    },
+    {
+      "path": "StaticFrames/Rooftop_Bridge_6m_ThreeQuarter.png",
+      "sha256": "70b0990429831ea0ea4ab92e183cb272ccabead7c088930da02b395cd8068468"
+    },
+    {
+      "path": "StaticFrames/Rooftop_Hut_Side.png",
+      "sha256": "afd471bcd6909120e5044ad1dc9b8d20ad47c96bdb0b1319447d50eb00b2613b"
+    },
+    {
+      "path": "StaticFrames/Rooftop_Hut_ThreeQuarter.png",
+      "sha256": "d3442d9266ce855dbfd88222e55924a339610cef4b0708fdf4ae4cde2c4d5162"
+    },
+    {
+      "path": "StaticFrames/Rooftop_WaterTank_Side.png",
+      "sha256": "d7dba3c4a7b74c14c23eda521edf0e06cd4928ddcc04a71a5ea79d4b9181e565"
+    },
+    {
+      "path": "StaticFrames/Rooftop_WaterTank_ThreeQuarter.png",
+      "sha256": "482715713062a14d6606186a60f4e041cf9420981acf3d717f2310009f99a5af"
+    },
+    {
+      "path": "StaticFrames/Sidewalk_Straight_8m_Side.png",
+      "sha256": "ce18675667385d0c14b0706ccf350c6e3af7cd93202329c8b45ba7245797337d"
+    },
+    {
+      "path": "StaticFrames/Sidewalk_Straight_8m_ThreeQuarter.png",
+      "sha256": "b4eff16e0491206e3f937336d77c6f4eab1b74b7664b8b25a0d678ea7dad7eb4"
+    },
+    {
+      "path": "StaticFrames/Staff_Orb_Transparency.png",
+      "sha256": "5c6c25d6da481e6d84eb2d17b37da5aed4ec0b6031222cf38cee652fdbdd607a"
+    },
+    {
+      "path": "StaticFrames/Staff_Side.png",
+      "sha256": "ef8d188cff4afb290e9f083babbf6f3ed19a348c4e230b761471d4aeb8a38076"
+    },
+    {
+      "path": "StaticFrames/Staff_ThreeQuarter.png",
+      "sha256": "e3d6b44d01ba9ddb7dff5a6b4dd6d74bad79f8ea4b54ad0090df24ef36ddfeeb"
+    },
+    {
+      "path": "StaticFrames/Stage01_Block_Side.png",
+      "sha256": "327922ad91d9cd4cf219444d83b2ebe4c8aca83c282dc1047d104032531bd0dc"
+    },
+    {
+      "path": "StaticFrames/Stage01_Block_ThreeQuarter.png",
+      "sha256": "4752bcc8657cb1c40242552e49f366b2d9ae710ae714223a87102146883298a1"
+    },
+    {
+      "path": "StaticFrames/StreetLamp_Side.png",
+      "sha256": "b7220689c3ecd90f40664dc3da86c4470426c2125c1893b053015f9f64709f67"
+    },
+    {
+      "path": "StaticFrames/StreetLamp_ThreeQuarter.png",
+      "sha256": "22111ee26e44f33b5a421b1311c4be4618205f40030fbf49d7da8c04b2fccf34"
+    },
+    {
+      "path": "StaticFrames/StreetTree_Side.png",
+      "sha256": "5bf8292e82f7e675999ecdd83079da458175b338879963bb79aa64cefd03f15d"
+    },
+    {
+      "path": "StaticFrames/StreetTree_ThreeQuarter.png",
+      "sha256": "4fda70926a2412404f27f4ee9770d4ad3586bbd7cb683e53c673ace797f3c69f"
+    },
+    {
+      "path": "StaticFrames/Sword_Side.png",
+      "sha256": "1c240932c7718e6a6d30ba37ca62ff9ade7e86f0e041154c3f85219bea2da352"
+    },
+    {
+      "path": "StaticFrames/Sword_ThreeQuarter.png",
+      "sha256": "8f83e64a22fa77cc1c916b6b429e0eb6b940c46024e2940e8a078800cf9681d0"
+    },
+    {
+      "path": "StaticFrames/TrashBin_Side.png",
+      "sha256": "4fb7c53640c035170dd2c98e7771b3dfef3fee1e1660253f92691e18158b5361"
+    },
+    {
+      "path": "StaticFrames/TrashBin_ThreeQuarter.png",
+      "sha256": "f37fb5a002ad7171210776281aa0b5f317b8b396c6529f14b2741e97f0235864"
+    },
+    {
+      "path": "StaticFrames/Tutorial_Block_Side.png",
+      "sha256": "4303845c8d3e549714f5fdbcf71bd15d95869e4966cce3a582b381398adf8734"
+    },
+    {
+      "path": "StaticFrames/Tutorial_Block_ThreeQuarter.png",
+      "sha256": "fd1fe770260c6af2841223477a57ba84a78e9131f1300d68b057c17cb9da3de3"
+    },
+    {
+      "path": "StaticFrames/Utility_Box_Side.png",
+      "sha256": "43f29b09888ea05e3a8a0a3762b7a8d00e14ee833a00415a997eb2e13ff7c66b"
+    },
+    {
+      "path": "StaticFrames/Utility_Box_ThreeQuarter.png",
+      "sha256": "6b402fa4f05a578055c55ddf15b62f9caea20590bc8beba908f2d3289da0dbd3"
+    },
+    {
+      "path": "StaticFrames/VendingMachine_Side.png",
+      "sha256": "6bf288cef942012bb0fbc309f151a03d382f95ebd9abd4bc8ca6b47b73ca6f0e"
+    },
+    {
+      "path": "StaticFrames/VendingMachine_ThreeQuarter.png",
+      "sha256": "1ab5e39c05065bfe55334ad48393337da9f388fc27f51706dea829fed9cc0879"
+    }
+  ],
+  "limitations": [
+    "Two static views per prefab at LOD0; hidden interior faces and all possible camera angles are not certified.",
+    "All referenced mesh objects were numerically inspected, including LOD variants; LOD transitions were not played or performance-profiled.",
+    "No target-device GPU/frame-time assessment, lighting integration, gameplay collision/path traversal, weapon equip logic, or VFX audit.",
+    "This is current approved asset review, not a new style redesign."
+  ]
+}

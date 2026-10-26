@@ -1,0 +1,93 @@
+{
+  "method": "123 baked frames before/after, same poses. Edge-length ratios relative to rest geometry; excludes <2mm tiny edges from ratio statistics. Ratios diagnose skin deformation, not aesthetic quality by themselves.",
+  "bodyMaxVertexDifferenceM": 0.013915483917960833,
+  "bodyChangedVertexCount": 274,
+  "before": [
+    {
+      "clip": "Longsword_Attack_Chop",
+      "min": 0.05425722793863865,
+      "max": 6.410056659190306,
+      "ratioPercentiles": [
+        0.4379052396355497,
+        0.6783783097238222,
+        1.0000000923110877,
+        1.5036906844146647,
+        2.5584334452576982
+      ],
+      "compressedBelow10PercentCount": 5,
+      "expandedAbove3xCount": 319
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "min": 0.12899130137905584,
+      "max": 9.889890069751118,
+      "ratioPercentiles": [
+        0.40997980795673583,
+        0.6261727892568212,
+        1.000000128038414,
+        1.6261293293587669,
+        2.628423201237298
+      ],
+      "compressedBelow10PercentCount": 0,
+      "expandedAbove3xCount": 402
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "min": 0.02782614749519313,
+      "max": 10.187317169711726,
+      "ratioPercentiles": [
+        0.39397754708537336,
+        0.6417669843772048,
+        1.000000041450911,
+        1.5622785963563965,
+        2.9745256922173557
+      ],
+      "compressedBelow10PercentCount": 28,
+      "expandedAbove3xCount": 543
+    }
+  ],
+  "after": [
+    {
+      "clip": "Longsword_Attack_Chop",
+      "min": 0.05694707246740442,
+      "max": 6.410056659190306,
+      "ratioPercentiles": [
+        0.46807071420804386,
+        0.6828980856444532,
+        1.0000000927005772,
+        1.4684829946326743,
+        2.551892877314213
+      ],
+      "compressedBelow10PercentCount": 7,
+      "expandedAbove3xCount": 318
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "min": 0.1467330577555389,
+      "max": 9.889890069751118,
+      "ratioPercentiles": [
+        0.4272788031189946,
+        0.634437563768991,
+        1.0000001294838659,
+        1.5969219086139055,
+        2.617397036037517
+      ],
+      "compressedBelow10PercentCount": 0,
+      "expandedAbove3xCount": 402
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "min": 0.027311185835813483,
+      "max": 10.187317169711726,
+      "ratioPercentiles": [
+        0.41367616522227285,
+        0.6483337212840207,
+        1.0000000420507198,
+        1.546392652640093,
+        2.9745256922173557
+      ],
+      "compressedBelow10PercentCount": 17,
+      "expandedAbove3xCount": 543
+    }
+  ]
+}
