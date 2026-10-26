@@ -1,0 +1,29 @@
+{
+  "scope": "Only obsolete diagnostic output directories changed. No motion builder executed, no animation curves, mesh generation logic, runtime code or scene changed. ChibiGaitSourceMigration remains a historical one-time pre-deletion utility requiring retired MotionNatural_v005 input; its preparation step is already complete and must not be rerun as a normal rebuild.",
+  "changes": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionSet.cs",
+      "sha256Before": "bfb4282b58e2931379f96b8b0453879a27cca92daeeae784e1697bdbd0374335",
+      "replacedOutputDirectory": "ArtSources/Characters/Protagonist01/v007-compact-action",
+      "canonicalOutputDirectory": "ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring",
+      "replacementCount": 1,
+      "sha256After": "702c88f54a1a11c6b14f045b7e09056ad0fcd7c19d15fc7afed07089ec33f009"
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiCapHandBuilder.cs",
+      "sha256Before": "bce4187f0fb696a930552f17b9a01c25e3edf41f6311bde5fcbc061626384b0a",
+      "replacedOutputDirectory": "ArtSources/Characters/Protagonist01/v006-chibi-cap",
+      "canonicalOutputDirectory": "ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring",
+      "replacementCount": 2,
+      "sha256After": "1772618a8543bf30f30cf7857ac877e4359a4d9d2e14a0b07aa05339bea27da8"
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiGaitSourceMigration.cs",
+      "sha256Before": "8f46943154c9f01acb05938faea747329b4abad41152ce89ddca31dffd95df72",
+      "replacedOutputDirectory": "ArtSources/Characters/Protagonist01/v007-compact-action",
+      "canonicalOutputDirectory": "ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring",
+      "replacementCount": 1,
+      "sha256After": "fb64f3b99bd01f2a2165e19dce7ea395a946e53ba80133da291a527841a631c8"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+    "unity": "6000.3.21f1",
+    "method": "Saved/reloaded native Generic FBX clips and independent prefab. Actual SkinnedMeshRenderer rendered by Unity Camera.Render into RenderTexture at 30fps in four fixed views. AnimationClip.SampleAnimation and an offline Playables mixer only; no bone-pose corrections or gameplay transition changes.",
+    "fbx": "Assets/Art/Monsters/Stage01/Melee01/v001/FBX/Stage01_Melee01.fbx",
+    "prefab": "Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab",
+    "success": true,
+    "gameplayIntegrated": false,
+    "controllerCreated": false,
+    "visualApproval": false,
+    "width": 960,
+    "height": 540,
+    "rate": 30,
+    "skins": 9,
+    "bones": 369,
+    "vertices": 5706,
+    "worldBounds": {
+        "m_Center": {
+            "x": 3.250102996826172,
+            "y": 37.755855560302737,
+            "z": 0.6295127868652344
+        },
+        "m_Extent": {
+            "x": 29.03781509399414,
+            "y": 39.61737823486328,
+            "z": 25.867633819580079
+        }
+    },
+    "cameraPositions": [
+        {
+            "x": 3.250102996826172,
+            "y": 39.817378997802737,
+            "z": -6.370487213134766
+        },
+        {
+            "x": 10.250102996826172,
+            "y": 39.717376708984378,
+            "z": 0.6295127868652344
+        },
+        {
+            "x": 3.250102996826172,
+            "y": 39.817378997802737,
+            "z": 7.629512786865234
+        },
+        {
+            "x": -3.749897003173828,
+            "y": 39.717376708984378,
+            "z": 0.6295127868652344
+        }
+    ],
+    "views": [
+        "Side",
+        "Front",
+        "Opposite",
+        "Back"
+    ],
+    "orthographicSize": 49.12554931640625,
+    "clips": [
+        {
+            "name": "Idle",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Idle.anim",
+            "seconds": 1.3333333730697632,
+            "frames": 41,
+            "curves": 378,
+            "loop": true,
+            "endpointMeshDifference": 0.0,
+            "minimumGroundY": -0.012659893371164799,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Move",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Move.anim",
+            "seconds": 1.0,
+            "frames": 31,
+            "curves": 378,
+            "loop": true,
+            "endpointMeshDifference": 0.0,
+            "minimumGroundY": -1.8615220785140992,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Attack",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Attack.anim",
+            "seconds": 1.3333333730697632,
+            "frames": 41,
+            "curves": 378,
+            "loop": false,
+            "endpointMeshDifference": 0.000012212990441184957,
+            "minimumGroundY": -0.1716672033071518,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Hit",
+            "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Hit.anim",
+            "seconds": 0.8333333134651184,
+            "frames": 26,
+            "curves": 378,
+            "loop": false,
+            "endpointMeshDifference": 0.0,
+            "minimumGroundY": -0.029839621856808664,
+            "firstRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "lastRoot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    ],
+    "connections": [
+        {
+            "first": "Idle",
+            "second": "Idle",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.0,
+            "frames": 26
+        },
+        {
+            "first": "Move",
+            "second": "Move",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.0,
+            "frames": 26
+        },
+        {
+            "first": "Idle",
+            "second": "Move",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 26.373205184936525,
+            "frames": 26
+        },
+        {
+            "first": "Move",
+            "second": "Attack",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 26.373205184936525,
+            "frames": 26
+        },
+        {
+            "first": "Attack",
+            "second": "Idle",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 2.1004199981689455,
+            "frames": 26
+        },
+        {
+            "first": "Hit",
+            "second": "Idle",
+            "blendSeconds": 0.11999999731779099,
+            "rawEndStartMeshDifference": 0.0,
+            "frames": 26
+        }
+    ],
+    "scope": "Rendered output must be visually reviewed. Endpoint displacement and finite-vertex measurements are diagnostics only. Connections use explicit preview-only 0.12s blends and do not certify in-game Animator integration."
+}

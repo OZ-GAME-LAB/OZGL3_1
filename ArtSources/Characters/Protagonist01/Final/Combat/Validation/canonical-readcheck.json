@@ -1,0 +1,22 @@
+{
+  "blendSHA256": "aa9726296cfcbcc4f804017870879026b6fb82e4f4b938daf85f2a8f69a09087",
+  "sceneCount": 1,
+  "objectCount": 28,
+  "editableActions": 6,
+  "clipNames": [
+    "Longsword_Attack_Chop",
+    "Longsword_Attack_Slice",
+    "Longsword_Attack_Stab"
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "path": "//Textures\\Image_0.jpg",
+      "packed": true,
+      "externalCopyMatches": true
+    }
+  ],
+  "libraries": [],
+  "passed": true,
+  "all123PoseAndSkinSamplesUnchanged": true
+}

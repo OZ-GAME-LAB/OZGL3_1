@@ -1,0 +1,61 @@
+{
+    "asset": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Visual.prefab",
+    "label": "ExistingRuntimeReference",
+    "sha256": "ad84cbd673018f38b361d7177ce211ec27ad538fe2c69fcae9c9f03e4c2741fe",
+    "meshes": [
+        {
+            "name": "char1",
+            "asset": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Rig.fbx",
+            "vertices": 7427,
+            "triangles": 6087,
+            "blendShapes": 0,
+            "bones": [
+                "Hips",
+                "Spine02",
+                "Spine01",
+                "Spine",
+                "neck",
+                "Head",
+                "head_end",
+                "headfront",
+                "LeftShoulder",
+                "LeftArm",
+                "LeftForeArm",
+                "LeftHand",
+                "RightShoulder",
+                "RightArm",
+                "RightForeArm",
+                "RightHand",
+                "LeftUpLeg",
+                "LeftLeg",
+                "LeftFoot",
+                "LeftToeBase",
+                "RightUpLeg",
+                "RightLeg",
+                "RightFoot",
+                "RightToeBase"
+            ],
+            "materials": [
+                "Protagonist01_Unlit"
+            ],
+            "shaders": [
+                "Universal Render Pipeline/Unlit"
+            ],
+            "missingBones": 0,
+            "missingMaterials": 0,
+            "invalidIndices": 0,
+            "nonFiniteRestVertices": 0
+        }
+    ],
+    "nonFiniteWorldVertices": 0,
+    "boundsCenter": {
+        "x": -2.086162567138672e-7,
+        "y": 0.8249998688697815,
+        "z": 0.0
+    },
+    "boundsSize": {
+        "x": 0.5198042988777161,
+        "y": 1.6500003337860108,
+        "z": 1.445125937461853
+    }
+}

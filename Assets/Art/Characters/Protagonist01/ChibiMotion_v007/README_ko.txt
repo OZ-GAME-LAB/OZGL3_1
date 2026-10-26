@@ -68,8 +68,10 @@ Move_Dash_Recover 전환 GIF 1개는 별도 검수 장면에서 저장 클립을
 추가 Meshy / Comfy 생성 크레딧은 사용하지 않았습니다.
 
 검수 결과 / GIF:
-ArtSources/Characters/Protagonist01/v007-compact-action/ReviewOutput/FinalChibi/index.html
-최종 실제 PNG는 review-report.json이 가리키는 CaptureRuns 경로에 보존합니다. 기존 14개는 승인된 원본 캡처를 재사용합니다.
+ArtSources/Characters/Protagonist01/Final/Review/index.html
+정리 후 승인된 GIF와 제작 기록은 ArtSources/Characters/Protagonist01/Final/LegacyMotions에 보존합니다. 원본 PNG 캡처 캐시는 삭제했습니다.
 달리기는 저장된 실제 클립의 사이드뷰·정면 38프레임과 변형된 메시를 검사했습니다. 몸통 대비 전완·손의 선택 표면에서 삼각형 교차 0이며, 전체 캐릭터의 연속 시간 충돌 보장을 뜻하지 않습니다.
-실제 캡처: review-report.json / 빌드: build-report.json / 이번 검수: run-revision-qa.txt 및 run-revision-qa.json
+정본 기록: Final/LegacyMotions/manifest.json 및 Provenance 폴더. 실제 Unity 클립·프리팹·메시는 승인된 파일을 그대로 유지합니다.
 조사 근거와 관찰 범위: research/sword-reference-research.txt / research/animation-reference-crosscheck.txt
+
+최종 선택: 이 폴더의 15개 비공격 클립과 ../Combat의 검 공격 3개. 두 세트는 서로 다른 Generic 리그이므로 compatiblePrefab을 Final/selection.json에서 확인해야 합니다. 게임 상태 전환이나 리타기팅은 연결하지 않았습니다.

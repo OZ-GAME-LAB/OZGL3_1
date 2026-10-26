@@ -1,0 +1,133 @@
+{
+  "method": "Fresh real-project Unity prefab reload + 60 Hz AnimationClip.SampleAnimation and BakeMesh, compared at identical times against original audit. No controller or in-game integration.",
+  "changedBodyVertices": 275,
+  "clips": [
+    {
+      "clip": "Longsword_Attack_Chop",
+      "samples": 43,
+      "timesIdentical": true,
+      "clipBytesUnchanged": true,
+      "durationUnchanged": true,
+      "missingBindingTargets": 0,
+      "loopSeamVertexDistanceMetres": 0.0,
+      "baselineRawSHA256": "383a3fb9c724a5513cfe308417890f873dc9aaa49a54b7c81a5e66e359021b12",
+      "correctedRawSHA256": "0f1b514cba051383905874f738bce7a4143b3e575dc63d6021aaab66d85cb526",
+      "meshes": [
+        {
+          "name": "Chibi_Body_v009",
+          "vertices": 6422,
+          "maxWorldSurfaceDifferenceMetres": 0.013915462419390678,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true,
+          "maxUntouchedVertexDifferenceMetres": 1.8907454091277032e-07
+        },
+        {
+          "name": "Mitten_L",
+          "vertices": 112,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        },
+        {
+          "name": "Mitten_R",
+          "vertices": 112,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        },
+        {
+          "name": "Longsword",
+          "vertices": 176,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        }
+      ]
+    },
+    {
+      "clip": "Longsword_Attack_Slice",
+      "samples": 37,
+      "timesIdentical": true,
+      "clipBytesUnchanged": true,
+      "durationUnchanged": true,
+      "missingBindingTargets": 0,
+      "loopSeamVertexDistanceMetres": 0.0,
+      "baselineRawSHA256": "2f3b2fe5224eeddcec0430184d812776f928ed01455707b09427ba3d11015b79",
+      "correctedRawSHA256": "160331617dbb1eb39cb54569c7031321f0832268b9cbfafd83cd9a9ad7ae5f33",
+      "meshes": [
+        {
+          "name": "Chibi_Body_v009",
+          "vertices": 6422,
+          "maxWorldSurfaceDifferenceMetres": 0.011568579822778702,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true,
+          "maxUntouchedVertexDifferenceMetres": 1.8907454091277032e-07
+        },
+        {
+          "name": "Mitten_L",
+          "vertices": 112,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        },
+        {
+          "name": "Mitten_R",
+          "vertices": 112,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        },
+        {
+          "name": "Longsword",
+          "vertices": 176,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        }
+      ]
+    },
+    {
+      "clip": "Longsword_Attack_Stab",
+      "samples": 43,
+      "timesIdentical": true,
+      "clipBytesUnchanged": true,
+      "durationUnchanged": true,
+      "missingBindingTargets": 0,
+      "loopSeamVertexDistanceMetres": 0.0,
+      "baselineRawSHA256": "8659157b8da875d0acc2eaf4c73eb471f5475c25ab1305e90c07b75053a7f2df",
+      "correctedRawSHA256": "a33198472d5843d441b62510837020feca5ae766f88439b6caa0daf28e13526b",
+      "meshes": [
+        {
+          "name": "Chibi_Body_v009",
+          "vertices": 6422,
+          "maxWorldSurfaceDifferenceMetres": 0.012594209983944893,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true,
+          "maxUntouchedVertexDifferenceMetres": 2.4575624024691933e-07
+        },
+        {
+          "name": "Mitten_L",
+          "vertices": 112,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        },
+        {
+          "name": "Mitten_R",
+          "vertices": 112,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        },
+        {
+          "name": "Longsword",
+          "vertices": 176,
+          "maxWorldSurfaceDifferenceMetres": 0.0,
+          "allPositionsFinite": true,
+          "trianglesIdentical": true
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

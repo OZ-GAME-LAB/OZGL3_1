@@ -1,0 +1,31 @@
+{
+  "scope": "Selected editable baked attacks only. Original downloaded archives, source character models, and unused animation libraries are not bundled. No external source file is required to open or edit this blend.",
+  "creator": "Kay Lousberg / KayKit",
+  "sourcePages": [
+    "https://kaylousberg.itch.io/kaykit-character-animations",
+    "https://kaylousberg.itch.io/kaykit-skeletons"
+  ],
+  "license": "CC0; complete included license texts in Licenses/",
+  "licenses": [
+    {
+      "file": "Combat/Licenses/KayKit_Character_Animations_CC0.txt",
+      "sha256": "373b159044d1a886ed15f57ca5a7673ba14e2623c460283452705f2056912ed9",
+      "bytes": 1548
+    },
+    {
+      "file": "Combat/Licenses/KayKit_Skeletons_CC0.txt",
+      "sha256": "327a1aac6e6ff1259d82d0024cdaf088bcef302f8d7a116b5142538ac2b5cf8d",
+      "bytes": 1552
+    }
+  ],
+  "originalCharacterAnimationArchiveSHA256": "65882f31f905ad2e953819648a59287cdeab8f623908d5ef701971d3758be20f",
+  "originalCombatMeleeGLBSHA256": "c55e6ec1c79e83ae21d46fe1cd921c1b64be8b9a524a24517e51c6ba99231459",
+  "approvedSourceBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+  "sourceActions": [
+    "Melee_2H_Attack_Chop",
+    "Melee_2H_Attack_Slice",
+    "Melee_2H_Attack_Stab"
+  ],
+  "adaptation": "KayKit source motion retargeted to approved chibi proportions with paired hand contacts. Chop/Slice include approved cutting-edge roll correction; Stab unchanged. No procedural rebake or motion alteration during cleanup.",
+  "protagonistModelProvenance": "Original Meshy generated chibi model; see ../Model generation provenance in final package."
+}

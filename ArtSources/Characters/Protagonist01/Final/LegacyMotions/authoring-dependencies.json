@@ -1,0 +1,141 @@
+{
+  "purpose": "Small explicit authoring dependency record for unchanged approved15 legacy clips. Does not rebuild or retarget anything.",
+  "coreEditorFiles": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionSet.cs",
+      "sha256": "bfb4282b58e2931379f96b8b0453879a27cca92daeeae784e1697bdbd0374335",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionRig.cs",
+      "sha256": "416f422b2ba9bc63029338f3d9091bc89a288503f8d93c74a159770623cc011f",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionLocomotion.cs",
+      "sha256": "455de851db53dc7e653ac7766230c41e117d90b94cb11a35f6466d64abdd10b1",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionUtility.cs",
+      "sha256": "2bed952e168935d89eca3df7787586fb8f249125efe79314d11536a75eb1f8c6",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionCombat.cs",
+      "sha256": "368a2082f876f36623972d7f7432f7071f44d6e989865bfed4d4ca962617f878",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionBuild.cs",
+      "sha256": "876c054b4d8a36d40b494bb71f3f87b749269bcef197722ac87af609d394ee53",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionCapture.cs",
+      "sha256": "7e1941de2c61dbf5f7854ec921f40f6fe3810990aca4c51fa8febd6a2a5554a0",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiRunOnlyReview.cs",
+      "sha256": "4a161e641fa2b897e4c02ed7b828faaea7a49b7c7ca56c1bca187304cbf7cd57",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiGripProbe.cs",
+      "sha256": "f401b0917e75e6f02bf268f3f699e29206735840b96b5281d41cd9aa09313b2a",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiCylinderGripBuilder.cs",
+      "sha256": "aa771cafd9a06c10d9123181f0e0e6e1a0118da33e43c52ad826a5f9997f53ef",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiClosedGripGeometry.cs",
+      "sha256": "c7397e27e0028bb5823e51ad6eac624a241edbb036e4b436a955fde2054c1baf",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiCapHandBuilder.cs",
+      "sha256": "bce4187f0fb696a930552f17b9a01c25e3edf41f6311bde5fcbc061626384b0a",
+      "keepMatchingMeta": true
+    }
+  ],
+  "optionalExistingReviewEntry": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiFinalReview.cs",
+      "sha256": "6de58380b98d219c3488a239e9a24846371ec1ac746ae7793111f3474f5e79f4",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Editor/ChibiGaitSourceMigration.cs",
+      "sha256": "8f46943154c9f01acb05938faea747329b4abad41152ce89ddca31dffd95df72",
+      "keepMatchingMeta": true
+    }
+  ],
+  "externalEditorDependency": {
+    "path": "Assets/Art/Stage01Kit/Editor/ChibiStaffOrbBuilder.cs",
+    "sha256": "c287274f72a1de99fa5ae722ad2b2b84e7e396ee74a5d7e1ae86ed87045f7a06",
+    "keepMatchingMeta": true
+  },
+  "minimumV006AuthoringAssets": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx",
+      "sha256": "8b2a204b7f9df23fa2a0780f3c0939e2da650a7513d787c2fda2fd8cb60f7950",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Prefabs/Protagonist_ChibiCap_Rig.prefab",
+      "sha256": "f79e8b32c931349fbdf1d72e8b07162a8fdde991086310f7cfe2ec990a965712",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset",
+      "sha256": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat",
+      "sha256": "fcdd072322f6ad12346d9436b6509243418763ea268bf1dc216db25681f59322",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png",
+      "sha256": "a2b78743110cc57387498fec3b70a775c33b888d11d874614d54e036460055e3",
+      "keepMatchingMeta": true
+    }
+  ],
+  "sourceGaitAssets": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Skeleton.prefab",
+      "sha256": "735a6700ab25f79e74e1aed3e83a1826565e358e0f5dd451fe644986ec705f6b",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Idle_Fists.anim",
+      "sha256": "9af0cc80974b91b71621d0b8383a2e00a5e2fc3f21834def7a33af0e71d1d15a",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Walk_Fists.anim",
+      "sha256": "881a747bae480f0150433e98efb2d9362da819d9f064db2bbbd1bf37fa450fdb",
+      "keepMatchingMeta": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait/Clips/Run_Fists.anim",
+      "sha256": "baab538730888c747ba6adebdf04fedd5711627179c42ab93e580c37a2af50fc",
+      "keepMatchingMeta": true
+    }
+  ],
+  "notNeededByOld15": [
+    "ChibiCapModelReview.cs",
+    "ChibiCapElasticReview.cs",
+    "LongswordV008Delivery.cs",
+    "LongswordV009Delivery.cs",
+    "LongswordV010Delivery.cs",
+    "LongswordV011Delivery.cs"
+  ],
+  "otherCompilationDependencyWarning": "Stage01Kit/Editor/UrbanKitSetup.cs calls ProtagonistExtendedAnimationSetup, ProtagonistGripBuilder, ProtagonistGroundingBuilder and ProtagonistExtendedValidation. Extended classes reference ProtagonistUnitySetup, which references ProtagonistAssetImport. They are not old15 authoring dependencies but cannot be independently deleted while callers remain.",
+  "historicalReportPathNote": "Some retained Editor entry points still use v006/v007 report output directories. Retiring art source version folders does not change approved clip playback; update future report output paths separately rather than executing old builders during selection cleanup."
+}

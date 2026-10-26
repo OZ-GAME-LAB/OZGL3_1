@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Longsword_Attack_Chop",
+    "start": 1,
+    "end": 43,
+    "loop": false,
+    "weaponVisible": true,
+    "rootMotionPolicy": "Baked in-place attack; no runtime game movement or controller included.",
+    "sourceAction": "Melee_2H_Attack_Chop",
+    "sourceDurationSeconds": 1.6333333333333333,
+    "durationSeconds": 0.7,
+    "actions": {
+      "Hero_KayKit_Rig": "KayKitAdapted__Longsword_Attack_Chop__Hero_KayKit_Rig",
+      "WeaponRoot": "KayKitRetouch18__Longsword_Attack_Chop__WeaponRoot"
+    },
+    "sourcePage": "https://kaylousberg.itch.io/kaykit-character-animations",
+    "sourceAsset": "KayKit Character Animations 1.1 / Rig_Medium_CombatMelee.glb",
+    "sourceAssetSHA256": "c55e6ec1c79e83ae21d46fe1cd921c1b64be8b9a524a24517e51c6ba99231459",
+    "editableSource": "Protagonist_Combat.blend"
+  },
+  {
+    "name": "Longsword_Attack_Slice",
+    "start": 1,
+    "end": 37,
+    "loop": false,
+    "weaponVisible": true,
+    "rootMotionPolicy": "Baked in-place attack; no runtime game movement or controller included.",
+    "sourceAction": "Melee_2H_Attack_Slice",
+    "sourceDurationSeconds": 1.1,
+    "durationSeconds": 0.6,
+    "actions": {
+      "Hero_KayKit_Rig": "KayKitAdapted__Longsword_Attack_Slice__Hero_KayKit_Rig",
+      "WeaponRoot": "KayKitRetouch18__Longsword_Attack_Slice__WeaponRoot"
+    },
+    "sourcePage": "https://kaylousberg.itch.io/kaykit-character-animations",
+    "sourceAsset": "KayKit Character Animations 1.1 / Rig_Medium_CombatMelee.glb",
+    "sourceAssetSHA256": "c55e6ec1c79e83ae21d46fe1cd921c1b64be8b9a524a24517e51c6ba99231459",
+    "editableSource": "Protagonist_Combat.blend"
+  },
+  {
+    "name": "Longsword_Attack_Stab",
+    "start": 1,
+    "end": 43,
+    "loop": false,
+    "weaponVisible": true,
+    "rootMotionPolicy": "Baked in-place attack; no runtime game movement or controller included.",
+    "sourceAction": "Melee_2H_Attack_Stab",
+    "sourceDurationSeconds": 1.6,
+    "durationSeconds": 0.7,
+    "actions": {
+      "Hero_KayKit_Rig": "KayKitAdapted__Longsword_Attack_Stab__Hero_KayKit_Rig",
+      "WeaponRoot": "KayKitAdapted__Longsword_Attack_Stab__WeaponRoot"
+    },
+    "sourcePage": "https://kaylousberg.itch.io/kaykit-character-animations",
+    "sourceAsset": "KayKit Character Animations 1.1 / Rig_Medium_CombatMelee.glb",
+    "sourceAssetSHA256": "c55e6ec1c79e83ae21d46fe1cd921c1b64be8b9a524a24517e51c6ba99231459",
+    "editableSource": "Protagonist_Combat.blend"
+  }
+]

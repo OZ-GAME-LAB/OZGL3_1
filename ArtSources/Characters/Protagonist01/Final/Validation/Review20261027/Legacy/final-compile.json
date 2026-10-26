@@ -1,0 +1,22 @@
+{
+  "unityVersion": "6000.3.21f1",
+  "project": "C:/Users/me/Desktop/OZGameLab3/OZGL3_1",
+  "method": "Fresh real-project batchmode import/compilation after four output-only path replacements across three existing Editor helper sources. No animation builder executed.",
+  "log": "Logs/AssetAudit20261027/main-project-final-compile.log",
+  "logSHA256": "469780cb0d455f2f859a5ec1d76535eb130e242aa4f3ee620e0c5067be213dd2",
+  "exitCode": 0,
+  "compilerErrorMarkers": 0,
+  "temporaryHelperCleanup": {
+    "completed": false,
+    "reason": "Automatic approval review rejected recursive and exact-path native PowerShell cleanup. No specific reason supplied. No alternate deletion API attempted. Root excludes the local transient folder from Git; durable canonical source lives in ArtSources validation.",
+    "paths": [
+      "Assets/Editor/AssetAudit20261027/ApplyUnitySkinWeights.cs",
+      "Assets/Editor/AssetAudit20261027/ApplyUnitySkinWeights.cs.meta",
+      "Assets/Editor/AssetAudit20261027/HeroAssetAudit.cs",
+      "Assets/Editor/AssetAudit20261027/HeroAssetAudit.cs.meta",
+      "Assets/Editor/AssetAudit20261027/NonHeroAssetAudit.cs",
+      "Assets/Editor/AssetAudit20261027/NonHeroAssetAudit.cs.meta",
+      "Assets/Editor/AssetAudit20261027.meta"
+    ]
+  }
+}

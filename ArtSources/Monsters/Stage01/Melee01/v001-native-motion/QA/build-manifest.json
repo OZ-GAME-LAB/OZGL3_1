@@ -1,0 +1,40 @@
+{
+  "source_file": "SourceAssets/Skeleton_Minion.glb",
+  "source_version": "official GitHub Skeletons 1.0",
+  "clips": {
+    "Idle": "Idle_Combat",
+    "Move": "Running_A",
+    "Attack": "1H_Melee_Attack_Chop",
+    "Hit": "Hit_A"
+  },
+  "durations_seconds": {
+    "Idle": 4.266666666666667,
+    "Move": 0.8,
+    "Attack": 1.0666666666666667,
+    "Hit": 0.6666666666666666
+  },
+  "scale": 0.5852892239763324,
+  "native_height": 1.964840548724169,
+  "delivery_height": 1.15,
+  "root_motion": "all four selected clips are horizontally in place; native vertical bounce and hips sway remain",
+  "ground_normalization": {
+    "Idle": {
+      "native_min_foot_z": -3.45164371537976e-05,
+      "constant_vertical_offset_m": 0
+    },
+    "Move": {
+      "native_min_foot_z": -0.03226359188556671,
+      "constant_vertical_offset_m": 0.03226359188556671
+    },
+    "Attack": {
+      "native_min_foot_z": -0.005913735833019018,
+      "constant_vertical_offset_m": 0.005913735833019018
+    },
+    "Hit": {
+      "native_min_foot_z": -0.00043615588219836354,
+      "constant_vertical_offset_m": 0
+    }
+  },
+  "weapon_attachment": "native handslot.r; matching native Skeleton_Blade; fixed -90deg local X accessory-axis conversion (+Z shaft to slot +Y)",
+  "no_pose_generation": true
+}

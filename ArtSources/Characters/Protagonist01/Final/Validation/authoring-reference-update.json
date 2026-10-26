@@ -1,0 +1,9 @@
+{
+  "file": "ArtSources\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Tools\\build_monster.py",
+  "purpose": "Relocate the existing monster preview-only protagonist reference to an equivalent static snapshot; no monster geometry, motion or game code changes.",
+  "oldPath": "ArtSources/Characters/Protagonist01/v016-overhead-arm-correction/Chibi_Longsword_OverheadCorrected.blend",
+  "newPath": "ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ComparisonReference.blend",
+  "beforeSHA256": "93414edc3d87960344ee49937762fb590585e760b1da6b86489aeefaad533205",
+  "afterSHA256": "7bf7de0bd51356fe8c83dde8b003fc2f553eeedd42007e9c2efb113ec679d878",
+  "onlyLiteralPathChanged": true
+}

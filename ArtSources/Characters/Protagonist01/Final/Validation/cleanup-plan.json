@@ -1,0 +1,588 @@
+{
+  "authorizedSelection": "User explicitly confirmed 3 latest attacks including Stab + existing v007 nonattack motions; delete unused animation/model versions.",
+  "workspace": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1",
+  "sourceRoot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01",
+  "assetRoot": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01",
+  "gatePassed": true,
+  "selectedClips": 18,
+  "deleteTargets": [
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v006-chibi-cap",
+      "directory": true,
+      "files": 21,
+      "bytes": 14406097
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v007-compact-action",
+      "directory": true,
+      "files": 1033,
+      "bytes": 152488945
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v008-longsword",
+      "directory": true,
+      "files": 1017,
+      "bytes": 281252564
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v009-longsword-redesign",
+      "directory": true,
+      "files": 6704,
+      "bytes": 2599253665
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v010-body-driven",
+      "directory": true,
+      "files": 11,
+      "bytes": 4061366
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v010-body-driven-longsword",
+      "directory": true,
+      "files": 3168,
+      "bytes": 1683387858
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v011-torso-led-longsword",
+      "directory": true,
+      "files": 8412,
+      "bytes": 5764087312
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v012-whole-body-longsword",
+      "directory": true,
+      "files": 31654,
+      "bytes": 3418592835
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v013-chest-locked-longsword",
+      "directory": true,
+      "files": 31394,
+      "bytes": 3375993634
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v014-shoulder-elbow-longsword",
+      "directory": true,
+      "files": 31568,
+      "bytes": 3504637540
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v015-upright-overhead-longsword",
+      "directory": true,
+      "files": 31174,
+      "bytes": 3117925912
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v016-overhead-arm-correction",
+      "directory": true,
+      "files": 31603,
+      "bytes": 3283413276
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v017-kaykit-retarget",
+      "directory": true,
+      "files": 19263,
+      "bytes": 2300676079
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\v018-kaykit-retouch",
+      "directory": true,
+      "files": 1033,
+      "bytes": 420842078
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\CleanupPlan",
+      "directory": true,
+      "files": 24,
+      "bytes": 54890084
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\KayKit_v017",
+      "directory": true,
+      "files": 55,
+      "bytes": 70339856
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\KayKit_v017.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v008",
+      "directory": true,
+      "files": 32,
+      "bytes": 22620738
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v008.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v009",
+      "directory": true,
+      "files": 35,
+      "bytes": 56375565
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v009.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v010",
+      "directory": true,
+      "files": 35,
+      "bytes": 56404232
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v010.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v011",
+      "directory": true,
+      "files": 35,
+      "bytes": 83688212
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v011.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012",
+      "directory": true,
+      "files": 31,
+      "bytes": 135646687
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v013",
+      "directory": true,
+      "files": 31,
+      "bytes": 74335618
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v013.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v014",
+      "directory": true,
+      "files": 29,
+      "bytes": 60152915
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v014.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v015",
+      "directory": true,
+      "files": 29,
+      "bytes": 64749497
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v015.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v016",
+      "directory": true,
+      "files": 29,
+      "bytes": 62537324
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v016.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Clips",
+      "directory": true,
+      "files": 2,
+      "bytes": 3306962
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Clips.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Model",
+      "directory": true,
+      "files": 2,
+      "bytes": 4968487
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Model.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 172
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Prefabs\\Protagonist_ChibiCap_Model.prefab",
+      "directory": false,
+      "files": 1,
+      "bytes": 3656
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Prefabs\\Protagonist_ChibiCap_Model.prefab.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 154
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCapModelReview.cs",
+      "directory": false,
+      "files": 1,
+      "bytes": 20977
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCapModelReview.cs.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 240
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCapElasticReview.cs",
+      "directory": false,
+      "files": 1,
+      "bytes": 38832
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCapElasticReview.cs.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 240
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV008Delivery.cs",
+      "directory": false,
+      "files": 1,
+      "bytes": 30084
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV008Delivery.cs.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 59
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV009Delivery.cs",
+      "directory": false,
+      "files": 1,
+      "bytes": 48284
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV009Delivery.cs.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 59
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV010Delivery.cs",
+      "directory": false,
+      "files": 1,
+      "bytes": 49770
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV010Delivery.cs.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 59
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV011Delivery.cs",
+      "directory": false,
+      "files": 1,
+      "bytes": 81097
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Assets\\Art\\Characters\\Protagonist01\\Editor\\LongswordV011Delivery.cs.meta",
+      "directory": false,
+      "files": 1,
+      "bytes": 59
+    }
+  ],
+  "deleteFileCount": 198450,
+  "deleteBytes": 30671310972,
+  "brokenIncomingReferences": [],
+  "reparsePoints": [],
+  "retainedHashes": {
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006.meta": "5306cf960959f8bd532924db043470f2f38933c1410bef41096f25e2072fb2ee",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007.meta": "f9649febebbfdc689a7bb32aa14b5a28eb199258931a441c8a5ea8ea456021ae",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat.meta": "3a4186711204f03565df929f6939fa20e6fcdd66818d86048ea21b22c72ae5d4",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor.meta": "4398945321546e28c38fd6dfdbd37aae51b2cb451342482a41f035c5ad9e0aec",
+    "Assets\\Art\\Characters\\Protagonist01\\protagonist01-v001_base_color.png": "241b6488640b9ef2c75f37407816cce1182552a12841afc5564f3dbec1ae098b",
+    "Assets\\Art\\Characters\\Protagonist01\\protagonist01-v001_base_color.png.meta": "f21d875638c72d598b557a2adba0bcd5a531d470b9cb06aa0fd22da77e151ad6",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime.meta": "80d3e9985cda14dbeec5bb707a9e3edc751e38faf956f0946266e096292742ab",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Materials.meta": "326b3bf85f812b5992d612c0494a30000cf33759589d12ce62500eceae3fc6d7",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Meshes.meta": "b061093c94821e5bbb56ae4756efbe237217907aa3e83b74ee9b805492bdb37a",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Prefabs.meta": "3736e54bec0ba75954a96d7ad9215d8dff4cee5e558c5ef70e687b3598e30d57",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\README_ko.txt": "fbfc90920bf8fbb976d2d6bc527a1356bcb8076638e69ffd187f7a9ae1eaeb1a",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\README_ko.txt.meta": "d16297426dca60f01f75407cb2a01168f2222ddf3f675de55b68166254887fc5",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Rig.meta": "ead8f77e006f92c75cf3bd032f149088131fbae128b1bbbf23ed216b8cc1e459",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Textures.meta": "29c3294713b8aa0ed3acd92d613068e15abe25e54043b4be9d345960d3205c57",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips.meta": "1f8820f98e335098872b2c0049700fbf159e21210dbe096b818e38674f1f0c00",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes.meta": "1f2fbd6629995ba86ac13cf05c1ca3b136091e2bffcf7c4e56aeb3d29b370a1b",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs.meta": "a92267cb1f7b6b4a48146ddbe20e482a2f9504249ab6ad65d0d7b538b2a0d467",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\README_ko.txt": "9d4ebaf8a40f9d75bd12309e1a82a2bbd8675c48e2d015fd9b62f45613f91e0f",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\README_ko.txt.meta": "dc9a572d672e1598ffa1e345c860f81315ac98d678593c1d03a2adbbbd1c3579",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait.meta": "64e8f18a216ed7468f0b6a3b9740617ee012de7cff4d573aef56904626647568",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips.meta": "f20b424616aae48bf72af77d58a71617b2a7437aae6e2efcef26f4a36bd9dbb3",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\FBX.meta": "5c2172068e2bd21c4ea228b243c5c5fa45734b055c9c904fa7de67814cd13b9e",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses.meta": "5487623816ac137e2fe0bfdacce09118fa303f373de3cc30cff3e013e0dcafb6",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials.meta": "57b8ee5ec35cb15cb02b80ac44c29b9ad27842ade98acde7f06b3f1d7717be56",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Meshes.meta": "c24b8b43198c9277cd0fcf4b97d3bdc8901e723703ddc38fc5106aa0fdd32b8a",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Prefabs.meta": "137ee0942273f931d9b94d7f93737603c52fb9fb14ada4ce5c03ecf28aab7c1c",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\README.txt": "d64d5c16aa6d96587ab253110952b28019b94842857922378e5a1b165fe30f48",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\README.txt.meta": "a15f5e5cefc825a120529987836047077b60d3d48d3af1c81db29130f7f0ba63",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Textures.meta": "8f7b3b702af4f8ac24612ea197b9824111a4d5d005b4940bf5ca53e9cf3917b9",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Weapon_Attachment.json": "06ab0fd1ab1486668e5d7e2d58f3be639b0b201536c683609848053411ab422d",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Weapon_Attachment.json.meta": "eed3d75a86123a9e3a7e6739ee8105cb291881c14b2b5a1de2dedee957a030fb",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCapHandBuilder.cs": "bce4187f0fb696a930552f17b9a01c25e3edf41f6311bde5fcbc061626384b0a",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCapHandBuilder.cs.meta": "dac28e63f0ed3257f862666e5d4fee465cd4197da592594e1004a98453cdcf4d",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiClosedGripGeometry.cs": "c7397e27e0028bb5823e51ad6eac624a241edbb036e4b436a955fde2054c1baf",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiClosedGripGeometry.cs.meta": "9dcbeb59714a0afe53c111bd58e7b5cbe835c1ff505607b880fa1947b0288beb",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCylinderGripBuilder.cs": "aa771cafd9a06c10d9123181f0e0e6e1a0118da33e43c52ad826a5f9997f53ef",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiCylinderGripBuilder.cs.meta": "2c94437dc40662708e9486d1be35e794b431b341c00a7d33f52da0747cb295de",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiFinalReview.cs": "6de58380b98d219c3488a239e9a24846371ec1ac746ae7793111f3474f5e79f4",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiFinalReview.cs.meta": "f766b5b4fa61fbe7b907fde7253bdd5d66176029564f33a01e4dd481fb0e199d",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiGaitSourceMigration.cs": "8f46943154c9f01acb05938faea747329b4abad41152ce89ddca31dffd95df72",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiGaitSourceMigration.cs.meta": "e510e9388d1a218470bba3e43c613432c465f3107da93c12921e259f1864436c",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiGripProbe.cs": "f401b0917e75e6f02bf268f3f699e29206735840b96b5281d41cd9aa09313b2a",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiGripProbe.cs.meta": "8538b687fc4d37445caa4a346c898034bb6006185b0364a9016bb14dad358b1a",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionBuild.cs": "876c054b4d8a36d40b494bb71f3f87b749269bcef197722ac87af609d394ee53",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionBuild.cs.meta": "ab1106367ec4d126332d84cd8ff05066aabc0890700598e7f91bdb03a5d12a32",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionCapture.cs": "7e1941de2c61dbf5f7854ec921f40f6fe3810990aca4c51fa8febd6a2a5554a0",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionCapture.cs.meta": "774edfb402920e4de77793b611bc543d4e14e108a4b50614a3f62273edae8fa9",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionCombat.cs": "368a2082f876f36623972d7f7432f7071f44d6e989865bfed4d4ca962617f878",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionCombat.cs.meta": "c2b8bcacedd0c7e9c168a03f9366a9e66c0119a0086261283757c2e5de8d1b01",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionLocomotion.cs": "455de851db53dc7e653ac7766230c41e117d90b94cb11a35f6466d64abdd10b1",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionLocomotion.cs.meta": "2a30651a795c814af225867dd7e671e850624a683941280b2d1244fa5e600c4b",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionRig.cs": "416f422b2ba9bc63029338f3d9091bc89a288503f8d93c74a159770623cc011f",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionRig.cs.meta": "9e8fa841a847d6ed91cce5510e3f88302c2044e22a68362a77465f62da2fd611",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionSet.cs": "bfb4282b58e2931379f96b8b0453879a27cca92daeeae784e1697bdbd0374335",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionSet.cs.meta": "32260b0dc2e9caff338251684a9037645938bbce6474a251b52689a52f4305f0",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionUtility.cs": "2bed952e168935d89eca3df7787586fb8f249125efe79314d11536a75eb1f8c6",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiMotionUtility.cs.meta": "919e3a773d849d04caa592e9cb903ccfdf6c76cc62301fb3c28c34b16594fac9",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiRunOnlyReview.cs": "4a161e641fa2b897e4c02ed7b828faaea7a49b7c7ca56c1bca187304cbf7cd57",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ChibiRunOnlyReview.cs.meta": "697dc5536323a406ac0196976a26b6bf8ba2140dd36bcb01f2e99b8b79b36b13",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistAssetImport.cs": "d94fbdae7880b1ad8eef6db2e5fd3b3b78384260ffbec409ead0cbe74d26955d",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistAssetImport.cs.meta": "04bb69eba773e6ccbb295599b53e2b5b76b01ed800f7cf318054453c775cd90f",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistExtendedAnimationSetup.cs": "2d7d88d43dc0dc71ade87227610ffcb0ca913c3e7b67ea2001a90ce7b2fb6ad7",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistExtendedAnimationSetup.cs.meta": "ea8577e008017f17386562e876158039b203d73ca290de6c2e3119f72b082dc9",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistExtendedValidation.cs": "82e5a32e3c15aad1e8795d09b47dd109815b4fae13f671c8c6c2c318e7d4bf6c",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistExtendedValidation.cs.meta": "30d332ec2a509f5a45087450b375047d07bd19a87c425539e9d71bf1b4faf4a0",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistGripBuilder.cs": "457fc3f8f57d4667b83283a1b56434d6cbd93f8111c98f2e7b6dd27e53b41782",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistGripBuilder.cs.meta": "5639c179ae6aca1e4e7242f88ea1e791e261b7bd81e164468bc4d77b59fb9b1c",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistGroundingBuilder.cs": "ff3733dffc46500fdf7e34cde900ff5cf30d054d65b7de1209e7084959f61c72",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistGroundingBuilder.cs.meta": "f88813ecb4efaaff9a9fc57a8c6f970c8079370c2fafb179ecd66652efde40ea",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistPlayValidation.cs": "9b480f7a215fad8e435b1bd84a992ee6faed2e9b28b73b285dac4aa1be06577d",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistPlayValidation.cs.meta": "5815b38889adacf01670495d202a5e12825231d9c1785c1c51b37e12f11456e3",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistUnitySetup.cs": "9f7d653e95324c5d6e097f4c2ce243761283c109ee132dff81aef26a5deb76e5",
+    "Assets\\Art\\Characters\\Protagonist01\\Editor\\ProtagonistUnitySetup.cs.meta": "dd0bcef83745bba062beb1ac94f226490d81660197c98ebd5664385c00049c06",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Actions.fbx": "5141cd8418a2e33f3990ed99d05b85f153e4eef1b58ba338531c668d08bba7ce",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Actions.fbx.meta": "7f3675fec24423dcaea7b6832887bc625ab40337a2fb16974530d6f3c001cc4e",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Rig.fbx": "1e42fcee84e276b1c3886c6b7b396c3e6148f6c50531b821b4dd939d780ec5ed",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Rig.fbx.meta": "fbc95272b94002f0bd02e4fbdac733acddc6bffccff3e01bf723f9bc6d8f7876",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Run.fbx": "e86b59a7f6779c4ae048ca4aee997b4e38966f506e31b63976f82c0c0cf26a1f",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Run.fbx.meta": "609409733a18743ecc6c3335eca2a5e7829626cda521382fb7cbb7ffb56a2605",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Unarmed.controller": "e816c43acffe7cbb83a961c5a3c0268f828c7ac225420f6fe49c7360af67cdd6",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Unarmed.controller.meta": "6f2e5327df00dfdace795e171fd21639ea370ec8f9b673c4af96ddc14bc6bb3a",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Unlit.mat": "060d9e30ea9c2e6893003ba74785674c5f720ff1b5a00171ddcda01fa89fcc34",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Unlit.mat.meta": "0d18695dc94a63e03cbefe34b6bb7c9c4b148444b211aa0424cc26558a32da31",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Visual.prefab": "ad84cbd673018f38b361d7177ce211ec27ad538fe2c69fcae9c9f03e4c2741fe",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Visual.prefab.meta": "ea8297c149bbfabfd2781972c42d86ef87ee98baa7565a7c01b41112d481157e",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Walk.fbx": "09f3d4937d1dadeed98fa77d2cd0274cf59601dfff45af52f789fd1aaaed7190",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\Protagonist01_Walk.fbx.meta": "6247f8ff5f9d8daa321b2a2b5c8282cf62cbb6a855dc1f54f41bf8f47a87054d",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\ProtagonistHandGrip.cs": "a9e8efe8e4bb572d7acb32e3e6bbfa16b5bb57772383b0452f14acb3e0064da7",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\ProtagonistHandGrip.cs.meta": "0759e03ba092c1864c92725fed60d201f3d8259d89c702e9bf78161118a1df90",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\ProtagonistPlaygroundCamera.cs": "23ae90d0f642a2e30d0c18f63464f66befbc42f5af08883819f12c6b9bef7e74",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\ProtagonistPlaygroundCamera.cs.meta": "de22ed8905c209990501efbcc916fb0c5e061a5360933985c41b1a34a9d12bb0",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\ProtagonistVisualGrounding.cs": "36ca1ef455fd26a6c2e0654610600bf9cab055e18a28588ebcbc036a166268b6",
+    "Assets\\Art\\Characters\\Protagonist01\\Runtime\\ProtagonistVisualGrounding.cs.meta": "c866bf8637e2988313d1cb39cffad1bf68de01d66b7d2fd49691af41e1418110",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips\\Longsword_Attack_Chop.anim": "1a53d1c84ab77b6cfa6839b22fabacbc1d1df99990b87fe0fa32fe11b1efce59",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips\\Longsword_Attack_Chop.anim.meta": "29c9c79369981979e64460933538ceafab27ed3e802a5b4f91e81ebdb99b68f6",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips\\Longsword_Attack_Slice.anim": "41946ba732bb55ad38b683cc924f336735a0d018d63c4da0834b5f239af0d7d2",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips\\Longsword_Attack_Slice.anim.meta": "be048e012c4281160401a26582816073812b893d8babc5f0f5641916dbe28c3d",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips\\Longsword_Attack_Stab.anim": "7bec5cf2eea5c6e30028f0e6e96e753ae84a452b159b266900edd25eda8c94e8",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Clips\\Longsword_Attack_Stab.anim.meta": "87327ba3e66871f58081040ff5036711cc6f3d7426b4bf16dec8fae5ea83dbee",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\FBX\\Protagonist_KayKit_v018.fbx": "f8fcf5108512d20a2c55871cce7ebdd45637f38b295405154d7d7f6cbc31b98c",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\FBX\\Protagonist_KayKit_v018.fbx.meta": "e3b51c2c03edccd22628c926e5269e65412e16b2ff02c66b72c66e6884c103e6",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\Clip_Source_Map.json": "9714d9a1ead0a35a95135330403cbdc34ea4b427816c6e9e02cdcca6ad940399",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\Clip_Source_Map.json.meta": "a288effad31214728223660631c94e1b6327c41fc3fe584371a35c4de479177a",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\KayKit_Character_Animations_CC0.txt": "373b159044d1a886ed15f57ca5a7673ba14e2623c460283452705f2056912ed9",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\KayKit_Character_Animations_CC0.txt.meta": "247b83060150ba97827cf1d70f72aae915133ea49ddb2ba2b1c9d47dc6f85a72",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\KayKit_Skeletons_CC0.txt": "327a1aac6e6ff1259d82d0024cdaf088bcef302f8d7a116b5142538ac2b5cf8d",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\KayKit_Skeletons_CC0.txt.meta": "1b3aa7ee5bf52f04788453f233f39edc268d66b7f761d61572d0302e2a0bc5a9",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\Source_Provenance.json": "3e92de4dcf8eae4db68e26c66e0a6003ac6ceb34f2b75b1af8b193960aed630b",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Licenses\\Source_Provenance.json.meta": "ebc74607c0c54be2ed962d87c375cd08e45952fef5f7b83b0e44810af3305424",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_Edge.mat": "fe9e419d3d3fc0641c5f89fcb9e18c59da8c7929de9359be25cb05b19fc061d8",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_Edge.mat.meta": "865cc3cf4833ecffe654759e5e0fd77ece8c7f2fbbee080f5f3ff2df6c102f13",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_Guard.mat": "86ba976d8e14c12a84f22323cc6416924e7399cc847f1c6a476493564daed7ca",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_Guard.mat.meta": "d74ff4d7bfb4570765287289ba6f8f6dc3badadc8909f535a3d7f0749e26c88a",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_NavyGrip.mat": "5096e05cf607b760792afab3f93b818e9bb9b4cfa12650b8a4d4eeb080dda008",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_NavyGrip.mat.meta": "4b53040eb5a3844359f110f561be8cb7f993ae74001a200bae8e042d36e3ed2e",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_SimpleSkin.mat": "876f34611f46da8e5356304258eb3aa817a63b0228bc37df57a19af7b9bc3dd4",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_SimpleSkin.mat.meta": "53c89fa4ab0f67899ef79473078c987482d55e202f28a75037a4c7af5a3f3080",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_Steel.mat": "78f37c584da1db5b1b4df5d28cec6b83f258f84bee1f46a8264317153431132b",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\LS_Steel.mat.meta": "7ce9050b2a2877f80c23fec968bae7f2520c490686c30f89a5ed6f039677e5e7",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\Material_0.mat": "d902754a44fe936744c9cf1facf1c91865efd70384b31fe6f324439bc1cd5c1d",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Materials\\Material_0.mat.meta": "0cda93ba7353f2407e32b3417b0560dcbd550d845e812d5951dfd27ba519e7ca",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Prefabs\\Longsword_KayKitSocket.prefab": "07e801795e15d3c7090b083027ae8176407f209009e5dc4d97273892e80ad13e",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Prefabs\\Longsword_KayKitSocket.prefab.meta": "d1ec5cae5935484252c5732271be8ff7592a12c952b42d5c18f515d4c235847b",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Prefabs\\Protagonist_Combat.prefab": "48d0a16a3b074901608c64139a4d9f4d600e2ef29325a42d7662ff710bdc6578",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Prefabs\\Protagonist_Combat.prefab.meta": "dc8d6d2edd8d5d97acdd80f05f699778d343a7712b3f75f8707221855a76f127",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Textures\\Image_0.jpg": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+    "Assets\\Art\\Characters\\Protagonist01\\Combat\\Textures\\Image_0.jpg.meta": "2c0f9cafc71c588caf2e86f26d9a6875e2793816e52ee0b9cd2eaf8b5199640a",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Dash_Forward.anim": "682e6db8fec7926e133dae61f00c687f9ec6c2e0bb89daab9ddffc9078ae2080",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Dash_Forward.anim.meta": "2fbc08e095b4fdaf24eedd2eeb22ef44b5808159a7b46f0237506b155aa774b5",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Hit_Reaction.anim": "2cbb087b5c81f2fd7c3cce68a836b7b2380116723e019b7ce99e37b40a40bcef",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Hit_Reaction.anim.meta": "f60e84e5b169e315a5b5bf3a5f8bfada186549e5a615967bb648962441ecb6e0",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Idle_Fists.anim": "8eb67c8aafacbf706ddf2dd55d6adbbeb08780869955f22f0c90590062cd1dc4",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Idle_Fists.anim.meta": "3f061f28b7c054d698198b7294540ab90b276cc3d442d65fc8a8ff01f24a583a",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Interact_Reach.anim": "75d5f7f8003d2d3440c6569ca73b5e782005910aa898a8e7e59f93134b85633e",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Interact_Reach.anim.meta": "71bb4870b89894e835af7aaf04fd46292d9df2edbceed0148a66cebdb587edbb",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Item_Throw_Overhand.anim": "058b86ab7781113b617bfe5e81ff749313c23a6aff7634af913d8c534744c355",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Item_Throw_Overhand.anim.meta": "cfae7c27c6da68f0cac9e4b8187cdcc173bb9e6acdeb6916963034ac4107ae1f",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Apex_Loop.anim": "f69665c014120ec8a1eccca6a1d4f5d80f4244dd1f9eb0d8d3c50168cfe3b612",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Apex_Loop.anim.meta": "cc9a3faf83d0e88f4c7b17aedf6898e6bdc15ea79fa4e2f3dd48f08b01f7074d",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Fall_Loop.anim": "5fffacd881eacda71d071249921f5e02b87b3eb9a00c7b8cbb982ac7670e0391",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Fall_Loop.anim.meta": "c94201867bbf7161dd4f5f294f283a229c8ff96b32ea080eb983db5ec2ea5441",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Full.anim": "e819f36a9af6c5552e0b77bbf3b3a498be58297b8c407e18833cec9e59d87ee6",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Full.anim.meta": "58aa2af74270bad16518d614b6eb8e8bdba402a1dc28c6f2b043f2c6d22f2724",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Land.anim": "4b71b8d8e362a0fafc0d371a61bad8178d5fdb19d632132c97eb72d851446eff",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Land.anim.meta": "4db3cf7b9547b7e94303622d13009cc9b7d9b21b29d4241227697dbbf4a4be3b",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Rise_Loop.anim": "3b0019b6e1186e90e6a19776705afe8346a63c58385d1f2649801c40ccb13f89",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Rise_Loop.anim.meta": "172035a91b144d9aac2b65cc3c72d43c3ac99073c6a696598cf4bf7e81811900",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Takeoff.anim": "57a4dd77cb9cd604772247579e7c812d922786ef4c3a4c913fac46054e4326fa",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Jump_Takeoff.anim.meta": "880b805b7586712a6f7ebba3a3dbf4cba442679d8e947dcd5aba18a56014998d",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Pickup_Low.anim": "5f930267000699e7236d1b71b06e3770df24a1e34cbac08fd37389151f0b6512",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Pickup_Low.anim.meta": "14a325a669c569ceda4f6abfec01b66d8fb88ecdde1398f969cfe11e972f19b3",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Potion_Drink.anim": "77119754a7d98427a73248a62f7ffae28e78a8cbdacbd64bbcb38b84e6fd52a5",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Potion_Drink.anim.meta": "914abf6070769e0bc6aabb08da2fe936f31aae1b1cc85ac94f8523cebd445600",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Run_Fists.anim": "fe4055276294b2dc4a88745cd84bb0634d9bff3bc1c4122c5335099453bbc103",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Run_Fists.anim.meta": "5814417666bb340f140ecb251409aeb7c07b61bd415f356bf889e7a265b95ca3",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Walk_Fists.anim": "5abef4d7f9654f5280e97d60f754040c3b3b3de4039c28855e619ef36827e156",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Clips\\Walk_Fists.anim.meta": "294100361195f1d12e5128ab052b3ceb17bc0021067d141ea6d89c456bd84169",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_CylinderGrip.asset": "e474f2b2a4fc8e8dff7625db29d497e1b9549558713a132304a152852a48f8f4",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_CylinderGrip.asset.meta": "8b1f0a5acfdff42d4f91fa23aab7b3acf4fe19fef3c083c754576ea2f167281e",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_StaffClosedGrip.asset": "de02c10b82bd74b94cfa877fc946fc56b392e237443fd8ee20ff2237bdb73b53",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_StaffClosedGrip.asset.meta": "c6b9939f8dbe4efaca6b0476a2d4497e607f692944eabd9d4fbc9945e9c096c3",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_SwordClosedGrip.asset": "d7b99ea8733f17c9024acfa52110e18cdf9b857e23aa1011a0ff375311305f2f",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Meshes\\Protagonist_Chibi_SwordClosedGrip.asset.meta": "194477fc85c3b473fde379a6006c3786c8dd89a813087b902feffa6001f60a97",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_MotionReview.prefab": "8fc93bc285f7e8807961864fba709c03dd16262151cdee9dcd17376a932bf8f6",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_MotionReview.prefab.meta": "a756df63787a6eb918194d56ac2dcc53c38dad9cb19728135c96cf7c4ff39eb2",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_StaffGrip.prefab": "52ac32a47005cf2280f038307c2457bfa12ffb8323bc941f59ebf78cef3f2ad2",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_StaffGrip.prefab.meta": "e44742c63c0c28b1aa28cf0c6ee5b485d3ebe3963312d30bf2c8b4000a425929",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_SwordGrip.prefab": "4b1a2dc4bad3b413767a793fd4636a3ac8c6faa097fb339a03e9d74f3ab1fd04",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\Prefabs\\Protagonist_Chibi_SwordGrip.prefab.meta": "20a9375f0dea67160c81feab0d58d2966d886babaed5bc1eb51535edcf580183",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips.meta": "0d8c047c4f090531c6c112a117184ed9b6cd449e65bd233cd98ea651f838aedf",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Skeleton.prefab": "735a6700ab25f79e74e1aed3e83a1826565e358e0f5dd451fe644986ec705f6b",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Skeleton.prefab.meta": "b3db03d63c15f9d5a3854c69022d74089a8391b2f719c5e5c1298152a1b397aa",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips\\Idle_Fists.anim": "9af0cc80974b91b71621d0b8383a2e00a5e2fc3f21834def7a33af0e71d1d15a",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips\\Idle_Fists.anim.meta": "a6b724acf3139387ed8612f21a5862fe3b1ddeed04007237a73f5400a22e94e3",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips\\Run_Fists.anim": "baab538730888c747ba6adebdf04fedd5711627179c42ab93e580c37a2af50fc",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips\\Run_Fists.anim.meta": "162d2c16bf2ac77d19078191742e4bf0082bb3d80621ef3e58cac3ffa2e75b25",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips\\Walk_Fists.anim": "881a747bae480f0150433e98efb2d9362da819d9f064db2bbbd1bf37fa450fdb",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiMotion_v007\\SourceGait\\Clips\\Walk_Fists.anim.meta": "7be6ec5830563b800522397e2ef8136a0d00142383ec9109fb1a0fa09d5b6ca6",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Materials\\Protagonist_ChibiCap_Unlit.mat": "fcdd072322f6ad12346d9436b6509243418763ea268bf1dc216db25681f59322",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Materials\\Protagonist_ChibiCap_Unlit.mat.meta": "3feb5f82d9d34a9e55ac769ede77bdcbc0f422fca5c566387aea292902361ef3",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Meshes\\Protagonist_ChibiCap_Fists.asset": "862cab9172c5daee1660aaf1e8d3836440ec01f6f01ab0fdf3c4214b87938593",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Meshes\\Protagonist_ChibiCap_Fists.asset.meta": "f98366155b55f4fe4429f546733413a6cc2764e38b3755d57879e28898ef7093",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Prefabs\\Protagonist_ChibiCap_Rig.prefab": "f79e8b32c931349fbdf1d72e8b07162a8fdde991086310f7cfe2ec990a965712",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Prefabs\\Protagonist_ChibiCap_Rig.prefab.meta": "e812cd43e258f2f1b3a7b65be6b425f827dfa40347ed810c48305bfe4acc0000",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Rig\\Protagonist_ChibiCap_Rig.fbx": "8b2a204b7f9df23fa2a0780f3c0939e2da650a7513d787c2fda2fd8cb60f7950",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Rig\\Protagonist_ChibiCap_Rig.fbx.meta": "0c9c8a5e68ad1a50cb455743a5565189f1c3ccb3e8b56e63c2fb3af0ed3121d6",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Textures\\Protagonist_ChibiCap_BaseColor.png": "a2b78743110cc57387498fec3b70a775c33b888d11d874614d54e036460055e3",
+    "Assets\\Art\\Characters\\Protagonist01\\ChibiCap_v006\\Textures\\Protagonist_ChibiCap_BaseColor.png.meta": "e2e2a932a6c7d8b54b4b9759c7467bdaf774fa78fe14bbd8e40ed237da36394b",
+    "ArtSources\\Characters\\Protagonist01\\Final\\build_catalog.py": "6d5622ea5fda2b975d274afa4096b1f531b4f61d8af2fbe19de2cd7e3ab9ba67",
+    "ArtSources\\Characters\\Protagonist01\\Final\\README.txt": "4953d6502881bd0314b7f9d198b30e7fd9951fce55e071e8a837b08dee2e5626",
+    "ArtSources\\Characters\\Protagonist01\\Final\\selection.json": "65648f9515154bdcb1c7be27dbe925a36ebcbefaebb844dfa9155f5070324bbf",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\clips.json": "8c987a9bfce6d5b63af5149e84c9a2f2930e6d2e678f2ea2ab1a118249008325",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\Protagonist_Combat.blend": "aa9726296cfcbcc4f804017870879026b6fb82e4f4b938daf85f2a8f69a09087",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\README.txt": "c6dd39933b4822ba4d46096e60897a1b8891d1cb286957d56da01b4149f60e23",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\authoring-dependencies.json": "51e3c5033790b41e18167aa576dad1418f74a94acaa9c696a99f945cafab5ccb",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\manifest.json": "dd9f5950a9b943a1946c66341984889cfb695ddeb8e89a91f2b9d2b0ffaa68e4",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\manifest.json": "c39f9d0da77fb31b0a7cc9799c0d9a7ee67b82eb4dc9d3c29a5657a6208984d8",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Protagonist_ChibiCap_Concept.png": "2a320616f99d74e99f545b97ca087c2b84eceb1c5db982d201b7d9d7a5e7a09b",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Protagonist_ChibiCap_Rig.glb": "749ffef1b602780db8ce21d3da0a5737c7d94b171806a4c48e7d3ebe1b07d775",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\README.txt": "b5a2180bc4054c4164555c957147339ec72fff6981c5dbb41c918a1226d9860f",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\index.html": "08c483c416e0694ad12336921bf22b627a652363297c6d69ce743fa1cf882522",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Chop_Side.gif": "8c9f8c61297be87bd396f348babe6e2b3c384783cf96ea14ef2c14d3a78c3733",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Chop_Side_Slow.gif": "0684c65c3254b055dadda799e32ac52e3c3ef326a68335b388d1f0538442f202",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Slice_Side.gif": "24fc50c45d3da5b37fd5c47d0b01709049a82adb91886de048c4dbaeee768b3c",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Slice_Side_Slow.gif": "7b9bba7d9c90b06e683cd0df84834356294b6a5fe647ee4e2bc4653c97d2f203",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Stab_Side.gif": "d65e712b50fa74d339d15bdccb342f1b4546d6b539b5e425cfa1c995519a6ab1",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Stab_Side_Slow.gif": "109fa8930f03e136dc803da499f66e63e3c6891ca353a8ce5fcf4ea39d393ce3",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Review\\Combat\\media-manifest.json": "00f5620130a382dd19c174872a55b0de516283709ad40d3217f802f021755c51",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Provenance\\concept-prompt.txt": "cd3447d824ece6336b32d762c452dbae7bb66e5f5ba80b1dfc3b79990f46ea25",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Provenance\\generation.json": "8f45ec73ee5530ad8f1e84dfe248b9d39649cbf9cb2ef8aa11d0f4e09666c83b",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Provenance\\reference-analysis-2026-10-21.txt": "b8c2e23308929158dc504cafe8edf61840f203cd306d9f9b5ca22414a18565d1",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Provenance\\rig-inspection.json": "179aa4f10ab7bafc5f8f46f5c2173bc5a1d69c639fac46c1fd18eea9906a6911",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Dash_Forward.gif": "ba0004a029c3928f8c25b91b1b64387063745d49e2bb900e4b3ac3eda56a0fee",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Hit_Reaction.gif": "0c156186085de084f7eb67842a02fb8e324090c95cbbb04542e081076a2b8f35",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Idle_Fists.gif": "194fb35512ccfd5df9a682eed6be2231b7e41634b349e2e49c912bdb2d332f15",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Interact_Reach.gif": "56f4980f422274a0a8a89c3ca6b9c191205e60b7e1a72a9a34f7ed5dc9d3539a",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Item_Throw_Overhand.gif": "e53af775852040e9551b065a8e6cb3096acaac53f32c2f1b17c13a792a739839",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Apex_Loop.gif": "ec6892fb73fde87b2178c8dc497fd8e94aad1ca099ab25ae0c97259bc47b1680",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Fall_Loop.gif": "c9ce6912c5efb82bfcdf8fc32a4bbc983907cdee0096b2f7fd16dfde1e9ee9e1",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Full.gif": "777607aefa45f047a83025a2dea07d72936aea7025c04afefb9bc4c0dffd4648",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Land.gif": "84a19c2b220329b780bc0b5ff350701eb322f084ef9e21b9c3f2a01164130df2",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Rise_Loop.gif": "eaaf1a6b1efe5924f77eabfa6c8335481ef7a5c010e3d59356f2ca6873565ba6",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Takeoff.gif": "64efc0433e0f7966893e97841ba9e3ee7e03734dada300050d88833fd2d18b57",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Pickup_Low.gif": "5574df73f43964d9d16585e77358c1c32c34816a507283bbd1b6af80f29e453d",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Potion_Drink.gif": "c3c2ade5df49b017c67571ac782fdd4cec63ceab7bb3aeb38e9699461f80149d",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Run_Fists.gif": "6b4611f28293710499142218f2c6552b5d448db60893912b68ace40010ee5263",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Walk_Fists.gif": "3fc028807f95784a12c707d14d4d9cbfdec4dee66399d770b2c976775917ae4b",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\build-report.json": "0b5f12f4da648e0e8a97f26b6f282fdcb0784d5e72381a6e5927453cf6114184",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\clip-timing.csv": "85e68c12866528f45fa505149187a639f19e38ad05e496d7f4fb71a796dfb4d2",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\independent-visual-validation.json": "eacf77988e77a58a13eef30f8275e9c4da003cd29fa314f560c43e171620e1be",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\run-revision-preservation.json": "888fd91678d8cc2b070730cde7c4ff21ddd7e74b9b8d399dddad046aecd5b46a",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\run-revision-qa.json": "d9dce6bea50058289871286675eee5d0ba9bcae7cad7dc3267b9d3a4935b1bc7",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\run-revision-visual-qa.txt": "0774523af95bbc3efca45ef49a0bc529a0e2ef91d1b195bc8777a354df5e3055",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Provenance\\source-gait-migration.json": "a30aba6dbcee363a0362d505146ccca8112067b9c5004b1d4af5e7cdcc89a9c3",
+    "ArtSources\\Characters\\Protagonist01\\Final\\LegacyMotions\\Transitions\\Move_Dash_Recover.gif": "96fb116ddfabc40c217e7baae8c03683eb1ff3e9611e5dd3cc3bea89b680961c",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\Licenses\\KayKit_Character_Animations_CC0.txt": "373b159044d1a886ed15f57ca5a7673ba14e2623c460283452705f2056912ed9",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\Licenses\\KayKit_Skeletons_CC0.txt": "327a1aac6e6ff1259d82d0024cdaf088bcef302f8d7a116b5142538ac2b5cf8d",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\Provenance\\source-provenance.json": "d4e047d4aed176e0f94f842715390e1526363e0fc145bc6ff54f2dc4bb572b82",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Combat\\Textures\\Image_0.jpg": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\comparison-reference-validation.json": "65f22de361afe03eeffb305fc631e15f4aa1cb7028c20faf7bd922e5ffe2c39d",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Protagonist_ComparisonReference.blend": "d4f82d8f47b50ae5e5e784283f15e85224f599653807a68b21c958246e5baf74",
+    "ArtSources\\Characters\\Protagonist01\\Final\\Model\\Textures\\Comparison_Image_0.jpg": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+    "ArtSources\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Tools\\build_monster.py": "7bf7de0bd51356fe8c83dde8b003fc2f553eeedd42007e9c2efb113ec679d878"
+  },
+  "authoringReferenceUpdates": [
+    {
+      "file": "ArtSources\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Tools\\build_monster.py",
+      "purpose": "Relocate the existing monster preview-only protagonist reference to an equivalent static snapshot; no monster geometry, motion or game code changes.",
+      "oldPath": "ArtSources/Characters/Protagonist01/v016-overhead-arm-correction/Chibi_Longsword_OverheadCorrected.blend",
+      "newPath": "ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ComparisonReference.blend",
+      "beforeSHA256": "93414edc3d87960344ee49937762fb590585e760b1da6b86489aeefaad533205",
+      "afterSHA256": "7bf7de0bd51356fe8c83dde8b003fc2f553eeedd42007e9c2efb113ec679d878",
+      "onlyLiteralPathChanged": true
+    }
+  ]
+}

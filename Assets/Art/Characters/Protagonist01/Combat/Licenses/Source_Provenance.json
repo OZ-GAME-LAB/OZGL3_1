@@ -1,0 +1,18 @@
+{
+  "creator": "Kay Lousberg / KayKit",
+  "license": "CC0 according to the preserved package License.txt files",
+  "officialPages": [
+    "https://kaylousberg.itch.io/kaykit-character-animations",
+    "https://kaylousberg.itch.io/kaykit-skeletons"
+  ],
+  "originalAnimationArchiveSHA256": "65882f31f905ad2e953819648a59287cdeab8f623908d5ef701971d3758be20f",
+  "originalCombatSourceMember": "CharacterAnimations/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+  "originalCombatSourceSHA256": "c55e6ec1c79e83ae21d46fe1cd921c1b64be8b9a524a24517e51c6ba99231459",
+  "validatedRetargetSourceBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+  "selectedActions": [
+    "Melee_2H_Attack_Chop",
+    "Melee_2H_Attack_Slice",
+    "Melee_2H_Attack_Stab"
+  ],
+  "note": "Archive/member names identify original provenance, not local file links. Unselected animation/model history and disposable QA projects are not required by this delivery. Hero and weapon artwork retain their separate existing provenance."
+}

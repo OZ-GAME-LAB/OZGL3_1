@@ -1,0 +1,390 @@
+{
+  "date": "2026-10-27",
+  "reviewer": "kaykit_delivery",
+  "result": "No new blocking deformation or binding defect found in the retained Legacy clips/meshes within the inspected scope. Approved Legacy motion and model assets were preserved.",
+  "actualUnityVersion": "6000.3.21f1",
+  "samplingMethod": "Actual main-project Unity prefab instances; saved AnimationClip.SampleAnimation at 60 Hz including endpoint; every skinned world vertex BakeMesh and finite local transform checks. No Animator/controller or runtime integration.",
+  "legacyClipCount": 15,
+  "legacyPrefabVariants": 3,
+  "legacyCombinations": 45,
+  "legacyPoseSamples": 2529,
+  "missingBindingTargets": 0,
+  "nonFiniteValues": 0,
+  "zeroScaleAxes": 0,
+  "collapsedTrianglesAtAreaBelow1eMinus10SquareMetres": 0,
+  "maximumLoopEndpointSurfaceDifferenceMetres": 2.327635826304686e-07,
+  "visualScope": {
+    "primarySide": "Every 30 Hz rendered frame of each of the 15 MotionReview clips, in chronological contact sheets.",
+    "oppositeSide": "Nine equally spaced poses including endpoints for every MotionReview clip.",
+    "secondaryReviewer": "independent-secondary-visual-review.json contains the separate review of 30 Front/ThreeQuarter sheets and 14 SwordGrip/StaffGrip utility sheets.",
+    "staticModels": "Four views each of v006 imported rest mesh, v006 Rig prefab, v006 Fists source mesh on rig instance, and existing Runtime reference. The raw imported FBX rest mesh is gray; the retained prefab supplies its intended textured material.",
+    "observations": [
+      "No detached/reversed wrist or elbow, large mesh tear, or Run fist buried in torso observed in reviewed game-scale frames.",
+      "Potion hand-to-face approach, Throw preparation near the cheek, and Pickup hand near the shoes are consistent with the authored intent.",
+      "Idle is intentionally restrained. Jump phase clips are small transition/loop components; their static-ground preview is not a gameplay jump simulation.",
+      "Compact fast Throw/Hit/Dash frame-to-frame rotation measurements are not by themselves defects; corresponding visible sequences were inspected.",
+      "No Legacy changes were justified by the current evidence."
+    ],
+    "limits": [
+      "These are asset-space sampled poses and review-camera renders, not a playtested combat/controller integration.",
+      "No potion, thrown object, or environment interaction prop was attached to Legacy utility clips; actual object contact is not verified.",
+      "Front/ThreeQuarter/Opposite and grip-variant renders use selected phases rather than every 60 Hz frame; all frames received numerical mesh validation.",
+      "A finite sampling and camera review cannot establish absence of every possible subframe/self-intersection or future transition artifact.",
+      "Runtime reference was checked as a static dependency; its legacy controller motions were not regenerated or exhaustively replayed."
+    ]
+  },
+  "reviewedContactSheets": [
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Dash_Forward_Opposite_01.jpg",
+      "sha256": "9f985fa6279df43869f1c86b490cf5dc54fe1a694e7164f8c90933c5aad358a8"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Dash_Forward_Side_01.jpg",
+      "sha256": "e313c828b9ba00c9568f4f8da24a483547a4d65c31a5f395969f46ece40c29d1"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Dash_Forward_Side_02.jpg",
+      "sha256": "e243c8cf973c6a3093fa79277ff9945b30f79488ba1cc02a1290f835e2df49b3"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Hit_Reaction_Opposite_01.jpg",
+      "sha256": "74398fcfba7901980340c0b22af2b75c129b3d973cb8554ae6ce8fcd8bac5974"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Hit_Reaction_Side_01.jpg",
+      "sha256": "7a6482a8ea0373a8905055042f3aed1a2d926af9344fb12f519efe0ca0a9aaf3"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Hit_Reaction_Side_02.jpg",
+      "sha256": "2d35277d2f768068e87bed4a5b5591f840bd73ce23dd78d762ff53110f7d574b"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Opposite_01.jpg",
+      "sha256": "08e3179faf22d15d086adc14e69ef6e028fd60b4904912607a4a391f6e6bd261"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_01.jpg",
+      "sha256": "a5b799111426b5b8b85a85c920b6509bad5cd2f2b8185db26e37e0ca01ebf8f4"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_02.jpg",
+      "sha256": "1b462d3f1a23cdfa3176c822099d08bc08c608fb62c111d8a8f5f4b45f246f7b"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_03.jpg",
+      "sha256": "ab3aa202ad48afb16b5aed2305bc9f4e683e5e485b7d3e30a829c97168e875ba"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_04.jpg",
+      "sha256": "4995ce5aa89e28a55bc43618d54f1d8d550f74ec2b143da24cc3422156fb5cc2"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_05.jpg",
+      "sha256": "8e1fd11619f85debd9b85fe7640191e13bd5df247fd11d97235b2f3dd603a941"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_06.jpg",
+      "sha256": "7ef2eb4388ce31966b9a49417edc2cf0d5c1122bad7c5c01e3792ebe7939217a"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Idle_Fists_Side_07.jpg",
+      "sha256": "f52eda5ef8910ade13030b4f89191e01b516ac78f02c154e1a02bf5a145d9b5a"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Interact_Reach_Opposite_01.jpg",
+      "sha256": "4edb0c6d100294178700b115e77c694930aa154b50eeb31689ada666db1511af"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Interact_Reach_Side_01.jpg",
+      "sha256": "5521a9e155e3830517200b128d265ab41445e5c885e52730b45af032c598cfa4"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Interact_Reach_Side_02.jpg",
+      "sha256": "94e9dfa7284090a8babd1e96d79a4277a8c7a189b8028e46f45e3ed4906ed36d"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Interact_Reach_Side_03.jpg",
+      "sha256": "6ad0c46f188754e502ac048f827f7db6a39beae8b89a2c3a6804d5a2e06466f7"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Item_Throw_Overhand_Opposite_01.jpg",
+      "sha256": "f34e429f4e1938b6018e3a0001e320eb67a8115ff891fd9d71d5396d07403840"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Item_Throw_Overhand_Side_01.jpg",
+      "sha256": "d7de1a6c43817d0628ef24560682084a3f242d9042dae828650c08c68916f3ea"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Item_Throw_Overhand_Side_02.jpg",
+      "sha256": "84634367f9949c2b2b8c25b6db7d7bf0fb0353fa416da01bf6f59b782811638e"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Item_Throw_Overhand_Side_03.jpg",
+      "sha256": "4d307326927a5e6b5c54885d19637aa7bfa048a04eb8a2522ad89be258dddfe9"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Item_Throw_Overhand_Side_04.jpg",
+      "sha256": "8af87309c563c8e94eeb5545b1465d80a8e258475428a35e8ff311d125b2d484"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Apex_Loop_Opposite_01.jpg",
+      "sha256": "b0b09cc3f5cd22f8effe8c4b5e5d379dc451b8165162bf9153122d974927f45b"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Apex_Loop_Side_01.jpg",
+      "sha256": "a803c8f3ce716c72f9a852a6c0a0b6ece737041de7b06d08d7e560b90006cac2"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Fall_Loop_Opposite_01.jpg",
+      "sha256": "7ded302232072634270efeffa920c70387b9b36d8d31fc6b5ecbbb7e8425adaf"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Fall_Loop_Side_01.jpg",
+      "sha256": "1537872011d4e01dc0dc5757e2029d2940a25dbc76a67d30a21f4f858ef1431c"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Full_Opposite_01.jpg",
+      "sha256": "584312f3928c48c26707f1681797441611aa02ab824ba3e19b1629a43fc5afa3"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Full_Side_01.jpg",
+      "sha256": "1092ae36ca3f44ac5ae15e27c0bbdc10c185442bacf0b8a8ee01f396a26ba1e1"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Full_Side_02.jpg",
+      "sha256": "936f45689630e327af85716ee878b4aefcaf5dee93d7e2772f6b3791ef1c100b"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Full_Side_03.jpg",
+      "sha256": "50ec36fb9dee91f168d1caff7cb9ae5a6ed30a3675ce8d0201d65c2b367dd4e1"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Land_Opposite_01.jpg",
+      "sha256": "d124cfda178251be498f8b87b50bf563794d0d83248e400c76cafa4f7e69c3ab"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Land_Side_01.jpg",
+      "sha256": "bfad4ab2d382e94810bd6ce0fc956afac4b4c1304586e78551382ad5bc3fb71e"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Land_Side_02.jpg",
+      "sha256": "2c3dbcf2edbafc3c557b0934d8f4a4fc737c7e967dcc81799ae29f25ae7e461e"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Rise_Loop_Opposite_01.jpg",
+      "sha256": "47786944b115a156cf2d0314b20acbeb15f9b80423d2f8b40f477fabb3a39152"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Rise_Loop_Side_01.jpg",
+      "sha256": "78cda501a2a2d4de0de17d7ac1a45d6fab186785d35756ddc78e84d3b55dbecb"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Takeoff_Opposite_01.jpg",
+      "sha256": "f53498f2192414ac2ba1f67a58eefc7c4ce576763eca18c41685b859905ad2af"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Jump_Takeoff_Side_01.jpg",
+      "sha256": "3b230d3e4137afae80571ae026aaa72145bc336e84141a3bc607f229cdc293c3"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Pickup_Low_Opposite_01.jpg",
+      "sha256": "b1b7d28b5c802d40d180f158edc4bde2de5c58c6453c129ad29d84a5d6e31555"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Pickup_Low_Side_01.jpg",
+      "sha256": "f24e8a13df7715fce977b7451e3fccc343cd03c824df98a1d6508abef1284c90"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Pickup_Low_Side_02.jpg",
+      "sha256": "810441ad5959cbabac08ef62103e7cf3c41b3af66afa92d7113f7e5ce7cf34fd"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Pickup_Low_Side_03.jpg",
+      "sha256": "c21ef79a138a4ecb2cf6d4a41f14120d2bf8de6999035a41a241ab1551eb36fb"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Pickup_Low_Side_04.jpg",
+      "sha256": "70ce137252cc0d7bdc4dae78fc0c6da441e5aa0c3d3208382d08f3285b9d572c"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Potion_Drink_Opposite_01.jpg",
+      "sha256": "a5f6d6ff2955bcd6c4872ad6ada6331a78014285fa18543e45356a0ae2105887"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Potion_Drink_Side_01.jpg",
+      "sha256": "2a15f2f6eca432e0645719c604dc4d60c2f59420af0701c3a3bcd493c79c85a4"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Potion_Drink_Side_02.jpg",
+      "sha256": "dbfa8980ef6b115e6e7466055c1ddfd5c8e66db26576f2a0e496a7ac54994cde"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Potion_Drink_Side_03.jpg",
+      "sha256": "9cc8a0d4978266adf1950f3bd9dbccbdc1db838b6835d86f04d6fc48ee02a0ba"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Potion_Drink_Side_04.jpg",
+      "sha256": "26af5236dab47c2c5f21eabde3421590730fe06129af97015c8aa30717b5f8ae"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Potion_Drink_Side_05.jpg",
+      "sha256": "123dbe51463ebd4b1937c49a4f1e15b514f0c3a68970df2d4db6eec6c5312076"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Run_Fists_Opposite_01.jpg",
+      "sha256": "315e1bc0dc81c11ffed4147b5c5a3a4185961e7e5467159805f12bcc7cdc1a3f"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Run_Fists_Side_01.jpg",
+      "sha256": "b64b8c7066927cb79932f3f81e24e7eb31c412bdbf757111a2ebf35aa6a79530"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Run_Fists_Side_02.jpg",
+      "sha256": "0c6ac4d55636f0dcf936cfac44985edae413dcec0d81044d6804e7a29e52a2ef"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Walk_Fists_Opposite_01.jpg",
+      "sha256": "eb6a340f33d0287e1d3ec0d088e1e249c458af42332ea18fcc49752e642feba5"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Walk_Fists_Side_01.jpg",
+      "sha256": "a940ffdae47e9ccd19d7ff88125a3095ea05ff1fd8db2a3c6f228febd5a2adea"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Walk_Fists_Side_02.jpg",
+      "sha256": "19ab0ca3660a3f1f064cb6cf4e1f060e3a1b91fae4b47809b182f6e7cd996fb8"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Legacy_MotionReview_Walk_Fists_Side_03.jpg",
+      "sha256": "7ff34895c03d8c2d6497cfc7df900aecdf7f6bdc83609dadf3db9b900aeffe66"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Static_ExistingRuntimeReference_Rest_Views_01.jpg",
+      "sha256": "b679cd11860562cab2568fb36a6c936c458feffa2f3fc58a1466d531e028f5c6"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Static_V006_FistsSource_Rest_Views_01.jpg",
+      "sha256": "873920f69d8ba44c75fb8b121d8c037a6ce3887d6026ad5ec2a093b1c058f9d2"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Static_V006_ImportedRest_Rest_Views_01.jpg",
+      "sha256": "4a6c0c2bdb08c03a565a5b3ac5c07d5c976df3bec6227ccc5e167fc9db2263a1"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsBaseline/Static_V006_RigPrefab_Rest_Views_01.jpg",
+      "sha256": "873920f69d8ba44c75fb8b121d8c037a6ce3887d6026ad5ec2a093b1c058f9d2"
+    }
+  ],
+  "preservedSelectedAssets": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim",
+      "auditSHA256": "682e6db8fec7926e133dae61f00c687f9ec6c2e0bb89daab9ddffc9078ae2080",
+      "currentSHA256": "682e6db8fec7926e133dae61f00c687f9ec6c2e0bb89daab9ddffc9078ae2080",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim",
+      "auditSHA256": "2cbb087b5c81f2fd7c3cce68a836b7b2380116723e019b7ce99e37b40a40bcef",
+      "currentSHA256": "2cbb087b5c81f2fd7c3cce68a836b7b2380116723e019b7ce99e37b40a40bcef",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim",
+      "auditSHA256": "8eb67c8aafacbf706ddf2dd55d6adbbeb08780869955f22f0c90590062cd1dc4",
+      "currentSHA256": "8eb67c8aafacbf706ddf2dd55d6adbbeb08780869955f22f0c90590062cd1dc4",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim",
+      "auditSHA256": "75d5f7f8003d2d3440c6569ca73b5e782005910aa898a8e7e59f93134b85633e",
+      "currentSHA256": "75d5f7f8003d2d3440c6569ca73b5e782005910aa898a8e7e59f93134b85633e",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim",
+      "auditSHA256": "058b86ab7781113b617bfe5e81ff749313c23a6aff7634af913d8c534744c355",
+      "currentSHA256": "058b86ab7781113b617bfe5e81ff749313c23a6aff7634af913d8c534744c355",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim",
+      "auditSHA256": "f69665c014120ec8a1eccca6a1d4f5d80f4244dd1f9eb0d8d3c50168cfe3b612",
+      "currentSHA256": "f69665c014120ec8a1eccca6a1d4f5d80f4244dd1f9eb0d8d3c50168cfe3b612",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "auditSHA256": "5fffacd881eacda71d071249921f5e02b87b3eb9a00c7b8cbb982ac7670e0391",
+      "currentSHA256": "5fffacd881eacda71d071249921f5e02b87b3eb9a00c7b8cbb982ac7670e0391",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim",
+      "auditSHA256": "e819f36a9af6c5552e0b77bbf3b3a498be58297b8c407e18833cec9e59d87ee6",
+      "currentSHA256": "e819f36a9af6c5552e0b77bbf3b3a498be58297b8c407e18833cec9e59d87ee6",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim",
+      "auditSHA256": "4b71b8d8e362a0fafc0d371a61bad8178d5fdb19d632132c97eb72d851446eff",
+      "currentSHA256": "4b71b8d8e362a0fafc0d371a61bad8178d5fdb19d632132c97eb72d851446eff",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "auditSHA256": "3b0019b6e1186e90e6a19776705afe8346a63c58385d1f2649801c40ccb13f89",
+      "currentSHA256": "3b0019b6e1186e90e6a19776705afe8346a63c58385d1f2649801c40ccb13f89",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim",
+      "auditSHA256": "57a4dd77cb9cd604772247579e7c812d922786ef4c3a4c913fac46054e4326fa",
+      "currentSHA256": "57a4dd77cb9cd604772247579e7c812d922786ef4c3a4c913fac46054e4326fa",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim",
+      "auditSHA256": "5f930267000699e7236d1b71b06e3770df24a1e34cbac08fd37389151f0b6512",
+      "currentSHA256": "5f930267000699e7236d1b71b06e3770df24a1e34cbac08fd37389151f0b6512",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim",
+      "auditSHA256": "77119754a7d98427a73248a62f7ffae28e78a8cbdacbd64bbcb38b84e6fd52a5",
+      "currentSHA256": "77119754a7d98427a73248a62f7ffae28e78a8cbdacbd64bbcb38b84e6fd52a5",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim",
+      "auditSHA256": "fe4055276294b2dc4a88745cd84bb0634d9bff3bc1c4122c5335099453bbc103",
+      "currentSHA256": "fe4055276294b2dc4a88745cd84bb0634d9bff3bc1c4122c5335099453bbc103",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim",
+      "auditSHA256": "5abef4d7f9654f5280e97d60f754040c3b3b3de4039c28855e619ef36827e156",
+      "currentSHA256": "5abef4d7f9654f5280e97d60f754040c3b3b3de4039c28855e619ef36827e156",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+      "auditSHA256": "8fc93bc285f7e8807961864fba709c03dd16262151cdee9dcd17376a932bf8f6",
+      "currentSHA256": "8fc93bc285f7e8807961864fba709c03dd16262151cdee9dcd17376a932bf8f6",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab",
+      "auditSHA256": "4b1a2dc4bad3b413767a793fd4636a3ac8c6faa097fb339a03e9d74f3ab1fd04",
+      "currentSHA256": "4b1a2dc4bad3b413767a793fd4636a3ac8c6faa097fb339a03e9d74f3ab1fd04",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_StaffGrip.prefab",
+      "auditSHA256": "52ac32a47005cf2280f038307c2457bfa12ffb8323bc941f59ebf78cef3f2ad2",
+      "currentSHA256": "52ac32a47005cf2280f038307c2457bfa12ffb8323bc941f59ebf78cef3f2ad2",
+      "unchanged": true
+    }
+  ],
+  "authoringMaintenance": "authoring-path-repairs.json: four output path replacements across ChibiMotionSet.cs, ChibiCapHandBuilder.cs, ChibiGaitSourceMigration.cs. No builder was run and no motion-generation logic changed.",
+  "combatCorrectionSeparateReceipt": "../Combat/unity-skin-regression.json"
+}
