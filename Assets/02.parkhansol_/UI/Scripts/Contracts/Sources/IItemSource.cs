@@ -12,6 +12,10 @@ namespace OZ.UI.Contracts
         ItemData GetItem(int slotIndex);
         int GetCount(int slotIndex);
 
+        /// <summary>slotIndex 칸 아이템 사용 시도. 성공하면 ItemUsed, 실패(수량 0·체력 가득 등)하면 ItemUseFailed.
+        /// 1~4 키 입력은 플레이어 쪽(InputManager)에서 이 메서드를 호출한다.</summary>
+        void UseItem(int slotIndex);
+
         /// <summary>(slotIndex, 새 수량) — 획득·사용·재도전 복구 모두</summary>
         event Action<int, int> CountChanged;
         /// <summary>사용 성공 (사용 연출)</summary>
