@@ -25,8 +25,8 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     [SerializeField] int[] startCounts = { 1, 0, 0, 0 };
     [Tooltip("1~4 칸 아이템. 비우면 씬의 상점 목록에서 slotIndex 기준으로 채움")]
     [SerializeField] ItemData[] quickItems = new ItemData[4];
-    [Tooltip("숫자 키 1~4로 사용 (플레이어 쪽 입력이 생기면 끄기)")]
-    [SerializeField] bool useNumberKeys = true;
+    [Tooltip("숫자 키 1~4로 직접 사용 (기본 꺼짐 — 플레이어 InputManager가 IItemSource.UseItem 호출. 단독 테스트할 때만 켜기)")]
+    [SerializeField] bool useNumberKeys = false;
 
     readonly int[] _counts = new int[4];
     readonly System.Collections.Generic.Dictionary<ItemData, int> _others = new System.Collections.Generic.Dictionary<ItemData, int>(); // 1~4 칸이 없는 아이템 (장비 등)
