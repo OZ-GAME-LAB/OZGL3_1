@@ -278,8 +278,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        // TODO: 한솔님 IItemSource.UseItem 추가 + useNumberKeys=false 반영 후 주석 해제
-        // UISources.Items?.UseItem(slotIndex);
+        UISources.Items?.UseItem(slotIndex);
     }
 
     public void ChangeState(PlayerState newState)
