@@ -1,0 +1,26 @@
+{
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false
+  },
+  "selectedUnityClipsChecked": 18,
+  "currentClipManifest": "LegacyMotions/manifest.json",
+  "changedSelectedClipsOrMetas": [],
+  "lineEndingOnlyDifferences": [
+    "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+    "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+    "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim"
+  ],
+  "legacyGIFsChecked": 15,
+  "changedLegacyGIFs": [],
+  "combatGIFsChecked": 6,
+  "combatGIFHashMismatches": [],
+  "catalogsChecked": 4,
+  "localCatalogLinksChecked": 29,
+  "missingCatalogLinks": [],
+  "currentSourceHashMatchesRetouchReceipt": true,
+  "passed": true
+}

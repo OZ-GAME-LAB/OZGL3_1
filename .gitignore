@@ -126,3 +126,9 @@ GEMINI.md
 .github/prompts/
 .vscode/mcp.json
 /Docs/
+
+# Generated art review GIFs are stored outside the Unity project.
+# Default: Desktop/OZGL3_ArtReview; override with OZGL3_ART_REVIEW_DIR.
+# Existing tracked historical GIFs remain until their pending deletion is allowed.
+/ArtSources/**/*.gif
+/ArtSources/**/__pycache__/

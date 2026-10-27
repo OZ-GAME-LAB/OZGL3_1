@@ -1,8 +1,12 @@
 """Package actual rendered frames; no pose generation or image synthesis."""
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
-import json, hashlib, html
+import json, hashlib, html, sys
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'Review'
+PROJECT=next(p for p in ROOT.parents if (p/'Assets').is_dir() and (p/'ProjectSettings').is_dir())
+sys.path.insert(0,str(PROJECT/'ArtSources'))
+from review_storage import media_path,publish_html,storage_metadata
+media_path(OUT).mkdir(parents=True,exist_ok=True)
 manifest=json.loads((ROOT/'QA/build-manifest.json').read_text())
 font_path='C:/Windows/Fonts/malgun.ttf'
 font=ImageFont.truetype(font_path,18);small=ImageFont.truetype(font_path,13)
@@ -26,7 +30,7 @@ for clip,seconds in manifest['durations_seconds'].items():
     # GIF delays are centiseconds: distribute rounding instead of changing FPS.
     for speed,suffix in [(1,'1x'),(.5,'05x')]:
         delays=[(round((i+1)*100/(30*speed))-round(i*100/(30*speed)))*10 for i in range(n)]
-        q[0].save(OUT/f'{clip}_{suffix}.gif',save_all=True,append_images=q[1:],duration=delays,loop=0,disposal=2,optimize=False)
+        q[0].save(media_path(OUT/f'{clip}_{suffix}.gif'),save_all=True,append_images=q[1:],duration=delays,loop=0,disposal=2,optimize=False)
     sheets=[]
     paths=[OUT/'Frames'/clip/f'{f:04}.png'for f in range(n+1)]
     for page in range((len(paths)+35)//36):
@@ -58,6 +62,6 @@ for row in summaries:
     body+='</details></article>'
 body+='''<h2>공격 주요 자세 네 방향</h2><img src="Attack_KeyPoses.jpg" alt="공격 측면 정면 반대 후면 주요 자세">
 <p>원본의 준비·타격·회수 구조를 유지했습니다. 공격 판정 이벤트·게임 이동 속도·실제 Animator 전환은 연결하지 않았습니다. 제자리 달리기의 발 접지는 최종 게임 이동 속도와 함께 확인해야 합니다. Unity 페이지의 0.12초 연결은 검수용 미리보기입니다.</p></html>'''
-(OUT/'index.html').write_text(body,encoding='utf-8')
-(OUT/'presentation-manifest.json').write_text(json.dumps({'source_blend_sha256':hashlib.sha256((ROOT/'Stage01_Melee01.blend').read_bytes()).hexdigest(),'source_fbx_sha256':hashlib.sha256((ROOT/'Exports/Stage01_Melee01.fbx').read_bytes()).hexdigest(),'clips':summaries,'camera':'same orthographic camera and world units for both characters','protagonist':'static evaluated mesh copied read-only from v016','rendering':'Blender Cycles actual evaluated skin; Unity render separately linked'},indent=2))
+publish_html(OUT/'index.html',body,'1스테이지 몬스터 외부 갤러리')
+(OUT/'presentation-manifest.json').write_text(json.dumps({'previewStorage':storage_metadata(OUT),'source_blend_sha256':hashlib.sha256((ROOT/'Stage01_Melee01.blend').read_bytes()).hexdigest(),'source_fbx_sha256':hashlib.sha256((ROOT/'Exports/Stage01_Melee01.fbx').read_bytes()).hexdigest(),'clips':summaries,'camera':'same orthographic camera and world units for both characters','protagonist':'static evaluated mesh copied read-only from v016','rendering':'Blender Cycles actual evaluated skin; Unity render separately linked'},indent=2))
 print('PACKAGED',len(summaries),'clips')

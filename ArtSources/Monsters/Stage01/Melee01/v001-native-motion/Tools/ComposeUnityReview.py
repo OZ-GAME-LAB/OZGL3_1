@@ -1,15 +1,19 @@
 """Compose actual Unity Camera.Render frames; never generates or changes motion."""
 from pathlib import Path
-import json
+import json,sys
 from PIL import Image,ImageDraw,ImageFont
 
 ROOT=Path(__file__).resolve().parent.parent
+PROJECT=next(p for p in ROOT.parents if (p/'Assets').is_dir() and (p/'ProjectSettings').is_dir())
+sys.path.insert(0,str(PROJECT/'ArtSources'))
+from review_storage import media_path,publish_html
 OUT=ROOT/'QA/UnityRendered'
 report=json.loads((OUT/'report.json').read_text(encoding='utf-8'))
 font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',17)
 small=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',14)
 
 def gif(folder,target,speed=1,frame_count=None):
+    target=media_path(target);target.parent.mkdir(parents=True,exist_ok=True)
     paths=[folder/f'{i:04}.png' for i in range(frame_count)] if frame_count is not None else sorted(folder.glob('[0-9][0-9][0-9][0-9].png'))
     if not paths: raise ValueError(f'No actual Unity frames: {folder}')
     frames=[Image.open(p).convert('RGB') for p in paths]
@@ -60,5 +64,5 @@ for info in report['clips']:
 html.append('<h2>Preview connections</h2><p>Each preview uses a 0.12 second offline Playables blend. Raw end and start stills are also retained in Connections. These previews do not verify the game Animator.</p>')
 for info in report['connections']:
     name=info['first']+'_to_'+info['second'];html.append(f'<details><summary>{name}</summary><img src="{name}_PreviewBlend.gif"></details>')
-(OUT/'index.html').write_text(''.join(html),encoding='utf-8')
+publish_html(OUT/'index.html',''.join(html),'몬스터 Unity 검수 외부 갤러리')
 print('UNITY_REVIEW_COMPOSED',OUT/'index.html')

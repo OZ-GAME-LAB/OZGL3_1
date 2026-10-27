@@ -1,0 +1,53 @@
+{
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false
+  },
+  "resolvedReviewRoot": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview",
+  "pages": [
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\Final\\Review\\index.html",
+      "links": 1
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\index.html",
+      "links": 22
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\Final\\Review\\Airborne\\index.html",
+      "links": 1
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Airborne\\index.html",
+      "links": 5
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\index.html",
+      "links": 1
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\index.html",
+      "links": 22
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\index.html",
+      "links": 1
+    },
+    {
+      "page": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\index.html",
+      "links": 30
+    }
+  ],
+  "localLinksChecked": 83,
+  "missingLinks": [],
+  "insideProjectOverrideRejected": true,
+  "pythonScriptsParsed": 23,
+  "gifFilesMovedOrDeletedByThisOperation": 0,
+  "historicalProjectGIFDeletionStatus": "blocked by automatic approval review; current galleries and producers use external copies",
+  "newAirborneClipsIntegrated": false,
+  "runtimeIntegrationChangedThisTask": false,
+  "passed": true
+}

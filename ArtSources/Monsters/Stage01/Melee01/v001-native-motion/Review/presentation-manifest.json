@@ -44,5 +44,13 @@
   ],
   "camera": "same orthographic camera and world units for both characters",
   "protagonist": "static evaluated mesh copied read-only from v016",
-  "rendering": "Blender Cycles actual evaluated skin; Unity render separately linked"
+  "rendering": "Blender Cycles actual evaluated skin; Unity render separately linked",
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false,
+    "relativeBase": "Monsters/Stage01/Melee01/v001-native-motion/Review"
+  }
 }

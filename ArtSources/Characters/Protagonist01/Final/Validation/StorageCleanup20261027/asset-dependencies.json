@@ -1,0 +1,125 @@
+[
+  {
+    "root": "Assets/Art/Characters/Protagonist01/Runtime",
+    "incomingFromOutsideRoot": {
+      "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Actions.fbx": [
+        "Assets/2.Prefab/Player/Player.prefab",
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unarmed.controller": [
+        "Assets/2.Prefab/Player/Player.prefab"
+      ]
+    },
+    "stringPathCodeReferences": [
+      "Assets/Art/Stage01Kit/Editor/SideviewAnimationRefinement.cs",
+      "Assets/Art/Stage01Kit/Editor/SideviewContactCalibration.cs",
+      "Assets/Art/Stage01Kit/Editor/SideviewMotionDiagnostics.cs",
+      "Assets/Art/Stage01Kit/Editor/SideviewOrientationProbe.cs",
+      "Assets/Art/Stage01Kit/Editor/SideviewReviewCapture.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanCharacterCapture.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanConsumableBuilder.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanKitSetup.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanWeaponBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ProtagonistAssetImport.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ProtagonistGripBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ProtagonistGroundingBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ProtagonistUnitySetup.cs"
+    ]
+  },
+  {
+    "root": "Assets/Art/Characters/Protagonist01/ChibiCap_v006",
+    "incomingFromOutsideRoot": {
+      "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat": [
+        "Assets/2.Prefab/Player/Player.prefab",
+        "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+        "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_StaffGrip.prefab",
+        "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Meshes/Protagonist_ChibiCap_Fists.asset": [
+        "Assets/2.Prefab/Player/Player.prefab"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx": [
+        "Assets/2.Prefab/Player/Player.prefab"
+      ]
+    },
+    "stringPathCodeReferences": [
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiCapHandBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiCylinderGripBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiGripProbe.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionSet.cs"
+    ]
+  },
+  {
+    "root": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007",
+    "incomingFromOutsideRoot": {
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ],
+      "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim": [
+        "Assets/Anim/Player_Chibi.controller"
+      ]
+    },
+    "stringPathCodeReferences": [
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiCylinderGripBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiGaitSourceMigration.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionRig.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionSet.cs"
+    ]
+  },
+  {
+    "root": "Assets/Art/Characters/Protagonist01/Combat",
+    "incomingFromOutsideRoot": {},
+    "stringPathCodeReferences": [
+      "Assets/Editor/AssetAudit20261027/ApplyUnitySkinWeights.cs"
+    ]
+  },
+  {
+    "root": "Assets/Art/CombatVFX_v1",
+    "incomingFromOutsideRoot": {},
+    "stringPathCodeReferences": [
+      "Assets/Art/CombatVFX_v1/Editor/CombatVfxBuilder.cs"
+    ]
+  },
+  {
+    "root": "Assets/Art/Stage01Kit",
+    "incomingFromOutsideRoot": {},
+    "stringPathCodeReferences": [
+      "Assets/Editor/AssetAudit20261027/NonHeroAssetAudit.cs",
+      "Assets/Art/Stage01Kit/Editor/ChibiStaffOrbBuilder.cs",
+      "Assets/Art/Stage01Kit/Editor/SideviewContactCalibration.cs",
+      "Assets/Art/Stage01Kit/Editor/SideviewReviewCapture.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanCharacterCapture.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanConsumableBuilder.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanKitSetup.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanModuleBuilder.cs",
+      "Assets/Art/Stage01Kit/Editor/UrbanWeaponBuilder.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiGaitSourceMigration.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiGripProbe.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ChibiMotionCapture.cs",
+      "Assets/Art/Characters/Protagonist01/Editor/ProtagonistExtendedValidation.cs"
+    ]
+  },
+  {
+    "root": "Assets/Art/Monsters",
+    "incomingFromOutsideRoot": {},
+    "stringPathCodeReferences": []
+  }
+]
