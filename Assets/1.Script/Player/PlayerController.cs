@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private IPlayerAttack _attack; // 공격 확장 지점. 없으면 모션만 재생.
     private PlayerSkill _skills; //없으면 스킬 입력 무시 -> 스킬 없는 테스트 씬에서도 플레이어가 그대로 동작
     private PlayerBuffs _buffs;  //없으면 신속 버프 없이 동작
+    private PlayerStats _stats;  // 새 게임 초기화용
 
     private float _facingX = 1f;
 
@@ -160,6 +161,8 @@ public class PlayerController : MonoBehaviour
         _bodyColliders = CollectBodyColliders();
         _rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         InitStateDictionary();
+        _stats = GetComponent<PlayerStats>();
+        UIRequests.NewGame += ResetForNewGame;
     }
 
     private void OnEnable()
@@ -209,6 +212,11 @@ public class PlayerController : MonoBehaviour
         _inputManager.OnAttackAction -= OnAttack;
         _inputManager.OnSkillAction -= OnSkill;
         _inputManager.OnItemAction -= OnItem;
+    }
+
+    private void OnDestroy()
+    {
+        UIRequests.NewGame -= ResetForNewGame;
     }
 
     private void InitStateDictionary()
@@ -362,6 +370,14 @@ public class PlayerController : MonoBehaviour
         EndDropThrough(); // 통과 중 사망 -> 재시작 위치에서 발판을 뚫고 떨어지지 않게
         ClearRequests();
         ChangeState(PlayerState.Idle);
+    }
+
+    // 타이틀 '새 게임' 때 이전 판 성장(버프·스킬·스탯)을 지움
+    private void ResetForNewGame()
+    {
+        if (_buffs != null) _buffs.ClearAll();
+        if (_skills != null) _skills.ResetAll();
+        if (_stats != null) _stats.ResetAll(); // 최대 HP도 100으로 돌아감
     }
 
     public void SetInvincible(float duration)

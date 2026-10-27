@@ -145,6 +145,53 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
         SlotChanged?.Invoke(slot);
     }
 
+    // 새 게임: 보유·장착·쿨다운을 처음 상태로
+    // 플레이어 오브젝트를 재사용(SetActive만 껐다 켬)해서 직접 비우지 않으면 이전 판 구매가 남음
+    public void ResetAll()
+    {
+        _owned.Clear();
+        _cooldownEndTime.Clear();
+        for (int i = 0; i < SlotCount; i++)
+        {
+            _equipped[i] = null;
+            SlotChanged?.Invoke((SkillSlot)i); // HUD 슬롯 아이콘도 비우도록 알림
+        }
+    }
+
+    // 저장: 보유·장착 상태만 꺼냄. 쿨다운은 저장 X
+    public PlayerSkillSaveData GetSaveData()
+    {
+        PlayerSkillSaveData data = new PlayerSkillSaveData();
+        data.owned.AddRange(_owned); // HashSet -> List로 옮겨 담기 (저장 가능한 모양으로)
+        for (int i = 0; i < SlotCount; i++)
+        {
+            data.equipped[i] = _equipped[i] != null ? _equipped[i].Data.Id : null;
+        }
+        return data;
+    }
+
+    // 불러오기
+    // 없는 id 무시, 중복 보유·장착 방지, UI 알림까지 기존 검사를 그대로 거치게
+    public void LoadSaveData(PlayerSkillSaveData data)
+    {
+        ResetAll();
+        if (data == null)
+        {
+            return;
+        }
+        foreach (string id in data.owned)
+        {
+            TryAddOwned(id);
+        }
+        for (int i = 0; i < SlotCount && data.equipped != null && i < data.equipped.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(data.equipped[i]))
+            {
+                TryEquip((SkillSlot)i, data.equipped[i]);
+            }
+        }
+    }
+
     // - 쿨다운 -
     public float GetCooldownRemaining(string id)
     {
