@@ -1,7 +1,6 @@
 ﻿using OZ.UI.Contracts;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 
 [RequireComponent(typeof(Animator))]
