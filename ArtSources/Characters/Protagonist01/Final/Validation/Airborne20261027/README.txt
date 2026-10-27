@@ -46,4 +46,4 @@ Review/Airborne/Jump_Sequence.gif는 기존 시전·착지에 새 Rise/Fall을 �
 단독 GIF의 팔다리 변화량은 의도적으로 작습니다. 모든 미래 게임 전환에서 관통이 없음을 보장하는 검사는 아닙니다.
 Final/Validation/Review20261027은 이번 상승/낙하 수정 전의 역사적 검수 기록입니다. planning의 종합 출처 보고서는 이번 변경과 외부GIF저장 정책까지 갱신했습니다.
 GIF기본위치: ~/Desktop/OZGL3_ArtReview/Characters/Protagonist01/Final. 프로젝트 안의 Review HTML은 외부 갤러리 포털입니다.
-프로젝트 안의 구GIF 삭제는 자동 승인 검토가 차단하여 미완료이며, 새GIF는 외부에만 게시하고 Git 대상에서 제외합니다.
+프로젝트 GIF117개의 제거를 완료했습니다. 현재 GIF60개는 외부 보관본의 해시를 재검증했으며, 새GIF도 외부에만 게시하고 Git 대상에서 제외합니다.

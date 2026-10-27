@@ -1,8 +1,8 @@
-실행 상태: 읽기 전용 감사. 실제 삭제 0개. Root의 정확한117 GIF삭제 요청은 자동승인검토 정책차단(구체사유없음)으로 중단되었으며 이후 삭제를 시도하지 않습니다. 외부GIF60개 복사검증, 프로젝트원본GIF117개·옛프레임636개·임시Editor7개는 남아 있습니다.
+실행 완료: 프로젝트 GIF117개와 나머지 폐기 파일659개, 합계776개 삭제. 현재 GIF60개는 외부에 보존하고 SHA256을 재검증했습니다. 구버전·중복 폐기716개와 외부 이관 원본60개를 구분하며 현행·예정 게임 자산은 보존했습니다.
 
-독립 정리감사 결과
+독립 정리감사 결과와 실행 완료 기록
 
-AssetsGUID5893개와 직렬화 참조/C# 경로입력을 확인했습니다. 삭제는 실행하지 않았습니다.
+AssetsGUID5893개와 직렬화 참조/C# 경로입력을 확인했습니다. 이 문서의 권고695개는 이후 승인된 정리로 모두 삭제했습니다. 외부 이관과 추가 중복 GIF를 포함한 전체 정리는776개입니다.
 
 LegacyRuntimeCharacterFrames: 636개 / 79,945,787bytes
 Old non-chibi Runtime character review captures include retired Punch,Dead,MagicCast,StaffBasicAttack,SwordBasicAttack. These are output-only preview frames, not animation/model inputs.
@@ -34,7 +34,7 @@ Temporary audit console output; source and structured final audit results retain
 
 DisposableEditorAuditCopies: 7개 / 36,704bytes
 Temporary Editor copies of canonical ArtSources QA helpers. No inbound code references; not runtime scripts.
-Earlier automatic policy review blocked deletion. Root must respect any current tool rejection; do not bypass. Assets/Editor.meta can be removed only if Assets/Editor has no other content after removal.
+All7 disposable audit files were removed after user-approved execution. Canonical QA helpers remain in ArtSources. The existing Editor root folder metadata is retained.
 
 LegacyRuntimeCharacterStillPreviews: 4개 / 2,183,781bytes
 Old Runtime character preview stills and their output capture metadata. Current chibi 18-clip review supersedes them.

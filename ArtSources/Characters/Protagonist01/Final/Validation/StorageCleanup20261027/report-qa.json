@@ -1,14 +1,14 @@
 {
   "operation": "edit-existing-docx-and-markdown",
-  "updatedAt": "2026-10-27T07:41:39.446178+00:00",
+  "updatedAt": "2026-10-27T08:17:13.342738+00:00",
   "reports": [
     {
       "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\planning\\Art_Assets_Provenance_and_QA_2026-10-27.docx",
-      "sha256": "a2389703d3701ef826747027a5b65709e2d8f8684ce66c82e0e7756c1281a726"
+      "sha256": "31370ea1c4cd17682067b625f08c5cbad8718a0479d39e1dca15e2f80392b37d"
     },
     {
       "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\planning\\Art_Assets_Provenance_and_QA_2026-10-27.md",
-      "sha256": "27f5e872fae469b2cbc872e8d72ecb887ae5bfb24c973767268d93ac51f7a2c8"
+      "sha256": "b80e2b3f0fec4475eaeca83ad436001a7c877a8a3d16f1c7a989ac9d04273e6f"
     }
   ],
   "rendering": {
@@ -17,8 +17,8 @@
     "diagnostic": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Logs\\ArtCleanup20261027\\renderer-diagnostic.log",
     "fallback": "existing hidden Microsoft Word COM export, bundled pypdfium2 PNG rendering",
     "systemLibreOfficeUsed": false,
-    "pdf": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Logs\\ArtCleanup20261027\\ReportPages\\report-final2.pdf",
-    "pdfSHA256": "4a83c9266da64db04539c00be9fd1d9d353d58f6f5b5cf966212d2db783e74a7",
+    "pdf": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Logs\\ArtCleanup20261027\\ReportPages\\Completed\\report-completed.pdf",
+    "pdfSHA256": "786dfea7d3649b5e8c82c849bf476bcb1224b44c53fb75515750fab47fd4108e",
     "pageCount": 13,
     "pagesVisuallyInspected": [
       1,
@@ -51,8 +51,11 @@
     "unchanged16ClipsDocumented": true,
     "threePass654Poses306ImagesDocumented": true,
     "external60CopiedVerified": true,
-    "project117Remain113Tracked4NewDocumented": true,
-    "obsolete57Gif636FramesAndZeroDeletionsDocumented": true,
+    "project117Removed113Tracked4NewDocumented": true,
+    "obsolete57Gif636FramesAnd776DeletedDocumented": true,
+    "all776ListedProjectFilesAreAbsent": true,
+    "all60ExternalCopiesStillMatchSHA256": true,
+    "unsupportedAutomaticApprovalAttributionRemoved": true,
     "mergeFb71492dAndNoGameplayAppliedDocumented": true,
     "allLocalLinksExist": true,
     "finalPageRendersExist": true
@@ -165,6 +168,16 @@
       "exists": true
     },
     {
+      "label": "폐기 파일 목록",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/obsolete-files-approved-plan.json",
+      "exists": true
+    },
+    {
+      "label": "정리 결과",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/cleanup-status.json",
+      "exists": true
+    },
+    {
       "label": "최종 선택 18개",
       "target": "../ArtSources/Characters/Protagonist01/Final/selection.json",
       "exists": true
@@ -210,6 +223,9 @@
       "exists": true
     }
   ],
-  "actualDeletionsThisTask": 0,
+  "actualDeletionsThisTask": 776,
+  "obsoleteFilesDeleted": 716,
+  "currentGIFOriginalsMovedOutsideProject": 60,
+  "cleanupValidation": "Independently read approved file lists: all 776 project paths absent; all 60 external GIF copies still match stored SHA256. No deletion operations performed by report agent.",
   "scope": "Only planning report pair edited; QA helpers and render outputs under Logs. No git commits or pushes by report agent."
 }

@@ -6,7 +6,7 @@
 
 조사 대상은 주인공 Final 정본과 보존 중인 Runtime 비주얼, 튜토리얼·1스테이지 환경 키트, Melee01 몬스터다. 기존 VFX는 목록만 확인한다. 기존 게임 시스템·UI·외부 패키지 전체의 라이선스 감사나 실제 게임 플레이 성능 검증을 수행했다는 뜻은 아니다. 기획 기준은 같은 폴더의 Project M 상세기획서 0.5와 기획데이터이며, 현재 에셋 목록이 기획상 모든 몬스터와 스테이지 콘텐츠를 충족하는 것은 아니다.
 
-후속 요청에 따라 Jump_Rise_Loop와 Jump_Fall_Loop를 작은 균형 움직임이 있는 상승·낙하 루프로 보완했다. 기존 시전·착지·정점·Jump_Full과 다른 선택 클립 16개는 유지했다. 현재 사용할 GIF 60개를 외부 폴더에 복사·검증했고 새 미디어 저장을 외부 우선으로 전환했다. 프로젝트 원본의 삭제는 자동 승인 검토에서 차단되어 아직 남아 있다. 팀원 머지 결과에 게임 동작을 추가 연결하지 않았다.
+후속 요청에 따라 Jump_Rise_Loop와 Jump_Fall_Loop를 작은 균형 움직임이 있는 상승·낙하 루프로 보완했다. 기존 시전·착지·정점·Jump_Full과 다른 선택 클립 16개는 유지했다. 현재 사용할 GIF 60개를 외부 폴더로 옮겨 SHA256을 검증했고 새 미디어 저장도 외부로 전환했다. 프로젝트 안의 GIF 원본과 확인된 구버전·폐기 파일을 정리했으며, 현재 사용하거나 향후 사용할 모델·리그·애니메이션은 보존했다. 팀원 머지 결과에 게임 동작을 추가 연결하지 않았다.
 
 ## 1 현재 보존된 결과물
 
@@ -253,11 +253,13 @@ Final Combat의 `Validation/source-integrity.json`은 이전 정본 정리 과�
 
 ### 저장 정책과 팀원 작업 보존
 
-새 GIF 생성과 갤러리의 기준 위치는 외부 `C:/Users/me/Desktop/OZGL3_ArtReview/`로 전환했다. 프로젝트에서 조사한 117개 GIF 중 현재 사용할 60개를 외부 대응 경로에 복사하고 원본과 SHA256을 대조했다. 이 복사는 완료되었지만 프로젝트 안의 원본 제거까지 완료된 것은 아니다. 새 미디어 파일은 커밋 대상에서 제외하며, 모델·애니메이션·원본 제작 자료·라이선스·검수 수치와 보고서는 기존 프로젝트 경로에 저장한다.
+새 GIF 생성과 갤러리의 기준 위치는 외부 `C:/Users/me/Desktop/OZGL3_ArtReview/`로 전환했다. 프로젝트에서 조사한 117개 GIF 중 현재 사용할 60개를 외부 대응 경로에 복사하고 원본과 SHA256을 대조한 뒤 프로젝트 원본을 제거했다. 모델·애니메이션·원본 제작 자료·라이선스·검수 수치와 보고서는 기존 프로젝트 경로에 저장하며, 새 GIF 미디어는 커밋 대상에서 제외한다.
 
-나머지 57개 GIF는 구버전 또는 중복 검수본으로 분류했다. 외부 복사본의 해시를 검증한 뒤 정확한 파일 목록으로 프로젝트 GIF 117개를 제거하려 했으나, 자동 승인 검토가 정책상 차단했고 구체적인 사유는 제공하지 않았다. 삭제 우회는 하지 않았으므로 프로젝트 GIF 117개는 남아 있다. 이 중 기존 Git 추적 파일은 113개, 이번 Airborne의 새 GIF는 4개다. 기존 Rise·Fall GIF 두 개는 최신본을 외부에 보존한 후 HEAD 상태로 되돌려 기존 113개 GIF를 이번 변경 커밋에서 제외했고, 새 4개는 Git 제외 규칙을 적용했다. 따라서 최신 GIF는 외부 갤러리를 기준으로 확인한다.
+나머지 GIF 57개는 구버전 또는 중복 검수본으로 확인해 폐기했다. 제거한 프로젝트 GIF는 총 117개로, 기존 Git 추적 파일 113개와 이번 Airborne의 새 GIF 4개다. 최신 Rise·Fall을 포함한 현재 검수본 60개는 외부에 보존했으며, 최신 동작은 외부 갤러리에서 확인한다.
 
-구형 캐릭터의 Stage01Kit/SideviewReview/Frames 렌더 636개도 정리 대상으로 확인했지만 실제 삭제하지 않았다. 이번 정리 작업의 실제 삭제 수는 0이며, 외부 복사를 이동 완료 또는 삭제 완료로 표시하지 않는다. 범위와 해시는 [GIF 정리 계획](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-plan.json)과 [외부 복사 검증](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-copies-verified.json)에 보존한다.
+구형 캐릭터의 Stage01Kit/SideviewReview/Frames 렌더 636개와 폐기된 검수본·백업·임시 파일 23개도 제거했다. 이 23개에는 임시 Editor 파일과 관련 메타 7개가 포함된다. 이번에 프로젝트에서 삭제한 파일은 총 776개이며, 외부로 옮긴 현재 GIF 원본 60개와 폐기 파일 716개를 합한 수다. 삭제 범위는 확인된 파일 목록으로 한정했고, 현재 또는 향후 사용할 모델·리그·애니메이션과 런타임 자산은 보존했다.
+
+처음 삭제 명령은 도구의 일반적인 정책 차단 응답으로 실행되지 않았지만, 이후 권한 요청이 승인되어 지정한 파일들의 삭제를 완료했다. 범위와 해시는 [GIF 정리 계획](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-plan.json), [외부 복사 검증](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-copies-verified.json), [폐기 파일 목록](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/obsolete-files-approved-plan.json), [정리 결과](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/cleanup-status.json)에 보존한다.
 
 이번 작업은 팀원 변경을 포함한 model-test의 머지 커밋 fb71492d 위에서 진행한다. 팀원의 씬·게임 코드·컨트롤러에 새 동작을 적용하거나 기존 런타임 비주얼을 교체하지 않았다. 현재 참조되는 Runtime FBX와 Unarmed Controller, v006 메시 및 v007 동작 8개를 확인하고 보존했다. 이번 Rise·Fall은 현재 게임 Controller가 참조하지 않는다. 향후 사용할 자산과 재편집 입력도 보존한다.
 
@@ -265,7 +267,7 @@ Final Combat의 `Validation/source-integrity.json`은 이전 정본 정리 과�
 
 출력 경로 수정 후 실제 Unity 프로젝트의 최종 컴파일은 종료 코드 0이며 C# 컴파일 오류가 없었다. 근거는 Legacy 검수 폴더의 final-compile.json이다.
 
-인게임 코드·Animator·VFX는 변경하지 않았다. 검수 실행용 임시 Editor 파일 7개의 삭제는 자동 승인 검토에서 정책상 차단되어 로컬에 남아 있으며, `Assets/Editor/AssetAudit20261027`과 관련 메타는 커밋에서 제외한다. 재실행 가능한 검사 도구의 정본과 결과 기록은 ArtSources에 보존한다.
+인게임 코드·Animator·VFX는 변경하지 않았다. 검수 실행용 `Assets/Editor/AssetAudit20261027`의 임시 파일과 관련 메타 7개를 제거했다. 재실행 가능한 검사 도구의 정본과 결과 기록은 ArtSources에 보존한다.
 
 ### 주요 증거 파일
 
