@@ -1,11 +1,11 @@
-using OZ.UI.Contracts;
+﻿using OZ.UI.Contracts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
 /// [박한솔 UI · v0.9] 몬스터 머리 위 체력바. 팀원 코드(Monster · MonsterSpawner · PoolManager) 수정 없이 동작한다.
 ///   0.25초마다 씬의 Monster(풀에 들어 있는 것 포함)를 찾아 EnemyUILink + MonsterHealthBarSync를 붙인다.
-///   Sync는 Monster의 체력 값(hp · maxHP)을 읽기만 해서 체력바에 넘긴다 (값을 바꾸지 않음).
+///   Sync는 Monster의 체력 값(MaxHP · CurrentHP)을 읽기만 해서 체력바에 넘긴다 (값을 바꾸지 않음).
 ///   피해 숫자는 Monster.TakeDamage가 이미 띄우므로 여기서는 체력바만 맞춘다.
 ///   풀에 반납(비활성) → 체력바 자동 해제, 다시 꺼내면 가득 찬 상태로 다시 표시.
 /// 씬에 GameManager가 있으면 Play 시 자동으로 생긴다 (씬·프리팹 수정 불필요).
@@ -28,6 +28,7 @@ public class MonsterHealthBarBridge : MonoBehaviour
         foreach (var m in FindObjectsByType<Monster>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             if (m == null || m is IEnemyHealthSource) continue;
+            if (m is BossMonster) continue; // 보스는 머리 위 바 대신 화면 상단 보스 체력바 (BossHudBridge)
             if (m.GetComponent<MonsterHealthBarSync>() != null) continue;
             if (m.GetComponent<EnemyUILink>() != null) continue; // 팀원이 직접 붙였으면 그쪽 사용
             m.gameObject.AddComponent<MonsterHealthBarSync>().Setup();
