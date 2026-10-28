@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "Stage_01",
+    "MonsterIds": [
+      "Monster_Skeleton1",
+      "Monster_Ranged1",
+      "Monster_Charge1"
+    ],
+    "BossMonsterId": "BossMonster_1"
+  },
+  {
+    "Id": "Stage_02",
+    "MonsterIds": [
+      "Monster_Skeleton2",
+      "Monster_Ranged2",
+      "Monster_Charge2"
+    ],
+    "BossMonsterId": "BossMonster_2"
+  }
+]

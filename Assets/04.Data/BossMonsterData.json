@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "BossMonster_1",
+    "Name": "Boss1",
+    "PrefabKey": "BossMonster/01",
+    "MonsterType": "4",
+    "HP": 1800,
+    "MeleeDamage": 20,
+    "PatternTriggerHpRatio": 0.5
+  },
+  {
+    "Id": "BossMonster_2",
+    "Name": "Boss2",
+    "PrefabKey": "BossMonster/02",
+    "MonsterType": "4",
+    "HP": 2900,
+    "MeleeDamage": 20,
+    "PatternTriggerHpRatio": 0.5
+  }
+]
