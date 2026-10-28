@@ -13,6 +13,8 @@ public class StageManager : BaseManager
     [SerializeField, Min(1)] private int stageNumber = 1;
     [SerializeField] private HunterRank clearRank = HunterRank.E;
     private GateManager gateManager;
+    private DataManager dataManager;
+    private ResourceManager resourceManager;
     private Stage currentStage;
 
     public bool IsStageRunning => currentStage != null && currentStage.IsRunning;
@@ -21,21 +23,35 @@ public class StageManager : BaseManager
     public event System.Action StageCleared;
     public GameObject CurrentStage => currentStage != null ? currentStage.gameObject : null;
 
-    public override UniTask InitializeAsync()
+    public override async UniTask InitializeAsync()
     {
         if (gateManager == null)
             throw new System.InvalidOperationException("GameManager에서 GateManager를 주입해야 합니다.");
         EndStage();
         if (stagePrefabs.Count == 0 && stagePrefab != null)
             stagePrefabs.Add(stagePrefab);
-        return UniTask.CompletedTask;
+        if (dataManager == null || resourceManager == null)
+            throw new System.InvalidOperationException("GameManager에서 DataManager와 ResourceManager를 주입해야 합니다.");
+        // 스테이지 시작 API는 동기이므로 보스 에셋을 초기화 시 캐시에 준비합니다.
+        if (dataManager.TryGetDataTable<StageMonsterData>(out var table))
+        {
+            foreach (StageMonsterData data in table.Values)
+            {
+                BossMonsterData bossData = GetMonsterData<BossMonsterData>(data.BossMonsterId);
+                GameObject prefab = await resourceManager.LoadAssetAsync<GameObject>(bossData.PrefabKey);
+                if (prefab == null || prefab.GetComponent<BossMonster>() == null)
+                    throw new System.InvalidOperationException($"'{data.Id}'의 보스 프리팹 루트에 BossMonster가 필요합니다.");
+            }
+        }
     }
 
-    public UniTask InitializeAsync(GateManager manager)
+    public UniTask InitializeAsync(GateManager manager, DataManager data, ResourceManager resources)
     {
         if (manager == null) throw new System.ArgumentNullException(nameof(manager));
         EndStage();
         gateManager = manager;
+        dataManager = data;
+        resourceManager = resources;
         return InitializeAsync();
     }
 
@@ -48,7 +64,51 @@ public class StageManager : BaseManager
     {
         if (!HasStage(number) || gateManager == null) return false;
         GameObject prefab = stagePrefabs[number - 1];
-        return prefab != null && prefab.GetComponent<Stage>() != null;
+        return prefab != null && prefab.GetComponent<Stage>() != null &&
+            TryGetStageMonsters(number, out _, out _, out _);
+    }
+
+    private T GetMonsterData<T>(string id) where T : BaseMonsterData
+    {
+        if (string.IsNullOrWhiteSpace(id) || !dataManager.TryGetData<T>(id, out var data))
+            throw new System.InvalidOperationException($"{typeof(T).Name} '{id}'가 없습니다.");
+        if (string.IsNullOrWhiteSpace(data.PrefabKey))
+            throw new System.InvalidOperationException($"{typeof(T).Name} '{id}'의 PrefabKey가 비어 있습니다.");
+        return data;
+    }
+
+    private bool TryGetStageMonsters(int number, out List<MonsterData> monsters,
+        out BossMonsterData bossData, out BossMonster boss)
+    {
+        monsters = new List<MonsterData>();
+        bossData = null;
+        boss = null;
+        string id = $"Stage_{number:D2}";
+        try
+        {
+            if (dataManager == null || !dataManager.TryGetData<StageMonsterData>(id, out var data))
+                throw new System.InvalidOperationException($"StageMonsterData에 '{id}'가 없습니다.");
+            if (data.MonsterIds == null || data.MonsterIds.Length == 0)
+                throw new System.InvalidOperationException($"'{id}'의 MonsterIds가 비어 있습니다.");
+            foreach (string monsterId in data.MonsterIds)
+            {
+                MonsterData monsterData = GetMonsterData<MonsterData>(monsterId);
+                if (!gateManager.PoolManager.TryGetPrefab<Monster>(monsterData.PrefabKey, out var monster) ||
+                    monster is BossMonster)
+                    throw new System.InvalidOperationException($"일반 몬스터 '{monsterId}'의 PoolData 등록과 루트 Monster 컴포넌트를 확인하세요.");
+                if (!monsters.Contains(monsterData)) monsters.Add(monsterData);
+            }
+            bossData = GetMonsterData<BossMonsterData>(data.BossMonsterId);
+            if (resourceManager == null || !resourceManager.TryGetAsset<GameObject>(bossData.PrefabKey, out var prefab) ||
+                !prefab.TryGetComponent(out boss))
+                throw new System.InvalidOperationException($"보스 '{data.BossMonsterId}'가 준비되지 않았습니다.");
+            return true;
+        }
+        catch (System.InvalidOperationException exception)
+        {
+            Debug.LogError($"[{id}] {exception.Message}", this);
+            return false;
+        }
     }
 
     public bool SetStage(int number)
@@ -59,9 +119,11 @@ public class StageManager : BaseManager
             return false;
         }
         int previousNumber = stageNumber;
+        if (!TryGetStageMonsters(number, out var monsterData, out var bossData, out var boss)) return false;
         try
         {
-            LoadStage(stagePrefabs[number - 1]);
+            stageNumber = number;
+            LoadStage(stagePrefabs[number - 1], monsterData, bossData, boss);
             if (IsStageRunning)
             {
                 stageNumber = number;
@@ -82,10 +144,11 @@ public class StageManager : BaseManager
     public void StartStage(GameObject prefab)
     {
         if (IsStageRunning) return;
-        LoadStage(prefab);
+        if (TryGetStageMonsters(stageNumber, out var data, out var bossData, out var boss))
+            LoadStage(prefab, data, bossData, boss);
     }
 
-    private void LoadStage(GameObject prefab)
+    private void LoadStage(GameObject prefab, IReadOnlyList<MonsterData> monsterData, BossMonsterData bossData, BossMonster boss)
     {
         if (prefab == null || prefab.GetComponent<Stage>() == null)
         {
@@ -104,7 +167,7 @@ public class StageManager : BaseManager
         try
         {
             // 등록 → 상태 이벤트 구독 → 진행 시작 순서를 지킵니다.
-            gateManager.SetGates(currentStage.Gates, currentStage.BossGate);
+            gateManager.SetGates(currentStage.Gates, currentStage.BossGate, monsterData, bossData, boss);
             currentStage.Initialize(gateManager);
             currentStage.StateChanged += OnStageStateChanged;
             currentStage.Completed += OnStageCompleted;

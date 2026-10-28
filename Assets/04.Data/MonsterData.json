@@ -1,0 +1,56 @@
+[
+  {
+    "Id": "Monster_Skeleton1",
+    "Name": "Skeleton",
+    "PrefabKey": "Monster/Skeleton1",
+    "MonsterType": "0",
+    "HP": 90,
+    "MeleeDamage": 10,
+    "SkillDamage": 10
+  },
+  {
+    "Id": "Monster_Ranged1",
+    "Name": "Ranged",
+    "PrefabKey": "Monster/Ranged1",
+    "MonsterType": "1",
+    "HP": 80,
+    "MeleeDamage": 20,
+    "SkillDamage": 10
+  },
+  {
+    "Id": "Monster_Charge1",
+    "Name": "Charge",
+    "PrefabKey": "Monster/Charge1",
+    "MonsterType": "2",
+    "HP": 100,
+    "MeleeDamage": 30,
+    "SkillDamage": 10
+  },
+  {
+    "Id": "Monster_Skeleton2",
+    "Name": "Skeleton2",
+    "PrefabKey": "Monster/Skeleton2",
+    "MonsterType": "0",
+    "HP": 90,
+    "MeleeDamage": 10,
+    "SkillDamage": 10
+  },
+  {
+    "Id": "Monster_Ranged2",
+    "Name": "Ranged2",
+    "PrefabKey": "Monster/Ranged2",
+    "MonsterType": "1",
+    "HP": 80,
+    "MeleeDamage": 20,
+    "SkillDamage": 10
+  },
+  {
+    "Id": "Monster_Charge2",
+    "Name": "Charge2",
+    "PrefabKey": "Monster/Charge2",
+    "MonsterType": "2",
+    "HP": 100,
+    "MeleeDamage": 30,
+    "SkillDamage": 10
+  }
+]

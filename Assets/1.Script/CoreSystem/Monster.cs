@@ -25,6 +25,34 @@ public class Monster : MonoBehaviour, IDamageable
 
     private float hp;
 
+    public string DataId { get; private set; }
+    public string MonsterName { get; private set; }
+    public MonsterType MonsterType { get; private set; }
+    public float MaxHP => maxHP;
+    public float CurrentHP => hp;
+    public float MeleeDamage => attackDamage;
+    public float SkillDamage { get; private set; }
+
+    // 풀에서 비활성 상태로 꺼낸 뒤, 활성화 전에 호출합니다.
+    public virtual void InitializeStats(BaseMonsterData data)
+    {
+        if (data == null) throw new ArgumentNullException(nameof(data));
+        float skillDamage = data is MonsterData normal ? normal.SkillDamage : 0f;
+        if (!(data.HP > 0f) || float.IsInfinity(data.HP) ||
+            !(data.MeleeDamage >= 0f) || float.IsInfinity(data.MeleeDamage) ||
+            !(skillDamage >= 0f) || float.IsInfinity(skillDamage))
+            throw new ArgumentException($"몬스터 '{data.Id}'의 HP와 데미지를 확인하세요.");
+
+        DataId = data.Id;
+        MonsterName = data.Name;
+        MonsterType = data.MonsterType;
+        maxHP = data.HP;
+        attackDamage = data.MeleeDamage;
+        SkillDamage = skillDamage;
+        hp = maxHP;
+        IsDead = false;
+    }
+
     protected virtual void OnEnable()
     {
         hp = maxHP;

@@ -170,6 +170,12 @@ public class PlayerStats : MonoBehaviour, IStatSource
         }
     }
 
+    // 새 게임: 모든 스탯 레벨 0
+    public void ResetAll()
+    {
+        SetLevels(new int[_levels.Length]);
+    }
+
     private void NotifyStatChanged(StatType type)
     {
         StatChanged?.Invoke(type);

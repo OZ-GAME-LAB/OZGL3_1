@@ -74,9 +74,29 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
         // 다른 오브젝트가 OnEnable에서 먼저 상점 소스를 등록했으면 양보
         if (UISources.Shop != null && !ReferenceEquals(UISources.Shop, this)) { Destroy(gameObject); return; }
         GameUI.Bind(this);
+        UIRequests.NewGame += ResetForNewGame;
     }
 
-    void OnDestroy() => GameUI.Unbind(this);
+    void OnDestroy()
+    {
+        UIRequests.NewGame -= ResetForNewGame;
+        GameUI.Unbind(this);
+    }
+
+    // 타이틀 '새 게임': 아이템 포인트·개수를 시작값으로 (플레이어 쪽 스킬·스탯·버프 초기화와 짝)
+    void ResetForNewGame()
+    {
+        _points = startPoints;
+        _others.Clear();
+        CancelInvoke(nameof(EndBuffs));
+        for (int i = 0; i < 4; i++)
+        {
+            if (_lastBuff[i] > 0f) { _lastBuff[i] = 0f; BuffEnded?.Invoke(quickItems[i]); }
+            _counts[i] = startCounts != null && i < startCounts.Length ? Mathf.Max(0, startCounts[i]) : 0;
+            CountChanged?.Invoke(i, _counts[i]);
+        }
+        ShopChanged?.Invoke();
+    }
 
     void FillQuickItemsFromShop()
     {

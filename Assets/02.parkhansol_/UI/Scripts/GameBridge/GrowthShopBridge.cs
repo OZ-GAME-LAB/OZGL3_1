@@ -95,10 +95,21 @@ public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource
         if (lockCombatPath && GetComponent<CombatPathLock>() == null) gameObject.AddComponent<CombatPathLock>();
         _quest = GameUI.Quest;
         if (_quest != null) _quest.Changed += PayQuestRewards;
+        UIRequests.NewGame += ResetForNewGame;
+    }
+
+    // 타이틀 '새 게임': 성장 포인트를 시작값으로 (스탯·스킬은 플레이어 쪽 ResetAll이 비움)
+    // 받은 퀘스트 보상 기록(_paidQuests)은 유지 — 퀘스트 진행이 초기화되지 않는 동안 중복 지급 방지
+    void ResetForNewGame()
+    {
+        int before = _points;
+        _points = Mathf.Max(0, startPoints);
+        PointsChanged?.Invoke(_points, _points - before);
     }
 
     void OnDestroy()
     {
+        UIRequests.NewGame -= ResetForNewGame;
         if (_instance == this) _instance = null;
         if (_quest != null) _quest.Changed -= PayQuestRewards;
         GameUI.Unbind(this);
