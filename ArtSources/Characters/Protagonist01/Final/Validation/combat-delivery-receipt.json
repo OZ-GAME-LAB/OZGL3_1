@@ -1,0 +1,877 @@
+{
+  "folder": "Assets/Art/Characters/Protagonist01/Combat",
+  "prefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+  "prefabSHA256": "48d0a16a3b074901608c64139a4d9f4d600e2ef29325a42d7662ff710bdc6578",
+  "folderGUID": "4c77c0aae35d5c04e8281c6f67a6f166",
+  "selectedClips": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim",
+      "sha256": "682e6db8fec7926e133dae61f00c687f9ec6c2e0bb89daab9ddffc9078ae2080",
+      "guid": "bbc9cbe6efa8548439a6ab446a023ac4",
+      "metaSHA256": "2fbc08e095b4fdaf24eedd2eeb22ef44b5808159a7b46f0237506b155aa774b5",
+      "bytes": 1777681,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim",
+      "sha256": "2cbb087b5c81f2fd7c3cce68a836b7b2380116723e019b7ce99e37b40a40bcef",
+      "guid": "8824b52a091b9244c841adb34da8c56c",
+      "metaSHA256": "f60e84e5b169e315a5b5bf3a5f8bfada186549e5a615967bb648962441ecb6e0",
+      "bytes": 1798688,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim",
+      "sha256": "8eb67c8aafacbf706ddf2dd55d6adbbeb08780869955f22f0c90590062cd1dc4",
+      "guid": "4bb1d1bf6d30f5646bbbebb243bd93c4",
+      "metaSHA256": "3f061f28b7c054d698198b7294540ab90b276cc3d442d65fc8a8ff01f24a583a",
+      "bytes": 6601982,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim",
+      "sha256": "75d5f7f8003d2d3440c6569ca73b5e782005910aa898a8e7e59f93134b85633e",
+      "guid": "645d7905e69ed184db9a1580531dc706",
+      "metaSHA256": "71bb4870b89894e835af7aaf04fd46292d9df2edbceed0148a66cebdb587edbb",
+      "bytes": 2395900,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim",
+      "sha256": "058b86ab7781113b617bfe5e81ff749313c23a6aff7634af913d8c534744c355",
+      "guid": "95b6d5a658feaef46ba100973b4b758a",
+      "metaSHA256": "cfae7c27c6da68f0cac9e4b8187cdcc173bb9e6acdeb6916963034ac4107ae1f",
+      "bytes": 3290251,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim",
+      "sha256": "f69665c014120ec8a1eccca6a1d4f5d80f4244dd1f9eb0d8d3c50168cfe3b612",
+      "guid": "8a37659a065df9b4a9ff9083a74bb038",
+      "metaSHA256": "cc9a3faf83d0e88f4c7b17aedf6898e6bdc15ea79fa4e2f3dd48f08b01f7074d",
+      "bytes": 332176,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "sha256": "5fffacd881eacda71d071249921f5e02b87b3eb9a00c7b8cbb982ac7670e0391",
+      "guid": "456454f104b25714cb3a2354e7a3f8a2",
+      "metaSHA256": "c94201867bbf7161dd4f5f294f283a229c8ff96b32ea080eb983db5ec2ea5441",
+      "bytes": 332646,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim",
+      "sha256": "e819f36a9af6c5552e0b77bbf3b3a498be58297b8c407e18833cec9e59d87ee6",
+      "guid": "a9e32b48a0129eb4ea2795c6807c9218",
+      "metaSHA256": "58aa2af74270bad16518d614b6eb8e8bdba402a1dc28c6f2b043f2c6d22f2724",
+      "bytes": 3008888,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim",
+      "sha256": "4b71b8d8e362a0fafc0d371a61bad8178d5fdb19d632132c97eb72d851446eff",
+      "guid": "8d005b6a3400cd2408da3c5d1f30be45",
+      "metaSHA256": "4db3cf7b9547b7e94303622d13009cc9b7d9b21b29d4241227697dbbf4a4be3b",
+      "bytes": 1268832,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "sha256": "3b0019b6e1186e90e6a19776705afe8346a63c58385d1f2649801c40ccb13f89",
+      "guid": "1a5c1b6af0feb7845bbf8e782d2cbc6f",
+      "metaSHA256": "172035a91b144d9aac2b65cc3c72d43c3ac99073c6a696598cf4bf7e81811900",
+      "bytes": 332394,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim",
+      "sha256": "57a4dd77cb9cd604772247579e7c812d922786ef4c3a4c913fac46054e4326fa",
+      "guid": "d855b18aaf020854188e6020674f9d50",
+      "metaSHA256": "880b805b7586712a6f7ebba3a3dbf4cba442679d8e947dcd5aba18a56014998d",
+      "bytes": 680679,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim",
+      "sha256": "5f930267000699e7236d1b71b06e3770df24a1e34cbac08fd37389151f0b6512",
+      "guid": "ccefb824cdbd9354a8d59121e56ff40f",
+      "metaSHA256": "14a325a669c569ceda4f6abfec01b66d8fb88ecdde1398f969cfe11e972f19b3",
+      "bytes": 3484635,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim",
+      "sha256": "77119754a7d98427a73248a62f7ffae28e78a8cbdacbd64bbcb38b84e6fd52a5",
+      "guid": "6fa2aa083757d4544a56b949360b8a32",
+      "metaSHA256": "914abf6070769e0bc6aabb08da2fe936f31aae1b1cc85ac94f8523cebd445600",
+      "bytes": 3933947,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim",
+      "sha256": "fe4055276294b2dc4a88745cd84bb0634d9bff3bc1c4122c5335099453bbc103",
+      "guid": "9713dd34c9fcbbb40a6c002f45fcea02",
+      "metaSHA256": "5814417666bb340f140ecb251409aeb7c07b61bd415f356bf889e7a265b95ca3",
+      "bytes": 2140856,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim",
+      "sha256": "5abef4d7f9654f5280e97d60f754040c3b3b3de4039c28855e619ef36827e156",
+      "guid": "0e9c5e1abea3a1b449e8d2cc45f932a4",
+      "metaSHA256": "294100361195f1d12e5128ab052b3ceb17bc0021067d141ea6d89c456bd84169",
+      "bytes": 2826298,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+      "sha256": "1a53d1c84ab77b6cfa6839b22fabacbc1d1df99990b87fe0fa32fe11b1efce59",
+      "guid": "817df6de9a4ec134296e4c4c2bcd8883",
+      "metaSHA256": "29c9c79369981979e64460933538ceafab27ed3e802a5b4f91e81ebdb99b68f6",
+      "bytes": 6641178,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+      "sha256": "41946ba732bb55ad38b683cc924f336735a0d018d63c4da0834b5f239af0d7d2",
+      "guid": "77c54af014af8d6419308d3b507ab479",
+      "metaSHA256": "be048e012c4281160401a26582816073812b893d8babc5f0f5641916dbe28c3d",
+      "bytes": 5742269,
+      "preservedByteIdentically": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
+      "sha256": "7bec5cf2eea5c6e30028f0e6e96e753ae84a452b159b266900edd25eda8c94e8",
+      "guid": "2e807f6206ce8bd41afae4294b09a49b",
+      "metaSHA256": "87327ba3e66871f58081040ff5036711cc6f3d7426b4bf16dec8fae5ea83dbee",
+      "bytes": 6638094,
+      "preservedByteIdentically": true
+    }
+  ],
+  "combatClipCount": 3,
+  "oldNonAttackClipCount": 15,
+  "retainedAssetFiles": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips.meta",
+      "sha256": "f20b424616aae48bf72af77d58a71617b2a7437aae6e2efcef26f4a36bd9dbb3",
+      "originalSHA256": "f20b424616aae48bf72af77d58a71617b2a7437aae6e2efcef26f4a36bd9dbb3",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/FBX.meta",
+      "sha256": "5c2172068e2bd21c4ea228b243c5c5fa45734b055c9c904fa7de67814cd13b9e",
+      "originalSHA256": "5c2172068e2bd21c4ea228b243c5c5fa45734b055c9c904fa7de67814cd13b9e",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses.meta",
+      "sha256": "5487623816ac137e2fe0bfdacce09118fa303f373de3cc30cff3e013e0dcafb6",
+      "originalSHA256": "5487623816ac137e2fe0bfdacce09118fa303f373de3cc30cff3e013e0dcafb6",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials.meta",
+      "sha256": "57b8ee5ec35cb15cb02b80ac44c29b9ad27842ade98acde7f06b3f1d7717be56",
+      "originalSHA256": "57b8ee5ec35cb15cb02b80ac44c29b9ad27842ade98acde7f06b3f1d7717be56",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Meshes.meta",
+      "sha256": "c24b8b43198c9277cd0fcf4b97d3bdc8901e723703ddc38fc5106aa0fdd32b8a",
+      "originalSHA256": "c24b8b43198c9277cd0fcf4b97d3bdc8901e723703ddc38fc5106aa0fdd32b8a",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs.meta",
+      "sha256": "137ee0942273f931d9b94d7f93737603c52fb9fb14ada4ce5c03ecf28aab7c1c",
+      "originalSHA256": "137ee0942273f931d9b94d7f93737603c52fb9fb14ada4ce5c03ecf28aab7c1c",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/README.txt",
+      "sha256": "d64d5c16aa6d96587ab253110952b28019b94842857922378e5a1b165fe30f48",
+      "originalSHA256": "fe3ede1d7d031533abbac338fe130b5adf50d2d219db91129b5022832a732179",
+      "bytesPreserved": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/README.txt.meta",
+      "sha256": "a15f5e5cefc825a120529987836047077b60d3d48d3af1c81db29130f7f0ba63",
+      "originalSHA256": "a15f5e5cefc825a120529987836047077b60d3d48d3af1c81db29130f7f0ba63",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Textures.meta",
+      "sha256": "8f7b3b702af4f8ac24612ea197b9824111a4d5d005b4940bf5ca53e9cf3917b9",
+      "originalSHA256": "8f7b3b702af4f8ac24612ea197b9824111a4d5d005b4940bf5ca53e9cf3917b9",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Weapon_Attachment.json",
+      "sha256": "06ab0fd1ab1486668e5d7e2d58f3be639b0b201536c683609848053411ab422d",
+      "originalSHA256": "1ec93dea6ab39d305c8e535b10d5c6009a393ce17010b3805cf8b5b03f4c6fd9",
+      "bytesPreserved": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Weapon_Attachment.json.meta",
+      "sha256": "eed3d75a86123a9e3a7e6739ee8105cb291881c14b2b5a1de2dedee957a030fb",
+      "originalSHA256": "eed3d75a86123a9e3a7e6739ee8105cb291881c14b2b5a1de2dedee957a030fb",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+      "sha256": "1a53d1c84ab77b6cfa6839b22fabacbc1d1df99990b87fe0fa32fe11b1efce59",
+      "originalSHA256": "1a53d1c84ab77b6cfa6839b22fabacbc1d1df99990b87fe0fa32fe11b1efce59",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim.meta",
+      "sha256": "29c9c79369981979e64460933538ceafab27ed3e802a5b4f91e81ebdb99b68f6",
+      "originalSHA256": "29c9c79369981979e64460933538ceafab27ed3e802a5b4f91e81ebdb99b68f6",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+      "sha256": "41946ba732bb55ad38b683cc924f336735a0d018d63c4da0834b5f239af0d7d2",
+      "originalSHA256": "41946ba732bb55ad38b683cc924f336735a0d018d63c4da0834b5f239af0d7d2",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim.meta",
+      "sha256": "be048e012c4281160401a26582816073812b893d8babc5f0f5641916dbe28c3d",
+      "originalSHA256": "be048e012c4281160401a26582816073812b893d8babc5f0f5641916dbe28c3d",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
+      "sha256": "7bec5cf2eea5c6e30028f0e6e96e753ae84a452b159b266900edd25eda8c94e8",
+      "originalSHA256": "7bec5cf2eea5c6e30028f0e6e96e753ae84a452b159b266900edd25eda8c94e8",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim.meta",
+      "sha256": "87327ba3e66871f58081040ff5036711cc6f3d7426b4bf16dec8fae5ea83dbee",
+      "originalSHA256": "87327ba3e66871f58081040ff5036711cc6f3d7426b4bf16dec8fae5ea83dbee",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/FBX/Protagonist_KayKit_v018.fbx",
+      "sha256": "f8fcf5108512d20a2c55871cce7ebdd45637f38b295405154d7d7f6cbc31b98c",
+      "originalSHA256": "f8fcf5108512d20a2c55871cce7ebdd45637f38b295405154d7d7f6cbc31b98c",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/FBX/Protagonist_KayKit_v018.fbx.meta",
+      "sha256": "e3b51c2c03edccd22628c926e5269e65412e16b2ff02c66b72c66e6884c103e6",
+      "originalSHA256": "e3b51c2c03edccd22628c926e5269e65412e16b2ff02c66b72c66e6884c103e6",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/Clip_Source_Map.json",
+      "sha256": "9714d9a1ead0a35a95135330403cbdc34ea4b427816c6e9e02cdcca6ad940399",
+      "originalSHA256": "febc121349e7513652fa349e50081ee74688a692fccda78aa7bd32dfe263f328",
+      "bytesPreserved": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/Clip_Source_Map.json.meta",
+      "sha256": "a288effad31214728223660631c94e1b6327c41fc3fe584371a35c4de479177a",
+      "originalSHA256": "a288effad31214728223660631c94e1b6327c41fc3fe584371a35c4de479177a",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/KayKit_Character_Animations_CC0.txt",
+      "sha256": "373b159044d1a886ed15f57ca5a7673ba14e2623c460283452705f2056912ed9",
+      "originalSHA256": "373b159044d1a886ed15f57ca5a7673ba14e2623c460283452705f2056912ed9",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/KayKit_Character_Animations_CC0.txt.meta",
+      "sha256": "247b83060150ba97827cf1d70f72aae915133ea49ddb2ba2b1c9d47dc6f85a72",
+      "originalSHA256": "247b83060150ba97827cf1d70f72aae915133ea49ddb2ba2b1c9d47dc6f85a72",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/KayKit_Skeletons_CC0.txt",
+      "sha256": "327a1aac6e6ff1259d82d0024cdaf088bcef302f8d7a116b5142538ac2b5cf8d",
+      "originalSHA256": "327a1aac6e6ff1259d82d0024cdaf088bcef302f8d7a116b5142538ac2b5cf8d",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/KayKit_Skeletons_CC0.txt.meta",
+      "sha256": "1b3aa7ee5bf52f04788453f233f39edc268d66b7f761d61572d0302e2a0bc5a9",
+      "originalSHA256": "1b3aa7ee5bf52f04788453f233f39edc268d66b7f761d61572d0302e2a0bc5a9",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/Source_Provenance.json",
+      "sha256": "3e92de4dcf8eae4db68e26c66e0a6003ac6ceb34f2b75b1af8b193960aed630b",
+      "originalSHA256": "8357eac1de570aaf8f748fe35f36e9ceea4a39fcd3c2b1a80c45e5c873316f99",
+      "bytesPreserved": false
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Licenses/Source_Provenance.json.meta",
+      "sha256": "ebc74607c0c54be2ed962d87c375cd08e45952fef5f7b83b0e44810af3305424",
+      "originalSHA256": "ebc74607c0c54be2ed962d87c375cd08e45952fef5f7b83b0e44810af3305424",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Edge.mat",
+      "sha256": "fe9e419d3d3fc0641c5f89fcb9e18c59da8c7929de9359be25cb05b19fc061d8",
+      "originalSHA256": "fe9e419d3d3fc0641c5f89fcb9e18c59da8c7929de9359be25cb05b19fc061d8",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Edge.mat.meta",
+      "sha256": "865cc3cf4833ecffe654759e5e0fd77ece8c7f2fbbee080f5f3ff2df6c102f13",
+      "originalSHA256": "865cc3cf4833ecffe654759e5e0fd77ece8c7f2fbbee080f5f3ff2df6c102f13",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Guard.mat",
+      "sha256": "86ba976d8e14c12a84f22323cc6416924e7399cc847f1c6a476493564daed7ca",
+      "originalSHA256": "86ba976d8e14c12a84f22323cc6416924e7399cc847f1c6a476493564daed7ca",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Guard.mat.meta",
+      "sha256": "d74ff4d7bfb4570765287289ba6f8f6dc3badadc8909f535a3d7f0749e26c88a",
+      "originalSHA256": "d74ff4d7bfb4570765287289ba6f8f6dc3badadc8909f535a3d7f0749e26c88a",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_NavyGrip.mat",
+      "sha256": "5096e05cf607b760792afab3f93b818e9bb9b4cfa12650b8a4d4eeb080dda008",
+      "originalSHA256": "5096e05cf607b760792afab3f93b818e9bb9b4cfa12650b8a4d4eeb080dda008",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_NavyGrip.mat.meta",
+      "sha256": "4b53040eb5a3844359f110f561be8cb7f993ae74001a200bae8e042d36e3ed2e",
+      "originalSHA256": "4b53040eb5a3844359f110f561be8cb7f993ae74001a200bae8e042d36e3ed2e",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_SimpleSkin.mat",
+      "sha256": "876f34611f46da8e5356304258eb3aa817a63b0228bc37df57a19af7b9bc3dd4",
+      "originalSHA256": "876f34611f46da8e5356304258eb3aa817a63b0228bc37df57a19af7b9bc3dd4",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_SimpleSkin.mat.meta",
+      "sha256": "53c89fa4ab0f67899ef79473078c987482d55e202f28a75037a4c7af5a3f3080",
+      "originalSHA256": "53c89fa4ab0f67899ef79473078c987482d55e202f28a75037a4c7af5a3f3080",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Steel.mat",
+      "sha256": "78f37c584da1db5b1b4df5d28cec6b83f258f84bee1f46a8264317153431132b",
+      "originalSHA256": "78f37c584da1db5b1b4df5d28cec6b83f258f84bee1f46a8264317153431132b",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Steel.mat.meta",
+      "sha256": "7ce9050b2a2877f80c23fec968bae7f2520c490686c30f89a5ed6f039677e5e7",
+      "originalSHA256": "7ce9050b2a2877f80c23fec968bae7f2520c490686c30f89a5ed6f039677e5e7",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/Material_0.mat",
+      "sha256": "d902754a44fe936744c9cf1facf1c91865efd70384b31fe6f324439bc1cd5c1d",
+      "originalSHA256": "d902754a44fe936744c9cf1facf1c91865efd70384b31fe6f324439bc1cd5c1d",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/Material_0.mat.meta",
+      "sha256": "0cda93ba7353f2407e32b3417b0560dcbd550d845e812d5951dfd27ba519e7ca",
+      "originalSHA256": "0cda93ba7353f2407e32b3417b0560dcbd550d845e812d5951dfd27ba519e7ca",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Longsword_KayKitSocket.prefab",
+      "sha256": "07e801795e15d3c7090b083027ae8176407f209009e5dc4d97273892e80ad13e",
+      "originalSHA256": "07e801795e15d3c7090b083027ae8176407f209009e5dc4d97273892e80ad13e",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Longsword_KayKitSocket.prefab.meta",
+      "sha256": "d1ec5cae5935484252c5732271be8ff7592a12c952b42d5c18f515d4c235847b",
+      "originalSHA256": "d1ec5cae5935484252c5732271be8ff7592a12c952b42d5c18f515d4c235847b",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+      "sha256": "48d0a16a3b074901608c64139a4d9f4d600e2ef29325a42d7662ff710bdc6578",
+      "originalSHA256": "48d0a16a3b074901608c64139a4d9f4d600e2ef29325a42d7662ff710bdc6578",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab.meta",
+      "sha256": "dc8d6d2edd8d5d97acdd80f05f699778d343a7712b3f75f8707221855a76f127",
+      "originalSHA256": "dc8d6d2edd8d5d97acdd80f05f699778d343a7712b3f75f8707221855a76f127",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Textures/Image_0.jpg",
+      "sha256": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+      "originalSHA256": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+      "bytesPreserved": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Textures/Image_0.jpg.meta",
+      "sha256": "2c0f9cafc71c588caf2e86f26d9a6875e2793816e52ee0b9cd2eaf8b5199640a",
+      "originalSHA256": "2c0f9cafc71c588caf2e86f26d9a6875e2793816e52ee0b9cd2eaf8b5199640a",
+      "bytesPreserved": true
+    }
+  ],
+  "removedUnselectedClips": [
+    "Idle_Fists.anim",
+    "Walk_Fists.anim",
+    "Run_Fists.anim",
+    "Jump_Full.anim",
+    "Longsword_Idle.anim"
+  ],
+  "originalSelectedAttackValidation": {
+    "transformSamples": 123,
+    "meshPoses": 51,
+    "bodyMaximumVertexErrorM": 0.00017473923919005053,
+    "handsAndWeaponMaximumVertexErrorM": 5.653341677462132e-07,
+    "clips": [
+      {
+        "name": "Longsword_Attack_Chop",
+        "transformSamples": 43,
+        "meshSamples": 17,
+        "maximumWorldMatrixDifference": 6.709601134691212e-07,
+        "surfaces": [
+          {
+            "mesh": "Chibi_Body_v009",
+            "nativeVertices": 6421,
+            "unityVertices": 6422,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 0.00015946330302395019,
+            "reverseMaximumWorldVertexErrorM": 0.00015946330302395019,
+            "fixedTrajectoryMappingMaxM": 0.00023364884386485626,
+            "reverseTrajectoryCoverageMaxM": 0.00023364884386485626,
+            "toleranceM": 0.0005,
+            "worstSample": {
+              "frameIndex": 26,
+              "timeSeconds": 0.4333333373069763,
+              "unityVertex": 1459,
+              "sourceVertex": 6420
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Mitten_L",
+            "nativeVertices": 48,
+            "unityVertices": 112,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 5.183101749762641e-07,
+            "reverseMaximumWorldVertexErrorM": 5.183101749762641e-07,
+            "fixedTrajectoryMappingMaxM": 7.748414704261044e-07,
+            "reverseTrajectoryCoverageMaxM": 7.748414704261044e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 29,
+              "timeSeconds": 0.4833333194255829,
+              "unityVertex": 109,
+              "sourceVertex": 12
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Mitten_R",
+            "nativeVertices": 48,
+            "unityVertices": 112,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 3.801967377682543e-07,
+            "reverseMaximumWorldVertexErrorM": 3.801967377682543e-07,
+            "fixedTrajectoryMappingMaxM": 4.880775093334233e-07,
+            "reverseTrajectoryCoverageMaxM": 4.880775093334233e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 16,
+              "timeSeconds": 0.2666666805744171,
+              "unityVertex": 107,
+              "sourceVertex": 10
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Longsword",
+            "nativeVertices": 57,
+            "unityVertices": 176,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 4.990928924807704e-07,
+            "reverseMaximumWorldVertexErrorM": 4.990928924807704e-07,
+            "fixedTrajectoryMappingMaxM": 7.270680581778862e-07,
+            "reverseTrajectoryCoverageMaxM": 7.270680581778862e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 34,
+              "timeSeconds": 0.5666666626930237,
+              "unityVertex": 1,
+              "sourceVertex": 8
+            },
+            "passed": true
+          }
+        ]
+      },
+      {
+        "name": "Longsword_Attack_Slice",
+        "transformSamples": 37,
+        "meshSamples": 17,
+        "maximumWorldMatrixDifference": 6.275278579687127e-07,
+        "surfaces": [
+          {
+            "mesh": "Chibi_Body_v009",
+            "nativeVertices": 6421,
+            "unityVertices": 6422,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 0.00015002502257445048,
+            "reverseMaximumWorldVertexErrorM": 0.00015002502257445048,
+            "fixedTrajectoryMappingMaxM": 0.00022657269413962826,
+            "reverseTrajectoryCoverageMaxM": 0.00022657269413962826,
+            "toleranceM": 0.0005,
+            "worstSample": {
+              "frameIndex": 29,
+              "timeSeconds": 0.4833333194255829,
+              "unityVertex": 1459,
+              "sourceVertex": 6420
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Mitten_L",
+            "nativeVertices": 48,
+            "unityVertices": 112,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 5.11596283103796e-07,
+            "reverseMaximumWorldVertexErrorM": 5.11596283103796e-07,
+            "fixedTrajectoryMappingMaxM": 6.452898576055136e-07,
+            "reverseTrajectoryCoverageMaxM": 6.452898576055136e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 29,
+              "timeSeconds": 0.4833333194255829,
+              "unityVertex": 15,
+              "sourceVertex": 4
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Mitten_R",
+            "nativeVertices": 48,
+            "unityVertices": 112,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 3.30595308696566e-07,
+            "reverseMaximumWorldVertexErrorM": 3.30595308696566e-07,
+            "fixedTrajectoryMappingMaxM": 5.343488834299314e-07,
+            "reverseTrajectoryCoverageMaxM": 5.343488834299314e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 0,
+              "timeSeconds": 0.0,
+              "unityVertex": 15,
+              "sourceVertex": 4
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Longsword",
+            "nativeVertices": 57,
+            "unityVertices": 176,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 5.522902061458408e-07,
+            "reverseMaximumWorldVertexErrorM": 5.522902061458408e-07,
+            "fixedTrajectoryMappingMaxM": 8.894688657614782e-07,
+            "reverseTrajectoryCoverageMaxM": 8.894688657614782e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 25,
+              "timeSeconds": 0.4166666567325592,
+              "unityVertex": 1,
+              "sourceVertex": 8
+            },
+            "passed": true
+          }
+        ]
+      },
+      {
+        "name": "Longsword_Attack_Stab",
+        "transformSamples": 43,
+        "meshSamples": 17,
+        "maximumWorldMatrixDifference": 7.147000284923877e-07,
+        "surfaces": [
+          {
+            "mesh": "Chibi_Body_v009",
+            "nativeVertices": 6421,
+            "unityVertices": 6422,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 0.00017473923919005053,
+            "reverseMaximumWorldVertexErrorM": 0.00017473923919005053,
+            "fixedTrajectoryMappingMaxM": 0.00025085032067472327,
+            "reverseTrajectoryCoverageMaxM": 0.00025085032067472327,
+            "toleranceM": 0.0005,
+            "worstSample": {
+              "frameIndex": 8,
+              "timeSeconds": 0.13333334028720856,
+              "unityVertex": 1459,
+              "sourceVertex": 6420
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Mitten_L",
+            "nativeVertices": 48,
+            "unityVertices": 112,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 5.10726829741746e-07,
+            "reverseMaximumWorldVertexErrorM": 5.10726829741746e-07,
+            "fixedTrajectoryMappingMaxM": 5.29227705454522e-07,
+            "reverseTrajectoryCoverageMaxM": 5.29227705454522e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 18,
+              "timeSeconds": 0.30000001192092896,
+              "unityVertex": 91,
+              "sourceVertex": 27
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Mitten_R",
+            "nativeVertices": 48,
+            "unityVertices": 112,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 3.7224117461540573e-07,
+            "reverseMaximumWorldVertexErrorM": 3.7224117461540573e-07,
+            "fixedTrajectoryMappingMaxM": 4.912192450519343e-07,
+            "reverseTrajectoryCoverageMaxM": 4.912192450519343e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 10,
+              "timeSeconds": 0.1666666716337204,
+              "unityVertex": 6,
+              "sourceVertex": 18
+            },
+            "passed": true
+          },
+          {
+            "mesh": "Longsword",
+            "nativeVertices": 57,
+            "unityVertices": 176,
+            "sampledPoses": 17,
+            "maximumWorldVertexErrorM": 5.653341677462132e-07,
+            "reverseMaximumWorldVertexErrorM": 5.653341677462132e-07,
+            "fixedTrajectoryMappingMaxM": 8.100331111068048e-07,
+            "reverseTrajectoryCoverageMaxM": 8.100331111068048e-07,
+            "toleranceM": 0.0001,
+            "worstSample": {
+              "frameIndex": 21,
+              "timeSeconds": 0.3499999940395355,
+              "unityVertex": 2,
+              "sourceVertex": 5
+            },
+            "passed": true
+          }
+        ]
+      }
+    ]
+  },
+  "protectedExistingFiles": 62,
+  "protectedFileChanges": [],
+  "runtimeDependencyClosure": [
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Actions.fbx",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Rig.fbx",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Run.fbx",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unarmed.controller",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unlit.mat",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Visual.prefab",
+    "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Walk.fbx",
+    "Assets/Art/Characters/Protagonist01/protagonist01-v001_base_color.png"
+  ],
+  "usedV006Assets": [
+    "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat",
+    "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png"
+  ],
+  "rigCompatibility": "Two preserved Generic rig sets (old 24 bones / KayKit 23 bones); not unified or wired into runtime.",
+  "runtimeIntegrated": false,
+  "noExistingCodeOrSceneChanges": true,
+  "validatedPreConsolidationSourceBlendSHA256": "e1acfb49f7c6ee51f5252295cbec5a552a7c324562670d5d53eb25e0eab65d81",
+  "editableSource": "ArtSources/Characters/Protagonist01/Final/Combat/Protagonist_Combat.blend",
+  "editableSourceSHA256": "aa9726296cfcbcc4f804017870879026b6fb82e4f4b938daf85f2a8f69a09087",
+  "runtimeDependencies": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Actions.fbx",
+      "guid": "e35ac131c75af224793d16098902e7b7",
+      "sha256": "5141cd8418a2e33f3990ed99d05b85f153e4eef1b58ba338531c668d08bba7ce",
+      "metaSHA256": "7f3675fec24423dcaea7b6832887bc625ab40337a2fb16974530d6f3c001cc4e",
+      "bytes": 3412716
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Rig.fbx",
+      "guid": "cb8120a628081894e9407093b6830ae0",
+      "sha256": "1e42fcee84e276b1c3886c6b7b396c3e6148f6c50531b821b4dd939d780ec5ed",
+      "metaSHA256": "fbc95272b94002f0bd02e4fbdac733acddc6bffccff3e01bf723f9bc6d8f7876",
+      "bytes": 2921948
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Run.fbx",
+      "guid": "83972f2188fc80d41a8fa95eddaec809",
+      "sha256": "e86b59a7f6779c4ae048ca4aee997b4e38966f506e31b63976f82c0c0cf26a1f",
+      "metaSHA256": "609409733a18743ecc6c3335eca2a5e7829626cda521382fb7cbb7ffb56a2605",
+      "bytes": 2940924
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unarmed.controller",
+      "guid": "142253e0e707fd24188eb961231bed9f",
+      "sha256": "e816c43acffe7cbb83a961c5a3c0268f828c7ac225420f6fe49c7360af67cdd6",
+      "metaSHA256": "6f2e5327df00dfdace795e171fd21639ea370ec8f9b673c4af96ddc14bc6bb3a",
+      "bytes": 30148
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Unlit.mat",
+      "guid": "99136c3d0b898e74293d0849f30d9dd9",
+      "sha256": "060d9e30ea9c2e6893003ba74785674c5f720ff1b5a00171ddcda01fa89fcc34",
+      "metaSHA256": "0d18695dc94a63e03cbefe34b6bb7c9c4b148444b211aa0424cc26558a32da31",
+      "bytes": 2062
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Visual.prefab",
+      "guid": "d9b1f2875f337084f9dd0d7bb8b53900",
+      "sha256": "ad84cbd673018f38b361d7177ce211ec27ad538fe2c69fcae9c9f03e4c2741fe",
+      "metaSHA256": "ea8297c149bbfabfd2781972c42d86ef87ee98baa7565a7c01b41112d481157e",
+      "bytes": 32042
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Walk.fbx",
+      "guid": "d87e947e65a39274886755bc8d48133f",
+      "sha256": "09f3d4937d1dadeed98fa77d2cd0274cf59601dfff45af52f789fd1aaaed7190",
+      "metaSHA256": "6247f8ff5f9d8daa321b2a2b5c8282cf62cbb6a855dc1f54f41bf8f47a87054d",
+      "bytes": 2958044
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/protagonist01-v001_base_color.png",
+      "guid": "1763004a0eef55741a1d59633b0afc69",
+      "sha256": "241b6488640b9ef2c75f37407816cce1182552a12841afc5564f3dbec1ae098b",
+      "metaSHA256": "f21d875638c72d598b557a2adba0bcd5a531d470b9cb06aa0fd22da77e151ad6",
+      "bytes": 4254472
+    }
+  ],
+  "combatDependencies": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+      "guid": "817df6de9a4ec134296e4c4c2bcd8883",
+      "sha256": "1a53d1c84ab77b6cfa6839b22fabacbc1d1df99990b87fe0fa32fe11b1efce59",
+      "metaSHA256": "29c9c79369981979e64460933538ceafab27ed3e802a5b4f91e81ebdb99b68f6",
+      "bytes": 6641178
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+      "guid": "77c54af014af8d6419308d3b507ab479",
+      "sha256": "41946ba732bb55ad38b683cc924f336735a0d018d63c4da0834b5f239af0d7d2",
+      "metaSHA256": "be048e012c4281160401a26582816073812b893d8babc5f0f5641916dbe28c3d",
+      "bytes": 5742269
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
+      "guid": "2e807f6206ce8bd41afae4294b09a49b",
+      "sha256": "7bec5cf2eea5c6e30028f0e6e96e753ae84a452b159b266900edd25eda8c94e8",
+      "metaSHA256": "87327ba3e66871f58081040ff5036711cc6f3d7426b4bf16dec8fae5ea83dbee",
+      "bytes": 6638094
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/FBX/Protagonist_KayKit_v018.fbx",
+      "guid": "bbf9f1cafc06dda4eb6f7b757b3b7731",
+      "sha256": "f8fcf5108512d20a2c55871cce7ebdd45637f38b295405154d7d7f6cbc31b98c",
+      "metaSHA256": "e3b51c2c03edccd22628c926e5269e65412e16b2ff02c66b72c66e6884c103e6",
+      "bytes": 520044
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Edge.mat",
+      "guid": "1f71f94a6a270c243b3a87fb53e25f84",
+      "sha256": "fe9e419d3d3fc0641c5f89fcb9e18c59da8c7929de9359be25cb05b19fc061d8",
+      "metaSHA256": "865cc3cf4833ecffe654759e5e0fd77ece8c7f2fbbee080f5f3ff2df6c102f13",
+      "bytes": 3798
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Guard.mat",
+      "guid": "56142b32114b3b34d9c12a1d26536b04",
+      "sha256": "86ba976d8e14c12a84f22323cc6416924e7399cc847f1c6a476493564daed7ca",
+      "metaSHA256": "d74ff4d7bfb4570765287289ba6f8f6dc3badadc8909f535a3d7f0749e26c88a",
+      "bytes": 3800
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_NavyGrip.mat",
+      "guid": "cc518913ea8a36d46b02ea63328022cd",
+      "sha256": "5096e05cf607b760792afab3f93b818e9bb9b4cfa12650b8a4d4eeb080dda008",
+      "metaSHA256": "4b53040eb5a3844359f110f561be8cb7f993ae74001a200bae8e042d36e3ed2e",
+      "bytes": 3804
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_SimpleSkin.mat",
+      "guid": "1ec6964d8067b0e47b683f667c7ca824",
+      "sha256": "876f34611f46da8e5356304258eb3aa817a63b0228bc37df57a19af7b9bc3dd4",
+      "metaSHA256": "53c89fa4ab0f67899ef79473078c987482d55e202f28a75037a4c7af5a3f3080",
+      "bytes": 3836
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Steel.mat",
+      "guid": "e39f32067c177f64fa5502524127c2d8",
+      "sha256": "78f37c584da1db5b1b4df5d28cec6b83f258f84bee1f46a8264317153431132b",
+      "metaSHA256": "7ce9050b2a2877f80c23fec968bae7f2520c490686c30f89a5ed6f039677e5e7",
+      "bytes": 3801
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/Material_0.mat",
+      "guid": "3505c01ee73a33a42b60b468323d66fc",
+      "sha256": "d902754a44fe936744c9cf1facf1c91865efd70384b31fe6f324439bc1cd5c1d",
+      "metaSHA256": "0cda93ba7353f2407e32b3417b0560dcbd550d845e812d5951dfd27ba519e7ca",
+      "bytes": 3912
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Longsword_KayKitSocket.prefab",
+      "guid": "2412273bb5612ee428ece72b477bf607",
+      "sha256": "07e801795e15d3c7090b083027ae8176407f209009e5dc4d97273892e80ad13e",
+      "metaSHA256": "d1ec5cae5935484252c5732271be8ff7592a12c952b42d5c18f515d4c235847b",
+      "bytes": 10396
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+      "guid": "a13f00140fdadb24d9d8fe293c6e60b2",
+      "sha256": "48d0a16a3b074901608c64139a4d9f4d600e2ef29325a42d7662ff710bdc6578",
+      "metaSHA256": "dc8d6d2edd8d5d97acdd80f05f699778d343a7712b3f75f8707221855a76f127",
+      "bytes": 47900
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Textures/Image_0.jpg",
+      "guid": "8506267b0e9b03d4780964ac068dbce2",
+      "sha256": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4",
+      "metaSHA256": "2c0f9cafc71c588caf2e86f26d9a6875e2793816e52ee0b9cd2eaf8b5199640a",
+      "bytes": 2583170
+    }
+  ],
+  "usedV006MaterialTexture": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Materials/Protagonist_ChibiCap_Unlit.mat",
+      "guid": "f1e56dba756ee4644b0a3e7961db2718",
+      "sha256": "fcdd072322f6ad12346d9436b6509243418763ea268bf1dc216db25681f59322",
+      "metaSHA256": "3feb5f82d9d34a9e55ac769ede77bdcbc0f422fca5c566387aea292902361ef3",
+      "bytes": 2068
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Textures/Protagonist_ChibiCap_BaseColor.png",
+      "guid": "76a571927a55a1a469330ffebeed90b0",
+      "sha256": "a2b78743110cc57387498fec3b70a775c33b888d11d874614d54e036460055e3",
+      "metaSHA256": "e2e2a932a6c7d8b54b4b9759c7467bdaf774fa78fe14bbd8e40ed237da36394b",
+      "bytes": 4646330
+    }
+  ],
+  "postConsolidationGUIDCheck": {
+    "passed": true,
+    "newlyBrokenReferences": [],
+    "duplicateGUIDs": [],
+    "scannedSerializedAssets": 953,
+    "reportSHA256": "cef40912f00073ba3fd7e4f61a0fb23b3f7dba81f08eff0296835c1e453b001f"
+  }
+}

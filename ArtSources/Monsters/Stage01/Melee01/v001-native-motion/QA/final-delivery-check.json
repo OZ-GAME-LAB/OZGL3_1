@@ -1,0 +1,26 @@
+{
+  "status": "single-monster feedback sample delivered",
+  "source_blend_sha256": "0a4a9ccbccf79f756a63a7637cd794034317e926ef22a614964e5edfb6a5e2b2",
+  "fbx_sha256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0",
+  "prefab_sha256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf",
+  "source_timing_preserved": true,
+  "actual_unity_skin_rendered_and_independently_reviewed": true,
+  "native_action_names": [
+    "Idle_Combat",
+    "Running_A",
+    "1H_Melee_Attack_Chop",
+    "Hit_A"
+  ],
+  "delivered_actions": [
+    "Idle",
+    "Move",
+    "Attack",
+    "Hit"
+  ],
+  "view": "same-scale orthographic side-by-side protagonist reference",
+  "gameplay_integrated": false,
+  "live_game_locomotion_transition_hitboxes_tested": false,
+  "cost_paid": 0,
+  "existing_tracked_files_changed": false,
+  "reference_protagonist_sha256": "3c01805cf9b53e10abdcf9c8267f9ae118fa187c212cc3bd30cf2cc714bd8a6b"
+}

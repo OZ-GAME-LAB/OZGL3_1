@@ -13,7 +13,7 @@ public static class ChibiCapHandBuilder
     public const string Root = "Assets/Art/Characters/Protagonist01/ChibiCap_v006";
     public const string MeshPath = Root + "/Meshes/Protagonist_ChibiCap_Fists.asset";
     const string Source = "Assets/Art/Characters/Protagonist01/ChibiCap_v006/Rig/Protagonist_ChibiCap_Rig.fbx";
-    const string ReportPath = "ArtSources/Characters/Protagonist01/v006-chibi-cap/hand-polish-build.json";
+    const string ReportPath = "ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring/hand-polish-build.json";
     // v006 GLB hand inspection: finger tips are .168/.176m from the wrist in bind space.
     // The .068m ridge preserves the wrist/palm and closes the distal pads.
     const float KnuckleY = .068f;
@@ -323,7 +323,7 @@ public static class ChibiCapHandBuilder
                     thumbCandidate = p.z > .065f && p.y > .065f && p.y < .15f
                 });
             }
-        string path = "ArtSources/Characters/Protagonist01/v006-chibi-cap/hand-selection-" + bone + ".json";
+        string path = "ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring/hand-selection-" + bone + ".json";
         Directory.CreateDirectory(Path.GetDirectoryName(path));
         File.WriteAllText(path, JsonUtility.ToJson(dump, true));
         Debug.Log("CHIBI_CAP_HAND_SELECTION_DIAGNOSTIC " + path);

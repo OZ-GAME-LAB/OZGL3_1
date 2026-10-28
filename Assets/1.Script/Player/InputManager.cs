@@ -19,6 +19,14 @@ public class InputManager : MonoBehaviour
     [SerializeField] private InputActionReference _skillEAction; // Button (E)
     [SerializeField] private InputActionReference _skillRAction; // Button (R)
 
+    // 스킬 Q/E/R과 같은 방식으로 맞춰서,
+    // 키 변경이나 특정 슬롯 막기를 액션 하나만 바꿔서 할 수 있게
+    [Header("Item")]
+    [SerializeField] private InputActionReference _item1Action; // Button (1)
+    [SerializeField] private InputActionReference _item2Action; // Button (2)
+    [SerializeField] private InputActionReference _item3Action; // Button (3)
+    [SerializeField] private InputActionReference _item4Action; // Button (4)
+
     private Camera _camera;
 
     public Vector2 MoveInput { get; private set; }
@@ -29,6 +37,8 @@ public class InputManager : MonoBehaviour
 
     //이벤트 1개 + 슬롯 번호 -> 컨트롤러는 핸들러 하나로 Q/E/R을 모두 처리
     public event Action<SkillSlot> OnSkillAction;
+    // IItemSource의 slotIndex(0~3)를 변환 없이 바로 쓰려고 int 사용
+    public event Action<int> OnItemAction;
 
     private void Awake()
     {
@@ -50,6 +60,10 @@ public class InputManager : MonoBehaviour
         _skillQAction.action.Enable();
         _skillEAction.action.Enable();
         _skillRAction.action.Enable();
+        _item1Action.action.Enable();
+        _item2Action.action.Enable();
+        _item3Action.action.Enable();
+        _item4Action.action.Enable();
 
         _moveAction.action.performed += OnMove;
         _moveAction.action.canceled += OnMove;
@@ -59,6 +73,10 @@ public class InputManager : MonoBehaviour
         _skillQAction.action.started += OnSkillQ;
         _skillEAction.action.started += OnSkillE;
         _skillRAction.action.started += OnSkillR;
+        _item1Action.action.started += OnItem1; 
+        _item2Action.action.started += OnItem2; 
+        _item3Action.action.started += OnItem3; 
+        _item4Action.action.started += OnItem4; 
     }
 
     private void OnDisable()
@@ -73,6 +91,10 @@ public class InputManager : MonoBehaviour
         _skillQAction.action.started -= OnSkillQ;
         _skillEAction.action.started -= OnSkillE;
         _skillRAction.action.started -= OnSkillR;
+        _item1Action.action.started -= OnItem1;
+        _item2Action.action.started -= OnItem2;
+        _item3Action.action.started -= OnItem3;
+        _item4Action.action.started -= OnItem4;
 
         _moveAction.action.Disable();
         _dashAction.action.Disable();
@@ -82,6 +104,10 @@ public class InputManager : MonoBehaviour
         _skillQAction.action.Disable();
         _skillEAction.action.Disable();
         _skillRAction.action.Disable();
+        _item1Action.action.Disable();
+        _item2Action.action.Disable();
+        _item3Action.action.Disable();
+        _item4Action.action.Disable();
     }
 
     // 커서 위치 → origin이 있는 Z 평면 위의 월드 좌표
@@ -132,5 +158,22 @@ public class InputManager : MonoBehaviour
     private void OnSkillR(InputAction.CallbackContext context)
     {
         OnSkillAction?.Invoke(SkillSlot.R);
+    }
+
+    private void OnItem1(InputAction.CallbackContext context)
+    {
+        OnItemAction?.Invoke(0);
+    }
+    private void OnItem2(InputAction.CallbackContext context)
+    {
+        OnItemAction?.Invoke(1); 
+    }
+    private void OnItem3(InputAction.CallbackContext context) 
+    {
+        OnItemAction?.Invoke(2); 
+    }
+    private void OnItem4(InputAction.CallbackContext context) 
+    {
+        OnItemAction?.Invoke(3); 
     }
 }

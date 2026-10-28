@@ -1,0 +1,90 @@
+{
+  "selectedNativeSource": "Protagonist_ChibiCap_Rig.glb",
+  "selfContained": true,
+  "embeddedImages": [
+    {
+      "name": "Image_0",
+      "mimeType": "image/jpeg",
+      "bufferView": 7
+    }
+  ],
+  "boneCount": 24,
+  "boneNames": [
+    "Hips",
+    "Spine02",
+    "Spine01",
+    "Spine",
+    "neck",
+    "Head",
+    "head_end",
+    "headfront",
+    "LeftShoulder",
+    "LeftArm",
+    "LeftForeArm",
+    "LeftHand",
+    "RightShoulder",
+    "RightArm",
+    "RightForeArm",
+    "RightHand",
+    "LeftUpLeg",
+    "LeftLeg",
+    "LeftFoot",
+    "LeftToeBase",
+    "RightUpLeg",
+    "RightLeg",
+    "RightFoot",
+    "RightToeBase"
+  ],
+  "externalBufferOrImageUris": [],
+  "files": [
+    {
+      "source": "ArtSources/Characters/Protagonist01/v006-chibi-cap/rigging-bundle/Protagonist_ChibiCap_Rig.glb",
+      "retained": "Model/Protagonist_ChibiCap_Rig.glb",
+      "sha256": "749ffef1b602780db8ce21d3da0a5737c7d94b171806a4c48e7d3ebe1b07d775",
+      "bytes": 3196000
+    },
+    {
+      "source": "ArtSources/Characters/Protagonist01/v006-chibi-cap/Protagonist_ChibiCap_Concept.png",
+      "retained": "Model/Protagonist_ChibiCap_Concept.png",
+      "sha256": "2a320616f99d74e99f545b97ca087c2b84eceb1c5db982d201b7d9d7a5e7a09b",
+      "bytes": 1612687
+    },
+    {
+      "source": "ArtSources/Characters/Protagonist01/v006-chibi-cap/generation.json",
+      "retained": "Model/Provenance/generation.json",
+      "sha256": "8f45ec73ee5530ad8f1e84dfe248b9d39649cbf9cb2ef8aa11d0f4e09666c83b",
+      "bytes": 2220
+    },
+    {
+      "source": "ArtSources/Characters/Protagonist01/v006-chibi-cap/concept-prompt.txt",
+      "retained": "Model/Provenance/concept-prompt.txt",
+      "sha256": "cd3447d824ece6336b32d762c452dbae7bb66e5f5ba80b1dfc3b79990f46ea25",
+      "bytes": 3562
+    },
+    {
+      "source": "ArtSources/Characters/Protagonist01/v006-chibi-cap/rig-inspection.json",
+      "retained": "Model/Provenance/rig-inspection.json",
+      "sha256": "179aa4f10ab7bafc5f8f46f5c2173bc5a1d69c639fac46c1fd18eea9906a6911",
+      "bytes": 10916
+    },
+    {
+      "source": "ArtSources/Characters/Protagonist01/v006-chibi-cap/research/reference-analysis-2026-10-21.txt",
+      "retained": "Model/Provenance/reference-analysis-2026-10-21.txt",
+      "sha256": "b8c2e23308929158dc504cafe8edf61840f203cd306d9f9b5ca22414a18565d1",
+      "bytes": 8704
+    }
+  ],
+  "authoritativeApprovedUnityGeometry": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset",
+  "scope": "Original generated rigged source for future DCC editing. The approved Unity hand/blendshape edits remain in their unchanged Unity mesh assets; this raw source is not a substitute for those approved assets.",
+  "provenance": {
+    "modelProvider": "Meshy",
+    "modelTask": "01a15d2b-ee91-7588-8dd9-041192a87f0b",
+    "rigTask": "01a15d31-2ce9-7463-a3d7-392b1ba82785",
+    "conceptProvider": "built-in image_gen",
+    "referenceLinks": [
+      "https://www.youtube.com/shorts/ujVLoPdd1Pg",
+      "https://x.com/cartridge102"
+    ],
+    "licenseRecord": "No standalone model license file was present in the original v006 source. Original generation metadata is preserved. KayKit CC0 licensing does not describe this independently generated hero."
+  }
+}

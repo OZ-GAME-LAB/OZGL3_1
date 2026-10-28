@@ -1,0 +1,65 @@
+{
+  "method": "Actual Unity corrected Combat prefab captures sampled at 60Hz, every second image encoded at 30fps; no artificial hold. A fixed palette per GIF prevents palette flicker. Slow versions double the same frame durations. Legacy15 GIFs are unchanged.",
+  "files": [
+    {
+      "file": "Review/Combat/Longsword_Attack_Chop_Side.gif",
+      "sha256": "689b923d54c23219315faa1c4acf12ea25d8786ce18bc1924976ea5ced607692",
+      "bytes": 522650,
+      "clip": "Longsword_Attack_Chop",
+      "speed": "normal",
+      "frames": 21,
+      "durationMs": 700,
+      "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
+    },
+    {
+      "file": "Review/Combat/Longsword_Attack_Chop_Side_Slow.gif",
+      "sha256": "2b3683994cc4ffb59d6f0591142bef498f3705a272aaeb63e9b7f88f40c1d65e",
+      "bytes": 523781,
+      "clip": "Longsword_Attack_Chop",
+      "speed": "slow",
+      "frames": 21,
+      "durationMs": 1400,
+      "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
+    },
+    {
+      "file": "Review/Combat/Longsword_Attack_Slice_Side.gif",
+      "sha256": "4b57a0956e433a491f4c8fec483156d0ca1768079884c376ce0f6e7ceab47891",
+      "bytes": 438807,
+      "clip": "Longsword_Attack_Slice",
+      "speed": "normal",
+      "frames": 18,
+      "durationMs": 600,
+      "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
+    },
+    {
+      "file": "Review/Combat/Longsword_Attack_Slice_Side_Slow.gif",
+      "sha256": "e38a70847c47e5da176b6e27ad62d10fe64ba2f1952420950504b0863b0663a3",
+      "bytes": 437257,
+      "clip": "Longsword_Attack_Slice",
+      "speed": "slow",
+      "frames": 18,
+      "durationMs": 1200,
+      "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
+    },
+    {
+      "file": "Review/Combat/Longsword_Attack_Stab_Side.gif",
+      "sha256": "6e04844ff0417e955c06e1c5b848aafb466bd1a25171951b512dab4353e3a054",
+      "bytes": 518737,
+      "clip": "Longsword_Attack_Stab",
+      "speed": "normal",
+      "frames": 21,
+      "durationMs": 700,
+      "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
+    },
+    {
+      "file": "Review/Combat/Longsword_Attack_Stab_Side_Slow.gif",
+      "sha256": "468436ab85165968cacc01cb2292e87f07dadb59f45b3f5d46c375fb6ffd2eb3",
+      "bytes": 521706,
+      "clip": "Longsword_Attack_Stab",
+      "speed": "slow",
+      "frames": 21,
+      "durationMs": 1400,
+      "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
+    }
+  ]
+}

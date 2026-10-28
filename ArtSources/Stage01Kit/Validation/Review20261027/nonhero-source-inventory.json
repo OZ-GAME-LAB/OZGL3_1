@@ -1,0 +1,782 @@
+{
+  "date": "2026-10-27",
+  "scope": "Retained Stage01 environments, noncombat props, weapons, potions, assembled blocks, and delivered Melee01 monster. Hero, VFX and unrelated third-party/UI excluded. Read-only inventory; no runtime integration assessment.",
+  "stage01": {
+    "prefabCount": 31,
+    "prefabCategories": {
+      "Blocks": 2,
+      "Modules": 16,
+      "Props": 11,
+      "Weapons": 2
+    },
+    "prefabs": [
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab",
+        "bytes": 173607,
+        "sha256": "36de3ac33c9fa4b02d418f98a7ca22986fd20998e976ee3ea987c435357a86ca",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab",
+        "bytes": 93559,
+        "sha256": "9b57ace40762e84b5102296ec1734f35f6c9e8f4fe1d92f3354b2e1bce8a5f90",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+          "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab",
+        "bytes": 12102,
+        "sha256": "5d13fa0e7506ac0c14e5bf3223428b2468637cf5783a73259946c25518fb48e8",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab",
+        "bytes": 12076,
+        "sha256": "deb0227830b542051fe3b5be4411ddc9c4cd74d59445aaea788d07496c20fbde",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset",
+          "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab",
+        "bytes": 12082,
+        "sha256": "0920fa02f2c959fca2820c8bae63f135b0a4cb337c43d6a2465b963f9d3bd12d",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset",
+          "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab",
+        "bytes": 12083,
+        "sha256": "d3bf8b6789b53239073c493ac7121184be04887288733d8ec246326125fb3558",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+          "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab",
+        "bytes": 23642,
+        "sha256": "81542c3020e6af7cd64c569a8bdafc77f180fd295c9e4ab3b70359452b04604b",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab",
+        "bytes": 6301,
+        "sha256": "f1a19ab386d0e4f24096a06983400a4b0f276aed642def79b32d9687ec69d22f",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab",
+        "bytes": 5393,
+        "sha256": "25a9861cf49ba35a3bb5b1d26dbf87f6a7f2a024bdf50ad895dbe730ffbbef12",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab",
+        "bytes": 3552,
+        "sha256": "f5c1a0a478017986f1e6f4d4ee534942977d01d542a6d4393d153712b05478f9",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab",
+        "bytes": 3555,
+        "sha256": "5172f38fca7ccfc397c000de2436563b49cf77dfcc1b4aaac750036c7c3354dd",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab",
+        "bytes": 7823,
+        "sha256": "b007f7159354af2361138eaf7fe93bd01ef6403a645eaf12c584ac2c04d57ea2",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab",
+        "bytes": 3549,
+        "sha256": "5abb3b96861f64d71468457476457875a069453bbe9f05828c959cb9fcdff570",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab",
+        "bytes": 7827,
+        "sha256": "db310c97d54003d1ab37393eec5c94b2b71e6bcf66a3d5909fd7759ceb97f96d",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab",
+        "bytes": 5973,
+        "sha256": "e2c3ad228cd99a6f6f78b20cc821007a5311602f46898f047413cc563ee2191d",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab",
+        "bytes": 3558,
+        "sha256": "70c97f37eaae44ac283eb81acdd2c19d8414cadd5b0d4dec13020bdf981da22b",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab",
+        "bytes": 7822,
+        "sha256": "3b4ff0beecc21640aec14fcf907ca74be3e6dd9c3955bfbf15911f39e9f5c22c",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab",
+        "bytes": 3547,
+        "sha256": "0d3b5bdf854d5b3bccaf6598cbafa6c8db982d3f89ae351524721a3bbd3c76f6",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab",
+        "bytes": 3547,
+        "sha256": "387f634e97852f650085457e1df20aa5e6108b3af414bf97b272a26d46e23ed8",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+        "bytes": 3549,
+        "sha256": "6d6b07ff1d6dbfe41eb2cc6869f37c2b68878fdf9bf46cdeaf4e7a7f4ff8e5fa",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+        "bytes": 3553,
+        "sha256": "64fc0c7ad605afbc0d40c23951c1777d6590a0f9ac6fd407c43074dc8fdac50b",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab",
+        "bytes": 4151,
+        "sha256": "64dbbfc18bf4bd9222871f3081006034357e61e2d0f9d2503a81225d1bb2e573",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/ConsumableHandProp.cs",
+          "Assets/Art/Stage01Kit/Meshes/Props/Potion_Attack.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab",
+        "bytes": 4152,
+        "sha256": "663d899e62fdc1f7e24a7673ce3874589af24aa9f3ae59003528ee7cf20ccad1",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/ConsumableHandProp.cs",
+          "Assets/Art/Stage01Kit/Meshes/Props/Potion_Defense.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab",
+        "bytes": 4151,
+        "sha256": "dcd09f3540ef1395b0588daaf12afb60480cf4a5ea746c268fedbd312d851d0d",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/ConsumableHandProp.cs",
+          "Assets/Art/Stage01Kit/Meshes/Props/Potion_Health.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab",
+        "bytes": 4144,
+        "sha256": "3f4a410cf22a2b0993f32d95838152d292812f8c1094d7ad79a19fb7a837d92a",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Props/Potion_Speed.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/ConsumableHandProp.cs"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab",
+        "bytes": 3544,
+        "sha256": "546978e0da0991c6e9b477e2e43a1708fa1b337dd140207bc2666003449dfee5",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+        "bytes": 3551,
+        "sha256": "2a938b17487e59e93527814eabcc2b8211ee3a4c082f3a69268df3394ead91be",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+        "bytes": 4161,
+        "sha256": "7214b48b7250de7e29de9cf518d16310cb32b33b89c5b0e7cba20170cd0b098b",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+        "bytes": 4165,
+        "sha256": "3710d1bf6fbc6cf22efdd9717eb20b8780200c9731502ac083c184c444c81943",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+        "bytes": 6923,
+        "sha256": "997af7e6592ad5658dd123086d68d09d9578b6044fcc53e605d987a42dd2827a",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/SocketWeapon.cs",
+          "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat",
+          "Assets/Art/Stage01Kit/Materials/StaffOrb/Staff_CrystalOrb_TransparentTeal.mat",
+          "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_CrystalOrb_80Faces.asset"
+        ],
+        "otherReferences": []
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+        "bytes": 4183,
+        "sha256": "e313c9db1c1055734f70107f4b6e7f2404c5c647902123c09131b209848c117b",
+        "resolvedArtReferences": [
+          "Assets/Art/Stage01Kit/SocketWeapon.cs",
+          "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+          "Assets/Art/Stage01Kit/Materials/Urban_SharedPalette.mat"
+        ],
+        "otherReferences": []
+      }
+    ],
+    "sourceFBX": [
+      {
+        "path": "Assets/Art/Stage01Kit/Models/ACUnit.fbx",
+        "bytes": 21020,
+        "sha256": "646eb854badf640819488f7fb1e492e268edd13152559ffb0c9491408c96e2db"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/Bench.fbx",
+        "bytes": 30380,
+        "sha256": "a3daad3f2eb1e0c903273f08ff0f2de650489dad1f71f33bed5390e92bf030bd"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/GatePylon.fbx",
+        "bytes": 34668,
+        "sha256": "8b5e5e09bddaaff383bb405c1f662767ae69242b3d4de0c1842529aca393f252"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/Staff.fbx",
+        "bytes": 37180,
+        "sha256": "21156c6df112e7be5194995a17fd8a8668b795ea59524d040af2a045b335a373"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/StreetLamp.fbx",
+        "bytes": 29836,
+        "sha256": "d7c7a48c0e60447905db73dc987a6bfb03ff0d906b68e94d9da491e938d841cd"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/StreetTree.fbx",
+        "bytes": 37228,
+        "sha256": "b735229b4eb27d5e4ff7ac8857dcb224ca3937d5bc67b25dc353cb7d93797959"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/Sword.fbx",
+        "bytes": 30924,
+        "sha256": "9a87a7aa5d1d3573bd89582fda70899da65d1838fe0484182144f8965803181f"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/TrashBin.fbx",
+        "bytes": 22972,
+        "sha256": "e008e0536144d1b8cb86a9b0468afb35b629a82a0bc9af3da54804ec6fdaddae"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Models/VendingMachine.fbx",
+        "bytes": 37916,
+        "sha256": "e84d58512e98ab06f8205fe5ff7ff0c4bfaeb23f205fefa1075ddad206c57173"
+      }
+    ],
+    "generatedMeshes": [
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset",
+        "bytes": 643322,
+        "sha256": "1046c0409876926b1d29586f90fb1cb30d4f4f67e0037613d7711c8b6b0480e1"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset",
+        "bytes": 220173,
+        "sha256": "6b9e4e5ecbbdd460c67839ae7909b7d59804334972cceccf660151643c6613ec"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset",
+        "bytes": 290345,
+        "sha256": "9615251ec49470d1152f7a68fde1fd4c84b7199a2fa3e8443fad3ec37d7549fe"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset",
+        "bytes": 112840,
+        "sha256": "51020be10e2e730be179953d567a57724868e4e0a66c2ea1fdfbb3cdf1bc4a53"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset",
+        "bytes": 114909,
+        "sha256": "c19e5ab326fb2fe4786ae07667bbcca750f78ecd96ed42948f6a23a6535adeb6"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset",
+        "bytes": 46772,
+        "sha256": "2f5d98e5a9cec913b24280d8a4c51e554b7d6198699a55c8a38b4b3f0e5ac4a6"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+        "bytes": 104584,
+        "sha256": "3e3e263e0c21d617c867ac3b2e2fdd4a96f285840b8c090bc3e20ff4dae0971d"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+        "bytes": 36465,
+        "sha256": "0ae72081c791ca81cbc2a5fd8c36fda40e955a60ed70ebad91c1f06808564c4b"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset",
+        "bytes": 81921,
+        "sha256": "a6726acaa5c9afe47aa0e5cd52fd6106a440a537e13935e0d1d8e98acfeb6b9f"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset",
+        "bytes": 28192,
+        "sha256": "617cccfaf13cd15b759d17f5107edf5b48b3b638aae967c95806ed1698c294ee"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset",
+        "bytes": 50907,
+        "sha256": "708ce2972c60f2490b7c34cd857265a4677edfb607f7955d09ee0d6fd149e65f"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+        "bytes": 18679,
+        "sha256": "1591da4e2517f3d77fa2a8b25026aa1b1a5e5ba4c2b17a5f4e9cb06c3156555e"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset",
+        "bytes": 122661,
+        "sha256": "dfea6d7e0039249127c655abbc8b959dab6ba1e5227e40acfbb7bd632e97e8bf"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+        "bytes": 158678,
+        "sha256": "1a708fe45b519d3166eee5ee5b652f2445c29be4dc2a24501d5d8ce8213d65f8"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+        "bytes": 197516,
+        "sha256": "5346f4c4d5c7daeb19814b107622b813e17deb1a80d6b1301292665cf46311a7"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Attack.asset",
+        "bytes": 49851,
+        "sha256": "39949619c50348adba49ce85fcfa8ac936733df626f575abcff68b512688be1c"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Defense.asset",
+        "bytes": 49852,
+        "sha256": "5f442015217b19c601feaf91990c9e3f2368298a9d49aabfc9cce50138b6ac6d"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Health.asset",
+        "bytes": 52875,
+        "sha256": "89ec6b90c66098c0ebb51e3bdfd1979487ea4bd4d46e7292b83e102f2e21cb88"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Speed.asset",
+        "bytes": 49850,
+        "sha256": "2daf4087b623201f3abf2cde7d3b4a491083e7f325778a5100b908fb88425c02"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+        "bytes": 165771,
+        "sha256": "7f28d72e558cc248c4a8fc2f66d5c5d65a7d74e9bdc212bc923d67a8ef3ebd2d"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+        "bytes": 219476,
+        "sha256": "5d980b95b2a342da2fa0a966794beb177a3f795f6d23bab55657a9339f79c7bc"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+        "bytes": 102769,
+        "sha256": "71daad0ff3a9d519b3bbdd641921f983a04f207a3bb25b452b0d5a5fbd76ff1d"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset",
+        "bytes": 508236,
+        "sha256": "98459ff12b38760108cf5a9e71a8f36c35c2145e12b3759d58018fb79b9121d8"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+        "bytes": 24051,
+        "sha256": "a6330df213f7e33b94a3fcb0a4cab64cb8781d5f199f406ed5f8676d6fc8b58f"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+        "bytes": 47353,
+        "sha256": "872be3eb3e55481cb181efd9ca52b43f5162d72155331fe4c2687fcb3235800f"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset",
+        "bytes": 44723,
+        "sha256": "0897949d1716f64841e5be57edd1a0220f193d2c14706d480dd09f9ec5dae744"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset",
+        "bytes": 81896,
+        "sha256": "ab6c83331d8e8aee6767e7c28286afabe76d65d085937c1f202f25cc237d0132"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset",
+        "bytes": 30289,
+        "sha256": "c487973c0335fe1689ceea87428d9f3d3de45218f62885b7ff3cb6153601ee71"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset",
+        "bytes": 58655,
+        "sha256": "acdaeca20f64ccf2e694fa729a985598cd5791815e96861c2edeb8dee9b4c186"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+        "bytes": 137583,
+        "sha256": "222dde38a651d25b4c06f9472b1dcbd2f460c2ab3ce80af582d809fb7d72599d"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset",
+        "bytes": 26115,
+        "sha256": "d8fb3f853b7e287517202ec5b2d36d9e672b450a2d4385af5affef9c854dd75f"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Staff.asset",
+        "bytes": 244707,
+        "sha256": "2dc3192d78668147a3303e5a8d33d1be75f7228e364d5470853f4df04e292fa9"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_CrystalOrb_80Faces.asset",
+        "bytes": 23600,
+        "sha256": "e8057680c163a30408c425287e16f03eafa5b34eeb608d39769850e31bf74b08"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+        "bytes": 213950,
+        "sha256": "d2a7e1e37f214f10152f15f399b7f2faea9c422c142b965c0734bb439a7b9e24"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+        "bytes": 184426,
+        "sha256": "2c8c0d653814b87c3f9b2edb0a66f4cf7187fd307e9b32195bc504796aaf610d"
+      }
+    ],
+    "meshGenerationReceipts": [
+      {
+        "name": "Sword",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b6-cdbe-76d9-b8a1-ed613858b804",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/Sword.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab"
+      },
+      {
+        "name": "Staff",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b6-d416-71fc-ba94-aba3843fa7e9",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/Staff.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab"
+      },
+      {
+        "name": "StreetLamp",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b6-db54-71e4-bdf8-b353e7faadfb",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/StreetLamp.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab"
+      },
+      {
+        "name": "StreetTree",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b6-e8de-72af-9e4e-9be71444e288",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/StreetTree.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab"
+      },
+      {
+        "name": "VendingMachine",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b6-f3ae-7043-bc6e-83755d112e0a",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/VendingMachine.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab"
+      },
+      {
+        "name": "Bench",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b6-fa74-7796-9207-9426b44decc8",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/Bench.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab"
+      },
+      {
+        "name": "TrashBin",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b7-01e1-74ff-adff-acf279e82fb2",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/TrashBin.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab"
+      },
+      {
+        "name": "ACUnit",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b7-08f7-76e3-84dd-7c340931c427",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/ACUnit.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab"
+      },
+      {
+        "name": "GatePylon",
+        "provider": "Meshy",
+        "model": "T2.5 Smart Topology",
+        "taskId": "01a152b7-0f86-72f1-abf0-aa2f8bab26a7",
+        "recordedCredits": 5,
+        "sourceFBX": "Assets/Art/Stage01Kit/Models/GatePylon.fbx",
+        "activePrefab": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab"
+      }
+    ],
+    "recordedMeshyCredits": 45,
+    "localAuthoringTools": [
+      {
+        "path": "Assets/Art/Stage01Kit/Editor/ChibiStaffOrbBuilder.cs",
+        "bytes": 11617,
+        "sha256": "c287274f72a1de99fa5ae722ad2b2b84e7e396ee74a5d7e1ae86ed87045f7a06"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Editor/UrbanConsumableBuilder.cs",
+        "bytes": 11247,
+        "sha256": "f5eec539ceaf69af7f5ef640183f085bdef2d9fbd787fcbdc9c2d79f38aef84e"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Editor/UrbanModuleBuilder.cs",
+        "bytes": 39836,
+        "sha256": "528e62fd0c6007a4b15b8a8ea347593987667c521f3b0e90efca8a108ad1bcd3"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Editor/UrbanPropBuilder.cs",
+        "bytes": 19484,
+        "sha256": "088783ffcf4f2f6cbba79a1b8dc9d41941494cb235641724381ca76b07bde7c7"
+      },
+      {
+        "path": "Assets/Art/Stage01Kit/Editor/UrbanWeaponBuilder.cs",
+        "bytes": 10106,
+        "sha256": "36a8c80e0764c29cfd7debf0459cb81251cfe60a37c3abaef58ba8f9b7ca31cf"
+      }
+    ],
+    "provenanceNotes": [
+      "Seven Meshy environment props and two original Meshy weapons use generated geometry, local vertex-color normalization and authored prefabs.",
+      "Sixteen modular environment prefabs and four potion variants were authored locally in Unity editor tooling.",
+      "The Staff prefab uses the locally revised smaller floating semitransparent faceted orb; original Meshy crystal geometry is not the active head.",
+      "Stage01 Sword is the retained original short sword asset; hero Final/Combat contains its separate approved longsword."
+    ],
+    "providerLicenseNote": "Generation task receipts establish provider/model/task identity and recorded credit use. These are not KayKit CC0 assets; no claim of a third-party asset-pack license is made."
+  },
+  "monster": {
+    "prefabCount": 1,
+    "prefab": {
+      "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab",
+      "bytes": 85257,
+      "sha256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf",
+      "resolvedArtReferences": [
+        "Assets/Art/Monsters/Stage01/Melee01/v001/Materials/Glow.mat",
+        "Assets/Art/Monsters/Stage01/Melee01/v001/Materials/skeleton.mat",
+        "Assets/Art/Monsters/Stage01/Melee01/v001/Materials/Melee01_UrbanTeal.mat",
+        "Assets/Art/Monsters/Stage01/Melee01/v001/FBX/Stage01_Melee01.fbx"
+      ],
+      "otherReferences": []
+    },
+    "deliveredClips": [
+      {
+        "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Attack.anim",
+        "bytes": 1695516,
+        "sha256": "63530a2dff3ce7748c634437f5ac80bf7b96a512da4fb4f83e1e6381f4e54be1"
+      },
+      {
+        "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Hit.anim",
+        "bytes": 1093577,
+        "sha256": "6b6ede2dc9e2f3edf6c3f77eec0a02ee4d976bf7be108a558a5146b5f6765d44"
+      },
+      {
+        "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Idle.anim",
+        "bytes": 6523770,
+        "sha256": "d717e50ac1c27a8b1ee30d2825007a14bf4cbc7765bdf89157bc164b66b2e786"
+      },
+      {
+        "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Move.anim",
+        "bytes": 1332465,
+        "sha256": "00a5fd750784b419b61ae8d00156da09f5a1d7d52a0bb9f006d59468c4ff2c29"
+      }
+    ],
+    "sourceProvenance": {
+      "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Research/source-provenance.json",
+      "bytes": 8227,
+      "sha256": "75cac5eb8b4632caada93bed246d474bf2b575c32d9c81a59fa60ef9461d62a9"
+    },
+    "sourceURL": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0",
+    "pinnedCommit": "15b62b9bad122f72926c10fb14d622c73819fa54",
+    "license": "CC0-1.0",
+    "licenseFile": {
+      "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Licenses/KayKit_CC0.txt",
+      "bytes": 914,
+      "sha256": "5d822abca4e08c5a91d329e5372b3dc605cba8d994f752cb0f7dfdb7a0a79954"
+    },
+    "approvedReviewIdentity": [
+      {
+        "file": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Stage01_Melee01.blend",
+        "expectedSHA256": "0a4a9ccbccf79f756a63a7637cd794034317e926ef22a614964e5edfb6a5e2b2",
+        "actualSHA256": "0a4a9ccbccf79f756a63a7637cd794034317e926ef22a614964e5edfb6a5e2b2",
+        "matchesPreviousApprovedReview": true
+      },
+      {
+        "file": "Assets/Art/Monsters/Stage01/Melee01/v001/FBX/Stage01_Melee01.fbx",
+        "expectedSHA256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0",
+        "actualSHA256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0",
+        "matchesPreviousApprovedReview": true
+      },
+      {
+        "file": "Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab",
+        "expectedSHA256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf",
+        "actualSHA256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf",
+        "matchesPreviousApprovedReview": true
+      }
+    ],
+    "technique": "Same-model native embedded motion; selected Idle_Combat, Running_A, 1H_Melee_Attack_Chop and Hit_A. Uniform scale, palette/cloak adjustments, static weapon-axis alignment, constant clip floor offset; no AI pose synthesis or retargeting."
+  }
+}

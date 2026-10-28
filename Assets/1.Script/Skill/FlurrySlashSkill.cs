@@ -15,7 +15,7 @@ public class FlurrySlashSkill : PlayerSkillBase
     [Header("Hit Box")]
     [SerializeField] private Vector3 _hitBoxSize = new Vector3(1.8f, 1.6f, 2f);
     [SerializeField] private float _hitBoxForward = 1f;
-    [SerializeField] private float _hitBoxHeight = 1f;
+    [SerializeField] private float _hitBoxHeight = 0.65f;
     [SerializeField] private LayerMask _enemyLayer;
     [SerializeField] private SkillAutoRelease _slashVfx; // 매 타 연출 (선택)
 

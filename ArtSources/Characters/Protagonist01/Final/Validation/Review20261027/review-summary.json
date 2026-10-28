@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-27",
+  "scope": "Retained produced hero models and18selected motions,Stage01Kit31prefabs,Melee01monster4motions; Runtimehero static reference. No gameplayintegration or VFX changes.",
+  "legacy": {
+    "clips": 15,
+    "prefabVariants": 3,
+    "poseSamples60Hz": 2529,
+    "fullSideSheets": 41,
+    "oppositePhaseSheets": 15,
+    "staticSheets": 4,
+    "independentSecondarySheets": 44,
+    "assetChanges": false
+  },
+  "combat": {
+    "clips": 3,
+    "nativeSamples120HzPerVersion": 243,
+    "nativeFramesPerVersion": 123,
+    "nativeViews": 3,
+    "freshNativeCapturesPerVersion": 369,
+    "unityRegressionPoses": 123,
+    "changedBodyWeightVertices": 275,
+    "maxSurfaceDisplacementMm": 13.91546,
+    "animationCurvesChanged": false,
+    "swordAndMittensExactlyPreserved": true,
+    "updatedGIFs": 6
+  },
+  "environment": {
+    "prefabs": 31,
+    "newUnityStaticRenders": 62,
+    "additionalTransparencyWitnesses": 1,
+    "uniqueMeshes": 34,
+    "assetChanges": false
+  },
+  "monster": {
+    "clips": 4,
+    "freshNativePoses60Hz": 412,
+    "reinspectedExistingUnitySheets": 34,
+    "newUnityRendersClaimed": false,
+    "assetChanges": false
+  },
+  "checks": {
+    "finalUnityCompileExit": 0,
+    "compilerErrorMarkers": 0,
+    "newlyBrokenUnityGUIDs": 0,
+    "selectedClipAndMetaHashesPreserved": 18,
+    "legacyGIFHashesPreserved": 15,
+    "brokenCatalogLinks": 0
+  },
+  "limitations": [
+    "Separate native24bone locomotion and23bone combat rigs; no commonAnimator integration.",
+    "Review is finite frame/view inspection, not proof of zero self-intersection under every future blend.",
+    "Runtime hero checked as static dependency; its legacycontroller was not exhaustively replayed.",
+    "No prop contact validation for Legacy utility actions, no VFX/gameplay/performance/LODtransition validation.",
+    "Automaticapprovalreview blocked temporaryEditorhelper deletion with no specificreason; helpers remainlocal and are Git-excluded."
+  ],
+  "evidence": [
+    "Legacy/final-audit-summary.json",
+    "Legacy/independent-secondary-visual-review.json",
+    "Legacy/final-compile.json",
+    "Combat/source-retouch-receipt.json",
+    "Combat/unity-skin-regression.json",
+    "Combat/unity-final-visual-review.json",
+    "delivery-verification.json"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "reviewer": "kaykit_delivery",
+  "scope": "Fresh corrected actual Unity prefab: all3 clips at9 Front phases, plus source candidate versus original Slice14Front and Chop34Opposite detail comparison. Full final side GIF contact review separately performed by root.",
+  "result": "No new visible wrist/grip displacement or detached/reversed limb observed in these views; localized sleeve correction supported. Whole body and rigid geometry invariants are covered by unity-skin-regression.json.",
+  "inspectedUnitySheets": [
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Front_01.jpg",
+      "sha256": "bccd18839f30c1bd72abac54c4bacae167de3ab00c3fc930b859ad4efbbf4270"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Front_01.jpg",
+      "sha256": "1ac798ad638d06d0a27da6c1bae5308bf2eb38a9da185f459cfa870b1ce4a1e4"
+    },
+    {
+      "path": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Front_01.jpg",
+      "sha256": "b503434338ac14fae5e7ed31ff179503e4150f5eb2e664323eaf505015fe4cfb"
+    }
+  ],
+  "limitations": "Phase sheets are not an exhaustive continuous visual review of every angle; 60Hz actual BakeMesh regression covers every sampled vertex."
+}

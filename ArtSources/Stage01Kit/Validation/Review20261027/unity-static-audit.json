@@ -1,0 +1,1657 @@
+{
+    "unity": "6000.3.21f1",
+    "method": "Read-only actual retained prefabs. Temporary scene; actual shared meshes and shaders; deterministic orthographic side/three-quarter Camera.Render. LOD0 forced only on disposable instances. No asset/importer/scene saved.",
+    "scope": "All Stage01Kit delivered prefabs including two assembled blocks. Static geometry/material completeness, not gameplay collision/path traversal or target-device performance certification.",
+    "prefabCount": 31,
+    "prefabs": [
+        {
+            "name": "Stage01_Block",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab",
+            "renderers": 67,
+            "colliders": 31,
+            "lodGroups": 5,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 48.0,
+                    "y": 7.189999580383301,
+                    "z": -1.0555295944213868
+                },
+                "m_Extent": {
+                    "x": 48.0,
+                    "y": 7.449999809265137,
+                    "z": 4.305529594421387
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Road_Straight_12m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+                    "vertices": 512,
+                    "triangles": 248,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Sidewalk_Straight_8m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+                    "vertices": 1560,
+                    "triangles": 780,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ShopLow_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+                    "vertices": 1176,
+                    "triangles": 588,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ShopLow_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+                    "vertices": 384,
+                    "triangles": 192,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Rooftop_Bridge_6m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset",
+                    "vertices": 912,
+                    "triangles": 456,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_OfficeMid_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset",
+                    "vertices": 3336,
+                    "triangles": 1668,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_OfficeMid_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset",
+                    "vertices": 1272,
+                    "triangles": 636,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ApartmentTall_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset",
+                    "vertices": 7440,
+                    "triangles": 3720,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ApartmentTall_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset",
+                    "vertices": 2520,
+                    "triangles": 1260,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_RooftopArena_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset",
+                    "vertices": 1296,
+                    "triangles": 648,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_RooftopArena_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset",
+                    "vertices": 504,
+                    "triangles": 252,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Rooftop_Hut",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset",
+                    "vertices": 312,
+                    "triangles": 156,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Rooftop_WaterTank",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset",
+                    "vertices": 648,
+                    "triangles": 276,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Rooftop_Billboard",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset",
+                    "vertices": 480,
+                    "triangles": 240,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "ACUnit_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset",
+                    "vertices": 1419,
+                    "triangles": 473,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "GatePylon_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+                    "vertices": 2310,
+                    "triangles": 770,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "StreetLamp_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+                    "vertices": 1932,
+                    "triangles": 644,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "StreetTree_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+                    "vertices": 2571,
+                    "triangles": 857,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "VendingMachine_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset",
+                    "vertices": 6009,
+                    "triangles": 2003,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Bench_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+                    "vertices": 1848,
+                    "triangles": 616,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "TrashBin_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+                    "vertices": 1182,
+                    "triangles": 394,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Planter_Shrubs",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+                    "vertices": 180,
+                    "triangles": 72,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Road_Barrier",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+                    "vertices": 240,
+                    "triangles": 120,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Guardrail_4m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset",
+                    "vertices": 288,
+                    "triangles": 144,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Stage01_Block_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Stage01_Block_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Tutorial_Block",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab",
+            "renderers": 35,
+            "colliders": 27,
+            "lodGroups": 2,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 24.0,
+                    "y": 2.9700000286102297,
+                    "z": -1.1805295944213868
+                },
+                "m_Extent": {
+                    "x": 24.0,
+                    "y": 3.2300000190734865,
+                    "z": 4.180529594421387
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Road_Straight_12m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+                    "vertices": 512,
+                    "triangles": 248,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Sidewalk_Straight_8m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+                    "vertices": 1560,
+                    "triangles": 780,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ShopLow_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+                    "vertices": 1176,
+                    "triangles": 588,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ShopLow_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+                    "vertices": 384,
+                    "triangles": 192,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Exterior_Stairs_Rise3m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset",
+                    "vertices": 912,
+                    "triangles": 456,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Rooftop_Bridge_6m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset",
+                    "vertices": 912,
+                    "triangles": 456,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "GatePylon_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+                    "vertices": 2310,
+                    "triangles": 770,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Ladder_4m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset",
+                    "vertices": 552,
+                    "triangles": 276,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Utility_Box",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset",
+                    "vertices": 264,
+                    "triangles": 132,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "StreetLamp_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+                    "vertices": 1932,
+                    "triangles": 644,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "StreetTree_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+                    "vertices": 2571,
+                    "triangles": 857,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "VendingMachine_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset",
+                    "vertices": 6009,
+                    "triangles": 2003,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Bench_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+                    "vertices": 1848,
+                    "triangles": 616,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "TrashBin_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+                    "vertices": 1182,
+                    "triangles": 394,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Planter_Shrubs",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+                    "vertices": 180,
+                    "triangles": 72,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Road_Barrier",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+                    "vertices": 240,
+                    "triangles": 120,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Guardrail_4m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset",
+                    "vertices": 288,
+                    "triangles": 144,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Tutorial_Block_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Tutorial_Block_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": [
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Building_ApartmentTall",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab",
+            "renderers": 2,
+            "colliders": 1,
+            "lodGroups": 1,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 6.149999618530273,
+                    "z": -0.2024998664855957
+                },
+                "m_Extent": {
+                    "x": 5.199999809265137,
+                    "y": 6.149999618530273,
+                    "z": 3.4524998664855959
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Building_ApartmentTall_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD0.asset",
+                    "vertices": 7440,
+                    "triangles": 3720,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ApartmentTall_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ApartmentTall_LOD1.asset",
+                    "vertices": 2520,
+                    "triangles": 1260,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_ApartmentTall_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_ApartmentTall_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": [
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Building_OfficeMid",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab",
+            "renderers": 2,
+            "colliders": 1,
+            "lodGroups": 1,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 4.149999618530273,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 4.090000152587891,
+                    "y": 4.149999618530273,
+                    "z": 2.75
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Building_OfficeMid_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD0.asset",
+                    "vertices": 3336,
+                    "triangles": 1668,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_OfficeMid_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_OfficeMid_LOD1.asset",
+                    "vertices": 1272,
+                    "triangles": 636,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_OfficeMid_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_OfficeMid_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": [
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Building_RooftopArena",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab",
+            "renderers": 2,
+            "colliders": 1,
+            "lodGroups": 1,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 2.1500000953674318,
+                    "z": -0.06500005722045899
+                },
+                "m_Extent": {
+                    "x": 9.09000015258789,
+                    "y": 2.1500000953674318,
+                    "z": 3.184999942779541
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Building_RooftopArena_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD0.asset",
+                    "vertices": 1296,
+                    "triangles": 648,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_RooftopArena_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_RooftopArena_LOD1.asset",
+                    "vertices": 504,
+                    "triangles": 252,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_RooftopArena_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_RooftopArena_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": [
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Building_ShopLow",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab",
+            "renderers": 2,
+            "colliders": 1,
+            "lodGroups": 1,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 2.1500000953674318,
+                    "z": -0.2950000762939453
+                },
+                "m_Extent": {
+                    "x": 4.090000152587891,
+                    "y": 2.1500000953674318,
+                    "z": 2.4149999618530275
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Building_ShopLow_LOD0",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD0.asset",
+                    "vertices": 1176,
+                    "triangles": 588,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Building_ShopLow_LOD1",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Building_ShopLow_LOD1.asset",
+                    "vertices": 384,
+                    "triangles": 192,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_ShopLow_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Building_ShopLow_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": [
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Exterior_Stairs_Rise3m",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab",
+            "renderers": 1,
+            "colliders": 12,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": -0.005000114440917969,
+                    "y": 1.9629220962524415,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 2.119791030883789,
+                    "y": 2.123077869415283,
+                    "z": 0.9149999618530273
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Exterior_Stairs_Rise3m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Exterior_Stairs_Rise3m.asset",
+                    "vertices": 912,
+                    "triangles": 456,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Exterior_Stairs_Rise3m_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Exterior_Stairs_Rise3m_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Guardrail_4m",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.5724999904632568,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 2.049999952316284,
+                    "y": 0.5724999904632568,
+                    "z": 0.11500000208616257
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Guardrail_4m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Guardrail_4m.asset",
+                    "vertices": 288,
+                    "triangles": 144,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Guardrail_4m_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Guardrail_4m_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Ladder_4m",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 2.1399998664855959,
+                    "z": 0.10000000149011612
+                },
+                "m_Extent": {
+                    "x": 0.4099999964237213,
+                    "y": 2.1399998664855959,
+                    "z": 0.18000000715255738
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Ladder_4m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Ladder_4m.asset",
+                    "vertices": 552,
+                    "triangles": 276,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Ladder_4m_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Ladder_4m_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Planter_Shrubs",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.5699999928474426,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 0.9399999976158142,
+                    "y": 0.5699999928474426,
+                    "z": 0.4099999964237213
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Planter_Shrubs",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Planter_Shrubs.asset",
+                    "vertices": 180,
+                    "triangles": 72,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Planter_Shrubs_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Planter_Shrubs_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Road_Barrier",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.46000000834465029,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 0.8999999761581421,
+                    "y": 0.46000000834465029,
+                    "z": 0.3100000023841858
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Road_Barrier",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Road_Barrier.asset",
+                    "vertices": 240,
+                    "triangles": 120,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Road_Barrier_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Road_Barrier_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Road_Straight_12m",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab",
+            "renderers": 1,
+            "colliders": 1,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": -0.09849999845027924,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 6.0,
+                    "y": 0.12150000035762787,
+                    "z": 3.0
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Road_Straight_12m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Road_Straight_12m.asset",
+                    "vertices": 512,
+                    "triangles": 248,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Road_Straight_12m_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Road_Straight_12m_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Rooftop_Billboard",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 1.399999976158142,
+                    "z": 0.11671899259090424
+                },
+                "m_Extent": {
+                    "x": 1.7000000476837159,
+                    "y": 1.399999976158142,
+                    "z": 0.46671897172927859
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Rooftop_Billboard",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Billboard.asset",
+                    "vertices": 480,
+                    "triangles": 240,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_Billboard_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_Billboard_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Rooftop_Bridge_6m",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab",
+            "renderers": 1,
+            "colliders": 1,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.41225001215934756,
+                    "z": 0.007500022649765015
+                },
+                "m_Extent": {
+                    "x": 3.049999952316284,
+                    "y": 0.7422499656677246,
+                    "z": 0.9075000286102295
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Rooftop_Bridge_6m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Bridge_6m.asset",
+                    "vertices": 912,
+                    "triangles": 456,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_Bridge_6m_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_Bridge_6m_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Rooftop_Hut",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab",
+            "renderers": 1,
+            "colliders": 1,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 1.3199999332427979,
+                    "z": -0.02499997615814209
+                },
+                "m_Extent": {
+                    "x": 1.350000023841858,
+                    "y": 1.3199999332427979,
+                    "z": 1.125
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Rooftop_Hut",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_Hut.asset",
+                    "vertices": 312,
+                    "triangles": 156,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_Hut_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_Hut_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Rooftop_WaterTank",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.07499998807907105,
+                    "y": 1.2325000762939454,
+                    "z": 2.9802322387695315e-8
+                },
+                "m_Extent": {
+                    "x": 0.9350000023841858,
+                    "y": 1.2325000762939454,
+                    "z": 0.8179086446762085
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Rooftop_WaterTank",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Rooftop_WaterTank.asset",
+                    "vertices": 648,
+                    "triangles": 276,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_WaterTank_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Rooftop_WaterTank_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Sidewalk_Straight_8m",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab",
+            "renderers": 1,
+            "colliders": 1,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": -0.12200000137090683,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 4.0,
+                    "y": 0.15800000727176667,
+                    "z": 1.2000000476837159
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Sidewalk_Straight_8m",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Sidewalk_Straight_8m.asset",
+                    "vertices": 1560,
+                    "triangles": 780,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Sidewalk_Straight_8m_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Sidewalk_Straight_8m_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Utility_Box",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.6499999761581421,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 0.5199999809265137,
+                    "y": 0.6499999761581421,
+                    "z": 0.30000001192092898
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Utility_Box",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Utility_Box.asset",
+                    "vertices": 264,
+                    "triangles": 132,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Utility_Box_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Utility_Box_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "ACUnit",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.44999998807907107,
+                    "z": -0.038000017404556277
+                },
+                "m_Extent": {
+                    "x": 0.512544572353363,
+                    "y": 0.44999998807907107,
+                    "z": 0.3586713969707489
+                }
+            },
+            "meshes": [
+                {
+                    "name": "ACUnit_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/ACUnit.asset",
+                    "vertices": 1419,
+                    "triangles": 473,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\ACUnit_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\ACUnit_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Bench",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.42500001192092898,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 0.7499769926071167,
+                    "y": 0.42500001192092898,
+                    "z": 0.3809283673763275
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Bench_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Bench.asset",
+                    "vertices": 1848,
+                    "triangles": 616,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Bench_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Bench_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "GatePylon",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/GatePylon.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": -5.960464477539063e-8,
+                    "y": 1.100000023841858,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 0.9193019270896912,
+                    "y": 1.100000023841858,
+                    "z": 0.8114473223686218
+                }
+            },
+            "meshes": [
+                {
+                    "name": "GatePylon_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/GatePylon.asset",
+                    "vertices": 2310,
+                    "triangles": 770,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\GatePylon_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\GatePylon_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Potion_Attack",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.1184999942779541,
+                    "z": -0.00299999862909317
+                },
+                "m_Extent": {
+                    "x": 0.06199999898672104,
+                    "y": 0.1184999942779541,
+                    "z": 0.06499999761581421
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Potion_Attack_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Attack.asset",
+                    "vertices": 552,
+                    "triangles": 184,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Attack_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Attack_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Potion_Defense",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.1184999942779541,
+                    "z": -0.00299999862909317
+                },
+                "m_Extent": {
+                    "x": 0.06199999898672104,
+                    "y": 0.1184999942779541,
+                    "z": 0.06499999761581421
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Potion_Defense_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Defense.asset",
+                    "vertices": 552,
+                    "triangles": 184,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Defense_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Defense_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Potion_Health",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.1184999942779541,
+                    "z": -0.0040000006556510929
+                },
+                "m_Extent": {
+                    "x": 0.06199999898672104,
+                    "y": 0.1184999942779541,
+                    "z": 0.06599999964237213
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Potion_Health_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Health.asset",
+                    "vertices": 588,
+                    "triangles": 196,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Health_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Health_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Potion_Speed",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.1184999942779541,
+                    "z": -0.00299999862909317
+                },
+                "m_Extent": {
+                    "x": 0.06199999898672104,
+                    "y": 0.1184999942779541,
+                    "z": 0.06499999761581421
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Potion_Speed_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/Potion_Speed.asset",
+                    "vertices": 552,
+                    "triangles": 184,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Speed_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Potion_Speed_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "StreetLamp",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": -2.9802322387695315e-8,
+                    "y": 2.1500000953674318,
+                    "z": 0.0
+                },
+                "m_Extent": {
+                    "x": 0.44961655139923098,
+                    "y": 2.1500000953674318,
+                    "z": 0.5476921200752258
+                }
+            },
+            "meshes": [
+                {
+                    "name": "StreetLamp_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetLamp.asset",
+                    "vertices": 1932,
+                    "triangles": 644,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\StreetLamp_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\StreetLamp_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "StreetTree",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": -5.960464477539063e-8,
+                    "y": 2.25,
+                    "z": 5.960464477539063e-8
+                },
+                "m_Extent": {
+                    "x": 1.4009206295013428,
+                    "y": 2.25,
+                    "z": 1.0610589981079102
+                }
+            },
+            "meshes": [
+                {
+                    "name": "StreetTree_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/StreetTree.asset",
+                    "vertices": 2571,
+                    "triangles": 857,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\StreetTree_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\StreetTree_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "TrashBin",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab",
+            "renderers": 1,
+            "colliders": 1,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.44999998807907107,
+                    "z": 1.4901161193847657e-8
+                },
+                "m_Extent": {
+                    "x": 0.2704618573188782,
+                    "y": 0.44999998807907107,
+                    "z": 0.28200024366378786
+                }
+            },
+            "meshes": [
+                {
+                    "name": "TrashBin_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/TrashBin.asset",
+                    "vertices": 1182,
+                    "triangles": 394,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\TrashBin_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\TrashBin_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "VendingMachine",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab",
+            "renderers": 1,
+            "colliders": 1,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.925000011920929,
+                    "z": -0.04499998688697815
+                },
+                "m_Extent": {
+                    "x": 0.4461427330970764,
+                    "y": 0.925000011920929,
+                    "z": 0.385890394449234
+                }
+            },
+            "meshes": [
+                {
+                    "name": "VendingMachine_FlatPalette",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Props/VendingMachine.asset",
+                    "vertices": 6009,
+                    "triangles": 2003,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\VendingMachine_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\VendingMachine_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Staff",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab",
+            "renderers": 2,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": -1.4901161193847657e-8,
+                    "y": 0.1700000762939453,
+                    "z": -7.450580596923828e-9
+                },
+                "m_Extent": {
+                    "x": 0.0949999988079071,
+                    "y": 0.6320000886917114,
+                    "z": 0.0949999988079071
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Staff_ShaftHardware",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_ShaftHardware.asset",
+                    "vertices": 2505,
+                    "triangles": 835,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                },
+                {
+                    "name": "Staff_CrystalOrb_80Faces",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Weapons/StaffOrb/Staff_CrystalOrb_80Faces.asset",
+                    "vertices": 240,
+                    "triangles": 80,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Staff_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Staff_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        },
+        {
+            "name": "Sword",
+            "path": "Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab",
+            "renderers": 1,
+            "colliders": 0,
+            "lodGroups": 0,
+            "missingComponents": 0,
+            "bounds": {
+                "m_Center": {
+                    "x": 0.0,
+                    "y": 0.34199997782707217,
+                    "z": 9.313225746154786e-10
+                },
+                "m_Extent": {
+                    "x": 0.08749311417341232,
+                    "y": 0.4749999940395355,
+                    "z": 0.027052730321884157
+                }
+            },
+            "meshes": [
+                {
+                    "name": "Sword_LowPoly_GripPivot",
+                    "path": "Assets/Art/Stage01Kit/Meshes/Weapons/Sword.asset",
+                    "vertices": 2154,
+                    "triangles": 718,
+                    "degenerateTriangles": 0,
+                    "nonfiniteVertices": 0,
+                    "invalidIndices": 0,
+                    "readable": true
+                }
+            ],
+            "materialIssues": [],
+            "pictures": [
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Sword_Side.png",
+                "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Sword_ThreeQuarter.png"
+            ],
+            "lodRendererCounts": []
+        }
+    ],
+    "issues": [],
+    "orbTransparencyImage": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Stage01Kit\\Validation\\Review20261027\\StaticFrames\\Staff_Orb_Transparency.png",
+    "assetsModified": false
+}

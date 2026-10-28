@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 public static partial class ChibiMotionSet
 {
     public const string Root="Assets/Art/Characters/Protagonist01/ChibiMotion_v007";
-    public const string Report="ArtSources/Characters/Protagonist01/v007-compact-action";
+    public const string Report="ArtSources/Characters/Protagonist01/Final/Validation/LegacyAuthoring";
     const string Input="Assets/Art/Characters/Protagonist01/ChibiCap_v006";
     const string RigPath=Input+"/Rig/Protagonist_ChibiCap_Rig.fbx";
     const string MaterialPath=Input+"/Materials/Protagonist_ChibiCap_Unlit.mat";

@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "iterations": 46,
+  "objectiveBefore": 0.015946379512486945,
+  "objectiveAfter": 0.013379860289424998,
+  "maximumWeightDelta": 0.10091078353788345,
+  "maximumVertexDisplacementBoundM": 0.013915491973263975,
+  "affectedWeldedVertices": 203
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-27",
+  "deliverables": [
+    {
+      "path": "planning/Art_Assets_Provenance_and_QA_2026-10-27.md",
+      "bytes": 32021,
+      "sha256": "b44de5e7b14d2acd67127f29ba583126be656f1be512beebbc8e99fc3426172e",
+      "lfNormalizedSHA256": "03222379fc507b9888d80f22080210d0993c056835083150e579739f321e4fe4",
+      "postRenderFormattingChange": "Removed an extra final blank line only; DOCX and report text are unchanged."
+    },
+    {
+      "path": "planning/Art_Assets_Provenance_and_QA_2026-10-27.docx",
+      "bytes": 54308,
+      "sha256": "86493fb269479fd2e4709f931b62c9fa7fe5c0f183f1f721aa6cd3478caf531f"
+    }
+  ],
+  "pageCount": 11,
+  "pagesVisuallyInspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "allPagesClean": true,
+  "localLinkCount": 22,
+  "missingLocalLinks": [],
+  "all18SelectedClipNamesPresent": true,
+  "unfinishedQAPlaceholder": false,
+  "renderer": "Microsoft Word hidden COM ExportAsFixedFormat; bundled Python pypdfium2 rasterization, inspected all 11 final PNG pages. Canonical render_docx.py was attempted and diagnosed missing soffice.exe; Windows runtime contained no bundled LibreOffice. No user-installed LibreOffice used.",
+  "internalRenderDirectory": "Logs/ArtAudit20261027/FinalVerified4",
+  "sourceAudit": "Official KayKit pages and saved CC0 texts; official Meshy terms and ownership help; local source manifests and generation receipts. Account plan/private publishing status not inferred.",
+  "assetsChangedByDocumentWork": false
+}

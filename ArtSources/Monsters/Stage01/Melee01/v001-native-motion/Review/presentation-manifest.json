@@ -1,0 +1,48 @@
+{
+  "source_blend_sha256": "0a4a9ccbccf79f756a63a7637cd794034317e926ef22a614964e5edfb6a5e2b2",
+  "source_fbx_sha256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0",
+  "clips": [
+    {
+      "clip": "Idle",
+      "seconds": 4.266666666666667,
+      "frames": 129,
+      "gifCycleMs": 4270,
+      "allFrameSheets": [
+        "Idle_AllFrames_01.jpg",
+        "Idle_AllFrames_02.jpg",
+        "Idle_AllFrames_03.jpg",
+        "Idle_AllFrames_04.jpg"
+      ]
+    },
+    {
+      "clip": "Move",
+      "seconds": 0.8,
+      "frames": 25,
+      "gifCycleMs": 800,
+      "allFrameSheets": [
+        "Move_AllFrames_01.jpg"
+      ]
+    },
+    {
+      "clip": "Attack",
+      "seconds": 1.0666666666666667,
+      "frames": 33,
+      "gifCycleMs": 1070,
+      "allFrameSheets": [
+        "Attack_AllFrames_01.jpg"
+      ]
+    },
+    {
+      "clip": "Hit",
+      "seconds": 0.6666666666666666,
+      "frames": 21,
+      "gifCycleMs": 670,
+      "allFrameSheets": [
+        "Hit_AllFrames_01.jpg"
+      ]
+    }
+  ],
+  "camera": "same orthographic camera and world units for both characters",
+  "protagonist": "static evaluated mesh copied read-only from v016",
+  "rendering": "Blender Cycles actual evaluated skin; Unity render separately linked"
+}

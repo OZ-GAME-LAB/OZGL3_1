@@ -1,0 +1,1549 @@
+{
+    "set": "Legacy",
+    "variant": "SwordGrip",
+    "clip": "Interact_Reach",
+    "clipPath": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips\\Interact_Reach.anim",
+    "clipSHA256": "75d5f7f8003d2d3440c6569ca73b5e782005910aa898a8e7e59f93134b85633e",
+    "prefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_SwordGrip.prefab",
+    "prefabSHA256": "4b1a2dc4bad3b413767a793fd4636a3ac8c6faa097fb339a03e9d74f3ab1fd04",
+    "duration": 0.9333333373069763,
+    "frameRate": 60.0,
+    "maximumVertexStep": 0.06619273126125336,
+    "maximumLocalRotationStep": 16.889284133911134,
+    "loopSeamVertexDistance": 0.0,
+    "loop": false,
+    "samples": 57,
+    "bindingCount": 272,
+    "missingBindingTargets": 0,
+    "missingBindings": [],
+    "meshes": [
+        {
+            "name": "char1",
+            "asset": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_SwordClosedGrip.asset",
+            "vertices": 10233,
+            "triangles": 8652,
+            "blendShapes": 2,
+            "bones": [
+                "Hips",
+                "Spine02",
+                "Spine01",
+                "Spine",
+                "neck",
+                "Head",
+                "head_end",
+                "headfront",
+                "LeftShoulder",
+                "LeftArm",
+                "LeftForeArm",
+                "LeftHand",
+                "RightShoulder",
+                "RightArm",
+                "RightForeArm",
+                "RightHand",
+                "LeftUpLeg",
+                "LeftLeg",
+                "LeftFoot",
+                "LeftToeBase",
+                "RightUpLeg",
+                "RightLeg",
+                "RightFoot",
+                "RightToeBase"
+            ],
+            "materials": [
+                "Protagonist_ChibiCap_Unlit"
+            ],
+            "shaders": [
+                "Universal Render Pipeline/Unlit"
+            ],
+            "missingBones": 0,
+            "missingMaterials": 0,
+            "invalidIndices": 0,
+            "nonFiniteRestVertices": 0
+        }
+    ],
+    "frames": [
+        {
+            "index": 0,
+            "time": 0.0,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 1,
+            "time": 0.01666666753590107,
+            "minY": 0.0026630449574440719,
+            "maxY": 1.1999151706695557,
+            "maxVertexStep": 0.016306845471262933,
+            "maxLocalRotationStep": 7.181265354156494,
+            "maxLocalPositionStep": 0.00013572936586569995,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011400014162063599,
+                "y": 0.6012890934944153,
+                "z": -0.03135386109352112
+            },
+            "boundsSize": {
+                "x": 0.6384639143943787,
+                "y": 1.1972521543502808,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.546410074610321e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 2,
+            "time": 0.03333333507180214,
+            "minY": 0.0026946498546749355,
+            "maxY": 1.199676275253296,
+            "maxVertexStep": 0.04127074405550957,
+            "maxLocalRotationStep": 15.338306427001954,
+            "maxLocalPositionStep": 0.00038024914101697505,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011400938034057618,
+                "y": 0.6011855006217957,
+                "z": -0.03102847933769226
+            },
+            "boundsSize": {
+                "x": 0.6384657621383667,
+                "y": 1.19698166847229,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.546142910541676e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 3,
+            "time": 0.05000000074505806,
+            "minY": 0.002648549387231469,
+            "maxY": 1.1993215084075928,
+            "maxVertexStep": 0.05693625286221504,
+            "maxLocalRotationStep": 16.889284133911134,
+            "maxLocalPositionStep": 0.0005844244733452797,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011401265859603882,
+                "y": 0.6009849905967712,
+                "z": -0.03050285577774048
+            },
+            "boundsSize": {
+                "x": 0.638466477394104,
+                "y": 1.1966729164123536,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.546322535745276e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 4,
+            "time": 0.06666667014360428,
+            "minY": 0.0027378646191209556,
+            "maxY": 1.198885440826416,
+            "maxVertexStep": 0.06508839130401612,
+            "maxLocalRotationStep": 15.203936576843262,
+            "maxLocalPositionStep": 0.000749111408367753,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011401206254959107,
+                "y": 0.6008116602897644,
+                "z": -0.029801517724990846
+            },
+            "boundsSize": {
+                "x": 0.6384663581848145,
+                "y": 1.1961475610733033,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.545153266619309e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 5,
+            "time": 0.0833333358168602,
+            "minY": 0.002732549561187625,
+            "maxY": 1.1984031200408936,
+            "maxVertexStep": 0.06619273126125336,
+            "maxLocalRotationStep": 11.590300559997559,
+            "maxLocalPositionStep": 0.0008750555571168661,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011400789022445679,
+                "y": 0.6005678772926331,
+                "z": -0.02895224094390869
+            },
+            "boundsSize": {
+                "x": 0.6384655833244324,
+                "y": 1.1956706047058106,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.545963285338075e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 6,
+            "time": 0.10000000149011612,
+            "minY": 0.002727006794884801,
+            "maxY": 1.1979103088378907,
+            "maxVertexStep": 0.06269454210996628,
+            "maxLocalRotationStep": 7.6180925369262699,
+            "maxLocalPositionStep": 0.0009634406305849552,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011399686336517334,
+                "y": 0.6003186702728272,
+                "z": -0.02798318862915039
+            },
+            "boundsSize": {
+                "x": 0.6384633779525757,
+                "y": 1.195183277130127,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.545306175416044e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 7,
+            "time": 0.11666666716337204,
+            "minY": 0.0027214495930820705,
+            "maxY": 1.197441577911377,
+            "maxVertexStep": 0.04752440005540848,
+            "maxLocalRotationStep": 7.9305267333984379,
+            "maxLocalPositionStep": 0.0010162837570533157,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011398017406463623,
+                "y": 0.6000815033912659,
+                "z": -0.026922285556793214
+            },
+            "boundsSize": {
+                "x": 0.6384601593017578,
+                "y": 1.1947201490402222,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.54517316181591e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 8,
+            "time": 0.13333334028720857,
+            "minY": 0.0027163203340023758,
+            "maxY": 1.1970324516296387,
+            "maxVertexStep": 0.025396108627319337,
+            "maxLocalRotationStep": 4.507366180419922,
+            "maxLocalPositionStep": 0.001036428613588214,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011396855115890503,
+                "y": 0.5998743772506714,
+                "z": -0.025797873735427858
+            },
+            "boundsSize": {
+                "x": 0.6384579539299011,
+                "y": 1.1943161487579346,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.545161793132138e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 9,
+            "time": 0.15000000596046449,
+            "minY": 0.0027115705888718368,
+            "maxY": 1.1967177391052247,
+            "maxVertexStep": 0.0096516702324152,
+            "maxLocalRotationStep": 0.8504125475883484,
+            "maxLocalPositionStep": 0.0010283279698342085,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011396616697311402,
+                "y": 0.5997146964073181,
+                "z": -0.024637728929519655
+            },
+            "boundsSize": {
+                "x": 0.6384574770927429,
+                "y": 1.1940062046051026,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.54494465127209e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 10,
+            "time": 0.1666666716337204,
+            "minY": 0.002707765670493245,
+            "maxY": 1.1965327262878419,
+            "maxVertexStep": 0.008342798799276352,
+            "maxLocalRotationStep": 2.39721941947937,
+            "maxLocalPositionStep": 0.0009995742002502084,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011395871639251709,
+                "y": 0.5996202826499939,
+                "z": -0.023470252752304078
+            },
+            "boundsSize": {
+                "x": 0.6384561061859131,
+                "y": 1.1938250064849854,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.545554012722278e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 11,
+            "time": 0.18333333730697633,
+            "minY": 0.0027047412004321815,
+            "maxY": 1.19647216796875,
+            "maxVertexStep": 0.011551817879080773,
+            "maxLocalRotationStep": 3.731011390686035,
+            "maxLocalPositionStep": 0.0009639547788538039,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011394649744033814,
+                "y": 0.5995884537696838,
+                "z": -0.022323280572891237
+            },
+            "boundsSize": {
+                "x": 0.6384538412094116,
+                "y": 1.1937674283981324,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545632456640305e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 12,
+            "time": 0.20000000298023225,
+            "minY": 0.0027005786541849376,
+            "maxY": 1.1961936950683594,
+            "maxVertexStep": 0.01380647998303175,
+            "maxLocalRotationStep": 4.57939338684082,
+            "maxLocalPositionStep": 0.0009590972331352532,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139301061630249,
+                "y": 0.5994471311569214,
+                "z": -0.02122482657432556
+            },
+            "boundsSize": {
+                "x": 0.638450562953949,
+                "y": 1.193493127822876,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.546015012849239e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 13,
+            "time": 0.21666666865348817,
+            "minY": 0.002695592353120446,
+            "maxY": 1.1956870555877686,
+            "maxVertexStep": 0.014671645127236843,
+            "maxLocalRotationStep": 5.183415412902832,
+            "maxLocalPositionStep": 0.0009892701636999846,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011391013860702515,
+                "y": 0.5991913676261902,
+                "z": -0.02020341157913208
+            },
+            "boundsSize": {
+                "x": 0.6384466886520386,
+                "y": 1.1929914951324463,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545837661382393e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 14,
+            "time": 0.23333333432674409,
+            "minY": 0.0026901501696556808,
+            "maxY": 1.1950459480285645,
+            "maxVertexStep": 0.01442070584744215,
+            "maxLocalRotationStep": 5.6269636154174809,
+            "maxLocalPositionStep": 0.0009930258383974434,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011388838291168213,
+                "y": 0.5988680720329285,
+                "z": -0.01928645372390747
+            },
+            "boundsSize": {
+                "x": 0.6384422779083252,
+                "y": 1.1923558712005616,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545028779532004e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 15,
+            "time": 0.25,
+            "minY": 0.002684778766706586,
+            "maxY": 1.1943635940551758,
+            "maxVertexStep": 0.013479105196893216,
+            "maxLocalRotationStep": 5.638084888458252,
+            "maxLocalPositionStep": 0.0009377622045576572,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01138654351234436,
+                "y": 0.5985241532325745,
+                "z": -0.018502622842788698
+            },
+            "boundsSize": {
+                "x": 0.638437807559967,
+                "y": 1.191678762435913,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.54484233311814e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 16,
+            "time": 0.2666666805744171,
+            "minY": 0.0026802041102200748,
+            "maxY": 1.1937334537506104,
+            "maxVertexStep": 0.011728759855031968,
+            "maxLocalRotationStep": 5.105646133422852,
+            "maxLocalPositionStep": 0.0008074014913290739,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011384457349777222,
+                "y": 0.5982068181037903,
+                "z": -0.017879575490951539
+            },
+            "boundsSize": {
+                "x": 0.6384336948394775,
+                "y": 1.1910532712936402,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.54406244141137e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 17,
+            "time": 0.28333333134651186,
+            "minY": 0.0026768005918711426,
+            "maxY": 1.1932487487792969,
+            "maxVertexStep": 0.008772293105721474,
+            "maxLocalRotationStep": 3.9096930027008058,
+            "maxLocalPositionStep": 0.0005936652887612581,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011382877826690674,
+                "y": 0.5979627966880798,
+                "z": -0.01744556427001953
+            },
+            "boundsSize": {
+                "x": 0.6384305357933044,
+                "y": 1.1905720233917237,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.543437163803901e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 18,
+            "time": 0.30000001192092898,
+            "minY": 0.0026752857957035305,
+            "maxY": 1.1930034160614014,
+            "maxVertexStep": 0.004347813315689564,
+            "maxLocalRotationStep": 1.96913743019104,
+            "maxLocalPositionStep": 0.0002918349637184292,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011382073163986206,
+                "y": 0.59783935546875,
+                "z": -0.01722860336303711
+            },
+            "boundsSize": {
+                "x": 0.6384290456771851,
+                "y": 1.1903281211853028,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.543839046775247e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 19,
+            "time": 0.3166666626930237,
+            "minY": 0.0026752015110105278,
+            "maxY": 1.1929900646209717,
+            "maxVertexStep": 0.00023719588352832943,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.000015328507288359106,
+            "rotationNode": "",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01138201355934143,
+                "y": 0.5978326201438904,
+                "z": -0.01719510555267334
+            },
+            "boundsSize": {
+                "x": 0.6384289264678955,
+                "y": 1.1903148889541627,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.543222864114796e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 20,
+            "time": 0.3333333432674408,
+            "minY": 0.0026752015110105278,
+            "maxY": 1.1929898262023926,
+            "maxVertexStep": 0.0000063192210291163068,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01138201355934143,
+                "y": 0.5978325009346008,
+                "z": -0.017188847064971925
+            },
+            "boundsSize": {
+                "x": 0.6384289264678955,
+                "y": 1.1903146505355836,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.54375605538371e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 21,
+            "time": 0.3499999940395355,
+            "minY": 0.0026752015110105278,
+            "maxY": 1.1929898262023926,
+            "maxVertexStep": 4.460403317807504e-7,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01138201355934143,
+                "y": 0.5978325009346008,
+                "z": -0.017188459634780885
+            },
+            "boundsSize": {
+                "x": 0.6384289264678955,
+                "y": 1.1903146505355836,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.543754350081144e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 22,
+            "time": 0.36666667461395266,
+            "minY": 0.0026752015110105278,
+            "maxY": 1.1929898262023926,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01138201355934143,
+                "y": 0.5978325009346008,
+                "z": -0.017188459634780885
+            },
+            "boundsSize": {
+                "x": 0.6384289264678955,
+                "y": 1.1903146505355836,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.543754350081144e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 23,
+            "time": 0.38333332538604739,
+            "minY": 0.0026752015110105278,
+            "maxY": 1.1929898262023926,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01138201355934143,
+                "y": 0.5978325009346008,
+                "z": -0.017188459634780885
+            },
+            "boundsSize": {
+                "x": 0.6384289264678955,
+                "y": 1.1903146505355836,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.543754350081144e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 24,
+            "time": 0.4000000059604645,
+            "minY": 0.0026752015110105278,
+            "maxY": 1.1929898262023926,
+            "maxVertexStep": 0.0008431467576883733,
+            "maxLocalRotationStep": 0.39366379380226138,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011382192373275757,
+                "y": 0.5978325009346008,
+                "z": -0.017188459634780885
+            },
+            "boundsSize": {
+                "x": 0.6384292840957642,
+                "y": 1.1903146505355836,
+                "z": 0.7012825012207031
+            },
+            "minTriangleArea": 7.543754350081144e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 25,
+            "time": 0.4166666567325592,
+            "minY": 0.002675312804058194,
+            "maxY": 1.1929962635040284,
+            "maxVertexStep": 0.007861588150262833,
+            "maxLocalRotationStep": 3.646120309829712,
+            "maxLocalPositionStep": 0.000012893973689642735,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011383622884750367,
+                "y": 0.5978357791900635,
+                "z": -0.017200589179992677
+            },
+            "boundsSize": {
+                "x": 0.6384321451187134,
+                "y": 1.1903209686279297,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.543250717390038e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 26,
+            "time": 0.4333333373069763,
+            "minY": 0.002676566829904914,
+            "maxY": 1.1931424140930176,
+            "maxVertexStep": 0.014077085070312024,
+            "maxLocalRotationStep": 6.23933219909668,
+            "maxLocalPositionStep": 0.0003091426333412528,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011386066675186158,
+                "y": 0.5979095101356506,
+                "z": -0.017492443323135377
+            },
+            "boundsSize": {
+                "x": 0.638437032699585,
+                "y": 1.1904659271240235,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.543897027062485e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 27,
+            "time": 0.44999998807907107,
+            "minY": 0.0026797105092555286,
+            "maxY": 1.1934623718261719,
+            "maxVertexStep": 0.02045375667512417,
+            "maxLocalRotationStep": 7.423025131225586,
+            "maxLocalPositionStep": 0.0006728765438310802,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011388897895812989,
+                "y": 0.5980710387229919,
+                "z": -0.018149197101593019
+            },
+            "boundsSize": {
+                "x": 0.6384427547454834,
+                "y": 1.1907826662063599,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.543244464613963e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 28,
+            "time": 0.46666666865348818,
+            "minY": 0.0026843289379030468,
+            "maxY": 1.1939263343811036,
+            "maxVertexStep": 0.024594757705926896,
+            "maxLocalRotationStep": 7.481878757476807,
+            "maxLocalPositionStep": 0.0009716487256810069,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011391818523406983,
+                "y": 0.598305344581604,
+                "z": -0.019123107194900514
+            },
+            "boundsSize": {
+                "x": 0.6384483575820923,
+                "y": 1.191241979598999,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.544145432802907e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 29,
+            "time": 0.4833333194255829,
+            "minY": 0.0026901804376393558,
+            "maxY": 1.1945042610168458,
+            "maxVertexStep": 0.025872044265270234,
+            "maxLocalRotationStep": 6.693700790405273,
+            "maxLocalPositionStep": 0.0012054757680743933,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011394262313842774,
+                "y": 0.5985972285270691,
+                "z": -0.020349174737930299
+            },
+            "boundsSize": {
+                "x": 0.6384532451629639,
+                "y": 1.1918140649795533,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.544342679466354e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 30,
+            "time": 0.5,
+            "minY": 0.002696853829547763,
+            "maxY": 1.1951663494110108,
+            "maxVertexStep": 0.024633919820189477,
+            "maxLocalRotationStep": 5.720941543579102,
+            "maxLocalPositionStep": 0.0013744046445935965,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011396139860153199,
+                "y": 0.598931610584259,
+                "z": -0.021758615970611573
+            },
+            "boundsSize": {
+                "x": 0.6384569406509399,
+                "y": 1.1924694776535035,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.544538220827235e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 31,
+            "time": 0.5166666507720947,
+            "minY": 0.0027044520247727634,
+            "maxY": 1.1958825588226319,
+            "maxVertexStep": 0.02130483277142048,
+            "maxLocalRotationStep": 3.968320846557617,
+            "maxLocalPositionStep": 0.001478364341892302,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139727234840393,
+                "y": 0.5992935299873352,
+                "z": -0.02328258752822876
+            },
+            "boundsSize": {
+                "x": 0.6384590268135071,
+                "y": 1.1931781768798829,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.544732625319739e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 32,
+            "time": 0.5333333611488342,
+            "minY": 0.0027124315965920688,
+            "maxY": 1.1966238021850587,
+            "maxVertexStep": 0.016188213601708413,
+            "maxLocalRotationStep": 1.2747018337249756,
+            "maxLocalPositionStep": 0.0015174803556874395,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011397600173950196,
+                "y": 0.5996680855751038,
+                "z": -0.024852365255355836
+            },
+            "boundsSize": {
+                "x": 0.6384596824645996,
+                "y": 1.1939113140106202,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.54522204715613e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 33,
+            "time": 0.550000011920929,
+            "minY": 0.0027205420192331077,
+            "maxY": 1.197359323501587,
+            "maxVertexStep": 0.020748239010572435,
+            "maxLocalRotationStep": 1.785696268081665,
+            "maxLocalPositionStep": 0.0014916948275640607,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139804720878601,
+                "y": 0.6000398993492127,
+                "z": -0.026399284601211549
+            },
+            "boundsSize": {
+                "x": 0.6384603977203369,
+                "y": 1.194638729095459,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.544701361439365e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 34,
+            "time": 0.5666666626930237,
+            "minY": 0.0027283846866339447,
+            "maxY": 1.1980600357055665,
+            "maxVertexStep": 0.024662746116518976,
+            "maxLocalRotationStep": 3.8016796112060549,
+            "maxLocalPositionStep": 0.0014011103194206954,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011398911476135254,
+                "y": 0.6003941893577576,
+                "z": -0.02785477042198181
+            },
+            "boundsSize": {
+                "x": 0.6384620666503906,
+                "y": 1.1953315734863282,
+                "z": 0.7012824416160584
+            },
+            "minTriangleArea": 7.248187330333167e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 35,
+            "time": 0.5833333134651184,
+            "minY": 0.0027356271166354419,
+            "maxY": 1.1986961364746094,
+            "maxVertexStep": 0.027253512293100358,
+            "maxLocalRotationStep": 4.920258522033691,
+            "maxLocalPositionStep": 0.0012457296252250672,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011399835348129273,
+                "y": 0.6007158756256104,
+                "z": -0.029149621725082399
+            },
+            "boundsSize": {
+                "x": 0.6384638547897339,
+                "y": 1.195960521697998,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 6.974496500333771e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 36,
+            "time": 0.6000000238418579,
+            "minY": 0.0026202809531241657,
+            "maxY": 1.1992378234863282,
+            "maxVertexStep": 0.035237375646829608,
+            "maxLocalRotationStep": 5.008730888366699,
+            "maxLocalPositionStep": 0.0010259210830554367,
+            "rotationNode": "RightArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011400580406188965,
+                "y": 0.6009290814399719,
+                "z": -0.030215561389923097
+            },
+            "boundsSize": {
+                "x": 0.638465166091919,
+                "y": 1.196617603302002,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.545972948719282e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 37,
+            "time": 0.6166666746139526,
+            "minY": 0.0026462192181497814,
+            "maxY": 1.1996557712554932,
+            "maxVertexStep": 0.04073089361190796,
+            "maxLocalRotationStep": 5.620280742645264,
+            "maxLocalPositionStep": 0.0007422429625876248,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01140102744102478,
+                "y": 0.6011509895324707,
+                "z": -0.03098359704017639
+            },
+            "boundsSize": {
+                "x": 0.6384660005569458,
+                "y": 1.197009563446045,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.545620519522345e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 38,
+            "time": 0.6333333253860474,
+            "minY": 0.0026676177512854339,
+            "maxY": 1.1999201774597169,
+            "maxVertexStep": 0.04315884783864021,
+            "maxLocalRotationStep": 7.416585922241211,
+            "maxLocalPositionStep": 0.00039829849265515804,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011401265859603882,
+                "y": 0.6012938618659973,
+                "z": -0.03138512372970581
+            },
+            "boundsSize": {
+                "x": 0.6384664177894592,
+                "y": 1.1972525119781495,
+                "z": 0.7012823224067688
+            },
+            "minTriangleArea": 7.546810252279101e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 39,
+            "time": 0.6499999761581421,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.04346638172864914,
+            "maxLocalRotationStep": 8.99411678314209,
+            "maxLocalPositionStep": 0.00008452869951725006,
+            "rotationNode": "RightForeArm",
+            "positionNode": "Hips",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011401355266571045,
+                "y": 0.6013761162757874,
+                "z": -0.03145161271095276
+            },
+            "boundsSize": {
+                "x": 0.6384665966033936,
+                "y": 1.1972525119781495,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.545962716903887e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 40,
+            "time": 0.6666666865348816,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.04164838418364525,
+            "maxLocalRotationStep": 10.18347454071045,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011401325464248658,
+                "y": 0.6013761162757874,
+                "z": -0.031463623046875
+            },
+            "boundsSize": {
+                "x": 0.6384665369987488,
+                "y": 1.1972525119781495,
+                "z": 0.701282262802124
+            },
+            "minTriangleArea": 7.545946232312417e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 41,
+            "time": 0.6833333373069763,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.03816281631588936,
+            "maxLocalRotationStep": 10.863762855529786,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011401176452636719,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384662389755249,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 42,
+            "time": 0.699999988079071,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.032996829599142078,
+            "maxLocalRotationStep": 10.874724388122559,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011400848627090454,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384655833244324,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 43,
+            "time": 0.7166666388511658,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.025903942063450815,
+            "maxLocalRotationStep": 9.863941192626954,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.011400222778320313,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384643316268921,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 44,
+            "time": 0.7333333492279053,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.016483543440699579,
+            "maxLocalRotationStep": 7.123229026794434,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139947772026062,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384628415107727,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 45,
+            "time": 0.75,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.004455622285604477,
+            "maxLocalRotationStep": 2.0695295333862306,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "RightForeArm",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 46,
+            "time": 0.7666666507720947,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 47,
+            "time": 0.7833333611488342,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 48,
+            "time": 0.800000011920929,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 49,
+            "time": 0.8166666626930237,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 50,
+            "time": 0.8333333134651184,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 51,
+            "time": 0.8500000238418579,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 52,
+            "time": 0.8666666746139526,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 53,
+            "time": 0.8833333253860474,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 54,
+            "time": 0.8999999761581421,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 55,
+            "time": 0.9166666865348816,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        },
+        {
+            "index": 56,
+            "time": 0.9333333373069763,
+            "minY": 0.0027498535346239807,
+            "maxY": 1.2000024318695069,
+            "maxVertexStep": 0.0,
+            "maxLocalRotationStep": 0.0,
+            "maxLocalPositionStep": 0.0,
+            "rotationNode": "",
+            "positionNode": "",
+            "nonFiniteValues": 0,
+            "zeroScaleAxes": 0,
+            "collapsedTriangles": 0,
+            "boundsCenter": {
+                "x": 0.01139920949935913,
+                "y": 0.6013761162757874,
+                "z": -0.03146439790725708
+            },
+            "boundsSize": {
+                "x": 0.6384623050689697,
+                "y": 1.1972525119781495,
+                "z": 0.7012823820114136
+            },
+            "minTriangleArea": 7.545954190391058e-7,
+            "maxBoneScale": 1.0000003576278687
+        }
+    ],
+    "rawMeshFile": "Logs/AssetAudit20261027/Hero/Meshes/Legacy_SwordGrip_Interact_Reach.bin.gz"
+}

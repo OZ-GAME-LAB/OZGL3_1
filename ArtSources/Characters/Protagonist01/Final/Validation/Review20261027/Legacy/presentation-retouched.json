@@ -1,0 +1,137 @@
+{
+  "source": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/combat-retouched-audit.json",
+  "sourceSHA256": "10d7c13d7a0296d434b0e3bb29612a257a328bf79c9be809aa692056a6e2a12f",
+  "records": [
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Chop",
+      "view": "Side",
+      "renderedFrames": 42,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Side_01.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Side_02.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Side_03.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Side_04.jpg"
+      ],
+      "gif": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/GIFRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Side.gif"
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Chop",
+      "view": "Front",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Front_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Chop",
+      "view": "ThreeQuarter",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_ThreeQuarter_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Chop",
+      "view": "Opposite",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Chop_Opposite_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Slice",
+      "view": "Side",
+      "renderedFrames": 36,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Side_01.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Side_02.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Side_03.jpg"
+      ],
+      "gif": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/GIFRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Side.gif"
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Slice",
+      "view": "Front",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Front_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Slice",
+      "view": "ThreeQuarter",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_ThreeQuarter_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Slice",
+      "view": "Opposite",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Slice_Opposite_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Stab",
+      "view": "Side",
+      "renderedFrames": 42,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Side_01.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Side_02.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Side_03.jpg",
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Side_04.jpg"
+      ],
+      "gif": "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/GIFRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Side.gif"
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Stab",
+      "view": "Front",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Front_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Stab",
+      "view": "ThreeQuarter",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_ThreeQuarter_01.jpg"
+      ]
+    },
+    {
+      "set": "CombatRetouched",
+      "variant": "Combat",
+      "clip": "Longsword_Attack_Stab",
+      "view": "Opposite",
+      "renderedFrames": 9,
+      "contactSheets": [
+        "ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/ContactsRetouched/CombatRetouched_Combat_Longsword_Attack_Stab_Opposite_01.jpg"
+      ]
+    }
+  ]
+}

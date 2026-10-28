@@ -1,0 +1,24 @@
+{
+  "prefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Longsword_KayKitSocket.prefab",
+  "parentName": "hand.r",
+  "parentPath": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+  "sourceObject": "WeaponRoot",
+  "localPosition": {
+    "x": -1.1628075391456605e-08,
+    "y": 0.05101225897669792,
+    "z": 0.030641857534646988
+  },
+  "localScale": {
+    "x": 1.0000003576278687,
+    "y": 1.0000001192092896,
+    "z": 1.0000001192092896
+  },
+  "localRotation": {
+    "x": 0.23114006221294403,
+    "y": 0.2520953118801117,
+    "z": 0.6926261186599731,
+    "w": -0.6350522041320801
+  },
+  "replacementName": "WeaponRoot",
+  "note": "Replace the existing inactive WeaponRoot at this exact path, preserving its name; clips animate this transform and activation state."
+}

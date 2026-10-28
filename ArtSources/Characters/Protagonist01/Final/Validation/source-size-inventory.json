@@ -1,0 +1,2071 @@
+{
+  "root": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01",
+  "totalFiles": 198055,
+  "totalBytes": 29921019161.0,
+  "versions": [
+    {
+      "version": "v006-chibi-cap",
+      "files": 21,
+      "bytes": 14406097.0
+    },
+    {
+      "version": "v007-compact-action",
+      "files": 1033,
+      "bytes": 152488945.0
+    },
+    {
+      "version": "v008-longsword",
+      "files": 1017,
+      "bytes": 281252564.0
+    },
+    {
+      "version": "v009-longsword-redesign",
+      "files": 6704,
+      "bytes": 2599253665.0
+    },
+    {
+      "version": "v010-body-driven",
+      "files": 11,
+      "bytes": 4061366.0
+    },
+    {
+      "version": "v010-body-driven-longsword",
+      "files": 3168,
+      "bytes": 1683387858.0
+    },
+    {
+      "version": "v011-torso-led-longsword",
+      "files": 8412,
+      "bytes": 5764087312.0
+    },
+    {
+      "version": "v012-whole-body-longsword",
+      "files": 31654,
+      "bytes": 3418592835.0
+    },
+    {
+      "version": "v013-chest-locked-longsword",
+      "files": 31394,
+      "bytes": 3375993634.0
+    },
+    {
+      "version": "v014-shoulder-elbow-longsword",
+      "files": 31568,
+      "bytes": 3504637540.0
+    },
+    {
+      "version": "v015-upright-overhead-longsword",
+      "files": 31174,
+      "bytes": 3117925912.0
+    },
+    {
+      "version": "v016-overhead-arm-correction",
+      "files": 31603,
+      "bytes": 3283413276.0
+    },
+    {
+      "version": "v017-kaykit-retarget",
+      "files": 19263,
+      "bytes": 2300676079.0
+    },
+    {
+      "version": "v018-kaykit-retouch",
+      "files": 1033,
+      "bytes": 420842078.0
+    }
+  ],
+  "subtrees": [
+    {
+      "subtree": "v011-torso-led-longsword/UnityCapture",
+      "files": 4912,
+      "bytes": 4483320390.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/QA",
+      "files": 29912,
+      "bytes": 2250756818.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "files": 29849,
+      "bytes": 2190542237.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "files": 29790,
+      "bytes": 2141701672.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/QA",
+      "files": 29778,
+      "bytes": 2054956775.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/QA",
+      "files": 29754,
+      "bytes": 2048144412.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/QA",
+      "files": 18414,
+      "bytes": 1964846063.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/UnityCapture",
+      "files": 5079,
+      "bytes": 1957204128.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/UnityCapture",
+      "files": 868,
+      "bytes": 1074934183.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/UnityCapture",
+      "files": 868,
+      "bytes": 1074462163.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/UnityCapture",
+      "files": 868,
+      "bytes": 1074441340.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/QA",
+      "files": 1284,
+      "bytes": 959333808.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/UnityCapture",
+      "files": 578,
+      "bytes": 711898224.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/UnityCapture",
+      "files": 578,
+      "bytes": 711752676.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/QA",
+      "files": 849,
+      "bytes": 667026390.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/UnityCapture",
+      "files": 1693,
+      "bytes": 652921936.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/QA",
+      "files": 820,
+      "bytes": 332961782.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/Prototypes",
+      "files": 874,
+      "bytes": 322999888.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/Review",
+      "files": 920,
+      "bytes": 249499114.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/ReviewOutput",
+      "files": 856,
+      "bytes": 239574726.0
+    },
+    {
+      "subtree": "v008-longsword/UnityCapture",
+      "files": 815,
+      "bytes": 207653655.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/Review",
+      "files": 922,
+      "bytes": 198103999.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/Review",
+      "files": 1437,
+      "bytes": 191734912.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/Review",
+      "files": 629,
+      "bytes": 189113102.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/QA",
+      "files": 323,
+      "bytes": 186580584.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/Review",
+      "files": 624,
+      "bytes": 146900412.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/Review",
+      "files": 572,
+      "bytes": 142265606.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/research",
+      "files": 198,
+      "bytes": 126992426.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/research",
+      "files": 404,
+      "bytes": 109400826.0
+    },
+    {
+      "subtree": "v007-compact-action/CaptureRuns",
+      "files": 871,
+      "bytes": 101765953.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/Review",
+      "files": 405,
+      "bytes": 100073128.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/Sources",
+      "files": 182,
+      "bytes": 98732087.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/Review",
+      "files": 314,
+      "bytes": 72308426.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/ReviewOutput",
+      "files": 86,
+      "bytes": 49133462.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/Review",
+      "files": 176,
+      "bytes": 46785919.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/Comparison",
+      "files": 90,
+      "bytes": 43632821.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/Comparison",
+      "files": 74,
+      "bytes": 43093816.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/ReviewOutput",
+      "files": 75,
+      "bytes": 41217580.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/Comparison",
+      "files": 131,
+      "bytes": 38591510.0
+    },
+    {
+      "subtree": "v007-compact-action/ReviewOutput",
+      "files": 76,
+      "bytes": 32106899.0
+    },
+    {
+      "subtree": "v008-longsword/Review",
+      "files": 99,
+      "bytes": 28526734.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/Comparison",
+      "files": 158,
+      "bytes": 28259500.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/Comparison",
+      "files": 135,
+      "bytes": 27166523.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/ReviewOutput",
+      "files": 14,
+      "bytes": 26033913.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/ReviewOutput",
+      "files": 11,
+      "bytes": 25081433.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/Comparison",
+      "files": 68,
+      "bytes": 25044830.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/ReviewOutput",
+      "files": 15,
+      "bytes": 24673569.0
+    },
+    {
+      "subtree": "v008-longsword/QA",
+      "files": 58,
+      "bytes": 20799386.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/ReviewOutput",
+      "files": 10,
+      "bytes": 20727076.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/ReviewOutput",
+      "files": 10,
+      "bytes": 20404463.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/ReviewOutput",
+      "files": 9,
+      "bytes": 17384882.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/Review",
+      "files": 77,
+      "bytes": 16439031.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/ReviewOutput",
+      "files": 3,
+      "bytes": 15989357.0
+    },
+    {
+      "subtree": "v008-longsword/ReviewOutput",
+      "files": 22,
+      "bytes": 13418040.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/Chibi_Longsword_Articulated.blend",
+      "files": 1,
+      "bytes": 12468114.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/Chibi_Longsword_Articulated.blend1",
+      "files": 1,
+      "bytes": 11282130.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/Chibi_Longsword_ChestLocked.blend",
+      "files": 1,
+      "bytes": 11279223.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/baseline.json",
+      "files": 1,
+      "bytes": 10486602.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/Chibi_Longsword_WholeBody.blend",
+      "files": 1,
+      "bytes": 10436238.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/Chibi_Longsword_ChestLocked.blend1",
+      "files": 1,
+      "bytes": 10431157.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/baseline.json",
+      "files": 1,
+      "bytes": 10088020.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/Chibi_Longsword_OverheadCorrected.blend1",
+      "files": 1,
+      "bytes": 9917034.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/Chibi_Longsword_Upright.blend1",
+      "files": 1,
+      "bytes": 9907953.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/baseline.json",
+      "files": 1,
+      "bytes": 9555290.0
+    },
+    {
+      "subtree": "v006-chibi-cap/rigging-bundle",
+      "files": 3,
+      "bytes": 9503032.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/Chibi_Longsword_WholeBody.blend1",
+      "files": 1,
+      "bytes": 9174748.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/baseline.json",
+      "files": 1,
+      "bytes": 9071616.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/baseline.json",
+      "files": 1,
+      "bytes": 8539746.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/Chibi_KayKit_Retouch.blend",
+      "files": 1,
+      "bytes": 8207775.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/Delivery",
+      "files": 15,
+      "bytes": 8203791.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/Delivery",
+      "files": 14,
+      "bytes": 8169778.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/Chibi_KayKit_Retarget.blend",
+      "files": 1,
+      "bytes": 8057192.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/Chibi_KayKit_Working.blend1",
+      "files": 1,
+      "bytes": 7823264.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/Chibi_KayKit_Working.blend",
+      "files": 1,
+      "bytes": 7822939.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/Chibi_Longsword_TorsoLed.blend1",
+      "files": 1,
+      "bytes": 7579647.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/Chibi_Longsword_TorsoLed.blend",
+      "files": 1,
+      "bytes": 7577662.0
+    },
+    {
+      "subtree": "v007-compact-action/research",
+      "files": 36,
+      "bytes": 7344904.0
+    },
+    {
+      "subtree": "v007-compact-action/RunRevisionQA",
+      "files": 19,
+      "bytes": 6758336.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/Chibi_Longsword_BodyDriven.blend",
+      "files": 1,
+      "bytes": 5987627.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/Chibi_Longsword_BodyDriven.blend1",
+      "files": 1,
+      "bytes": 5987578.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/Chibi_Longsword_Redesign.blend1",
+      "files": 1,
+      "bytes": 5086339.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/Chibi_Longsword_Redesign.blend",
+      "files": 1,
+      "bytes": 5084071.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/Chibi_Longsword_Upright.blend",
+      "files": 1,
+      "bytes": 5028769.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/Chibi_Longsword_OverheadCorrected.blend",
+      "files": 1,
+      "bytes": 4998350.0
+    },
+    {
+      "subtree": "v010-body-driven/QA",
+      "files": 8,
+      "bytes": 4026973.0
+    },
+    {
+      "subtree": "v008-longsword/Chibi_Longsword_Authoring.blend1",
+      "files": 1,
+      "bytes": 3599394.0
+    },
+    {
+      "subtree": "v008-longsword/Chibi_Longsword_Authoring.blend",
+      "files": 1,
+      "bytes": 3598524.0
+    },
+    {
+      "subtree": "v007-compact-action/review-report.json",
+      "files": 1,
+      "bytes": 3349191.0
+    },
+    {
+      "subtree": "v006-chibi-cap/Protagonist_ChibiCap.glb",
+      "files": 1,
+      "bytes": 2909192.0
+    },
+    {
+      "subtree": "v006-chibi-cap/Protagonist_ChibiCap_Concept.png",
+      "files": 1,
+      "bytes": 1612687.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/baseline.json",
+      "files": 1,
+      "bytes": 1341257.0
+    },
+    {
+      "subtree": "v008-longsword/sampled-blocking.json",
+      "files": 1,
+      "bytes": 1117965.0
+    },
+    {
+      "subtree": "v008-longsword/sampled-grip-polished.json",
+      "files": 1,
+      "bytes": 1117566.0
+    },
+    {
+      "subtree": "v008-longsword/sampled-polished1.json",
+      "files": 1,
+      "bytes": 1117566.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/research",
+      "files": 10,
+      "bytes": 659480.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/baseline.json",
+      "files": 1,
+      "bytes": 437002.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/baseline.json",
+      "files": 1,
+      "bytes": 429604.0
+    },
+    {
+      "subtree": "v007-compact-action/run-only-review.json",
+      "files": 1,
+      "bytes": 293965.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/DeliveryStaging",
+      "files": 2,
+      "bytes": 192423.0
+    },
+    {
+      "subtree": "v006-chibi-cap/research",
+      "files": 5,
+      "bytes": 190337.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/__pycache__",
+      "files": 9,
+      "bytes": 167090.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/__pycache__",
+      "files": 7,
+      "bytes": 160445.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/__pycache__",
+      "files": 6,
+      "bytes": 139316.0
+    },
+    {
+      "subtree": "v006-chibi-cap/hand-bind-inspection.json",
+      "files": 1,
+      "bytes": 138998.0
+    },
+    {
+      "subtree": "v008-longsword/baseline.json",
+      "files": 1,
+      "bytes": 131953.0
+    },
+    {
+      "subtree": "v007-compact-action/build-report.json",
+      "files": 1,
+      "bytes": 126123.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/DeliveryStaging",
+      "files": 2,
+      "bytes": 107003.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/DeliveryStaging",
+      "files": 1,
+      "bytes": 95617.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/__pycache__",
+      "files": 7,
+      "bytes": 90492.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/DeliveryStaging",
+      "files": 1,
+      "bytes": 90076.0
+    },
+    {
+      "subtree": "v007-compact-action/run-v2-crossing-frame12.png",
+      "files": 1,
+      "bytes": 89565.0
+    },
+    {
+      "subtree": "v007-compact-action/run-v2-crossing-frame00.png",
+      "files": 1,
+      "bytes": 86899.0
+    },
+    {
+      "subtree": "v007-compact-action/run-crossing-body-diagnostic.png",
+      "files": 1,
+      "bytes": 85435.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/__pycache__",
+      "files": 6,
+      "bytes": 83219.0
+    },
+    {
+      "subtree": "v007-compact-action/run-revision-before-sha.json",
+      "files": 1,
+      "bytes": 75806.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/__pycache__",
+      "files": 5,
+      "bytes": 58379.0
+    },
+    {
+      "subtree": "v008-longsword/UnityDelivery.log",
+      "files": 1,
+      "bytes": 58371.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/__pycache__",
+      "files": 6,
+      "bytes": 52351.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/research",
+      "files": 3,
+      "bytes": 47488.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/unity-delivery.log",
+      "files": 1,
+      "bytes": 45964.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/__pycache__",
+      "files": 5,
+      "bytes": 43905.0
+    },
+    {
+      "subtree": "v007-compact-action/export_review.py",
+      "files": 1,
+      "bytes": 43638.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/unity-delivery.log",
+      "files": 1,
+      "bytes": 41889.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/unity-prepare.log",
+      "files": 1,
+      "bytes": 39981.0
+    },
+    {
+      "subtree": "v007-compact-action/final-chibi-release-unity.log",
+      "files": 1,
+      "bytes": 37063.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/unity-delivery-final.log",
+      "files": 1,
+      "bytes": 36941.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 35468.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/__pycache__",
+      "files": 4,
+      "bytes": 34542.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/unity-delivery-exact-skin.log",
+      "files": 1,
+      "bytes": 34231.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 33561.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 33374.0
+    },
+    {
+      "subtree": "v007-compact-action/run-actual-lateral-audit.json",
+      "files": 1,
+      "bytes": 33193.0
+    },
+    {
+      "subtree": "v007-compact-action/run-revision-qa.json",
+      "files": 1,
+      "bytes": 32201.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/unity-skin-diagnostic.log",
+      "files": 1,
+      "bytes": 31084.0
+    },
+    {
+      "subtree": "v007-compact-action/preserved-assets-baseline.json",
+      "files": 1,
+      "bytes": 29048.0
+    },
+    {
+      "subtree": "v007-compact-action/run-clearance-revision-unity.log",
+      "files": 1,
+      "bytes": 28398.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 28249.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 28018.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/export_fbx_v011.py",
+      "files": 1,
+      "bytes": 28015.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 27786.0
+    },
+    {
+      "subtree": "v007-compact-action/run-clearance-approved-unity.log",
+      "files": 1,
+      "bytes": 26994.0
+    },
+    {
+      "subtree": "v007-compact-action/run-clearance-release-unity.log",
+      "files": 1,
+      "bytes": 26992.0
+    },
+    {
+      "subtree": "v007-compact-action/run-clearance-final-unity.log",
+      "files": 1,
+      "bytes": 26990.0
+    },
+    {
+      "subtree": "v007-compact-action/final-chibi-report-publish-unity.log",
+      "files": 1,
+      "bytes": 26493.0
+    },
+    {
+      "subtree": "v008-longsword/__pycache__",
+      "files": 2,
+      "bytes": 26004.0
+    },
+    {
+      "subtree": "v007-compact-action/capture-audit.json",
+      "files": 1,
+      "bytes": 22096.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/__pycache__",
+      "files": 2,
+      "bytes": 22046.0
+    },
+    {
+      "subtree": "v008-longsword/research",
+      "files": 1,
+      "bytes": 21443.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/author_v010.py",
+      "files": 1,
+      "bytes": 21331.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/author_v010.py",
+      "files": 1,
+      "bytes": 21329.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/author_v009.py",
+      "files": 1,
+      "bytes": 20983.0
+    },
+    {
+      "subtree": "v007-compact-action/independent-visual-validation.json",
+      "files": 1,
+      "bytes": 20840.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/export_fbx_v010.py",
+      "files": 1,
+      "bytes": 17245.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/export_fbx_v009.py",
+      "files": 1,
+      "bytes": 16382.0
+    },
+    {
+      "subtree": "v008-longsword/blender_author.py",
+      "files": 1,
+      "bytes": 16299.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 15867.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 15821.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/export_unity_review.py",
+      "files": 1,
+      "bytes": 15353.0
+    },
+    {
+      "subtree": "v008-longsword/unity-delivery-report.json",
+      "files": 1,
+      "bytes": 15334.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 15302.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/export_unity_review.py",
+      "files": 1,
+      "bytes": 15115.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/export_unity_review.py",
+      "files": 1,
+      "bytes": 15115.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/choreography.py",
+      "files": 1,
+      "bytes": 14804.0
+    },
+    {
+      "subtree": "v007-compact-action/audit_capture.py",
+      "files": 1,
+      "bytes": 14294.0
+    },
+    {
+      "subtree": "v010-body-driven/__pycache__",
+      "files": 1,
+      "bytes": 14031.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/arm15.py",
+      "files": 1,
+      "bytes": 13942.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 13304.0
+    },
+    {
+      "subtree": "v006-chibi-cap/export_review.py",
+      "files": 1,
+      "bytes": 12317.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/collision_choices.py",
+      "files": 1,
+      "bytes": 12267.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/collision_choices.py",
+      "files": 1,
+      "bytes": 12267.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/arm14.py",
+      "files": 1,
+      "bytes": 12169.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/collision_choices.py",
+      "files": 1,
+      "bytes": 12031.0
+    },
+    {
+      "subtree": "v010-body-driven/research",
+      "files": 1,
+      "bytes": 11917.0
+    },
+    {
+      "subtree": "v008-longsword/export_unity_review.py",
+      "files": 1,
+      "bytes": 11704.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/export-manifest.json",
+      "files": 1,
+      "bytes": 11193.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/arm12.py",
+      "files": 1,
+      "bytes": 11015.0
+    },
+    {
+      "subtree": "v006-chibi-cap/rig-inspection.json",
+      "files": 1,
+      "bytes": 10916.0
+    },
+    {
+      "subtree": "v006-chibi-cap/vfx-baseline.json",
+      "files": 1,
+      "bytes": 10852.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/export_native_v016.py",
+      "files": 1,
+      "bytes": 10430.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/arm16.py",
+      "files": 1,
+      "bytes": 9884.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/FINAL_REVIEW.html",
+      "files": 1,
+      "bytes": 9862.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/export_native_v013.py",
+      "files": 1,
+      "bytes": 9717.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/FINAL_REVIEW.txt",
+      "files": 1,
+      "bytes": 9628.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/export_native_v015.py",
+      "files": 1,
+      "bytes": 9502.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/export_native_v014.py",
+      "files": 1,
+      "bytes": 9302.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/body_mechanics.py",
+      "files": 1,
+      "bytes": 9065.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/body_mechanics.py",
+      "files": 1,
+      "bytes": 9065.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/research",
+      "files": 1,
+      "bytes": 8965.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/body_mechanics.py",
+      "files": 1,
+      "bytes": 8903.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/body_mechanics.py",
+      "files": 1,
+      "bytes": 8903.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/research",
+      "files": 1,
+      "bytes": 8887.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/body_mechanics.py",
+      "files": 1,
+      "bytes": 8880.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/body_mechanics.py",
+      "files": 1,
+      "bytes": 8880.0
+    },
+    {
+      "subtree": "v010-body-driven/body_mechanics.py",
+      "files": 1,
+      "bytes": 8445.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/body_mechanics.py",
+      "files": 1,
+      "bytes": 8445.0
+    },
+    {
+      "subtree": "v007-compact-action/reference-rebuild-qa.txt",
+      "files": 1,
+      "bytes": 8143.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/motion11.py",
+      "files": 1,
+      "bytes": 7859.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/export_native_v012.py",
+      "files": 1,
+      "bytes": 7726.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/retouch_walk18.py",
+      "files": 1,
+      "bytes": 7378.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/dense_pipeline.py",
+      "files": 1,
+      "bytes": 7235.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/dense_pipeline.py",
+      "files": 1,
+      "bytes": 7125.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/DELIVERY_PIPELINE.txt",
+      "files": 1,
+      "bytes": 6818.0
+    },
+    {
+      "subtree": "v007-compact-action/run_arm_surface_audit.py",
+      "files": 1,
+      "bytes": 6795.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/research",
+      "files": 1,
+      "bytes": 6458.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/clip-source-map.json",
+      "files": 1,
+      "bytes": 6407.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/clip-source-map.json",
+      "files": 1,
+      "bytes": 6401.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/torso11.py",
+      "files": 1,
+      "bytes": 6316.0
+    },
+    {
+      "subtree": "v006-chibi-cap/hand-polish-build.json",
+      "files": 1,
+      "bytes": 6028.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/motion15.py",
+      "files": 1,
+      "bytes": 5802.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/motion14.py",
+      "files": 1,
+      "bytes": 5694.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/motion16.py",
+      "files": 1,
+      "bytes": 5680.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/build17.py",
+      "files": 1,
+      "bytes": 5438.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/make_gallery17.py",
+      "files": 1,
+      "bytes": 5122.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/bake16.py",
+      "files": 1,
+      "bytes": 5070.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/bake17.py",
+      "files": 1,
+      "bytes": 5056.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/rig17.py",
+      "files": 1,
+      "bytes": 5031.0
+    },
+    {
+      "subtree": "v008-longsword/blender_polish.py",
+      "files": 1,
+      "bytes": 4947.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/motion13.py",
+      "files": 1,
+      "bytes": 4866.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/DELIVERY-DRAFT.txt",
+      "files": 1,
+      "bytes": 4611.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/research",
+      "files": 1,
+      "bytes": 4462.0
+    },
+    {
+      "subtree": "v007-compact-action/requested-tweaks-combat-qa.txt",
+      "files": 1,
+      "bytes": 4370.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 4208.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 4191.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/weapon17.py",
+      "files": 1,
+      "bytes": 4144.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/motion12.py",
+      "files": 1,
+      "bytes": 4011.0
+    },
+    {
+      "subtree": "v007-compact-action/source-gait-migration.json",
+      "files": 1,
+      "bytes": 3993.0
+    },
+    {
+      "subtree": "v007-compact-action/targeted-revision-baseline.json",
+      "files": 1,
+      "bytes": 3939.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/hand17.py",
+      "files": 1,
+      "bytes": 3904.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/FINAL_REVIEW.txt",
+      "files": 1,
+      "bytes": 3855.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 3849.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/bake15.py",
+      "files": 1,
+      "bytes": 3688.0
+    },
+    {
+      "subtree": "v006-chibi-cap/concept-prompt.txt",
+      "files": 1,
+      "bytes": 3562.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/bake14.py",
+      "files": 1,
+      "bytes": 3521.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/bake13.py",
+      "files": 1,
+      "bytes": 3463.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/FINAL_REVIEW.txt",
+      "files": 1,
+      "bytes": 3433.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 3419.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/DESIGN_NOTES.txt",
+      "files": 1,
+      "bytes": 3412.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/DELIVERY_NOTES.txt",
+      "files": 1,
+      "bytes": 3362.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/export-manifest.json",
+      "files": 1,
+      "bytes": 3258.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 3203.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/bake12.py",
+      "files": 1,
+      "bytes": 3107.0
+    },
+    {
+      "subtree": "v006-chibi-cap/inspect_glb_hands.py",
+      "files": 1,
+      "bytes": 3044.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/reweight_v009.py",
+      "files": 1,
+      "bytes": 2985.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/bake11.py",
+      "files": 1,
+      "bytes": 2897.0
+    },
+    {
+      "subtree": "v008-longsword/DELIVERY.txt",
+      "files": 1,
+      "bytes": 2889.0
+    },
+    {
+      "subtree": "v007-compact-action/run-revision-qa.txt",
+      "files": 1,
+      "bytes": 2820.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/package_native_review.py",
+      "files": 1,
+      "bytes": 2815.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/package_native_review.py",
+      "files": 1,
+      "bytes": 2815.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/package_native_review.py",
+      "files": 1,
+      "bytes": 2815.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/FINAL_REVIEW.txt",
+      "files": 1,
+      "bytes": 2799.0
+    },
+    {
+      "subtree": "v008-longsword/blender_grip_polish.py",
+      "files": 1,
+      "bytes": 2765.0
+    },
+    {
+      "subtree": "v007-compact-action/run-revision-visual-qa.txt",
+      "files": 1,
+      "bytes": 2720.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/FINAL_REVIEW.txt",
+      "files": 1,
+      "bytes": 2643.0
+    },
+    {
+      "subtree": "v008-longsword/authoring-config.json",
+      "files": 1,
+      "bytes": 2599.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/retouch_blade18.py",
+      "files": 1,
+      "bytes": 2580.0
+    },
+    {
+      "subtree": "v008-longsword/blender_pipeline.py",
+      "files": 1,
+      "bytes": 2551.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/RETOUCH_NOTES.txt",
+      "files": 1,
+      "bytes": 2538.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/DELIVERY_NOTES.txt",
+      "files": 1,
+      "bytes": 2504.0
+    },
+    {
+      "subtree": "v008-longsword/blender_export.py",
+      "files": 1,
+      "bytes": 2429.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/locomotion17.py",
+      "files": 1,
+      "bytes": 2352.0
+    },
+    {
+      "subtree": "v018-kaykit-retouch/build18.py",
+      "files": 1,
+      "bytes": 2306.0
+    },
+    {
+      "subtree": "v006-chibi-cap/mesh-inspection.json",
+      "files": 1,
+      "bytes": 2256.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/run_bake16.py",
+      "files": 1,
+      "bytes": 2240.0
+    },
+    {
+      "subtree": "v006-chibi-cap/generation.json",
+      "files": 1,
+      "bytes": 2220.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/run_bake15.py",
+      "files": 1,
+      "bytes": 1984.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/apply_shoulder_cleanup.py",
+      "files": 1,
+      "bytes": 1952.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/FINAL_REVIEW.txt",
+      "files": 1,
+      "bytes": 1916.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/run_bake14.py",
+      "files": 1,
+      "bytes": 1875.0
+    },
+    {
+      "subtree": "v008-longsword/blender_sleeve_fit.py",
+      "files": 1,
+      "bytes": 1853.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/context16.py",
+      "files": 1,
+      "bytes": 1833.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/proposal11.py",
+      "files": 1,
+      "bytes": 1798.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/actual11.py",
+      "files": 1,
+      "bytes": 1785.0
+    },
+    {
+      "subtree": "v007-compact-action/attack-retirement-recycle-inventory.json",
+      "files": 1,
+      "bytes": 1778.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/update_candidate13.py",
+      "files": 1,
+      "bytes": 1706.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/complete_skin_lock13.py",
+      "files": 1,
+      "bytes": 1702.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/HANDOFF.txt",
+      "files": 1,
+      "bytes": 1689.0
+    },
+    {
+      "subtree": "v007-compact-action/run-revision-preservation.json",
+      "files": 1,
+      "bytes": 1646.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/run_bake13.py",
+      "files": 1,
+      "bytes": 1582.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/verify_preserved.py",
+      "files": 1,
+      "bytes": 1571.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/prepare13.py",
+      "files": 1,
+      "bytes": 1395.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/quick_candidates.py",
+      "files": 1,
+      "bytes": 1371.0
+    },
+    {
+      "subtree": "v008-longsword/export-manifest.json",
+      "files": 1,
+      "bytes": 1296.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/context15.py",
+      "files": 1,
+      "bytes": 1230.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/context14.py",
+      "files": 1,
+      "bytes": 1228.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/context13.py",
+      "files": 1,
+      "bytes": 1226.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/context12.py",
+      "files": 1,
+      "bytes": 1194.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/preview03.py",
+      "files": 1,
+      "bytes": 1193.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/preview17.py",
+      "files": 1,
+      "bytes": 1191.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/verify_preserved.py",
+      "files": 1,
+      "bytes": 1189.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/verify_preserved.py",
+      "files": 1,
+      "bytes": 1189.0
+    },
+    {
+      "subtree": "v008-longsword/verify_preserved.py",
+      "files": 1,
+      "bytes": 1189.0
+    },
+    {
+      "subtree": "v017-kaykit-retarget/preview02.py",
+      "files": 1,
+      "bytes": 1185.0
+    },
+    {
+      "subtree": "v007-compact-action/clip-timing.csv",
+      "files": 1,
+      "bytes": 1116.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/skin12_candidate.py",
+      "files": 1,
+      "bytes": 960.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/prepare16.py",
+      "files": 1,
+      "bytes": 960.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/quick_pose_review02.py",
+      "files": 1,
+      "bytes": 826.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/quick_pose_review03.py",
+      "files": 1,
+      "bytes": 826.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/quick_pose_review.py",
+      "files": 1,
+      "bytes": 824.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/prepare15.py",
+      "files": 1,
+      "bytes": 789.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/prepare14.py",
+      "files": 1,
+      "bytes": 629.0
+    },
+    {
+      "subtree": "v006-chibi-cap/final-quality-evidence.json",
+      "files": 1,
+      "bytes": 606.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 395.0
+    },
+    {
+      "subtree": "v011-torso-led-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 395.0
+    },
+    {
+      "subtree": "v007-compact-action/qa-review.txt",
+      "files": 1,
+      "bytes": 309.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/preservation-result.json",
+      "files": 1,
+      "bytes": 298.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 298.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 298.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/gif-package.log",
+      "files": 1,
+      "bytes": 209.0
+    },
+    {
+      "subtree": "v012-whole-body-longsword/.gitignore",
+      "files": 1,
+      "bytes": 193.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/preservation-result.json",
+      "files": 1,
+      "bytes": 110.0
+    },
+    {
+      "subtree": "v010-body-driven-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 110.0
+    },
+    {
+      "subtree": "v008-longsword/preservation-result.json",
+      "files": 1,
+      "bytes": 108.0
+    },
+    {
+      "subtree": "v006-chibi-cap/vfx-unchanged-final.json",
+      "files": 1,
+      "bytes": 50.0
+    },
+    {
+      "subtree": "v013-chest-locked-longsword/.gitignore",
+      "files": 1,
+      "bytes": 50.0
+    },
+    {
+      "subtree": "v014-shoulder-elbow-longsword/.gitignore",
+      "files": 1,
+      "bytes": 50.0
+    },
+    {
+      "subtree": "v015-upright-overhead-longsword/.gitignore",
+      "files": 1,
+      "bytes": 43.0
+    },
+    {
+      "subtree": "v016-overhead-arm-correction/.gitignore",
+      "files": 1,
+      "bytes": 43.0
+    },
+    {
+      "subtree": "v009-longsword-redesign/unity-process-id.txt",
+      "files": 1,
+      "bytes": 7.0
+    }
+  ],
+  "largestFiles": [
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.dylib",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": ".dylib",
+      "bytes": 144359968,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v017-kaykit-retarget\\QA\\Delivery\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.dylib",
+      "version": "v017-kaykit-retarget",
+      "subtree": "v017-kaykit-retarget/QA",
+      "extension": ".dylib",
+      "bytes": 144359968,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.dylib",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": ".dylib",
+      "bytes": 144359968,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.dylib",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": ".dylib",
+      "bytes": 144359968,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.dylib",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".dylib",
+      "bytes": 144359968,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.dylib",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": ".dylib",
+      "bytes": 144359968,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostmac\\dsymutil",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": "",
+      "bytes": 85812032,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostmac\\dsymutil",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": "",
+      "bytes": 85812032,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostmac\\dsymutil",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": "",
+      "bytes": 85812032,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostmac\\dsymutil",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": "",
+      "bytes": 85812032,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v017-kaykit-retarget\\QA\\Delivery\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostmac\\dsymutil",
+      "version": "v017-kaykit-retarget",
+      "subtree": "v017-kaykit-retarget/QA",
+      "extension": "",
+      "bytes": 85812032,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostmac\\dsymutil",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": "",
+      "bytes": 85812032,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.so",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".so",
+      "bytes": 75393688,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.so",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": ".so",
+      "bytes": 75393688,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.so",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": ".so",
+      "bytes": 75393688,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v017-kaykit-retarget\\QA\\Delivery\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.so",
+      "version": "v017-kaykit-retarget",
+      "subtree": "v017-kaykit-retarget/QA",
+      "extension": ".so",
+      "bytes": 75393688,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.so",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": ".so",
+      "bytes": 75393688,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\libburst-llvm-21.so",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": ".so",
+      "bytes": 75393688,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21.dll",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".dll",
+      "bytes": 63496616,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21.dll",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": ".dll",
+      "bytes": 63496616,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v017-kaykit-retarget\\QA\\Delivery\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21.dll",
+      "version": "v017-kaykit-retarget",
+      "subtree": "v017-kaykit-retarget/QA",
+      "extension": ".dll",
+      "bytes": 63496616,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21.dll",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": ".dll",
+      "bytes": 63496616,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21.dll",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": ".dll",
+      "bytes": 63496616,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21.dll",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": ".dll",
+      "bytes": 63496616,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21-arm64.dll",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": ".dll",
+      "bytes": 59824048,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v017-kaykit-retarget\\QA\\Delivery\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21-arm64.dll",
+      "version": "v017-kaykit-retarget",
+      "subtree": "v017-kaykit-retarget/QA",
+      "extension": ".dll",
+      "bytes": 59824048,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21-arm64.dll",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": ".dll",
+      "bytes": 59824048,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21-arm64.dll",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": ".dll",
+      "bytes": 59824048,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21-arm64.dll",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": ".dll",
+      "bytes": 59824048,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\burst-llvm-21-arm64.dll",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".dll",
+      "bytes": 59824048,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v011-torso-led-longsword\\QA\\UnityInterpolationRejected_174733915\\QA\\export-sampled-meshes.npz",
+      "version": "v011-torso-led-longsword",
+      "subtree": "v011-torso-led-longsword/QA",
+      "extension": ".npz",
+      "bytes": 47614995,
+      "modifiedUtc": "2026-10-23T17:57:43.7898209Z"
+    },
+    {
+      "relativePath": "v011-torso-led-longsword\\QA\\export-sampled-meshes.npz",
+      "version": "v011-torso-led-longsword",
+      "subtree": "v011-torso-led-longsword/QA",
+      "extension": ".npz",
+      "bytes": 47614995,
+      "modifiedUtc": "2026-10-23T17:34:04.9822428Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Overhead.anim",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": ".anim",
+      "bytes": 46175018,
+      "modifiedUtc": "2026-10-23T19:20:30.7058112Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Overhead.anim",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": ".anim",
+      "bytes": 46175018,
+      "modifiedUtc": "2026-10-23T19:20:30.7058112Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Overhead.anim",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": ".anim",
+      "bytes": 46175018,
+      "modifiedUtc": "2026-10-23T19:20:30.7058112Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Overhead.anim",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".anim",
+      "bytes": 46175018,
+      "modifiedUtc": "2026-10-23T19:20:30.7058112Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Overhead.anim",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": ".anim",
+      "bytes": 46175018,
+      "modifiedUtc": "2026-10-23T19:20:30.7058112Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostlin\\dsymutil",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": "",
+      "bytes": 45829080,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostlin\\dsymutil",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": "",
+      "bytes": 45829080,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostlin\\dsymutil",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": "",
+      "bytes": 45829080,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostlin\\dsymutil",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": "",
+      "bytes": 45829080,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v017-kaykit-retarget\\QA\\Delivery\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostlin\\dsymutil",
+      "version": "v017-kaykit-retarget",
+      "subtree": "v017-kaykit-retarget/QA",
+      "extension": "",
+      "bytes": 45829080,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Library\\PackageCache\\com.unity.burst@2f3d916873ea\\.Runtime\\hostlin\\dsymutil",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": "",
+      "bytes": 45829080,
+      "modifiedUtc": "2026-07-21T09:39:57.0000000Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\PrePureExport\\export-sampled-meshes.npz",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".npz",
+      "bytes": 45122678,
+      "modifiedUtc": "2026-10-23T19:17:01.2088225Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\export-sampled-meshes.npz",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".npz",
+      "bytes": 45122375,
+      "modifiedUtc": "2026-10-23T19:17:22.7085377Z"
+    },
+    {
+      "relativePath": "v014-shoulder-elbow-longsword\\QA\\export-sampled-meshes.npz",
+      "version": "v014-shoulder-elbow-longsword",
+      "subtree": "v014-shoulder-elbow-longsword/QA",
+      "extension": ".npz",
+      "bytes": 45096584,
+      "modifiedUtc": "2026-10-26T06:03:29.9286736Z"
+    },
+    {
+      "relativePath": "v013-chest-locked-longsword\\QA\\export-sampled-meshes.npz",
+      "version": "v013-chest-locked-longsword",
+      "subtree": "v013-chest-locked-longsword/QA",
+      "extension": ".npz",
+      "bytes": 45084261,
+      "modifiedUtc": "2026-10-26T04:17:13.6088822Z"
+    },
+    {
+      "relativePath": "v015-upright-overhead-longsword\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Diagonal_Left.anim",
+      "version": "v015-upright-overhead-longsword",
+      "subtree": "v015-upright-overhead-longsword/QA",
+      "extension": ".anim",
+      "bytes": 43656646,
+      "modifiedUtc": "2026-10-23T19:20:29.6029525Z"
+    },
+    {
+      "relativePath": "v016-overhead-arm-correction\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Diagonal_Left.anim",
+      "version": "v016-overhead-arm-correction",
+      "subtree": "v016-overhead-arm-correction/QA",
+      "extension": ".anim",
+      "bytes": 43656646,
+      "modifiedUtc": "2026-10-23T19:20:29.6029525Z"
+    },
+    {
+      "relativePath": "v012-whole-body-longsword\\QA\\UnityProject\\Assets\\Art\\Characters\\Protagonist01\\Longsword_v012\\Clips\\Longsword_Attack_Diagonal_Left.anim",
+      "version": "v012-whole-body-longsword",
+      "subtree": "v012-whole-body-longsword/QA",
+      "extension": ".anim",
+      "bytes": 43656646,
+      "modifiedUtc": "2026-10-23T19:20:29.6029525Z"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "file": "Attack_05x.gif",
+    "frames": 32,
+    "ms": 2130,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Attack_1x.gif",
+    "frames": 32,
+    "ms": 1070,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Hit_05x.gif",
+    "frames": 20,
+    "ms": 1330,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Hit_1x.gif",
+    "frames": 20,
+    "ms": 670,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Idle_05x.gif",
+    "frames": 128,
+    "ms": 8530,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Idle_1x.gif",
+    "frames": 128,
+    "ms": 4270,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Move_05x.gif",
+    "frames": 24,
+    "ms": 1600,
+    "size": [
+      960,
+      604
+    ]
+  },
+  {
+    "file": "Move_1x.gif",
+    "frames": 24,
+    "ms": 800,
+    "size": [
+      960,
+      604
+    ]
+  }
+]
