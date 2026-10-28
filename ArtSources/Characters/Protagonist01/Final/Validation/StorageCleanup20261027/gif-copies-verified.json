@@ -1,0 +1,362 @@
+[
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Move_1x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Move_1x.gif",
+    "sha256": "eac244d75153a4bda5f80e684d07b1533334e690622d7551ef7c18a519a54be7",
+    "bytes": 2683226
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Move_05x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Move_05x.gif",
+    "sha256": "3b02e7d8bfd3d7772d81f8d101ec590bd4c9354776100f7217d0b9daa42652e1",
+    "bytes": 2683226
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Idle_1x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Idle_1x.gif",
+    "sha256": "dc30fe0ddc4ff0bcf43b794e4843a310468422ed0c436dd8b95f8edb347de59b",
+    "bytes": 14177097
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Idle_05x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Idle_05x.gif",
+    "sha256": "530095344a88c39fa5d7786c295862d5502b04445823481c5e0534d0484eec51",
+    "bytes": 14177097
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Hit_1x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Hit_1x.gif",
+    "sha256": "8eeef2e93bc2b9bf98fc7bf2464956dd5ba784504f22ce4cfe4a870d949ec7b7",
+    "bytes": 2226086
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Hit_05x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Hit_05x.gif",
+    "sha256": "9bb4a8af516918309cb90c883617279b0e306056c0cf345ccb5ab1c07b2a7ebc",
+    "bytes": 2226086
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Attack_05x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Attack_05x.gif",
+    "sha256": "817dd0d8d9bfc97be35194e94977a5fbad5fab7872eb5b76d0ac2512e79da2c5",
+    "bytes": 3557175
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/Attack_1x.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\Review\\Attack_1x.gif",
+    "sha256": "7929da83db894c56431a765fe80dbb43eeaef27aefb7fd782fcae66d3483be02",
+    "bytes": 3557175
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Combat/Longsword_Attack_Stab_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Stab_Side_Slow.gif",
+    "sha256": "468436ab85165968cacc01cb2292e87f07dadb59f45b3f5d46c375fb6ffd2eb3",
+    "bytes": 521706
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Combat/Longsword_Attack_Stab_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Stab_Side.gif",
+    "sha256": "6e04844ff0417e955c06e1c5b848aafb466bd1a25171951b512dab4353e3a054",
+    "bytes": 518737
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Combat/Longsword_Attack_Slice_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Slice_Side_Slow.gif",
+    "sha256": "e38a70847c47e5da176b6e27ad62d10fe64ba2f1952420950504b0863b0663a3",
+    "bytes": 437257
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Combat/Longsword_Attack_Slice_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Slice_Side.gif",
+    "sha256": "4b57a0956e433a491f4c8fec483156d0ca1768079884c376ce0f6e7ceab47891",
+    "bytes": 438807
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Combat/Longsword_Attack_Chop_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Chop_Side_Slow.gif",
+    "sha256": "2b3683994cc4ffb59d6f0591142bef498f3705a272aaeb63e9b7f88f40c1d65e",
+    "bytes": 523781
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Combat/Longsword_Attack_Chop_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Combat\\Longsword_Attack_Chop_Side.gif",
+    "sha256": "689b923d54c23219315faa1c4acf12ea25d8786ce18bc1924976ea5ced607692",
+    "bytes": 522650
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_to_Move_PreviewBlend.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_to_Move_PreviewBlend.gif",
+    "sha256": "3f736de2e10ba2605733f510ee6fa1eb92897e64173b2f6689f8d619f0421fa9",
+    "bytes": 645040
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_to_Attack_PreviewBlend.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_to_Attack_PreviewBlend.gif",
+    "sha256": "f88299ae4369af2c07d21b4f3c82374de5bc264f18c584cbe0c0584a005613dc",
+    "bytes": 597006
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_Side_Slow.gif",
+    "sha256": "f907b410011f61d9bdce5f4ffa6a26d5c69b052ab694691395fac20ffc461500",
+    "bytes": 595048
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_Side.gif",
+    "sha256": "e82dd62a639ec48d7ffda53227ef1e4956402ddc8e19676df7c9d4cf245a6564",
+    "bytes": 595048
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_Opposite.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_Opposite.gif",
+    "sha256": "39cba8f7561b7e302537fd384022d5a0476e1966830771a444ab924e62c7d0a4",
+    "bytes": 598134
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_Front.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_Front.gif",
+    "sha256": "0fbd37c98084587b8eef0096f78efcbf293fed485c3a984bcfd6b902163a95c6",
+    "bytes": 555260
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Move_Back.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Move_Back.gif",
+    "sha256": "6d0195160d836bf994520617fe0b366c0ae8a789e37d7e0891b6be1681aacb4d",
+    "bytes": 552731
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/Transitions/Move_Dash_Recover.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\Transitions\\Move_Dash_Recover.gif",
+    "sha256": "96fb116ddfabc40c217e7baae8c03683eb1ff3e9611e5dd3cc3bea89b680961c",
+    "bytes": 3528725
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Airborne/Rise_Fall_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Airborne\\Rise_Fall_Side.gif",
+    "sha256": "8418830a1c6860eb459b6a8076aa740b3b6e885b15836db8fb5476954add65ab",
+    "bytes": 5008225
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Airborne/Jump_Sequence.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Airborne\\Jump_Sequence.gif",
+    "sha256": "7343cb911ec7bec622d0a21f1e4634f4a79266eaf37decaed27d3d67bc6f4a05",
+    "bytes": 816875
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Airborne/Jump_Rise_Loop.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Airborne\\Jump_Rise_Loop.gif",
+    "sha256": "69c884cea384c25147ce6c9899ede067b9befd0b408d7bbede86976599c81a09",
+    "bytes": 1114905
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/Review/Airborne/Jump_Fall_Loop.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Airborne\\Jump_Fall_Loop.gif",
+    "sha256": "725ab367db7f9e1d909df8f2521d7acb7636d7f1db2c75704a2b3c966bde9404",
+    "bytes": 1345193
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Hit_Opposite.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Hit_Opposite.gif",
+    "sha256": "c6a40675b6e475908e7068a78ec62d07b537b495b4c0f6d069f0c67dc7cd0b5f",
+    "bytes": 458064
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Hit_Front.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Hit_Front.gif",
+    "sha256": "50b97ec97821a1d8f4ab5b27d14dcbfc32bb2f0ba5769dbcb6522d41c9bf46a9",
+    "bytes": 475513
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Hit_Back.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Hit_Back.gif",
+    "sha256": "ce17bd476727b1aa70e438dae0c0285c0ede2d9c871eaed881433e6cd2a1b377",
+    "bytes": 441700
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Walk_Fists.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Walk_Fists.gif",
+    "sha256": "3fc028807f95784a12c707d14d4d9cbfdec4dee66399d770b2c976775917ae4b",
+    "bytes": 1215160
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Run_Fists.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Run_Fists.gif",
+    "sha256": "6b4611f28293710499142218f2c6552b5d448db60893912b68ace40010ee5263",
+    "bytes": 903134
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Potion_Drink.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Potion_Drink.gif",
+    "sha256": "c3c2ade5df49b017c67571ac782fdd4cec63ceab7bb3aeb38e9699461f80149d",
+    "bytes": 1122400
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Pickup_Low.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Pickup_Low.gif",
+    "sha256": "5574df73f43964d9d16585e77358c1c32c34816a507283bbd1b6af80f29e453d",
+    "bytes": 733648
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Jump_Takeoff.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Takeoff.gif",
+    "sha256": "64efc0433e0f7966893e97841ba9e3ee7e03734dada300050d88833fd2d18b57",
+    "bytes": 113429
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Jump_Rise_Loop.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Rise_Loop.gif",
+    "sha256": "69c884cea384c25147ce6c9899ede067b9befd0b408d7bbede86976599c81a09",
+    "bytes": 1114905
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Jump_Land.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Land.gif",
+    "sha256": "84a19c2b220329b780bc0b5ff350701eb322f084ef9e21b9c3f2a01164130df2",
+    "bytes": 273642
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Jump_Full.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Full.gif",
+    "sha256": "777607aefa45f047a83025a2dea07d72936aea7025c04afefb9bc4c0dffd4648",
+    "bytes": 815060
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Jump_Fall_Loop.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Fall_Loop.gif",
+    "sha256": "725ab367db7f9e1d909df8f2521d7acb7636d7f1db2c75704a2b3c966bde9404",
+    "bytes": 1345193
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Jump_Apex_Loop.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Jump_Apex_Loop.gif",
+    "sha256": "ec6892fb73fde87b2178c8dc497fd8e94aad1ca099ab25ae0c97259bc47b1680",
+    "bytes": 27750
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Item_Throw_Overhand.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Item_Throw_Overhand.gif",
+    "sha256": "e53af775852040e9551b065a8e6cb3096acaac53f32c2f1b17c13a792a739839",
+    "bytes": 833307
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Interact_Reach.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Interact_Reach.gif",
+    "sha256": "56f4980f422274a0a8a89c3ca6b9c191205e60b7e1a72a9a34f7ed5dc9d3539a",
+    "bytes": 556124
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Idle_Fists.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Idle_Fists.gif",
+    "sha256": "194fb35512ccfd5df9a682eed6be2231b7e41634b349e2e49c912bdb2d332f15",
+    "bytes": 3842379
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Hit_Reaction.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Hit_Reaction.gif",
+    "sha256": "0c156186085de084f7eb67842a02fb8e324090c95cbbb04542e081076a2b8f35",
+    "bytes": 420411
+  },
+  {
+    "path": "ArtSources/Characters/Protagonist01/Final/LegacyMotions/GIF/Dash_Forward.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\LegacyMotions\\GIF\\Dash_Forward.gif",
+    "sha256": "ba0004a029c3928f8c25b91b1b64387063745d49e2bb900e4b3ac3eda56a0fee",
+    "bytes": 419227
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_to_Move_PreviewBlend.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_to_Move_PreviewBlend.gif",
+    "sha256": "11d39e84be93d1b54e8a74dad037ac91ce9d8c8d1ab44c6fd41bd66f7a789f24",
+    "bytes": 623824
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_to_Idle_PreviewBlend.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_to_Idle_PreviewBlend.gif",
+    "sha256": "e5db3fbab7f13e65ea6f7902da0178230c94c1fc1b73ea3b473af9fb7aacbaed",
+    "bytes": 586735
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_Side_Slow.gif",
+    "sha256": "a07c26ed1d15e86a22d051b1ef16b402a0076b55e5ea2cbf9a7a4043f9c4942e",
+    "bytes": 2925675
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_Side.gif",
+    "sha256": "aba8bcff72fd0bb08369b322b04c1e80205171ca29ea0fe25651daa1eb4bfcbf",
+    "bytes": 2925675
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_Opposite.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_Opposite.gif",
+    "sha256": "27f968bc9906d42401eb9e8c231f1f70f05fe218eb6ae3e4594552e0ac347e1a",
+    "bytes": 2998428
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_Front.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_Front.gif",
+    "sha256": "2842682675ddc54f3d2509cd99bd8eed53ad29c38ff9f875cdb0d97830017758",
+    "bytes": 3087433
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Idle_Back.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Idle_Back.gif",
+    "sha256": "835e96352a9073e98af748a56239f6fb40c76a2d475de9a90c7b8d98d4948a28",
+    "bytes": 3333963
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Attack_to_Idle_PreviewBlend.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Attack_to_Idle_PreviewBlend.gif",
+    "sha256": "ea0e27b2a81dab83d8b52a186aefc63a8ad25eb189829c83dc29c03ad55f3897",
+    "bytes": 592914
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Attack_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Attack_Side_Slow.gif",
+    "sha256": "ad0bcf028646c18588c10a50f1ffca2550a05e2e8dc4d323812a04297a9bc413",
+    "bytes": 726088
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Attack_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Attack_Side.gif",
+    "sha256": "1848ff2a7d71ff008890ba3579c2606c1c03b4ab387330ad7f571926617f6376",
+    "bytes": 726088
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Attack_Opposite.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Attack_Opposite.gif",
+    "sha256": "6b41eb650b041ead1c5fcafd03f343710c4af9f95b269c6c7c0178c37522e141",
+    "bytes": 747129
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Attack_Front.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Attack_Front.gif",
+    "sha256": "0c5aee4aa84b64793d248814e8599e0ae3782d3c0a7adb197a182d104ce5d6b5",
+    "bytes": 761544
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Attack_Back.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Attack_Back.gif",
+    "sha256": "1cf971e0518bb18fb4f92d1428fdbbd51304dd479be7d34cd3d0c840dc120d7c",
+    "bytes": 702207
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Hit_to_Idle_PreviewBlend.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Hit_to_Idle_PreviewBlend.gif",
+    "sha256": "59f014989d84c2d44fd90429bd56b63fc8144d604e23aa18ffb5599d6a929f74",
+    "bytes": 576791
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Hit_Side_Slow.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Hit_Side_Slow.gif",
+    "sha256": "38bd14b5e6b5610b0c3d723f6742fbf0e3ee423c21ad42d8078aaaa88677933f",
+    "bytes": 439282
+  },
+  {
+    "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/UnityRendered/Hit_Side.gif",
+    "destination": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\Melee01\\v001-native-motion\\QA\\UnityRendered\\Hit_Side.gif",
+    "sha256": "662b3768e41364364242c0dcee8821dd49af79afe9627e26c4f02decb20a438d",
+    "bytes": 439282
+  }
+]

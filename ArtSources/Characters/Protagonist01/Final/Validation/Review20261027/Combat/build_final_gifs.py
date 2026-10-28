@@ -1,11 +1,14 @@
 """Package actual corrected Unity prefab captures at 30 fps, without added holds."""
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
-import json,hashlib
+import json,hashlib,sys
 
 out=Path(__file__).parent;final=out.parents[2];project=out.parents[6]
+sys.path.insert(0,str(project/'ArtSources'))
+from review_storage import media_path,storage_metadata
 source=project/'Logs/AssetAudit20261027/Hero/Frames/CombatRetouched/Combat'
-target=final/'Review/Combat'
+target=media_path(final/'Review/Combat')
+target.mkdir(parents=True,exist_ok=True)
 fontpath=Path('C:/Windows/Fonts/segoeui.ttf')
 font=ImageFont.truetype(str(fontpath),12)
 entries=[]
@@ -29,6 +32,6 @@ for name,expected in [('Longsword_Attack_Chop',21),('Longsword_Attack_Slice',18)
         test=Image.open(p);actual=0
         for i in range(test.n_frames):test.seek(i);actual+=test.info['duration']
         assert test.n_frames==expected and actual==round(expected/30*1000)*multiplier
-        entries.append({'file':p.relative_to(final).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size,'clip':name,'speed':'normal' if multiplier==1 else 'slow','frames':expected,'durationMs':actual,'sourceRevision':'2026-10-27 actual Unity corrected Combat prefab'})
-(target/'media-manifest.json').write_text(json.dumps({'method':'Actual Unity corrected Combat prefab captures sampled at 60Hz, every second image encoded at 30fps; no artificial hold. A fixed palette per GIF prevents palette flicker. Slow versions double the same frame durations. Legacy15 GIFs are unchanged.','files':entries},indent=2),encoding='utf8')
+        entries.append({'file':p.relative_to(media_path(final)).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size,'clip':name,'speed':'normal' if multiplier==1 else 'slow','frames':expected,'durationMs':actual,'sourceRevision':'2026-10-27 actual Unity corrected Combat prefab'})
+(final/'Review/Combat/media-manifest.json').write_text(json.dumps({'previewStorage':storage_metadata(final),'method':'Actual Unity corrected Combat prefab captures sampled at 60Hz, every second image encoded at 30fps; no artificial hold. A fixed palette per GIF prevents palette flicker. Slow versions double the same frame durations. This producer does not change locomotion clips.','files':entries},indent=2),encoding='utf8')
 print('SIX_UNITY_GIFS_VERIFIED')

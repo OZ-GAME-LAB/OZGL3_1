@@ -1,0 +1,51 @@
+{
+  "revision": "Airborne20261027",
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false
+  },
+  "changedClips": [
+    {
+      "name": "Jump_Rise_Loop",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "unitySHA256": "0bfb9c751f8e4c8d5551cad0c443f08b53133c8a5c647903281170eda6dbfbf3",
+      "durationSeconds": 0.8,
+      "gifSHA256": "69c884cea384c25147ce6c9899ede067b9befd0b408d7bbede86976599c81a09",
+      "gifFrames": 48,
+      "gifPlaybackMilliseconds": 1600
+    },
+    {
+      "name": "Jump_Fall_Loop",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "unitySHA256": "064f3adbda0497ba0f6b54c12636c1af40c237287b0b9d86387a921a3eb14f65",
+      "durationSeconds": 1.0,
+      "gifSHA256": "725ab367db7f9e1d909df8f2521d7acb7636d7f1db2c75704a2b3c966bde9404",
+      "gifFrames": 60,
+      "gifPlaybackMilliseconds": 2000
+    }
+  ],
+  "unchangedSelectedClips": 16,
+  "unrelatedClipChanges": [],
+  "existingTakeoffLandApexFullPreserved": true,
+  "modelRigMaterialsPrefabsChanged": false,
+  "gameplayAndVFXChanged": false,
+  "samples120Hz": 654,
+  "maxLoopSeamMetres": 0.0,
+  "maxHipDriftMetres": 0.0,
+  "maxBoundaryTangentDifference": 0.0,
+  "validationErrors": 0,
+  "visualReview": [
+    "Pass1: baseline freeze pose identified; authored pose silhouettes checked on Front andThreeQuarter; all Side sequence frames examined.",
+    "Pass2: independent reviewer inspected108loopSide frames,54other-view loop phases,108sequence frames and36grip-variant frontal phases. No clear arm inversion,body penetration,mesh tear or actual leg crossing observed. Side falling foot overlap was confirmed as projection overlap in otherviews.",
+    "Pass3: matching endpoint tangent correction; saved clips reloaded and654120Hz poses rechecked;306rendered frames refreshed. Independent final reviewer rechecked Side/Front loops and sequence transition boundaries. Root drift, endpoint pose and tangent differences are0."
+  ],
+  "limitations": [
+    "Finite sampled review; no claim about arbitrary future gameplay blends.",
+    "Existing Apex and Jump_Full remain unchanged; sequence preview blends Rise directly intoFall.",
+    "Small balance movement is intentional. No Mixamo binary was downloaded or retargeted."
+  ],
+  "finalUnityCompilePassed": true
+}

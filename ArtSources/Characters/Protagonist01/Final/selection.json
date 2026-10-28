@@ -1,7 +1,26 @@
 {
-  "userSelection": "3 latest sword attacks + unchanged existing v007 nonattack clips",
+  "userSelection": "3 latest sword attacks +15v007 nonattack clips; Rise/Fall loops revised2026-10-27, other16selected clips preserved",
   "count": 18,
-  "runtimeIntegrated": false,
+  "runtimeIntegrationChangedThisTask": false,
+  "existingGameClipReferences": [
+    "Hit_Reaction",
+    "Walk_Fists",
+    "Idle_Fists",
+    "Dash_Forward",
+    "Jump_Apex_Loop",
+    "Jump_Takeoff",
+    "Jump_Land",
+    "Run_Fists"
+  ],
+  "newAirborneClipsIntegrated": false,
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false,
+    "relativeBase": "Characters/Protagonist01/Final/Review"
+  },
   "rigCompatibility": "Two native Generic rigs. No direct common Animator compatibility; future retargeting is required for a single rig.",
   "clips": [
     {

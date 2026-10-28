@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-10-27T17:17:11.699087+09:00",
+  "baselineCommit": "57e37700349095fcaafbbb27843e904c7af168da",
+  "actualFilesDeleted": 776,
+  "obsoleteFilesDeleted": 716,
+  "projectGIFsDeleted": 117,
+  "externalCurrentGIFsVerified": 60,
+  "remainingProjectGIFs": [],
+  "remainingDeletionTargets": [],
+  "selectedClipsPreserved": 18,
+  "selectedClipsAndPrefabsExist": true,
+  "protectedTrackedChanges": [],
+  "removedTemporaryAuditGUIDs": {
+    "005a978435122244a9be72ab4b71d83f": "Assets/Editor/AssetAudit20261027",
+    "32ae597ffd4aa3f4a8f4d297f2faab11": "Assets/Editor/AssetAudit20261027/ApplyUnitySkinWeights.cs",
+    "e83cd5d20e78ef348af4a79d60da2e2e": "Assets/Editor/AssetAudit20261027/HeroAssetAudit.cs",
+    "27d52253b8db4fa4a873f6eb070e15f0": "Assets/Editor/AssetAudit20261027/NonHeroAssetAudit.cs"
+  },
+  "newDanglingGUIDReferences": [],
+  "activeGalleryPagesChecked": 10,
+  "localLinksChecked": 94,
+  "missingGalleryLinks": [],
+  "gameplayCodeControllersScenesVFXAndCurrentAssetsChanged": false,
+  "newAirborneClipsIntegrated": false,
+  "passed": true
+}

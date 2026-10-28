@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Jump_Fall_Loop",
+    "file": "Characters/Protagonist01/Final/Review/Airborne/Jump_Fall_Loop.gif",
+    "sha256": "725ab367db7f9e1d909df8f2521d7acb7636d7f1db2c75704a2b3c966bde9404",
+    "frames": 60,
+    "previewStorage": {
+      "kind": "external-local-review",
+      "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+      "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+      "mirrorRelativeTo": "ArtSources",
+      "trackedMedia": false
+    }
+  },
+  {
+    "name": "Jump_Rise_Loop",
+    "file": "Characters/Protagonist01/Final/Review/Airborne/Jump_Rise_Loop.gif",
+    "sha256": "69c884cea384c25147ce6c9899ede067b9befd0b408d7bbede86976599c81a09",
+    "frames": 48,
+    "previewStorage": {
+      "kind": "external-local-review",
+      "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+      "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+      "mirrorRelativeTo": "ArtSources",
+      "trackedMedia": false
+    }
+  }
+]
