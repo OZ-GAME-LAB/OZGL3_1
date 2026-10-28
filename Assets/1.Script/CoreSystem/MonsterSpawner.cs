@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    [SerializeField, Min(0)] private int monsterPrefabIndex;
     [SerializeField] private Transform spawnPoint;
+    private Monster fixedPrefab;
+    private BaseMonsterData fixedData;
+    private readonly List<MonsterData> monsterData = new List<MonsterData>();
     private PoolManager poolManager;
     private readonly HashSet<Monster> spawned = new HashSet<Monster>();
     private bool spawningCompleted;
@@ -17,30 +19,72 @@ public class MonsterSpawner : MonoBehaviour
         if (manager == null) throw new ArgumentNullException(nameof(manager));
         ReturnAll();
         poolManager = manager;
+        monsterData.Clear();
+        fixedPrefab = null;
+        fixedData = null;
     }
 
-    public void Configure(int prefabIndex, Transform point)
+    public void Configure(Monster prefab, Transform point, BaseMonsterData data = null)
     {
-        monsterPrefabIndex = prefabIndex;
-        spawnPoint = point;
+        fixedPrefab = prefab;
+        fixedData = data;
+        if (point != null) spawnPoint = point;
+    }
+
+    public void ConfigureMonsters(IEnumerable<MonsterData> settings)
+    {
+        monsterData.Clear();
+        fixedPrefab = null;
+        fixedData = null;
+        if (settings == null) throw new ArgumentNullException(nameof(settings));
+        foreach (MonsterData data in settings)
+        {
+            if (data == null || !poolManager.TryGetPrefab<Monster>(data.PrefabKey, out var prefab) || prefab is BossMonster)
+                throw new ArgumentException($"일반 몬스터 풀 설정을 확인하세요: '{data?.Id}'");
+            if (!monsterData.Contains(data)) monsterData.Add(data);
+        }
+        if (monsterData.Count == 0) throw new ArgumentException("스테이지의 일반 몬스터 목록이 비어 있습니다.");
     }
 
     public GameObject Spawn()
     {
         if (!isActiveAndEnabled || spawningCompleted) return null;
-        if (poolManager == null || monsterPrefabIndex < 0 || monsterPrefabIndex >= poolManager.MonsterPrefabs.Count
-            || poolManager.MonsterPrefabs[monsterPrefabIndex] == null
-            || poolManager.MonsterPrefabs[monsterPrefabIndex].GetComponent<Monster>() == null)
+        if (poolManager == null || (fixedPrefab == null && monsterData.Count == 0))
         {
-            Debug.LogError("PoolManager의 프리팹 인덱스와 루트 Monster 컴포넌트를 확인하세요.", this);
+            Debug.LogError("소환 대상이 없습니다. PoolData에 일반 Monster 프리팹을 등록하거나 보스 프리팹을 지정하세요.", this);
             return null;
         }
         Transform point = spawnPoint != null ? spawnPoint : transform;
-        GameObject instance = poolManager.Rent(poolManager.MonsterPrefabs[monsterPrefabIndex], point.position, point.rotation);
+        BaseMonsterData data = fixedPrefab != null ? fixedData : monsterData[UnityEngine.Random.Range(0, monsterData.Count)];
+        if (data == null)
+        {
+            Debug.LogError("몬스터 스탯 데이터가 전달되지 않았습니다.", this);
+            return null;
+        }
+        GameObject instance;
+        if (fixedPrefab != null)
+            instance = poolManager.Rent(fixedPrefab.gameObject, point.position, point.rotation, false);
+        else
+        {
+            Monster summoned = poolManager.Get<Monster>(data.PrefabKey, point.position, point.rotation, false);
+            instance = summoned != null ? summoned.gameObject : null;
+        }
         if (instance == null) return null;
         Monster monster = instance.GetComponent<Monster>();
-        spawned.Add(monster);
-        monster.Died += OnMonsterDied;
+        try
+        {
+            monster.InitializeStats(data);
+            spawned.Add(monster);
+            monster.Died += OnMonsterDied;
+            instance.SetActive(true);
+        }
+        catch
+        {
+            monster.Died -= OnMonsterDied;
+            spawned.Remove(monster);
+            poolManager.Return(instance);
+            throw;
+        }
         return instance;
     }
 

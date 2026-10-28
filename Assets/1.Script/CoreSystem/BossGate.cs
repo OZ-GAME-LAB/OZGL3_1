@@ -12,10 +12,18 @@ public class BossGate : StageGate, IDamageable
     private const float SummonDelay = 5f;
     private float remainingDurability;
     private Coroutine summonRoutine;
+    private BossMonsterData bossData;
     public bool CanTakeDamage { get; private set; }
     public bool IsOpened { get; private set; }
     public event Action BossDefeated;
     public event Action BossSpawned;
+
+    public void SetBossPrefab(BossMonster prefab, BossMonsterData data)
+    {
+        if (prefab == null) throw new ArgumentNullException(nameof(prefab));
+        bossPrefab = prefab;
+        bossData = data ?? throw new ArgumentNullException(nameof(data));
+    }
 
     public override void Initialize(PoolManager poolManager)
     {
@@ -24,15 +32,13 @@ public class BossGate : StageGate, IDamageable
         if (spawner == null) spawner = GetComponent<MonsterSpawner>();
         if (spawner == null) spawner = gameObject.AddComponent<MonsterSpawner>();
         spawner.Initialize(poolManager);
-        int prefabIndex = -1;
         if (bossPrefab != null)
-            for (int i = 0; i < poolManager.MonsterPrefabs.Count; i++)
-                if (poolManager.MonsterPrefabs[i] == bossPrefab.gameObject) { prefabIndex = i; break; }
-        spawner.Configure(prefabIndex, bossSpawnPoint != null ? bossSpawnPoint : transform);
+            poolManager.PreparePool(bossPrefab.gameObject);
+        spawner.Configure(bossPrefab, bossSpawnPoint != null ? bossSpawnPoint : transform, bossData);
         spawner.AllMonstersDefeated -= OnBossDefeated;
         spawner.AllMonstersDefeated += OnBossDefeated;
-        if (prefabIndex < 0)
-            Debug.LogError("BossGate의 Boss Prefab을 지정하고 PoolManager 목록에도 등록하세요.", this);
+        if (bossPrefab == null)
+            Debug.LogError("BossGate의 Boss Prefab을 지정하세요.", this);
     }
 
     // 일반 게이트 목표 달성은 공격 잠금만 해제하며 상태는 비활성을 유지합니다.
@@ -44,7 +50,7 @@ public class BossGate : StageGate, IDamageable
 
     public override void StartSpawning()
     {
-        if (IsOpened || spawner == null) return;
+        if (IsOpened || spawner == null || bossPrefab == null) return;
         CanTakeDamage = false;
         IsOpened = true;
         GameUI.HUD.ShowBanner("보스 게이트 개방", "5초 후 보스가 출현합니다", SummonDelay);

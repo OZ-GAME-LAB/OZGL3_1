@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "Pool_Monster_Skeleton1",
+    "PoolType": "0",
+    "DataId": "Monster_Skeleton1",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_Monster_Ranged1",
+    "PoolType": "0",
+    "DataId": "Monster_Ranged1",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_Monster_Charge1",
+    "PoolType": "0",
+    "DataId": "Monster_Charge1",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_Monster_Skeleton2",
+    "PoolType": "0",
+    "DataId": "Monster_Skeleton2",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_Monster_Ranged2",
+    "PoolType": "0",
+    "DataId": "Monster_Ranged2",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_Monster_Charge2",
+    "PoolType": "0",
+    "DataId": "Monster_Charge2",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_BossMonster_1",
+    "PoolType": "1",
+    "DataId": "BossMonster_1",
+    "InitialCount": 1
+  },
+  {
+    "Id": "Pool_BossMonster_2",
+    "PoolType": "1",
+    "DataId": "BossMonster_2",
+    "InitialCount": 1
+  }
+]

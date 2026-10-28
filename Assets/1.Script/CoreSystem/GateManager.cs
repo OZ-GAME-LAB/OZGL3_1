@@ -24,7 +24,8 @@ public class GateManager : BaseManager
         return UniTask.CompletedTask;
     }
 
-    public void SetGates(IEnumerable<StageGate> stageGates, BossGate stageBossGate = null)
+    public void SetGates(IEnumerable<StageGate> stageGates, BossGate stageBossGate,
+        IReadOnlyList<MonsterData> monsters, BossMonsterData bossData, BossMonster bossPrefab)
     {
         if (poolManager == null) throw new InvalidOperationException("StageManager에서 PoolManager를 주입해야 합니다.");
         var incomingGates = stageGates == null
@@ -39,12 +40,14 @@ public class GateManager : BaseManager
                 gates.Add(gate);
                 // 스테이지 게이트 등록/초기화 단계에서 구독합니다.
                 gate.Initialize(poolManager);
+                if (gate is Gate normalGate) normalGate.ConfigureMonsters(monsters);
                 gate.Closed += OnGateClosed;
             }
         }
         bossGate = stageBossGate;
         if (bossGate != null)
         {
+            bossGate.SetBossPrefab(bossPrefab, bossData);
             bossGate.Initialize(poolManager);
             bossGate.BossSpawned += OnBossSpawned;
             bossGate.BossDefeated += OnBossDefeated;
