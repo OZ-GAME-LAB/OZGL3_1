@@ -9,16 +9,19 @@ public class MonsterSpawner : MonoBehaviour
     private BaseMonsterData fixedData;
     private readonly List<MonsterData> monsterData = new List<MonsterData>();
     private PoolManager poolManager;
+    private Transform playerTarget;
     private readonly HashSet<Monster> spawned = new HashSet<Monster>();
     private bool spawningCompleted;
     private bool completionNotified;
     public event Action AllMonstersDefeated;
 
-    public void Initialize(PoolManager manager)
+    public void Initialize(PoolManager manager, Transform target)
     {
         if (manager == null) throw new ArgumentNullException(nameof(manager));
+        if (target == null) throw new ArgumentNullException(nameof(target));
         ReturnAll();
         poolManager = manager;
+        playerTarget = target;
         monsterData.Clear();
         fixedPrefab = null;
         fixedData = null;
@@ -49,6 +52,11 @@ public class MonsterSpawner : MonoBehaviour
     public GameObject Spawn()
     {
         if (!isActiveAndEnabled || spawningCompleted) return null;
+        if (playerTarget == null)
+        {
+            Debug.LogError("소환할 몬스터의 플레이어 타깃이 없습니다.", this);
+            return null;
+        }
         if (poolManager == null || (fixedPrefab == null && monsterData.Count == 0))
         {
             Debug.LogError("소환 대상이 없습니다. PoolData에 일반 Monster 프리팹을 등록하거나 보스 프리팹을 지정하세요.", this);
@@ -74,6 +82,7 @@ public class MonsterSpawner : MonoBehaviour
         try
         {
             monster.InitializeStats(data);
+            monster.SetTarget(playerTarget);
             spawned.Add(monster);
             monster.Died += OnMonsterDied;
             instance.SetActive(true);

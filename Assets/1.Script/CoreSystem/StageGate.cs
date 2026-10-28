@@ -28,9 +28,10 @@ public abstract class StageGate : MonoBehaviour
         Deactivate();
     }
 
-    public virtual void Initialize(PoolManager poolManager)
+    public virtual void Initialize(PoolManager poolManager, Transform playerTarget)
     {
         if (poolManager == null) throw new ArgumentNullException(nameof(poolManager));
+        if (playerTarget == null) throw new ArgumentNullException(nameof(playerTarget));
         Initialize();
     }
 

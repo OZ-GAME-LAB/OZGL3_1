@@ -10,6 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6654668028604206911}
   - component: {fileID: 1986617323336968267}
+  - component: {fileID: 1303900462087809273}
+  - component: {fileID: 2297668289024470797}
+  - component: {fileID: 8333539233318773418}
+  - component: {fileID: 1440200918829156783}
+  - component: {fileID: 3030510770451797220}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,5 +49,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8219646797a7e114c8d809b416eb9d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  stageManager: {fileID: 209169231462605206, guid: 2a7143386c0089a4e8da0cf5f6c3eb81, type: 3}
-  gateManager: {fileID: 7899853565566256162, guid: cef0b7d1c3e0c894ab2dddaf3ab36c0e, type: 3}
+  stageManager: {fileID: 0}
+  gateManager: {fileID: 0}
+  poolManager: {fileID: 0}
+  resourceManager: {fileID: 0}
+  dataManager: {fileID: 0}
+  preloadDataKey: 
+--- !u!114 &1303900462087809273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2277815803352081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be0c601bb143d74a9c8d5a8d73f0277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GateManager
+--- !u!114 &2297668289024470797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2277815803352081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed67b1399774d94b95214b85eae6b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageManager
+  stagePrefabs:
+  - {fileID: 7441219851636034096, guid: d5d0b851500be7047b8c8a33c7f666bf, type: 3}
+  - {fileID: 8933158922703630053, guid: f25787ff5573ded4dbb3d3215189eea1, type: 3}
+  stagePrefab: {fileID: 0}
+  stageParent: {fileID: 0}
+  stageNumber: 1
+  clearRank: 1
+--- !u!114 &8333539233318773418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2277815803352081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f84d86f94640968b5cd00632e502ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+--- !u!114 &1440200918829156783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2277815803352081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e54cc54e61d91e4aa183b2b6154e76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataManager
+  monsterDataKey: Data/MonsterData
+  bossMonsterDataKey: Data/BossMonsterData
+  poolDataKey: Data/PoolData
+  stageMonsterDataKey: Data/StageMonsterData
+--- !u!114 &3030510770451797220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2277815803352081826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f467b8c74f5b742bbde996c6e06153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceManager
