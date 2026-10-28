@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using OZ.UI.Contracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -81,6 +81,61 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     {
         UIRequests.NewGame -= ResetForNewGame;
         GameUI.Unbind(this);
+    }
+
+    // ───────────── 저장 / 불러오기 (저장 담당이 부름 — GameSave) ─────────────
+
+    [Serializable]
+    public class SaveData
+    {
+        public int points;
+        public int[] counts = new int[4];
+        public System.Collections.Generic.List<string> otherIds = new System.Collections.Generic.List<string>();
+        public System.Collections.Generic.List<int> otherCounts = new System.Collections.Generic.List<int>();
+    }
+
+    public SaveData GetSaveData()
+    {
+        var d = new SaveData { points = _points };
+        for (int i = 0; i < 4; i++) d.counts[i] = _counts[i];
+        foreach (var kv in _others)
+        {
+            if (kv.Key == null || string.IsNullOrEmpty(kv.Key.id) || kv.Value <= 0) continue;
+            d.otherIds.Add(kv.Key.id); d.otherCounts.Add(kv.Value);
+        }
+        return d;
+    }
+
+    /// <summary>저장값으로 덮어씀. 상점 목록에 없는 아이템 id는 무시</summary>
+    public void LoadSaveData(SaveData d)
+    {
+        if (d == null) return;
+        _points = Mathf.Max(0, d.points);
+        _others.Clear();
+        CancelInvoke(nameof(EndBuffs));
+        for (int i = 0; i < 4; i++)
+        {
+            if (_lastBuff[i] > 0f) { _lastBuff[i] = 0f; BuffEnded?.Invoke(quickItems[i]); }
+            _counts[i] = d.counts != null && i < d.counts.Length ? Mathf.Max(0, d.counts[i]) : 0;
+            CountChanged?.Invoke(i, _counts[i]);
+        }
+        if (d.otherIds != null && d.otherCounts != null)
+            for (int i = 0; i < d.otherIds.Count && i < d.otherCounts.Count; i++)
+            {
+                var item = FindShopItem(d.otherIds[i]);
+                if (item != null && d.otherCounts[i] > 0) _others[item] = d.otherCounts[i];
+            }
+        ShopChanged?.Invoke();
+    }
+
+    ItemData FindShopItem(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return null;
+        foreach (var page in FindObjectsByType<OZ.UI.StatusItemPage>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            if (page.ItemShop != null) foreach (var e in page.ItemShop.entries) if (e?.item != null && e.item.id == id) return e.item;
+        foreach (var keeper in FindObjectsByType<ShopkeeperLink>(FindObjectsSortMode.None))
+            if (keeper.Shop != null) foreach (var e in keeper.Shop.entries) if (e?.item != null && e.item.id == id) return e.item;
+        return null;
     }
 
     // 타이틀 '새 게임': 아이템 포인트·개수를 시작값으로 (플레이어 쪽 스킬·스탯·버프 초기화와 짝)
