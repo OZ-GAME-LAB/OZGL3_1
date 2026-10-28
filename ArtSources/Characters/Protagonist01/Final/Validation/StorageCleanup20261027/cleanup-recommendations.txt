@@ -1,0 +1,84 @@
+실행 완료: 프로젝트 GIF117개와 나머지 폐기 파일659개, 합계776개 삭제. 현재 GIF60개는 외부에 보존하고 SHA256을 재검증했습니다. 구버전·중복 폐기716개와 외부 이관 원본60개를 구분하며 현행·예정 게임 자산은 보존했습니다.
+
+독립 정리감사 결과와 실행 완료 기록
+
+AssetsGUID5893개와 직렬화 참조/C# 경로입력을 확인했습니다. 이 문서의 권고695개는 이후 승인된 정리로 모두 삭제했습니다. 외부 이관과 추가 중복 GIF를 포함한 전체 정리는776개입니다.
+
+LegacyRuntimeCharacterFrames: 636개 / 79,945,787bytes
+Old non-chibi Runtime character review captures include retired Punch,Dead,MagicCast,StaffBasicAttack,SwordBasicAttack. These are output-only preview frames, not animation/model inputs.
+Keep sibling Environment folder and numerical/provenance reports. Update old review webpage to avoid presenting retired actions.
+
+LegacyRuntimeCharacterGIFs: 32개 / 42,957,586bytes
+Same obsolete preview set; superseded by selected Final chibi motions.
+Prefer discarding obsolete copies rather than adding them to the new current-review gallery; root media migration owns actual disposition.
+
+LegacyRuntimeContactSheets: 2개 / 1,067,033bytes
+Contact sheets for superseded Runtime preview actions.
+
+
+RetiredStaffCastReview: 4개 / 382,018bytes
+Retired Staff_Cast_Forward pose review. Current staff geometry and transparency are freshly validated in Stage01Kit/Validation/Review20261027.
+No outside references to StaffOrbReview were found in planning,Final,or Assets authoring. This removes review evidence only; keep all current Staff assets/builders and original Staff.asset authoring input.
+
+MonsterBeforeWeaponAxisReview: 7개 / 2,946,148bytes
+Superseded pre-axis-fix Attack/Move screenshots,GIFs and report; final current monster views are in QA/UnityRendered and Review.
+No code or document input references to this folder were found. Keep current native monster source,Exports,Review,QA/UnityRendered,and QA/Independent.
+
+BlenderAutosaveBackups: 2개 / 4,184,575bytes
+Blender .blend1 backup files superseded by matching current .blend authoring files; no references.
+Ignored local files. Exact target paths only; preserve corresponding .blend files.
+
+OldTemporaryConsole: 1개 / 19,609bytes
+Temporary audit console output; source and structured final audit results retained.
+
+
+DisposableEditorAuditCopies: 7개 / 36,704bytes
+Temporary Editor copies of canonical ArtSources QA helpers. No inbound code references; not runtime scripts.
+All7 disposable audit files were removed after user-approved execution. Canonical QA helpers remain in ArtSources. The existing Editor root folder metadata is retained.
+
+LegacyRuntimeCharacterStillPreviews: 4개 / 2,183,781bytes
+Old Runtime character preview stills and their output capture metadata. Current chibi 18-clip review supersedes them.
+UrbanCharacterCapture.cs writes these as outputs; it does not load them. Do not remove the editor class because UrbanKitSetup.BuildWithReview calls it.
+
+보존
+Assets/Art/Characters/Protagonist01/Runtime
+Actions.fbx and Unarmed.controller are directly referenced by Assets/2.Prefab/Player/Player.prefab and Assets/Anim/Player_Chibi.controller. Remaining source dependencies and authoring tools rely on this family.
+
+Assets/Art/Characters/Protagonist01/ChibiCap_v006
+Actual current player uses Rig.fbx,Fists.asset and Unlit.mat; v007 authoring also requires these.
+
+Assets/Art/Characters/Protagonist01/ChibiMotion_v007
+Selected15clips. Current game controller references8includingTakeoff/Apex/Land. Rise/Fall are not game-connected. All3handmeshvariants andSourceGait required.
+
+Assets/Art/Characters/Protagonist01/Combat
+Selected approved3attackclips/model/rig; planned usage is explicitly protected even without game references.
+
+Assets/Art/Stage01Kit
+Approved planned environment/props/weapons. Original Meshes/Weapons/Staff.asset is read by ChibiStaffOrbBuilder despite current prefab using derivedshaft/orb.
+
+ArtSources/Stage01Kit/SideviewReview/Environment
+Approved environment preview, not obsolete character review.
+
+Assets/Art/CombatVFX_v1
+Deferred VFX sample set; no externalGUID inboundrefs found, but user saidpostpone/do nottouch rather than explicitlydelete. Treat as on-hold planned work, not confirmedretired.
+
+ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ComparisonReference.blend
+Read by monsterTools/build_monster.py, staticcomparison dependency.
+
+ArtSources/Characters/Protagonist01/Final/Validation/Review20261027
+Canonical QA evidence and source helper copies. Historical baseline images prove retouch comparisons; externalGIF migration can relocate their media without deleting all evidence.
+
+ArtSources/Monsters/Stage01/Melee01/v001-native-motion/SourceAssets
+Native KayKit source and licenses are current import/provenance dependencies; unusedembeddedactions are not obsolete standalone files.
+
+Assets/Art/Stage01Kit/Editor
+Cross-calling authoring classes remain connected via UrbanKitSetup.Build; deleting only old-looking Sideview classes would break compilation.
+
+ArtSources/Stage01Kit/research
+Most structured forensic data documents retainedhand/Staff geometry and should stay. Only explicit .tmpconsole is disposable.
+
+
+현머지 문서 교정
+Player.prefab은 Runtime/Protagonist01_Visual.prefab을 직접참조하지 않습니다. v006 Rig/Fists/Unlit와 Runtime Actions/Unarmed Controller를 사용합니다.
+사용중 v007클립8개: Hit_Reaction,Walk_Fists,Idle_Fists,Dash_Forward,Jump_Apex_Loop,Jump_Takeoff,Jump_Land,Run_Fists. Rise/Fall은 현재게임컨트롤러참조없음.
+selection.json/build_catalog.py runtimeIntegrated:false는 global상태로해석하면부정확합니다. runtimeIntegrationChangedThisTask:false, existingGameClipReferences8, newAirborneClipsIntegrated:false로구분권장.

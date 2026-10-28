@@ -1,7 +1,11 @@
 주인공 최종 사용 자산
 
 확정 선택: 최신 검 공격 3종 + 기존 v007 비공격 모션 15종.
-승인된 모션을 새로 생성하거나 다시 수정하지 않았습니다.
+2026-10-27 후속 요청: Jump_Rise_Loop(0.8초), Jump_Fall_Loop(1.0초)를 작은 균형 움직임이 있는 공중 루프로 교체했습니다.
+기존 점프 시전·착지·정점·Jump_Full 및 다른 선택 클립 16개는 그대로 유지했습니다.
+최신 공중 동작과 연결 미리보기: Review/Airborne/index.html의 외부 갤러리 링크. 기존 Jump_Full에는 새 두 루프가 삽입되지 않았습니다.
+GIF의 기본 저장소는 프로젝트 밖의 ~/Desktop/OZGL3_ArtReview입니다. OZGL3_ART_REVIEW_DIR로 다른 외부 위치를 지정할 수 있습니다.
+현재 GIF60개를 외부에 보존하고 해시를 재검증했습니다. 승인 요청 모드에서 프로젝트 GIF117개와 나머지 폐기 파일659개의 삭제를 완료했습니다. 현재 갤러리에서는 외부본을 사용합니다.
 2026-10-27 전체 검수에서 공격 모델의 팔꿈치 주변 스킨 가중치만 제한적으로 보정했습니다. 애니메이션 곡선, 관절, 검과 손의 움직임은 유지했습니다.
 
 사용 파일
@@ -13,7 +17,7 @@
 
 원본
 - Model: 텍스처와 24본 리그가 내장된 기존 chibi 모델 GLB, 콘셉트와 생성 출처.
-- LegacyMotions: 승인된 기존 15종 GIF, 선택 목록, 모션 길이와 Unity 파일 해시, 필요한 제작 기록.
+- LegacyMotions: 승인된 15종의 선택 목록, 모션 길이와 Unity 파일 해시, 필요한 제작 기록. 현재 GIF는 외부 저장소의 같은 상대 경로에 있습니다.
 - Combat: 승인된 공격 3종만 담은 편집 가능한 Blender 파일, 텍스처, CC0 라이선스와 검증 기록.
 - Combat/SkinWeights: 팔꿈치 보정 전후 영향도와 Unity 메시 갱신에 사용하는 확정 데이터.
 
@@ -35,3 +39,6 @@ Validation/cleanup-result.json: 실제 삭제한 대상과 파일 수/용량.
 Validation/preservation-result.json: 선택 자산과 기존 필수 파일 보존 검사.
 Validation/guid-validation-current.json: 정리 후 Unity 참조 검사.
 Validation/Review20261027: 이후 실시한 전체 프레임·다시점 검수와 팔꿈치 보정 기록. 앞의 정리 시점 해시 증거와 구분해서 사용해야 합니다.
+Validation/Airborne20261027: 후속 상승·낙하 루프 수정과 검수 기록. 앞의 전체 검수는 이번 두 클립 수정 전의 역사적 기록입니다.
+Validation/StorageCleanup20261027: 머지 후 사용 의존성, 외부GIF복사검증, 실제 삭제776개와 최종 보존·참조 검증 기록.
+현재 팀원 작업에서 Player_Chibi.controller는 기존 v007모션8개를 참조합니다. 이번 Rise/Fall2개는 게임 컨트롤러에 연결하지 않았습니다.

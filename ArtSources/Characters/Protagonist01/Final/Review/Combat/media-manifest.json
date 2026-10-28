@@ -1,5 +1,5 @@
 {
-  "method": "Actual Unity corrected Combat prefab captures sampled at 60Hz, every second image encoded at 30fps; no artificial hold. A fixed palette per GIF prevents palette flicker. Slow versions double the same frame durations. Legacy15 GIFs are unchanged.",
+  "method": "Actual Unity corrected Combat prefab captures sampled at 60Hz, every second image encoded at 30fps; no artificial hold. A fixed palette per GIF prevents palette flicker. Slow versions double the same frame durations. This combat producer does not change locomotion clips.",
   "files": [
     {
       "file": "Review/Combat/Longsword_Attack_Chop_Side.gif",
@@ -61,5 +61,13 @@
       "durationMs": 1400,
       "sourceRevision": "2026-10-27 actual Unity corrected Combat prefab"
     }
-  ]
+  ],
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false,
+    "relativeBase": "Characters/Protagonist01/Final"
+  }
 }

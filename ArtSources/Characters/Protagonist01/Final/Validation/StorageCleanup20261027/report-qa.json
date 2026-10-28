@@ -1,0 +1,231 @@
+{
+  "operation": "edit-existing-docx-and-markdown",
+  "updatedAt": "2026-10-27T08:17:13.342738+00:00",
+  "reports": [
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\planning\\Art_Assets_Provenance_and_QA_2026-10-27.docx",
+      "sha256": "31370ea1c4cd17682067b625f08c5cbad8718a0479d39e1dca15e2f80392b37d"
+    },
+    {
+      "path": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\planning\\Art_Assets_Provenance_and_QA_2026-10-27.md",
+      "sha256": "b80e2b3f0fec4475eaeca83ad436001a7c877a8a3d16f1c7a989ac9d04273e6f"
+    }
+  ],
+  "rendering": {
+    "primaryRenderer": "packaged render_docx.py",
+    "primaryResult": "FileNotFoundError: LibreOffice soffice.exe was not found on PATH",
+    "diagnostic": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Logs\\ArtCleanup20261027\\renderer-diagnostic.log",
+    "fallback": "existing hidden Microsoft Word COM export, bundled pypdfium2 PNG rendering",
+    "systemLibreOfficeUsed": false,
+    "pdf": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\Logs\\ArtCleanup20261027\\ReportPages\\Completed\\report-completed.pdf",
+    "pdfSHA256": "786dfea7d3649b5e8c82c849bf476bcb1224b44c53fb75515750fab47fd4108e",
+    "pageCount": 13,
+    "pagesVisuallyInspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "visualResult": "All final pages reviewed: no clipping, overlaps, broken glyphs, or blank pages; continued tables repeat headers.",
+    "layoutAdjustment": "Removed only the forced page break before section 3; retained existing styles, tables, margins and fonts."
+  },
+  "artifactEditMarker": {
+    "successfulCalls": 1,
+    "operationKind": "edit",
+    "expectedOutputCount": 1,
+    "outputFormat": "docx"
+  },
+  "contentChecks": {
+    "markdownDocxTablesIdentical": true,
+    "riseDurationMatchesDelivery": true,
+    "fallDurationMatchesDelivery": true,
+    "unchanged16ClipsDocumented": true,
+    "threePass654Poses306ImagesDocumented": true,
+    "external60CopiedVerified": true,
+    "project117Removed113Tracked4NewDocumented": true,
+    "obsolete57Gif636FramesAnd776DeletedDocumented": true,
+    "all776ListedProjectFilesAreAbsent": true,
+    "all60ExternalCopiesStillMatchSHA256": true,
+    "unsupportedAutomaticApprovalAttributionRemoved": true,
+    "mergeFb71492dAndNoGameplayAppliedDocumented": true,
+    "allLocalLinksExist": true,
+    "finalPageRendersExist": true
+  },
+  "tableCount": 7,
+  "localLinks": [
+    {
+      "label": "selection.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/selection.json",
+      "exists": true
+    },
+    {
+      "label": "외부 모션 갤러리",
+      "target": "file:///C:/Users/me/Desktop/OZGL3_ArtReview/Characters/Protagonist01/Final/Review/index.html",
+      "exists": true
+    },
+    {
+      "label": "아트 의존성 검사",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/asset-dependencies.json",
+      "exists": true
+    },
+    {
+      "label": "generation.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Model/Provenance/generation.json",
+      "exists": true
+    },
+    {
+      "label": "authoring-dependencies.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/LegacyMotions/authoring-dependencies.json",
+      "exists": true
+    },
+    {
+      "label": "LegacyMotions/manifest.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/LegacyMotions/manifest.json",
+      "exists": true
+    },
+    {
+      "label": "Combat/clips.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Combat/clips.json",
+      "exists": true
+    },
+    {
+      "label": "공중 동작 미리보기",
+      "target": "file:///C:/Users/me/Desktop/OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Airborne/index.html",
+      "exists": true
+    },
+    {
+      "label": "nonhero-source-inventory.json",
+      "target": "../ArtSources/Stage01Kit/Validation/Review20261027/nonhero-source-inventory.json",
+      "exists": true
+    },
+    {
+      "label": "source-retouch-receipt.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Combat/source-retouch-receipt.json",
+      "exists": true
+    },
+    {
+      "label": "unity-skin-regression.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Combat/unity-skin-regression.json",
+      "exists": true
+    },
+    {
+      "label": "delivery-verification.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/delivery-verification.json",
+      "exists": true
+    },
+    {
+      "label": "hero-audit.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/hero-audit.json",
+      "exists": true
+    },
+    {
+      "label": "independent-secondary-visual-review.json",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/independent-secondary-visual-review.json",
+      "exists": true
+    },
+    {
+      "label": "상승 낙하 검수 기록",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/README.txt",
+      "exists": true
+    },
+    {
+      "label": "저장 클립 수치 검사",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/unity-review.json",
+      "exists": true
+    },
+    {
+      "label": "최종 보존과 전달 검증",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/delivery-verification.json",
+      "exists": true
+    },
+    {
+      "label": "환경 시각 검수 기록",
+      "target": "../ArtSources/Stage01Kit/Validation/Review20261027/visual-review.json",
+      "exists": true
+    },
+    {
+      "label": "수치 요약",
+      "target": "../ArtSources/Stage01Kit/Validation/Review20261027/numerical-summary.json",
+      "exists": true
+    },
+    {
+      "label": "GIF 정리 계획",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-plan.json",
+      "exists": true
+    },
+    {
+      "label": "외부 복사 검증",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-copies-verified.json",
+      "exists": true
+    },
+    {
+      "label": "폐기 파일 목록",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/obsolete-files-approved-plan.json",
+      "exists": true
+    },
+    {
+      "label": "정리 결과",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/cleanup-status.json",
+      "exists": true
+    },
+    {
+      "label": "최종 선택 18개",
+      "target": "../ArtSources/Characters/Protagonist01/Final/selection.json",
+      "exists": true
+    },
+    {
+      "label": "모델 생성 기록",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Model/Provenance/generation.json",
+      "exists": true
+    },
+    {
+      "label": "기존 동작의 파일별 해시와 외부 GIF 대응",
+      "target": "../ArtSources/Characters/Protagonist01/Final/LegacyMotions/manifest.json",
+      "exists": true
+    },
+    {
+      "label": "상승 낙하 후속 검수와 보존",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/delivery-verification.json",
+      "exists": true
+    },
+    {
+      "label": "기존 동작의 제작 의존성",
+      "target": "../ArtSources/Characters/Protagonist01/Final/LegacyMotions/authoring-dependencies.json",
+      "exists": true
+    },
+    {
+      "label": "공격 동작의 원본 이름과 길이",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Combat/clips.json",
+      "exists": true
+    },
+    {
+      "label": "공격 원본 출처와 해시",
+      "target": "../ArtSources/Characters/Protagonist01/Final/Combat/Provenance/source-provenance.json",
+      "exists": true
+    },
+    {
+      "label": "환경과 몬스터 출처 목록",
+      "target": "../ArtSources/Stage01Kit/Validation/Review20261027/nonhero-source-inventory.json",
+      "exists": true
+    },
+    {
+      "label": "몬스터 원본 출처",
+      "target": "../ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Research/source-provenance.json",
+      "exists": true
+    }
+  ],
+  "actualDeletionsThisTask": 776,
+  "obsoleteFilesDeleted": 716,
+  "currentGIFOriginalsMovedOutsideProject": 60,
+  "cleanupValidation": "Independently read approved file lists: all 776 project paths absent; all 60 external GIF copies still match stored SHA256. No deletion operations performed by report agent.",
+  "scope": "Only planning report pair edited; QA helpers and render outputs under Logs. No git commits or pushes by report agent."
+}

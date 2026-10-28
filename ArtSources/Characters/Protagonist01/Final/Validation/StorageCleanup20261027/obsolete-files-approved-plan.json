@@ -1,0 +1,3302 @@
+{
+  "workspace": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1",
+  "expectedFiles": 659,
+  "purpose": "Remove confirmed obsolete preview frames, superseded review files, Blender backup files and disposable Editor audit copies; preserve all runtime and planned assets.",
+  "files": [
+    {
+      "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/WeaponAxisBefore/Attack_Contact.png",
+      "sha256": "fc6546470b57bec051dd3e4f8ee476b9a5533fa506a8e89e4da3e30869d6d2f8",
+      "bytes": 106171
+    },
+    {
+      "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/WeaponAxisBefore/Move_Contact.png",
+      "sha256": "c45149730434d9c3614f8b49ae3db5b1bc2c4ad8a2d9d62998e8ac4859742454",
+      "bytes": 174659
+    },
+    {
+      "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/WeaponAxisBefore/report.json",
+      "sha256": "97f5e2faf40547fdee44e5474189891d218eca86721e93e93e269216ea37b4d7",
+      "bytes": 5616
+    },
+    {
+      "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Review/SideBySide.blend1",
+      "sha256": "a3bc9aea590105de4cac1887108327282a60af6acd55e32e345654007d4a70a8",
+      "bytes": 3610566
+    },
+    {
+      "path": "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Stage01_Melee01.blend1",
+      "sha256": "e1fe1602791fbd270ae676bc74330c647bb06b38a429f13ea33badb9fd5aa0c6",
+      "bytes": 574009
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/004.png",
+      "sha256": "ae5c32c4eddd30f6b926a0c82436482efab2aa171c42ecee28e70c3977ec4ef7",
+      "bytes": 130410
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/005.png",
+      "sha256": "0848e77f17ddde092965ca552303fb8d17c76b5649de2c6639218018afaa90bb",
+      "bytes": 124495
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/006.png",
+      "sha256": "bb399fe686a99e5bc78777388678b2e6a2c7527521a5242f53d5bb4574ce823b",
+      "bytes": 130529
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/007.png",
+      "sha256": "4474239bf005437e059f9ca9cc10cc8841d6dcd4c563167a66d641500c7f149a",
+      "bytes": 140813
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/008.png",
+      "sha256": "d39b5fae6d1fd69052419c36e03239ebb731a6e020248930b4ee0398fd5ec251",
+      "bytes": 141270
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/009.png",
+      "sha256": "01cb39d389e0dd8ccf81aa6c798c1b49b1c448e9c49f25eea6e862f4a744aef9",
+      "bytes": 141302
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dash/010.png",
+      "sha256": "212060fce51fb9cfaded410f50b5bf00486245ade19158255d8004dba1a976fe",
+      "bytes": 141660
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/004.png",
+      "sha256": "dd75e7707b41d3e7dfa80207e7eb91c5ed2c006abec9d77c15b10f5c8b2980cd",
+      "bytes": 133142
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/005.png",
+      "sha256": "bd5ef91ea5b866fb083c5ba8b9b28fc279f6a05178395df9ac83faa14ad0ddb1",
+      "bytes": 133740
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/006.png",
+      "sha256": "22c169f3493c20029ad18a2675510870f33af254c3502fab971bfe205e7049c4",
+      "bytes": 132954
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/007.png",
+      "sha256": "f7854ba897e865218aba35fa2b8f6fb36e031d8c821b76663e32491457f81103",
+      "bytes": 132971
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/008.png",
+      "sha256": "1e75851508daffed16a626c126ee2715ef6c1ac73b656ce60caf7e908db5e340",
+      "bytes": 133497
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/009.png",
+      "sha256": "108af9f874c3975ee091b6d99db20a764acbea5b2f62a2ad9c13963a01111c13",
+      "bytes": 133489
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/010.png",
+      "sha256": "113292ea51d46c1c4f0935ea78e7cf464511ac0b6af51dc5743dea4ca7d1609f",
+      "bytes": 132947
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/011.png",
+      "sha256": "56e2be32056e21b5324921ea56e16a0940ff82195e8e7a0b5c91685cb7f59164",
+      "bytes": 132318
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/012.png",
+      "sha256": "578b736ae23f446b1c7202377d35e875d4611911411fbe678ebaa31776fd527e",
+      "bytes": 132428
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/013.png",
+      "sha256": "aeca41c090c42743290c41e60e618fa9bf2f92ad6062456f693bf9aa55a1b5d2",
+      "bytes": 131617
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/014.png",
+      "sha256": "cbcc5e694a729dadd5101fcc4b0bf3bbc5c35912bd552604730ba2119b9b399b",
+      "bytes": 132276
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/015.png",
+      "sha256": "7756bb836ac1928e6951b5661d2cd85ef44e6a983925f37bc74ba4bf88314da7",
+      "bytes": 131768
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/016.png",
+      "sha256": "3ef1aeebdcc1ba205eb0d8572f79fd336e01b2c09b7ee653629606e6a360654a",
+      "bytes": 131952
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/017.png",
+      "sha256": "8810be2c9570cca732eb8c564574100b9be27d78991ac9669a049d609f7316b0",
+      "bytes": 131709
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/018.png",
+      "sha256": "88a1d270eec0ed45fd424452467fd8150c2e7e9cc52f689f43931dc89b930317",
+      "bytes": 131637
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/019.png",
+      "sha256": "553f602234f1ce495e0b875251bc9619110e38453efa75d10d8a371094445880",
+      "bytes": 131157
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/020.png",
+      "sha256": "5869b82b906e4d769334c08c5a3b2248580596522ff11963a72d6de4c973f81e",
+      "bytes": 131201
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/021.png",
+      "sha256": "606babac55ac8b4111026ee9af0054ad23d8705f7125d87f07ffa3ee39f0ae40",
+      "bytes": 130929
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/022.png",
+      "sha256": "7235ab458766ecf77a8c939ed01bfcf17413ef9222d1e86ab7c47ba94d92f37b",
+      "bytes": 130724
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/023.png",
+      "sha256": "9368af9893831b65a041a1fad3175aee81b6905f0b505adc29cd3933d69a2a27",
+      "bytes": 130880
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/024.png",
+      "sha256": "97a3dcf27bb5b9c0436326d73f0680ca548aaf303fb5251a913eac87b7c1c620",
+      "bytes": 131207
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/025.png",
+      "sha256": "055a26ab41a582cf6ef2403863fb36adbb95c6e53f4ed0b26a67e4262bd2f40c",
+      "bytes": 131163
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/026.png",
+      "sha256": "5f48c9b0a5886069d0c79c803a295955b983819d2e244f8c44350886161a17bc",
+      "bytes": 131057
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/027.png",
+      "sha256": "8e9ff7b61dd724c837ff93e7b259caf80e98d308b07583d78ff60bdd28de0c7d",
+      "bytes": 131495
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/028.png",
+      "sha256": "320237c77371e30683da77bea90a2f0b387cfab1d09e1601b4799dd9c37f67c6",
+      "bytes": 131838
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/029.png",
+      "sha256": "b013b4dd97d4f7aa3911724073bb47f298f5a5f25c6a5c4722f82e8525beb8cd",
+      "bytes": 132365
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/030.png",
+      "sha256": "066087396b9a9d359d553189e3866b49b5ff7d746f5e65208300726992794dbb",
+      "bytes": 131791
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/031.png",
+      "sha256": "9a70e60b00182d5dbc0df325ff3dc6d9dabb3306b2a0c7e0121dfa008ca89bb0",
+      "bytes": 130846
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/032.png",
+      "sha256": "3362860485206853e404e68c4c574db3a4fe91d22a6d760ae11440d659ec9ae0",
+      "bytes": 131042
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/033.png",
+      "sha256": "f01b9f463a6ae245ca367e35a149aa032f5ddfa5ae470cd369d514d6d8fcb52d",
+      "bytes": 130403
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/034.png",
+      "sha256": "42657719f95eda3a6cabf165c0d129c1b9af2bf2307405218b8f1a71e4bacc82",
+      "bytes": 129559
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/035.png",
+      "sha256": "7c45a4c94fcd7745b953ce934e11f0feb52dd31651e7c490e8743ae1bb182185",
+      "bytes": 128811
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/036.png",
+      "sha256": "40583e7a40385b3c682d776c3f9cbc7744f4aee15f175406450e00433750a28c",
+      "bytes": 128051
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/037.png",
+      "sha256": "b474c8cccadc799020c7c16bce5ebc6fc35f73d5e51d0bf4cbf814cb3a500a66",
+      "bytes": 126066
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/038.png",
+      "sha256": "b36c1ddc071ecb893820cd04f49098e85f09f804e1864b43f0aa3c459beff527",
+      "bytes": 124884
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/039.png",
+      "sha256": "167779702a74668108264aa4e919afc4c4070069093902ceb2e5c86ee0348945",
+      "bytes": 125003
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/040.png",
+      "sha256": "f52f67ee2123d493d21dcb05eafe1ac4487dfe6a1c657a0cc8cf63a6bcf529a1",
+      "bytes": 125140
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/041.png",
+      "sha256": "b7fe073c997d0db31bab149f714b27972f2c17135f6d05301587126fbc3e68a8",
+      "bytes": 124412
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/042.png",
+      "sha256": "1e5e897d6a3fb0f208ba4b430161034c91296ff3ad0643d4cb3e3f43645700c3",
+      "bytes": 124153
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/043.png",
+      "sha256": "443619c872baf008e6e5604271f38e1977b3c5a90c8dd5762cc8d9934f8a1745",
+      "bytes": 124149
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/044.png",
+      "sha256": "ae6fbb2c0574373ae910be86df4603bed4aafa4f52006127e910251b66611de9",
+      "bytes": 124428
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/045.png",
+      "sha256": "4c66a7b6bdc619416842c8cf44959662b98af695aefc83ccb885f02998af2550",
+      "bytes": 124335
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/046.png",
+      "sha256": "9705c85dd5091d16304ca02afb2a2ba3a303f26395ad72ca8650caf134b0859b",
+      "bytes": 124372
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/047.png",
+      "sha256": "1b35b9a83fb30b977d6dec7ff6b946b7ee91bc4a435c18031e77e821057fb6bf",
+      "bytes": 121442
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/048.png",
+      "sha256": "5207a23bd3b805cad02a80071a18f9a4757f1d9e6a688e20f264aebe603b1da7",
+      "bytes": 121665
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/049.png",
+      "sha256": "376a48ff827a90989442bea2f716edf849d559955fe731fb24f21f78b30f92ac",
+      "bytes": 121904
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/050.png",
+      "sha256": "f64957638e79346f2d5b425735fb9a2496316663feda48fef6a368816894597e",
+      "bytes": 121407
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/051.png",
+      "sha256": "2edbf4e8772bb0a5d428363d2ff5d45db5c4ab46e843af85e2bd6f6362c38bb8",
+      "bytes": 120938
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/052.png",
+      "sha256": "8927927db919072ccb0c10b39f885c6abfa766021ad9d034f6d473b61fb3f644",
+      "bytes": 120973
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/053.png",
+      "sha256": "b4fcd6fe2fa8ff39278f9dcf1bdd206f87d7dc8f91c145909fecf598737e7b0d",
+      "bytes": 121111
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/054.png",
+      "sha256": "31b1e48430990cbe2ce3e2181a9b6f996db9281b607c2ec2d9c0214213f50011",
+      "bytes": 121184
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/055.png",
+      "sha256": "149c58b8fee3c385b461728ce37ff7537eab6d53948c31b9114edf922ad4ea91",
+      "bytes": 121368
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/056.png",
+      "sha256": "23537a631273b17ec82df99ce19a92b8e99981af5a4e84f79a603e775876042b",
+      "bytes": 121307
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/057.png",
+      "sha256": "9bad2b6168f729690ee59f579d5e5ad04c80acf698a86a1f41143c18ddf6986b",
+      "bytes": 121411
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/058.png",
+      "sha256": "5ee9a044e12bd511f04474710d4b75eacb3b6444db936a55f2cc696e8da600c8",
+      "bytes": 121402
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/059.png",
+      "sha256": "ed1036ca9ac0e625594880b6ddf548d38302262ed24752afcce306050cb62857",
+      "bytes": 121375
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/060.png",
+      "sha256": "77721de564e8a05ce2b8f781a340128cf380309a3af96eca3b708919e539b15f",
+      "bytes": 121146
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/061.png",
+      "sha256": "77721de564e8a05ce2b8f781a340128cf380309a3af96eca3b708919e539b15f",
+      "bytes": 121146
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/062.png",
+      "sha256": "77721de564e8a05ce2b8f781a340128cf380309a3af96eca3b708919e539b15f",
+      "bytes": 121146
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Dead/063.png",
+      "sha256": "77721de564e8a05ce2b8f781a340128cf380309a3af96eca3b708919e539b15f",
+      "bytes": 121146
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/004.png",
+      "sha256": "9db265660c1f5cdec35de80ce1ff3b2d10c97e18ddba87a2ae9d3cac45cdbc51",
+      "bytes": 128219
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/005.png",
+      "sha256": "914eb41c269f0d57eaf75c15644fd8535fd229c84fab21031747e7f470c2c92f",
+      "bytes": 128584
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/006.png",
+      "sha256": "0ab550ccf0f42d5c26a491c0dfe0c875259539ae530f4a94636e8d2d17dd977c",
+      "bytes": 128557
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/007.png",
+      "sha256": "e5f8e90099b09623300ca41920151b474759d95794dc2640744c51f1ee4436dd",
+      "bytes": 128804
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/008.png",
+      "sha256": "1bc50fd2e017ca5493857235af053bdc45df6a85bccd384d7811930d98d8025c",
+      "bytes": 128186
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/009.png",
+      "sha256": "9a7c01e82861ef9cb66aca65a395daf0bebd316b8ecc3a20e984319caacf34b1",
+      "bytes": 127902
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/010.png",
+      "sha256": "a29a34e5f72287e0205c217928c67a847116e8b924ff49bae0dbbc689340f283",
+      "bytes": 127417
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/011.png",
+      "sha256": "69a963fefbe4727243eb55beb4aba522169af1f162b4719b7c2018e5cbb62562",
+      "bytes": 127993
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/012.png",
+      "sha256": "e220cbf2f36254dbcff046db49e3d36b6b03535e6aaad7f3ec2aefd2e3a77cfe",
+      "bytes": 127322
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/013.png",
+      "sha256": "9904732bf1f835475760690550916fddc38066f671ed4bade07b908599c19b19",
+      "bytes": 127721
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/014.png",
+      "sha256": "10bd32368cdbd92ad0285e5f2f8fab4524127b825d6f590e93e738b32e1dece9",
+      "bytes": 127965
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/015.png",
+      "sha256": "03a0c27550d9094628aeeb1b2a12418fb8b97799c9c3ae7edc61b01d50dd55bd",
+      "bytes": 127596
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/016.png",
+      "sha256": "5630f8655a77535b78334a2965ef090189c35a29459027b235700430776d95bf",
+      "bytes": 127572
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/017.png",
+      "sha256": "c7d45d5f1e6cb279cf47ba2c382bf5a5864b2eafd5389aacbcb60735802ec678",
+      "bytes": 127170
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/018.png",
+      "sha256": "d4b9f3814f405a4b2903cb69c060bb808fba1b925ae87d727233b22ff1c03181",
+      "bytes": 127317
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/019.png",
+      "sha256": "7e624a9b89ddba6bb6a3eb2498c7c0269c7e887a7abf1bf638964fde517b1643",
+      "bytes": 127900
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/020.png",
+      "sha256": "1f7a3f5f9ad7c5398818d4b60b7f2b8829c18ba812320882356226eeb52ce9bc",
+      "bytes": 128091
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/021.png",
+      "sha256": "cd406fbcfe2be7cad6065a3abd003d5bda9cea96249b64d84bb9500fdf88a15e",
+      "bytes": 127875
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/022.png",
+      "sha256": "d205d28e4dd739fdf6e72de8ec23c5bbf6e779b385b11817aa6b055b062cb4ab",
+      "bytes": 128377
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/023.png",
+      "sha256": "93cc13e54bec80fa71a7b1a108bd1c2634c60578edd8fb4be087e489671be4ee",
+      "bytes": 128090
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/024.png",
+      "sha256": "6fc8debee1fc53c6a5d19b09f9fa1383dc2ee29349806b7c61b84b3ff457b62f",
+      "bytes": 127955
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/025.png",
+      "sha256": "1b4dbb74def22d45d92a7fceea17c477863be0b1d54e3890ef0c862f8b678cd1",
+      "bytes": 128026
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/026.png",
+      "sha256": "bf0f5d6837cb776425761e343c322e95c1309f8f009102c07f7869095aa961d4",
+      "bytes": 131240
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/027.png",
+      "sha256": "ff7ae5aa404597088a98a244b42c8b3cf86f12049c6e27c21ccf3a3451bb9839",
+      "bytes": 131269
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/028.png",
+      "sha256": "5ce06b05dfd146625b3c100cb330ff4c42c0b7d894167d96f226d44d435a2c4d",
+      "bytes": 132021
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink/029.png",
+      "sha256": "f5687fc76431e91556219a04336a7bf257b88882f5208e5f8040d4e7c60ff010",
+      "bytes": 132234
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/000.png",
+      "sha256": "c61eb48fd571fa09fe2c0d1615ace3b7b1d4871560d1d00c377d5d60c30d13f4",
+      "bytes": 134263
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/001.png",
+      "sha256": "c2a53478fbb3865324f658d3d8a961ff7181ce5e0a7c298450335cb70ca77f9a",
+      "bytes": 134016
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/002.png",
+      "sha256": "36909451ed64ffaaedce7f4de515c2fdf877aa48d548ead226de10d1547e306f",
+      "bytes": 134371
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/003.png",
+      "sha256": "5429bc2974a753425d1a0dff7763dccf2951f1a174fe5d5a9e7a2f399a5265d9",
+      "bytes": 134307
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/004.png",
+      "sha256": "7fb2638d89c735dac8ce03655a21b0cde908bb349f8830b6a18c23b24c60f4f2",
+      "bytes": 132900
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/005.png",
+      "sha256": "4d3f5816d42882e9ef071419c6357675dcbfb9708c562c9085a544b97b96f894",
+      "bytes": 132501
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/006.png",
+      "sha256": "ca9f013293735531abddafc9aa2e38b7f0a117f1e9cf1b521cc1008d49085c45",
+      "bytes": 132221
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/007.png",
+      "sha256": "9691c05eabe8d8adeb78c92fa7172571733873b3e44991ff1a84e9b8c773f750",
+      "bytes": 132139
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/008.png",
+      "sha256": "0aa5adc1b8a69b8cf234df15664a852e0ff7fb9071b70bf797b2f7511d02c29d",
+      "bytes": 131634
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/009.png",
+      "sha256": "36262072f0ad66570b28434d22959616050364642785b9c5f7f9633364e05796",
+      "bytes": 131591
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/010.png",
+      "sha256": "a418435108b1f876e40ade84a9838cc9518329c7e031865d145ed7b0b18f48e7",
+      "bytes": 131805
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/011.png",
+      "sha256": "d390a178e79967f5b455dcabe3b7526a8db6dd39770f7a83dd681afa8f7ed613",
+      "bytes": 131718
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/012.png",
+      "sha256": "940e29db4f8a16b2997e0438e86a8f3cd4b553168e276976b0be09e674076877",
+      "bytes": 131491
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/013.png",
+      "sha256": "f2bbf24a752a4f15df56d9581957d435d60373026d1d147aec6305ee8b297214",
+      "bytes": 131749
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/014.png",
+      "sha256": "ef0fe6ddb7edccd37c063ed39ebb6706fd4ba88912cceecd0b123758cf262060",
+      "bytes": 131635
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/015.png",
+      "sha256": "29f4289ce5eea56c2683ec33989d4ac75b307d6fb3dc4039966e1a81f635267c",
+      "bytes": 131726
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/016.png",
+      "sha256": "16b24c311548978030db1c3c0db38c1c4af388b29a3058e4a9cdf7030d39de28",
+      "bytes": 131831
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/017.png",
+      "sha256": "f573f1f93b37d77e00cd32c0468f98f05bce0e639636d3d35855e968a187984f",
+      "bytes": 131973
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/018.png",
+      "sha256": "354c7272f811045786b950ce49d7b4d085bdb43dd936c25a611ab9457d617a75",
+      "bytes": 132325
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/019.png",
+      "sha256": "11e8adcc7b1f7229efb23e3c93c0affe9e3bebf6ced92c2f3baffb0f3cfe7c53",
+      "bytes": 132896
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/020.png",
+      "sha256": "46d9221b4742525b67d676ef0aa3f73c802de2477fee2a37ea98dee7baa1639f",
+      "bytes": 132855
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/021.png",
+      "sha256": "01a9b77152c047c8893c35fa157fa324e3d95012269b0774d3cafc7ecedf2636",
+      "bytes": 133100
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/022.png",
+      "sha256": "81172b950fd97a78216c184997c54db2af91e61b1bd58739d30ac696542ce66d",
+      "bytes": 133140
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/023.png",
+      "sha256": "348e64f131d0b0b3f6307d722cdf06d93041b18aac377b34faf12d7dffaf8df7",
+      "bytes": 132668
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/024.png",
+      "sha256": "6880a6d183ae3573d1e0fbc455c0c6580eb554e4588d76eccff38a97f3e7a1b2",
+      "bytes": 132439
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/025.png",
+      "sha256": "1d175941ee81a2e895bf851617844ec6cd7f526c020787e26612c88382bf0c6c",
+      "bytes": 132489
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/026.png",
+      "sha256": "3313fbece82d81c3b74247950ccabd20ece908d3b652d0ce8762e4909fe4b350",
+      "bytes": 133995
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/027.png",
+      "sha256": "f669603d4added203e0c02d22ebe323cdc37209f2deb5d682a50c9dbd6f42cf7",
+      "bytes": 134244
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/028.png",
+      "sha256": "0b90a616b2a2ef2063a24ff93c201485440cb1c44563a431e81c88d5dfde9647",
+      "bytes": 134294
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Drink_Left/029.png",
+      "sha256": "43d3b54022ebbb89c2af9330b7c1935fe91cd730e88840feb24cecb6bbc8eded",
+      "bytes": 134265
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/004.png",
+      "sha256": "88519eb8265a88aa868de0e943a3cc7e04b731dc86f00c1f0076a1f79c9acdd6",
+      "bytes": 129491
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/005.png",
+      "sha256": "11860996bbf7cf3379bbdece596a8a5effaed25e1a98630c0929a2043a6ba7df",
+      "bytes": 128548
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/006.png",
+      "sha256": "ab78436e89d7c21b39b7a49cb7da30fb4f9e6f27d628e40443423124135620b5",
+      "bytes": 128026
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/007.png",
+      "sha256": "c67c21f0f49f1793e2ed569e12b0dbaf6dd4cb1a9668b6cac1439a82584cd838",
+      "bytes": 128982
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/008.png",
+      "sha256": "832137e64740eddaf2c8d52767e7f0ce53428f7f311afbd1837c911bbcd2a59d",
+      "bytes": 129091
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/009.png",
+      "sha256": "5a19c793ad751d85ab934f3ba9d2e6f6f448cd83600b2e8501b17e032394900b",
+      "bytes": 131247
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/010.png",
+      "sha256": "6c8a6074cfcaf9c0f1bab70f62a37bb605cb2c815b9be3a2f75d2e7325a5fbf7",
+      "bytes": 131280
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/011.png",
+      "sha256": "0fe8ed85cc1ff605976e1071d563e3cbe0debffd85b37bab71b40209c8dfe43a",
+      "bytes": 131856
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Hit/012.png",
+      "sha256": "99e93b60bc08aec24615d06cc800f1275bea292862d5acd2ce790b5b0eceb609",
+      "bytes": 131912
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/000.png",
+      "sha256": "ef005e52e1b02876ccb5623ca006c680e33dad4ce9c5227c0e8ad65fa7655248",
+      "bytes": 131705
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/001.png",
+      "sha256": "dc5b3c60ca7e06be1eba5af1dcf3493b594af6c30716fc93c15d36350f749061",
+      "bytes": 131978
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/002.png",
+      "sha256": "b3428f14c6d7e9fa1dff52e2048a0e73d2fedc24363baa33a416946f192d0cc0",
+      "bytes": 131763
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/003.png",
+      "sha256": "613d90d19fc7f81106d83d518363e38de96fc55ed3606590553e11c443ae4ddd",
+      "bytes": 131976
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/004.png",
+      "sha256": "355fe7345c9e58500cb3f5b1987a0a53fccfc7abea96135f4f8f59dc2dc4ade1",
+      "bytes": 131848
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/005.png",
+      "sha256": "c72dab0b77d9f8a80483a1eed7b97684980e1476dbc4fe7833e47c1f2fd6a15f",
+      "bytes": 132354
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/006.png",
+      "sha256": "799b36b4c7ac8392305025a852cb06bc19b8af9e40d193a66c0b55c3565513c1",
+      "bytes": 131796
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/007.png",
+      "sha256": "8c6d11207197277294b8a5fcb0f9dee3fd865d89cc12d6b83841133549ee4bbe",
+      "bytes": 131741
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/008.png",
+      "sha256": "c7f3a7b5b1415a6127ba5468168790d9352c48d9cf9b0ba8ff04cbc27ae377d1",
+      "bytes": 131871
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/009.png",
+      "sha256": "1c9a45c66734385ba58eba35d0cbea4b92470993d6701bd649d24cbcba523626",
+      "bytes": 131856
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/010.png",
+      "sha256": "a7fec7479ae3c865fe339b59695b64b8e3e0c20c7cd5919cd0148512972ecafc",
+      "bytes": 131368
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/011.png",
+      "sha256": "9511708d242b9bef31c8cd7a99d2721fe181fec6ea7e6e4dab36d5af8a725e0b",
+      "bytes": 131070
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/012.png",
+      "sha256": "eb6595103954c10a5a454701c83f9341d6908f60bfa2ff8265c2048dba87a229",
+      "bytes": 131069
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/013.png",
+      "sha256": "83934699ec10ab56076efd83af57079fcf48dc5fb94d87e5093a8de6448ef049",
+      "bytes": 130990
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/014.png",
+      "sha256": "8fa6070a319e764ee6d477d4e5f46590a49a3f45487c926efa7f61cfe73a0619",
+      "bytes": 130295
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/015.png",
+      "sha256": "fcc65dc35ebf2e1a5face6c90e2936705dc5fade0abaac11b0ab18861859ce0e",
+      "bytes": 129750
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/016.png",
+      "sha256": "376556fe4ea2948ed8d744c2a43aa7e8d7f728960a2b46fb4f4116c242d891d2",
+      "bytes": 129663
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/017.png",
+      "sha256": "e45c5bafd2860c540f472d00991119abb16f289bfa4e27d0dc42020aebf21a02",
+      "bytes": 129748
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/018.png",
+      "sha256": "c43f0342f713bcb633ab9deb6b87317905acf62e641f62d381ad55f3c13bfc00",
+      "bytes": 129602
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/019.png",
+      "sha256": "b1581ad7849b87712cee8d165589b49f0ffb1b2175be79a86c826e95731e5324",
+      "bytes": 130146
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/020.png",
+      "sha256": "7cf11dd7872a701e14cae895869c53335a5b1751b7612a5c57d787c390b9f210",
+      "bytes": 130096
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/021.png",
+      "sha256": "28bfef97383b427985eceb1f9afe4110b2d1ae78a3fa648a2094a8b8ae95bb03",
+      "bytes": 130209
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/022.png",
+      "sha256": "6ac04c1b4967b1cceebab5187149a26c270889936b4ff56194a289501d5653d0",
+      "bytes": 130151
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/023.png",
+      "sha256": "dfc1b77ac790fbdc053b47c83136ad2cfba7392dc80e26490308104f45af0886",
+      "bytes": 130302
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/024.png",
+      "sha256": "1f7d7cc8805d76415556fff138a572067305706cdc86a082a7821d1aeb974ae0",
+      "bytes": 130725
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/025.png",
+      "sha256": "e7a885afc264d6eeb289b570e574ea39a7083ec159a56f02f3e4559c2359f461",
+      "bytes": 130443
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/026.png",
+      "sha256": "754f146ed1ea1b54fc397ded3b3e8505a2dc880670071ccad31cd08d57f41fdc",
+      "bytes": 130533
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/027.png",
+      "sha256": "74dc90013195aee3b2b3382cfd33654e8a7c44be22e42bfa60bb69611a0a8f05",
+      "bytes": 130784
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/028.png",
+      "sha256": "7debace8f5c550288ee74b254dcc3ca78689a4f08904b27824e3b8900e2dd63e",
+      "bytes": 131575
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/029.png",
+      "sha256": "cf723c491275a827d6f38ad4eb7c51a41444d801f6c3413597784223ceceac52",
+      "bytes": 131758
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/030.png",
+      "sha256": "e895e84a199f410738b8249f1c9fc2bcc69c057ae737e82864b2896f950e49b3",
+      "bytes": 132242
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/031.png",
+      "sha256": "5ebf87065e08cd656f6746529a224f600f505c0dd161e08ec4c4d2e547e6ca5c",
+      "bytes": 132704
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/032.png",
+      "sha256": "0f4379c567527b87f04ae3cc249dc856a16621907113226d7cef645c88c10a36",
+      "bytes": 133666
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/033.png",
+      "sha256": "c8159f1b486250b9ae33b0e91f12e5f564d13085df6625c4eada81bd2923cd62",
+      "bytes": 133315
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/034.png",
+      "sha256": "3660ac0e26ccdcdab742918e96988ea6dbb5c1213f0b40b57c01829acff92c39",
+      "bytes": 133374
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/035.png",
+      "sha256": "6b5b0e2226b32550a82b5e991cc87620f42a2f6c9cccca6478ebc7e4e21c831b",
+      "bytes": 133258
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/036.png",
+      "sha256": "b198da3cdd22121293b04361563fab9251e074147377351cfdb66087957515a5",
+      "bytes": 133049
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/037.png",
+      "sha256": "39135316b94a8b9e876dd665922c2ed03adf109804781a824cf24269bfe349e7",
+      "bytes": 132984
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/038.png",
+      "sha256": "efb77d11377e79b1d892cd8e4b4ae3d1504202a390aa95f469ab51dc4c03964d",
+      "bytes": 132465
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/039.png",
+      "sha256": "f239feb222d388d2d1a56d2137f36e587323f360d459c2259a3c09f824e52a91",
+      "bytes": 132215
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/040.png",
+      "sha256": "a31ae6b936d450e5daefe1d08f7a3682daa4b4249b9186fc20e167ea9b7d3adc",
+      "bytes": 132083
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/041.png",
+      "sha256": "c6643c4d6ef4b97a5a02d66d6401164a16ed06eea56346ac18bf6f374fa30fa4",
+      "bytes": 132501
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/042.png",
+      "sha256": "670115bccde31c9b05219bd18e1717e4571e6b0607132c90a7eea6d5ac7ec56d",
+      "bytes": 132290
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/043.png",
+      "sha256": "ea5d59e9ebc9b44fb4113cb2fbbd1f9da16e204e7e0b2466596dbb735e61dc38",
+      "bytes": 132669
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/044.png",
+      "sha256": "88e7deecef093a1129b05fa031b5a1924e3e0be4c6ed6968a710049e6a0ebf17",
+      "bytes": 133357
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/045.png",
+      "sha256": "fc7f77a92d08a74cb05ea19a3f589738464f3ff62a7e6cefe3a7d6548e779364",
+      "bytes": 133280
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/046.png",
+      "sha256": "a4c0166ee8ffdcdaa227c6be3bc9898e7af062adb1d50d19931057dd104251e3",
+      "bytes": 133115
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/047.png",
+      "sha256": "d3a08cbb033a97fc55515b45a5d9a5d99c576115fbf64b2977aca2aec973a7af",
+      "bytes": 133119
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/048.png",
+      "sha256": "90981681d5bb886d90961493c61d1065335178a5d828aa4f9536f7f9112267c7",
+      "bytes": 132542
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/049.png",
+      "sha256": "f742d0bac85b607a786c6b7af92e0fa97af03eb0f08762f413db876b257fe0e3",
+      "bytes": 132288
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/050.png",
+      "sha256": "765f03686880f4d48568221dd873d89e7777a0b3c915343bc4b5fb6a299382e6",
+      "bytes": 132347
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/051.png",
+      "sha256": "3675a3296c9bfa5d169f7647eb80edc7ce383aeed571c0175097024b027707df",
+      "bytes": 131646
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/052.png",
+      "sha256": "4afbe836ff3a1a020c0d53b1048bfa36be9eb614853e2cf199adb178cbd95ed6",
+      "bytes": 131377
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/053.png",
+      "sha256": "de0e42b4ccf2b768bdd79401597827d0054600e64efaa72e54191613c5acea1a",
+      "bytes": 131644
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/054.png",
+      "sha256": "f2b288bb353d71581d6ceed57127b8f1d66ee5974ba5d6155d5b1707cda05755",
+      "bytes": 131539
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/055.png",
+      "sha256": "6503e1d8c9a44d3104f0e7aa47f13e18fac6bc147c722a99d47f977051cf5d16",
+      "bytes": 131562
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/056.png",
+      "sha256": "cebba5c13c53427f81d074ff84d65090144fb42037a19962243de368c3d9839d",
+      "bytes": 131859
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/057.png",
+      "sha256": "9785fbbb2b155fd524ba2e35bb305020639e027d7c2423f7c1a31f30583e5d78",
+      "bytes": 131425
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/058.png",
+      "sha256": "09c9832112117bffbd2e3f5c5d4506ed561c38c715378bcc54c6496176d37189",
+      "bytes": 132059
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/059.png",
+      "sha256": "3652da09f36f14880902e2ac20235bfe04035adf660059b0404faa5f967d6b79",
+      "bytes": 131462
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/060.png",
+      "sha256": "b3a09bc424e9e7c4eb14b1487f5e83d26152d7aa1dfe769a4a1f5ddb449d6ed6",
+      "bytes": 131632
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/061.png",
+      "sha256": "d9190123b210d3af3921dbd638cf9fa2ee78e931b0cb6b12ac65bdf0824e6229",
+      "bytes": 131325
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/062.png",
+      "sha256": "1575f88e4875a7760d7e8aba11bdca4000a0fd5304e4226e2562ae2c8b41c432",
+      "bytes": 131380
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Idle/063.png",
+      "sha256": "25b1fa6c1cf1ef24f6922b266b6c3e61cccd5d03c60c74329d8d01b8c5c1613e",
+      "bytes": 131710
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/004.png",
+      "sha256": "31f5ab52b4c44b05ea9d4ec2fdb3cebfdb7fead2205096e1e01d3b600fbf75a0",
+      "bytes": 128478
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/005.png",
+      "sha256": "18dcc672968616c33ce8a62096370a592559804e2ecd54ae0a2951c82876b91d",
+      "bytes": 128324
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/006.png",
+      "sha256": "d31e73832102b51001bcb59eca05cf86554a944b6e3f9eb642162ced68bdb17c",
+      "bytes": 128606
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/007.png",
+      "sha256": "f7dd8470d992e75866db665ff9423a7599311a025dd179edc3829b948d66e99d",
+      "bytes": 128878
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/008.png",
+      "sha256": "ba114727e6fba52656ab1a5f08bb9bcd327622e4733b9b8ff28456d119672647",
+      "bytes": 128775
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/009.png",
+      "sha256": "0924b8d532be48eea29ec448aa00a2f092bfdebae6d7c1672f5aebb4d7d65eb6",
+      "bytes": 129962
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/010.png",
+      "sha256": "98501866166595d8aff9459fa50274a9d27ca06444ce9eb35554c0318e0df279",
+      "bytes": 129478
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/011.png",
+      "sha256": "f4ffd92585e4e9ee8a373c174a73243b0ce4e2e584b7c9a706d80fb34d74d35a",
+      "bytes": 129702
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/012.png",
+      "sha256": "415bc7bc0783c63df5511b077facc606424d0ee4fcbcd354bbc4071293ef5b0a",
+      "bytes": 129669
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/013.png",
+      "sha256": "7e3db95f753b0846360d1bae25f88fda9674f681af28113990f5925772e6a976",
+      "bytes": 129685
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/014.png",
+      "sha256": "8fc1b3c181f5e6bea3c904f0ec5821c5e12d41f57e9e56bc5cb6ae368ee6abe3",
+      "bytes": 129728
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/015.png",
+      "sha256": "ab3c7b35e971d5b6f1d8b7ee0c2735504b172c91afbaf3f6dd8a28fb7389bf6f",
+      "bytes": 129693
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/016.png",
+      "sha256": "122d5ea50d24870a751c27ed2f0697efd4946d3eb5cecfc58b6c444f82d4a886",
+      "bytes": 129638
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/017.png",
+      "sha256": "c24485a83c50178fc2748e8aa3e0c0fc0a8646aae35cdd5d39826147ad0f7af0",
+      "bytes": 129252
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/018.png",
+      "sha256": "bf0f5d6837cb776425761e343c322e95c1309f8f009102c07f7869095aa961d4",
+      "bytes": 131240
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/019.png",
+      "sha256": "ff7ae5aa404597088a98a244b42c8b3cf86f12049c6e27c21ccf3a3451bb9839",
+      "bytes": 131269
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/020.png",
+      "sha256": "5ce06b05dfd146625b3c100cb330ff4c42c0b7d894167d96f226d44d435a2c4d",
+      "bytes": 132021
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact/021.png",
+      "sha256": "f5687fc76431e91556219a04336a7bf257b88882f5208e5f8040d4e7c60ff010",
+      "bytes": 132234
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/000.png",
+      "sha256": "0bd809e3d3467dac18670b2af4f035e8681fc35bf1e20dbb9aa4fe8396f5304b",
+      "bytes": 131992
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/001.png",
+      "sha256": "295eabaf6dad8df317d604fa7296e457326eacca71c7b5bf823e37b409f1a469",
+      "bytes": 131975
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/002.png",
+      "sha256": "d7bd20b8accfe1413417c0beb50f458ade71eab1db0feb0afc4fa91d03f118ee",
+      "bytes": 131653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/003.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/004.png",
+      "sha256": "31f5ab52b4c44b05ea9d4ec2fdb3cebfdb7fead2205096e1e01d3b600fbf75a0",
+      "bytes": 128478
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/005.png",
+      "sha256": "18dcc672968616c33ce8a62096370a592559804e2ecd54ae0a2951c82876b91d",
+      "bytes": 128324
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/006.png",
+      "sha256": "d31e73832102b51001bcb59eca05cf86554a944b6e3f9eb642162ced68bdb17c",
+      "bytes": 128606
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/007.png",
+      "sha256": "f7dd8470d992e75866db665ff9423a7599311a025dd179edc3829b948d66e99d",
+      "bytes": 128878
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/008.png",
+      "sha256": "ba114727e6fba52656ab1a5f08bb9bcd327622e4733b9b8ff28456d119672647",
+      "bytes": 128775
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/009.png",
+      "sha256": "0924b8d532be48eea29ec448aa00a2f092bfdebae6d7c1672f5aebb4d7d65eb6",
+      "bytes": 129962
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/010.png",
+      "sha256": "98501866166595d8aff9459fa50274a9d27ca06444ce9eb35554c0318e0df279",
+      "bytes": 129478
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/011.png",
+      "sha256": "f4ffd92585e4e9ee8a373c174a73243b0ce4e2e584b7c9a706d80fb34d74d35a",
+      "bytes": 129702
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/012.png",
+      "sha256": "415bc7bc0783c63df5511b077facc606424d0ee4fcbcd354bbc4071293ef5b0a",
+      "bytes": 129669
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/013.png",
+      "sha256": "7e3db95f753b0846360d1bae25f88fda9674f681af28113990f5925772e6a976",
+      "bytes": 129685
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/014.png",
+      "sha256": "8fc1b3c181f5e6bea3c904f0ec5821c5e12d41f57e9e56bc5cb6ae368ee6abe3",
+      "bytes": 129728
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/015.png",
+      "sha256": "ab3c7b35e971d5b6f1d8b7ee0c2735504b172c91afbaf3f6dd8a28fb7389bf6f",
+      "bytes": 129693
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/016.png",
+      "sha256": "122d5ea50d24870a751c27ed2f0697efd4946d3eb5cecfc58b6c444f82d4a886",
+      "bytes": 129638
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/017.png",
+      "sha256": "c24485a83c50178fc2748e8aa3e0c0fc0a8646aae35cdd5d39826147ad0f7af0",
+      "bytes": 129252
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/018.png",
+      "sha256": "f396b465207517a65b3dfff95d3ba9970feeb8877553003f8a1e889ee73e603d",
+      "bytes": 132088
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/019.png",
+      "sha256": "4ea244291f4add97f781526a54e16eefca10748b1025af2080157913b3fddcb8",
+      "bytes": 132129
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/020.png",
+      "sha256": "50d0c60e8cd411981cc999668b235511c8134637e28f5de06e3e5c43a6846173",
+      "bytes": 131982
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Interact_WithStaff/021.png",
+      "sha256": "d2379f73559c2fbc37fc671bd845bf8f816863295ff61ecdcd14c8582f02c6cb",
+      "bytes": 133229
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/004.png",
+      "sha256": "e56b21bb35c7af042eab0c411982193b495d1d836c5ec4e165984aead1a1ceca",
+      "bytes": 130452
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/005.png",
+      "sha256": "2a5616921d563dbf97a367c2a3d76c2aa850f0b074c8cdff265aa89308c0320f",
+      "bytes": 131519
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/006.png",
+      "sha256": "b23537415efb7d1d637d0ff88def799cf5cccd6dffa5557442b2d271602e4bc7",
+      "bytes": 144287
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/007.png",
+      "sha256": "60c726e3fc526d46554a663437eda00e92ecf002e8eafdf5214af4b09bfac527",
+      "bytes": 139663
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/008.png",
+      "sha256": "212cdc13b249ffe4cdc578df66e9fb61c69da08aa8ed0afa9ebee85171092fdc",
+      "bytes": 118497
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/009.png",
+      "sha256": "fd6718339aca09e95b56d790b69189e8d994e8e88e7b47fc127aa04ccb3a784b",
+      "bytes": 105826
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/010.png",
+      "sha256": "6594a2ca241696118295a06e7141aa84c44d51e7e559725dd7089bf2a920f610",
+      "bytes": 102913
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/011.png",
+      "sha256": "b8a9a0cd5eb8386463ca1daa8b5c05b1956725c97d319fd5146bd5065ec87dc7",
+      "bytes": 88951
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/012.png",
+      "sha256": "2a471daefb55bfcabaf021b1d38dd4187e412a8976e08cc4a68ebb684c24bc1b",
+      "bytes": 75609
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/013.png",
+      "sha256": "01e124ff5c98141d93d53de93dcea9250fb21f8cd2c55185c603439c656d8f55",
+      "bytes": 59971
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/014.png",
+      "sha256": "191237a673a35595c6ad697c6909e0f7e932bfacc0fb39cc06a89bd0c833960d",
+      "bytes": 48838
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/015.png",
+      "sha256": "48866c10c1ecd8839252429746b333b11103462324fc0c8a27c45f8a773feaa5",
+      "bytes": 37923
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/016.png",
+      "sha256": "3eae570b64650be252f1b7fac7800a603e4c2359c87cbcca8dd8d239e43db77a",
+      "bytes": 29736
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/017.png",
+      "sha256": "a2f6a323d052dfa8bc8553b14d811de54f8f923aeb6e41ea54920d670b0b9f3b",
+      "bytes": 21246
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/018.png",
+      "sha256": "2d946b7b7841f00f00d7036fa069c09197bffdc40f40d97663ce1755b45e8199",
+      "bytes": 21241
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/019.png",
+      "sha256": "26502abf0ccf49ebd50528bf24f4bcf0f61787b72b7726cadacdd3e06b9f73dc",
+      "bytes": 21577
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/020.png",
+      "sha256": "aef48e15b623e2e2c0bca3231d76dc2e6cca56f1484e7afa1370210770a1e917",
+      "bytes": 21572
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/021.png",
+      "sha256": "9ba1f2e7cdbd1743f14e05ead8f2c9ff7e30801b8437e544dad298ef4cf820c0",
+      "bytes": 21149
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/022.png",
+      "sha256": "0b096082d9da155b08e78567b21c71e9c8e2ce8d05e9caccba3f8f2614e34dd0",
+      "bytes": 22083
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/023.png",
+      "sha256": "f7a1604a70d9aa0da0497d4b200ac93ecdba01882d3325f1df74286d3ff39b97",
+      "bytes": 29783
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/024.png",
+      "sha256": "a302d1afa56eeedd609a959cf9de4084c7c0ddd2e0f35780b5b2662a59026742",
+      "bytes": 36646
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/025.png",
+      "sha256": "a238d32a4585ac2fd2773051fc1ed651cec6fd4e760def1c828610ae7530b5a1",
+      "bytes": 46050
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/026.png",
+      "sha256": "e53d62f0280e4004d5ef8a20b7af9dc50b17b5c34b3b429f2bac0af87a0165dd",
+      "bytes": 54261
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/027.png",
+      "sha256": "b047f93cc8ec6fcb7a24cf8367db07975ba259d24f30ad8670696208eaeb5d6c",
+      "bytes": 61195
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/028.png",
+      "sha256": "d5a9e77f835005f064f5e86effe7d3925250bee1ef14a754a058520aa25836a9",
+      "bytes": 70274
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/029.png",
+      "sha256": "3c77146c3115bbb9856d090cafd175648ba77d6115461845d57dadeb89288c05",
+      "bytes": 80632
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/030.png",
+      "sha256": "67155ab32a4e1c75c90dceb6b7313c93403c646ad0b2b4e82acb8ae08d319b4f",
+      "bytes": 90124
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/031.png",
+      "sha256": "332a8eb71621b9c959e6f285e89728384019a50f9513b52bd35620ee79410407",
+      "bytes": 102501
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/032.png",
+      "sha256": "15c9938debef666cadaf8324cad323f7c62c48629ef72735583e121946ae87a1",
+      "bytes": 119906
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/033.png",
+      "sha256": "e096a53a4c0fc20d565a5e0d6cc1962c2520d9147d8bf6d38928566119ab0655",
+      "bytes": 132849
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/034.png",
+      "sha256": "5c586d0c4056a537e0ffc4da456b6b7ed2ff88a55bc00341944c5ae752ba394e",
+      "bytes": 142815
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/035.png",
+      "sha256": "1807f6ef8530dcd03d3c6eda82f1251ebd6cc7423f2a0983392aaea135eab2fb",
+      "bytes": 146535
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/036.png",
+      "sha256": "de9ffc998f6f77bfd4679483165d3f7d0cd0e3ef1894ce650961d59d76fd0852",
+      "bytes": 148664
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/037.png",
+      "sha256": "7a89d22fcdae85dcfc72aef00b5e22b10bc1215bbbbd379aedc0da7670f02d03",
+      "bytes": 155277
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/038.png",
+      "sha256": "c6cadaffb55649a59cd7687793aea5ac4ec48259c2be481fe0d10a34aaa66e1c",
+      "bytes": 168704
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/039.png",
+      "sha256": "7a7930c76be34dcfcc1b222326fb6ea40771754fa2b8bdab469cc09f05959ece",
+      "bytes": 173778
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/040.png",
+      "sha256": "aadf45ac6d8d7f4881d967e3d0ef1692c9d22b8237c5ab9341cdf838d5ac9f5d",
+      "bytes": 180201
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/041.png",
+      "sha256": "4d1e660eda6215e5c4dab90b11175b11cea5dd9b5be766105a1dc19325833a55",
+      "bytes": 183144
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/042.png",
+      "sha256": "53532ffe9543f28e8025487414e508a2e53c8de4e43c99ef3886d5e019975d37",
+      "bytes": 170117
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/043.png",
+      "sha256": "a4d1ced739643d3d261b85d7e6fce20d19c1c08daab26327f832b889ba7a675f",
+      "bytes": 167395
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/044.png",
+      "sha256": "240e9f28d1fe89cec7a144e54d8632aa93e2786e389ffda0b30b74c1316f1433",
+      "bytes": 168160
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/045.png",
+      "sha256": "4645b7eb61fb62ba2fab8097810d51d4011ef814a3ccbac99230d5ca0a6dcf4d",
+      "bytes": 168653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/046.png",
+      "sha256": "a2fa843c11769e278d3992c1a7ad188b021b152849c649864b2afb1b4aa5570a",
+      "bytes": 168910
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/047.png",
+      "sha256": "2e6aad33b36c5495137a501e45203428c8d875dceda301cbe20cdcec953437c7",
+      "bytes": 169266
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump/048.png",
+      "sha256": "73e882e5047dab628bcf9ba1f4ddb68da9cc6bbab1ee1e57d01d1b740406b350",
+      "bytes": 169776
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/000.png",
+      "sha256": "c61eb48fd571fa09fe2c0d1615ace3b7b1d4871560d1d00c377d5d60c30d13f4",
+      "bytes": 134263
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/001.png",
+      "sha256": "c2a53478fbb3865324f658d3d8a961ff7181ce5e0a7c298450335cb70ca77f9a",
+      "bytes": 134016
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/002.png",
+      "sha256": "36909451ed64ffaaedce7f4de515c2fdf877aa48d548ead226de10d1547e306f",
+      "bytes": 134371
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/003.png",
+      "sha256": "5429bc2974a753425d1a0dff7763dccf2951f1a174fe5d5a9e7a2f399a5265d9",
+      "bytes": 134307
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/004.png",
+      "sha256": "985864b7e20ab9404d662864737b3443bbc059cec7c2ee599b5d1cb659ae2172",
+      "bytes": 131891
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/005.png",
+      "sha256": "5f8525f36c603f539fb773e29e1ec56aeb8921f8b0aa0a2fb3a88d34dc7ad776",
+      "bytes": 137666
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/006.png",
+      "sha256": "1b601d2069b78ffd6df778ab1d004d40a89b1a4dacc47c661caf806a4410cb7f",
+      "bytes": 155742
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/007.png",
+      "sha256": "4e76bb95fe71d3eb70779835b454afebb046ad28c4aba4c8ece282ae3d1d5ee4",
+      "bytes": 149080
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/008.png",
+      "sha256": "71ecf7f5b006770a877ad847e2355a555cff464f9c77176974a6a282b211c42b",
+      "bytes": 134270
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/009.png",
+      "sha256": "43b60c5e911c76ac4aa2319d252abb89ca6c41148f1750fef1e1a07910f6f543",
+      "bytes": 120831
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/010.png",
+      "sha256": "96dd0cf04bdaa0480699c604bf7cae62e25dd226107a8b70f71fca2d93ff2814",
+      "bytes": 113261
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/011.png",
+      "sha256": "9516cd505fe429ba502e696fe4f8321156072e4f99e521b43fc39a0dcce96d06",
+      "bytes": 98949
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/012.png",
+      "sha256": "11225c5b6e952a16f1a6c674ced98f9f2bf3fc7a16a248890fc6d4bf39c2c916",
+      "bytes": 83398
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/013.png",
+      "sha256": "5d5b4f1e036b2196d63ad46fc0e6750c1c209dacdddbaf12714c4d30ed20a3b3",
+      "bytes": 66263
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/014.png",
+      "sha256": "414d1061f474f1fd04ccc376ed241086a43a2692b9577e60e055a344a1249499",
+      "bytes": 50524
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/015.png",
+      "sha256": "185a7d60e12d34f9456c4ab997b7e10dc02862fdfe900cf6f2444e6878465cd0",
+      "bytes": 38861
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/016.png",
+      "sha256": "cd796cc93e6f86173a2f79ecdeb33ab3652b78023e2f91a3692dd660b4e87cd6",
+      "bytes": 30053
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/017.png",
+      "sha256": "52f632cbb34da0d8cf7018901c159f5f5eeb20b87c7703dc83e512d4601a2120",
+      "bytes": 20912
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/018.png",
+      "sha256": "d9330720e149cfa7a834b3fd6e23e841a8e2b18637cd599e965035f67b9258e9",
+      "bytes": 21033
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/019.png",
+      "sha256": "e23cdf2d5b7b3393e9f266f5be0cdc4d0e0b8ea39f99506cfa298d7411611828",
+      "bytes": 20836
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/020.png",
+      "sha256": "d15e791cb0205af1842e37027aee866e4dd6807c89444867ad42a7901e208920",
+      "bytes": 20951
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/021.png",
+      "sha256": "b2e63456a51e9a4cac5060651049dfe63a99fa3711ddd15bd526592c3324f331",
+      "bytes": 20421
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/022.png",
+      "sha256": "9f7b0e573d5f130aba6869e43a6dcf5439a49e24ce931e6a958335404ce536ca",
+      "bytes": 19044
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/023.png",
+      "sha256": "850405e5f77062593aa5369ac22ad707f3f8c0d1b1ffd0adfb6b891dc371e79a",
+      "bytes": 19551
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/024.png",
+      "sha256": "1fcdb27b5854dc5b1a05739f4b93747a560c49f102701a1ea5e8b4fc6fe3d131",
+      "bytes": 19227
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/025.png",
+      "sha256": "03779971c55fdf11cb23cb9f44f19656a594aa20b3ae92c95d58658c99da5e3b",
+      "bytes": 19734
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/026.png",
+      "sha256": "983ce73dd9a2b5bb0d5923f791cb92f4c56c97049cd40af55efcc17d16ee15e1",
+      "bytes": 20834
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/027.png",
+      "sha256": "7080345f61347415a0bba770aead34af9ea69660003fcdc0e77f36f6f937e1b4",
+      "bytes": 21645
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/028.png",
+      "sha256": "318d61f144196704fedef4d1c94412ac0bfaf752fca65d4ff95beb6acc1fadd6",
+      "bytes": 21702
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/029.png",
+      "sha256": "0f8d1443abb7492a7616feffd375d278ae48843ee5a4f046b1faeb5a8129c808",
+      "bytes": 22171
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/030.png",
+      "sha256": "600f01174928d6432e08aabd7690db1c35356ffba735e2661b03ad02d63184f0",
+      "bytes": 26652
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/031.png",
+      "sha256": "b73ae0fb80db3c9b0037eb3e5eb849c98483712e085713ed07d380042768970c",
+      "bytes": 34640
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/032.png",
+      "sha256": "db69d1184886b14c3d3563695910260d964d8d934953215e44961b22e8f759bd",
+      "bytes": 52987
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/033.png",
+      "sha256": "7b4665c7b1096e538875ced33d7f276f655f6522cd619dcbce04ef96f51b837c",
+      "bytes": 69003
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/034.png",
+      "sha256": "bcc000e053ec0945a11acec64fcc1e2ddc3aa8b2c00d0970a3fbd31ba1d99e5d",
+      "bytes": 87243
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/035.png",
+      "sha256": "72d2d4e9629591d83ed0a11bbb3ba4624ff928554ba434ca56230fad5d69bdd4",
+      "bytes": 104362
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/036.png",
+      "sha256": "7a8504e18cd4a12988e6ff86b649896306f7e1abdccf815eb2ee23dc6d09efc0",
+      "bytes": 117234
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/037.png",
+      "sha256": "bace4f5e53fe5538d270dae41d4d5b2657b1d3510627cbda4e520b3299150bf5",
+      "bytes": 133114
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/038.png",
+      "sha256": "34eeb3601f07cd5d6342b881c0445fc53db140b39389c2acd90967fa42c9a76e",
+      "bytes": 136610
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/039.png",
+      "sha256": "1e0f5fa72ce0aa04aa1ee9b59d83648217adc81d2069d4021aa62a55d86c4524",
+      "bytes": 138225
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/040.png",
+      "sha256": "95e4a33cd3a0fa17e8983846972349541d6a6039c6d2213e670a1aa3935a53d4",
+      "bytes": 150870
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/041.png",
+      "sha256": "1107e9e967106e6d3a64096ac65ef7222a2aa0491c99290144612fe16e155e2b",
+      "bytes": 153981
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/042.png",
+      "sha256": "8d50f5a9569d6ae27c8ff76dccfa8e90bee61b4fef461b1c7e31ca09fb2343cd",
+      "bytes": 138470
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/043.png",
+      "sha256": "5b8fa9d68ec8905f2d22d3810f2932eeea0f06be1fe7160dd464c8e6ef79f522",
+      "bytes": 140496
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/044.png",
+      "sha256": "2258c14775fbd9991d07b9b9f4cc05a0566c8f77a390be624204131dfe689594",
+      "bytes": 141138
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/045.png",
+      "sha256": "fe2f5cc5d5aa93bffe091af751224e8b5e320e563f5b5414028f3c1a93481ce8",
+      "bytes": 142598
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/046.png",
+      "sha256": "3b27c2d8f344165a45b17e9f7befdcd6d5d57a5bc92b1ad9998ee3097f7eeb15",
+      "bytes": 142660
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/047.png",
+      "sha256": "6cddb2d540271d8032c3016cd0fc19643f42d3cc64f64bc91ae38d821baa16b4",
+      "bytes": 142924
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Jump_Left/048.png",
+      "sha256": "b9f6b0ca1ed5867cc42b3c2e7ddc6b5631737180af0d3ef02c80a8c118523e18",
+      "bytes": 142842
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/004.png",
+      "sha256": "5f1b55833a9105128a3866ed7b8c871c687f1e8e9ba8ce2f586b40728a76f462",
+      "bytes": 130190
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/005.png",
+      "sha256": "917b2a365fabf5158979655b175253cc6e53e1afb8a17b2fdbd7650760e0c3a4",
+      "bytes": 130542
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/006.png",
+      "sha256": "bf0f5d6837cb776425761e343c322e95c1309f8f009102c07f7869095aa961d4",
+      "bytes": 131240
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/007.png",
+      "sha256": "ff7ae5aa404597088a98a244b42c8b3cf86f12049c6e27c21ccf3a3451bb9839",
+      "bytes": 131269
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/008.png",
+      "sha256": "5ce06b05dfd146625b3c100cb330ff4c42c0b7d894167d96f226d44d435a2c4d",
+      "bytes": 132021
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Land/009.png",
+      "sha256": "f5687fc76431e91556219a04336a7bf257b88882f5208e5f8040d4e7c60ff010",
+      "bytes": 132234
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/000.png",
+      "sha256": "0bd809e3d3467dac18670b2af4f035e8681fc35bf1e20dbb9aa4fe8396f5304b",
+      "bytes": 131992
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/001.png",
+      "sha256": "295eabaf6dad8df317d604fa7296e457326eacca71c7b5bf823e37b409f1a469",
+      "bytes": 131975
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/002.png",
+      "sha256": "d7bd20b8accfe1413417c0beb50f458ade71eab1db0feb0afc4fa91d03f118ee",
+      "bytes": 131653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/003.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/004.png",
+      "sha256": "91d8f55eb1d064b9606337c4107deeb06d33696397e8628e7597287e933415ea",
+      "bytes": 130727
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/005.png",
+      "sha256": "b13634134de1efb5ce53d43be523f7dbf686057182a942fe0e2a36de3d1d1e1a",
+      "bytes": 131699
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/006.png",
+      "sha256": "91356434a112b07843da69544e8ca31b82eee2e2065a2106b4f5a47324f6974d",
+      "bytes": 132265
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/007.png",
+      "sha256": "5fae1cbaf3b6fd40761acf8517cf814d0dff6e358f7093bd3ae3746f0ba499cb",
+      "bytes": 131770
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/008.png",
+      "sha256": "2c43a19488a81fb3626408670ea9745cab826b52715fd8da12c383751c27ca85",
+      "bytes": 131725
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/009.png",
+      "sha256": "a8740d519b32f51707a76222c4284198913abdfdc59e383320989a2092ca0d48",
+      "bytes": 133364
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/010.png",
+      "sha256": "b53e4d72ea819427c055c00981ea11d0e4706bae93f9a7eb84d1433250009278",
+      "bytes": 133146
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/011.png",
+      "sha256": "ffe35a835a6a84ddbeaec003cc7e92cd65f19eb3edc83fdde7386e1e077c7a69",
+      "bytes": 133501
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/012.png",
+      "sha256": "8a5195d229ded7700bb5607aec931851f6f5589d2f51c592f80852f277e6a362",
+      "bytes": 131092
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/013.png",
+      "sha256": "6f654c7ef4a2ded2ace0862188af0ccf39eda6801dc50735ad33a9c56e073f07",
+      "bytes": 131021
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/014.png",
+      "sha256": "512783d455e284acab763474d0aca4b3ad5a9cc8ccacb91c90b718a95ee1dfc9",
+      "bytes": 130390
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/015.png",
+      "sha256": "acfd000c94dba1a4ec8790fd8ef45b6b18da538a98f8666c92a0f9bf9346cf8d",
+      "bytes": 132060
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/016.png",
+      "sha256": "4ba76b76a5d27366956edc7eec9d35d6cb7e4104596c39371d1d1f764649858f",
+      "bytes": 131859
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/017.png",
+      "sha256": "ddcf71cd255a618cbac6d6b3719f038f53d4999ea03c3b724c52cd5b35984d41",
+      "bytes": 132141
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast/018.png",
+      "sha256": "bc81346d9143f73b3270ec3480624993abb80bdb1f392632a8b5099ffd0f158e",
+      "bytes": 133479
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/000.png",
+      "sha256": "df4216b259356cdfc8a622fa0ce6d49ce988ff2d14368fc51a7eea78968c58f7",
+      "bytes": 135104
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/001.png",
+      "sha256": "811422ebbc3ac229d2f2ee3d244757246661b21e0dd7cd2a60804ac96809d77e",
+      "bytes": 134824
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/002.png",
+      "sha256": "f5456bdbbaee8dca62c0c40eb209cd658bb458cfe645d869b2476080194f0529",
+      "bytes": 135101
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/003.png",
+      "sha256": "24789400e96eac30d2b85dc5ef010af295aab187f19e5bec5ffeed27c670ac2f",
+      "bytes": 135210
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/004.png",
+      "sha256": "d9e991e69b114b33a136d282b32fe6b8eb098cdabace0bf095627c6bdd8cae47",
+      "bytes": 132383
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/005.png",
+      "sha256": "4b61a3f114257f2ab1d95f3d71684d95444491abd16475d5a5662ae3331e15a0",
+      "bytes": 132935
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/006.png",
+      "sha256": "c00762a5fba5b31f758218ebdcdae0271dd5d428a4d2af8dc186ca95b3d2c6b7",
+      "bytes": 134511
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/007.png",
+      "sha256": "4b89e37dcddcb28188393c0bbd4ca992c567e97c33fdf9db18c2c550b311a27f",
+      "bytes": 134664
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/008.png",
+      "sha256": "5a5b69680701225b2a6195eebfd6014c457f95d5f924730d6986b1d0534ab7a9",
+      "bytes": 133759
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/009.png",
+      "sha256": "2b39c5064d40158037559073accbc3d14195b6580510398537bc6e5f25b5de81",
+      "bytes": 135308
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/010.png",
+      "sha256": "991c31b5bcfd1dc693500c33e02b05e4cb3a431e47e99ce002082f544ff02905",
+      "bytes": 134668
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/011.png",
+      "sha256": "af88f7823d43e86333d4812e9e668eede0e2af023757c0adc9d1da7541ef6601",
+      "bytes": 134688
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/012.png",
+      "sha256": "0441fa0ebf60636634bdea11e87214e465437d039701a203bbc79d7dfb5b3147",
+      "bytes": 133578
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/013.png",
+      "sha256": "28f7aa2b0f7b69ce200caa5571e8d6510b8fdefcc58d9cb33101213079c7bc5d",
+      "bytes": 132918
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/014.png",
+      "sha256": "d24792f5b0197b3fd4ebd3c54c23a37f494909b7b7622d4df75cba7d79e1f5da",
+      "bytes": 132351
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/015.png",
+      "sha256": "cb4f6684d7c22f10f8b35d4c051965cb5cdd882ab43f2a48e4639ff9e06aaa6e",
+      "bytes": 135010
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/016.png",
+      "sha256": "3eaf7165bba007ade524cc0074b83899a27a2e1d6dee0746254d08e74ed6bac8",
+      "bytes": 135023
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/017.png",
+      "sha256": "c5114cec180b5b56298b022019147e061b48a4c42cfdbc3d2419a62c3b1e1a0e",
+      "bytes": 135110
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/MagicCast_Left/018.png",
+      "sha256": "cf1fa29e5276014fd1909b755613ebc4e8daf95d5a3230a3d5fbb01cb72879fe",
+      "bytes": 134775
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/004.png",
+      "sha256": "756a640593593aa567ae7fcc0e68572e0a18f74329508d4ebd3da49c1b83e0f0",
+      "bytes": 128496
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/005.png",
+      "sha256": "db55264ed585ef39eb11c0e5405c46d2e2e997bbac4b6a20e483955bf9083e67",
+      "bytes": 128473
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/006.png",
+      "sha256": "b689af902e6005ddbfbcd77dce1f05b67f2a72925b3fe3703fb4c68d756a2768",
+      "bytes": 127906
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/007.png",
+      "sha256": "8a46dd06407904e602a46b8e02352dd72af0d67ff431eb83cd7850257bb72e25",
+      "bytes": 127890
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/008.png",
+      "sha256": "5abd6f778ba4df566bb9f1b5246345cc4dcc1f4629cd44d22317e537a1c3d862",
+      "bytes": 127877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/009.png",
+      "sha256": "4441c365eb71bd9b912da87ec1020e2c3e185bcd40f4f4e764ec6be78ab4e8d4",
+      "bytes": 127236
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/010.png",
+      "sha256": "d1485efcc99ee42b611bb2c1ec50d8a5c8fc823ef326325f521c4f86a1a787b2",
+      "bytes": 126413
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/011.png",
+      "sha256": "5bec9c20f70e8e266778459f96cf8b2ec3db45d2b42eb031941ac1fc32c9d115",
+      "bytes": 126045
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/012.png",
+      "sha256": "2609a9cdc1edc317519ddf8dbddf961343403b0af060ab2a654416149731e794",
+      "bytes": 125648
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/013.png",
+      "sha256": "5eec65c2e73375ef96723dc01ead3ed7cb47b51d7f1d84ea58e6abf00bb4a4be",
+      "bytes": 126429
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/014.png",
+      "sha256": "d81998a2ec6d55c2f3688a94d5fb4fe0f7ae5d0e78af56ebf56e383d9d435a88",
+      "bytes": 127062
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/015.png",
+      "sha256": "fbfe834ca1a2c5de674fac5bbc2dee3dd8d28f7c793f367ae4c9ccd860c563d9",
+      "bytes": 127354
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/016.png",
+      "sha256": "d428573f4128e47f0b1eaf573725e3b22c3e105dae74f1ab7e7af12b07effec0",
+      "bytes": 128582
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/017.png",
+      "sha256": "41b376be1e25ca1d29608e0f4766d550c7572bf502d0bd5b5048b6a6bdd4d5b8",
+      "bytes": 128526
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/018.png",
+      "sha256": "8f167ad5f73924cee2e4046c278ac355e90670d67ef82f63e93adca05a29619e",
+      "bytes": 128410
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/019.png",
+      "sha256": "611aa36f6df9f84e6327e380ab166b55f986d152aadf2659dcee0a359b289ceb",
+      "bytes": 128404
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/020.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/021.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/022.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup/023.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/000.png",
+      "sha256": "0bd809e3d3467dac18670b2af4f035e8681fc35bf1e20dbb9aa4fe8396f5304b",
+      "bytes": 131992
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/001.png",
+      "sha256": "295eabaf6dad8df317d604fa7296e457326eacca71c7b5bf823e37b409f1a469",
+      "bytes": 131975
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/002.png",
+      "sha256": "d7bd20b8accfe1413417c0beb50f458ade71eab1db0feb0afc4fa91d03f118ee",
+      "bytes": 131653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/003.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/004.png",
+      "sha256": "756a640593593aa567ae7fcc0e68572e0a18f74329508d4ebd3da49c1b83e0f0",
+      "bytes": 128496
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/005.png",
+      "sha256": "db55264ed585ef39eb11c0e5405c46d2e2e997bbac4b6a20e483955bf9083e67",
+      "bytes": 128473
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/006.png",
+      "sha256": "b689af902e6005ddbfbcd77dce1f05b67f2a72925b3fe3703fb4c68d756a2768",
+      "bytes": 127906
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/007.png",
+      "sha256": "8a46dd06407904e602a46b8e02352dd72af0d67ff431eb83cd7850257bb72e25",
+      "bytes": 127890
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/008.png",
+      "sha256": "5abd6f778ba4df566bb9f1b5246345cc4dcc1f4629cd44d22317e537a1c3d862",
+      "bytes": 127877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/009.png",
+      "sha256": "4441c365eb71bd9b912da87ec1020e2c3e185bcd40f4f4e764ec6be78ab4e8d4",
+      "bytes": 127236
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/010.png",
+      "sha256": "d1485efcc99ee42b611bb2c1ec50d8a5c8fc823ef326325f521c4f86a1a787b2",
+      "bytes": 126413
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/011.png",
+      "sha256": "5bec9c20f70e8e266778459f96cf8b2ec3db45d2b42eb031941ac1fc32c9d115",
+      "bytes": 126045
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/012.png",
+      "sha256": "2609a9cdc1edc317519ddf8dbddf961343403b0af060ab2a654416149731e794",
+      "bytes": 125648
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/013.png",
+      "sha256": "5eec65c2e73375ef96723dc01ead3ed7cb47b51d7f1d84ea58e6abf00bb4a4be",
+      "bytes": 126429
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/014.png",
+      "sha256": "d81998a2ec6d55c2f3688a94d5fb4fe0f7ae5d0e78af56ebf56e383d9d435a88",
+      "bytes": 127062
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/015.png",
+      "sha256": "fbfe834ca1a2c5de674fac5bbc2dee3dd8d28f7c793f367ae4c9ccd860c563d9",
+      "bytes": 127354
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/016.png",
+      "sha256": "d428573f4128e47f0b1eaf573725e3b22c3e105dae74f1ab7e7af12b07effec0",
+      "bytes": 128582
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/017.png",
+      "sha256": "41b376be1e25ca1d29608e0f4766d550c7572bf502d0bd5b5048b6a6bdd4d5b8",
+      "bytes": 128526
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/018.png",
+      "sha256": "8f167ad5f73924cee2e4046c278ac355e90670d67ef82f63e93adca05a29619e",
+      "bytes": 128410
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/019.png",
+      "sha256": "611aa36f6df9f84e6327e380ab166b55f986d152aadf2659dcee0a359b289ceb",
+      "bytes": 128404
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/020.png",
+      "sha256": "0bd809e3d3467dac18670b2af4f035e8681fc35bf1e20dbb9aa4fe8396f5304b",
+      "bytes": 131992
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/021.png",
+      "sha256": "295eabaf6dad8df317d604fa7296e457326eacca71c7b5bf823e37b409f1a469",
+      "bytes": 131975
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/022.png",
+      "sha256": "d7bd20b8accfe1413417c0beb50f458ade71eab1db0feb0afc4fa91d03f118ee",
+      "bytes": 131653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Pickup_WithStaff/023.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/004.png",
+      "sha256": "ced9387c707db861a2c94bd60323a164bd2bbdeaa133a77750ecc9d47085f1a3",
+      "bytes": 130119
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/005.png",
+      "sha256": "243bb45b9416b4ac1bc15d042af66f61509f5b2ce5fe39e1af48217fa729d02e",
+      "bytes": 130102
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/006.png",
+      "sha256": "df9a178926e10c558a113a5b3db534931c7d765489627df11274b0f39af8a02c",
+      "bytes": 128045
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/007.png",
+      "sha256": "8efac46dfa86c83e50834867028ea32615ec5cdaf6fd6402a8c29ad932ffee96",
+      "bytes": 128617
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/008.png",
+      "sha256": "80360b18ffbc241fb171d4a54e5387ff7c12cfb66f209ea847a202a60af46548",
+      "bytes": 129602
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/009.png",
+      "sha256": "5a19c793ad751d85ab934f3ba9d2e6f6f448cd83600b2e8501b17e032394900b",
+      "bytes": 131247
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/010.png",
+      "sha256": "6c8a6074cfcaf9c0f1bab70f62a37bb605cb2c815b9be3a2f75d2e7325a5fbf7",
+      "bytes": 131280
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/011.png",
+      "sha256": "0fe8ed85cc1ff605976e1071d563e3cbe0debffd85b37bab71b40209c8dfe43a",
+      "bytes": 131856
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch/012.png",
+      "sha256": "99e93b60bc08aec24615d06cc800f1275bea292862d5acd2ce790b5b0eceb609",
+      "bytes": 131912
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/000.png",
+      "sha256": "c61eb48fd571fa09fe2c0d1615ace3b7b1d4871560d1d00c377d5d60c30d13f4",
+      "bytes": 134263
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/001.png",
+      "sha256": "c2a53478fbb3865324f658d3d8a961ff7181ce5e0a7c298450335cb70ca77f9a",
+      "bytes": 134016
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/002.png",
+      "sha256": "36909451ed64ffaaedce7f4de515c2fdf877aa48d548ead226de10d1547e306f",
+      "bytes": 134371
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/003.png",
+      "sha256": "5429bc2974a753425d1a0dff7763dccf2951f1a174fe5d5a9e7a2f399a5265d9",
+      "bytes": 134307
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/004.png",
+      "sha256": "9853c623e78fe48bbcf1499fddeea2e23d9867b35268136ec09152d5ebfd92ba",
+      "bytes": 133769
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/005.png",
+      "sha256": "ca3d96283ce0b0d304609285983e3d18544f3f3c5f3d041c7275c7f84583159d",
+      "bytes": 133641
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/006.png",
+      "sha256": "5766374be16d15c8325e13987373c478da88857f4bc629b4f6f1b0a35650985a",
+      "bytes": 132036
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/007.png",
+      "sha256": "1bb241abc21bf356e7a03363cf2055c97e688fa74e28ca9df170d42962497526",
+      "bytes": 132805
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/008.png",
+      "sha256": "4569ef459765b76856caaa271a7f51cdf6d61a6955b2e42204f441469ee92ae7",
+      "bytes": 133882
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/009.png",
+      "sha256": "75ba779d9693ee16aed5a84d3600e91e343bab830913cbea5a59fd12fcefa28a",
+      "bytes": 134074
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/010.png",
+      "sha256": "38abc5648780d62b53f1359d00ca48fa87b045d0e3eaa2868516c9933d1def92",
+      "bytes": 134031
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/011.png",
+      "sha256": "d86fae6a6b64ad15d7e69ef3e3fc2d219d9dddfbf7bc51389db0c59984d3f71c",
+      "bytes": 134104
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Punch_Left/012.png",
+      "sha256": "f039de2e24e309021ace9b9c4fb0bcae21096e4131335edcc6905bd40c0fb468",
+      "bytes": 134238
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/000.png",
+      "sha256": "a90326c5b0b0156398b4253d93e8385ee8b6065401493fac0e5a6e82382c82a6",
+      "bytes": 129430
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/001.png",
+      "sha256": "7990af52b0295f8ab81ae29c9bb3519f20dbbd37bd92907a05a4eec5f97c9c15",
+      "bytes": 127972
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/002.png",
+      "sha256": "0f7fb9b9c7bcc2463277b71dc8b849f4b745f8526c54e77b956e67458ddfd572",
+      "bytes": 121775
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/003.png",
+      "sha256": "828c27081c434cbdd54f387f6327a20d11955bf97588f7902c4ada4efb978a99",
+      "bytes": 123475
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/004.png",
+      "sha256": "0d5ab652ff18b8cfae1cf4eef2452fea1b51c94ea336364e80ca07ed4b73b777",
+      "bytes": 127564
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/005.png",
+      "sha256": "2a05d51efe4419aa14c153ccd83457ef87f6f13a5847b22f768fe2afb5fc6383",
+      "bytes": 130793
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Run/006.png",
+      "sha256": "b0455beb019fc7782b7f89832650ff3a552e01d6385ac47986b50d7057d870b6",
+      "bytes": 130728
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/000.png",
+      "sha256": "0bd809e3d3467dac18670b2af4f035e8681fc35bf1e20dbb9aa4fe8396f5304b",
+      "bytes": 131992
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/001.png",
+      "sha256": "295eabaf6dad8df317d604fa7296e457326eacca71c7b5bf823e37b409f1a469",
+      "bytes": 131975
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/002.png",
+      "sha256": "d7bd20b8accfe1413417c0beb50f458ade71eab1db0feb0afc4fa91d03f118ee",
+      "bytes": 131653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/003.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/004.png",
+      "sha256": "91d8f55eb1d064b9606337c4107deeb06d33696397e8628e7597287e933415ea",
+      "bytes": 130727
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/005.png",
+      "sha256": "7ff2ec2bd6c533f2457d1d329511565235240ef590e4d112f297b4743737d4c5",
+      "bytes": 132154
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/006.png",
+      "sha256": "b9b6cd33aa36b8c9239d6d98308fac248c17b51118b5b797e24fe34a8560cafc",
+      "bytes": 132559
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/007.png",
+      "sha256": "0ecde3867b3b3bb7562bffadfa1bad9054a427d87704e721882a5a50052cc48a",
+      "bytes": 133133
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/008.png",
+      "sha256": "b173f09baa882aba8d3bcde1000526e2091c76a12d9818140c1ee134c277d7f8",
+      "bytes": 131297
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/009.png",
+      "sha256": "1ea2e43791d5e5f7654e113417a74774e72104e81e8caa095375176f5fb66414",
+      "bytes": 132133
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/010.png",
+      "sha256": "d2917bcb477228c8e97b60e187fbafdac603001dc27dee7eeeb6d9ff4bd4ac4a",
+      "bytes": 132063
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/011.png",
+      "sha256": "cbcc4b249c263743ec4a5056e4c7832b346a5ec47ca293f475b9da78156fe543",
+      "bytes": 132003
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack/012.png",
+      "sha256": "ee772f8bd2d8da2257ba0bbfb8ce471b07525e2b326032cefeaddca2fd22bb3a",
+      "bytes": 132551
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/000.png",
+      "sha256": "df4216b259356cdfc8a622fa0ce6d49ce988ff2d14368fc51a7eea78968c58f7",
+      "bytes": 135104
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/001.png",
+      "sha256": "811422ebbc3ac229d2f2ee3d244757246661b21e0dd7cd2a60804ac96809d77e",
+      "bytes": 134824
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/002.png",
+      "sha256": "f5456bdbbaee8dca62c0c40eb209cd658bb458cfe645d869b2476080194f0529",
+      "bytes": 135101
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/003.png",
+      "sha256": "24789400e96eac30d2b85dc5ef010af295aab187f19e5bec5ffeed27c670ac2f",
+      "bytes": 135210
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/004.png",
+      "sha256": "d9e991e69b114b33a136d282b32fe6b8eb098cdabace0bf095627c6bdd8cae47",
+      "bytes": 132383
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/005.png",
+      "sha256": "599d741900fd4c3a9fee5b1cd61dc2fe7ab3d94ead2d0390eebe5d509cc590af",
+      "bytes": 134897
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/006.png",
+      "sha256": "41858a779d6b85b06e8913507564215c457ad0d32dc7e2ba3f144d46daa2f5fa",
+      "bytes": 133856
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/007.png",
+      "sha256": "8d5aff7f18235a4f40d4a71a142979d724f89d549d4573e0b02b08d321f8e744",
+      "bytes": 134509
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/008.png",
+      "sha256": "2f033a3a5855583258e31ea225a42f8c41e35a4571a2f264b4e4dcaa9043f9bf",
+      "bytes": 133371
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/009.png",
+      "sha256": "d1ae5713c543a6d34991d95c5ef4a6000930676d8f3eb8aff52d8f762fbd46c3",
+      "bytes": 135184
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/010.png",
+      "sha256": "27970f83f54dca5b4345aa75fe36afd03a1ca0249a5e4d8a198dfe43ba3ef3b7",
+      "bytes": 135028
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/011.png",
+      "sha256": "2415844b55acb9794cc92e4b823c26f175e37d56f801680359a7a8a6531b8a25",
+      "bytes": 135007
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/StaffBasicAttack_Left/012.png",
+      "sha256": "1b989529bedb5d02f3931ab61e5a205ed227fa1605cc9a88387f287b95e16830",
+      "bytes": 135077
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/000.png",
+      "sha256": "2598856272bbc7cc2a731e5967bf99d80366ae88f4b8c0a07b2e998dc66e036f",
+      "bytes": 131436
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/001.png",
+      "sha256": "6179b9d4ef0c2bb32b5f30bc3eea45fd4f162be710debeef8e5d0449e4762859",
+      "bytes": 131608
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/002.png",
+      "sha256": "a5865d8a7c69ef0ed006dd4b07b60c150969c72ab46de14e05e90aac65f30e6e",
+      "bytes": 131783
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/003.png",
+      "sha256": "44af6b3833db90ff9b54ddbe0607dc7884e4f69ea1cc30537a310e600ad70b58",
+      "bytes": 132206
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/004.png",
+      "sha256": "2210998a0e95b0c13709ccc991173ae234e749775714ceda4dce38feee84b580",
+      "bytes": 128758
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/005.png",
+      "sha256": "bc88feb0601ceaa58f19d3e62a41e928ef7a57570223187eb54e2aaad9bbf0bf",
+      "bytes": 128713
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/006.png",
+      "sha256": "be9e3797832fea0cb355b604c8d27907234d9b93c964b267fae530299fe0a782",
+      "bytes": 128968
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/007.png",
+      "sha256": "64791161228301e964a7150b8765c1f60a9f3fe657f1477e2d2278b8338f8b08",
+      "bytes": 130810
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/008.png",
+      "sha256": "6f6c6313c78e22cfa58f6355ecf99109b75654c8f5d3041683158743d2339ab6",
+      "bytes": 132774
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/009.png",
+      "sha256": "61b7918cf6d444f726f4aedd1472a1ae80c3e732559454167d5536d1a448af66",
+      "bytes": 131476
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/010.png",
+      "sha256": "ca0b697280df67e0445003bdcaa280f92f0c1ffba31871153d9f20f5613b5f2a",
+      "bytes": 131921
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/011.png",
+      "sha256": "da6a73d15e253f1e09cf3f2fdc7209264dce7970ce5d9fcbc6cc2069b35f43f4",
+      "bytes": 132058
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack/012.png",
+      "sha256": "adf03b32eea84fa883457db6ccb78f19b161b8f676aa0cabeaec2354d11e35ee",
+      "bytes": 132304
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/000.png",
+      "sha256": "a5e06ee832b3739f931085416348183be628657b74afe0c30bc631baafefea40",
+      "bytes": 134937
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/001.png",
+      "sha256": "2f51bfd6d0945087aac5b66c603bac2798d6caf9c744d3e01f4025a5c9b7d6b6",
+      "bytes": 134587
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/002.png",
+      "sha256": "3f26a1b321f02cd7a5d21ebf134a056659cbdb27b9e23642ef07994b2df70bda",
+      "bytes": 134940
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/003.png",
+      "sha256": "10edcd79da561b845b6536809d9355e74282a672b75750b42b75dd345baa20ba",
+      "bytes": 134777
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/004.png",
+      "sha256": "9b7298e1e46f69b06f94869468ea9f78b96ef0ebb4040c144ec4790185557e2a",
+      "bytes": 132229
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/005.png",
+      "sha256": "ab1eadd697b27ece9b742d1dc68561f484e488cb17f7c2e5f836c4be41e8a4ec",
+      "bytes": 133574
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/006.png",
+      "sha256": "52bd7b87314e2d2f91412d5e3dd3b6ca6e9a8751aed89a17f1c567a562c019cd",
+      "bytes": 132492
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/007.png",
+      "sha256": "cafb3a92c60a23370feadd2848d49c06d5d1806efe1697c9df03e5f75f9801ee",
+      "bytes": 135439
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/008.png",
+      "sha256": "f90abe12f91e9146ea6b614a64e9797b17c07440110e46dd6e2f90120eceb180",
+      "bytes": 135353
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/009.png",
+      "sha256": "1ee8509144bb82ef19fdcb247aaed5d716ab893072a0e0060ba7768176b66f2d",
+      "bytes": 134805
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/010.png",
+      "sha256": "a6037b15ae07114d457637cc72d9f50480d56d6b8ea6a52acfe3f99296bdd5e0",
+      "bytes": 134765
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/011.png",
+      "sha256": "87d9ab5b6e5f457800d4fa4846d005f545a2f9f14c094ff3e7e59ff501abd991",
+      "bytes": 134815
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordBasicAttack_Left/012.png",
+      "sha256": "0c301e6f9c5f2ad4737a832ac8525ae9e2294429f288c5bf91906fc0ec990acf",
+      "bytes": 134946
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/000.png",
+      "sha256": "2598856272bbc7cc2a731e5967bf99d80366ae88f4b8c0a07b2e998dc66e036f",
+      "bytes": 131436
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/001.png",
+      "sha256": "6179b9d4ef0c2bb32b5f30bc3eea45fd4f162be710debeef8e5d0449e4762859",
+      "bytes": 131608
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/002.png",
+      "sha256": "a5865d8a7c69ef0ed006dd4b07b60c150969c72ab46de14e05e90aac65f30e6e",
+      "bytes": 131783
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/003.png",
+      "sha256": "44af6b3833db90ff9b54ddbe0607dc7884e4f69ea1cc30537a310e600ad70b58",
+      "bytes": 132206
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/004.png",
+      "sha256": "2210998a0e95b0c13709ccc991173ae234e749775714ceda4dce38feee84b580",
+      "bytes": 128758
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/005.png",
+      "sha256": "e8994649f335f5f035648deade95bd10f656ddd20079363b99ab3fa7ea6049fc",
+      "bytes": 128383
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/006.png",
+      "sha256": "2b3c1e2ea15ace792c715c140ca5d080a1c55583807f09c4324160531072bbe6",
+      "bytes": 129558
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/007.png",
+      "sha256": "0ef3ef4d38c79d1628cc51828119ccb972433241aacbd6eedac94c246598319d",
+      "bytes": 128967
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/008.png",
+      "sha256": "ea20279561b0588dbbfc7b7f630b3e1ed9a67c3d4f2820cae16ef46714d7bc33",
+      "bytes": 131550
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/009.png",
+      "sha256": "1e4ea6051488523ea94f768f9fae38200c0309950425237c083de7df7dd53c8b",
+      "bytes": 132489
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/010.png",
+      "sha256": "6f6c6313c78e22cfa58f6355ecf99109b75654c8f5d3041683158743d2339ab6",
+      "bytes": 132774
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/011.png",
+      "sha256": "978bc6594d0cd20bace6e9b48391606fe5a5a489c2ee7cbcf9b6262ccd361b38",
+      "bytes": 131524
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/012.png",
+      "sha256": "70a77807dfe5878f2ad4992faf8b6ece12d544b20dd9bce61dc0bd17e589126b",
+      "bytes": 131373
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/013.png",
+      "sha256": "452edd40b8b8b285e46d7c4117222504da75380b027909a8268f26fccd0e98a5",
+      "bytes": 131706
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/014.png",
+      "sha256": "2e9fa5be3cd132b4a1daaa283355bad56a78089d50ab0fc605a7c6b6a2882a08",
+      "bytes": 132425
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash/015.png",
+      "sha256": "9587ead5b1ea2cb2ff1589c3ecebd2cfce6b8d5a051bcfacfbf6075a3b1bf97d",
+      "bytes": 133347
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/000.png",
+      "sha256": "a5e06ee832b3739f931085416348183be628657b74afe0c30bc631baafefea40",
+      "bytes": 134937
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/001.png",
+      "sha256": "2f51bfd6d0945087aac5b66c603bac2798d6caf9c744d3e01f4025a5c9b7d6b6",
+      "bytes": 134587
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/002.png",
+      "sha256": "3f26a1b321f02cd7a5d21ebf134a056659cbdb27b9e23642ef07994b2df70bda",
+      "bytes": 134940
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/003.png",
+      "sha256": "10edcd79da561b845b6536809d9355e74282a672b75750b42b75dd345baa20ba",
+      "bytes": 134777
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/004.png",
+      "sha256": "9b7298e1e46f69b06f94869468ea9f78b96ef0ebb4040c144ec4790185557e2a",
+      "bytes": 132229
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/005.png",
+      "sha256": "6301425e932c93eedd3b4eeee9fb2f0fe5e787cd7d4db37906a0d845eb26de97",
+      "bytes": 133151
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/006.png",
+      "sha256": "4d4af753133e3150d37659065d90a63d61101499f384eaafe73906e1b72b829f",
+      "bytes": 133702
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/007.png",
+      "sha256": "39f5fb1a827bc8c7e9a09d3a0437e8eda5730efc04e846ec5bd2ce9e87455656",
+      "bytes": 132469
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/008.png",
+      "sha256": "bb78348148213c1b36b5caaeea70ef3a6d93842f833dd00a7667273973f23cac",
+      "bytes": 133415
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/009.png",
+      "sha256": "a965ba4e5b7facadcc9a845b1a9e9549cda2842180e325450718249bbfb427c7",
+      "bytes": 135710
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/010.png",
+      "sha256": "f90abe12f91e9146ea6b614a64e9797b17c07440110e46dd6e2f90120eceb180",
+      "bytes": 135353
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/011.png",
+      "sha256": "3a2ddfb9b2ac1dc3959641ba4864310459743ae0e0fea8cef8aabb011b6c481c",
+      "bytes": 135010
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/012.png",
+      "sha256": "a703572d751541963c5839d3199abdc9bb3e8fd40ae5710afa24e038c3e78af9",
+      "bytes": 134902
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/013.png",
+      "sha256": "411f50d7907e7ff22a06f55ea233c9bdcfd0849e32f66eb9b321b0dd32c9f2ca",
+      "bytes": 134889
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/014.png",
+      "sha256": "5a0f7fd3d154e204ac1117071d7a71a914ae79b5fea4f191e4d75479d3d58e54",
+      "bytes": 135040
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/SwordSlash_Left/015.png",
+      "sha256": "755123601370efe8ffaf0977ad88717e851dbf640ab7c22d510dc48873779279",
+      "bytes": 134451
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/000.png",
+      "sha256": "5cc64933a4c920924d7c6fcdfbd8c7e6d8aab45653f9a0175b96828751b1092c",
+      "bytes": 130877
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/001.png",
+      "sha256": "7d73815a98db67d8f30ca25f3db180210d0f75e0d3b5d09769bae401847a6ab1",
+      "bytes": 131254
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/002.png",
+      "sha256": "85e5ce86c466f8577bfaa4027ef09604bc3db746a5776109f6bb120b9bb427f7",
+      "bytes": 131546
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/003.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/004.png",
+      "sha256": "fdda197461d0fb5ac44bfe70910fa1eb11d07537225564df2d3e836c94332e59",
+      "bytes": 130377
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/005.png",
+      "sha256": "e15a2bb08929f3b92731d5a982dc188c83c46f2da06166c3dd00e431b0b5a036",
+      "bytes": 130399
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/006.png",
+      "sha256": "c04f4bb7916b34f1719cc8855be36fdea42072c1b5cc535f43fc53841c33dabe",
+      "bytes": 129446
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/007.png",
+      "sha256": "f197f8d8ba7de1f3b8d502b884dce945627bcf729d61c03722033ea6969aaee9",
+      "bytes": 129082
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/008.png",
+      "sha256": "83aa035225cfdb9ff3e0ef6b770d937c3ab03d49e2fe92a2694ff1bb07bf484c",
+      "bytes": 128480
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/009.png",
+      "sha256": "bb6ef0afbb757f4ba28b0050434b7961031af0cd64fa3092dddf72ff765da2b6",
+      "bytes": 128553
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/010.png",
+      "sha256": "d9bd87af48ad08e1fd1ebc8817b63ca8fefe3d7c7993e80574347254d2dc3bbe",
+      "bytes": 129227
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/011.png",
+      "sha256": "84dccd76ccc28704350edfad0fe706d88d8ba2ab5a59b635cb42e9fbadba309d",
+      "bytes": 131458
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/012.png",
+      "sha256": "8c7f5cedd836fd288699e7257e4aee64ef695d1cfb264313fc4034c4d5e23938",
+      "bytes": 131346
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/013.png",
+      "sha256": "2427ad89536d34ae25a513fd82d3830ed2899777e7b1912a4ef4f51ac9b39804",
+      "bytes": 131474
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/014.png",
+      "sha256": "d42c865294ec45f655af0fa4e3fa6eb3858e128478a4c2316ee2409e0b3a95cf",
+      "bytes": 132001
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/015.png",
+      "sha256": "cfeb0687790232d23e9b5ab190c61cb994b3ef0678da286d98b93bd9452c753e",
+      "bytes": 131051
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/016.png",
+      "sha256": "b48fb4eaa60ebc7fe7288ffb3ff300b88f775a5069b89071c6947249f42926a7",
+      "bytes": 131704
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/017.png",
+      "sha256": "cca5d62990333fd8f0592beb8c54e27ae0e0bdd0f9093cc2e1a1df4bdfd6e583",
+      "bytes": 131491
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/018.png",
+      "sha256": "4f9ee64cee8116cce2df83387e8751194252a1eb0d302293b5d925b1c93b3ea9",
+      "bytes": 131588
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw/019.png",
+      "sha256": "7aafa7815e4fa66343d24fda53bcab9e5feddd196b89f7fc8fa37c6971863e40",
+      "bytes": 132071
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/000.png",
+      "sha256": "c61eb48fd571fa09fe2c0d1615ace3b7b1d4871560d1d00c377d5d60c30d13f4",
+      "bytes": 134263
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/001.png",
+      "sha256": "c2a53478fbb3865324f658d3d8a961ff7181ce5e0a7c298450335cb70ca77f9a",
+      "bytes": 134016
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/002.png",
+      "sha256": "36909451ed64ffaaedce7f4de515c2fdf877aa48d548ead226de10d1547e306f",
+      "bytes": 134371
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/003.png",
+      "sha256": "5429bc2974a753425d1a0dff7763dccf2951f1a174fe5d5a9e7a2f399a5265d9",
+      "bytes": 134307
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/004.png",
+      "sha256": "3fa6ba5c50fc7d1377463606b62e19a143024b56d6f9be58c179ab2b568935af",
+      "bytes": 132848
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/005.png",
+      "sha256": "1f4a00a49324877b6a32ba1aad26ca394b04d461cd2685c9cdccb3fb5f868456",
+      "bytes": 133091
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/006.png",
+      "sha256": "b8d393af4647729710a8aac2b16d90288517b73ad15720d0b87c62fd28629037",
+      "bytes": 131700
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/007.png",
+      "sha256": "450e53128d429240fdd79d49f96bbb6f811696ac13385aa5b008bcc9aeee1eb3",
+      "bytes": 131490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/008.png",
+      "sha256": "deb24cf0086edc1c9f64244d8d093aa346d42f6442d6fb333276f8d0bcc5caff",
+      "bytes": 132963
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/009.png",
+      "sha256": "9bf09b1b620268f0cd612ffc887e5725e57d063535c17ba474febe21cb28134c",
+      "bytes": 133292
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/010.png",
+      "sha256": "283cc1c5c51d1080c02cf1819b79bebd7312a3efae7c5318e19f70f44bffea62",
+      "bytes": 132550
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/011.png",
+      "sha256": "a83e46207100fb3797b515077c2060a623147579808ac7fb826d4e0721cf8123",
+      "bytes": 133275
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/012.png",
+      "sha256": "05af3d8d7adb1f9c8db9b83bc45c9a3ff2131e207d5370e09883105036451c71",
+      "bytes": 132893
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/013.png",
+      "sha256": "ce8b1966f5af52779f3cfc8582a6b2461f0fe906315ba545823936cd973d92c0",
+      "bytes": 135417
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/014.png",
+      "sha256": "fc28f403d672d803acc1a28847c16396a795b4ffcfc6a8c96b1c1efbd6d89005",
+      "bytes": 134037
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/015.png",
+      "sha256": "ac783de4ca3d9367a691eeb45a9d3bbd098d399ed998608861737bd78fc542d1",
+      "bytes": 133854
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/016.png",
+      "sha256": "c1af1bc4d8da8415771a26f90f7aa74377a9f50dee196d78633bd495047cdc5d",
+      "bytes": 134867
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/017.png",
+      "sha256": "c2a53478fbb3865324f658d3d8a961ff7181ce5e0a7c298450335cb70ca77f9a",
+      "bytes": 134016
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/018.png",
+      "sha256": "36909451ed64ffaaedce7f4de515c2fdf877aa48d548ead226de10d1547e306f",
+      "bytes": 134371
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_Left/019.png",
+      "sha256": "5429bc2974a753425d1a0dff7763dccf2951f1a174fe5d5a9e7a2f399a5265d9",
+      "bytes": 134307
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/000.png",
+      "sha256": "0bd809e3d3467dac18670b2af4f035e8681fc35bf1e20dbb9aa4fe8396f5304b",
+      "bytes": 131992
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/001.png",
+      "sha256": "295eabaf6dad8df317d604fa7296e457326eacca71c7b5bf823e37b409f1a469",
+      "bytes": 131975
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/002.png",
+      "sha256": "d7bd20b8accfe1413417c0beb50f458ade71eab1db0feb0afc4fa91d03f118ee",
+      "bytes": 131653
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/003.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/004.png",
+      "sha256": "fdda197461d0fb5ac44bfe70910fa1eb11d07537225564df2d3e836c94332e59",
+      "bytes": 130377
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/005.png",
+      "sha256": "e15a2bb08929f3b92731d5a982dc188c83c46f2da06166c3dd00e431b0b5a036",
+      "bytes": 130399
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/006.png",
+      "sha256": "c04f4bb7916b34f1719cc8855be36fdea42072c1b5cc535f43fc53841c33dabe",
+      "bytes": 129446
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/007.png",
+      "sha256": "f197f8d8ba7de1f3b8d502b884dce945627bcf729d61c03722033ea6969aaee9",
+      "bytes": 129082
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/008.png",
+      "sha256": "83aa035225cfdb9ff3e0ef6b770d937c3ab03d49e2fe92a2694ff1bb07bf484c",
+      "bytes": 128480
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/009.png",
+      "sha256": "bb6ef0afbb757f4ba28b0050434b7961031af0cd64fa3092dddf72ff765da2b6",
+      "bytes": 128553
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/010.png",
+      "sha256": "d9bd87af48ad08e1fd1ebc8817b63ca8fefe3d7c7993e80574347254d2dc3bbe",
+      "bytes": 129227
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/011.png",
+      "sha256": "84dccd76ccc28704350edfad0fe706d88d8ba2ab5a59b635cb42e9fbadba309d",
+      "bytes": 131458
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/012.png",
+      "sha256": "8c7f5cedd836fd288699e7257e4aee64ef695d1cfb264313fc4034c4d5e23938",
+      "bytes": 131346
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/013.png",
+      "sha256": "2427ad89536d34ae25a513fd82d3830ed2899777e7b1912a4ef4f51ac9b39804",
+      "bytes": 131474
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/014.png",
+      "sha256": "d42c865294ec45f655af0fa4e3fa6eb3858e128478a4c2316ee2409e0b3a95cf",
+      "bytes": 132001
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/015.png",
+      "sha256": "cfeb0687790232d23e9b5ab190c61cb994b3ef0678da286d98b93bd9452c753e",
+      "bytes": 131051
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/016.png",
+      "sha256": "f6fcb0d3cac1daf025cd079663ca9296b77282fe08ff8d89de98623c01133cb1",
+      "bytes": 132898
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/017.png",
+      "sha256": "ad0009e495e4a50975332156a1ab35a50f96752111cc9ffd28f9cf5e2cb4145d",
+      "bytes": 132152
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/018.png",
+      "sha256": "da7e16dda2a7820eee1b0b1f7460940854118ec3626cc39e38a0ae7dccf859fd",
+      "bytes": 131688
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Throw_WithStaff/019.png",
+      "sha256": "5d8eaf8b88e74898c073c6a06a879b3e983442218703371a13c9766e37d237c1",
+      "bytes": 132490
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/000.png",
+      "sha256": "d8dac5f111d72727bac2bc3479c8e131c70cb9b22d4335817343de2814325aac",
+      "bytes": 127780
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/001.png",
+      "sha256": "ce88383ac7252b7344da1083cee4eba8d76aee14022de05c8c0564caddb57f90",
+      "bytes": 129774
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/002.png",
+      "sha256": "28a2a4c5daff30de461471d5ccdf09f50077cbaa9853822314e2206ce14bec72",
+      "bytes": 128745
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/003.png",
+      "sha256": "42643200e0d7794528b34d5da242fef6a0d758d201e7a88b380a778c7a4b6839",
+      "bytes": 124855
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/004.png",
+      "sha256": "3e19d1b75a951918d7ecfbefcae6672c764bdaeff8ffc1f9051d0d494f38725c",
+      "bytes": 122020
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/005.png",
+      "sha256": "974c9e6216261a44c50f54217bfe919ebefd462ed6837dbba8570478340874ef",
+      "bytes": 123350
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/006.png",
+      "sha256": "e5c63a79c44fabaf3665b2d994b813bbe001db36a13fd1f76b43010ebd891e9c",
+      "bytes": 125147
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/007.png",
+      "sha256": "3bca1d223ad5db1c5d857d029d79448c85cfe0f40ba19a34a796be89e62a2431",
+      "bytes": 126431
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/Frames/Walk/008.png",
+      "sha256": "d18acf667da61e055d215710c15cd925b7332604edb3791261fae15be0b4dff7",
+      "bytes": 124720
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/audit-actions.png",
+      "sha256": "3fae9dd1d37204987f81977a966acb22b4097c3eb2ae40d824751cb40c5cd9f2",
+      "bytes": 382198
+    },
+    {
+      "path": "ArtSources/Stage01Kit/SideviewReview/audit-movement.png",
+      "sha256": "90d95e199ea182d66fd0196a5d6d86c300488bf33af23b040fe65fa85d69b384",
+      "bytes": 684835
+    },
+    {
+      "path": "ArtSources/Stage01Kit/StaffOrbReview/Staff_Cast_Forward_All28.png",
+      "sha256": "298fe2b2945d2594dcb5782146f61334f7d236f4566343ec0c29439bf1534051",
+      "bytes": 263270
+    },
+    {
+      "path": "ArtSources/Stage01Kit/StaffOrbReview/Staff_Orb_Head_Closeups.png",
+      "sha256": "37a6be24972842725dd74624b2a6dd89538d8316385c3315f9baedbc6161dce6",
+      "bytes": 114099
+    },
+    {
+      "path": "ArtSources/Stage01Kit/StaffOrbReview/staff-orb-independent-qa.json",
+      "sha256": "426b3007a55cad5ac0208e39debabb888c5f918f1b5fc8e392f857553d25d865",
+      "bytes": 2078
+    },
+    {
+      "path": "ArtSources/Stage01Kit/StaffOrbReview/staff-orb-independent-qa.txt",
+      "sha256": "7759263bd38d4da585e34224ec02ae3eaac2dc7195b74b2a7d74366fba34b0ea",
+      "bytes": 2571
+    },
+    {
+      "path": "ArtSources/Stage01Kit/character-actions-capture.json",
+      "sha256": "e97829e6a8d4eceb021ffdc12ea17889e2d3a71f0feac77beb737370709f90a8",
+      "bytes": 27143
+    },
+    {
+      "path": "ArtSources/Stage01Kit/character-actions-contact.png",
+      "sha256": "0a577f7d693db2d207666310637a0bccdd118eddfe4be0ceeed38930af672ab2",
+      "bytes": 1232659
+    },
+    {
+      "path": "ArtSources/Stage01Kit/character-grip-candidates.json",
+      "sha256": "42590e1b2cc11e2abbe5579e9348ce9b978780cc265a52e194a526c8ae46a0c3",
+      "bytes": 20171
+    },
+    {
+      "path": "ArtSources/Stage01Kit/character-grip-candidates.png",
+      "sha256": "bd33ef0d418d22d42aeeaa6a23d2b82d9a3e29a07192049fbd9050145055b87b",
+      "bytes": 903808
+    },
+    {
+      "path": "ArtSources/Stage01Kit/research/staff-grip-audit-console.tmp",
+      "sha256": "c406972826bfca688d573c7e07e45b16ab2f02f5318c72ab474c5246d1115201",
+      "bytes": 19609
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027.meta",
+      "sha256": "c4df842947c8819749c97c72c2dfaa52b58b0fe10c175f2b36788f5b216e2550",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027/ApplyUnitySkinWeights.cs",
+      "sha256": "c7e78e1fd4787a6d537878c2a98dbc42d8e9dbc13e8ff2aa1e2ca9f7c2ce1745",
+      "bytes": 6195
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027/ApplyUnitySkinWeights.cs.meta",
+      "sha256": "9a1a7e7fd85764c5ac5be29ba5e0cde6963a2adea88e3f329c1b026ddaf45eab",
+      "bytes": 59
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027/HeroAssetAudit.cs",
+      "sha256": "4973027f5c674b9a57008f43f168996a159fef8237fe8857cb473db6d0643621",
+      "bytes": 19554
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027/HeroAssetAudit.cs.meta",
+      "sha256": "24e9cef4c3749709d0140ced4b96a15989eb809686e2cf31a7119ae6f0d17a96",
+      "bytes": 59
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027/NonHeroAssetAudit.cs",
+      "sha256": "8aaed3f64095fb74abcae375d9eb3cb0fe0bbff64f4c7a98c71aa24097de2074",
+      "bytes": 10606
+    },
+    {
+      "path": "Assets/Editor/AssetAudit20261027/NonHeroAssetAudit.cs.meta",
+      "sha256": "bde18ebc4ec73078fbe42fc7d1fa453e38eafe179dfb640adc898ee878db0888",
+      "bytes": 59
+    }
+  ]
+}

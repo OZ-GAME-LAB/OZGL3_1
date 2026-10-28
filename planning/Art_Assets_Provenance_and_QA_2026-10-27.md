@@ -1,18 +1,20 @@
 # Project M 아트 에셋 출처와 검수 보고서
 
-2026년 10월 27일 | 개발팀 인수인계용 | 작성 Codex
+2026년 10월 27일 | 상승 낙하 후속 수정 반영 | 개발팀 인수인계용 | 작성 Codex
 
 현재 보존된 주인공은 기존 이동·생활 동작 15개와 최신 롱소드 공격 3개, 총 18개 클립으로 구성된다. 두 묶음은 서로 다른 Generic 리그를 사용하므로, 지금 상태에서 하나의 캐릭터 Animator에 모두 연결할 수는 없다. 이번 보고서는 에셋이 어디서 왔고 어떻게 가공되었는지, 어느 파일이 정본인지, 무엇을 검수했고 무엇이 아직 통합되지 않았는지를 구분한다.
 
 조사 대상은 주인공 Final 정본과 보존 중인 Runtime 비주얼, 튜토리얼·1스테이지 환경 키트, Melee01 몬스터다. 기존 VFX는 목록만 확인한다. 기존 게임 시스템·UI·외부 패키지 전체의 라이선스 감사나 실제 게임 플레이 성능 검증을 수행했다는 뜻은 아니다. 기획 기준은 같은 폴더의 Project M 상세기획서 0.5와 기획데이터이며, 현재 에셋 목록이 기획상 모든 몬스터와 스테이지 콘텐츠를 충족하는 것은 아니다.
+
+후속 요청에 따라 Jump_Rise_Loop와 Jump_Fall_Loop를 작은 균형 움직임이 있는 상승·낙하 루프로 보완했다. 기존 시전·착지·정점·Jump_Full과 다른 선택 클립 16개는 유지했다. 현재 사용할 GIF 60개를 외부 폴더로 옮겨 SHA256을 검증했고 새 미디어 저장도 외부로 전환했다. 프로젝트 안의 GIF 원본과 확인된 구버전·폐기 파일을 정리했으며, 현재 사용하거나 향후 사용할 모델·리그·애니메이션은 보존했다. 팀원 머지 결과에 게임 동작을 추가 연결하지 않았다.
 
 ## 1 현재 보존된 결과물
 
 | 분류 | 현재 수량 | 제작 방식 | 사용 상태 |
 | --- | --- | --- | --- |
 | 주인공 원본 모델 | 1 | 생성 콘셉트 이미지 → Meshy 모델·리그 → 로컬 가공 | 3등신 chibi 정본 |
-| 기존 Runtime 비주얼 | 1 | 이전 비주얼과 동작 전달 파일 보존 | 현재 Player 의존성 |
-| 기존 주인공 동작 | 15 | 기존 AI 보행 입력과 Unity Editor 곡선·포즈 가공 | Chibi24 전용 |
+| 기존 Runtime 자료 | 1묶음 | 이전 비주얼과 동작 전달 파일 보존 | 일부 Player·제작 도구 의존성 |
+| 기존 주인공 동작 | 15 | 기존 AI 보행 입력과 Unity Editor 가공 및 상승·낙하 보완 | Chibi24 전용 |
 | 최신 롱소드 공격 | 3 | KayKit 실제 동작 → 체형 맞춤 리타게팅·양손 접촉 보정 | KayKit23 전용 |
 | 도시 환경 모듈 | 16 | Unity Editor에서 로컬 메시 제작 | 독립 프리팹 |
 | 환경 소품 | 7 | Meshy 생성 후 팔레트·피벗·프리팹 가공 | 독립 프리팹 |
@@ -26,10 +28,11 @@ Stage01Kit의 31개 프리팹은 모듈 16개, 소품 11개인 환경 소품 7�
 
 ### 정본 위치
 
-주인공 저작 원본은 `ArtSources/Characters/Protagonist01/Final/`이다. 이 보고서에서 Final은 이 경로를 뜻한다. 전체 선택 목록은 [selection.json](../ArtSources/Characters/Protagonist01/Final/selection.json), GIF 모음은 [Review/index.html](../ArtSources/Characters/Protagonist01/Final/Review/index.html)에 있다.
+주인공 저작 원본은 `ArtSources/Characters/Protagonist01/Final/`이다. 이 보고서에서 Final은 이 경로를 뜻한다. 전체 선택 목록은 [selection.json](../ArtSources/Characters/Protagonist01/Final/selection.json), GIF 모음은 프로젝트 밖 [외부 모션 갤러리](file:///C:/Users/me/Desktop/OZGL3_ArtReview/Characters/Protagonist01/Final/Review/index.html)에 있다. GIF 저장 기준 폴더는 `C:/Users/me/Desktop/OZGL3_ArtReview/`이며, 모델·애니메이션과 제작·출처·검수 기록은 기존 프로젝트 경로를 유지한다.
 
 - 원본 모델: `Final/Model/Protagonist_ChibiCap_Rig.glb`
-- 기존 동작의 GIF·제작 기록: `Final/LegacyMotions/`
+- 기존 동작 제작 기록: `Final/LegacyMotions/`
+- GIF 미디어와 검수 갤러리: 외부 `OZGL3_ArtReview/`의 대응 경로
 - 최신 공격 편집 원본: `Final/Combat/Protagonist_Combat.blend`
 - 기존 동작 Unity 폴더: `Assets/Art/Characters/Protagonist01/ChibiMotion_v007/`
 - 최신 공격 Unity 폴더: `Assets/Art/Characters/Protagonist01/Combat/`
@@ -38,9 +41,11 @@ Stage01Kit의 31개 프리팹은 모듈 16개, 소품 11개인 환경 소품 7�
 
 폴더 이름에 v006·v007이 남아 있는 일부 Unity 파일은 승인된 동작과 제작 도구가 실제 참조하는 의존성이다. 오래된 이름이라는 이유만으로 삭제하면 기존 프리팹이나 재편집 경로가 깨질 수 있다. 현재 게임 씬에 사용되는 기존 플레이어 자료도 별도이며, Final 선택 작업이 그 플레이어를 교체한 것은 아니다.
 
-### 현재 Player에 연결된 기존 비주얼
+### 팀원 머지 후 Player의 참조
 
-`Assets/2.Prefab/Player/Player.prefab`은 `Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Visual.prefab`의 GUID를 실제로 참조한다. Runtime 폴더에는 Rig·Walk·Run·Actions FBX와 Unarmed Animator Controller, 재질 및 보조 코드가 남아 있다. 이 묶음은 선택된 Final 18개와 구분하며 기존 게임 의존성을 보존하기 위해 유지한다. 현재 남은 기록만으로 이 이전 비주얼의 정확한 최초 생성 작업과 입력 출처를 확정하지 못했으므로, Final chibi의 Meshy 작업 ID를 이 파일들에 대신 붙이지 않는다. 이번 Unity 정적 검사에서 24본, 7,427정점, 6,087삼각형을 확인했다. 기존 Controller의 모든 런타임 동작을 시험했다는 뜻은 아니다.
+현재 `Assets/2.Prefab/Player/Player.prefab`은 v006의 리그 FBX·주먹 메시·재질과 Runtime의 Actions FBX·Unarmed Controller를 참조한다. `Assets/Anim/Player_Chibi.controller`는 v007의 Idle_Fists, Walk_Fists, Run_Fists, Dash_Forward, Hit_Reaction, Jump_Takeoff, Jump_Apex_Loop, Jump_Land 등 8개 클립을 참조한다. 이는 팀원 머지에 이미 포함된 연결이며 이번 아트 정리에서 추가하거나 교체한 것이 아니다. 후속 보완한 Rise와 Fall은 이 Controller의 참조 대상이 아니다.
+
+Runtime 폴더의 이전 비주얼과 편집 입력도 현재 참조와 제작 의존성을 구분해 보존한다. 정확한 최초 생성 작업·입력 출처를 현재 기록만으로 확정하지 못하므로 Final chibi의 Meshy 작업 ID를 대신 붙이지 않는다. 앞선 정적 검사에서 확인한 24본·7,427정점·6,087삼각형은 그 이전 Runtime 비주얼의 수치이며, 머지 후 Player 모델의 새 측정 결과가 아니다. 현재 참조 근거는 [아트 의존성 검사](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/asset-dependencies.json)에 있다.
 
 ## 2 주인공 모델과 두 리그의 제작 과정
 
@@ -87,9 +92,9 @@ Blender 원본에는 선택된 공격 3종 각각의 리그 액션과 WeaponRoot
 | Interact_Reach | 0.933 | 아니오 | L | 상호작용 |
 | Pickup_Low | 1.333 | 아니오 | L | 낮은 물건 줍기 |
 | Jump_Takeoff | 0.167 | 아니오 | L | 점프 보조 이륙 |
-| Jump_Rise_Loop | 0.300 | 예 | L | 점프 보조 상승 |
+| Jump_Rise_Loop | 0.800 | 예 | L | 후속 보완 상승 유지 자세 |
 | Jump_Apex_Loop | 0.200 | 예 | L | 점프 보조 정점 |
-| Jump_Fall_Loop | 0.300 | 예 | L | 점프 보조 하강 |
+| Jump_Fall_Loop | 1.000 | 예 | L | 후속 보완 낙하 유지 자세 |
 | Jump_Land | 0.433 | 아니오 | L | 점프 보조 착지 |
 | Longsword_Attack_Chop | 0.700 | 아니오 | K | Melee_2H_Attack_Chop |
 | Longsword_Attack_Slice | 0.600 | 아니오 | K | Melee_2H_Attack_Slice |
@@ -100,6 +105,14 @@ L의 호환 프리팹은 `ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionRevie
 공격 원본 길이는 Chop 1.633초, Slice 1.100초, Stab 1.600초이며 결과는 60Hz로 베이크했다. 걷기·달리기·대시와 공격은 게임 이동을 자동 구현하는 클립이 아니다. Jump_Full의 골반 높이 궤적과 물리 점프를 함께 적용하면 높이가 중복될 수 있으므로, 실제 통합 시에는 전체 점프 또는 높이 궤적을 분리한 보조 5클립 중 방식에 맞는 것을 사용해야 한다.
 
 Move_Dash_Recover.gif는 이동 전환을 보여주는 보관 시연으로, 19번째 납품 클립이 아니다. 삭제 요청된 과거 주먹 공격·스태프 캐스팅·옛 검 공격과 죽음 모션은 이 선택 목록에 없다.
+
+### 상승과 낙하 후속 보완
+
+이전 Rise와 Fall은 Jump_Full의 단일 프레임을 반복한 고정 포즈였다. 새 Rise는 앞무릎을 살짝 접고 뒤발을 내리는 0.8초 루프, Fall은 발을 아래로 준비하고 팔을 조금 벌려 균형을 잡는 1.0초 루프다. 기존 24본 리그와 모델·주먹 형태를 사용하며, 전완 방향을 따르는 손목과 작은 몸·발끝 변화로 공중 자세를 유지한다. 새 리그나 모델을 만든 작업은 아니다.
+
+두 동작은 레퍼런스를 관찰한 뒤 기존 Unity Editor 제작 도구에서 체형에 맞춰 직접 저작했다. [Adobe Mixamo 공식 사용법](https://helpx.adobe.com/creative-cloud/help/animate-characters-mixamo.html), [KayKit Character Animations](https://kaylousberg.itch.io/kaykit-character-animations), [Animation Mentor 점프 제작 설명](https://www.animationmentor.com/blog/tutorial-animate-a-jump-and-land/)을 참고했다. 보존된 KayKit Skeletons 1.0의 Jump_Idle과 Jump_Full_Short를 각각 8시점·측면과 정면, 총 32컷으로 직접 확인했으며, 큰 팔 벌림은 주인공 체형에 맞게 줄였다. 이번 Rise와 Fall은 Mixamo 또는 KayKit 동작을 다운로드해 직접 리타게팅한 결과물이 아니다.
+
+클립은 60Hz Generic 곡선으로 저장했고 반복 시작·끝 자세와 곡선 접선을 일치시켰다. 골반의 이동 궤적은 포함하지 않는다. [공중 동작 미리보기](file:///C:/Users/me/Desktop/OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Airborne/index.html)는 기존 시전·착지와 새 두 루프를 오프라인으로 혼합한 시연이다. 높이 이동은 검수용 부모에만 적용했으며 기존 Jump_Full, 인게임 Animator·물리 이동·전환 코드에는 반영하지 않았다. 제작 도구는 `Editor/ChibiAirborneMotion.cs`이며, 전체 제작 경로와 두 클립만 만드는 메뉴가 같은 정의를 사용한다.
 
 ## 4 무기와 도시 환경의 출처
 
@@ -160,20 +173,21 @@ Meshy 공식 약관은 유료 플랜 고객의 생성 결과 권리와 무료 �
 
 라이선스 파일은 `Final/Combat/Licenses/`의 KayKit_Character_Animations_CC0.txt와 KayKit_Skeletons_CC0.txt, 몬스터 Unity 폴더 `Licenses/KayKit_CC0.txt`에 있다. CC0는 KayKit 원본 부분의 조건이며 주인공 생성 모델·별도 무기·레퍼런스 이미지 전체로 자동 확장되는 허가는 아니다.
 
-## 7 이번 검수의 결과와 범위
+## 7 전체 검수와 후속 보완 결과
 
-이번 출처 조사에서는 선택된 18개 이름·호환 프리팹·원본 동작 매핑, 모델 생성 기록, Stage01Kit 작업 영수증, 몬스터 고정 출처, 보존된 라이선스를 대조했다. 과거의 통과 기록과 오늘 새로 실행한 검사 결과는 구분한다. 같은 파일 해시라는 사실은 이전 결과 보존을 입증하지만, 그 자체로 새 동작 품질 검사를 수행했다는 뜻은 아니다.
+전체 출처 조사에서는 선택된 18개 이름·호환 프리팹·원본 동작 매핑, 모델 생성 기록, Stage01Kit 작업 영수증, 몬스터 고정 출처, 보존된 라이선스를 대조했다. 아래 전체 검수는 상승·낙하 후속 수정 전의 기록이며, 새 두 루프의 검사 결과는 별도로 기재한다. 같은 파일 해시라는 사실은 이전 결과 보존을 입증하지만, 그 자체로 새 동작 품질 검사를 수행했다는 뜻은 아니다.
 
 | 대상 | 이번 검사 | 결과 |
 | --- | --- | --- |
 | 최신 공격 3종 | 수정 전후 각각 123프레임 3시점과 120Hz 243포즈 | 소매 스킨 보정과 Unity 123포즈 회귀검사 완료 |
-| 기존 15종 | 45조합 2529포즈와 전체 30Hz 측면 프레임 | 확정적 신규 결함 미발견과 승인본 보존 |
+| 기존 15종 전체 검수 | 45조합 2529포즈와 전체 30Hz 측면 프레임 | 당시 승인본 보존 및 후속 Rise·Fall 수정 전 기준 |
+| 상승·낙하 후속 보완 | 3프리팹 6조합 654포즈와 306이미지 | 루프 경계·접선·골반 이동 차이 0 및 나머지 16클립 보존 |
 | 환경·소품·무기 | 31프리팹 62이미지와 고유 메시 34개 | 확정적 결함 미발견과 원본 80파일 해시 보존 |
 | Melee01 4종 | 60Hz 412포즈와 기존 실제 Unity 34개 시트 대조 | 명확한 스킨·관절·파지 결함 미발견 |
 | 출처와 라이선스 | 공식 배포 페이지·보존 영수증 대조 | KayKit CC0 확인과 Meshy 계정 조건 미확정 구분 |
 | 기존 VFX | 보존 위치·README만 확인 | 품질 검사 제외 |
 
-이번에 확인한 수정 사항은 공격 소매의 스킨 가중치와 제작 도구의 오래된 보고서 출력 경로다. 기존 15개 동작과 환경·몬스터 모델은 유지했다. 아래 결과는 명시한 표본·시점·환경에서의 에셋 검사이며 실제 게임 플레이 전체를 보증하지 않는다.
+전체 검수 단계에서는 공격 소매의 스킨 가중치와 제작 도구의 오래된 보고서 출력 경로를 수정했고, 당시 기존 15개 동작과 환경·몬스터 모델은 유지했다. 그 뒤 상승·낙하 두 클립을 보완했다. 아래 결과는 명시한 표본·시점·환경에서의 에셋 검사이며 실제 게임 플레이 전체를 보증하지 않는다.
 
 ### 주인공 공격 검사와 수정
 
@@ -191,7 +205,7 @@ Blender의 실제 스킨 결과를 수정 전후 각각 123개 베이크 프레�
 
 수정한 몸체를 Unity 메시로 전달한 뒤 세 공격의 123개 포즈를 다시 대조했다. 원본과 Unity의 변경 정점 수는 정확히 275개로 대응했고, 애니메이션 해시·표본 시각·삼각형 구성은 유지되었다. 몸체 최대 위치 변화는 13.91546mm, 영향 밖 정점의 부동소수점 차이는 최대 0.000246mm였으며, 검과 양쪽 주먹 정점은 정확히 같았다. 비유한 좌표와 누락 바인딩은 없었다. [unity-skin-regression.json](../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Combat/unity-skin-regression.json).
 
-최종 선택 검증에서 18개 Unity AnimationClip과 메타 파일의 해시, 기존 15개 GIF가 모두 보존되었다. 몸체 가중치만 바뀐 공격은 실제 Unity 프리팹에서 GIF 6개인 일반·느린 재생 각 3개를 다시 만들었고, 미디어 manifest와 대조했다. 일반 GIF는 Chop·Slice·Stab 순서로 21·18·21프레임, 0.7·0.6·0.7초이며 추가 정지 구간이 없다. 느린 버전은 재생 시간이 두 배다. 카탈로그 링크 21개와 현재 blend 해시도 확인했다. [delivery-verification.json](../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/delivery-verification.json).
+공격 스킨 보정 직후의 선택 검증에서는 당시 18개 Unity AnimationClip과 메타 파일의 해시, 기존 15개 GIF가 모두 보존되었다. 이후 Rise·Fall 수정 및 GIF 외부 이전으로 이 항목은 현재 전체 파일의 불변성을 뜻하지 않는다. 몸체 가중치만 바뀐 공격은 실제 Unity 프리팹에서 GIF 6개인 일반·느린 재생 각 3개를 다시 만들었고, 미디어 manifest와 대조했다. 일반 GIF는 Chop·Slice·Stab 순서로 21·18·21프레임, 0.7·0.6·0.7초이며 추가 정지 구간이 없다. 느린 버전은 재생 시간이 두 배다. 카탈로그 링크 21개와 현재 blend 해시도 확인했다. [delivery-verification.json](../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/delivery-verification.json).
 
 ### 몬스터 검사
 
@@ -203,11 +217,19 @@ Melee01은 오늘 Blender에서 전체 4클립의 412개 포즈를 60Hz로 다�
 
 Unity 6000.3.21f1에서 저장된 기존 15클립을 실제 MotionReview·SwordGrip·StaffGrip 프리팹에 적용해 45개 조합, 총 2,529개 포즈를 60Hz로 새로 평가했다. 누락된 바인딩, 비유한 좌표, 영 스케일, 붕괴한 삼각형은 검출되지 않았다. 모든 정점은 실제 BakeMesh 출력으로 검사했으며, 검토용 이미지는 그 포즈를 임시 CPU 스킨 메시로 옮겨 렌더했다. 근거는 [hero-audit.json](../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/hero-audit.json)이다.
 
-15개 MotionReview 동작의 30Hz 측면 프레임 전체인 41개 시트, 반대편 위상 시트 15개와 정적 모델 시트 4개를 직접 검토했다. 별도 검토자는 15종의 정면·3분의 4 시점 위상 시트 30장과 7종의 생활·점프·대시 동작에 대한 두 주먹 메시 변형 시트 14장, 총 44장을 확인했다. 검토 범위에서 확정적인 신규 메시 파열, 손 분리·역관절, Run 팔의 몸통 매몰 또는 루프 경계의 튐을 발견하지 못했다. 기존 15개 애니메이션과 모델은 수정하지 않았다.
+15개 MotionReview 동작의 30Hz 측면 프레임 전체인 41개 시트, 반대편 위상 시트 15개와 정적 모델 시트 4개를 직접 검토했다. 별도 검토자는 15종의 정면·3분의 4 시점 위상 시트 30장과 7종의 생활·점프·대시 동작에 대한 두 주먹 메시 변형 시트 14장, 총 44장을 확인했다. 검토 범위에서 확정적인 신규 메시 파열, 손 분리·역관절, Run 팔의 몸통 매몰 또는 루프 경계의 튐을 발견하지 못했다. 이 전체 검사 단계에서는 기존 15개 애니메이션과 모델을 수정하지 않았다. 이후 Rise·Fall 두 클립만 별도로 보완했다.
 
 Potion·Pickup·Throw의 손 접근은 의도된 동작으로 판단했다. 다만 소품을 장착하지 않은 검사이므로 포션·무기의 실제 손 접촉까지 통과했다고 해석하지 않는다. 정확한 파일 목록과 한계는 [independent-secondary-visual-review.json](../ArtSources/Characters/Protagonist01/Final/Validation/Review20261027/Legacy/independent-secondary-visual-review.json)에 있으며, 전체 측면 검수 시트와 수치 요약은 같은 폴더의 final-audit-summary.json에 기록했다.
 
 유지보수로 Editor 제작 도구 3개의 진단 출력 경로 4곳만 `Final/Validation/LegacyAuthoring`으로 정리했다. 클립을 재생성하지 않았으며, 변경 파일과 전후 해시는 같은 검수 폴더의 authoring-path-repairs.json에 있다.
+
+### 상승과 낙하 후속 검사
+
+1차로 기존 고정 포즈의 원인을 확인하고, 새 자세의 실제 변형 메시와 상승·낙하 실루엣을 검토했다. 2차 독립 검수에서는 측면 루프 108프레임, 다른 3시점 위상 54개, 연결 시퀀스 측면·정면 108프레임, 두 손 메시 변형의 정면 위상 36개를 확인했다. 명확한 팔의 역꺾임·메시 파열·몸통 관통·다리 교차는 관찰되지 않았다. 측면에서 겹쳐 보이는 낙하 발은 다른 시점에서 분리되는 투영 중첩으로 확인했다.
+
+3차로 루프 끝점의 접선을 맞춘 후 저장된 두 클립을 다시 읽어 세 프리팹에서 총 654개 포즈를 120Hz로 검사하고 306이미지를 재렌더했다. 최종 반복 경계의 자세 차이, 골반 이동 및 곡선 접선 차이는 모두 0이었다. 비유한 값·붕괴 삼각형·누락 바인딩도 0건이었다. 최종 독립 검수에서 측면·정면 루프와 상승에서 낙하로, 낙하에서 착지로 넘어가는 시연 경계를 다시 확인했다. 손목 방향은 전완을 따르며 의도하지 않은 손목 꺾임을 추가하지 않았다.
+
+기존 시전·착지·정점·Jump_Full과 다른 선택 클립 16개의 SHA256은 보존되었다. 모델·리그·재질·프리팹과 게임 코드는 변경하지 않았다. 손·몸의 움직임은 공중 유지에 필요한 작은 범위이며, 임의의 미래 게임 전환에서 관통이 없음을 보증하는 검사는 아니다. 최종 Unity 컴파일은 종료 코드 0이다. 근거는 [상승 낙하 검수 기록](../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/README.txt), [저장 클립 수치 검사](../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/unity-review.json), [최종 보존과 전달 검증](../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/delivery-verification.json)이다.
 
 ### 환경과 소품 검사
 
@@ -219,7 +241,7 @@ Potion·Pickup·Throw의 손 접근은 의도된 동작으로 판단했다. 다�
 
 ### 이전 보존 검증과 구분
 
-Final Combat의 `Validation/source-integrity.json`은 이전 정본 정리 과정에서 123개 베이크 프레임과 정리 전후 이미지를 대조한 역사적 기록이다. 오늘은 의도적으로 소매 가중치를 수정했으므로, 그 옛 전체 파일 해시가 현재 파일과 동일하다는 증거로 사용할 수 없다. 현재 Combat 결과는 2026년 10월 27일의 수정 영수증과 Unity 전달 검증을 우선한다. Legacy manifest의 해시는 그대로 보존한 기존 클립을 비교하는 별도 기준이다. 리그 유지와 시각적으로 어떤 결함도 없다는 판단은 별개다. 이번 검사에 실제 게임의 입력 지연, 공격 판정, 취소 타이밍, Animator 전환, 물리 점프·경사면 이동, 목표 기기 GPU·CPU 측정은 포함하지 않는다.
+Final Combat의 `Validation/source-integrity.json`은 이전 정본 정리 과정에서 123개 베이크 프레임과 정리 전후 이미지를 대조한 역사적 기록이다. 오늘은 의도적으로 소매 가중치를 수정했으므로, 그 옛 전체 파일 해시가 현재 파일과 동일하다는 증거로 사용할 수 없다. 현재 Combat 결과는 2026년 10월 27일의 수정 영수증과 Unity 전달 검증을 우선한다. Legacy manifest는 현재 선택 클립의 파일별 기준이며, Rise·Fall 후속 보완 후 두 항목을 갱신했다. 과거 전체 검수의 해시와 현재 해시를 혼동하지 않는다. 리그 유지와 시각적으로 어떤 결함도 없다는 판단은 별개다. 이번 검사에 실제 게임의 입력 지연, 공격 판정, 취소 타이밍, Animator 전환, 물리 점프·경사면 이동, 목표 기기 GPU·CPU 측정은 포함하지 않는다.
 
 ## 8 다음 담당자가 알아야 할 제한
 
@@ -229,17 +251,30 @@ Final Combat의 `Validation/source-integrity.json`은 이전 정본 정리 과�
 
 모든 원본 라이브러리와 중간 실험 파일이 정본에 들어 있지는 않다. 현재 보존 범위는 승인된 결과와 필요한 편집 의존성, 출처·라이선스·검수 기록이다. 옛 AI 보행 원본의 제공자별 영수증과 최신 롱소드 초창기 제작 스크립트 전체까지 복원할 수 있다고 보장하지 않는다. 현재 파일과 공개 1차 출처로 확인한 사실, 보존 기록만 남아 있는 사실을 구분해 후속 변경 기록을 이어가는 것이 필요하다.
 
+### 저장 정책과 팀원 작업 보존
+
+새 GIF 생성과 갤러리의 기준 위치는 외부 `C:/Users/me/Desktop/OZGL3_ArtReview/`로 전환했다. 프로젝트에서 조사한 117개 GIF 중 현재 사용할 60개를 외부 대응 경로에 복사하고 원본과 SHA256을 대조한 뒤 프로젝트 원본을 제거했다. 모델·애니메이션·원본 제작 자료·라이선스·검수 수치와 보고서는 기존 프로젝트 경로에 저장하며, 새 GIF 미디어는 커밋 대상에서 제외한다.
+
+나머지 GIF 57개는 구버전 또는 중복 검수본으로 확인해 폐기했다. 제거한 프로젝트 GIF는 총 117개로, 기존 Git 추적 파일 113개와 이번 Airborne의 새 GIF 4개다. 최신 Rise·Fall을 포함한 현재 검수본 60개는 외부에 보존했으며, 최신 동작은 외부 갤러리에서 확인한다.
+
+구형 캐릭터의 Stage01Kit/SideviewReview/Frames 렌더 636개와 폐기된 검수본·백업·임시 파일 23개도 제거했다. 이 23개에는 임시 Editor 파일과 관련 메타 7개가 포함된다. 이번에 프로젝트에서 삭제한 파일은 총 776개이며, 외부로 옮긴 현재 GIF 원본 60개와 폐기 파일 716개를 합한 수다. 삭제 범위는 확인된 파일 목록으로 한정했고, 현재 또는 향후 사용할 모델·리그·애니메이션과 런타임 자산은 보존했다.
+
+처음 삭제 명령은 도구의 일반적인 정책 차단 응답으로 실행되지 않았지만, 이후 권한 요청이 승인되어 지정한 파일들의 삭제를 완료했다. 범위와 해시는 [GIF 정리 계획](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-plan.json), [외부 복사 검증](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/gif-copies-verified.json), [폐기 파일 목록](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/obsolete-files-approved-plan.json), [정리 결과](../ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/cleanup-status.json)에 보존한다.
+
+이번 작업은 팀원 변경을 포함한 model-test의 머지 커밋 fb71492d 위에서 진행한다. 팀원의 씬·게임 코드·컨트롤러에 새 동작을 적용하거나 기존 런타임 비주얼을 교체하지 않았다. 현재 참조되는 Runtime FBX와 Unarmed Controller, v006 메시 및 v007 동작 8개를 확인하고 보존했다. 이번 Rise·Fall은 현재 게임 Controller가 참조하지 않는다. 향후 사용할 자산과 재편집 입력도 보존한다.
+
 ### 최종 작업 범위
 
 출력 경로 수정 후 실제 Unity 프로젝트의 최종 컴파일은 종료 코드 0이며 C# 컴파일 오류가 없었다. 근거는 Legacy 검수 폴더의 final-compile.json이다.
 
-인게임 코드·Animator·VFX는 변경하지 않았다. 검수 실행용 임시 Editor 파일 7개의 삭제는 자동 승인 검토에서 정책상 차단되어 로컬에 남아 있으며, `Assets/Editor/AssetAudit20261027`과 관련 메타는 커밋에서 제외한다. 재실행 가능한 검사 도구의 정본과 결과 기록은 ArtSources에 보존한다.
+인게임 코드·Animator·VFX는 변경하지 않았다. 검수 실행용 `Assets/Editor/AssetAudit20261027`의 임시 파일과 관련 메타 7개를 제거했다. 재실행 가능한 검사 도구의 정본과 결과 기록은 ArtSources에 보존한다.
 
 ### 주요 증거 파일
 
 - [최종 선택 18개](../ArtSources/Characters/Protagonist01/Final/selection.json)
 - [모델 생성 기록](../ArtSources/Characters/Protagonist01/Final/Model/Provenance/generation.json)
-- [기존 동작의 파일별 해시와 GIF 대응](../ArtSources/Characters/Protagonist01/Final/LegacyMotions/manifest.json)
+- [기존 동작의 파일별 해시와 외부 GIF 대응](../ArtSources/Characters/Protagonist01/Final/LegacyMotions/manifest.json)
+- [상승 낙하 후속 검수와 보존](../ArtSources/Characters/Protagonist01/Final/Validation/Airborne20261027/delivery-verification.json)
 - [기존 동작의 제작 의존성](../ArtSources/Characters/Protagonist01/Final/LegacyMotions/authoring-dependencies.json)
 - [공격 동작의 원본 이름과 길이](../ArtSources/Characters/Protagonist01/Final/Combat/clips.json)
 - [공격 원본 출처와 해시](../ArtSources/Characters/Protagonist01/Final/Combat/Provenance/source-provenance.json)

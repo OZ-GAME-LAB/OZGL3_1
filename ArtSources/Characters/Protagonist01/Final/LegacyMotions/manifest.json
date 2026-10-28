@@ -1,7 +1,7 @@
 {
-  "selection": "Exactly the approved pre-KayKit v007 non-attack set, including the corrected Run_Fists. No action was regenerated or retargeted.",
+  "selection": "15approved v007 nonattack clips; only Rise/Fall loops revised2026-10-27, other13preserved.",
   "clipCount": 15,
-  "unityAssetsChanged": false,
+  "unityAssetsChanged": true,
   "clips": [
     {
       "name": "Idle_Fists",
@@ -192,20 +192,21 @@
     },
     {
       "name": "Jump_Rise_Loop",
-      "durationSeconds": 0.3,
+      "durationSeconds": 0.8,
       "loop": true,
       "auxiliary": true,
       "releaseSeconds": -1.0,
       "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
       "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
-      "unitySHA256": "3b0019b6e1186e90e6a19776705afe8346a63c58385d1f2649801c40ccb13f89",
-      "unityLFNormalizedSHA256": "0ab229785934eb12a1bc41dec5ddefda7c7ccafcd033fa43fe0429826938541f",
+      "unitySHA256": "0bfb9c751f8e4c8d5551cad0c443f08b53133c8a5c647903281170eda6dbfbf3",
+      "unityLFNormalizedSHA256": "0bfb9c751f8e4c8d5551cad0c443f08b53133c8a5c647903281170eda6dbfbf3",
       "gif": "GIF/Jump_Rise_Loop.gif",
-      "gifSHA256": "eaaf1a6b1efe5924f77eabfa6c8335481ef7a5c010e3d59356f2ca6873565ba6",
-      "gifFrames": 1,
-      "gifPlaybackMilliseconds": 600,
-      "gifBytes": 27777,
-      "copiedWithoutReencoding": true
+      "gifSHA256": "69c884cea384c25147ce6c9899ede067b9befd0b408d7bbede86976599c81a09",
+      "gifFrames": 48,
+      "gifPlaybackMilliseconds": 1600,
+      "gifBytes": 1114905,
+      "copiedWithoutReencoding": false,
+      "revision": "Airborne20261027: authored on nativeChibi24 rig; observed KayKit poses and public Mixamo guidance as reference, not imported Mixamo animation."
     },
     {
       "name": "Jump_Apex_Loop",
@@ -226,20 +227,21 @@
     },
     {
       "name": "Jump_Fall_Loop",
-      "durationSeconds": 0.3,
+      "durationSeconds": 1.0,
       "loop": true,
       "auxiliary": true,
       "releaseSeconds": -1.0,
       "compatiblePrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
       "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
-      "unitySHA256": "5fffacd881eacda71d071249921f5e02b87b3eb9a00c7b8cbb982ac7670e0391",
-      "unityLFNormalizedSHA256": "ef0a695e116efe9261fb2bc7a3369c04fdbe3f4977db205307e23554c7168815",
+      "unitySHA256": "064f3adbda0497ba0f6b54c12636c1af40c237287b0b9d86387a921a3eb14f65",
+      "unityLFNormalizedSHA256": "064f3adbda0497ba0f6b54c12636c1af40c237287b0b9d86387a921a3eb14f65",
       "gif": "GIF/Jump_Fall_Loop.gif",
-      "gifSHA256": "c9ce6912c5efb82bfcdf8fc32a4bbc983907cdee0096b2f7fd16dfde1e9ee9e1",
-      "gifFrames": 1,
-      "gifPlaybackMilliseconds": 600,
-      "gifBytes": 27540,
-      "copiedWithoutReencoding": true
+      "gifSHA256": "725ab367db7f9e1d909df8f2521d7acb7636d7f1db2c75704a2b3c966bde9404",
+      "gifFrames": 60,
+      "gifPlaybackMilliseconds": 2000,
+      "gifBytes": 1345193,
+      "copiedWithoutReencoding": false,
+      "revision": "Airborne20261027: authored on nativeChibi24 rig; observed KayKit poses and public Mixamo guidance as reference, not imported Mixamo animation."
     },
     {
       "name": "Jump_Land",
@@ -312,5 +314,13 @@
     }
   ],
   "authoringSourceGait": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/SourceGait",
-  "note": "Generic24-bone Visual/Armature bindings. Not directly interchangeable with KayKit23-bone attack clips. Historical report paths are provenance only; this compact manifest is authoritative for retained review files. SHA differences caused solely by LF/CRLF are recorded separately."
+  "note": "Generic24-bone Visual/Armature bindings. Not directly interchangeable with KayKit23-bone attack clips. Historical report paths are provenance only; this compact manifest is authoritative for retained review files. SHA differences caused solely by LF/CRLF are recorded separately.",
+  "previewStorage": {
+    "kind": "external-local-review",
+    "environmentVariable": "OZGL3_ART_REVIEW_DIR",
+    "defaultDirectory": "~/Desktop/OZGL3_ArtReview",
+    "mirrorRelativeTo": "ArtSources",
+    "trackedMedia": false,
+    "relativeBase": "Characters/Protagonist01/Final/LegacyMotions"
+  }
 }

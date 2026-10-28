@@ -129,6 +129,7 @@ public static partial class ChibiMotionSet
             AnimationUtility.SetEditorCurve(clip,EditorCurveBinding.FloatCurve(path,typeof(SkinnedMeshRenderer),"blendShape."+name),Keys(poses.Select(p=>right?p.gripR:p.gripL).ToArray(),m.duration));
         }
         clip.EnsureQuaternionContinuity();var settings=AnimationUtility.GetAnimationClipSettings(clip);settings.loopTime=m.loop;AnimationUtility.SetAnimationClipSettings(clip,settings);
+        CloseAirLoopTangents(clip);
         string output=Root+"/Clips/"+m.name+".anim";var existing=AssetDatabase.LoadAssetAtPath<AnimationClip>(output);
         if(!existing)AssetDatabase.CreateAsset(clip,output);else{EditorUtility.CopySerialized(clip,existing);EditorUtility.SetDirty(existing);Object.DestroyImmediate(clip);}
         return new MotionInfo{name=m.name,clip=output,prop=m.prop,intent=m.intent,duration=m.duration,authoredDuration=m.sourceDuration,releaseTime=m.releaseTime,loop=m.loop,phases=m.phases,auxiliary=auxiliary,keySamples=count,start=start,end=end};
@@ -157,8 +158,8 @@ public static partial class ChibiMotionSet
                 evaluate=(r,t)=>{float authored=Mathf.Lerp(a,b,Mathf.Clamp01(t/duration));float time=authored*source.duration/source.sourceDuration;
                     source.evaluate(r,time);r.hips.position-=Vector3.up*AirHeight(source,time);}};
         }
-        return new[]{Slice("Jump_Takeoff",jump,0,.16f,5/30f,false),Slice("Jump_Rise_Loop",jump,.34f,.34f,.3f,true),
-            Slice("Jump_Apex_Loop",jump,.48f,.48f,.2f,true),Slice("Jump_Fall_Loop",jump,.66f,.66f,.3f,true),
+        return new[]{Slice("Jump_Takeoff",jump,0,.16f,5/30f,false),AirMotion(true),
+            Slice("Jump_Apex_Loop",jump,.48f,.48f,.2f,true),AirMotion(false),
             Slice("Jump_Land",jump,.78f,1.2f,13/30f,false)};
     }
 }
