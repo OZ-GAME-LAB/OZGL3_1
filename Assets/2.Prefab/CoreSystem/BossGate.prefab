@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2196695499816463519}
   - component: {fileID: 3495223811728197181}
   - component: {fileID: 3701701769077240389}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: BossGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,14 +124,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 925e7587d43249feab0014c921e45b41, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossGate
   gateRenderer: {fileID: 2196695499816463519}
   gateMaterial: {fileID: 0}
-  spawner: {fileID: 3394307624421897283}
   durability: 30
   bossPrefab: {fileID: 2873690002261162043, guid: ae2fd175855b4597b985f092ee1c9834, type: 3}
   bossSpawnPoint: {fileID: 4000509884964087676}
+  spawner: {fileID: 3394307624421897283}
 --- !u!1 &9081118732564039065
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4868955332407137698}
   - component: {fileID: 3394307624421897283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spanwer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 4000509884964087676}

@@ -22,6 +22,12 @@ public class SceneGameLink : MonoBehaviour
             Debug.LogError("SceneGameLink에 GameManager를 연결하세요.", this);
             return;
         }
+        if (player == null)
+        {
+            Debug.LogError("SceneGameLink에 Player를 연결하세요.", this);
+            return;
+        }
+        gameManager.SetPlayerTarget(player.transform);
         gameManager.InitializationCompleted += Initialize;
         gameManager.StageChanging += SuspendPlayer;
         gameManager.StageStarted += RestorePlayer;

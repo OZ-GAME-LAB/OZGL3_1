@@ -12,6 +12,7 @@ public class GameManager : BaseManager
     [SerializeField] private string preloadDataKey;
     private bool isReady;
     private bool isLoading;
+    private Transform playerTarget;
     private UniTaskCompletionSource resourceCleanup;
 
     public static GameManager Instance { get; private set; }
@@ -30,6 +31,12 @@ public class GameManager : BaseManager
     public bool AreGatesActive => gateManager != null && gateManager.AreGatesActive;
     public ResourceManager ResourceManager => resourceManager;
     public DataManager DataManager => dataManager;
+
+    public void SetPlayerTarget(Transform target)
+    {
+        if (target == null) throw new System.ArgumentNullException(nameof(target));
+        playerTarget = target;
+    }
 
     private void Awake()
     {
@@ -111,8 +118,13 @@ public class GameManager : BaseManager
             Debug.LogError($"{number}스테이지를 목록에 올바르게 등록하세요.", this);
             return false;
         }
+        if (playerTarget == null)
+        {
+            Debug.LogError("SceneGameLink를 통해 플레이어 Transform을 연결하세요.", this);
+            return false;
+        }
         StageChanging?.Invoke();
-        if (!stageManager.SetStage(number)) return false;
+        if (!stageManager.SetStage(number, playerTarget)) return false;
         StageStarted?.Invoke();
         return true;
     }

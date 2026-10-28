@@ -25,13 +25,13 @@ public class BossGate : StageGate, IDamageable
         bossData = data ?? throw new ArgumentNullException(nameof(data));
     }
 
-    public override void Initialize(PoolManager poolManager)
+    public override void Initialize(PoolManager poolManager, Transform playerTarget)
     {
-        base.Initialize(poolManager);
+        base.Initialize(poolManager, playerTarget);
         remainingDurability = Mathf.Max(1f, durability);
         if (spawner == null) spawner = GetComponent<MonsterSpawner>();
         if (spawner == null) spawner = gameObject.AddComponent<MonsterSpawner>();
-        spawner.Initialize(poolManager);
+        spawner.Initialize(poolManager, playerTarget);
         if (bossPrefab != null)
             poolManager.PreparePool(bossPrefab.gameObject);
         spawner.Configure(bossPrefab, bossSpawnPoint != null ? bossSpawnPoint : transform, bossData);

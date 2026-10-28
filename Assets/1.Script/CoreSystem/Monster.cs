@@ -6,6 +6,7 @@ public class Monster : MonoBehaviour, IDamageable
 {
     [SerializeField, Min(0f)] private float moveSpeed = 1f;
     public bool IsDead { get; private set; }
+    public Transform Target { get; private set; }
     public event Action<Monster> Died;
 
 
@@ -31,7 +32,18 @@ public class Monster : MonoBehaviour, IDamageable
     public float MaxHP => maxHP;
     public float CurrentHP => hp;
     public float MeleeDamage => attackDamage;
+    public float MoveSpeed => Mathf.Max(0f, moveSpeed);
     public float SkillDamage { get; private set; }
+
+    public void SetTarget(Transform target)
+    {
+        Target = target;
+    }
+
+    protected virtual void OnDisable()
+    {
+        Target = null;
+    }
 
     // 풀에서 비활성 상태로 꺼낸 뒤, 활성화 전에 호출합니다.
     public virtual void InitializeStats(BaseMonsterData data)
@@ -57,12 +69,6 @@ public class Monster : MonoBehaviour, IDamageable
     {
         hp = maxHP;
         IsDead = false;
-    }
-
-    protected virtual void Update()
-    {
-        if (IsDead) return;
-        transform.position += transform.forward * Mathf.Max(0f, moveSpeed) * Time.deltaTime;
     }
 
     public void TakeDamage(float damage)
@@ -93,28 +99,5 @@ public class Monster : MonoBehaviour, IDamageable
 
         // 무적·사망·UI 창 열림 체크는 PlayerHealth.TakeDamage 안에서 처리하므로 여기서는 부르기만 함
         target.TakeDamage(attackDamage);
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        TryContactAttack(collision.collider);
-    }
-
-    // 몬스터 콜라이더가 Is Trigger여도 똑같이 동작하게
-    private void OnTriggerStay(Collider other)
-    {
-        TryContactAttack(other);
-    }
-
-    private void TryContactAttack(Collider other)
-    {
-        //  Monster 자신도 IDamageable -> IDamageable로 찾으면 몬스터끼리 닿을 때 서로 때림
-        //  플레이어 자식(모델·무기) 콜라이더에 닿아도 본체를 찾기 위해
-        PlayerHealth player = other.GetComponentInParent<PlayerHealth>();
-        if (player == null)
-        {
-            return;
-        }
-
-        Attack(player);
     }
 }

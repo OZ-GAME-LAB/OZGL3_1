@@ -13,13 +13,13 @@ public class Gate : StageGate
     public int MaxSpawnCount => GetMaxSpawnCount();
     private int GetMaxSpawnCount() => DefaultMaxSpawnCount;
 
-    public override void Initialize(PoolManager manager)
+    public override void Initialize(PoolManager manager, Transform playerTarget)
     {
-        base.Initialize(manager);
+        base.Initialize(manager, playerTarget);
         if (spawner == null) spawner = GetComponent<MonsterSpawner>();
         if (spawner == null)
             spawner = gameObject.AddComponent<MonsterSpawner>();
-        spawner.Initialize(manager);
+        spawner.Initialize(manager, playerTarget);
         spawner.Configure(null, spawnPoint);
         spawner.AllMonstersDefeated -= OnAllMonstersDefeated;
         spawner.AllMonstersDefeated += OnAllMonstersDefeated;

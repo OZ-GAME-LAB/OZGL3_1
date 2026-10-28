@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2196695499816463519}
   - component: {fileID: 3495223811728197181}
   - component: {fileID: 3701701769077240389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,9 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gate
   gateRenderer: {fileID: 2196695499816463519}
   gateMaterial: {fileID: 0}
-  activeDuration: 10
   spawner: {fileID: 0}
-  monsterPrefab: {fileID: 2873690002261162043, guid: eae14ad38e0af6646baaa88d9f335130, type: 3}
   spawnPoint: {fileID: 4000509884964087676}
   spawnInterval: 3
 --- !u!1 &9081118732564039065
@@ -143,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4868955332407137698}
   - component: {fileID: 3394307624421897283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spanwer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,5 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 4000509884964087676}

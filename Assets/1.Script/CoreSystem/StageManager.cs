@@ -16,6 +16,7 @@ public class StageManager : BaseManager
     private DataManager dataManager;
     private ResourceManager resourceManager;
     private Stage currentStage;
+    private Transform playerTarget;
 
     public bool IsStageRunning => currentStage != null && currentStage.IsRunning;
     public int StageNumber => stageNumber;
@@ -111,8 +112,9 @@ public class StageManager : BaseManager
         }
     }
 
-    public bool SetStage(int number)
+    public bool SetStage(int number, Transform target = null)
     {
+        if (target != null) playerTarget = target;
         if (!CanSetStage(number))
         {
             Debug.LogError($"{number}스테이지의 프리팹과 매니저 설정을 확인하세요.", this);
@@ -150,6 +152,8 @@ public class StageManager : BaseManager
 
     private void LoadStage(GameObject prefab, IReadOnlyList<MonsterData> monsterData, BossMonsterData bossData, BossMonster boss)
     {
+        if (playerTarget == null)
+            throw new System.InvalidOperationException("GameManager에서 플레이어 Transform을 전달해야 합니다.");
         if (prefab == null || prefab.GetComponent<Stage>() == null)
         {
             Debug.LogError("Stage 컴포넌트가 있는 스테이지 프리팹을 지정하세요.", this);
@@ -167,7 +171,7 @@ public class StageManager : BaseManager
         try
         {
             // 등록 → 상태 이벤트 구독 → 진행 시작 순서를 지킵니다.
-            gateManager.SetGates(currentStage.Gates, currentStage.BossGate, monsterData, bossData, boss);
+            gateManager.SetGates(currentStage.Gates, currentStage.BossGate, monsterData, bossData, boss, playerTarget);
             currentStage.Initialize(gateManager);
             currentStage.StateChanged += OnStageStateChanged;
             currentStage.Completed += OnStageCompleted;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7626642809234045601}
   - component: {fileID: 2409131921605657330}
   - component: {fileID: 2873690002261162043}
+  - component: {fileID: 3051200901917416503}
   m_Layer: 7
   m_Name: BossMonster
   m_TagString: Untagged
@@ -130,3 +131,17 @@ MonoBehaviour:
   moveSpeed: 0.1
   maxHP: 100
   damageNumberOffset: {x: 0, y: 2, z: 0}
+  attackDamage: 10
+--- !u!114 &3051200901917416503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230925935269110599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c53f8d10684ac19e7d30f41a625980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterBehaviour
+  detectionRange: 10
