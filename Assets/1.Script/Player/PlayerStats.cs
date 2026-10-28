@@ -71,14 +71,9 @@ public class PlayerStats : MonoBehaviour, IStatSource
 
     private void Awake()
     {
-        _player = GetComponent<PlayerController>();
-        _health = GetComponent<PlayerHealth>();
-
-        if (_punchAttack == null)
-        {
-            _punchAttack = GetComponent<PunchAttack>();
-        }
+        EnsureComponents();
     }
+
     private void OnEnable()
     {
         GameUI.Bind(this);
@@ -94,6 +89,24 @@ public class PlayerStats : MonoBehaviour, IStatSource
     private void Start()
     {
         ApplyAll();
+    }
+
+    // Awake 전에 SetLevels(불러오기)가 불리면 _health가 null -> Apply에서 에러
+    // null인 것만 찾아 채우므로 Awake 뒤에 다시 불려도 비용이 거의 없음
+    private void EnsureComponents()
+    {
+        if (_player == null)
+        {
+            _player = GetComponent<PlayerController>();
+        }
+        if (_health == null)
+        {
+            _health = GetComponent<PlayerHealth>();
+        }
+        if (_punchAttack == null)
+        {
+            _punchAttack = GetComponent<PunchAttack>();
+        }
     }
 
     public int GetLevel(StatType type)
@@ -151,6 +164,7 @@ public class PlayerStats : MonoBehaviour, IStatSource
 
     public void SetLevels(int[] levels)
     {
+        EnsureComponents(); // 불러오기는 Player가 꺼진 상태(Awake 전)에서 올 수 있음
         if (levels == null)
         {
             Debug.LogError("[PlayerStats:SetLevels] 레벨 데이터가 없습니다.");

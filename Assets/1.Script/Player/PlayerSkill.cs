@@ -22,6 +22,8 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     // 스킬 id 기준 쿨다운 종료 시각. 장착을 바꿔도 남은 쿨다운 유지
     private readonly Dictionary<string, float> _cooldownEndTime = new Dictionary<string, float>();
 
+    private bool _registered;
+
     public event Action<string> SkillOwned;                            // 상점·스킬 창 갱신
     public event Action<SkillSlot> SlotChanged;                        // HUD 슬롯 아이콘 갱신
     public event Action<SkillSlot, float> CooldownStarted;             // UI에 알림 -> HUD 쿨다운 게이지
@@ -34,7 +36,7 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     {
         _stats = GetComponent<PlayerStats>();
         _buffs = GetComponent<PlayerBuffs>();
-        RegisterSkills();
+        EnsureRegistered();
     }
 
     private void OnEnable()
@@ -45,6 +47,19 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     private void OnDisable()
     {
         GameUI.Unbind(this);
+    }
+
+    // Player가 꺼진 채로 시작하면 Awake 전에 불러오기가 올 수 있음
+    // 그때 _allSkills가 비어 있으면 TryAddOwned가 전부 실패해서 스킬이 조용히 사라짐
+    // -> 필요한 순간에 먼저 등록해 두고, 나중에 Awake가 불려도 다시 등록하지 않게
+    private void EnsureRegistered()
+    {
+        if (_registered) 
+        {
+            return;
+        } 
+        _registered = true;
+        RegisterSkills();
     }
 
     private void RegisterSkills()
@@ -174,6 +189,7 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     // 없는 id 무시, 중복 보유·장착 방지, UI 알림까지 기존 검사를 그대로 거치게
     public void LoadSaveData(PlayerSkillSaveData data)
     {
+        EnsureRegistered(); // Awake 전에 불려도 저장된 스킬 id를 찾을 수 있게
         ResetAll();
         if (data == null)
         {

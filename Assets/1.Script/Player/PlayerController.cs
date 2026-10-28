@@ -380,6 +380,64 @@ public class PlayerController : MonoBehaviour
         if (_stats != null) _stats.ResetAll(); // 최대 HP도 100으로 돌아감
     }
 
+    // 저장, 불러오기
+    // 저장 담당(SaveManager 등)은 이 두 함수만 부르면 되게 -> 플레이어 내부 구조를 몰라도 됨
+    public PlayerSaveData GetSaveData()
+    {
+        // Player가 꺼진 채로 시작하면 Awake가 안 불려서 _stats/_skills가 null일 수 있음
+        PlayerStats stats = GetComponent<PlayerStats>();
+        PlayerSkill skills = GetComponent<PlayerSkill>();
+
+        PlayerSaveData data = new PlayerSaveData();
+        data.statLevels = stats != null ? stats.GetLevels() : null;
+        data.skills = skills != null ? skills.GetSaveData() : new PlayerSkillSaveData();
+        return data;
+    }
+
+    public void LoadSaveData(PlayerSaveData data)
+    {
+        if (data == null)
+        {
+            Debug.LogError("[Player:LoadSaveData] 저장 데이터가 없습니다.");
+            return;
+        }
+
+        PlayerStats stats = GetComponent<PlayerStats>();
+        PlayerSkill skills = GetComponent<PlayerSkill>();
+        PlayerBuffs buffs = GetComponent<PlayerBuffs>();
+
+        // 이전 판 버프가 남은 채로 불러오면 저장 시점과 상태가 달라짐
+        if (buffs != null) buffs.ClearAll();
+
+        // 체력 스탯이 최대 HP를 바꾸므로, 이후 코어의 ResetHealth가 늘어난 최대치로 채우게
+        if (stats != null && data.statLevels != null) stats.SetLevels(data.statLevels);
+        if (skills != null) skills.LoadSaveData(data.skills);
+    }
+
+    // 테스트용 (저장 담당이 생기기 전) 
+    // 새 게임으로 상태를 지운 뒤에도 저장한 JSON이 남아 있어야 불러오기를 확인할 수 있음
+    private static string _testSaveJson;
+
+    [ContextMenu("Test/저장 (JSON)")]
+    private void TestSave()
+    {
+        // 직렬화가 되는지까지 확인
+        _testSaveJson = JsonUtility.ToJson(GetSaveData());
+        Debug.Log($"[Player] 저장: {_testSaveJson}");
+    }
+
+    [ContextMenu("Test/불러오기 (JSON)")]
+    private void TestLoad()
+    {
+        if (string.IsNullOrEmpty(_testSaveJson))
+        {
+            Debug.LogWarning("[Player] 먼저 Test/저장을 실행하세요.");
+            return;
+        }
+        LoadSaveData(JsonUtility.FromJson<PlayerSaveData>(_testSaveJson));
+        Debug.Log("[Player] 불러오기 완료");
+    }
+
     public void SetInvincible(float duration)
     {
         _invincibleEndTime = Mathf.Max(_invincibleEndTime, Time.time + duration);
