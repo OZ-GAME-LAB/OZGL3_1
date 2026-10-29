@@ -414,30 +414,6 @@ public class PlayerController : MonoBehaviour
         if (skills != null) skills.LoadSaveData(data.skills);
     }
 
-    // 테스트용 (저장 담당이 생기기 전) 
-    // 새 게임으로 상태를 지운 뒤에도 저장한 JSON이 남아 있어야 불러오기를 확인할 수 있음
-    private static string _testSaveJson;
-
-    [ContextMenu("Test/저장 (JSON)")]
-    private void TestSave()
-    {
-        // 직렬화가 되는지까지 확인
-        _testSaveJson = JsonUtility.ToJson(GetSaveData());
-        Debug.Log($"[Player] 저장: {_testSaveJson}");
-    }
-
-    [ContextMenu("Test/불러오기 (JSON)")]
-    private void TestLoad()
-    {
-        if (string.IsNullOrEmpty(_testSaveJson))
-        {
-            Debug.LogWarning("[Player] 먼저 Test/저장을 실행하세요.");
-            return;
-        }
-        LoadSaveData(JsonUtility.FromJson<PlayerSaveData>(_testSaveJson));
-        Debug.Log("[Player] 불러오기 완료");
-    }
-
     public void SetInvincible(float duration)
     {
         _invincibleEndTime = Mathf.Max(_invincibleEndTime, Time.time + duration);
