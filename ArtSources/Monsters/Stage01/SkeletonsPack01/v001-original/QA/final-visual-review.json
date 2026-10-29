@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-29",
+  "reviewer": "independent visual review agent",
+  "visual_review_complete": true,
+  "original_asset_review_accepted": true,
+  "production_visual_approval": false,
+  "visual_approval": false,
+  "decision": "The original assets and native motion can be delivered for review with the documented limitations. This is not approval of a collision-free, fully integrated game animation set. Original meshes, proportions, bones, curves, colors and floor behavior were not repaired.",
+  "review_method": "Visual inspection of ordered actual Unity skinned-model PNG sequences, cropped every-frame sheets, full-resolution problem frames, original Blender reference images and encoded GIF timing. This reviewer did not claim real-time playback observation or use numerical pose equality as a substitute for visual quality.",
+  "coverage": {
+    "side": "Every supplied frame of all 20 selected clips, including all four existing Minion clips and inclusive endpoints.",
+    "auxiliary_full_sequences": {
+      "Minion": [
+        "Attack"
+      ],
+      "Rogue": [
+        "2H_Ranged_Aiming",
+        "2H_Ranged_Shoot",
+        "2H_Ranged_Reload"
+      ],
+      "Warrior": [
+        "1H_Melee_Attack_Chop",
+        "1H_Melee_Attack_Slice_Diagonal"
+      ],
+      "Mage": [
+        "Spellcast_Shoot",
+        "Spellcast_Raise"
+      ]
+    },
+    "auxiliary_views": [
+      "Front",
+      "Opposite",
+      "Back"
+    ],
+    "connections": "All 27 preview-only 0.12-second blends: both raw endpoints and every one of the 26 rendered blend frames per connection.",
+    "not_exhaustively_reviewed": "Additional captured auxiliary hit sequences and auxiliary loop key sheets were not all reviewed frame by frame. Necessary shoulder, grip, costume and weapon checks used the complete action sequences and enlarged problem frames."
+  },
+  "presentation": {
+    "world_camera_scale_shared": true,
+    "new_skeleton_outer_wrapper_scale": 0.585289224,
+    "hero_root_scale": 1,
+    "note": "Common world/camera scale does not mean equal total heights. Original helmets, horns, hats and weapons add different silhouette heights. The hero is the current Combat prefab in a static reference pose.",
+    "floor_reference": "Amber marks indicate intended Y=0. The review floor is lowered to Y=-0.05 for visibility. Ground observations use the amber reference, not the lowered floor surface. Whole-character minimumY includes accessories and is not a measurement of foot penetration."
+  },
+  "findings": [
+    {
+      "role": "Minion",
+      "result": "Existing adjusted v001 sample retained and reviewed without new edits.",
+      "motion": "Idle and run show continuous head, trunk and limb motion; loop endpoints align visually. Attack has a clear rise/anticipation through approximately 0.53s, fast strike around 0.57-0.63s, and recovery. Front/opposite/back show connected shoulders, elbows and grip without an obvious new skin collapse or reverse elbow. Hit settles back continuously.",
+      "limits": "This is the previously modified Minion, not a new pristine native version. Actual locomotion speed synchronization and collision behavior remain untested."
+    },
+    {
+      "role": "Rogue",
+      "result": "Native aim, shoot and reload are readable; original prop/floor and transition limitations remain.",
+      "motion": "Right-hand Crossbow attachment Y=-90 aligns the forward firing direction. Aim raises into a held pose; shoot has a small recoil, reload has a separate handling/return phase. No obvious detached limb or sudden imported skin jump was seen across the complete four-view action sequences.",
+      "issues": [
+        "Crossbow front geometry passes significantly below Y=0 in Idle_Combat and Hit_A, and remains low during Running_A. This is a visible accessory intersection, not merely a numerical warning.",
+        "Some running boot tips pass slightly below Y=0, independently of the deeper crossbow intersection; Running_A Side frame 5 is a clear example.",
+        "Aiming and Shoot have different initial/final postures. They are one-shot transitions, not seamless loops. In the preview Aiming-to-Shoot and Reload-to-Aiming blends the crossbow visibly dips before the incoming raise; Aiming-to-Idle lowers the weapon quickly. Blend interpolation does not eliminate these native state-design differences.",
+        "Arrow loading, actual projectile release and exact finger/trigger contact are not established by the supplied animation preview."
+      ]
+    },
+    {
+      "role": "Warrior",
+      "result": "Original one-handed actions fit the native short axe better than the discarded two-handed selection.",
+      "motion": "Right-hand identity attachment maintains grip while Chop rises beside the helmet and strikes forward/down with trunk follow-through. Diagonal Slice shows cross-body preparation, a quick cut and recovery. Front/opposite/back retain shoulder and elbow continuity; the floating off hand from the discarded two-handed selection is absent.",
+      "issues": [
+        "The axe edge lowers to/below Y=0 during the later Diagonal Slice recovery; Side frame 20 shows the remaining floor intersection.",
+        "Native Walking_B contains slight boot-tip/ground crossing; Side frame 8 provides an example. The numerical whole-renderer minimum is not used as a foot-depth estimate.",
+        "Helmet/axe overlap in side projection reduces separation at high preparation poses; supplementary front/opposite views were required to assess grip and direction."
+      ]
+    },
+    {
+      "role": "Mage",
+      "result": "Native right-hand spell gestures remain intact, but staff clearance does not pass production review.",
+      "motion": "Staff uses left handslot with Z=+90, leaving the native casting hand free. Shoot is a short forward gesture; Raise has a longer lift, hold and lowering phase. Skin and joint motion are continuous in the reviewed sequence. The large hat creates a distinct silhouette.",
+      "issues": [
+        "The staff skull/shaft visibly intersects the hat brim and emerges through it in opposite/back views during spell gestures; this is not only an uncertain side-view projection overlap. Spellcast_Shoot Opposite frame 8 is representative.",
+        "The staff lower end extends below the intended ground reference in several lowered poses. In the main side view it is largely occluded by the body; occlusion does not count as fixing the issue.",
+        "Walking_D_Skeletons has slight native foot/heel crossing below Y=0; Side frame 7 is a visible example.",
+        "The short Shoot gesture alone gives a restrained telegraph. Gameplay danger timing/range and magic effects were not validated or added."
+      ]
+    }
+  ],
+  "issues_resolved_without_native_edits": [
+    "Accessory coordinate-frame mismatch was corrected by separate static attachment wrappers, not animation or mesh edits.",
+    "Warrior switched from unsuitable native two-handed actions to compatible native one-handed actions without changing keys.",
+    "Rogue Aiming loop metadata was corrected to one-shot while preserving native curves.",
+    "Review-only hero material conversion restored visible original color families in the isolated Unity renderer; the source hero prefab/materials were not edited."
+  ],
+  "remaining_limits": [
+    "No game Animator controller, transition logic, locomotion controller, hitbox timing, projectile logic, VFX or runtime scene integration was changed or tested.",
+    "In-place clips cannot establish correct world-space foot sliding without the intended game movement speed.",
+    "The 27 offline blend demonstrations are representative connections, not exhaustive state-graph or interruption testing.",
+    "Only the 20 selected clips were visually reviewed; each new original FBX retains 95 embedded takes, and the unselected takes are not visually approved.",
+    "No numerical mesh-intersection solver or exact finger-contact signoff was performed. Named intersections above are visually observed and intentionally retained under the source-preservation requirement.",
+    "Native joint/key fidelity and successful main-project reload validate import/persistence, not production animation quality."
+  ],
+  "evidence_files": [
+    "QA/source-provenance.json",
+    "QA/import-only-reopen-verification.json",
+    "QA/source-motion-fidelity.json",
+    "QA/unity-import-report.json",
+    "QA/main-project-import-validation.json",
+    "QA/unity-review-report.json",
+    "QA/attachment-visual-review.json",
+    "QA/equipment-fit-study.txt",
+    "QA/independent-media-verification.json"
+  ],
+  "review_media_root": "C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original",
+  "independent_sheets": [
+    "Independent/FullFrames",
+    "Independent/Connections"
+  ],
+  "verification_metadata": {
+    "created_utc": "2026-10-29T05:12:13.223891+00:00",
+    "unity_review_report_sha256": "cbf685bff46a5800cf07580e8a3aa3a574f8639acbd24054ef0b457bf3ceb4dc",
+    "media_manifest_sha256": "391f5ec47b9d39ee5f76f49746264dc6088add5a030f9721926434ee0dc07cd7",
+    "main_project_validation_sha256": "d457914c02170f7b4464e088cc578184d7262b247353f9ee059b1af2924b573e",
+    "source_motion_fidelity_sha256": "d6c8bd6f2964681850d8e1a4da94157a02b0061fdfe6e52aa221c1bae951588c",
+    "media_verification_sha256": "c177e7e6246a455d384a1e62ec642ff94ce296a87019b0607bb0e5a230ea665b",
+    "main_project_readonly_validation_success": true,
+    "unity_render_success": true,
+    "protected_preexisting_files_checked": 22,
+    "source_hashes_unchanged": true,
+    "fidelity_scope": {
+      "times_seconds": [
+        0.0,
+        0.26666666666666666,
+        0.5333333333333333,
+        0.8
+      ],
+      "source_fbx_vs_glb_bones": [
+        "root",
+        "hips",
+        "head",
+        "upperarm.r",
+        "lowerarm.r",
+        "hand.r",
+        "handslot.r",
+        "upperarm.l",
+        "lowerarm.l",
+        "hand.l",
+        "handslot.l"
+      ],
+      "minion_vs_warrior_glb_bone_count": 41,
+      "unity_comparison_clips": [
+        "Idle_Combat",
+        "1H_Melee_Attack_Chop"
+      ],
+      "unity_dump_pose_count": 56
+    },
+    "side_pngs_reviewed": 1053,
+    "action_auxiliary_pngs_reviewed": 963,
+    "connections_reviewed": 27,
+    "connection_blend_frames_reviewed": 702,
+    "connection_raw_endpoints_reviewed": 54,
+    "gif_actual_file_count": 94,
+    "gif_hashes_and_delays_match_manifest": true,
+    "maximum_gif_timing_error_ms": 3.3337783813482957,
+    "native_model_and_prefab_files": [
+      {
+        "role": "Rogue",
+        "source_fbx": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Rogue.fbx",
+        "source_fbx_sha256": "2961f9cb6640f4627db4b9213b7b349270dc737a4c9b5f7aa5f078203887f78d",
+        "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Rogue.prefab",
+        "prefab_sha256": "43e9bab5128ad67d82ffd59fa501b39abfb37226be4aaaa08526464c49af5ce2"
+      },
+      {
+        "role": "Warrior",
+        "source_fbx": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Warrior.fbx",
+        "source_fbx_sha256": "783d88baface5b5aec4be3a1bdfe360e12e091dae753b3968161e7a69bd0c279",
+        "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Warrior.prefab",
+        "prefab_sha256": "7a770ccd3b64d84a247f91c563cfc7ff10e4c4d698f659198de6d2129fab9026"
+      },
+      {
+        "role": "Mage",
+        "source_fbx": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx",
+        "source_fbx_sha256": "a5b6a9e9c690b2c23f52aa7a18aef411b56e9c660229c7e2d0f217f78752573c",
+        "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Mage.prefab",
+        "prefab_sha256": "06ccdd36e0a4ee68a69ed197801153613545564c1783a6966fe17142362c6887"
+      }
+    ],
+    "test_environment_note": "Visual PNGs are actual skinned-model renders in the isolated Unity review environment. Main-project validation reopened/read the delivered assets structurally; it did not exercise game logic or render the running game."
+  }
+}

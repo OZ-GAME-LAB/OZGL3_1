@@ -1,0 +1,93 @@
+{
+  "source_file": "SourceAssets\\Accessories\\fbx\\Skeleton_Arrow.fbx",
+  "source_sha256": "594e7cb4df07076c94991c148803b3235ddf313ed03600dbab38c0b3910787c4",
+  "blender": "5.2.3 LTS",
+  "native_import_settings": "Default Blender importer, no post-import changes to asset data. Blender performs standard file-axis and unit conversion.",
+  "fps": 24.0,
+  "fps_integer": 24,
+  "fps_base": 1.0,
+  "unit_scale_length": 1.0,
+  "mesh_count": 1,
+  "raw_bind_mesh_world_bounds": {
+    "min": [
+      -0.05866653844714165,
+      -0.06774815917015076,
+      -0.38292860984802246
+    ],
+    "max": [
+      0.058673419058322906,
+      0.03387816250324249,
+      0.36561787128448486
+    ],
+    "size": [
+      0.11733995750546455,
+      0.10162632167339325,
+      0.7485464811325073
+    ]
+  },
+  "objects": [
+    {
+      "name": "Skeleton_Arrow",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        -1.6292067073209182e-07,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.6292067073209182e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292067073209182e-07,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 28,
+      "materials": [
+        "skeleton"
+      ]
+    }
+  ],
+  "rigs": [],
+  "action_count": 0,
+  "actions": [],
+  "images": [
+    {
+      "name": "skeleton_texture.png",
+      "filepath": "C:\\Users\\Kay Lousberg\\Desktop\\Work\\Gameassets\\Kay Lousberg Assets\\KayKit\\Characters\\Export\\Skeletons\\texture\\skeleton_texture.png",
+      "packed": false,
+      "size": [
+        0,
+        0
+      ]
+    }
+  ]
+}

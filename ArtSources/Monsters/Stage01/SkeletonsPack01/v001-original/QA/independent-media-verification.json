@@ -1,0 +1,856 @@
+{
+  "created_utc": "2026-10-29T05:12:13.223891+00:00",
+  "pass": true,
+  "gif_count": 94,
+  "maximum_timing_error_ms": 3.3337783813482957,
+  "checks": [
+    {
+      "path": "GIF/Minion/Idle_1x.gif",
+      "sha256": "8e67d3d3d5b92b2cb565274e629393236d7823a3359e5e59797f71eb04d5e6aa",
+      "frames": 128,
+      "encoded_seconds": 4.27,
+      "expected_seconds": 4.266666889190674,
+      "timing_error_ms": 3.3331108093257455,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Idle_0p5x.gif",
+      "sha256": "74702d14e21f988445e7834419966b1d5e8911af2a9a25d1d6bfab91854ddcaa",
+      "frames": 128,
+      "encoded_seconds": 8.53,
+      "expected_seconds": 8.533333778381348,
+      "timing_error_ms": 3.3337783813482957,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Move_1x.gif",
+      "sha256": "eab01ab5515d12fec61dbcbfc734199d8601079680354089fc9f0680943dc676",
+      "frames": 24,
+      "encoded_seconds": 0.8,
+      "expected_seconds": 0.800000011920929,
+      "timing_error_ms": 1.1920928910669204e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Move_0p5x.gif",
+      "sha256": "8a5b89466298113d9c83e1243bbad47d70357f86b4e0e6d0caf39c8977c9758a",
+      "frames": 24,
+      "encoded_seconds": 1.6,
+      "expected_seconds": 1.600000023841858,
+      "timing_error_ms": 2.3841857821338408e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Attack_1x.gif",
+      "sha256": "cf6ef42eccac40f381095a4ca09afec6016a796ba1ace3b2942b6fa59583b5b2",
+      "frames": 33,
+      "encoded_seconds": 1.57,
+      "expected_seconds": 1.5666667222976685,
+      "timing_error_ms": 3.333277702331605,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Attack_0p5x.gif",
+      "sha256": "8595c18366cf3b184132dd309808a2968569ce8e9c44360b77ffbba870db9dea",
+      "frames": 33,
+      "encoded_seconds": 2.63,
+      "expected_seconds": 2.633333444595337,
+      "timing_error_ms": 3.3334445953370206,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Hit_1x.gif",
+      "sha256": "1653353837b1805099c0fa5772f32f9c1026c14c5f801b70b8ab635778cfe612",
+      "frames": 21,
+      "encoded_seconds": 1.17,
+      "expected_seconds": 1.1666666865348816,
+      "timing_error_ms": 3.333313465118337,
+      "pass": true
+    },
+    {
+      "path": "GIF/Minion/Hit_0p5x.gif",
+      "sha256": "53c3ea5785524a2fff3226c8eaad24bac5dfebec00106adf55b95225a415f73b",
+      "frames": 21,
+      "encoded_seconds": 1.83,
+      "expected_seconds": 1.8333333730697632,
+      "timing_error_ms": 3.3333730697631125,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/Idle_Combat_1x.gif",
+      "sha256": "50625a42955c2d182f2625fdd5e75ed347c128ceb73c8bbec89616444bf5cfbe",
+      "frames": 128,
+      "encoded_seconds": 4.27,
+      "expected_seconds": 4.266666889190674,
+      "timing_error_ms": 3.3331108093257455,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/Idle_Combat_0p5x.gif",
+      "sha256": "0cd15b7d5690928c658956ad34617a900447fc3bc841822be7564178137c04cb",
+      "frames": 128,
+      "encoded_seconds": 8.53,
+      "expected_seconds": 8.533333778381348,
+      "timing_error_ms": 3.3337783813482957,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/Running_A_1x.gif",
+      "sha256": "41170da10b55c7f61001d661b2d25727c095264a86ea417448bdf289d88c2289",
+      "frames": 24,
+      "encoded_seconds": 0.8,
+      "expected_seconds": 0.800000011920929,
+      "timing_error_ms": 1.1920928910669204e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/Running_A_0p5x.gif",
+      "sha256": "4b963df12dde53040bfed5f5420d890c3fc7df10c810c755bdf56aadb8849fdb",
+      "frames": 24,
+      "encoded_seconds": 1.6,
+      "expected_seconds": 1.600000023841858,
+      "timing_error_ms": 2.3841857821338408e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/2H_Ranged_Aiming_1x.gif",
+      "sha256": "e083d062cfcc0fce348f9e554e82569003c235a370818b454c613c02f70da675",
+      "frames": 49,
+      "encoded_seconds": 2.1,
+      "expected_seconds": 2.100000023841858,
+      "timing_error_ms": 2.3841857821338408e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/2H_Ranged_Aiming_0p5x.gif",
+      "sha256": "258d9d25ebf86ebd997c0fc989efa861aaefb51952d79f3b59534d23b1b6e23c",
+      "frames": 49,
+      "encoded_seconds": 3.7,
+      "expected_seconds": 3.700000047683716,
+      "timing_error_ms": 4.7683715642676816e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/2H_Ranged_Shoot_1x.gif",
+      "sha256": "5122b9c6101aefe68ec44243554ed1d2e2e750cd3527d2c891699d5c914005a4",
+      "frames": 33,
+      "encoded_seconds": 1.57,
+      "expected_seconds": 1.5666667222976685,
+      "timing_error_ms": 3.333277702331605,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/2H_Ranged_Shoot_0p5x.gif",
+      "sha256": "fb2ba8658a2edb57d7d08fbe63a6fbe624c5d49a8d9e1cb170196b7efc939bb1",
+      "frames": 33,
+      "encoded_seconds": 2.63,
+      "expected_seconds": 2.633333444595337,
+      "timing_error_ms": 3.3334445953370206,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/2H_Ranged_Reload_1x.gif",
+      "sha256": "84936cc99ffaafd43b79543f5e092403a665a9987b35c10b983f0ad484994460",
+      "frames": 49,
+      "encoded_seconds": 2.1,
+      "expected_seconds": 2.100000023841858,
+      "timing_error_ms": 2.3841857821338408e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/2H_Ranged_Reload_0p5x.gif",
+      "sha256": "a59b53c5dc388ac201fb20f38dbdde64c1ad0510dcce6901d0163491cd4d694a",
+      "frames": 49,
+      "encoded_seconds": 3.7,
+      "expected_seconds": 3.700000047683716,
+      "timing_error_ms": 4.7683715642676816e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/Hit_A_1x.gif",
+      "sha256": "a224b1e7cf8b2b23537046875e874d8c9ec0e45e4b69687883dda7db3bdcbe89",
+      "frames": 21,
+      "encoded_seconds": 1.17,
+      "expected_seconds": 1.1666666865348816,
+      "timing_error_ms": 3.333313465118337,
+      "pass": true
+    },
+    {
+      "path": "GIF/Rogue/Hit_A_0p5x.gif",
+      "sha256": "905cd79c82db7522dd898dfd02ca2674dd17d9dc7c32534cf95819266651f427",
+      "frames": 21,
+      "encoded_seconds": 1.83,
+      "expected_seconds": 1.8333333730697632,
+      "timing_error_ms": 3.3333730697631125,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/Idle_Combat_1x.gif",
+      "sha256": "052528969d05dab1e8e7899f5e0fb19bea5698d110464c5f4a51745199a7cdf5",
+      "frames": 128,
+      "encoded_seconds": 4.27,
+      "expected_seconds": 4.266666889190674,
+      "timing_error_ms": 3.3331108093257455,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/Idle_Combat_0p5x.gif",
+      "sha256": "3732c6ca687527ec1979d379fa8f97cd90036f9cd43adb0f3f701fda2913f3ab",
+      "frames": 128,
+      "encoded_seconds": 8.53,
+      "expected_seconds": 8.533333778381348,
+      "timing_error_ms": 3.3337783813482957,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/Walking_B_1x.gif",
+      "sha256": "6acc9765b7ac0b14a84eb2e8b7847f1cb11c7e18e40a91f293333b09629efe6f",
+      "frames": 32,
+      "encoded_seconds": 1.07,
+      "expected_seconds": 1.0666667222976685,
+      "timing_error_ms": 3.333277702331605,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/Walking_B_0p5x.gif",
+      "sha256": "c3702c140995b7367120ed3c4f29e14d4b7062b418cc163c0eadc8958a4aec23",
+      "frames": 32,
+      "encoded_seconds": 2.13,
+      "expected_seconds": 2.133333444595337,
+      "timing_error_ms": 3.3334445953370206,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/1H_Melee_Attack_Chop_1x.gif",
+      "sha256": "4f0711c8fc1805cd8d5b1c547b83bc09e893a97cb0d4cef27dd746e38aad109d",
+      "frames": 33,
+      "encoded_seconds": 1.57,
+      "expected_seconds": 1.5666667222976685,
+      "timing_error_ms": 3.333277702331605,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/1H_Melee_Attack_Chop_0p5x.gif",
+      "sha256": "367ab16b238b835aee92e3c6ebdfeb4e6d62f7a41ebf972c3aa575547d253298",
+      "frames": 33,
+      "encoded_seconds": 2.63,
+      "expected_seconds": 2.633333444595337,
+      "timing_error_ms": 3.3334445953370206,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/1H_Melee_Attack_Slice_Diagonal_1x.gif",
+      "sha256": "595928e77c11a0ff567870a5e360bac0f7b85aa8d01e84f4930d87bf91658ffe",
+      "frames": 31,
+      "encoded_seconds": 1.5,
+      "expected_seconds": 1.5,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/1H_Melee_Attack_Slice_Diagonal_0p5x.gif",
+      "sha256": "c6d54e49968177c3f55110cb0591a0138b5b305ace84915f11cd7c2b8ffecf77",
+      "frames": 31,
+      "encoded_seconds": 2.5,
+      "expected_seconds": 2.5,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/Hit_A_1x.gif",
+      "sha256": "f19bbe947b5ec8b1079bba4b211fb311d43e204d7c023d24dada14b98b0c104d",
+      "frames": 21,
+      "encoded_seconds": 1.17,
+      "expected_seconds": 1.1666666865348816,
+      "timing_error_ms": 3.333313465118337,
+      "pass": true
+    },
+    {
+      "path": "GIF/Warrior/Hit_A_0p5x.gif",
+      "sha256": "a91ae96948abafe7983bca613e64b95fd31d96903f87c962255b9d43ff0af57a",
+      "frames": 21,
+      "encoded_seconds": 1.83,
+      "expected_seconds": 1.8333333730697632,
+      "timing_error_ms": 3.3333730697631125,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Idle_Combat_1x.gif",
+      "sha256": "d62ef35a15707742b4890e60e575ca154149124d7bc3ef6658b58ff04c7cbdad",
+      "frames": 128,
+      "encoded_seconds": 4.27,
+      "expected_seconds": 4.266666889190674,
+      "timing_error_ms": 3.3331108093257455,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Idle_Combat_0p5x.gif",
+      "sha256": "640ed4903843fa285145a5085f8bd6932a761f00d119db0b9130816d4f5af23f",
+      "frames": 128,
+      "encoded_seconds": 8.53,
+      "expected_seconds": 8.533333778381348,
+      "timing_error_ms": 3.3337783813482957,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Walking_D_Skeletons_1x.gif",
+      "sha256": "896aa570559d65dd4b90a75fd6ec717312e229e83d77f6cab2c29c5cce280434",
+      "frames": 48,
+      "encoded_seconds": 1.6,
+      "expected_seconds": 1.600000023841858,
+      "timing_error_ms": 2.3841857821338408e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Walking_D_Skeletons_0p5x.gif",
+      "sha256": "f58e899d043042841339eacf21204fa40fb7415629413a0e19c86ba1e48d5c80",
+      "frames": 48,
+      "encoded_seconds": 3.2,
+      "expected_seconds": 3.200000047683716,
+      "timing_error_ms": 4.7683715642676816e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Spellcast_Shoot_1x.gif",
+      "sha256": "7e2ed1a172faf9fb2fd486fac2a213628aaf97458f6ff7a6a5f0a55fe45c8d31",
+      "frames": 29,
+      "encoded_seconds": 1.43,
+      "expected_seconds": 1.4333333373069763,
+      "timing_error_ms": 3.3333373069763805,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Spellcast_Shoot_0p5x.gif",
+      "sha256": "39f8958e2a81016d114dc23c0164001147f5a6715bb4ff2c238343dd9274f241",
+      "frames": 29,
+      "encoded_seconds": 2.37,
+      "expected_seconds": 2.3666666746139526,
+      "timing_error_ms": 3.33332538604747,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Spellcast_Raise_1x.gif",
+      "sha256": "2a2d4de3fae6b88c632b830d6a4e6cc2ca03580bfc6e7ca032c09c3991729d39",
+      "frames": 64,
+      "encoded_seconds": 2.6,
+      "expected_seconds": 2.5999999046325684,
+      "timing_error_ms": 9.536743172944284e-05,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Spellcast_Raise_0p5x.gif",
+      "sha256": "05b55ac8fc91727ee6ef49ef55d0ea63cec830ca92c27a356d2cc13459923bd4",
+      "frames": 64,
+      "encoded_seconds": 4.7,
+      "expected_seconds": 4.699999809265137,
+      "timing_error_ms": 0.00019073486345888568,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Hit_A_1x.gif",
+      "sha256": "e3a177d3deadd3573dc99589f92f6a8c457cf396e80a1f8d98c2eb14d063e4cd",
+      "frames": 21,
+      "encoded_seconds": 1.17,
+      "expected_seconds": 1.1666666865348816,
+      "timing_error_ms": 3.333313465118337,
+      "pass": true
+    },
+    {
+      "path": "GIF/Mage/Hit_A_0p5x.gif",
+      "sha256": "c5b4f93e40f51312ab2eb5f4b22147162af4157390565b537a9a10d6245c6066",
+      "frames": 21,
+      "encoded_seconds": 1.83,
+      "expected_seconds": 1.8333333730697632,
+      "timing_error_ms": 3.3333730697631125,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Idle_to_Idle_1x.gif",
+      "sha256": "eb54b7203309406fb31e0a5ac9f8f0fad177e7b794a4f1283163e9a5f1e04cfd",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Idle_to_Idle_0p5x.gif",
+      "sha256": "486a1609c73464394fcfd0c39aad6f8580d8944f8516a1f26d0266d035e9aa08",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Move_to_Move_1x.gif",
+      "sha256": "6245ded0965ac8ca9012ed30307b521dc404e5b051f5e2d8837d8fd64c629bfc",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Move_to_Move_0p5x.gif",
+      "sha256": "7dcb20bbf8aea59bc73034e20c0c2bd341eeca7b3fcd5eaec3a550e479bbb8c6",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Idle_to_Move_1x.gif",
+      "sha256": "217e61d68f17754f9d16e234ce93cb5e8b273b089c92a1fc22a7b7d80366990f",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Idle_to_Move_0p5x.gif",
+      "sha256": "313180f589cc7d8a543fc73e349b0817c5ef8364107f77d519407697149f7816",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Move_to_Attack_1x.gif",
+      "sha256": "18b2f31e354fbf5135cb9a2f28ab7854c2dd8b6bdf30edea14ce4c0e9196c9df",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Move_to_Attack_0p5x.gif",
+      "sha256": "2cdb85507a5a5232c689df7ded8a875ef85820a6927dce7cd914fc863d70330d",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Attack_to_Idle_1x.gif",
+      "sha256": "b8c516d56cb9ea8a468ab2290501ba3314425b496a2d7569180c81ab6d63dcba",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Attack_to_Idle_0p5x.gif",
+      "sha256": "ac38f4dfc46094e3e118342c78db61f5bde59483c8600cb591ccdd06a6596c50",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Hit_to_Idle_1x.gif",
+      "sha256": "3806c218d34f54b3d479464b63246cd35254a34e71580397d30e01dc96eebbc5",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Minion/Hit_to_Idle_0p5x.gif",
+      "sha256": "45d4d432b63c5743077ba33b21ff23606b06b179aa0e05ec3b2abe8f9d9386c6",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Idle_Combat_to_Idle_Combat_1x.gif",
+      "sha256": "c7bc2a016ee145334bb55ccd070889db6555f01069801c0cf1b3dfa56d28899e",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Idle_Combat_to_Idle_Combat_0p5x.gif",
+      "sha256": "991b0f59273cd13279cebec9b2cd9de8081db0104a4c8a5534b8316146fd4bf5",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Running_A_to_Running_A_1x.gif",
+      "sha256": "a337554a8dac35255317e549ab1a554c9870a4be3dcada48b083b307fc372cc3",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Running_A_to_Running_A_0p5x.gif",
+      "sha256": "421a8bb662c08b0d695436e0a7f0e9be65eb472d4422a620cda834b025e6c5c0",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Idle_Combat_to_Running_A_1x.gif",
+      "sha256": "01aa2ce99869f099448cddfba76171b9feab1034905681468087e45d642b135c",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Idle_Combat_to_Running_A_0p5x.gif",
+      "sha256": "d6fe3718912c510bb85b2c285a44f219e3adc3c028e0df0d41365515e534a2b4",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Running_A_to_2H_Ranged_Aiming_1x.gif",
+      "sha256": "3da06966c05ab674067c7675c1ec2710d72aa6ececa552f9542d971872b213ff",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Running_A_to_2H_Ranged_Aiming_0p5x.gif",
+      "sha256": "ec3b15533d00b18c7eb542b8b4fc41891c37c934049605e84e17e48bddd3ffd8",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Aiming_to_Idle_Combat_1x.gif",
+      "sha256": "766fa9a8b978af312c4efd5ac2a91511335980b7b71221d5c57d7364e2b9efcf",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Aiming_to_Idle_Combat_0p5x.gif",
+      "sha256": "b68400bf291a3d76cbd2a6e2a7019378509fe914c5bdbe3ffb5cca708aafe226",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Hit_A_to_Idle_Combat_1x.gif",
+      "sha256": "5e313fc2df171dddbaaaec0500e4fbda25a0f0525cb8db8b68555529070a2ed3",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/Hit_A_to_Idle_Combat_0p5x.gif",
+      "sha256": "26144af3c283a804379e9836c73a874a35ebfb3ff2b09eb38b63feff24151c8e",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Aiming_to_2H_Ranged_Shoot_1x.gif",
+      "sha256": "0bf2dbdcfdcbee2467db8003fc5b6d905ba0ef46e67e83537228542b348a3627",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Aiming_to_2H_Ranged_Shoot_0p5x.gif",
+      "sha256": "8524547e5eb3bbef305e702ea19181e30e5b74c85be413fbf1a05b935147667d",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Shoot_to_2H_Ranged_Reload_1x.gif",
+      "sha256": "911235c998fd08144286c93cfb1d8a326171f7fbb81896b0df874f9db3cbb676",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Shoot_to_2H_Ranged_Reload_0p5x.gif",
+      "sha256": "fa08b36ad42e896f056c30f2ac97c59196bacf1d950276bf6f74d4461c7744f6",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Reload_to_2H_Ranged_Aiming_1x.gif",
+      "sha256": "240d6af07360c333d5d8f0a84ff5dc47342a63bcda1b0420aa8253980e0444d3",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Rogue/2H_Ranged_Reload_to_2H_Ranged_Aiming_0p5x.gif",
+      "sha256": "13c9c42f6be870adb9e787329b64f5f7fc38ccb625a44a1cc295071490720f13",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Idle_Combat_to_Idle_Combat_1x.gif",
+      "sha256": "f30d8fabc5a6d3a84a680e25c4853657f217161738d6450941ea1e055498983e",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Idle_Combat_to_Idle_Combat_0p5x.gif",
+      "sha256": "8a44e54877b65cf67274803197b023adb836138bd4d858366037b221d3875b4b",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Walking_B_to_Walking_B_1x.gif",
+      "sha256": "df44fef7c96c92dffac0b5eb5ccf7b9936558cd96f26ac921aacab85d111a2df",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Walking_B_to_Walking_B_0p5x.gif",
+      "sha256": "6fb9cbd5c38dead455bf5caf6e78231ed22cea8cf2b41ced7b7abbc1633e1544",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Idle_Combat_to_Walking_B_1x.gif",
+      "sha256": "864b390b80f027ea472dd8ec438d0807a7f16df40ab13d4b4aba401d8c55febe",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Idle_Combat_to_Walking_B_0p5x.gif",
+      "sha256": "01cab3fb408bf3d3a97919f62f1db683905220f23d597b25181880a2f753100c",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Walking_B_to_1H_Melee_Attack_Chop_1x.gif",
+      "sha256": "843a89ae9ef1bab279aaeb78f366470b1cd196c06cb300eb21660717ec9e14ba",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Walking_B_to_1H_Melee_Attack_Chop_0p5x.gif",
+      "sha256": "60f1814aa4521fad66df57555811d2cd911baf0ec62250512c60162f98aaeb91",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/1H_Melee_Attack_Chop_to_Idle_Combat_1x.gif",
+      "sha256": "5c60f6560077bf67bf088e9a1d0de65669e7d6a885ce36f6e4c7ab5461acf23c",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/1H_Melee_Attack_Chop_to_Idle_Combat_0p5x.gif",
+      "sha256": "4008a5eb769c086dd6f36e081f84abced794749df6269cb6d1f9e372b5c4eb94",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Hit_A_to_Idle_Combat_1x.gif",
+      "sha256": "78496b9dc56ad9e302bc0f4ebbe85388971ea854a0beff866fffbc7dc4202248",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Warrior/Hit_A_to_Idle_Combat_0p5x.gif",
+      "sha256": "066644be43170fdcd435758affd2bc750558679489b154d48e041718a1010de1",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Idle_Combat_to_Idle_Combat_1x.gif",
+      "sha256": "1d5a9ff1ac7288ba2b8fc9d07245cfd3faeac569f4f2a54491d0bf2e700b8783",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Idle_Combat_to_Idle_Combat_0p5x.gif",
+      "sha256": "3b2e3407c721807d63c28727503c2c2d2e96de23e8e9407c76687201ae4efe2a",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Walking_D_Skeletons_to_Walking_D_Skeletons_1x.gif",
+      "sha256": "2434216b2afa29c792057c178f7667e144afc63344bbd2cfb03a1b90ac7ae5fd",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Walking_D_Skeletons_to_Walking_D_Skeletons_0p5x.gif",
+      "sha256": "24fb93c66c5af5c2561c47aa2e219b53e3a3c9304a469275566739446d554b6b",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Idle_Combat_to_Walking_D_Skeletons_1x.gif",
+      "sha256": "98725c6c6d3ca11ae04b1edc307547fd06a298b95fe57bce4ee5b480ccab44b2",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Idle_Combat_to_Walking_D_Skeletons_0p5x.gif",
+      "sha256": "8752e7705dddcca137be04b9498ba396c6a7ad9d16cc38d8ca15a3a64f9c684b",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Walking_D_Skeletons_to_Spellcast_Shoot_1x.gif",
+      "sha256": "7ae51c1a3318fdd24a42795e505b2ea1b3d09c1192a59c5bf865d12beb20a83d",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Walking_D_Skeletons_to_Spellcast_Shoot_0p5x.gif",
+      "sha256": "3455177eb106b8fcabc8ffea9ff6d50144c7712f8f362bb1ec35dbfcf17d63ea",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Spellcast_Shoot_to_Idle_Combat_1x.gif",
+      "sha256": "0288863685c2a8f3db9a066ceefce9478501285ac550654abf5d66f1eff593e1",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Spellcast_Shoot_to_Idle_Combat_0p5x.gif",
+      "sha256": "b96b2bcec16b6740a8faacc5f5941a380dfc7c789baa993af6145738dd25b4e3",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Hit_A_to_Idle_Combat_1x.gif",
+      "sha256": "b04c8b92daf7f4da6c899a73a493cb5d9a49fd907782dafad07ee1fbaa0359f0",
+      "frames": 26,
+      "encoded_seconds": 1.32,
+      "expected_seconds": 1.32,
+      "timing_error_ms": 0.0,
+      "pass": true
+    },
+    {
+      "path": "GIF/Connections/Mage/Hit_A_to_Idle_Combat_0p5x.gif",
+      "sha256": "66ca1dc0cde96369075fc114c73798d5c957da92e24b5f92d545206249d2e0d9",
+      "frames": 26,
+      "encoded_seconds": 2.14,
+      "expected_seconds": 2.14,
+      "timing_error_ms": 0.0,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "method": "Read every encoded GIF frame duration with Pillow; compare file SHA256 and frame delays with the delivered manifest. This is timing/persistence verification, not direct real-time playback observation."
+}

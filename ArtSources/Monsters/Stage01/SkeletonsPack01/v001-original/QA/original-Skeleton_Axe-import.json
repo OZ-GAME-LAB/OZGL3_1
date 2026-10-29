@@ -1,0 +1,93 @@
+{
+  "source_file": "SourceAssets\\Accessories\\fbx\\Skeleton_Axe.fbx",
+  "source_sha256": "b921180f7cc55306c4907e51676d3f7b6cecf0ab2f90095e269ba807e023f55c",
+  "blender": "5.2.3 LTS",
+  "native_import_settings": "Default Blender importer, no post-import changes to asset data. Blender performs standard file-axis and unit conversion.",
+  "fps": 24.0,
+  "fps_integer": 24,
+  "fps_base": 1.0,
+  "unit_scale_length": 1.0,
+  "mesh_count": 1,
+  "raw_bind_mesh_world_bounds": {
+    "min": [
+      -0.4942930340766907,
+      -0.14092300832271576,
+      -0.2508419454097748
+    ],
+    "max": [
+      0.4942930340766907,
+      0.14094756543636322,
+      1.0012037754058838
+    ],
+    "size": [
+      0.9885860681533813,
+      0.281870573759079,
+      1.2520457208156586
+    ]
+  },
+  "objects": [
+    {
+      "name": "Skeleton_Axe",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        -1.6292067073209182e-07,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.6292067073209182e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292067073209182e-07,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 279,
+      "materials": [
+        "skeleton"
+      ]
+    }
+  ],
+  "rigs": [],
+  "action_count": 0,
+  "actions": [],
+  "images": [
+    {
+      "name": "skeleton_texture.png",
+      "filepath": "C:\\Users\\Kay Lousberg\\Desktop\\Work\\Gameassets\\Kay Lousberg Assets\\KayKit\\Characters\\Export\\Skeletons\\texture\\skeleton_texture.png",
+      "packed": false,
+      "size": [
+        0,
+        0
+      ]
+    }
+  ]
+}

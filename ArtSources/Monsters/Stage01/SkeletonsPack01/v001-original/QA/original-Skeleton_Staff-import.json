@@ -1,0 +1,93 @@
+{
+  "source_file": "SourceAssets\\Accessories\\fbx\\Skeleton_Staff.fbx",
+  "source_sha256": "7b9fa1ec537d6c5d609e83c2e3d13e247ca252716cab36a6fa83a63100145457",
+  "blender": "5.2.3 LTS",
+  "native_import_settings": "Default Blender importer, no post-import changes to asset data. Blender performs standard file-axis and unit conversion.",
+  "fps": 24.0,
+  "fps_integer": 24,
+  "fps_base": 1.0,
+  "unit_scale_length": 1.0,
+  "mesh_count": 1,
+  "raw_bind_mesh_world_bounds": {
+    "min": [
+      -0.4577472507953644,
+      -0.3848501145839691,
+      -0.8462717533111572
+    ],
+    "max": [
+      0.14001762866973877,
+      0.3684036135673523,
+      1.255488395690918
+    ],
+    "size": [
+      0.5977648794651031,
+      0.7532537281513214,
+      2.101760149002075
+    ]
+  },
+  "objects": [
+    {
+      "name": "Skeleton_Staff",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        -1.6292067073209182e-07,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.6292067073209182e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292067073209182e-07,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 790,
+      "materials": [
+        "skeleton"
+      ]
+    }
+  ],
+  "rigs": [],
+  "action_count": 0,
+  "actions": [],
+  "images": [
+    {
+      "name": "skeleton_texture.png",
+      "filepath": "C:\\Users\\Kay Lousberg\\Desktop\\Work\\Gameassets\\Kay Lousberg Assets\\KayKit\\Characters\\Export\\Skeletons\\texture\\skeleton_texture.png",
+      "packed": false,
+      "size": [
+        0,
+        0
+      ]
+    }
+  ]
+}

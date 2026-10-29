@@ -1,0 +1,93 @@
+{
+  "source_file": "SourceAssets\\Accessories\\fbx\\Skeleton_Quiver.fbx",
+  "source_sha256": "24504fb64f0064da9f1b016763ed88046ebd49cf4597accd5c0b8849433ec4ba",
+  "blender": "5.2.3 LTS",
+  "native_import_settings": "Default Blender importer, no post-import changes to asset data. Blender performs standard file-axis and unit conversion.",
+  "fps": 24.0,
+  "fps_integer": 24,
+  "fps_base": 1.0,
+  "unit_scale_length": 1.0,
+  "mesh_count": 1,
+  "raw_bind_mesh_world_bounds": {
+    "min": [
+      -0.15271618962287903,
+      -0.13090470433235168,
+      -0.40598809719085693
+    ],
+    "max": [
+      0.15271618962287903,
+      0.08865417540073395,
+      0.5233743786811829
+    ],
+    "size": [
+      0.30543237924575806,
+      0.21955887973308563,
+      0.9293624758720398
+    ]
+  },
+  "objects": [
+    {
+      "name": "Skeleton_Quiver",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        -1.6292067073209182e-07,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.6292067073209182e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292067073209182e-07,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 180,
+      "materials": [
+        "skeleton"
+      ]
+    }
+  ],
+  "rigs": [],
+  "action_count": 0,
+  "actions": [],
+  "images": [
+    {
+      "name": "skeleton_texture.png",
+      "filepath": "C:\\Users\\Kay Lousberg\\Desktop\\Work\\Gameassets\\Kay Lousberg Assets\\KayKit\\Characters\\Export\\Skeletons\\texture\\skeleton_texture.png",
+      "packed": false,
+      "size": [
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 Project M — 튜토리얼·1스테이지 도시 아트 키트 사용안내
 작성일: 2026-10-19
+환경 모델 수정: 2026-10-29. 현재 전체 고정 번호 목록은 ArtSources/Stage01Kit/Expansion20261029/index.html 참조.
+가로등·가로수·자판기·실외기를 단순한 직접 제작 메시로 교체했으며 GatePylon은 SatelliteDish(위성접시)로 변경했습니다.
+3m 외부 계단은 카메라 앞 난간을 제거하고 후면 난간만 유지합니다. 삭제 번호 S1-042/052/053은 재사용하지 않습니다.
 기준 환경: Unity 6000.3.21f1 / Universal Render Pipeline 17.3.0
 아래 파일 경로는 프로젝트 루트 기준입니다.
 
@@ -52,8 +55,8 @@ F1/F2/F3은 아트 확인용 자유 장착입니다. 튜토리얼 후 무기 1�
 • Road_Barrier: 도로 차단물
 
 일반 소품 — Assets/Art/Stage01Kit/Prefabs/Props/
-StreetLamp / StreetTree / VendingMachine / Bench / TrashBin / ACUnit / GatePylon
-각각 가로등 / 가로수 / 자판기 / 벤치 / 쓰레기통 / 실외기 / 게이트 기둥입니다.
+StreetLamp / StreetTree / VendingMachine / Bench / TrashBin / ACUnit / SatelliteDish
+각각 가로등 / 가로수 / 자판기 / 벤치 / 쓰레기통 / 실외기 / 위성접시입니다.
 
 물약 — 같은 Props 폴더
 Potion_Health / Potion_Attack / Potion_Defense / Potion_Speed
@@ -76,7 +79,7 @@ Assets/Art/Characters/Protagonist01/Runtime/Protagonist01_Player.prefab
 Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab
 Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab
 
-두 블록은 기획을 검토하기 위한 배치 시안입니다. 튜토리얼 퀘스트·몬스터 생성·게이트 봉쇄·보스 진행은 아직 연결하지 않았습니다. GatePylon은 시각 소품이며 그 자체가 기존 Gate 또는 StageGate의 동작을 대신하지 않습니다.
+두 블록은 기획을 검토하기 위한 배치 시안입니다. 튜토리얼 퀘스트·몬스터 생성·게이트 봉쇄·보스 진행은 아직 연결하지 않았습니다. 위성접시는 옥상 장식이며 게이트 기능을 제공하지 않습니다.
 
 튜토리얼 블록 앵커:
 PlayerSpawn / TutorialMonsterAnchor / TutorialGateAnchor / Stage01Exit

@@ -1,0 +1,118 @@
+{
+  "Skeleton_Mage.glb": {
+    "materials": [
+      {
+        "name": "skeleton",
+        "pbr": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.5
+        },
+        "emissiveFactor": null,
+        "extensions": null
+      },
+      {
+        "name": "Glow",
+        "pbr": {},
+        "emissiveFactor": [
+          1,
+          1,
+          0.18575208261609077
+        ],
+        "extensions": null
+      }
+    ],
+    "nodes": [
+      "Skeleton_Mage_Hat",
+      "Skeleton_Mage_ArmLeft",
+      "Skeleton_Mage_ArmRight",
+      "Skeleton_Mage_Body",
+      "Skeleton_Mage_Eyes",
+      "Skeleton_Mage_Jaw",
+      "Skeleton_Mage_LegLeft",
+      "Skeleton_Mage_LegRight",
+      "Skeleton_Mage_Skull"
+    ],
+    "animations": 95
+  },
+  "Skeleton_Rogue.glb": {
+    "materials": [
+      {
+        "name": "skeleton",
+        "pbr": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.5
+        },
+        "emissiveFactor": null,
+        "extensions": null
+      },
+      {
+        "name": "Glow",
+        "pbr": {},
+        "emissiveFactor": [
+          1,
+          1,
+          0.18575208261609077
+        ],
+        "extensions": null
+      }
+    ],
+    "nodes": [
+      "Skeleton_Rogue_Hood",
+      "Skeleton_Rogue_Cape",
+      "Skeleton_Rogue_ArmLeft",
+      "Skeleton_Rogue_ArmRight",
+      "Skeleton_Rogue_Body",
+      "Skeleton_Rogue_Eyes",
+      "Skeleton_Rogue_Head",
+      "Skeleton_Rogue_Jaw",
+      "Skeleton_Rogue_LegLeft",
+      "Skeleton_Rogue_LegRight"
+    ],
+    "animations": 95
+  },
+  "Skeleton_Warrior.glb": {
+    "materials": [
+      {
+        "name": "skeleton",
+        "pbr": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.5
+        },
+        "emissiveFactor": null,
+        "extensions": null
+      },
+      {
+        "name": "Glow",
+        "pbr": {},
+        "emissiveFactor": [
+          1,
+          1,
+          0.18575208261609077
+        ],
+        "extensions": null
+      }
+    ],
+    "nodes": [
+      "Skeleton_Warrior_Helmet",
+      "Skeleton_Warrior_ArmLeft",
+      "Skeleton_Warrior_ArmRight",
+      "Skeleton_Warrior_Body",
+      "Skeleton_Warrior_Cloak",
+      "Skeleton_Warrior_Eyes",
+      "Skeleton_Warrior_Head",
+      "Skeleton_Warrior_Jaw",
+      "Skeleton_Warrior_LegLeft",
+      "Skeleton_Warrior_LegRight"
+    ],
+    "animations": 95
+  }
+}

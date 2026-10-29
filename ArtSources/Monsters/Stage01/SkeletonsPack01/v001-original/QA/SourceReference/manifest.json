@@ -1,0 +1,80 @@
+[
+  {
+    "role": "Rogue",
+    "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\Editable\\Skeleton_Rogue_Original_GLTF.blend",
+    "source_sha256": "5ed6c7286ddf9a6aee8460373b0f7429d9b567617b3a88c5c9e3cae895920528",
+    "action": "Idle_Combat",
+    "frame": 0,
+    "view": "Front",
+    "render": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\SourceReference\\Rogue_Idle_Combat_Front.png",
+    "source_saved": false,
+    "material_modified": false,
+    "rig_scale_modified": false,
+    "note": "Native imported materials; only neutral review lighting. Floor is at Z=-0.08m, not a contact correction. No weapon is attached in this character-only reference."
+  },
+  {
+    "role": "Rogue",
+    "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\Editable\\Skeleton_Rogue_Original_GLTF.blend",
+    "source_sha256": "5ed6c7286ddf9a6aee8460373b0f7429d9b567617b3a88c5c9e3cae895920528",
+    "action": "Idle_Combat",
+    "frame": 0,
+    "view": "Side",
+    "render": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\SourceReference\\Rogue_Idle_Combat_Side.png",
+    "source_saved": false,
+    "material_modified": false,
+    "rig_scale_modified": false,
+    "note": "Native imported materials; only neutral review lighting. Floor is at Z=-0.08m, not a contact correction. No weapon is attached in this character-only reference."
+  },
+  {
+    "role": "Warrior",
+    "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\Editable\\Skeleton_Warrior_Original_GLTF.blend",
+    "source_sha256": "5e921373c6bf368bd0e82b5994dfb44b5fc860f5738c37063098ccd6c408f647",
+    "action": "Idle_Combat",
+    "frame": 0,
+    "view": "Front",
+    "render": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\SourceReference\\Warrior_Idle_Combat_Front.png",
+    "source_saved": false,
+    "material_modified": false,
+    "rig_scale_modified": false,
+    "note": "Native imported materials; only neutral review lighting. Floor is at Z=-0.08m, not a contact correction. No weapon is attached in this character-only reference."
+  },
+  {
+    "role": "Warrior",
+    "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\Editable\\Skeleton_Warrior_Original_GLTF.blend",
+    "source_sha256": "5e921373c6bf368bd0e82b5994dfb44b5fc860f5738c37063098ccd6c408f647",
+    "action": "Idle_Combat",
+    "frame": 0,
+    "view": "Side",
+    "render": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\SourceReference\\Warrior_Idle_Combat_Side.png",
+    "source_saved": false,
+    "material_modified": false,
+    "rig_scale_modified": false,
+    "note": "Native imported materials; only neutral review lighting. Floor is at Z=-0.08m, not a contact correction. No weapon is attached in this character-only reference."
+  },
+  {
+    "role": "Mage",
+    "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\Editable\\Skeleton_Mage_Original_GLTF.blend",
+    "source_sha256": "1524e82ef83c99a41d62749edff56818a43d01a1dfabf42544aded86ed1e5706",
+    "action": "Idle_Combat",
+    "frame": 0,
+    "view": "Front",
+    "render": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\SourceReference\\Mage_Idle_Combat_Front.png",
+    "source_saved": false,
+    "material_modified": false,
+    "rig_scale_modified": false,
+    "note": "Native imported materials; only neutral review lighting. Floor is at Z=-0.08m, not a contact correction. No weapon is attached in this character-only reference."
+  },
+  {
+    "role": "Mage",
+    "source": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\Editable\\Skeleton_Mage_Original_GLTF.blend",
+    "source_sha256": "1524e82ef83c99a41d62749edff56818a43d01a1dfabf42544aded86ed1e5706",
+    "action": "Idle_Combat",
+    "frame": 0,
+    "view": "Side",
+    "render": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Monsters\\Stage01\\SkeletonsPack01\\v001-original\\SourceReference\\Mage_Idle_Combat_Side.png",
+    "source_saved": false,
+    "material_modified": false,
+    "rig_scale_modified": false,
+    "note": "Native imported materials; only neutral review lighting. Floor is at Z=-0.08m, not a contact correction. No weapon is attached in this character-only reference."
+  }
+]

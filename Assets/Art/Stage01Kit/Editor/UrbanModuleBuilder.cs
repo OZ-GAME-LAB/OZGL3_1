@@ -85,6 +85,14 @@ public static class UrbanModuleBuilder
         EditorUtility.SetDirty(material);
     }
 
+    public static void RebuildSideviewStairs()
+    {
+        material = AssetDatabase.LoadAssetAtPath<Material>(MaterialFolder + "/Urban_SharedPalette.mat");
+        if (!material) throw new InvalidOperationException("The retained urban material is required.");
+        ExteriorStairs();
+        AssetDatabase.SaveAssets();
+    }
+
     static void Building(string name, float w, float h, float d, int type)
     {
         var root = NewRoot(name);
@@ -305,6 +313,9 @@ public static class UrbanModuleBuilder
         for (int side = -1; side <= 1; side += 2)
         {
             g.Beam(new Vector3(-2.08f, -.1f, side * .83f), new Vector3(2.07f, 2.99f, side * .83f), .15f, .17f, Metal);
+            // Camera is on -Z: keep the near-side stringer below the treads,
+            // but put the handrail and vertical posts exclusively behind the player.
+            if (side < 0) continue;
             g.Beam(new Vector3(-2, 1.05f, side * .83f), new Vector3(2, 4.05f, side * .83f), .09f, .09f, Metal);
             for (int i = 0; i < 5; i++)
             {

@@ -1,0 +1,19 @@
+{
+  "source_files": 25,
+  "all_git_blob_identities_match": true,
+  "pinned_commit": "15b62b9bad122f72926c10fb14d622c73819fa54",
+  "fbx_original_action_count": 95,
+  "fbx_original_fps": 30,
+  "blender_fbx_rogue_armature_scale": [
+    1,
+    1,
+    1
+  ],
+  "fbx_all_three_icosphere_absent": true,
+  "gltf_helper_icosphere_preserved": true,
+  "source_geometry_or_rig_or_keys_or_colors_or_scale_or_floor_changed": false,
+  "native_attachment_report": "QA/native-attachment-frames.json",
+  "import_only_editable_reopened": "QA/import-only-reopen-verification.json",
+  "unity_editor_import_tool": "Tools/SkeletonPackImport.cs",
+  "unity_compilation_or_visual_review_done_by_this_agent": false
+}

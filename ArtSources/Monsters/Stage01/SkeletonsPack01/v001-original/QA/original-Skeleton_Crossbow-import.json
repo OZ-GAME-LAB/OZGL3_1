@@ -1,0 +1,93 @@
+{
+  "source_file": "SourceAssets\\Accessories\\fbx\\Skeleton_Crossbow.fbx",
+  "source_sha256": "51f4262edab36a36a854f63d96ed7085de818cc606e91e5b48c4a5028eae0491",
+  "blender": "5.2.3 LTS",
+  "native_import_settings": "Default Blender importer, no post-import changes to asset data. Blender performs standard file-axis and unit conversion.",
+  "fps": 24.0,
+  "fps_integer": 24,
+  "fps_base": 1.0,
+  "unit_scale_length": 1.0,
+  "mesh_count": 1,
+  "raw_bind_mesh_world_bounds": {
+    "min": [
+      -0.5556284785270691,
+      -1.1411553621292114,
+      -0.17123575508594513
+    ],
+    "max": [
+      0.5556284785270691,
+      0.27768945693969727,
+      0.33692651987075806
+    ],
+    "size": [
+      1.1112569570541382,
+      1.4188448190689087,
+      0.5081622749567032
+    ]
+  },
+  "objects": [
+    {
+      "name": "Skeleton_Crossbow",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        -1.6292067073209182e-07,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.6292067073209182e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292067073209182e-07,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 315,
+      "materials": [
+        "skeleton"
+      ]
+    }
+  ],
+  "rigs": [],
+  "action_count": 0,
+  "actions": [],
+  "images": [
+    {
+      "name": "skeleton_texture.png",
+      "filepath": "C:\\Users\\Kay Lousberg\\Desktop\\Work\\Gameassets\\Kay Lousberg Assets\\KayKit\\Characters\\Export\\Skeletons\\texture\\skeleton_texture.png",
+      "packed": false,
+      "size": [
+        0,
+        0
+      ]
+    }
+  ]
+}

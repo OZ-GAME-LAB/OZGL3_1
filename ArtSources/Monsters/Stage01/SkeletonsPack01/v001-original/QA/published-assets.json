@@ -1,0 +1,306 @@
+{
+  "success": true,
+  "source_validation_success": true,
+  "visual_approval": false,
+  "protected_reference_count": 22,
+  "new_family_path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001",
+  "files": [
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories.meta",
+      "sha256": "ea715de6395abe7e529f5219dde2583560fa93253322b2af4006dbf3f3e4937a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips.meta",
+      "sha256": "bcdbad56684eb5fe00cc64556c138459bebb0de7f62377abe0e033cc1facc1cd"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX.meta",
+      "sha256": "e62f90c91ea02d3ece8c3195ec80d10d9b8ece0c8663b0e2082bc6b14fde71d5"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/LICENSE_KayKit.txt",
+      "sha256": "5d822abca4e08c5a91d329e5372b3dc605cba8d994f752cb0f7dfdb7a0a79954"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/LICENSE_KayKit.txt.meta",
+      "sha256": "a6f0e6b3844aa3e0b164ba3a330a0ed988a5fc36c20823c00a4dcd086ad107b1"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Materials.meta",
+      "sha256": "c8aacae66a2efe4fc9f884367cef396f2bfdea130caecd6f9bd028d32dd6558a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs.meta",
+      "sha256": "3d7f4b05b387a3b8257a6352f8a50322e2b1caf1066cfd486e939f4cb75bd768"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Shaders.meta",
+      "sha256": "536c904535d5f890c7a7ba87c96d136880007a93f701c4ce6e6ba11ce15ca6d7"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Textures.meta",
+      "sha256": "998f0dd8fa8eabd0793efee7d0910fc6c50c465029b25ace61e3c48e76398439"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Arrow.fbx",
+      "sha256": "594e7cb4df07076c94991c148803b3235ddf313ed03600dbab38c0b3910787c4"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Arrow.fbx.meta",
+      "sha256": "b907ac57d7d3c552a1a648a4c02d45dfe82c66c94157dd2e1fb33089a98c071a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Axe.fbx",
+      "sha256": "b921180f7cc55306c4907e51676d3f7b6cecf0ab2f90095e269ba807e023f55c"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Axe.fbx.meta",
+      "sha256": "934e294436a86ae848c5a0cc6b67fc1a53649d2916f65d623c6aa73e2254b1a2"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Crossbow.fbx",
+      "sha256": "51f4262edab36a36a854f63d96ed7085de818cc606e91e5b48c4a5028eae0491"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Crossbow.fbx.meta",
+      "sha256": "a2b6fbb2807351524c9f2f9b0083a8d89da148ec25c48641d18968b43b109777"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Quiver.fbx",
+      "sha256": "24504fb64f0064da9f1b016763ed88046ebd49cf4597accd5c0b8849433ec4ba"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Quiver.fbx.meta",
+      "sha256": "cf8ebd792c40a8c545e2257294852168cdb7140c59f44b6560eeccf3fbb38765"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Staff.fbx",
+      "sha256": "7b9fa1ec537d6c5d609e83c2e3d13e247ca252716cab36a6fa83a63100145457"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Staff.fbx.meta",
+      "sha256": "3d397157f75906162134e503462cbf353da1e21f724888cb54a4880c7715c046"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage.meta",
+      "sha256": "5db31aae95ff94bc755a3bfcb3d8b4797079bc287bdfffb90a2b64f13f3d50d8"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue.meta",
+      "sha256": "d3dfb0bf47396915211a28636658b55499d6399fec0b3a14a89ad25f375bebd5"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior.meta",
+      "sha256": "fb74f2592ed3b1b65cd29117ca2bdd5ecf0773ebbcc0dd97289f05224b7fd595"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx",
+      "sha256": "a5b6a9e9c690b2c23f52aa7a18aef411b56e9c660229c7e2d0f217f78752573c"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx.meta",
+      "sha256": "015b31764829fcfbf0266410f6eb7a98ad3d3b96043af25ef27d17ec0174d5c9"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Rogue.fbx",
+      "sha256": "2961f9cb6640f4627db4b9213b7b349270dc737a4c9b5f7aa5f078203887f78d"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Rogue.fbx.meta",
+      "sha256": "7cff13be783decda2c2d6187bce9883ad5c2554f15e8e26cca73d8e80b996f95"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Warrior.fbx",
+      "sha256": "783d88baface5b5aec4be3a1bdfe360e12e091dae753b3968161e7a69bd0c279"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Warrior.fbx.meta",
+      "sha256": "53907008e00297bd30e7db91bc1ebd2ad8e4125da1162a183ca2fb6f28a6913e"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Materials/Skeleton_Native_Atlas.mat",
+      "sha256": "5f374a3839f07fc9a8fd4543f5996fdc9294bd8fa8f115cef8a89c7b8bd241f5"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Materials/Skeleton_Native_Atlas.mat.meta",
+      "sha256": "3c12b5100714e34192cb0ef33605ad3bbc32a7fb00779735ac39d1b6baadf24a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Materials/Skeleton_Native_Glow.mat",
+      "sha256": "49cf884e2a973ac1cc7468814c587ad30f098320e1cff16fa9a020bf7525d843"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Materials/Skeleton_Native_Glow.mat.meta",
+      "sha256": "a93e9ab9619e33c276edd79a54fa3cec3eec64e994235577f632b9a8e67209a2"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Mage.prefab",
+      "sha256": "06ccdd36e0a4ee68a69ed197801153613545564c1783a6966fe17142362c6887"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Mage.prefab.meta",
+      "sha256": "016613b873295858992a1fddfec1c8b24207cfecb2536c6a41891b7af45b72a2"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Rogue.prefab",
+      "sha256": "43e9bab5128ad67d82ffd59fa501b39abfb37226be4aaaa08526464c49af5ce2"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Rogue.prefab.meta",
+      "sha256": "89dcba5062e2aadc8856c22d832f53a47bef0e98dd2748c782685da38381e09a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Warrior.prefab",
+      "sha256": "7a770ccd3b64d84a247f91c563cfc7ff10e4c4d698f659198de6d2129fab9026"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Warrior.prefab.meta",
+      "sha256": "24d355666ca2dc46bd7baaafcc21cc9df8c1bbfd9a6793f4a89de22345e77eb8"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Shaders/SkeletonNativeAtlas.shader",
+      "sha256": "273e37fdd5d9b68c75517b41ffb8bc51f293eacd13ed21cb0c32420be34d5dc0"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Shaders/SkeletonNativeAtlas.shader.meta",
+      "sha256": "7f61a28817e20f99daaceab23337905e9e196747ec3f5818f214d94e5c88de87"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Textures/skeleton_texture.png",
+      "sha256": "15741a25c53e04fa9bf3beac3bc0de442359404b1ff9be863b892cb551ad3657"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Textures/skeleton_texture.png.meta",
+      "sha256": "ec469cba77ce0f4bd5f4ac58ae3746a2894d3ecb7bd16637b356f070980ad396"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Hit_A.anim",
+      "sha256": "e4483293bb6291f1c1075cb68d9777b650a648e1f393fc90da8765b0065a0b46"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Hit_A.anim.meta",
+      "sha256": "d017fe3f0bfc2a0d31eaaa70b81deedb5e2a4b3406412399b732637201619931"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Idle_Combat.anim",
+      "sha256": "bfd3b98f3809b3ce2a467393ccfb41bd69e9ca07190bf694706139e911a7092c"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Idle_Combat.anim.meta",
+      "sha256": "fcc6e24c6d9e9098ca5b0f4ec159d26693085f478e68f81b9a1b9d80da810072"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Raise.anim",
+      "sha256": "252326307e87b74d5b0eeb743d83cd46e976d84de9cf068c4fc4dc120a2bb7c3"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Raise.anim.meta",
+      "sha256": "3e7af5edb09f9909d0c0452aa7fc52b9651ce452fec060c3242b09859e0c4b46"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Shoot.anim",
+      "sha256": "249d752d0531fd396b512cc0f546d1148b58877fbc8734009e744f3d968026d7"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Shoot.anim.meta",
+      "sha256": "b64cb4ad02294c02d0b66cce32faa3c7ba0b2193aa6333396d7cba6f2a5a9bf0"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Walking_D_Skeletons.anim",
+      "sha256": "e3fbe8fe0182ef342b5f618ae2fcf5f96c9ab8bb96f213bfa7cd233bafa7124c"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Walking_D_Skeletons.anim.meta",
+      "sha256": "fb0d53bb8c1c246e61a0f84934a462fcc0c386832611bef94dc3ecebad0be653"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Aiming.anim",
+      "sha256": "aa33c5ec681d4c9700f02fe78b4a82e8850b7c14e9518f454a54d0e00f589e6a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Aiming.anim.meta",
+      "sha256": "75aac1c837c5678ce5ba61fba7dc68387a14a4d43ca707f88254fd3df9cc6ba9"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Reload.anim",
+      "sha256": "e2d78643fe037c90a3d52b638e0a2b4e3892fb7c6c2624fa3350a70830c3e46a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Reload.anim.meta",
+      "sha256": "6ff4bb33e66fcc6a7bf502d6232ff03cdbd2b6c8a331123aa0ff01a24ec3cb19"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Shoot.anim",
+      "sha256": "5db4b7e58bce936e3baae0f52b4024b758d879889bddb31f85c65f04745f8130"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Shoot.anim.meta",
+      "sha256": "8b302974ea9bb3a85415811dd4309f956e5e7b61b2ffa7494fca57873797f1c6"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Hit_A.anim",
+      "sha256": "6480768c6b93bc2b1530e3124d8f9654635b4a485a4e9bc2e70ff450e1a6ddcd"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Hit_A.anim.meta",
+      "sha256": "4889c34ed4643dc937c8669395db15855a9f99012531aa0f7e378c8354eb5717"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Idle_Combat.anim",
+      "sha256": "33a94198af5d9354de89b092424420129bfe226894d042d2c606b788cf9052f0"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Idle_Combat.anim.meta",
+      "sha256": "f1b40b09189c2dfdf0d74d24ada09072580a31ee46ae371025847e6348aeda0f"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Running_A.anim",
+      "sha256": "afa2c84fb7cf831ac6742fbd541f75bb126a9025a5bf87dab45501b68e9e45b5"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Running_A.anim.meta",
+      "sha256": "01f2d15a40bbe875030fae1749fbab3fb7059f276d34e003e4b79ecd43e0826c"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Chop.anim",
+      "sha256": "f2a92db2cc050c01c7238d8092bff242d32dc6a9a7313e5d113818be2a54c621"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Chop.anim.meta",
+      "sha256": "55278feed2d6ca549b320f40f9a2c63fc0f34491885b0c34281d0a32b478e49a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Slice_Diagonal.anim",
+      "sha256": "8a25e80dd7c1196f6c2dff7e8fc8d9bd228abebb33d3dcc96836d2d4c9536470"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Slice_Diagonal.anim.meta",
+      "sha256": "26cb87ab5d80b09ab08e455de7080ec33fb2b1e917e50091068c009aa7291bb6"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Hit_A.anim",
+      "sha256": "b46251adcbb52280dfc4f04eb40bec340421cb19175214c015f54ee3ec7f635a"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Hit_A.anim.meta",
+      "sha256": "50da4528dc3751f47a1612f4068e1d54c495f0cf44cb8db24a4d8cf751b960a9"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Idle_Combat.anim",
+      "sha256": "1de4654a48227279094098dbbd07373ff2632137fcfd64d7844767f9de55ee9d"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Idle_Combat.anim.meta",
+      "sha256": "fb339d3673787fafc08de4a6f97571cd39df11a57e301ec1e28a66411e26bb5d"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Walking_B.anim",
+      "sha256": "869fb4e25f98d76419cfd1e78d9c2cc2166d13dca7d98a13994413965949bfd9"
+    },
+    {
+      "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Walking_B.anim.meta",
+      "sha256": "4dd2b300356f1bcaca6952aebb8705d53062f4e2a99e65de2dd439811f58012e"
+    }
+  ],
+  "scope": "Only new SkeletonsPack01 assets and independent review scenes. Main-project import validation must run separately. Residual original-motion/equipment conflicts are documented."
+}

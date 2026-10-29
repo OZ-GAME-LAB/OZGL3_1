@@ -1,0 +1,880 @@
+{
+    "unity": "6000.3.21f1",
+    "created": "2026-10-29",
+    "method": "Actual Unity-prefab renders, retained shaders, LOD0 shown/counts; all LOD geometry checked. Static art and anchor checks, not runtime traversal certification.",
+    "total": 54,
+    "entries": [
+        {
+            "id": "S1-001",
+            "key": "Building_ShopLow",
+            "triangles": 588,
+            "vertices": 1176,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 8.180000305175782,
+                "y": 4.300000190734863,
+                "z": 4.829999923706055
+            },
+            "issues": [],
+            "side_image": "Renders/S1-001_side.png",
+            "three_quarter_image": "Renders/S1-001_perspective.png"
+        },
+        {
+            "id": "S1-002",
+            "key": "Building_OfficeMid",
+            "triangles": 1668,
+            "vertices": 3336,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 8.180000305175782,
+                "y": 8.299999237060547,
+                "z": 5.5
+            },
+            "issues": [],
+            "side_image": "Renders/S1-002_side.png",
+            "three_quarter_image": "Renders/S1-002_perspective.png"
+        },
+        {
+            "id": "S1-003",
+            "key": "Building_ApartmentTall",
+            "triangles": 3720,
+            "vertices": 7440,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 10.399999618530274,
+                "y": 12.299999237060547,
+                "z": 6.904999732971191
+            },
+            "issues": [],
+            "side_image": "Renders/S1-003_side.png",
+            "three_quarter_image": "Renders/S1-003_perspective.png"
+        },
+        {
+            "id": "S1-004",
+            "key": "Building_RooftopArena",
+            "triangles": 648,
+            "vertices": 1296,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 18.18000030517578,
+                "y": 4.300000190734863,
+                "z": 6.369999885559082
+            },
+            "issues": [],
+            "side_image": "Renders/S1-004_side.png",
+            "three_quarter_image": "Renders/S1-004_perspective.png"
+        },
+        {
+            "id": "S1-005",
+            "key": "Road_Straight_12m",
+            "triangles": 248,
+            "vertices": 512,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 12.0,
+                "y": 0.24300000071525575,
+                "z": 6.0
+            },
+            "issues": [],
+            "side_image": "Renders/S1-005_side.png",
+            "three_quarter_image": "Renders/S1-005_perspective.png"
+        },
+        {
+            "id": "S1-006",
+            "key": "Sidewalk_Straight_8m",
+            "triangles": 780,
+            "vertices": 1560,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 8.0,
+                "y": 0.3160000145435333,
+                "z": 2.4000000953674318
+            },
+            "issues": [],
+            "side_image": "Renders/S1-006_side.png",
+            "three_quarter_image": "Renders/S1-006_perspective.png"
+        },
+        {
+            "id": "S1-007",
+            "key": "Rooftop_Bridge_6m",
+            "triangles": 456,
+            "vertices": 912,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 6.099999904632568,
+                "y": 1.4844999313354493,
+                "z": 1.815000057220459
+            },
+            "issues": [],
+            "side_image": "Renders/S1-007_side.png",
+            "three_quarter_image": "Renders/S1-007_perspective.png"
+        },
+        {
+            "id": "S1-008",
+            "key": "Exterior_Stairs_Rise3m",
+            "triangles": 384,
+            "vertices": 768,
+            "colliders": 12,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 4.239582061767578,
+                "y": 4.246155738830566,
+                "z": 1.8299999237060547
+            },
+            "issues": [],
+            "side_image": "Renders/S1-008_side.png",
+            "three_quarter_image": "Renders/S1-008_perspective.png"
+        },
+        {
+            "id": "S1-009",
+            "key": "Ladder_4m",
+            "triangles": 276,
+            "vertices": 552,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.8199999928474426,
+                "y": 4.279999732971191,
+                "z": 0.36000001430511477
+            },
+            "issues": [],
+            "side_image": "Renders/S1-009_side.png",
+            "three_quarter_image": "Renders/S1-009_perspective.png"
+        },
+        {
+            "id": "S1-010",
+            "key": "Guardrail_4m",
+            "triangles": 144,
+            "vertices": 288,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 4.099999904632568,
+                "y": 1.1449999809265137,
+                "z": 0.23000000417232514
+            },
+            "issues": [],
+            "side_image": "Renders/S1-010_side.png",
+            "three_quarter_image": "Renders/S1-010_perspective.png"
+        },
+        {
+            "id": "S1-011",
+            "key": "Rooftop_Hut",
+            "triangles": 156,
+            "vertices": 312,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 2.700000047683716,
+                "y": 2.6399998664855959,
+                "z": 2.25
+            },
+            "issues": [],
+            "side_image": "Renders/S1-011_side.png",
+            "three_quarter_image": "Renders/S1-011_perspective.png"
+        },
+        {
+            "id": "S1-012",
+            "key": "Rooftop_WaterTank",
+            "triangles": 276,
+            "vertices": 648,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.8700000047683716,
+                "y": 2.4650001525878908,
+                "z": 1.635817289352417
+            },
+            "issues": [],
+            "side_image": "Renders/S1-012_side.png",
+            "three_quarter_image": "Renders/S1-012_perspective.png"
+        },
+        {
+            "id": "S1-013",
+            "key": "Rooftop_Billboard",
+            "triangles": 240,
+            "vertices": 480,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 3.4000000953674318,
+                "y": 2.799999952316284,
+                "z": 0.9334379434585571
+            },
+            "issues": [],
+            "side_image": "Renders/S1-013_side.png",
+            "three_quarter_image": "Renders/S1-013_perspective.png"
+        },
+        {
+            "id": "S1-014",
+            "key": "Utility_Box",
+            "triangles": 132,
+            "vertices": 264,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.0399999618530274,
+                "y": 1.2999999523162842,
+                "z": 0.6000000238418579
+            },
+            "issues": [],
+            "side_image": "Renders/S1-014_side.png",
+            "three_quarter_image": "Renders/S1-014_perspective.png"
+        },
+        {
+            "id": "S1-015",
+            "key": "Planter_Shrubs",
+            "triangles": 72,
+            "vertices": 180,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.8799999952316285,
+                "y": 1.1399999856948853,
+                "z": 0.8199999928474426
+            },
+            "issues": [],
+            "side_image": "Renders/S1-015_side.png",
+            "three_quarter_image": "Renders/S1-015_perspective.png"
+        },
+        {
+            "id": "S1-016",
+            "key": "Road_Barrier",
+            "triangles": 120,
+            "vertices": 240,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.7999999523162842,
+                "y": 0.9200000166893005,
+                "z": 0.6200000047683716
+            },
+            "issues": [],
+            "side_image": "Renders/S1-016_side.png",
+            "three_quarter_image": "Renders/S1-016_perspective.png"
+        },
+        {
+            "id": "S1-017",
+            "key": "StreetLamp",
+            "triangles": 182,
+            "vertices": 546,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.6399999856948853,
+                "y": 4.300000190734863,
+                "z": 0.6399999856948853
+            },
+            "issues": [],
+            "side_image": "Renders/S1-017_side.png",
+            "three_quarter_image": "Renders/S1-017_perspective.png"
+        },
+        {
+            "id": "S1-018",
+            "key": "StreetTree",
+            "triangles": 200,
+            "vertices": 600,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 2.7125189304351808,
+                "y": 4.5,
+                "z": 1.6913871765136719
+            },
+            "issues": [],
+            "side_image": "Renders/S1-018_side.png",
+            "three_quarter_image": "Renders/S1-018_perspective.png"
+        },
+        {
+            "id": "S1-019",
+            "key": "VendingMachine",
+            "triangles": 284,
+            "vertices": 852,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.0199999809265137,
+                "y": 1.850000023841858,
+                "z": 0.8980236649513245
+            },
+            "issues": [],
+            "side_image": "Renders/S1-019_side.png",
+            "three_quarter_image": "Renders/S1-019_perspective.png"
+        },
+        {
+            "id": "S1-020",
+            "key": "Bench",
+            "triangles": 616,
+            "vertices": 1848,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.4999539852142335,
+                "y": 0.8500000238418579,
+                "z": 0.761856734752655
+            },
+            "issues": [],
+            "side_image": "Renders/S1-020_side.png",
+            "three_quarter_image": "Renders/S1-020_perspective.png"
+        },
+        {
+            "id": "S1-021",
+            "key": "TrashBin",
+            "triangles": 394,
+            "vertices": 1182,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.5409237146377564,
+                "y": 0.8999999761581421,
+                "z": 0.5640004873275757
+            },
+            "issues": [],
+            "side_image": "Renders/S1-021_side.png",
+            "three_quarter_image": "Renders/S1-021_perspective.png"
+        },
+        {
+            "id": "S1-022",
+            "key": "ACUnit",
+            "triangles": 196,
+            "vertices": 588,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.399999976158142,
+                "y": 0.8999999761581421,
+                "z": 0.6945000290870667
+            },
+            "issues": [],
+            "side_image": "Renders/S1-022_side.png",
+            "three_quarter_image": "Renders/S1-022_perspective.png"
+        },
+        {
+            "id": "S1-023",
+            "key": "SatelliteDish",
+            "triangles": 212,
+            "vertices": 636,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.5,
+                "y": 1.5988974571228028,
+                "z": 1.3638267517089844
+            },
+            "issues": [],
+            "side_image": "Renders/S1-023_side.png",
+            "three_quarter_image": "Renders/S1-023_perspective.png"
+        },
+        {
+            "id": "S1-024",
+            "key": "Potion_Health",
+            "triangles": 196,
+            "vertices": 588,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.13199999928474427
+            },
+            "issues": [],
+            "side_image": "Renders/S1-024_side.png",
+            "three_quarter_image": "Renders/S1-024_perspective.png"
+        },
+        {
+            "id": "S1-025",
+            "key": "Potion_Attack",
+            "triangles": 184,
+            "vertices": 552,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.12999999523162843
+            },
+            "issues": [],
+            "side_image": "Renders/S1-025_side.png",
+            "three_quarter_image": "Renders/S1-025_perspective.png"
+        },
+        {
+            "id": "S1-026",
+            "key": "Potion_Defense",
+            "triangles": 184,
+            "vertices": 552,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.12999999523162843
+            },
+            "issues": [],
+            "side_image": "Renders/S1-026_side.png",
+            "three_quarter_image": "Renders/S1-026_perspective.png"
+        },
+        {
+            "id": "S1-027",
+            "key": "Potion_Speed",
+            "triangles": 184,
+            "vertices": 552,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.12399999797344208,
+                "y": 0.2369999885559082,
+                "z": 0.12999999523162843
+            },
+            "issues": [],
+            "side_image": "Renders/S1-027_side.png",
+            "three_quarter_image": "Renders/S1-027_perspective.png"
+        },
+        {
+            "id": "S1-028",
+            "key": "Sword",
+            "triangles": 718,
+            "vertices": 2154,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.17498622834682465,
+                "y": 0.949999988079071,
+                "z": 0.05410546064376831
+            },
+            "issues": [],
+            "side_image": "Renders/S1-028_side.png",
+            "three_quarter_image": "Renders/S1-028_perspective.png"
+        },
+        {
+            "id": "S1-029",
+            "key": "Staff",
+            "triangles": 915,
+            "vertices": 2745,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.1899999976158142,
+                "y": 1.2640001773834229,
+                "z": 0.1899999976158142
+            },
+            "issues": [],
+            "side_image": "Renders/S1-029_side.png",
+            "three_quarter_image": "Renders/S1-029_perspective.png"
+        },
+        {
+            "id": "S1-030",
+            "key": "Tutorial_Block",
+            "triangles": 11698,
+            "vertices": 26330,
+            "colliders": 27,
+            "lodGroups": 2,
+            "dimensions": {
+                "x": 48.0,
+                "y": 5.858898162841797,
+                "z": 8.199999809265137
+            },
+            "issues": [],
+            "side_image": "Renders/S1-030_side.png",
+            "three_quarter_image": "Renders/S1-030_perspective.png"
+        },
+        {
+            "id": "S1-031",
+            "key": "Stage01_Block",
+            "triangles": 27922,
+            "vertices": 61294,
+            "colliders": 31,
+            "lodGroups": 5,
+            "dimensions": {
+                "x": 96.0,
+                "y": 14.899999618530274,
+                "z": 8.449999809265137
+            },
+            "issues": [],
+            "side_image": "Renders/S1-031_side.png",
+            "three_quarter_image": "Renders/S1-031_perspective.png"
+        },
+        {
+            "id": "S1-032",
+            "key": "Building_ConvenienceStore",
+            "triangles": 1140,
+            "vertices": 3420,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 8.25,
+                "y": 4.467499732971191,
+                "z": 6.047712326049805
+            },
+            "issues": [],
+            "side_image": "Renders/S1-032_side.png",
+            "three_quarter_image": "Renders/S1-032_perspective.png"
+        },
+        {
+            "id": "S1-033",
+            "key": "Building_CornerCafe",
+            "triangles": 1348,
+            "vertices": 4044,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 8.180000305175782,
+                "y": 8.547500610351563,
+                "z": 6.342499732971191
+            },
+            "issues": [],
+            "side_image": "Renders/S1-033_side.png",
+            "three_quarter_image": "Renders/S1-033_perspective.png"
+        },
+        {
+            "id": "S1-034",
+            "key": "Building_MixedUseNarrow",
+            "triangles": 2004,
+            "vertices": 6012,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 6.269999980926514,
+                "y": 13.639999389648438,
+                "z": 5.654999732971191
+            },
+            "issues": [],
+            "side_image": "Renders/S1-034_side.png",
+            "three_quarter_image": "Renders/S1-034_perspective.png"
+        },
+        {
+            "id": "S1-035",
+            "key": "Building_Rowhouse",
+            "triangles": 1572,
+            "vertices": 4716,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 8.270000457763672,
+                "y": 9.260000228881836,
+                "z": 5.972499847412109
+            },
+            "issues": [],
+            "side_image": "Renders/S1-035_side.png",
+            "three_quarter_image": "Renders/S1-035_perspective.png"
+        },
+        {
+            "id": "S1-036",
+            "key": "Building_ParkingDeck",
+            "triangles": 936,
+            "vertices": 2808,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 12.149999618530274,
+                "y": 8.399999618530274,
+                "z": 6.375
+            },
+            "issues": [],
+            "side_image": "Renders/S1-036_side.png",
+            "three_quarter_image": "Renders/S1-036_perspective.png"
+        },
+        {
+            "id": "S1-037",
+            "key": "Shop_InteriorSlice_8m",
+            "triangles": 1380,
+            "vertices": 4140,
+            "colliders": 5,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 8.0,
+                "y": 4.239999771118164,
+                "z": 5.0
+            },
+            "issues": [],
+            "side_image": "Renders/S1-037_side.png",
+            "three_quarter_image": "Renders/S1-037_perspective.png"
+        },
+        {
+            "id": "S1-038",
+            "key": "Exterior_Stairs_Rise4m",
+            "triangles": 732,
+            "vertices": 2196,
+            "colliders": 16,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 8.076026916503907,
+                "y": 5.218510627746582,
+                "z": 2.0
+            },
+            "issues": [],
+            "side_image": "Renders/S1-038_side.png",
+            "three_quarter_image": "Renders/S1-038_perspective.png"
+        },
+        {
+            "id": "S1-039",
+            "key": "Rooftop_Landing_4m",
+            "triangles": 216,
+            "vertices": 648,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 4.059999942779541,
+                "y": 2.042304515838623,
+                "z": 2.4000000953674318
+            },
+            "issues": [],
+            "side_image": "Renders/S1-039_side.png",
+            "three_quarter_image": "Renders/S1-039_perspective.png"
+        },
+        {
+            "id": "S1-040",
+            "key": "Rooftop_HVAC",
+            "triangles": 592,
+            "vertices": 1776,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 3.049999952316284,
+                "y": 1.652500033378601,
+                "z": 1.9509999752044678
+            },
+            "issues": [],
+            "side_image": "Renders/S1-040_side.png",
+            "three_quarter_image": "Renders/S1-040_perspective.png"
+        },
+        {
+            "id": "S1-041",
+            "key": "Rooftop_DuctElbow",
+            "triangles": 124,
+            "vertices": 372,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 2.549999952316284,
+                "y": 1.75,
+                "z": 1.2200000286102296
+            },
+            "issues": [],
+            "side_image": "Renders/S1-041_side.png",
+            "three_quarter_image": "Renders/S1-041_perspective.png"
+        },
+        {
+            "id": "S1-043",
+            "key": "Street_BusShelter",
+            "triangles": 420,
+            "vertices": 1260,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 4.079999923706055,
+                "y": 2.819999933242798,
+                "z": 1.777500033378601
+            },
+            "issues": [],
+            "side_image": "Renders/S1-043_side.png",
+            "three_quarter_image": "Renders/S1-043_perspective.png"
+        },
+        {
+            "id": "S1-044",
+            "key": "Street_TrafficSignal",
+            "triangles": 260,
+            "vertices": 780,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 3.184999942779541,
+                "y": 4.525000095367432,
+                "z": 0.6299999952316284
+            },
+            "issues": [],
+            "side_image": "Renders/S1-044_side.png",
+            "three_quarter_image": "Renders/S1-044_perspective.png"
+        },
+        {
+            "id": "S1-045",
+            "key": "Street_UtilityPole",
+            "triangles": 888,
+            "vertices": 2664,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 2.180000066757202,
+                "y": 5.380000114440918,
+                "z": 0.7300000190734863
+            },
+            "issues": [],
+            "side_image": "Renders/S1-045_side.png",
+            "three_quarter_image": "Renders/S1-045_perspective.png"
+        },
+        {
+            "id": "S1-046",
+            "key": "Street_Bollard",
+            "triangles": 256,
+            "vertices": 768,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 0.4000000059604645,
+                "y": 0.9000000357627869,
+                "z": 0.4000000059604645
+            },
+            "issues": [],
+            "side_image": "Renders/S1-046_side.png",
+            "three_quarter_image": "Renders/S1-046_perspective.png"
+        },
+        {
+            "id": "S1-047",
+            "key": "Prop_CargoPallet",
+            "triangles": 540,
+            "vertices": 1620,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.600000023841858,
+                "y": 1.2939999103546143,
+                "z": 1.2000000476837159
+            },
+            "issues": [],
+            "side_image": "Renders/S1-047_side.png",
+            "three_quarter_image": "Renders/S1-047_perspective.png"
+        },
+        {
+            "id": "S1-048",
+            "key": "Prop_WasteBags",
+            "triangles": 576,
+            "vertices": 1728,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 1.6952860355377198,
+                "y": 0.784000039100647,
+                "z": 1.1726658344268799
+            },
+            "issues": [],
+            "side_image": "Renders/S1-048_side.png",
+            "three_quarter_image": "Renders/S1-048_perspective.png"
+        },
+        {
+            "id": "S1-049",
+            "key": "Prop_EmergencyBarricade",
+            "triangles": 320,
+            "vertices": 960,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 2.4000000953674318,
+                "y": 1.1799999475479127,
+                "z": 0.800000011920929
+            },
+            "issues": [],
+            "side_image": "Renders/S1-049_side.png",
+            "three_quarter_image": "Renders/S1-049_perspective.png"
+        },
+        {
+            "id": "S1-050",
+            "key": "Damage_RubbleCluster",
+            "triangles": 156,
+            "vertices": 468,
+            "colliders": 0,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 3.1005449295043947,
+                "y": 0.8247771263122559,
+                "z": 1.488767147064209
+            },
+            "issues": [],
+            "side_image": "Renders/S1-050_side.png",
+            "three_quarter_image": "Renders/S1-050_perspective.png"
+        },
+        {
+            "id": "S1-051",
+            "key": "Damage_CrackedRoad_6m",
+            "triangles": 144,
+            "vertices": 432,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 6.0,
+                "y": 0.29600000381469729,
+                "z": 4.0
+            },
+            "issues": [],
+            "side_image": "Renders/S1-051_side.png",
+            "three_quarter_image": "Renders/S1-051_perspective.png"
+        },
+        {
+            "id": "S1-054",
+            "key": "Road_Crosswalk_6m",
+            "triangles": 360,
+            "vertices": 1080,
+            "colliders": 1,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 6.0,
+                "y": 0.25,
+                "z": 6.0
+            },
+            "issues": [],
+            "side_image": "Renders/S1-054_side.png",
+            "three_quarter_image": "Renders/S1-054_perspective.png"
+        },
+        {
+            "id": "S1-055",
+            "key": "Alley_Passage_6m",
+            "triangles": 396,
+            "vertices": 1188,
+            "colliders": 2,
+            "lodGroups": 0,
+            "dimensions": {
+                "x": 6.059999465942383,
+                "y": 3.6000001430511476,
+                "z": 2.559999942779541
+            },
+            "issues": [],
+            "side_image": "Renders/S1-055_side.png",
+            "three_quarter_image": "Renders/S1-055_perspective.png"
+        },
+        {
+            "id": "S1-056",
+            "key": "Stage01_ExpandedStreet_Block",
+            "triangles": 20210,
+            "vertices": 58178,
+            "colliders": 73,
+            "lodGroups": 6,
+            "dimensions": {
+                "x": 90.3949966430664,
+                "y": 13.879999160766602,
+                "z": 13.767499923706055
+            },
+            "issues": [],
+            "side_image": "Renders/S1-056_side.png",
+            "three_quarter_image": "Renders/S1-056_perspective.png"
+        },
+        {
+            "id": "S1-057",
+            "key": "Stage01_ExpandedBoss_Block",
+            "triangles": 2308,
+            "vertices": 5700,
+            "colliders": 1,
+            "lodGroups": 1,
+            "dimensions": {
+                "x": 18.18000030517578,
+                "y": 5.75,
+                "z": 6.715000152587891
+            },
+            "issues": [],
+            "side_image": "Renders/S1-057_side.png",
+            "three_quarter_image": "Renders/S1-057_perspective.png"
+        }
+    ],
+    "issues": [],
+    "connectionChecks": [
+        "16 treads and Entry/Exit match 8m run / 4m rise.",
+        "Five new solid building roofs match Ground collider heights (4/8/12m).",
+        "Normal composition has exactly three numbered gate anchors; boss composition is separate.",
+        "S1-008 has no camera-front handrail/posts above the tread envelope; rear rail retained.",
+        "Retired model prefabs removed; regeneration cannot recreate them."
+    ]
+}

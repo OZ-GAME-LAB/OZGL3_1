@@ -1,0 +1,108 @@
+[
+  {
+    "character": "Skeleton_Rogue",
+    "saved_blend": "Editable\\Skeleton_Rogue_Original_GLTF.blend",
+    "sha256": "5ed6c7286ddf9a6aee8460373b0f7429d9b567617b3a88c5c9e3cae895920528",
+    "action_count": 95,
+    "bone_count": 41,
+    "character_bind_mesh_world_bounds": {
+      "min": [
+        -0.9712532758712769,
+        -0.45381394028663635,
+        -2.6592668291414157e-05
+      ],
+      "max": [
+        0.9712532758712769,
+        0.4584195613861084,
+        2.1660871505737305
+      ],
+      "size": [
+        1.9425065517425537,
+        0.9122335016727448,
+        2.166113743242022
+      ]
+    },
+    "unbound_meshes": [
+      "Skeleton_Rogue_Hood",
+      "Skeleton_Rogue_Cape",
+      "Icosphere"
+    ],
+    "checks": {
+      "same_actions": true,
+      "same_rest_bones": true,
+      "same_fps": true,
+      "same_images": true
+    },
+    "asset_data_modified": false
+  },
+  {
+    "character": "Skeleton_Warrior",
+    "saved_blend": "Editable\\Skeleton_Warrior_Original_GLTF.blend",
+    "sha256": "5e921373c6bf368bd0e82b5994dfb44b5fc860f5738c37063098ccd6c408f647",
+    "action_count": 95,
+    "bone_count": 41,
+    "character_bind_mesh_world_bounds": {
+      "min": [
+        -0.9712532758712769,
+        -0.45381394028663635,
+        -2.6592668291414157e-05
+      ],
+      "max": [
+        0.9712532758712769,
+        0.4584195613861084,
+        2.1660871505737305
+      ],
+      "size": [
+        1.9425065517425537,
+        0.9122335016727448,
+        2.166113743242022
+      ]
+    },
+    "unbound_meshes": [
+      "Skeleton_Warrior_Helmet",
+      "Icosphere"
+    ],
+    "checks": {
+      "same_actions": true,
+      "same_rest_bones": true,
+      "same_fps": true,
+      "same_images": true
+    },
+    "asset_data_modified": false
+  },
+  {
+    "character": "Skeleton_Mage",
+    "saved_blend": "Editable\\Skeleton_Mage_Original_GLTF.blend",
+    "sha256": "1524e82ef83c99a41d62749edff56818a43d01a1dfabf42544aded86ed1e5706",
+    "action_count": 95,
+    "bone_count": 41,
+    "character_bind_mesh_world_bounds": {
+      "min": [
+        -0.9690915942192078,
+        -0.45381394028663635,
+        -2.6529514798312448e-05
+      ],
+      "max": [
+        0.9690915942192078,
+        0.4584195613861084,
+        2.1660871505737305
+      ],
+      "size": [
+        1.9381831884384155,
+        0.9122335016727448,
+        2.166113680088529
+      ]
+    },
+    "unbound_meshes": [
+      "Skeleton_Mage_Hat",
+      "Icosphere"
+    ],
+    "checks": {
+      "same_actions": true,
+      "same_rest_bones": true,
+      "same_fps": true,
+      "same_images": true
+    },
+    "asset_data_modified": false
+  }
+]

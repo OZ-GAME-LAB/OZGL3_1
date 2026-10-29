@@ -636,7 +636,7 @@ public static class SideviewReviewCapture
                 place(root, assets, "Modules", "Building_ApartmentTall", new Vector3(7, 0, 0));
                 place(root, assets, "Modules", "Rooftop_Bridge_6m", new Vector3(-7, 4, 0));
                 place(root, assets, "Modules", "Rooftop_Bridge_6m", new Vector3(2, 8, 0));
-                place(root, assets, "Props", "GatePylon", new Vector3(7, 12, 1.2f));
+                place(root, assets, "Props", "SatelliteDish", new Vector3(7, 12, 1.2f));
             });
             shot("03_Rooftop_Utilities", new Vector3(0, 4.65f, 0), 5.7f, (root, assets) =>
             {
@@ -650,7 +650,7 @@ public static class SideviewReviewCapture
                 place(root, assets, "Props", "ACUnit", new Vector3(2.1f, 4, .8f));
                 place(root, assets, "Modules", "Utility_Box", new Vector3(-2.7f, 4, 1.1f));
                 place(root, assets, "Modules", "Guardrail_4m", new Vector3(5, 4, 2.8f));
-                place(root, assets, "Props", "GatePylon", new Vector3(7, 4, .9f));
+                place(root, assets, "Props", "SatelliteDish", new Vector3(7, 4, .9f));
             });
             shot("04_Tutorial_Gameplay", new Vector3(13, 2, 0), 4.3f, (root, assets) =>
             {
