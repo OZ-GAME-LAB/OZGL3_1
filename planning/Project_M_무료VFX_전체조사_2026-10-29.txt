@@ -1,0 +1,1100 @@
+Project M 무료 VFX 조사와 적용 계획
+기준일 2026년 10월 29일 Asia/Seoul
+프로젝트 Unity 6000.3.21f1 / URP 17.3.0 / 정면 직교 카메라의 2.5D 전투
+후보 선정과 적용 설계 제안. 최종 아트 확정·다운로드·패키지 임포트·스킬 연결·Unity 재생 및 성능 검증은 수행하지 않음.
+공식 무료표기 17개 Unity Store 패키지와 외부 무료 재료·도구를 조사했다. 중복 4건을 합치면 43개 제품군이다. 이 수치는 모두를 도입하거나 모두가 무조건 상업 이용 가능한 완성 VFX라는 뜻이 아니다.
+
+1 추천 방향과 우리 게임의 기준
+====================================================================
+
+무료 툰 프리팹을 주력으로 삼고 색·크기·타이밍을 통일한다. Cartoon FX Remaster Free를 타격/폭발 기본으로, Free Slash VFX를 참격 후보로 먼저 비교한다. 대시와 탄 꼬리가 부족할 때만 Trails VFX URP를 보조로 넣고, 마력장/예고는 기존 링과 Kenney CC0 재료로 짧게 보완한다.
+
+우리 게임의 약3등신 3D 주인공, 단순한 KayKit 몬스터, 낮은 채도의 현대도시, 정면 직교 카메라에서는 굵고 짧은 툰 형태가 읽힌다. 픽셀 HUD가 있다고 월드 전투 VFX를 전부 픽셀로 바꾸면 통일감이 깨진다. 외부팩을 많이 섞으면 무료라도 서로 다른 bloom, noise, timing, shader를 맞추는 비용이 커진다.
+
+게임 스타일 판단은 저장된 최신 치비 캐릭터/롱소드 공격 검수 이미지와 도시 이미지, 현재 카메라·재질 설정을 대조한 결과다. 공식 이미지 직접 시각 확인은 CFX/Free Slash/Simple FX의 정지 프리뷰에 한정하며 나머지 후보의 스타일 적합도는 제품 설명과 기술정보 기반의 잠정 판단이다.
+물리: 아이보리 중심/옅은 금빛 가장자리. 얇은 초승달과 짧은 속도선. 불필요한 긴 광기둥 제거.
+마법: 청록 또는 옅은 보라를 한 계열로 정하고 작은 밝은 코어+짧은 꼬리. 지속 고채도 네온을 화면 전체로 퍼뜨리지 않음.
+폭발: 아이보리 섬광→노랑/주황의 큰 덩어리→소량 파편→짧은 회색 연기. 플레이어·적 윤곽이 다시 빨리 보이게 함.
+지면과 범위: 마법진의 장식보다 실제 피해범위의 좌우 끝과 높이를 먼저 읽히게 함. 정면 카메라에서는 XZ 링만으로 부족해 양 끝 짧은 기둥/수직 마스크 보완.
+적 공격: 아군의 물리/마법 형태와 구별되는 경계/맥동. 적 위험 범위는 색뿐 아니라 모양·예고 애니메이션으로 구분.
+낮출 요소: 실사 두꺼운 연기, 오래 남는 전체화면 bloom, 매타 화면왜곡, 코믹 BOOM/POW 글자 기본 노출, 픽셀 팩 무분별 혼합.
+시간 시작안: 일반 참격 .10~.25초, 작은 적중 .12~.35초, 대시잔상 .10~.25초, 주폭발 .25~.45초+별도 잔광/연기 .3~.6초. 제작 출발값이며 현재 전투 판정값을 변경하는 규칙은 아님.
+
+현재 환경 팔레트 참고: {'asphalt': '#3B4652', 'navy': '#293D50', 'teal': '#498F8C', 'ivory': '#F1E9D4', 'warm_window': '#E7C781'}
+
+2 먼저 비교할 조합
+====================================================================
+
+타격과 폭발
+우선: Cartoon FX Remaster Free
+대안: Free Stylized Impacts and Explosions URP 또는 SimpleFX
+비교 기준: bloom 낮추고 코믹 텍스트 제거한 상태로 도시/주인공과 비교; 충격 때 적 실루엣·범위 읽힘
+
+검기와 근접 참격
+우선: Free Slash VFX
+대안: 기존 CombatVFX_v1 Crescent/Core와 짧은 파티클
+비교 기준: 실제 정면 XY카메라, 좌우/상하 조준, +Z-forward와 원점, 외부팹 왜곡 off, 연속5타 중첩
+
+대시와 마력탄 꼬리
+우선: 기존 코어+Trails VFX URP 일부
+대안: TrailRenderer+Kenney Particle Pack
+비교 기준: 짧은 수명/얇은 폭으로 이동 방향 읽힘; 플레이어 몸과 바닥을 가리지 않음
+
+장판과 예고
+우선: 기존 Ring/간단 메시+Kenney CC0
+대안: Vefects Shockwaves 또는 Effekseer CC0에서 PNG 베이크
+비교 기준: 실제 Box/Sphere의 좌우 범위·높이, 정면 지면에서 경계 가시성, 시작/종료/취소 일치
+
+Vefects Flipbook Lite는 Store판의 무료·Standard EULA를 확인했다. 다만 무료판의 색상 선택/RGBA 마스크/Emission 편집 기능 제한으로 우리 팔레트 통일에는 불리하므로 최종 우선순위는 예비 비교군이다. 일부 개별 조사에서의 상위 A/B 제안보다 기능 제약을 무겁게 반영했다.
+가장 적게 섞는 안은 CFX+Free Slash 2팩이다. 실제로 꼬리가 부족한 경우 Trails URP를 추가한다. Magic Effects FREE 한 팩으로 넓게 맞추는 안도 대조할 수 있으나 Unity6·재질 변환은 먼저 검증한다.
+
+3 스킬별 적용 계획
+====================================================================
+
+대시
+형태: 짧은 발먼지+몸통 뒤 1~2줄+선택 잔상
+후보: Trails URP / Kenney Smoke / 기존 DashBurst 재료
+현재 구현과 연결: 플레이어 이동은 현재 대시 코드가 담당. sample 내부 전진/높이 제거한 variant, 몸에 붙는 꼬리와 월드먼지 분리
+
+검기
+형태: 진행방향의 넓고 얇은 초승달+끝 스파크
+후보: Free Slash VFX / 기존 SlashWave
+현재 구현과 연결: 실제 SkillProjectile speed15/range5/hitRadius.5/pierce. visual은 이동하지 않고 루트만 따라감. 화면 크기를 hitRadius와 비교
+
+회전베기
+형태: 시전자 주변 타원호+짧은 360도 잔상
+후보: Free Slash를 회전형 variant로 가공 / 기존 Ring
+현재 구현과 연결: 현재 1회 DamageBox=(3.5,2,2), 높이.65. 바닥에 누운 링만 쓰지 않고 몸 앞/뒤를 구분
+
+연속참격
+형태: 짧은 5회 호와 작은 적중, 마지막타만 약간 강화
+후보: Free Slash 짧은 preset+CFX 작은 hit
+현재 구현과 연결: 현재 5회/.08초, 마지막 명목.32초. .95초 sample을 매타 유지하면 과도한 중첩. 스킬취소 시 후속시각도 정지
+
+마력탄
+형태: 작은 청록 코어+짧은 tail+적중 폭발
+후보: 기존 MagicMissile 코어+Trails/CFX hit
+현재 구현과 연결: 현재 투사체 speed12/range8/hitRadius.4/explosionRadius1.5/explodeAtEnd=false. 기획상 목표지점 즉시 범위 공격과 차이 있어 이동방식은 팀에서 정리. VFX가 피해로직을 결정하지 않음
+
+마력장
+형태: 뚜렷한 경계+좌우 끝 표시+저밀도 상승입자
+후보: 기존 Ring+Kenney, 필요시 Effekseer CC0 베이크
+현재 구현과 연결: 현재5틱/.5초/첫틱즉시, 마지막 약2초, Box4×1.5×2. prefab scale4×.1×2를 그대로 상속하면 새 아트가 납작해지므로 단위 root/visual child 필요
+
+연쇄폭발
+형태: 각 지점 예고→충격 flash/ring→분리된 잔광
+후보: CFX explosion 또는 Free Stylized Impacts URP
+현재 구현과 연결: 현재5회/.12초,1.5거리간격,반경1.5,마지막명목.48초. SkillExplosion 회수 .3초보다 긴 연기는 별도 수명으로 분리. 실제 피해 시점에 Detonate 호출
+
+스킬의 수치/개수/틱/속도는 조사 시점의 직렬화 값과 코드를 설명한다. 이 보고서가 밸런스를 확정하거나 바꾼 것은 아니다. 모든 SkillData의 CastDuration=.4초이며 연쇄 마지막 생성의 명목시간=.48초와 차이가 있어 취소·시전 종료 시 연출을 어떻게 처리할지 팀이 일치시켜야 한다.
+
+4 기존 CombatVFX 샘플의 처리
+====================================================================
+
+보존: 독립 비교 기준으로 보존. Crescent/Ring/Core/Shard/Ribbon과 색의 방향은 재사용 가치가 있음.
+가공: 원본샘플을 스킬 담당자에게 최종 에셋으로 바로 넘기기 전에 Play 어댑터, 내부 이동/높이 제거, 종료/풀링, 단위크기 처리한 runtime variant 필요.
+연결 시 확인할 점: SetActive만으로 Play되지 않음 / 투사체 root 이동과 sample 내부 Visual_Travel 이동이 중복 / sample 높이 .82~1.1m를 이미 어깨/적중 위치에 더하면 이중 높이 / sample Explosion1.55초가 기존 SkillExplosion .3초에 회수되어 잘림 / 완료는 Completed 이벤트일 뿐 자동 반환/파괴 없음 / 샘플의 수동 ParticleSystem.Simulate와 런타임 자동시뮬레이션을 함께 쓰지 않음
+샘플 구성값: DashBurst .60초, SlashWave .95초, MagicMissile1.05초, Explosion1.55초. ParticleSystem MaxParticles 합계는 각각14/12/16/61. 이는 살아 있는 입자 수·드로콜·GPU실측값이 아니다.
+현재 6개 스킬은 이미 판정과 프리팹 연결을 갖고 있다. 2026-10-19 vfx-plan.txt의 TestLogSkill만 존재한다는 설명은 오래되었다. 기존 문서는 수정하지 않고 이 보고서에 현재 상태를 기록했다.
+
+5 직접 제작할 경우의 현실적인 방식
+====================================================================
+
+제작 방향: 직접 만든다면 완성형 이미지/3D 모델 하나를 생성하기보다 이미 있는 메시와 공용 texture로 작은 블록을 조합. Shuriken ParticleSystem+TrailRenderer+필요시 공용 ShaderGraph 1개. 복잡한 VFXGraph 신규도입은 초기 범위에서 제외.
+
+공용 블록
+  1. 초승달 메시와 UV마스크 1종: 검기/회전/연속참격 공유
+  2. 별/스파크마스크: 모든 적중 공유
+  3. 작은 코어+짧은 trail: 마력탄과 적 원거리 공격 공유
+  4. 경계링/좌우끝: 장판/폭발예고 공유
+  5. 불꽃 flipbook+파편+연기: 작은/큰폭발 공유
+
+작업 순서
+  1. 실제 카메라 스케일에서 흑백 실루엣을 먼저 비교
+  2. 기존 메시 또는 Blender/VFXMeshLab으로 저면수 호·링·파편만 제작
+  3. Kenney/다른 명확한 무료 라이선스 마스크를 URP/Particles/Unlit에 적용
+  4. 방출/알파/크기/색 곡선으로 예고·타격·잔광 타이밍 조정
+  5. 복잡한 불/연기는 Effekseer CC0 샘플→정면 PNG시퀀스→플립북; 새 런타임 의존성을 넣는 경로는 별도 검토
+  6. 8~16프레임 또는4×4 atlas를 시작점으로 테스트; 작은효과 .1초대는 프레임을 빠르게 재생해 길게 늘어지지 않게 함
+  7. 공용 tint/intensity/radius/duration을 노출하고 9개 전달 preset으로 묶음
+
+AI의 역할: AI는 구조 코드·파라미터 초안·단일 마스크/콘셉트 보조에 한정하는 것이 현실적. 연속 이미지 프레임의 형태/알파 일관성, 스킬 판정 정렬, 잔광과 풀링은 별도 작업. Meshy가 만든 고정 메시나 생성 영상이 바로 Unity VFX가 되지는 않는다. 무료 에셋 조건에서 유료 생성 크레딧을 무상이라고 계산하지 않는다.
+
+무료 도구: Unity 기본 ParticleSystem/TrailRenderer, Blender, Krita, Effekseer, MIT VFXMeshLab. 웹 CrunchyVFX는 픽셀/UI보조 후보. JangaFX 무료 VDB는 실사 베이크 부담으로 현재 비추천.
+
+예상 공수: 무료팩 A/B/임포트점검 .5~1인일+색/타이밍/통합1~2인일+게임QA .5~1인일, 총2~4인일 수준의 초기 견적. 기존샘플 완성화+부족한장판/회전/예고는 초안2~4인일+마감/QA2~3인일. 신규flipbook·셰이더 전체제작은 초안3~5인일, 학습포함1~2주 가능. 담당자 경험/플랫폼/완성도에 따라 크게 달라지는 추정이며 실제 작업시간 측정 아님.
+
+텍스처의 시트 크기와 재생 길이를 구분한다. 예를 들어 16프레임을16fps로 재생하면1초가 되어 .1초대 참격에는 길다. 프레임 수를 줄이거나 재생 속도를 조절하고 마지막 프레임의 알파를 확인한다. 플립북이 예쁘다는 이유로 타격 프레임을 지연시키지 않는다.
+
+6 팀원에게 전달할 규격과 일정
+====================================================================
+
+전달할 9개 variant: VFX_Dash / VFX_SlashProjectile / VFX_Spin / VFX_FlurryHit / VFX_MagicProjectile / VFX_MagicImpact / VFX_MagicField / VFX_ChainWarning / VFX_Explosion
+
+좌표: unit scale root, 원점=실제 적중점 또는 지면 기준점. 로컬+Z forward,아트오프셋은 visual child에서. gameplay XY조준 dir은 현재 LookRotation 사용.
+
+수명: Configure(position,direction,tint,scale,duration)→Play→Impact/Tick(optional)→StopEmitting→모든입자/트레일/메시잔광완료→1회 Release. 이동/충돌/데미지는 기존 스킬코드 소유.
+
+풀링: 현재 SkillSpawner.UsePool=false지만 범용 PoolManager가 있으므로 새 풀 시스템을 따로 만들 필요 작음. 전용 key와prefab등록/PreparePool,비활성Rent→설정→Play,Stop/Clear/Tail완료를 함께 처리해야 하며 bool만 켜면 완료가 아님.
+
+첨부 정보: 프리팹마다 출처/라이선스파일/원본버전/URP의존성/정면프리뷰/축·피벗/주동작·잔광수명/scale기준/loop/노출파라미터/풀반납조건을 기록.
+
+팀원 전달 문안 초안: VFX는 무료 툰팩을 기반으로 색과 타이밍을 통일하는 방향을 제안합니다. 타격·폭발은 Cartoon FX Remaster Free, 참격은 Free Slash VFX를 우선 비교하고 대시·탄 잔상은 Trails URP로 보완하겠습니다. CombatVFX_v1은 비교 기준으로 보존하며 내부이동과 재생·종료 처리를 정리한 뒤 실제 스킬용 프리팹을 넘기겠습니다. 최종 확정 전 실제 게임 카메라에서 크기·타이밍을 비교하겠습니다.
+
+실행 순서
+1 무료 주력 CFX와 참격 Free Slash만 임시 검증 프로젝트에서 도입. 배포당일 가격·license·README·버전 보존. 메인프로젝트 설정을 덮어쓰지 않음.
+2 실제 주인공/몬스터/도시 조명/orthographic 카메라에 동일크기·동일시간으로 비교. 코믹텍스트·왜곡 off, bloom낮춤. 필요할 때만 SimpleFX/Free Stylized Impacts 대조 추가.
+3 대시·검기·마력탄·폭발 4종을 먼저 시각적으로 승인. 이때 담당자에게 prefab,기간,원점,축,재생API를 전달.
+4 공용 블록으로 회전베기/연속참격/마력장/폭발예고와 작은 적중 variants 확장.
+5 수명과 취소·분리잔광·풀링을 스킬 쪽과 맞추고 실제판정/예고/범위표시/피해숫자와 정렬.
+6 좌우·공중·계단·벽가림·정지/재개·연속5타·장판겹침·5/10동시폭발·반복대여를 검수. PC/Mobile프로필에서 핑크/Depth의존과 실제CPU/GPU/GC/오버드로를 확인 후 확정.
+
+초기 성능 목표는 일반단발12~48입자, 큰폭발48~96입자·MaxParticles합128 이하, 공유재질3~4개에서 시작할 수 있다. 이전 연구의 설계 목표를 출발값으로만 사용하고 실제 전체화면 투명면적/겹침·CPU/GPU를 보고 조절한다. 현재 보고서에는 성능 측정 결과가 없다.
+
+7 무료와 라이선스를 확인하는 기준
+====================================================================
+
+- 무료 다운로드, 상업게임 사용 허가, Unity/URP 호환성은 각각 확인해야 하는 별개 항목이다. 기간한정무료·체험판·구독전용은 상시무료 추천과 분리한다.
+- Asset Store Standard EULA는 CC0가 아니다. 무료 Extension Asset도 팀사용자별 정식 취득/조건을 확인하고 원본팩을 공개저장소에서 배포하지 않는다.
+- CC0면 수정/게임상업사용/표기조건이 단순하다. 원본라이선스와작가/URL/버전은 내부출처기록에 남겨 추적가능하게 한다.
+- CC BY4.0은 작가/원출처/라이선스링크/변경사항을 표기한다. CC BY-SA 등은 별도 의무를 검토하며 이번 간편도입 주력에서는 낮춘다.
+- Gumroad의CC0표현과재배포금지처럼 페이지문구가 충돌하면 순수CC0로 단정하지 않는다. 같은제작자의다른스토어 배포라도 해당다운로드판 라이선스를 기준으로 한다.
+- 공식URP표기/Unity6표기는 우리정확한6000.3.21+URP17.3에서실제임포트검수가통과했다는뜻이아니다.
+Unity 표준 EULA: https://unity.com/legal/as-terms
+팀 안에서도 해당 Asset의 사용자·seat 조건을 확인하고 각자 무료 취득 기록을 남기는 편이 단순하다. 원본 패키지와 바뀐 프리팹을 공개적으로 재배포하는 일은 게임 실행본에 포함해 배포하는 것과 다르다.
+
+8 Unity Asset Store 무료 패키지 전체 17개
+====================================================================
+
+U01 Cartoon FX Remaster Free — Jean Moreno
+https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565
+권장 순위: A1: 공통 타격·폭발 기본팩
+현재 가격: FREE
+무료 포함 범위: 상용 Cartoon FX Remaster 1~4에서 뽑은 무료 샘플. 2D/3D, 셰이더의 디졸브/UV왜곡, 카메라 흔들림·빛 지원. 무료 정확 프리팹 수는 단정하지 않음.
+공식 호환 표기: builtin: True; urp: True; hdrp: False; unity_versions: ['2020.3.12f1', '2021.3.0f1']; unity6: 추가 호환 문구에 Unity 6 최신 URP 지원; R1.5.1 릴리스는 Unity6.2 obsolete API 수정
+버전: R1.5.1
+기록된 갱신일: 2025-12-18
+패키지 크기: 12.8 MB
+시각 확인 범위: 공식 6칸 screenshot 직접 확인: 굵은 별·링·파편, 강한 bloom, BOOM 텍스트. 정지 프리뷰만 확인.
+우리 스타일: 치비의 명료한 실루엣·색 블록에 적합. 코믹 텍스트, 과한 bloom·동적 광원·내장 화면흔들림은 제거/축소.
+수정 비용: 낮음~중간. 효과별 컬러/크기/수명 통일, 기존 CombatFeedback 흔들림 중복 방지.
+제한: 실제 6000.3.21f1/URP17.3 재생·풀링 검증은 아직 없음.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U02 Free Slash VFX — MaykerStudio
+https://assetstore.unity.com/packages/vfx/shaders/free-slash-vfx-309498
+권장 순위: A1: 검기·연속참격·회전베기 원형
+현재 가격: FREE
+무료 포함 범위: 스타일화 참격 프리팹·커스텀 셰이더·왜곡. 색·속도·형상 커스터마이즈. 무료 상업 사용 문구도 본문 존재. 무료 정확 프리팹 수 미기재.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['2021.3.45f1', '6000.0.34f1']; unity6: Unity6.0 URP 호환 표기;6.3은 미실측
+버전: 1.0
+기록된 갱신일: 2025-05-05
+패키지 크기: 13.1 MB
+시각 확인 범위: 공식 키이미지 직접 확인: 4색 초승달 참격+스파크와 긴 세로 광선. 영상/Unity재생 확인 안 함.
+우리 스타일: 측면 2.5D 검기에 읽히는 초승달. 아이보리·옅은 노랑으로 물리계열 통일, 세로광선/bloom 축소.
+수정 비용: 낮음~중간. XY 공격면 정렬, 좌우 방향, 이동형 검기와 칼 휘두름 분리. 왜곡 기본 끄기.
+제한: HDRP/Built-in도 ShaderGraph Target 변경으로 가능하다는 본문은 별도 작업 조건; 우리 URP판 선택.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U03 Trails VFX - URP — Vefects
+https://assetstore.unity.com/packages/vfx/trails-vfx-urp-242574
+권장 순위: A1: 대시·마력탄 꼬리 보완
+현재 가격: FREE
+무료 포함 범위: 10개 Elemental Trail(Cosmos, Dark, Earth, Electric, Fire, Ice, Nature, Sound, Void, Water). SFX 포함, 텍스처 최대1024, ShaderGraph 커스텀 셰이더20개 이상.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['2021.3.0f1', '2022.3.0f1', '2023.1.0f1', '6000.0.23f1']; unity6: Unity6.0URP 호환 표기
+버전: 1.0.20252
+기록된 갱신일: 2025-12-21
+패키지 크기: 28.6 MB
+시각 확인 범위: 제품 본문·기술정보 확인; 이미지/영상 미검수.
+우리 스타일: 청록/보라 한 종류만 채택하면 마력탄·대시의 공통 꼬리로 유용. 모든 원소를 도입하면 통일감 저하.
+수정 비용: 중간. 실제 이동에 따라 생성되는 trail인지 확인, teleport/풀 재대여 시 잔상 Clear, 소리 중복 제거.
+제한: 본문2D안내 문장이 다소 혼란스러움. 우리 프로젝트는 3D URP의 측면 카메라여서 별도2D Renderer 지원에 의존하지 않음. 선별셰이더만 사용.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U04 Magic Effects FREE — Hovl Studio
+https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933
+권장 순위: A2: 하나의 무료팩으로 6스킬을 넓게 충당하는 대안
+현재 가격: FREE
+무료 포함 범위: 마법진4, 캐릭터오라7, 히트7, 포털4, AoE11, 폭발3, 스파크18, 참격6, 실드3, 연기9, 환경4: 설명상 합계86개 항목.
+공식 호환 표기: builtin: True; urp: True; hdrp: True; unity_versions: ['2021.3.15f1', '2022.3.12f1']; unity6: Unity6명시 없음. URP/HDRP 지원은 standard upgrade/Render Pipeline Converter 안내와 함께 표기
+버전: 1.6
+기록된 갱신일: 2025-06-04
+패키지 크기: 36.4 MB
+시각 확인 범위: 공식 본문/표 확인; 실제 이미지/영상 미검수.
+우리 스타일: 검기부터 마력장·폭발까지 일관된 공급처로 묶을 수 있음. 고채도/발광 수위는 캐릭터 크기에 맞춰 낮춰야 함.
+수정 비용: 중간. 재질 업그레이드부터 확인, 86항목 전체 임포트 사용 대신 필요한 6~10종 선별.
+제한: 자동변환 도구 안내가 Unity6의 모든 커스텀 셰이더 동작을 보증하지 않음.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U05 Free Quick Effects Vol. 1 — Gabriel Aguiar Prod
+https://assetstore.unity.com/packages/vfx/particles/free-quick-effects-vol-1-304424
+권장 순위: A2: 마력탄·폭발·회복·충격파 보완
+현재 가격: FREE
+무료 포함 범위: 30개 Quick Effects. 폭발3/투사체2/회복2/전기·번개/실드/충격파/연기/스파크 등. 텍스처와 데모씬 포함.
+공식 호환 표기: builtin: True; urp: True; hdrp: True; unity_versions: ['2022.3.43']; unity6: 본문3RP지원;Unity6직접명시 없음
+버전: 1.0
+기록된 갱신일: 2024-12-06
+패키지 크기: 19.9 MB
+시각 확인 범위: 공식 본문 확인; 실제 이미지/영상 미검수.
+우리 스타일: 짧고 단순한 모듈을 재활용할 수 있어 하이브리드 제작에 적합. '60초 제작 챌린지' 무료 모음이므로 완성도는 효과별 평가.
+수정 비용: 낮음~중간. 폭발/투사체2개 우선 선택, 크기와 색·수명 통일.
+제한: Works on any platform은 판매자 설명이며 실제 성능/Unity6 검증 아님.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U06 Free Stylized Impacts and Explosions URP — Captivest Games
+https://assetstore.unity.com/packages/vfx/free-stylized-impacts-and-explosions-urp-385882
+권장 순위: A2: 최신엔진 폭발 A/B 후보
+현재 가격: FREE
+무료 포함 범위: 타격·폭발3VFX. 기술정보: 텍스처4~5개, 효과별 커스텀셰이더1개와 재질3개.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['6000.3.18f1']; unity6: 프로젝트6000.3.21과 근접한6.3호환 명시
+버전: 1.0
+기록된 갱신일: 2026-07-13
+패키지 크기: 16.8 MB
+시각 확인 범위: 공식 본문/기술정보 확인; 첫미디어영상이라 픽셀/영상은 미검수.
+우리 스타일: 스타일화 타격/폭발이라는 범위는 적합. 비주얼 확정은 실제 카메라 A/B 전까지 보류.
+수정 비용: 낮음 예상이나 미확정. 효과3종 중 작은/큰폭발로 적합한 것 선별.
+제한: 신규팩·평가 부족.6.3버전이 가깝다고 품질·성능 확인된 것은 아님.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U07 Simple FX - Cartoon Particles — Synty Studios
+https://assetstore.unity.com/packages/vfx/particles/simple-fx-cartoon-particles-67834
+권장 순위: A2: 로우폴리 먼지·잔해·폭발
+현재 가격: FREE
+무료 포함 범위: 피/흙 비산, 먼지, 잔해폭발, 불/불꽃놀이/화염방사, 연기/스팀/타이어연기, 물/하수비산. 본문URP지원과 Synty가이드 링크.
+공식 호환 표기: builtin: 미기재; urp: 본문지원+가이드; hdrp: 미기재; unity_versions: ['2021.3.17']; unity6: Unity6직접호환 표 없음
+버전: 1.2.0
+기록된 갱신일: 2023-09-24
+패키지 크기: 235.4 KB
+시각 확인 범위: 공식 키이미지 직접 확인: 각진 노란 폭발·갈색 돌·회색 연기.
+우리 스타일: 우리 로우폴리 도시와 형태상 가장 직접적으로 어울림. 대시 발먼지/연쇄폭발 잔해 보조에 특히 적합.
+수정 비용: 낮음~중간. 공식URP가이드에 따른 변환 후 일부Legacy재질 재확인.
+제한: 마법탄·검기·장판은 별도 필요. 가볍다는 파일크기로 런타임 성능을 단정하지 않음.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U08 Stylized Slash VFX — HungNguyenVFX
+https://assetstore.unity.com/packages/vfx/particles/stylized-slash-vfx-200233
+권장 순위: B: 검기 대안
+현재 가격: FREE
+무료 포함 범위: 프리팹6개 중 참격5+배경1. VFX프로필5, 3D모델1, 재질6, 셰이더1.2D/3D용.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['2020.2.4f1']; unity6: 명시없음
+버전: 1.0
+기록된 갱신일: 2021-08-21
+패키지 크기: 2.6 MB
+시각 확인 범위: 본문/표만 확인.
+우리 스타일: stylized/lowpoly/hack&slash를 표방하는 소형 참격 후보. Mayker보다 구형이므로 후순위.
+수정 비용: 중간. 구형셰이더·VFX프로필의Unity6의존성 확인, 형태/색 통일.
+제한: 5개참격을 '6개전투효과'로 세면 배경까지 포함하는 오류.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U09 Simple Stylized Slash Pack 2 — Namu
+https://assetstore.unity.com/packages/vfx/particles/simple-stylized-slash-pack-2-248665
+권장 순위: B: 참격 12프리팹 대안
+현재 가격: FREE
+무료 포함 범위: 입자프리팹12, 재질21, 메시5, 데모씬1, 텍스처23, ShaderGraph3/SubGraph2.
+공식 호환 표기: builtin: True; urp: True; hdrp: False; unity_versions: ['2021.3.19f1']; unity6: 명시없음
+버전: 1.0.0
+기록된 갱신일: 2023-05-11
+패키지 크기: 4.0 MB
+시각 확인 범위: 본문/표만 확인.
+우리 스타일: 참격 변주가 필요하면 비교할 후보. 아직 정지이미지 직접검수 없어서 확정 시각평가 유보.
+수정 비용: 중간.21재질 선별/병합, ShaderGraph업그레이드 검수.
+제한: 본문에 과거 '$13로 인하' 문구가 남아 있지만 현재 가격UI FREE/원가0 근거로 무료 분류. 다운로드당일 재확인.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U10 Free Game VFX - Magic Circle(URP) — Eric VFX Studio
+https://assetstore.unity.com/packages/vfx/particles/free-game-vfx-magic-circle-urp-344984
+권장 순위: B: 마력장 예비
+현재 가격: FREE
+무료 포함 범위: ParticleSystem 마법진4프리팹, PNG/TGA256x256. 크기·회전 조절. 제작자무료목록도4개 확인.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['2022.3.45f1']; unity6: 명시없음
+버전: 1.01
+기록된 갱신일: 2026-01-08
+패키지 크기: 992.4 KB
+시각 확인 범위: 본문/표만 확인.
+우리 스타일: 마력장 경계/시전 마법진에 유용. 복잡한 문양은 측면 카메라에서 사라질 수 있어 단순외곽 띠와 조합.
+수정 비용: 낮음~중간. 바닥정렬/양끝 가독성/실제판정범위 연동.
+제한: 4개무료 샘플이며Full Magic Circle Pack과 구분.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U11 Free Game VFX Collection(URP) — Eric VFX Studio
+https://assetstore.unity.com/packages/vfx/particles/free-game-vfx-collection-urp-345212
+권장 순위: B: 마법 여러유형 비교
+현재 가격: FREE
+무료 포함 범위: UnityParticleSystem마법효과10프리팹. PNG/TGA1024x1024. 확대/축소/회전가능. 제작자무료목록 교차확인.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['2022.3.45f1']; unity6: 명시없음
+버전: 미기록
+기록된 갱신일: 미기록
+패키지 크기: 미기록
+시각 확인 범위: 본문/표만 확인.
+우리 스타일: 마법계열 보조후보. 정확한10종이 본문에 열거되지 않아 마력탄 포함이라고 단정하지 않음.
+수정 비용: 중간 예상. 샘플10개 실제내용을 임포트후 확인.
+제한: 무료10개와유료Mega/RPGCollection혼동주의.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U12 Free RPG VFX Sprite Sheet Starter Pack — Eric VFX Studio
+https://assetstore.unity.com/packages/vfx/free-rpg-vfx-sprite-sheet-starter-pack-393438
+권장 순위: B: 플립북 기반 공통언어 대안
+현재 가격: FREE
+무료 포함 범위: 무료5효과:참격1/타격1/폭발2/마법진1. SpriteSheet+ParticleSystem프리팹+데모씬.
+공식 호환 표기: builtin: True; urp: True; hdrp: True; unity_versions: ['2022.3.45f1']; unity6: 명시없음;예제재질은URP이며이미지는다른RP에도사용가능이라는설명
+버전: 1.0
+기록된 갱신일: 2026-07-15
+패키지 크기: 9.3 MB
+시각 확인 범위: 본문/표만 확인.
+우리 스타일: 얇은2D효과를3D옆면전투에쓸수있어스킬통일이간편. 마력탄본체/대시는직접보완.
+수정 비용: 낮음~중간.알파필터/프레임속도/카메라빌보드/좌우반전.
+제한: 무료5개;유료전체50개를무료로계산하지않음.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U13 Free Stylized Smoke Effects Pack — Maiami Studio
+https://assetstore.unity.com/packages/vfx/particles/fire-explosions/free-stylized-smoke-effects-pack-226406
+권장 순위: B: 대시·착지·폭발 잔재
+현재 가격: FREE
+무료 포함 범위: ParticleSystem스타일화연기. Legacy셰이더로다른RP사용가능하다는제작자설명.정확프리팹수미기재.
+공식 호환 표기: builtin: True; urp: True; hdrp: True; unity_versions: ['2020.3.36f1']; unity6: 명시없음
+버전: 1.0.1
+기록된 갱신일: 2022-07-18
+패키지 크기: 120.5 KB
+시각 확인 범위: 본문/표만확인.
+우리 스타일: 작은각진먼지/연기를고르면로우폴리전투에적합할가능성.현재미리보기직접검수없음.
+수정 비용: 낮음~중간. 연기체류시간·입자수줄이고화면덮임방지.
+제한: 대시먼지와폭발후연기에한정;공격핵심네종완성팩아님.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U14 Polygonal's Low-Poly Particle Pack — Polygonal Stuff
+https://assetstore.unity.com/packages/vfx/particles/polygonal-s-low-poly-particle-pack-118355
+권장 순위: B: 면기반 잔해/먼지 재료
+현재 가격: FREE
+무료 포함 범위: 30여효과의일반/HighPerformance/Mobile변형총90프리팹.메시입자,연기/폭발/불/물/타격/환경.보너스로우폴리모델.
+공식 호환 표기: builtin: 미기재; urp: 명시없음; hdrp: 명시없음; unity_versions: ['2018.1.0']; unity6: 명시없음
+버전: 1.0
+기록된 갱신일: 2019-02-27
+패키지 크기: 1016 KB
+시각 확인 범위: 본문만확인.
+우리 스타일: 면기반파편은적합하나2018제작이라셰이더변환비용을감수할때만후순위검토.
+수정 비용: 중간~높음. Legacy/Mobile셰이더를URP파티클재질로옮겨텍스처·색·메시를재사용.
+제한: 90개를90개독립효과로해석하면안됨.30개효과의변형포함.오래된'정기업데이트'약속을현재지원보증으로쓰지않음.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U15 Particle Pack | Starter Assets — Unity Technologies
+https://assetstore.unity.com/packages/vfx/particles/particle-pack-starter-assets-127325
+권장 순위: B: 직접제작 학습·기술기준/얼음·디졸브
+현재 가격: FREE
+무료 포함 범위: UnityParticleSystem모듈예제.불/폭발/얼음/디졸브및추가예제.프로젝트에서재가공허용안내.
+공식 호환 표기: builtin: 2021.3옛판만호환; urp: True; hdrp: False; unity_versions: ['2021.3.0f1(BIRP)', '2022.3.0f1(URP)', '6000.0.0f1(URP)', '6000.3.0f1(URP)']; unity6: v3.3 릴리스는6000.3수정, 3.2는6000.3업데이트
+버전: 3.3
+기록된 갱신일: 2026-10-08
+패키지 크기: 160.2 MB
+시각 확인 범위: 본문/호환표/릴리스노트확인.실제이미지미검수.
+우리 스타일: 예제를공부하거나개별재료를뽑기좋음.스타일화치비에그대로적합한지는효과별별도.
+수정 비용: 중간.별도빈프로젝트에먼저읽고필요효과만이전.
+제한: 가져오기에서프로젝트설정임포트요구가능.그대로설정덮어쓰기하지않음.게임메인아트팩보다학습/재료용.
+라이선스: 스토어UI는Standard Unity Asset Store EULA/Extension Asset이지만제품설명및릴리스노트가Unity Companion License를명시.첨부LICENSE확인필요;CC0로분류금지.
+
+U16 War FX — Jean Moreno
+https://assetstore.unity.com/packages/vfx/particles/war-fx-5669
+권장 순위: C: 무료지만 우리 전투 기본팩에서는 제외
+현재 가격: FREE
+무료 포함 범위: 사실적전쟁효과40여개.폭발/불/총구섬광/재질별탄착/연기.프리로드·재활용CFXSpawnSystem포함.
+공식 호환 표기: builtin: 미기재; urp: 명시없음; hdrp: 명시없음; unity_versions: ['5.6.7']; unity6: 명시없음.2026릴리스날짜만으로Unity6호환이라판단불가
+버전: 1.8.1
+기록된 갱신일: 2026-06-30
+패키지 크기: 8.0 MB
+시각 확인 범위: 본문/가격/버전만확인.
+우리 스타일: 사실적연기·총기·전쟁지향으로치비로우폴리검/마법스타일과거리.도시배경의한정된환경화재에만고려.
+수정 비용: 중간~높음.구형코드/셰이더검토,사실적텍스처를과감하게줄여야함.
+제한: 무료유명팩이라고기본추천하지않음.기존CFX풀링을우리VFX풀에무검증중복도입금지.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+
+U17 Free - URP Flipbook VFX Bundle Lite — Vefects
+https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420
+권장 순위: B: 플립북 스타일 비교용,색상통일제약
+현재 가격: FREE
+무료 포함 범위: Flipbook/CombatFlipbook/PixelCraft세계열의Lite샘플.유료Full500+수량은무료수량아님.무료정확효과수본문미확정.
+공식 호환 표기: builtin: False; urp: True; hdrp: False; unity_versions: ['2023.1.0f1', '6000.0.23f1']; unity6: Unity6지원과Upgraded Unity6+Shaders릴리스표기
+버전: 1.0.1
+기록된 갱신일: 2026-07-28
+패키지 크기: 101.4 MB
+시각 확인 범위: 공식본문/표/릴리스노트확인.실제미디어미검수.
+우리 스타일: 2D/2.5D/스타일3D전투방향은맞으나픽셀계열은우리3D아트와같은화면에서판단필요.
+수정 비용: 중간~높음. Lite에custom color selector/RGBA mask color/masked emission/2DRenderer셰이더/모든VFX·SFX/4K텍스처가없음.
+제한: Built-in무료395530과URP395420구분.우리palette에맞추기쉽다고단정금지.선명한플립북원본하나를원한다면Eric무료5종이더단순.
+라이선스: Standard Unity Asset Store EULA; UI License type: Extension Asset
+날짜 보충: root의 직접 웹 조회는 Jul27,2026, 다른 지역 응답에는7월28일. 동일v1.0.1이며 하루 차이를 별도 버전으로 계산하지 않는다.
+
+
+9 다른 배포처의 무료 에셋과 재료
+====================================================================
+
+E01 Particle Pack — Kenney
+https://kenney.nl/assets/particle-pack
+배포처: Kenney / 제작자 OpenGameArt
+무료 범위: 무료(기부 선택)
+라이선스: CC0
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0 범위 허용
+형식: 80 PNG(512×512), tilesheet, vector; OGA판 Unity 파티클 샘플 포함
+내용: 기본 입자·불·연기·마법·하트·불꽃·전기
+Unity 적용: 텍스처는 엔진 독립. 구형 Unity 샘플의 Unity6/URP17.3 호환 미보장
+필요 작업: URP/Particles/Unlit 재질로 필요한 마스크만 사용. 입자 방출·크기·수명·트레일은 직접 구성
+적합도: 상(기초 재료)
+판단 근거: 색을 입힐 수 있는 단순 마스크를 쓰면 치비/로우폴리의 큰 형태와 맞추기 쉽다
+사용처: 대시 먼지 / 마력탄 코어/꼬리 / 작은 피격 / 폭발 파편
+판단: 우선 확보할 기초 라이브러리. 완성 프리팹 대체품은 아님
+확인 범위: 공식 검색결과+제작자 OGA 페이지 직접 읽음; 공식 도메인 본문 fetch 제한; 다운로드·임포트 안함
+추가 근거 https://opengameart.org/content/particle-pack-80-sprites
+
+E02 Smoke Particles — Kenney
+https://kenney.nl/assets/smoke-particles
+배포처: Kenney / 제작자 OpenGameArt
+무료 범위: 무료(기부 선택)
+라이선스: CC0
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0 범위 허용
+형식: PNG. 현 Kenney페이지 70파일, 구 OGA 배포 설명77파일(서로 버전/배포본 다를 수 있음)
+내용: 연기·폭발·섬광·흰 퍼프
+Unity 적용: 엔진 독립 이미지; URP 프리팹 아님
+필요 작업: 알파 재질, 색보정, 짧은 수명/낮은 밀도. 프레임 시퀀스 여부는 아카이브 검사 필요
+적합도: 중상(희박한 먼지/연기)
+판단 근거: 소량의 먼지와 폭발 잔재에 적합. 부드러운 대형 연기는 로우폴리 실루엣을 가릴 수 있음
+사용처: 대시 발먼지 / 착지 / 폭발 잔연기
+판단: E01 보조. 두 팩을 같은 완성 VFX 개수로 중복 계산하지 않음
+확인 범위: 공식 검색결과와 제작자 OGA 직접 읽음; 다운로드·임포트 안함
+추가 근거 https://opengameart.org/content/smoke-particle-assets
+
+E03 Hit Animation | Frame by frame — Sinestesia
+https://opengameart.org/content/hit-animation-frame-by-frame
+배포처: OpenGameArt
+무료 범위: 무료
+라이선스: CC0
+상업 게임: 가능
+표시: 의무 없음(출처 주장 금지·자발적 표기 요청)
+원본 배포: CC0 범위 허용
+형식: RGBA PNG4×4,총4096×4096,프레임1024×1024,16프레임
+내용: 노란 타격1종
+Unity 적용: 엔진 독립,URP Particle Texture Sheet Animation 또는 카메라향 Quad
+필요 작업: 텍스처 축소,배경/명도 시험,16프레임 재생속도·크기 조절
+적합도: 중상(작은 보조 타격)
+판단 근거: 큰 단일 타격 실루엣을 짧게 써서 3D 전투에도 적용 가능. 근접 기본 피격에 지나치게 크면 과장됨
+사용처: 검기 적중 / 연속참격 마지막 타격 / 마력탄 적중
+판단: 피격 전용 비교군
+확인 범위: 제작자 배포페이지 직접 읽음; 미임포트
+
+E04 Pure Projectile - Magic Effect — Cethiel
+https://opengameart.org/content/pure-projectile-magic-effect
+배포처: OpenGameArt
+무료 범위: 무료 배포본;고해상도 Patreon판 별도
+라이선스: CC0(OGA 배포본)
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0 범위 허용
+형식: ZIP500.8KB,2D effect 이미지. 페이지에 정확한 시트 해상도/프레임수 미기재
+내용: 발광 마법 투사체/주문 효과
+Unity 적용: Unity 프리팹 아님
+필요 작업: 이미지 형식·알파·프레임수 검사 후 URP 재질/시트 애니메이션 구성
+적합도: 중
+판단 근거: 발광을 낮추고 마력 팔레트로 재색칠하면 보조 가능. 형태·동세는 인게임 비교 필요
+사용처: 마력탄 / 마력장 틱의 작은 빛
+판단: 마력탄 재료 대안;후원 고해상도판을 무료내용으로 포함하지 않음
+확인 범위: 제작자 OGA 직접 읽음;미다운로드
+
+E05 Explosion effects and more — Soluna Software
+https://opengameart.org/content/explosion-effects-and-more
+배포처: OpenGameArt
+무료 범위: 무료
+라이선스: 페이지 CC-BY3.0+CC0 병기. 제작자 2015-12-28 댓글에서 CC0로 변경했다고 확인
+상업 게임: 가능
+표시: CC0 선택 시 의무 없음
+원본 배포: CC0 범위 허용
+형식: PNG 시트5개(Explosion03,Explosion21,Effect95,Effect47,Aura38)
+내용: 폭발2종·보조효과2종·오라1종
+Unity 적용: 엔진 독립 이미지
+필요 작업: 시트 슬라이싱/타이밍/알파 재질 구성. 전후 오라 층은 별도 제공 안됨
+적합도: 중하
+판단 근거: 구형 RPG의 부드러운 발광과 오라가 큰 로우폴리 면과 이질적일 수 있어 전체가 아닌 작은 섬광만
+사용처: 연쇄폭발 보조 섬광 / 마력장 장식
+판단: 후순위 재료/레퍼런스
+확인 범위: 배포페이지와 제작자 라이선스 수정 댓글 확인;미임포트
+
+E06 Free VFX Asset Pack — CodeManu
+https://opengameart.org/content/free-vfx-asset-pack
+배포처: OpenGameArt / itch.io
+무료 범위: Name your own price / 무료
+라이선스: OGA판 CC0+본문 public domain 일치. itch본문 public domain지만 metadata CC BY4.0와 충돌
+상업 게임: 가능(OGA CC0판 권장)
+표시: OGA CC0판 의무 없음
+원본 배포: OGA CC0 범위 허용
+형식: 22효과,30/60fps,PNG sheets·단일frames·GIF·SpriteMancer project
+내용: 히트·폭발·불·전기실드·소용돌이 등
+Unity 적용: 엔진 독립 이미지;SpriteMancer 유료앱 없어도 PNG 사용 가능
+필요 작업: 픽셀 밀도 통일,크기/색/프레임 속도 조정. 부드럽게 필터링만 해서 비픽셀로 전환되지는 않음
+적합도: 중하(픽셀)
+판단 근거: 현재 3D 캐릭터와 픽셀 VFX의 해상도 차이가 눈에 띌 가능성.작은 별/피격 정도로 제한
+사용처: 작은 피격 / 폭발 비교 / 실드/상태 보조
+판단: OGA판 보조 라이브러리;주력 아트 방향으로 채택하지 않음
+확인 범위: 두 제작자 페이지 직접 읽고 상충 기록;미임포트
+추가 근거 https://codemanu.itch.io/vfx-free-pack
+
+E07 Free Animated Explosion Sprite Pack — CraftPix
+https://craftpix.net/freebies/free-animated-explosion-sprite-pack/
+배포처: CraftPix
+무료 범위: 무료 다운로드(계정 로그인 경로)
+라이선스: CraftPix Freebie Products(현 약관2절)
+상업 게임: 무제한 개인/상업 프로젝트 가능
+표시: 의무 없음
+원본 배포: 원본·수정 아트 자체의 재판매/추출 가능한 재배포 금지
+형식: AI(벡터 원본)+PNG
+내용: 11효과:불폭발·연소/연기·전기방전·독 분사 등
+Unity 적용: 엔진 독립 PNG;Unity 프리팹 없음
+필요 작업: 선택 효과 슬라이싱,색·크기·방향·시트 재생 구성. AI원본 편집 가능 툴 필요(사용할 때만)
+적합도: 중상(비픽셀 만화 폭발)
+판단 근거: 벡터 기반 큼직한 형태가 픽셀팩보다 프로젝트 스타일에 가까울 가능성.검은 외곽선/기존채색은 조정
+사용처: 폭발 / 연쇄폭발 / 마력탄 착탄 / 도시 물체 파괴
+판단: 외부 PNG 폭발 후보 중 우선 비교
+확인 범위: 제품+무료 라이선스2절 직접 읽음;미다운로드
+추가 근거 https://craftpix.net/file-licenses/
+
+E08 Free Pixel Magic Sprite Effects Pack — CraftPix
+https://craftpix.net/freebies/free-pixel-magic-sprite-effects-pack/
+배포처: CraftPix
+무료 범위: 무료
+라이선스: CraftPix Freebie Products
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: 원본/수정 아트 자체 재배포 금지
+형식: PNG+PSD,10아이콘·15시트,32×32아이콘
+내용: 회복·점멸·뿌리·피해오라·레이저·스파크·매혹·별비·석화·투명
+Unity 적용: 엔진 독립 이미지
+필요 작업: 시트 재생/상태 시작·종료 제어;픽셀 밀도 조정
+적합도: 하(월드 주력)/중(UI 보조)
+판단 근거: 픽셀 UI와는 연결 가능하지만 3D 월드 VFX를 픽셀로 전환할 이유는 아님
+사용처: 상태 아이콘/보조 표현 / UI 주변 반짝임
+판단: 주력 전투 VFX에서 제외,보조만
+확인 범위: 제품+라이선스 직접 읽음;미다운로드
+추가 근거 https://craftpix.net/file-licenses/
+
+E09 Effekseer 공식/기여 CC0 샘플 — Effekseer 및 기여자
+https://effekseer.github.io/en/contribute.html
+배포처: Effekseer 공식 GitHub Pages
+무료 범위: 무료
+라이선스: Sample Effects CC0 구역만. Sample Effects(Old)는 별도 구라이선스
+상업 게임: CC0 구역 가능
+표시: 의무 없음(제작자 표기 권장)
+원본 배포: CC0 구역 허용
+형식: Effekseer 편집 프로젝트;툴에서2D애니메이션/3D효과 출력 가능
+내용: CC0구역10묶음의 표시 수 합계295효과(13+20+11+12+103+3+15+71+43+4)
+Unity 적용: Unity 런타임은 존재하지만 Unity6.3/URP17.3 미검증. PNG로 녹화하면 엔진 종속성 축소
+필요 작업: 기존 효과 고르기→색/노드 조정→고정 측면카메라 PNG 시트 출력→Unity에서 재생.3D런타임 사용 시 플러그인·빌드 검증 추가
+적합도: 중상~하(팩별 편차 큼)
+판단 근거: 마법/참격의 선택 폭은 넓지만 과한 발광·장시간 연출을 크게 줄여야 함
+사용처: 검기/참격 베이크 / 마력탄 / 폭발 / 마력장
+판단: 외부 무료중 가장 폭넓은 편집 가능한 대안.완성셋 일괄 채택보다 필요한 블록 선택
+확인 범위: 공식 샘플/툴 페이지 직접 확인;Old34효과와 구분;미다운로드
+추가 근거 https://effekseer.github.io/en/index.html
+추가 근거 https://effekseer.github.io/Helps/15x/Tool/en/overview.html
+
+E10 Linty's Textures — Linty / GreatFriend129
+https://github.com/GreatFriend129/LintyTextures
+배포처: GitHub
+무료 범위: 무료 공개
+라이선스: README 자체허가:누구나 모든 목적 사용,표기불필요,본인제작 주장금지.표준 CC0라 명명하지 않음
+상업 게임: 가능(모든 목적 명시)
+표시: 의무 없음
+원본 배포: 본문 all purpose 허가이나 세부 계약 없음;게임내 사용 중심으로 권장
+형식: VFX 텍스처 저장소,PMA접미사는 premultiplied alpha
+내용: 노이즈/입자용 텍스처;일부 Kenney Particle Pack의 큰 수정본
+Unity 적용: 재질/셰이더는 직접 구성
+필요 작업: 필요한 소수 마스크만 선별,알파·PMA블렌딩 점검,URP재질 적용
+적합도: 중상(재료)
+판단 근거: 원하는 단순 형태·색으로 통일하기 좋은 재료.완성 타이밍은 없음
+사용처: 검기 디졸브 / 마력탄 마스크 / 불/연기 노이즈
+판단: Kenney로 부족할 때 확장 재료
+확인 범위: 제작자 README 직접 읽음;미다운로드
+
+E11 Cooked FX - 40 Free Game Effects (5 Themes) — The Cooked Works
+https://the-cooked-works.itch.io/cooked-fx
+배포처: itch.io
+무료 범위: Name your own price($0 가능)
+라이선스: 자체허가:무제한 상업/비상업,원본효과 재판매/재배포금지
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: 원본 효과 자체 금지
+형식: 테마별PNG+JSON;비픽셀128/256px·24fps,픽셀32px·12fps;측면/탑다운 총63애니메이션/테마
+내용: 40종,hit/slash/crossslash/explosion/fireball/dash/landdust/shield/portal 등;5테마는 별도 다운로드
+Unity 적용: itch는PNG원본. Unity/Fab판은별도 sliced+player+demo 설명
+필요 작업: Soft Glass/Cozy Chunky/Flat Night 중 게임에 가까운 테마 하나로 제한.알파재질·시트재생·풀링을 우리 구조에 맞춤
+적합도: 중(측면 즉시비교)/하~중(독자 UI 테마)
+판단 근거: 측면판이 있고 비픽셀 옵션이 강점.기성UI 토큰의 외곽선/그림자가 우리3D아트와 일치하는지는 미검증
+사용처: 대시 / 검기/슬래시 / 폭발 / 마력탄
+판단: 전술 비교군.2026-10 신작·AI작성 드로잉코드 공개,실사용 검증 전 주력 확정 금지
+확인 범위: 제작자 제품/라이선스/AI공개 직접 확인;미임포트
+
+E12 Free Game Fx Vol.04 — ashishlko11
+https://www.gamedevmarket.net/asset/free-game-fx-vol-04
+배포처: GameDev Market
+무료 범위: FREE!
+라이선스: GameDev Market Pro Licence(제품페이지 요약)
+상업 게임: 무제한 프로젝트 가능
+표시: 페이지에 별도의 필수표기 미기재;전체 라이선스 확인 권장
+원본 배포: Media Product 밖 원본/파생물 공유·판매·재배포 금지
+형식: PNG,9.18MB,비벡터·비레이어;2019-09-06 업데이트
+내용: 제품 설명은 Free game effects로만 표시,효과별수량/프레임 미기재
+Unity 적용: 엔진독립PNG
+필요 작업: 아카이브 조사로 알파/효과종류/프레임수 먼저 파악하고URP재생 구성
+적합도: 보류
+판단 근거: 무료상업조건은 명확하지만 제품 설명만으로 게임 적합을 확정할 수 없음
+사용처: 폭발/피격 비교 후보
+판단: 예비후보;상세목록 없는 팩을 상위 추천으로 올리지 않음
+확인 범위: 제품 기술/라이선스 직접 읽음;아카이브 미확인
+
+E13 12 Free VFX Textures - Noise, Masks & Flipbooks — Pixel Dreamer Studio
+https://pixeldreamerstudio.itch.io/12-free-vfx-textures
+배포처: itch.io
+무료 범위: Name your own price($0 가능)
+라이선스: 상품본문 자체허가:상업가능,as-is재배포/재판매금지.다른팩 devlog CC BY4.0를 이팩에자동적용 안함
+상업 게임: 가능
+표시: 본상품 본문에필수표기미기재
+원본 배포: as-is금지
+형식: 4×2048px노이즈+6×1024px마스크+2×4096px(8×8/64프레임)플립북,ZIP4.4MB
+내용: Perlin/cracks/smoke/electric,glow/ring/star/spark/slash/magiccircle,sparkburst/magicswirl
+Unity 적용: Unity Texture Sheet Animation8×8 안내;프리팹 아님
+필요 작업: 해상도 축소,시트재생·색보정·마스크조합.4K를그대로사용할필요없음
+적합도: 상(단순 마스크 재료)
+판단 근거: 검기/별/원형을같은흰색마스크에서통일가능.신작과라이선스문구편차때문에기초Kenney다음
+사용처: 검기 / 마력장 / 마력탄 코어 / 피격
+판단: 자체구성 재료 예비후보,2026-10 신작·AI작성코드공개
+확인 범위: 제품/동일제작자devlog직접읽고라이선스범위구분;미다운로드
+추가 근거 https://pixeldreamerstudio.itch.io/12-free-vfx-textures/devlog/1731041/15-more-free-asset-packs-all-cc-by-40
+
+E14 PVFX Foundry — Free Pixel VFX Pack — nerijs
+https://nerijs.itch.io/pvfx-foundry
+배포처: itch.io
+무료 범위: Name your own price
+라이선스: CC0
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0범위허용
+형식: 96×96,20fps,투명프레임,엔진독립;현재본문v0.10·44효과
+내용: 전투/원소/방어/상태/포탈/빔/물/환경
+Unity 적용: 엔진독립이미지,Pixel VFX Studio없이사용가능
+필요 작업: PNG/메타구조확인,픽셀밀도통일,빌보드재생
+적합도: 하(픽셀월드)/중(작은보조)
+판단 근거: 광범위하나현재치비로우폴리3D의주력효과로는해상도차이.공식검색캐시35와본문44가달라본문기준
+사용처: 상태보조 / 피격참고
+판단: 수량보다스타일우선하여후순위
+확인 범위: 현재상품본문직접읽음;캐시보다본문우선;미다운로드
+
+E15 Pixel VFX — Free Sampler (4 Effects) — hinoko-fx
+https://hinoko-fx.itch.io/pixel-vfx-free-sampler
+배포처: itch.io
+무료 범위: 무료
+라이선스: 자체허가:상업/비상업게임·수정허용,팩재배포금지
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: 에셋팩으로 재배포 금지
+형식: PNG strips+single frames+GIF,12fps,ZIP77KB
+내용: 폭발·타격스파크·반짝임루프·불꽃루프4종.향후59시트는무료현행내용아님
+Unity 적용: 엔진독립
+필요 작업: 시트슬라이스/Point필터/재생구성
+적합도: 하
+판단 근거: 픽셀전용작은샘플.현재월드스타일과맞지않고제작자AI운영실험공개
+사용처: 작은피격 비교
+판단: 무료범위검증용기록;주력후보제외
+확인 범위: 제품본문직접읽음;미다운로드
+
+E16 Magic Projectiles VFX - Godot 3D — Binbun
+https://binbun3d.itch.io/magic-projectiles-vfx
+배포처: itch.io
+무료 범위: 본체무료(Name your own price).GreenExtra는0.50USD이상유료로제외
+라이선스: CC0
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0범위허용
+형식: Godot3D프로젝트/텍스처/재질/툴스크립트,본체ZIP113KB
+내용: Basic4+Wavy4+SharpJavelin4=12기본효과
+Unity 적용: Godot전용. Unity즉시임포트불가,셰이더·에미터·제어포팅필요
+필요 작업: Godot효과를PNG로베이크하거나URP Shader Graph/Particle로재작성.단순포맷변환이아님
+적합도: 중상(형태)/하(도입비용)
+판단 근거: 단순날카로운마법실루엣은맞을수있으나무료Unity후보보다공수가큼
+사용처: 마력탄디자인참고/포팅예비
+판단: 현재일정에서는비추천;스타일특별히선택시만
+확인 범위: 무료본체와유료보너스구분,직접페이지확인;미다운로드
+
+E17 Free VDB Volumes Created With EmberGen — JangaFX
+https://jangafx.com/software/embergen/download/free-vdb-animations
+배포처: JangaFX
+무료 범위: VDB무료(유료EmberGen앱과별도)
+라이선스: CC0
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0범위허용
+형식: VDB볼륨시퀀스.예:SmallCampFire59MB,GroundExplosion661MB,AerialExplosion6.6GB
+내용: 폭발·연기·불·먼지충격파·토네이도·구름
+Unity 적용: UnityURP용완성실시간프리팹아님. Blender등에서렌더/플립북베이크필요
+필요 작업: 대형원본다운로드→볼륨재질·카메라·조명→시트렌더→양식화·축소→Unity재생
+적합도: 하
+판단 근거: 실사볼륨과긴연기는치비/로우폴리아트·전투가독성에불리.베이크공수도큼
+사용처: 향후배경연기나큰보스폭발참고
+판단: 상업무료맞지만현재주력에서는제외
+확인 범위: 공식페이지라이선스/크기직접확인;미다운로드
+
+E18 Sandbox Hit Effects — Colorosse / Oğuzhan Girgin
+https://www.colorosse.com/assets/2d/vfx/sandbox-hit-effects
+배포처: Colorosse
+무료 범위: 무료직접다운로드
+라이선스: 이제품CC0(사이트기본CC BY4와구분)
+상업 게임: 가능
+표시: 의무 없음
+원본 배포: CC0범위허용
+형식: 12정적SVG+transparentPNG1x/2x/4x,ZIP42KB
+내용: hit/critical/ring/shockwave/slash/glow/sparkle/heal/shield/dust/lightning/embers
+Unity 적용: 정적스프라이트,애니메이션프리팹없음
+필요 작업: 크기·투명도·회전애니메이션직접구성,보셀이소메트릭음영을게임색에맞춤
+적합도: 중하
+판단 근거: 단순각진형태는맞을수있으나보셀UI용고정음영으로현재3D면과완전일치하지않음
+사용처: 작은피격/원형마스크참고
+판단: 구성재료예비.완성VFX팩으로세지않음
+확인 범위: 제품별CC0와정적형식직접확인;미다운로드
+
+E19 Free - URP Flipbook VFX Bundle Lite — Vefects
+https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420
+중복 제품군: U17와 같은 제품군. 별도 효과 수로 추가 집계하지 않음. 배포판별 약관과 바이너리는 별도 확인.
+배포처: Unity Asset Store / itch.io(중복 제품군)
+무료 범위: Unity Store FREE / itch Name your own price
+라이선스: 스토어판 Standard Unity Asset Store EULA, Extension Asset. itch ZIP의 계약을 자동 동일시하지 않음
+상업 게임: 스토어판 표준 EULA 조건으로 가능
+표시: 스토어 표준 EULA상 일반적 의무 없음; 추가 통지 검사
+원본 배포: 표준 EULA 범위의 팀 사용/완성 게임 포함. 원본 에셋팩 외부 재배포 금지
+형식: 스토어101.4MB,v1.0.1(2026-07-27);itch Unitypackage98MB. 바이너리 동일성 미검증
+내용: stylized combat/elemental/anime flipbooks.효과개수/목록미기재
+Unity 적용: 스토어 호환표 6000.0.23f1/2023.1.0f1 URP Compatible, BiRP/HDRP Not compatible. 프로젝트6000.3/URP17.3 실측 아님
+필요 작업: 희망3종샘플선별,색/스케일/수명/재질패스최소화,카메라면정렬
+적합도: 중간 잠정. 2.5D 방향은 맞지만 무료판 색상 제약과 픽셀 변형을 실제 화면에서 확인해야 함.
+판단 근거: 우리게임에맞는비실사전투스타일,Unity6URP가가장직접적.정확한무료포함효과와라이선스는추가조건
+사용처: 검기/피격 / 마력탄착탄 / 폭발
+판단: 최종 B 예비 비교군. Store판 무료·상업 라이선스는 확인했지만 Lite의 색상 편집 기능 제한으로 팔레트 통일 비용이 있다. 유료 Full 기능은 무료판의 장점으로 계산하지 않는다.
+확인 범위: Unity Store 공식 제품과 제작자 itch 페이지 직접 확인. 무료 포함 효과 목록/임포트/성능 미검증
+추가 근거 https://vefects.itch.io/free-urp-flipbook-vfx-bundle-lite
+추가 근거 https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420
+
+E20 Trails VFX - Unity URP — Vefects
+https://vefects.itch.io/trails-vfx-unity-urp
+중복 제품군: U03와 같은 제품군. 별도 효과 수로 추가 집계하지 않음. 배포판별 약관과 바이너리는 별도 확인.
+배포처: itch.io
+무료 범위: Name your own price($0가능)
+라이선스: itch공개본문정식상업조건미기재
+상업 게임: 미확인
+표시: 미확인
+원본 배포: 미확인
+형식: Unitypackage9.1MB;10트레일,20+ShaderGraph,최대1024텍스처,SFX포함
+내용: Cosmos/Dark/Earth/Electric/Fire/Ice/Nature/Sound/Void/Water
+Unity 적용: URP전용;3D파이프라인+Orthographic2D배치지원명시,2D Renderer기능지원안함
+필요 작업: 마력탄꼬리하나만선별,폭/수명/발광/색감축소.20+shader일괄추가필요없음
+적합도: 상(짧은꼬리)
+판단 근거: 2.5D구조와잘맞으나화려한Cosmos/전기전부사용하면스타일과복잡도증가
+사용처: 대시잔광 / 마력탄꼬리 / 검기잔상
+판단: 유력조건부보조후보
+확인 범위: 제작자본문직접읽음;Unity6/URP17.3는별도검증
+
+E21 Easy Shockwaves VFX - Unity URP — Vefects
+https://vefects.itch.io/easy-shockwaves-vfx-unity-urp
+배포처: itch.io
+무료 범위: 무료/Name your own price
+라이선스: itch공개본문정식상업조건미기재
+상업 게임: 미확인
+표시: 미확인
+원본 배포: 미확인
+형식: Unitypackage34MB,파일명6000_0_23,SFX포함
+내용: 스타일화충격파,색/타이밍/강도수정
+Unity 적용: URP명시.파일명Unity6지만본문은정확한버전보장미기재
+필요 작업: 폭발링한층만선택,화면왜곡/깊이기능의존여부검사,PC/Mobile렌더프로파일비교
+적합도: 상(작은한층)
+판단 근거: 폭발외곽읽힘보강에좋음.왜곡/화면가림이강하면축소또는제외
+사용처: 폭발 / 회전베기 / 마력장시작
+판단: 조건부보조,단독으로완성폭발아님
+확인 범위: 제작자페이지직접읽음;라이선스/임포트미검증
+
+E22 Wind VFX – Unity URP — Vefects
+https://vefects.itch.io/wind-vfx-unity-urp
+배포처: itch.io
+무료 범위: 무료/Name your own price
+라이선스: itch공개본문정식상업조건미기재
+상업 게임: 미확인
+표시: 미확인
+원본 배포: 미확인
+형식: Unitypackage52MB,파일명6000_URP
+내용: 환경·마법·이동용스타일화바람
+Unity 적용: Unity6·URP호환명시
+필요 작업: 대시뒤짧은선/고리만추출,방향정렬/폭/색감축소
+적합도: 상(대시보조)
+판단 근거: 실사먼지보다방향성이뚜렷한스타일화바람이2.5D대시와잘맞음
+사용처: 대시 / 회전베기 / 검기속도선
+판단: 조건부대시보조후보
+확인 범위: 제작자페이지직접읽음;정식상업조건미확인
+
+
+10 추가 제작 도구와 배포처
+====================================================================
+
+S01 VFX Mesh Lab — Ken Deng / PudinKiller
+https://github.com/PudinKiller/VFXMeshLab
+배포처: GitHub
+무료 범위: 무료 오픈소스
+라이선스: MIT; 소프트웨어 복사/실질 부분 배포 시 저작권·허가문 보존
+형식: Unity editor package → native Mesh .asset
+호환과 작업: 공식 README Unity 6000.0+ 및 URP 요구. 런타임 의존성 없는 메시 출력; 현재 프로젝트 실측 미실시
+제공 범위: 14 procedural shapes, 7 templates including Slash, Shockwave, Spiral, Splash. Arc/Ribbon/Ring/Helix 등
+추천: 직접 제작의 보조 도구 상위. 기존 Crescent/Ring 메시가 있어 도입 필수는 아님
+주의할 작업: 메시를 만들 뿐 완성된 파티클·셰이더·타이밍·스킬 연결을 제공하지 않는다
+확인 상태: 무료/라이선스/요구사항 확인
+라이선스 근거: https://github.com/PudinKiller/VFXMeshLab/blob/main/LICENSE.md
+
+S02 LintyTextures — Linty / GreatFriend129
+https://github.com/GreatFriend129/LintyTextures
+중복 제품군: E10와 같은 재료. 별도 집계하지 않음.
+배포처: GitHub
+무료 범위: 무료
+라이선스: 제작자 자체 허가: 누구나 모든 용도 사용 가능, 크레딧 불필요, 본인이 제작했다고 주장 금지. CC0라고 명시하지 않음
+형식: VFX textures; PMA 접미사는 premultiplied alpha
+호환과 작업: 텍스처 재료이므로 URP용 재질과 파티클을 직접 구성
+제공 범위: 마스크/노이즈 등 VFX 텍스처 컬렉션. 일부는 Kenney Particle Pack 가공
+추천: Kenney에 원하는 패턴이 없을 때 보조
+주의할 작업: PMA를 일반 알파 재질에 넣어 가장자리 오류가 생기지 않도록 선택
+확인 상태: 무료/제작자 허가 확인
+라이선스 근거: https://github.com/GreatFriend129/LintyTextures#readme
+
+S03 LeLu's Free Textures Pack 1 — LeLu VFX
+https://leluvfx.gumroad.com/l/freeTextures
+배포처: Gumroad
+무료 범위: $0+; 0 입력 가능
+라이선스: 페이지 상업 이용·수정·무표기 허용. CC0 표현과 pack 재배포/재판매 금지 문장이 함께 있으므로 순수 CC0로 단정하지 않고 제작자 조건을 보존
+형식: VFX textures, 13.8MB
+호환과 작업: 엔진 독립 텍스처; URP 재질과 효과 구성 필요
+제공 범위: 다양한 VFX용 텍스처 재료
+추천: 직접 조합형의 보조. 라이선스가 더 단순한 Kenney 우선
+주의할 작업: 원본 pack 공유보다 팀의 정식 수령·보존 절차 사용
+확인 상태: 무료/게임 상업 이용 허용 확인; 라이선스 문구 충돌 기록
+라이선스 근거: https://leluvfx.gumroad.com/l/freeTextures
+
+S04 Free Game FX Vol03 — ashishlko11
+https://www.gamedevmarket.net/asset/free-game-fx-vol03-10205
+배포처: GameDev Market
+무료 범위: FREE
+라이선스: GDM Pro Licence: 상업·비상업 다수 게임 포함 사용/수정 허용. 원본·파생 에셋 단독 재배포 금지
+형식: PNG animated sprite, 18.87MB
+호환과 작업: Unity 프리팹 아님. PNG 시퀀스/시트를 ParticleSystem 또는 sprite로 재생
+제공 범위: 2D effect pack. 공식 본문의 상세 효과 수 미기재, 2017-10-12 갱신
+추천: 보조 2D 플립북 후보. 정보 빈약·일관성 확인 필요
+주의할 작업: 그리드/프레임수/피벗/알파를 실제 파일로 검증해야 함
+확인 상태: 무료/상업허가/파일형식 확인
+라이선스 근거: https://www.gamedevmarket.net/terms-conditions
+
+S05 JangaFX Free VDB Volumes — JangaFX
+https://jangafx.com/software/embergen/download/free-vdb-animations
+중복 제품군: E17와 같은 재료. 별도 집계하지 않음.
+배포처: JangaFX
+무료 범위: 무료 VDB 원본
+라이선스: 해당 무료 VDB simulations CC0. EmberGen 소프트웨어·체험판의 상업 허가와 구분
+형식: OpenVDB volume sequences; 일부 EmberGen preset 포함
+호환과 작업: Unity URP용 완성 prefab/flipbook 아님. Blender 등에서 렌더해 PNG로 베이크 필요
+제공 범위: 폭발/충격 먼지/연기/불/토네이도. Simple Fire 64.7MB, Ground Explosion 661MB, Aerial Explosion 6.6GB 등
+추천: 현재 게임 주력 비추천. 사실적 볼륨 외형과 큰 베이크 비용
+주의할 작업: 필요하면 먼지 보조층만 낮은 해상도로 렌더·셀 셰이딩/양자화, 원본 VDB 런타임 반입 피함
+확인 상태: CC0 무료 확인; 스타일/작업량으로 후순위
+라이선스 근거: https://jangafx.com/software/embergen/download/free-vdb-animations
+
+S06 VisualEffectGraph Samples — Unity Technologies
+https://github.com/Unity-Technologies/VisualEffectGraph-Samples
+배포처: GitHub / Unity Technologies
+무료 범위: 무료 소스
+라이선스: Unity Companion License for Unity-dependent projects; third-party 별도 확인
+형식: VFX Graph/HDRP sample projects
+호환과 작업: README 대표 release 2022.3 / HDRP14.0.8. 현재 URP17.3에 그대로 도입 보장 없음
+제공 범위: Bonfire, portals, magic and large GPU demonstrations
+추천: 학습·기술 참고. 초기 제작 주력에서 제외
+주의할 작업: HDRP→URP 및 VFX Graph 추가·버전 이식 비용
+확인 상태: 무료 소스/Unity 전용 허가 확인; 직접 도입 비추천
+라이선스 근거: https://github.com/Unity-Technologies/VisualEffectGraph-Samples/blob/master/LICENSE.md
+
+S07 CrunchyVFX — superevil6
+https://crunchyvfx.com/
+배포처: CrunchyVFX
+무료 범위: 무료 웹 제작 도구
+라이선스: 도구 생성/출력 효과는 CC0. 사용자가 넣은 외부 이미지의 권리는 별도. 도구 소스코드 자체는 CC0 아님
+형식: sprite VFX / sprite sheet export UI
+호환과 작업: 출력 2D sprite를 Unity에서 직접 재생. 엔진 프리팹 아님
+제공 범위: fireball, heal, slash 등 파라미터 기반 제작 UI, palette/timing controls
+추천: 픽셀/UI 보조 또는 빠른 형태 시험. 3D 게임 주력 스타일과는 차이
+주의할 작업: 실제 출력·Unity 적용 미실시; 고해상도/비픽셀 대응은 확인되지 않음
+확인 상태: 무료 출력 CC0 확인; 보조 도구
+라이선스 근거: https://crunchyvfx.com/#license
+
+S08 Pixel Art Spell Magic FX — Ppeldo / community packaging
+https://gdevelop.io/tr-tr/asset-store/free/pixel-art-spell-magic-fx-pixel-art-spell-magic-fx
+배포처: GDevelop Asset Store
+무료 범위: Free asset pack
+라이선스: 공식 페이지 CC0(public domain)
+형식: 20 ready-to-use GDevelop objects; Unity 형식은 아님
+호환과 작업: 원본 PNG와 프레임 정보를 추출/재구성해야 함
+제공 범위: 픽셀 마법 효과
+추천: 현재 치비 3D 전투 주력 비추천; 픽셀 UI 보조
+주의할 작업: 원 저작자 배포판 우선. 포장 객체를 Unity에 바로 쓰지 못함
+확인 상태: 무료/CC0 확인; 엔진·스타일 비용
+라이선스 근거: https://gdevelop.io/tr-tr/asset-store/free/pixel-art-spell-magic-fx-pixel-art-spell-magic-fx
+
+
+11 조사했지만 우선 도입에서 제외한 자료
+====================================================================
+
+Soico Works 무료 Unity 폭발 / BOOTH
+https://booth.pm/ja/items/4538438
+¥0 실제 무료와 Unity2021.3 ShaderGraph package 확인. 개인 이용 허가와 별도로 법인 이용 전 DM 협의를 요구. 팀/출시 상업 사용을 무조건 허용한다고 단정할 수 없어 권한이 단순한 주력 무료 후보에서 제외.
+
+Niagara Examples Pack / Fab / Epic Games
+https://www.fab.com/listings/0e188eca-4e54-4fb2-a9ed-d8b8a565e600?lang=en
+공식 무료이나 Included formats Unreal Engine. Niagara 로직을 Unity에서 직접 재생할 수 없고 해당 라이선스의 사용범위를 별도 확인해야 하므로 Unity 즉시 적용 후보 제외. 구성/스케일 제어 학습 참고.
+
+Free Niagara Pack / Fab / SoerGame
+https://www.fab.com/listings/cc942f1c-1766-446a-bee2-3baabf95a71e?lang=en
+본문 무료 소개는 있으나 현재 페이지 가격/라이선스 선택 UI 미노출. Unreal Engine 전용 형식으로 주력 제외.
+
+CGTrader VFX 검색 / CGTrader
+https://www.cgtrader.com/3d-models/vfx
+무료/유료 3D 모델 혼재, Blender/Alembic 또는 유명 IP 모방 결과가 많음. 우리 용도에 맞는 무료 상업용 URP 완성 효과는 이번 확인에서 확정하지 못함.
+
+Free3D VFX 목록 / Free3D
+https://free3d.com/3d-models/vfx
+모델 목록과 실시간 효과를 구분. Rasengan 등 IP 기반 외형·개별 라이선스·런타임 비용 때문에 후보 숫자를 늘리기 위한 추천에서 제외.
+
+Unity 유료 및 필수 유료 의존성
+[
+  {
+    "title": "Flame Magic Stylized Slash VFX",
+    "url": "https://assetstore.unity.com/packages/vfx/particles/flame-magic-stylized-slash-vfx-201825",
+    "publisher": "HungNguyenVFX",
+    "price": "$4.99",
+    "reason": "공식가격이유료.같은제작자의무료StylizedSlashVFX와다름.",
+    "checked": "2026-10-29"
+  },
+  {
+    "title": "Cartoon FX Remaster /2/3/4 및Bundle",
+    "url": "https://assetstore.unity.com/packages/slug/4010",
+    "price": "유료;공식관련목록에CartoonFXRemaster $24.90(정가$30)/Bundle$96 표시",
+    "reason": "무료109565샘플과상용전체팩구분.전체팩효과수를무료수량으로계산하지않음.",
+    "checked": "2026-10-29"
+  },
+  {
+    "title": "Epic Toon FX",
+    "publisher": "Archanor VFX",
+    "checked": "2026-10-29",
+    "url": "https://assetstore.unity.com/packages/vfx/particles/epic-toon-fx-57772",
+    "reason": "공식 제품 가격이 유료. 1323프리팹/390고유효과 전체를 무료라고 소개하면 안 됨.",
+    "price": "$40"
+  },
+  {
+    "title": "Magic Arsenal",
+    "publisher": "Archanor VFX",
+    "checked": "2026-10-29",
+    "url": "https://assetstore.unity.com/packages/vfx/particles/spells/magic-arsenal-20869",
+    "reason": "공식 제품 가격이 유료.",
+    "price": "$30"
+  },
+  {
+    "title": "Projectile Factory for Magic Arsenal by Archanor VFX",
+    "publisher": "Magic Pig Games / Infinity PBR",
+    "checked": "2026-10-29",
+    "url": "https://assetstore.unity.com/packages/vfx/particles/spells/projectile-factory-for-magic-arsenal-by-archanor-vfx-282087",
+    "reason": "Package dependencies에 Projectile Factory($22.50 sale/$45 regular)+Magic Arsenal($30) 명시. 무료 독립 VFX 아님.",
+    "price": "FREE wrapper with paid dependencies"
+  }
+]
+
+추가 제외 기준
+- OpenGameArt의컬렉션제목cc0특수효과만보고모든원본을CC0라분류하지않음
+- CodeManu itchmetadata CC BY4와본문public domain충돌은OGA제작자판CC0증거로구분
+- ArtStation 기본무료StockLicense는완전무제한상업무료아님
+- Godot전용무료셰이더/프로젝트는UnityURP호환프리팹아님
+- Patreon고해상도판,GreenExtra,향후출시팩,유료번들내용은무료후보포함안함
+- 실사영상컴포지팅용ActionVFX/FXElements는상업허가와게임원본배포조건/스타일이별도여서주력후보로선정안함
+- GitHub다른게임README/자산리스트에서발견한Brackeys VFX Bundle과EpicToonFree는공식동일제품미확인상태로채택안함
+
+12 배포처별 조사 결론
+====================================================================
+
+Kenney: CC0기초마스크·연기우선추천;공식페이지검색본문과제작자OGA교차검증
+https://kenney.nl/assets/particle-pack
+
+OpenGameArt: 개별업로더/라이선스검증;모음페이지의cc0제목만으로판단안함
+https://opengameart.org/
+
+itch.io: 0달러선택/무료본문+상업조건개별확인;무료보너스/유료확장구분
+https://itch.io/game-assets/free/tag-effects/tag-unity/tag-vfx
+
+CraftPix: 무료폭발벡터/픽셀마법확인;freebies계약2절확인
+https://craftpix.net/categorys/sprite-effects/
+
+GameDev Market: 무료PNG+ProLicense확인,상세효과목록빈약
+https://www.gamedevmarket.net/asset/free-game-fx-vol-04
+
+Effekseer: 현재CC0구역295효과와Old구역34효과구분
+https://effekseer.github.io/en/contribute.html
+
+GitHub(개별제작자): README자체허가확인,표준CC0로오표기하지않음
+https://github.com/GreatFriend129/LintyTextures
+
+JangaFX: CC0이지만대형실사VDB로게임주력부적합
+https://jangafx.com/software/embergen/download/free-vdb-animations
+
+Colorosse: 정적SVG/PNGCC0제품확인,애니메이션팩아님
+https://www.colorosse.com/assets/2d/vfx/sandbox-hit-effects
+
+Vefects(제작자직접사이트/itch): itch 별도 배포판에는 상업 계약이 미기재된 경우가 있다. Lite395420와 Trails242574는 Unity Store판의 무료·Standard EULA를 확인했다. Wind/Shockwaves itch판은 조건부다. 직접 웹스토어의 유료 상품과 구분한다.
+https://vefects.itch.io/
+
+Eric VFX Studio: Unity스토어무료3팩을형제조사담당자에게전달.여기서중복세지않음
+https://ericvfxstudio.com/free-unity-vfx-assets/
+
+BOOTH: FloorAirflow는0JPY/다운로드표시에도private문구함께표시. VRChat전용·상업조건미확인으로제외
+https://ericwang.booth.pm/items/7702523
+
+GameArt2D: 무료캐릭터/타일/UI/기타목록검토,목표스킬용독립전투VFX팩미발견
+https://www.gameart2d.com/freebies.html
+
+ArtStation Marketplace: LightningPack무료이나기본StockStandard상업1프로젝트2000판매/20000뷰한도표시,우리무제한무료후보제외
+https://www.artstation.com/marketplace/p/qVNRO/lightning-pack
+
+Godot Shaders: 코드는CC0지만시각샘플이미지/영상자동포함안됨,Unity셰이더포팅필요하여직접사용추천제외
+https://godotshaders.com/shader/impact-vfx/
+
+OpenGameVFX: 접속/검색으로검증되는배포카탈로그미확인.공식무료후보로포함안함
+https://opengamevfx.com/
+
+Unity Asset Store: 무료17개 상세 확인. 공식 URP/Unity6 지원과 제작자 설명·버전 조건을 분리.
+Gumroad: LeLu 무료 텍스처의 상업 사용 가능. CC0와 pack 재배포 금지 표현이 병기되어 단순 CC0로 재해석하지 않음.
+Fab: 무료 Niagara 샘플은 UnrealEngine형식이라 현재 Unity 직접 적용에서 제외. 라이선스와 엔진 호환은 별개.
+CGTrader 및 Free3D: VFX 명칭으로 검색되는 모델·Alembic·IP기반 효과가 많아 현재 스타일의 무료 URP 완성품을 확정하지 못함.
+GDevelop: CC0 픽셀마법20개는 확인했지만 포장이 GDevelop객체여서 Unity재구성 필요.
+CrunchyVFX: 무료CC0출력 웹도구. 픽셀/UI보조 제작 후보이며 실출력과Unity재생은 미실시.
+
+13 검증의 범위와 근거 파일
+====================================================================
+
+공식 제품·제작자·라이선스 페이지와 로컬 소스 및 일부 정지이미지에 근거했다. 유료 구매/로그인 취득/원본팩 내용 전체/영상 전체/게임임포트·재생·벤치마크는 검증하지 않았다. 현재 공식페이지의 무료표기와 호환표기를 기준으로 하며 이후 변경될 수 있다. 조사 실패/라이선스미확인은 확인된상업사용후보와 별도로 분류했다.
+현재 페이지를 확인한 증거와 프로젝트의 파일 감사는 별개다. 공식 호환표를 읽은 후보를 인게임 테스트 완료라고 부르지 않았다. 수량을 알 수 없는 무료판에 유료 전체판의 프리팹 수를 붙이지 않았다. 조건부 후보와 도구를 완성 효과 개수로 세지 않았다.
+43개 계산: Unity17+외부22+추가8−중복4(Linty/JangaFX/Trails/Lite). 이 중 코드툴·학습용 편집샘플·이미지재료·조건부 자료도 포함하며, 11절에 별도로 모은 제외 목록은 이 숫자에 더하지 않았다.
+직접 수정한 것은 이 조사 문서/데이터/작성도구뿐이다. 런타임 코드·씬·프리팹·패키지 설정·기존 VFX는 이번 조사에서 변경하지 않았다.
+C:\Users\me\Desktop\OZGameLab3\OZGL3_1\ArtSources\Stage01Kit\ResearchVFX20261029\strategy.json
+C:\Users\me\Desktop\OZGameLab3\OZGL3_1\ArtSources\Stage01Kit\ResearchVFX20261029\unity-research.json
+C:\Users\me\Desktop\OZGameLab3\OZGL3_1\ArtSources\Stage01Kit\ResearchVFX20261029\external-research.json
+C:\Users\me\Desktop\OZGameLab3\OZGL3_1\ArtSources\Stage01Kit\ResearchVFX20261029\supplementary-research.json
+C:\Users\me\Desktop\OZGameLab3\OZGL3_1\ArtSources\Stage01Kit\ResearchVFX20261029\project-audit.txt
+C:\Users\me\Desktop\OZGameLab3\OZGL3_1\ArtSources\Stage01Kit\ResearchVFX20261029\project-audit.json
+
+공식 기술 문서
+ParticleSystem과 VFXGraph의 CPU/GPU 및 스크립트 제어 비교: https://docs.unity3d.com/6000.3/Documentation/Manual/ChoosingYourParticleSystem.html
+URP Particle Unlit 재질, Alpha/Additive와 선택 기능: https://docs.unity3d.com/6000.3/Documentation/Manual/urp/particles-unlit-shader.html
+Texture Sheet Animation으로 그리드 프레임 재생: https://docs.unity3d.com/6000.3/Documentation/Manual/PartSysTexSheetAnimModule.html
+폭/수명/색/방출/정점 간격을 제어하는 이동 잔상: https://docs.unity3d.com/6000.3/Documentation/Manual/class-TrailRenderer.html
+Standard Asset Store EULA, 제한 에셋과 제3자 라이선스 별도 확인: https://unity.com/legal/as-terms

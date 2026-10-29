@@ -1,0 +1,126 @@
+Project M VFX 로컬 감사 및 제작·연결 제안
+기준일: 2026-10-29 / Asia/Seoul
+감사 범위: 소스·직렬화된 프리팹·보존 이미지 읽기. 게임 코드/씬/프리팹 수정 없음.
+Unity Play/컴파일/새 렌더/CPU·GPU 측정은 이번 감사에 포함하지 않았다.
+
+1. 가장 중요한 결론
+
+무료 완성형 툰/스타일라이즈드 VFX 팩 한 개를 주력으로 삼고, 참격이나 먼지 같은 부족한 부분만 보조 팩 또는 기존 CombatVFX_v1에서 가져오는 방식이 현실적이다. 우리 프로젝트는 로우폴리 3D 치비와 저채도 현대 도시의 2.5D 액션이다. 픽셀 HUD만 보고 전체 게임을 픽셀아트로 간주하거나, 실사 폭발/진한 연기로 화면을 가리는 팩을 주력으로 선정하면 맞지 않는다.
+
+기존 CombatVFX_v1은 단순 정적 기하만 있는 폴더가 아니다. C#로 메시 포즈·알파·회전을 움직이고 native ParticleSystem을 고정 60Hz로 시뮬레이션하는 독립 시연이다. 다만 previewOnly=true/gameplayIntegration=false이며 기존 스킬 프리팹과 수명·위치·시작 API가 다르다. 완성 패키지처럼 그대로 연결하기보다 런타임용 wrapper/variant를 만드는 작업이 필요하다.
+
+2026-10-19 vfx-plan.txt/vfx-research.json의 '아직 TestLogSkill만 있음', '풀은 몬스터 전용'은 현재 코드에 해당하지 않는다. 6개 스킬 구현과 투사체/장판/폭발 프리팹이 이미 존재하고 Player 및 Player_Chibi에 연결됐다. 현재 SkillSpawner.UsePool=false라 스킬은 Instantiate/Destroy를 쓴다. 최신 PoolManager 자체는 범용 등록/PreparePool/Rent(activate=false)를 지원한다. 과거 문서 내용을 최신 구현 완료 상태로 복사하면 안 된다.
+
+2. 실제 아트 및 카메라
+
+- 주인공: 모자 쓴 약 3등신, 큰 머리·짧은 팔다리, 어두운 남색 의상과 밝은 피부/신발. 최신 활용 목록은 모델 1.2m 기준을 기록한다. 옛 환경 계획의 1.65m를 확정 수치로 재사용하지 않는다.
+- 몬스터: KayKit 기반의 각진 스켈레톤. 극사실적 불·유체·3D 연기는 이들의 단순 면과 쉽게 충돌한다.
+- 환경: 회청색·남색·절제된 청록·아이보리의 서울 상가/도로/옥상. 큰 각면과 무광 색, 세밀한 PBR 스크래치 없음.
+- 실제 MainScene 카메라: orthographic=true, size=8, position=(0,4,-25), 회전 identity. 즉 거의 정면 XY 횡스크롤이다. 바닥 XZ 원형 마법진은 옆에서 얇게 보일 수 있다.
+- 캐릭터 물리 Z는 잠겨 있고 조준은 origin의 상수-Z 평면이다. 효과 전방은 로컬 +Z로 통일하면 현재 Quaternion.LookRotation(dir)와 맞는다.
+- PC URP 프로필은 Depth/Opaque Texture 켜짐, Mobile은 둘 다 꺼짐. 두 프로필 SRP Batcher 켜짐. 기본 VFX는 이 텍스처와 왜곡 없이 읽히게 만들고 soft particles는 선택적으로 검증한다.
+- 실제 출시 플랫폼/최소 사양은 이번 파일 조사로 확정할 수 없다. 과거 연구의 GTX1650은 당시 사용자 제공 개발 GPU 기록이며 성능 보장이 아니다.
+
+시각 확인한 보존 이미지:
+ArtSources/Stage01Kit/Expansion20261029/Revisions/20261029-01/난간캐릭터검수.png
+ArtSources/Stage01Kit/Expansion20261029/ContactSheets/NEW_01.png
+ArtSources/Stage01Kit/SideviewReview/Environment/04_Tutorial_Gameplay.png
+마지막 이미지는 구형 캐릭터가 포함된 역사적 환경 검토본이므로 최신 주인공 기준은 첫 이미지와 최신 목록을 우선한다.
+
+3. CombatVFX_v1의 재사용 가치와 함정
+
+샘플       총길이   속도/이동시간      PS/Max합계   MeshRenderer/삼각형
+DashBurst  .60초    14/.22초           1/14        5/132
+SlashWave  .95초    7.5/.58초          1/12        6/180
+MagicMissile1.05초  8.5/.68초          1/16        5/136
+Explosion  1.55초   이동 없음          3/61        4/152
+
+수치는 BuildReport 구성값이다. 실시간 살아 있는 입자 수·드로콜·GPU시간 실측과 다르다.
+- 시작: CombatVfxSample.Play()를 명시 호출해야 한다. SetActive(true)만으로 시작하지 않는다.
+- 종료: Completed 이벤트만 발생하며 자동 Destroy/Return하지 않는다.
+- 내부 이동: Visual_Travel을 speed×min(time,travelDuration)만큼 전진한다. SkillProjectile의 루트 이동에 그대로 자식으로 붙이면 둘 다 이동한다.
+- 내부 높이: Visual_Travel의 Y가 Dash .95 / Slash1.05 / Missile1.1 / Explosion .82다. 이미 어깨·타격점 높이에서 생성하는 스킬의 자식으로 넣으면 이중 오프셋이 생긴다.
+- 현재 .3초 SkillAutoRelease 또는 SkillExplosion linger 아래 넣으면 .95~1.55초 샘플이 잘린다.
+- SkillExplosion은 blastVisual.SetActive만 호출하므로 샘플은 켜져도 Play가 호출되지 않는다.
+- root에 CombatVfxSample만 있고 SkillProjectile/SkillAutoRelease가 없으므로 typed SkillSpawner의 해당 슬롯에 직접 대입하는 구조가 아니다.
+- preview driver는 수동 ParticleSystem.Simulate를 쓴다. 네이티브 자동 Play 방식으로 바꾸면 preview sim과 이중 구동하지 않도록 분리해야 한다.
+- URP 셰이더는 투명, ZWrite Off, ZTest LEqual, 양면. 메시 정점색×Tint와 절차적 스파크/연기 마스크를 쓴다. 외부 텍스처/왜곡/동적 광원/충돌/VFXGraph가 없다.
+- 코어/청록 껍질/짧은 리본/각진 링/파편은 우리 스타일의 재사용 자산이다. 기존 모든 메시를 폐기하고 모델 생성기로 새로 만들 이유가 작다.
+- 샘플의 물리 검기와 마력탄에 청록이 공통으로 쓰이므로 최종은 물리 아이보리/금빛, 마법 청록/보라 등의 역할과 형태를 조정할 수 있다. 색만으로 구분하지 않는다.
+
+4. 이미 구현된 스킬과 VFX 슬롯
+
+모든 PlayerSkillData의 CastDuration은 .4초다. 계수/쿨다운은 기획 v0.5와 현재 SO가 일치한다.
+검기: 계수1.8/쿨4초. SwordWaveSkill이 SkillProjectile 생성/Launch. 실제 prefab speed15, range5, hitRadius.5, pierce=true. Cube placeholder. visual child만 교체하고 이동은 SkillProjectile에 맡긴다.
+회전베기: 2.1/7초. 중심높이.65, hitBox=(3.5,2,2), 즉시1회 판정. _slashVfx:SkillAutoRelease는 null. 공중/지면 양쪽에서 보이는 짧은 타원호가 적합하다. 코드 생성회전은 identity라 variant가 기대하는 회전을 맞춘다.
+연속참격: 3.75/12초. 5타/.08초, 마지막은 명목.32초. 시전 시작 방향을 저장하고 매타 플레이어 위치를 다시 읽는다. state가 Skill이 아니면 남은 타 취소. _slashVfx null. 매타 같은 .95초 검기를 남기면 과도하게 중첩되므로 .08~.15초 짧은 호/작은 적중만 사용하고 마지막을 강조한다.
+마력탄: 1.65/5초. 실제 prefab speed12/range8/hitRadius.4/explosionRadius1.5, explodeAtEnd=false, explosionVfx=null, Sphere placeholder. 스크립트는 원래 기획의 목표지점 즉시 범위피해와 현재 날아가는 탄이 다르다고 명시한다. 발사체형/즉시형은 최종 디자인 확인 대상이며 VFX가 규칙을 대신 결정하면 안 된다.
+마력장: 4/9초. 설치 최대 X거리7, 지면 스냅, 판정Box=(4,1.5,2), 5틱/.5초이며 첫틱 즉시, 마지막 약2초. prefab root scale=(4,.1,2)와 Cube placeholder라 새 visual을 그대로 자식으로 붙이면 찌그러진다. 단위 scale root와 visual child 분리를 권장한다.
+연쇄폭발: 3.45/13초. 5회, 첫앞거리1.5, 거리간격1.5, 시간간격.12초, 마지막.48초. 지면 스냅/범위radius1.5. warning null, blast는 Sphere placeholder. root scale1.5. 실제 판정 center는 root.y+.75이고 linger=.3초. 경고/폭발/잔광 수명은 별도 계약이 필요하다.
+
+VFX 수를 늘려 피해를 추가하지 않는다. 현재 DamageSphere/DamageBox가 실제 피해를 담당하고 totalDamage를 count로 나누는 로직은 전투 코드 책임이다.
+
+5. 직접 제작한다면
+
+권장 도구: Shuriken ParticleSystem + 초승달/링/파편의 간단 메시 + 짧은 TrailRenderer + URP/Particles/Unlit. 셰이더 그래프는 공통 dissolve/pan 기능이 꼭 필요한 경우 1개부터. VFXGraph는 현재 manifest에 없고 규모가 작아 필수 도입 이유가 없다.
+
+효과를 8~9개 새로 독립 제작하는 대신 공용 블록 5개를 만든다.
+A. 초승달/호: 검기, 회전, 연속참격의 공통 형태.
+B. 작은 별+스파크: 일반 타격/마력탄 적중.
+C. 코어+짧은 꼬리: 마력탄.
+D. 링+기둥끝+저밀도 입자: 범위 경계/마력장/폭발 예고.
+E. 섬광+각진 불꽃+파편+짧은 연기: 일반/연쇄 폭발.
+
+과도한 애니메이션 모델 생성보다, Unity에서 방출·크기·알파 곡선을 조정하는 편이 판정과 맞추기 쉽다. Blender는 저면수 초승달/링/파편 편집이나 필요시 툰 flipbook 렌더용으로 한정한다. 생성형 이미지/3D 모델은 콘셉트·단일 마스크 초안에는 쓸 수 있지만 프레임 연속성/알파/타이밍/URP 셰이더/풀링까지 완성된 게임 VFX를 보장하지 않는다. '무료 에셋만' 조건의 선택지에서 유료 생성크레딧은 0원으로 계산할 수 없다.
+
+시간 추정(성능/실작업 측정이 아닌 일정 견적):
+- 기존 샘플의 런타임화+spin/field/warning 초안: 약2~4인일, polish/QA 2~3일 추가.
+- 무료 주력팩2개 후보 A/B와 import 점검 .5~1일 + 스타일/통합1~2일 + QA .5~1일.
+- 새 flipbook/메시 조합 전체 초안3~5일, 처음 배우면1~2주까지.
+따라서 '무료팩1개 주력+기존 링/참격 보완'이 일정상 가장 낫다. 외부팩도 URP 호환·잔광/풀링 작업이 없어지는 것은 아니다.
+
+6. 팀원 전달 계약
+
+최종 전달은 시연 gif만이 아니라 아래 구성을 포함한다.
+- unit-scale root, pivot at hitPoint/groundOrigin, visual child의 로컬 오프셋으로 아트 조정.
+- local +Z forward. 좌/우/대각은 Quaternion.LookRotation(XY direction).
+- movement/collision/damage는 gameplay. projectile visual은 transform 이동 없음.
+- Configure→Play→Impact/optional Tick→Stop(emission only)→all tails ended→Reset/Release.
+- field는 gameplay 활성시간과 같은 수명. blast는 Detonate 프레임에 시작. 잔광/연기는 필요시 부모에서 분리.
+- player death/cancel/stage unload/pool return시 자식 particles/trails, 예약 callback/비동기 작업 모두 해제.
+- prefab별 material/dependency/radius/duration/tail/tint/forward/pivot 표.
+- 최소 VFX_Dash, SlashProjectile, Spin, FlurryHit, MagicProjectile, MagicImpact, MagicField, ChainWarning, Explosion의 9개 variant 또는 동등 프리셋.
+
+풀은 최신 PoolManager에 전용 key/prefab으로 등록해 기존 시스템을 활용할 수 있다. activate=false로 대여→설정→활성화/Play→모든 꼬리 종료 뒤 한 번 Return. SkillSpawner.UsePool을 켜기 전에 등록과 init 순서를 처리해야 하며 bool 하나만 바꾸면 완료라고 설명하지 않는다.
+
+7. 인게임 승인 기준
+
+- 실제 정면 카메라로 좌우, 공중, 계단, 적 앞/뒤, 벽 가림을 검사.
+- 일반 타격은 짧게, 연속 중간타는 약하게, 마지막만 강조. DOT 틱마다 큰 폭발/흔들림/히트스톱을 반복하지 않는다.
+- GameUI.Damage.Show의 기존 숫자/작은 스파크와 월드 VFX 주강조가 겹치지 않게 한다.
+- 실제 판정 프레임에 소리/흰 번쩍임/숫자와 맞춤. 현재 CombatFeedback.md는 한 프레임 시작 기준과 고속연타 합산을 설명한다.
+- 실제 radius/box와 눈으로 읽히는 경계/높이를 비교. 정면에서 눕힌 마법진만으로 넓이를 표현하지 않는다.
+- PC/Mobile 프로필에서 핑크 셰이더, depth/opaque 의존, 빌보드/정렬, bloom 의존 여부 검사.
+- 연쇄 1/5/10 동시폭발, 장판 겹침, 카메라 이동, 일시정지/재개, 피격취소, 반복대여.
+- 워밍업 뒤 CPU/GPU/GC/transparent overdraw 기록. MaxParticles 수가 적다는 이유로 빠르다고 단정하지 않는다.
+
+8. 핵심 출처와 줄번호
+
+ProjectSettings/ProjectVersion.txt:1
+Packages/manifest.json (URP17.3, VFXGraph absent)
+Assets/Scenes/MainScene.unity:236 (orthographic/size8)
+Assets/1.Script/Player/PlayerController.cs:162 (FreezePositionZ)
+Assets/1.Script/Player/InputManager.cs:114 (constant-Z aim)
+Assets/1.Script/Player/PlayerStates.cs:368 (skill enter/Execute)
+Assets/Art/CombatVFX_v1/Samples/CombatVfxSample.cs:54 (Play), :67 (Completed), :119 (Visual_Travel)
+Assets/Art/CombatVFX_v1/Editor/CombatVfxBuilder.cs:151 (visual root), :170 (playOnAwake false)
+Assets/Art/CombatVFX_v1/BuildReport.json
+Assets/1.Script/Skill/SkillSpawner.cs:10 (UsePool false)
+Assets/1.Script/CoreSystem/PoolManager.cs:75 (PreparePool), :128 (Rent activate)
+Assets/2.Prefab/Player/Player_Chibi.prefab:236/258 (slashVfx null)
+Assets/2.Prefab/Skills/MagicBolt.prefab:48 (actual serialized config)
+Assets/1.Script/Skill/SkillExplosion.cs:60 (damage time + linger)
+Assets/02.parkhansol_/Docs/CombatFeedback.md:3
+planning/Project_M_활용에셋목록_2026-10-29.txt:207 (VFX isolated on hold)
+
+더 자세한 구조화된 값은 같은 폴더 project-audit.json 참조.

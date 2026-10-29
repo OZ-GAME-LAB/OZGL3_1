@@ -1,0 +1,110 @@
+Project M 무료 Unity VFX 조사 — 2026-10-29
+
+조사 범위와 한계
+공식 Unity Asset Store 17개 무료 제품의 가격 UI, 렌더 파이프라인 표, 제품 설명, 기술 세부, 릴리스 노트를 대조했다. 페이지 본문이 웹 텍스트 도구에 비어 보일 때는 같은 공개 페이지 HTML의 제품 JSON을 읽었다. 재배포/가격 추적 사이트는 발견 경로로만 사용했다. 프로젝트 기준은 Unity 6000.3.21f1 + URP 17.3.0, 로우폴리 치비 캐릭터와 현대 도시 배경, 3D URP의 2.5D 횡스크롤 전투다.
+
+실제 에셋 패키지를 다운로드하거나 임포트하지 않았다. 공식 프리뷰 이미지 세 개만 직접 확인했으므로 스타일 판단과 Unity 런타임 호환 검증은 구분한다. Unity6 또는 URP Compatible 표시는 제작자 진술이며 현재 프로젝트 실측 통과를 의미하지 않는다.
+
+가장 현실적인 조합
+1. 공통 타격/폭발: Cartoon FX Remaster Free
+2. 검기/회전베기/연속참격: Free Slash VFX (MaykerStudio)
+3. 대시/마력탄 꼬리: Trails VFX - URP
+4. 발먼지/잔해가 필요하면 Simple FX의 작은 효과만 추가한다.
+5. 마력탄 코어와 마력장 경계는 기존 CombatVFX_v1의 소형 메시/링 원형을 다듬어 공통 색과 타이밍을 맞춘다.
+
+이것은 확정안이 아니라 실제 게임 카메라에서 먼저 비교할 조합이다. 팩을 많이 모으는 것과 스타일을 통일하는 것은 다르므로 한 장면에 모든 후보를 섞지 않는다. 무료팩 하나만 쓰고 싶다면 Magic Effects FREE를 차선 후보로 비교한다.
+
+17개 검토 결과
+
+U01 Cartoon FX Remaster Free — Jean Moreno
+https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565
+공식 가격 FREE, Standard EULA, Extension Asset. 12.8MB, R1.5.1, 2025-12-18. Built-in/URP 지원, HDRP 미지원. 표는 2020/2021이지만 추가 호환 안내가 최신 URP와 Unity6을 명시하고 릴리스에는 Unity6.2 obsolete API 수정이 있다. 기본 타격·폭발의 1순위. 공식 6칸 프리뷰를 직접 보니 굵은 별·링·파편은 치비와 잘 맞으며 BOOM 텍스트·강한 bloom·내장 흔들림은 덜어내야 한다. 무료 샘플의 정확한 효과 수는 확인 없이 전체 상용팩 수량으로 채우지 않는다.
+
+U02 Free Slash VFX — MaykerStudio
+https://assetstore.unity.com/packages/vfx/shaders/free-slash-vfx-309498
+FREE, Standard EULA, Extension Asset. 13.1MB, v1.0, 2025-05-05. 2021.3.45와 6000.0.34의 URP 호환 표. 초승달+스파크 공식 키이미지를 직접 확인했다. 물리계열 아이보리/옅은 노랑으로 바꾸고 긴 세로 광선과 과한 발광을 줄이면 검기/연속참격 원형으로 적합하다. 왜곡은 기본 끄고 시작한다. HDRP/Built-in 전환은 ShaderGraph Target와 왜곡 수정이 필요한 별도 작업이라고 설명한다.
+
+U03 Trails VFX - URP — Vefects
+https://assetstore.unity.com/packages/vfx/trails-vfx-urp-242574
+FREE, Standard EULA, Extension Asset. 28.6MB, v1.0.20252, 2025-12-21. 6000.0.23/2023/2022/2021 URP 호환. 원소형 trail 10개와 SFX, 최대1024 텍스처, ShaderGraph 셰이더20개 이상. 대시와 마력탄의 짧은 청록/보라 꼬리로 사용하되 효과 한두 개만 선별한다. 본문과 기술정보 검토이며 영상은 보지 않았다. 이동·순간이동·풀 재대여 때 trail 잔상 초기화가 필요하다.
+
+U04 Magic Effects FREE — Hovl Studio
+https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933
+FREE, Standard EULA, Extension Asset. 36.4MB, v1.6, 2025-06-04. Built-in/URP/HDRP 표기, 2021/2022 기준. 마법진4, 오라7, 히트7, 포털4, AoE11, 폭발3, 스파크18, 참격6, 실드3, 연기9, 환경4로 본문 항목 합86. 한 제작자 팩으로 여섯 스킬을 폭넓게 충당할 대안이다. URP/HDRP 지원 설명이 재질 업그레이드/Render Pipeline Converter 안내와 연결되므로 원클릭 무수정 호환으로 표현하면 안 된다. 실제 미디어 미검수.
+
+U05 Free Quick Effects Vol.1 — Gabriel Aguiar Prod
+https://assetstore.unity.com/packages/vfx/particles/free-quick-effects-vol-1-304424
+FREE, Standard EULA, Extension Asset. 19.9MB, v1.0, 2024-12-06. 30개 빠른 제작 챌린지 효과. 폭발3/투사체2/회복2/충격파/실드/연기/스파크 등, 3RP 지원 설명. 효과별 완성도는 별도 비교해야 하지만 마력탄+폭발을 짧게 조합하는 재료로 좋다. Unity6 직접 명시는 없다. 실제 미디어 미검수.
+
+U06 Free Stylized Impacts and Explosions URP — Captivest Games
+https://assetstore.unity.com/packages/vfx/free-stylized-impacts-and-explosions-urp-385882
+FREE, Standard EULA, Extension Asset. 16.8MB, v1.0, 2026-07-13. 6000.3.18 URP 호환으로 프로젝트 버전에 가깝다. 무료3VFX이며 효과당 셰이더1/재질3. 신생팩이라 최신 버전이라는 이유만으로 메인 확정하지 않고 CFX와 작은/큰 폭발 A/B 후보로 둔다. 영상/이미지 픽셀 미검수.
+
+U07 Simple FX - Cartoon Particles — Synty Studios
+https://assetstore.unity.com/packages/vfx/particles/simple-fx-cartoon-particles-67834
+FREE, Standard EULA, Extension Asset. 235.4KB, v1.2.0, 2023-09-24, 원본2021.3.17. 본문 URP 지원과 공식 가이드 링크. 먼지/돌파편 폭발/불/연기/물 등. 공식 키이미지의 각진 노랑 파편·갈색 돌·회색 연기를 직접 보았으며 우리 로우폴리 도시와 형태상 잘 맞는다. 발먼지와 폭발 잔해에 추천한다. Unity6 직접 표기는 없으며 일부 Legacy 재질의 실제 변환 확인이 필요하다. 검기/마력탄/장판까지 갖춘 완성팩은 아니다.
+
+U08 Stylized Slash VFX — HungNguyenVFX
+https://assetstore.unity.com/packages/vfx/particles/stylized-slash-vfx-200233
+FREE, Standard EULA, Extension Asset. 2.6MB, v1.0, 2021-08-21, 2020.2.4 URP 호환. 프리팹6개 중 참격5+배경1, 셰이더1/재질6/모델1. Mayker보다 구형이어서 예비 참격 후순위다. 미디어 미검수, Unity6 의존성 확인 필요.
+
+U09 Simple Stylized Slash Pack2 — Namu
+https://assetstore.unity.com/packages/vfx/particles/simple-stylized-slash-pack-2-248665
+현재 가격 FREE, Standard EULA, Extension Asset. 4MB, v1.0.0, 2023-05-11. 2021.3.19 Built-in/URP 지원, HDRP 미지원. 프리팹12/재질21/메시5/텍스처23/ShaderGraph3/SubGraph2. 본문에는 과거 '$13로 인하' 문구가 남았지만 현재 가격UI는 FREE다. 변형 많은 참격이 필요할 때 비교하되 Unity6 검증 전이다. 미디어 미검수.
+
+U10 Free Game VFX - Magic Circle(URP) — Eric VFX Studio
+https://assetstore.unity.com/packages/vfx/particles/free-game-vfx-magic-circle-urp-344984
+FREE, Standard EULA, Extension Asset. 992.4KB, v1.01, 2026-01-08. 2022.3.45 URP 지원. 무료 마법진4프리팹, PNG/TGA256x256. 마력장 후보지만 측면 카메라에서 바닥 원형이 얇게 보이므로 양끝/경계를 별도 읽히게 한다. 무료4개와 유료 완성팩을 구분한다. 미디어 미검수.
+
+U11 Free Game VFX Collection(URP) — Eric VFX Studio
+https://assetstore.unity.com/packages/vfx/particles/free-game-vfx-collection-urp-345212
+FREE, Standard EULA, Extension Asset. 2022.3.45 URP용 마법10프리팹, PNG/TGA1024. 크기·회전 변경 가능. 공식 제작자 무료목록도10개로 교차확인된다. 세부10종이 본문에 열거되지 않아서 마력탄까지 포함된다고 단정하지 않는다. 미디어 미검수.
+
+U12 Free RPG VFX Sprite Sheet Starter Pack — Eric VFX Studio
+https://assetstore.unity.com/packages/vfx/free-rpg-vfx-sprite-sheet-starter-pack-393438
+FREE, Standard EULA, Extension Asset. 9.3MB, v1.0, 2026-07-15. 2022.3.45의3RP호환 표, 예제재질은URP/텍스처는다른RP에도사용가능. 무료5개:참격1/타격1/폭발2/마법진1. SpriteSheet와 ParticleSystem 프리팹·데모씬. 여섯 스킬의 플립북 공통언어 후보이며 대시·마력탄 코어는 추가 제작이 필요하다. 유료 전체50개를 무료 수량으로 소개하지 않는다. 미디어 미검수.
+
+U13 Free Stylized Smoke Effects Pack — Maiami Studio
+https://assetstore.unity.com/packages/vfx/particles/fire-explosions/free-stylized-smoke-effects-pack-226406
+FREE, Standard EULA, Extension Asset. 120.5KB, v1.0.1, 2022-07-18. 2020.3.36의3RP호환 표. ParticleSystem 연기, Legacy셰이더 사용이라는 설명. 발먼지/착지/폭발 잔재 보조용. 수명·불투명도·분출량을 줄여 캐릭터와 적의 예고를 가리지 않게 한다. 정확 프리팹 수 미기재, 미디어 미검수.
+
+U14 Polygonal's Low-Poly Particle Pack — Polygonal Stuff
+https://assetstore.unity.com/packages/vfx/particles/polygonal-s-low-poly-particle-pack-118355
+FREE, Standard EULA, Extension Asset. 약1016KB, v1.0, 2019-02-27, 원본2018.1.0. 약30개 효과의 일반/HighPerformance/Mobile 변형을 합친90프리팹이다. 메시입자/연기/폭발/불/물/타격/환경. 로우폴리 재료로 유용하지만 URP/Unity6 호환은 미확인이라 변환비용이 크다. 90개를90개 독립효과로 부풀리면 안 된다. 미디어 미검수.
+
+U15 Particle Pack | Starter Assets — Unity Technologies
+https://assetstore.unity.com/packages/vfx/particles/particle-pack-starter-assets-127325
+FREE. 160.2MB, v3.3, 2026-10-08. 오래된 Built-in 전용 정보로 제외하면 안 된다. 현재 표는6000.3/6000.0/2022.3 URP지원이며 릴리스도6000.3업데이트/수정을 명시한다. 불/폭발/얼음/디졸브/ParticleSystem 모듈 예제로 제작 학습과 재료에 적합하다.
+주의:스토어UI는Standard EULA/Extension Asset이지만 본문과 릴리스노트가 Unity Companion License를 명시한다. 첨부LICENSE를 확인하기 전 CC0나 순수Standard로 단정하지 않는다. 본문은 프로젝트설정 덮어쓰기 가능성을 알려 주고 새 프로젝트에서 먼저 임포트할 것을 안내한다. 메인프로젝트 설정을 무심코 수락하지 않는다. 미디어 미검수.
+
+U16 War FX — Jean Moreno
+https://assetstore.unity.com/packages/vfx/particles/war-fx-5669
+FREE, Standard EULA, Extension Asset. 8MB, v1.8.1, 2026-06-30, 원본Unity5.6.7. 사실적인 전쟁효과40여개, 총기·탄착·폭발·연기. 무료 유명팩이지만 치비 로우폴리 검/마법 전투에는 스타일 거리가 커 메인 후보에서 제외한다. 환경 화재 등 한정 용도만 고려. 새 릴리스 날짜가 Unity6 호환을 뜻하지 않으며 URP표 없음. 미디어 미검수.
+
+U17 Free - URP Flipbook VFX Bundle Lite — Vefects
+https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420
+FREE, Standard EULA, Extension Asset.101.4MB,v1.0.1,2026-07-28(영문페이지조회기준;UTC/지역에따라전날표시가능).6000.0.23/2023.1 URP호환, Unity6+셰이더업데이트.
+스타일화2D/2.5D액션 방향은 맞지만 Lite에 custom color selector, RGBA masked color, masked emission, 모든VFX/SFX, 2DRenderer셰이더,4K텍스처가 빠진다. 팔레트통일에 제한이 있어 무조건 최우선으로 두지 않는다. 유료Full의500+효과는무료수량이아니다. Built-in무료판395530과구분하여URP판을획득한다. 미디어미검수.
+
+유료/숨은 유료 의존성 제외
+- Flame Magic Stylized Slash VFX:공식$4.99. 같은제작자무료StylizedSlashVFX와다름.
+  https://assetstore.unity.com/packages/vfx/particles/flame-magic-stylized-slash-vfx-201825
+- Epic Toon FX:공식$40. 무료후보에서제외.
+  https://assetstore.unity.com/packages/vfx/particles/epic-toon-fx-57772
+- Magic Arsenal:공식$30. 무료후보에서제외.
+  https://assetstore.unity.com/packages/vfx/particles/spells/magic-arsenal-20869
+- Cartoon FX Remaster 상용1~4/Bundle:무료109565샘플과다른상품. 할인액이있어도유료.
+  https://assetstore.unity.com/packages/slug/4010
+- Projectile Factory for Magic Arsenal:표면가격FREE이나공식Dependencies에유료ProjectileFactory($22.50세일/$45정가)+MagicArsenal($30)을요구. 무료독립VFX로소개하지않음.
+  https://assetstore.unity.com/packages/vfx/particles/spells/projectile-factory-for-magic-arsenal-by-archanor-vfx-282087
+
+확정 전 비교 기준
+동일한 최종 캐릭터·도시 배경·실제 카메라·같은 크기에서 현재 CombatVFX_v1, CFX기본+Mayker참격, MagicEffectsFREE단일팩을 비교한다. 배경색을 바꾸어 읽히는지, 좌우/고저차, 몸통·얼굴 가림, 한 번에10폭발과20대상 상태표시, 카메라 이동·일시정지·풀 재대여를 확인한다. 셰이더가 분홍색이 아니어도 투명도·빌보드·깊이 가림·재생시간·흔들림 중복이 맞는지 따로 본다.
+
+예상 최소작업은 무료 원형 선별→공통색/수명/크기 조정→XY/지면 정렬→현재 스킬 이벤트와연결할어댑터확정→실제판정/풀링/성능검수다. 조사문서만으로 팀원에게 'VFX 최종확정'을 알리지 않으며, 실제 비교 후 담당자에게 확정프리팹명·방향·앵커·종료계약을 전달한다.
+
+이미지 직접검수 기록
+- UnityPreviewQA/CartoonFX.jpg:CFX공식screenshot6칸.
+- UnityPreviewQA/FreeSlash.jpg:Mayker공식키이미지.
+- UnityPreviewQA/SimpleFX.jpg:Synty공식키이미지.
+출처URL은unity-research.json각항목의preview_url에보존했다. 이이미지들은검수자료이며게임에넣을라이선스원본패키지가아니다.

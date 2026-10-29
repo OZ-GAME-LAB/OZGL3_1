@@ -1,0 +1,69 @@
+{
+  "title":"Project M 무료 VFX 조사와 적용 계획",
+  "date":"2026-10-29",
+  "status":"후보 선정과 적용 설계 제안. 최종 아트 확정·다운로드·패키지 임포트·스킬 연결·Unity 재생 및 성능 검증은 수행하지 않음.",
+  "recommendation":"무료 툰 프리팹을 주력으로 삼고 색·크기·타이밍을 통일한다. Cartoon FX Remaster Free를 타격/폭발 기본으로, Free Slash VFX를 참격 후보로 먼저 비교한다. 대시와 탄 꼬리가 부족할 때만 Trails VFX URP를 보조로 넣고, 마력장/예고는 기존 링과 Kenney CC0 재료로 짧게 보완한다.",
+  "why":"우리 게임의 약3등신 3D 주인공, 단순한 KayKit 몬스터, 낮은 채도의 현대도시, 정면 직교 카메라에서는 굵고 짧은 툰 형태가 읽힌다. 픽셀 HUD가 있다고 월드 전투 VFX를 전부 픽셀로 바꾸면 통일감이 깨진다. 외부팩을 많이 섞으면 무료라도 서로 다른 bloom, noise, timing, shader를 맞추는 비용이 커진다.",
+  "style":{
+    "physical":"아이보리 중심/옅은 금빛 가장자리. 얇은 초승달과 짧은 속도선. 불필요한 긴 광기둥 제거.",
+    "magic":"청록 또는 옅은 보라를 한 계열로 정하고 작은 밝은 코어+짧은 꼬리. 지속 고채도 네온을 화면 전체로 퍼뜨리지 않음.",
+    "explosion":"아이보리 섬광→노랑/주황의 큰 덩어리→소량 파편→짧은 회색 연기. 플레이어·적 윤곽이 다시 빨리 보이게 함.",
+    "ground":"마법진의 장식보다 실제 피해범위의 좌우 끝과 높이를 먼저 읽히게 함. 정면 카메라에서는 XZ 링만으로 부족해 양 끝 짧은 기둥/수직 마스크 보완.",
+    "enemy":"아군의 물리/마법 형태와 구별되는 경계/맥동. 적 위험 범위는 색뿐 아니라 모양·예고 애니메이션으로 구분.",
+    "avoid":"실사 두꺼운 연기, 오래 남는 전체화면 bloom, 매타 화면왜곡, 코믹 BOOM/POW 글자 기본 노출, 픽셀 팩 무분별 혼합.",
+    "timing_starting_values":"일반 참격 .10~.25초, 작은 적중 .12~.35초, 대시잔상 .10~.25초, 주폭발 .25~.45초+별도 잔광/연기 .3~.6초. 제작 출발값이며 현재 전투 판정값을 변경하는 규칙은 아님."
+  },
+  "first_ab_test":[
+    {"slot":"타격과 폭발","first":"Cartoon FX Remaster Free","alternative":"Free Stylized Impacts and Explosions URP 또는 SimpleFX","compare":"bloom 낮추고 코믹 텍스트 제거한 상태로 도시/주인공과 비교; 충격 때 적 실루엣·범위 읽힘"},
+    {"slot":"검기와 근접 참격","first":"Free Slash VFX","alternative":"기존 CombatVFX_v1 Crescent/Core와 짧은 파티클","compare":"실제 정면 XY카메라, 좌우/상하 조준, +Z-forward와 원점, 외부팹 왜곡 off, 연속5타 중첩"},
+    {"slot":"대시와 마력탄 꼬리","first":"기존 코어+Trails VFX URP 일부","alternative":"TrailRenderer+Kenney Particle Pack","compare":"짧은 수명/얇은 폭으로 이동 방향 읽힘; 플레이어 몸과 바닥을 가리지 않음"},
+    {"slot":"장판과 예고","first":"기존 Ring/간단 메시+Kenney CC0","alternative":"Vefects Shockwaves 또는 Effekseer CC0에서 PNG 베이크","compare":"실제 Box/Sphere의 좌우 범위·높이, 정면 지면에서 경계 가시성, 시작/종료/취소 일치"}
+  ],
+  "skill_mapping":[
+    {"skill":"대시","visual":"짧은 발먼지+몸통 뒤 1~2줄+선택 잔상","source":"Trails URP / Kenney Smoke / 기존 DashBurst 재료","integration":"플레이어 이동은 현재 대시 코드가 담당. sample 내부 전진/높이 제거한 variant, 몸에 붙는 꼬리와 월드먼지 분리"},
+    {"skill":"검기","visual":"진행방향의 넓고 얇은 초승달+끝 스파크","source":"Free Slash VFX / 기존 SlashWave","integration":"실제 SkillProjectile speed15/range5/hitRadius.5/pierce. visual은 이동하지 않고 루트만 따라감. 화면 크기를 hitRadius와 비교"},
+    {"skill":"회전베기","visual":"시전자 주변 타원호+짧은 360도 잔상","source":"Free Slash를 회전형 variant로 가공 / 기존 Ring","integration":"현재 1회 DamageBox=(3.5,2,2), 높이.65. 바닥에 누운 링만 쓰지 않고 몸 앞/뒤를 구분"},
+    {"skill":"연속참격","visual":"짧은 5회 호와 작은 적중, 마지막타만 약간 강화","source":"Free Slash 짧은 preset+CFX 작은 hit","integration":"현재 5회/.08초, 마지막 명목.32초. .95초 sample을 매타 유지하면 과도한 중첩. 스킬취소 시 후속시각도 정지"},
+    {"skill":"마력탄","visual":"작은 청록 코어+짧은 tail+적중 폭발","source":"기존 MagicMissile 코어+Trails/CFX hit","integration":"현재 투사체 speed12/range8/hitRadius.4/explosionRadius1.5/explodeAtEnd=false. 기획상 목표지점 즉시 범위 공격과 차이 있어 이동방식은 팀에서 정리. VFX가 피해로직을 결정하지 않음"},
+    {"skill":"마력장","visual":"뚜렷한 경계+좌우 끝 표시+저밀도 상승입자","source":"기존 Ring+Kenney, 필요시 Effekseer CC0 베이크","integration":"현재5틱/.5초/첫틱즉시, 마지막 약2초, Box4×1.5×2. prefab scale4×.1×2를 그대로 상속하면 새 아트가 납작해지므로 단위 root/visual child 필요"},
+    {"skill":"연쇄폭발","visual":"각 지점 예고→충격 flash/ring→분리된 잔광","source":"CFX explosion 또는 Free Stylized Impacts URP","integration":"현재5회/.12초,1.5거리간격,반경1.5,마지막명목.48초. SkillExplosion 회수 .3초보다 긴 연기는 별도 수명으로 분리. 실제 피해 시점에 Detonate 호출"}
+  ],
+  "existing_sample_decision":{
+    "keep":"독립 비교 기준으로 보존. Crescent/Ring/Core/Shard/Ribbon과 색의 방향은 재사용 가치가 있음.",
+    "adapt":"원본샘플을 스킬 담당자에게 최종 에셋으로 바로 넘기기 전에 Play 어댑터, 내부 이동/높이 제거, 종료/풀링, 단위크기 처리한 runtime variant 필요.",
+    "pitfalls":["SetActive만으로 Play되지 않음","투사체 root 이동과 sample 내부 Visual_Travel 이동이 중복","sample 높이 .82~1.1m를 이미 어깨/적중 위치에 더하면 이중 높이","sample Explosion1.55초가 기존 SkillExplosion .3초에 회수되어 잘림","완료는 Completed 이벤트일 뿐 자동 반환/파괴 없음","샘플의 수동 ParticleSystem.Simulate와 런타임 자동시뮬레이션을 함께 쓰지 않음"]
+  },
+  "self_authoring":{
+    "recommended":"직접 만든다면 완성형 이미지/3D 모델 하나를 생성하기보다 이미 있는 메시와 공용 texture로 작은 블록을 조합. Shuriken ParticleSystem+TrailRenderer+필요시 공용 ShaderGraph 1개. 복잡한 VFXGraph 신규도입은 초기 범위에서 제외.",
+    "blocks":["초승달 메시와 UV마스크 1종: 검기/회전/연속참격 공유","별/스파크마스크: 모든 적중 공유","작은 코어+짧은 trail: 마력탄과 적 원거리 공격 공유","경계링/좌우끝: 장판/폭발예고 공유","불꽃 flipbook+파편+연기: 작은/큰폭발 공유"],
+    "workflow":["실제 카메라 스케일에서 흑백 실루엣을 먼저 비교","기존 메시 또는 Blender/VFXMeshLab으로 저면수 호·링·파편만 제작","Kenney/다른 명확한 무료 라이선스 마스크를 URP/Particles/Unlit에 적용","방출/알파/크기/색 곡선으로 예고·타격·잔광 타이밍 조정","복잡한 불/연기는 Effekseer CC0 샘플→정면 PNG시퀀스→플립북; 새 런타임 의존성을 넣는 경로는 별도 검토","8~16프레임 또는4×4 atlas를 시작점으로 테스트; 작은효과 .1초대는 프레임을 빠르게 재생해 길게 늘어지지 않게 함","공용 tint/intensity/radius/duration을 노출하고 9개 전달 preset으로 묶음"],
+    "ai_role":"AI는 구조 코드·파라미터 초안·단일 마스크/콘셉트 보조에 한정하는 것이 현실적. 연속 이미지 프레임의 형태/알파 일관성, 스킬 판정 정렬, 잔광과 풀링은 별도 작업. Meshy가 만든 고정 메시나 생성 영상이 바로 Unity VFX가 되지는 않는다. 무료 에셋 조건에서 유료 생성 크레딧을 무상이라고 계산하지 않는다.",
+    "tool_options":"Unity 기본 ParticleSystem/TrailRenderer, Blender, Krita, Effekseer, MIT VFXMeshLab. 웹 CrunchyVFX는 픽셀/UI보조 후보. JangaFX 무료 VDB는 실사 베이크 부담으로 현재 비추천.",
+    "effort_estimates":"무료팩 A/B/임포트점검 .5~1인일+색/타이밍/통합1~2인일+게임QA .5~1인일, 총2~4인일 수준의 초기 견적. 기존샘플 완성화+부족한장판/회전/예고는 초안2~4인일+마감/QA2~3인일. 신규flipbook·셰이더 전체제작은 초안3~5인일, 학습포함1~2주 가능. 담당자 경험/플랫폼/완성도에 따라 크게 달라지는 추정이며 실제 작업시간 측정 아님."
+  },
+  "handoff_contract":{
+    "prefabs":["VFX_Dash","VFX_SlashProjectile","VFX_Spin","VFX_FlurryHit","VFX_MagicProjectile","VFX_MagicImpact","VFX_MagicField","VFX_ChainWarning","VFX_Explosion"],
+    "transform":"unit scale root, 원점=실제 적중점 또는 지면 기준점. 로컬+Z forward,아트오프셋은 visual child에서. gameplay XY조준 dir은 현재 LookRotation 사용.",
+    "lifecycle":"Configure(position,direction,tint,scale,duration)→Play→Impact/Tick(optional)→StopEmitting→모든입자/트레일/메시잔광완료→1회 Release. 이동/충돌/데미지는 기존 스킬코드 소유.",
+    "pool":"현재 SkillSpawner.UsePool=false지만 범용 PoolManager가 있으므로 새 풀 시스템을 따로 만들 필요 작음. 전용 key와prefab등록/PreparePool,비활성Rent→설정→Play,Stop/Clear/Tail완료를 함께 처리해야 하며 bool만 켜면 완료가 아님.",
+    "metadata":"프리팹마다 출처/라이선스파일/원본버전/URP의존성/정면프리뷰/축·피벗/주동작·잔광수명/scale기준/loop/노출파라미터/풀반납조건을 기록.",
+    "team_reply_draft":"VFX는 무료 툰팩을 기반으로 색과 타이밍을 통일하는 방향을 제안합니다. 타격·폭발은 Cartoon FX Remaster Free, 참격은 Free Slash VFX를 우선 비교하고 대시·탄 잔상은 Trails URP로 보완하겠습니다. CombatVFX_v1은 비교 기준으로 보존하며 내부이동과 재생·종료 처리를 정리한 뒤 실제 스킬용 프리팹을 넘기겠습니다. 최종 확정 전 실제 게임 카메라에서 크기·타이밍을 비교하겠습니다."
+  },
+  "execution_plan":[
+    "1 무료 주력 CFX와 참격 Free Slash만 임시 검증 프로젝트에서 도입. 배포당일 가격·license·README·버전 보존. 메인프로젝트 설정을 덮어쓰지 않음.",
+    "2 실제 주인공/몬스터/도시 조명/orthographic 카메라에 동일크기·동일시간으로 비교. 코믹텍스트·왜곡 off, bloom낮춤. 필요할 때만 SimpleFX/Free Stylized Impacts 대조 추가.",
+    "3 대시·검기·마력탄·폭발 4종을 먼저 시각적으로 승인. 이때 담당자에게 prefab,기간,원점,축,재생API를 전달.",
+    "4 공용 블록으로 회전베기/연속참격/마력장/폭발예고와 작은 적중 variants 확장.",
+    "5 수명과 취소·분리잔광·풀링을 스킬 쪽과 맞추고 실제판정/예고/범위표시/피해숫자와 정렬.",
+    "6 좌우·공중·계단·벽가림·정지/재개·연속5타·장판겹침·5/10동시폭발·반복대여를 검수. PC/Mobile프로필에서 핑크/Depth의존과 실제CPU/GPU/GC/오버드로를 확인 후 확정."
+  ],
+  "free_and_license_rules":[
+    "무료 다운로드, 상업게임 사용 허가, Unity/URP 호환성은 각각 확인해야 하는 별개 항목이다. 기간한정무료·체험판·구독전용은 상시무료 추천과 분리한다.",
+    "Asset Store Standard EULA는 CC0가 아니다. 무료 Extension Asset도 팀사용자별 정식 취득/조건을 확인하고 원본팩을 공개저장소에서 배포하지 않는다.",
+    "CC0면 수정/게임상업사용/표기조건이 단순하다. 원본라이선스와작가/URL/버전은 내부출처기록에 남겨 추적가능하게 한다.",
+    "CC BY4.0은 작가/원출처/라이선스링크/변경사항을 표기한다. CC BY-SA 등은 별도 의무를 검토하며 이번 간편도입 주력에서는 낮춘다.",
+    "Gumroad의CC0표현과재배포금지처럼 페이지문구가 충돌하면 순수CC0로 단정하지 않는다. 같은제작자의다른스토어 배포라도 해당다운로드판 라이선스를 기준으로 한다.",
+    "공식URP표기/Unity6표기는 우리정확한6000.3.21+URP17.3에서실제임포트검수가통과했다는뜻이아니다."
+  ],
+  "research_limits":"공식 제품·제작자·라이선스 페이지와 로컬 소스 및 일부 정지이미지에 근거했다. 유료 구매/로그인 취득/원본팩 내용 전체/영상 전체/게임임포트·재생·벤치마크는 검증하지 않았다. 현재 공식페이지의 무료표기와 호환표기를 기준으로 하며 이후 변경될 수 있다. 조사 실패/라이선스미확인은 확인된상업사용후보와 별도로 분류했다."
+}

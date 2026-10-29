@@ -1,0 +1,168 @@
+Project M 무료 VFX 외부 배포처 정밀 조사
+기준일 2026-10-29 / Asia/Seoul
+환경 Unity 6000.3.21f1, URP 17.3.0, 치비 로우폴리 3D + 현대 도시 + 2.5D 횡스크롤 액션
+
+결론
+가장 먼저 화면에서 비교할 외부 후보는 Vefects Free - URP Flipbook VFX Bundle Lite의 Unity Asset Store판이다. Unity 6 URP 지원과 무료/표준 EULA가 공식 페이지에 같이 확인된다. Kenney Particle Pack은 완성 연출의 대체재가 아니라 적은 수정으로 색·모양·수명을 통일할 기초 재료로 좋다. 폭발을 PNG로 보충할 경우 CraftPix의 비픽셀 벡터 Explosion 팩을 비교할 만하다. Effekseer는 수백 CC0 샘플을 재편집하고 플립북으로 베이크할 수 있는 폭넓은 대안이다.
+
+우리 게임에서는 무료 팩 여러 개를 원형 그대로 섞는 방식을 피한다. 치비 캐릭터의 큼직한 면과 얼굴을 읽을 수 있게 흰 중심 섬광, 아이보리 물리 참격, 청록/보라 마력, 노랑→주황 폭발을 공통 규칙으로 묶는다. 효과마다 크기·밝기·지속시간을 조절하는 작업은 어느 무료 팩을 써도 필요하다. '무료 = 완성 전투에 즉시 연결 가능'은 아니다.
+
+조사 범위와 검증 수준
+22개 제품군을 기록했으며, 같은 팩의 itch/OGA/Store 중복본은 별도 상품 수로 부풀리지 않았다. Kenney, OpenGameArt, itch.io, CraftPix, GameDev Market, Effekseer, GitHub 제작자, JangaFX, Colorosse, Vefects, Eric VFX, BOOTH, GameArt2D, ArtStation, Godot Shaders 및 검증되지 않은 OpenGameVFX 도메인을 조사했다.
+제품 설명, 무료 범위, 라이선스 본문과 기술 정보를 직접 확인했다. 바이너리를 다운로드하지 않았고 Unity 임포트·렌더·성능 시험도 하지 않았다. 아래 적합도는 프로젝트 요구를 기준으로 한 제작 판단이며 실제 화면 검증 결과가 아니다.
+상세 표와 근거 URL은 같은 폴더 external-research.json에 있다.
+
+우선 비교할 팩
+
+1. Vefects — Free - URP Flipbook VFX Bundle Lite
+공식 Store: https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420
+제작자 itch: https://vefects.itch.io/free-urp-flipbook-vfx-bundle-lite
+확인: FREE, Standard Unity Asset Store EULA, Extension Asset, 101.4MB, v1.0.1, 2026-07-27 출시. 호환표는 6000.0.23f1 및 2023.1.0f1에서 URP Compatible, Built-in/HDRP Not Compatible.
+스타일: 스타일화 전투·원소·애니메이션풍 플립북이므로 이번 게임의 가장 직접적인 비교군. 검기/피격/마력탄 착탄/폭발의 기본층을 먼저 고른다.
+작업: 팔레트, 크기, 발광, 재생속도 조절과 2.5D 방향 정렬. 무료본에 실제로 필요한 슬래시·폭발이 몇 종류 포함되는지는 파일 검사 전 단정하지 않는다.
+주의: itch판98MB와 Store판101.4MB의 바이너리 동일성은 확인하지 않았다. 상업 사용 조건이 분명한 Store판을 취득하는 편이 낫다. Unity6.0 지원 표시는 현재6000.3/URP17.3 검증을 대신하지 않는다. Lite에 유료 Full의 전체 효과 수(500+)를 붙여 설명하면 안 된다.
+
+2. Kenney — Particle Pack
+https://kenney.nl/assets/particle-pack
+제작자 OGA: https://opengameart.org/content/particle-pack-80-sprites
+무료/CC0/상업 가능/표기 의무 없음. 80개 PNG(512×512), tilesheet, vector. OGA 설명에는 Unity 불·연기·마법·하트·스파크·전기 샘플도 포함된다.
+적합: 단순 마스크를 적은 수의 파티클에 쓰면 로우폴리 캐릭터와 톤을 맞추기 쉽다. 대시 먼지, 피격별, 마력탄 꼬리, 폭발 조각에 유용.
+작업: URP/Particles/Unlit 재질과 우리 에미터/수명 설정이 필요하다. 구형 Unity 샘플을 Unity6 URP 호환으로 단정하지 않는다. 검기 하나를 곧바로 대체하는 완성 팩은 아니다.
+
+3. CraftPix — Free Animated Explosion Sprite Pack
+https://craftpix.net/freebies/free-animated-explosion-sprite-pack/
+무료 계약: https://craftpix.net/file-licenses/ 의 2. FREEBIE PRODUCTS
+11종, AI 벡터 원본+PNG, 불폭발·연소·연기·전기·독 분사. 상업 프로젝트와 수정 가능, 무표기 가능, 원본/수정 아트 자체의 재판매·추출 가능한 재배포는 금지.
+적합: 픽셀 팩보다 비픽셀 만화형 폭발이 이번 치비/로우폴리와 가까울 가능성이 있다. 마력탄 착탄과 연쇄폭발에 우선 비교.
+작업: 시트 재생을 만들고 색·외곽선·크기·수명을 맞춰야 한다. 전기/독까지 몽땅 도입하지 말고 폭발 핵심층만 고른다.
+
+4. Sinestesia — Hit Animation | Frame by frame
+https://opengameart.org/content/hit-animation-frame-by-frame
+CC0, PNG 4096×4096의4×4시트, 프레임1024×1024,16프레임, 노랑 타격1종.
+적합: 검기 적중, 연속참격 마지막 타격, 마력탄 적중에 짧은 보조 섬광으로 사용 가능.
+작업: 큰 원본을 축소하고 실제 카메라의 표시 크기에 맞춘다. 기본 피격마다 큰 효과를 터뜨리면 얼굴과 적을 가린다.
+
+5. Effekseer — 공식/기여 CC0 샘플
+https://effekseer.github.io/en/contribute.html
+툴: https://effekseer.github.io/en/index.html
+CC0 섹션의10묶음 표시 수 합계는295효과다. 공식13, 리메벨타20, Pierre1·2각11·12, Magical X Spiral103, Suzuki3, AndrewFM15, tktk1·2각71·43, HATO4.
+중요: 아래 Sample Effects(Old)의34효과는 별도 구라이선스다. 이 부분까지 모두CC0라고 쓰면 안 된다.
+경로: 샘플 고르기→색/형태/노드 수정→측면 카메라에서 PNG 시트 출력→Unity에서 재생. Unity 플러그인을 새로 도입하는 부담을 줄일 수 있다.
+반대로3D 런타임으로 플레이할 경우 플러그인 버전, URP 렌더 기능, 네이티브 빌드와 풀링을 별도로 검증해야 한다. 툴은 무료지만 사용법을 익히고 연출을 고르는 시간은 필요하다.
+
+대시/꼬리/충격파의 유력 보조 후보 — itch 상업 조건은 추가 확인 필요
+
+6. Vefects — Trails VFX - Unity URP
+https://vefects.itch.io/trails-vfx-unity-urp
+무료$0선택,9.1MB Unitypackage,10속성 트레일,20+ShaderGraph,최대1024텍스처,SFX.
+제작자 설명은3D URP 기반의 Orthographic 2D 배치는 지원하지만2D Renderer기능은 지원하지 않는다고 명시한다. 이 점은2.5D인 우리 게임에 잘 맞는다.
+마력탄 꼬리나 대시 잔광 한두 종류만 선택하고 길이·폭·발광을 줄인다. itch 페이지에 정식 상업/재배포 계약이 없으므로 ZIP LICENSE나 동일 Store판 계약을 확인한 뒤 채택한다. 같은 이름의 제작자 직접 웹스토어 유료 상품을 무료판과 혼동하지 않는다.
+
+7. Vefects — Easy Shockwaves VFX - Unity URP
+https://vefects.itch.io/easy-shockwaves-vfx-unity-urp
+무료,34MB Unitypackage,충격파와SFX,색/타이밍/강도조절. URP 명시,파일명은6000_0_23.
+폭발 외곽링,회전베기,마력장 발생의 한 층으로 적합하다. 이것만으로 완성 폭발이 되지는 않는다.
+왜곡/Depth/Opaque Texture 의존성과 모바일 렌더 프로파일을 검사해야 한다. itch 정식 상업 계약은 미기재.
+
+8. Vefects — Wind VFX – Unity URP
+https://vefects.itch.io/wind-vfx-unity-urp
+무료,52MB,Unity6/URP 명시. 이동·마법·환경용 스타일화 바람.
+우리 게임은 대시 뒤의 짧은 속도선이나 끊긴 호만 써도 충분하다. 큰 환경 바람 연출을 그대로 쓰지 않는다. itch 정식 상업 계약은 미기재.
+
+기초 재료와 예비 후보
+
+9. Kenney — Smoke Particles
+https://kenney.nl/assets/smoke-particles
+제작자 OGA: https://opengameart.org/content/smoke-particle-assets
+CC0,무료. 현 사이트70파일과 구OGA설명77파일이 다르므로 실제 받는 판을 구분한다.
+흰 퍼프·작은 먼지·폭발 잔재에 좋다. 대형 반투명 연기는 과용하지 않는다. PNG기반이며 우리 파티클 방출/수명이 필요하다.
+
+10. Linty — Linty's Textures
+https://github.com/GreatFriend129/LintyTextures
+README가 누구나 모든 목적 사용 가능,표기 불필요,본인 제작 주장 금지라고 명시한다. 정식CC0라이선스 파일로 오표기하지 않는다.
+일부는 Kenney입자팩의 큰 수정본이다. PMA접미사 텍스처는 premultiplied alpha여서 블렌딩 설정을 맞춰야 한다. Kenney에 없는 노이즈/마스크를 확장할 때 유용하다.
+
+11. Cethiel — Pure Projectile - Magic Effect
+https://opengameart.org/content/pure-projectile-magic-effect
+OGA무료배포본CC0,ZIP500.8KB. 마법 투사체/주문용2D효과.
+고해상도 Patreon판은 무료 범위에 넣지 않는다. 페이지에는 정확한 시트 규격/프레임수가 없으므로 아카이브 검사와 재생 구성이 필요하다. 청록/보라로 톤을 낮춰 보조 재료로 비교한다.
+
+12. Soluna Software — Explosion effects and more
+https://opengameart.org/content/explosion-effects-and-more
+폭발2,효과2,오라1의PNG시트5개. CC BY3.0와CC0가 같이 보이지만 제작자 댓글이CC0로변경했다고 확인한다. CC0판 사용 근거를 같이 보존한다.
+구형 RPG의 부드러운 발광/오라는 로우폴리3D와 이질적일 수 있어 작은 섬광이나 한 겹만 고른다. Aura38은 앞뒤층이 따로 제공된다는 근거가 없다.
+
+13. CodeManu — Free VFX Asset Pack
+CC0판: https://opengameart.org/content/free-vfx-asset-pack
+itch: https://codemanu.itch.io/vfx-free-pack
+22픽셀효과,30/60fps,PNG시트·단일프레임·GIF·SpriteMancer프로젝트.
+제작자 OGA는CC0와본문public domain가 일치한다. itch본문public domain와metadata CC BY4.0는 충돌한다. OGA판을 받고 해당 페이지 근거를 보존하는 편이 명확하다.
+픽셀효과를 흐리게 필터링한다고 로우폴리 VFX로 바뀌지는 않는다. 현재는 작은 스파크/별 정도의 보조 또는 타이밍 참고용이다.
+
+14. The Cooked Works — Cooked FX
+https://the-cooked-works.itch.io/cooked-fx
+40효과×5테마,측면/탑다운63애니메이션/테마,비픽셀128/256px24fps,픽셀32px12fps,PNG+JSON.
+상업·비상업 무제한,표기 불필요,원본 재배포금지. 별도 Unity/Fab판의 sliced/player/demo설명과itch원본PNG를 구분한다.
+대시/슬래시/폭발/마력탄을 같은 테마로 비교할 수 있는 것이 장점이다. Soft Glass,Cozy Chunky,Flat Night 등 고유UI테마의 외곽선/그림자가 현재월드와 맞는지는 미검증이다.2026-10신작이고AI작성 드로잉코드를 사용했다고 공개한다. 우선 비교군으로만 둔다.
+
+15. GameDev Market — Free Game Fx Vol.04
+https://www.gamedevmarket.net/asset/free-game-fx-vol-04
+무료,PNG9.18MB,2019업데이트. 표준ProLicence는 상업/비상업 무제한 프로젝트와 수정 허용,MediaProduct밖 원본/파생물 공유금지.
+효과 목록과 프레임규격이 거의 설명되어 있지 않아 상위추천에 올릴 수 없다. 받는다면 파일 구성을 조사하는 단계부터 필요하다.
+
+16. Pixel Dreamer Studio — 12 Free VFX Textures
+https://pixeldreamerstudio.itch.io/12-free-vfx-textures
+4노이즈2048px,6마스크1024px,2플립북4096px·8×8·64프레임,ZIP4.4MB.
+본문은 상업 사용 가능/as-is재배포금지. 다른 새팩devlog의CC BY4.0를 이 팩에 자동 적용하지 않는다.
+슬래시호,별,링,마법문양을 공통 마스크로 써서 색을 통일하기 좋다.2026-10신작·AI작성코드공개. 원본4K를 그대로 쓸 필요는 없으며 슬롯별 표시 크기에 맞춰 축소한다.
+
+무료지만 현재 주력으로 추천하지 않는 것
+
+17. CraftPix — Free Pixel Magic Sprite Effects Pack
+https://craftpix.net/freebies/free-pixel-magic-sprite-effects-pack/
+무료상업 가능,PNG/PSD,10아이콘+15시트. 픽셀UI에 보조로 맞출 수 있으나 월드전투VFX의 주력으로는스타일차이가 크다.
+
+18. nerijs — PVFX Foundry
+https://nerijs.itch.io/pvfx-foundry
+CC0,현재본문v0.10·44효과,96×96·20fps. 검색캐시에35효과가 남아있지만 현재본문을 우선했다.
+전투·상태·환경 선택 폭은 넓다. 저해상도 픽셀 특성 때문에 현재3D전투 주력보다 상태/작은보조 후보로 둔다.
+
+19. hinoko-fx — Pixel VFX Free Sampler
+https://hinoko-fx.itch.io/pixel-vfx-free-sampler
+폭발/히트/반짝임/불꽃4종,12fpsPNG. 상업가능·표기불필요·에셋팩재배포금지. 향후15효과59시트는현재무료내용이 아니다.
+픽셀전용 소규모 샘플이며 제작자가AI작성절차코드를공개한다. 현재게임에맞춰주력으로쓸이유는약하다.
+
+20. Binbun — Magic Projectiles VFX - Godot3D
+https://binbun3d.itch.io/magic-projectiles-vfx
+무료본체CC0,12효과(Basic/Wavy/SharpJavelin각4),Godot3D프로젝트·텍스처·재질·스크립트. GreenExtra는유료이므로제외.
+형태는치비마법에맞을수있지만Unity로즉시임포트되지않는다. 셰이더/에미터/제어를 포팅하거나 베이크해야 하므로무료Unity후보보다도입공수가크다.
+
+21. JangaFX — Free VDB Volumes
+https://jangafx.com/software/embergen/download/free-vdb-animations
+CC0는확실하지만59MB~6.6GB의원본VDB볼륨시퀀스다. Unity실시간프리팹이아니다.
+Blender등에서볼륨재질/카메라/조명/렌더를설정한뒤시트로베이크해야한다. 실사연기스타일과제작비용때문에현재대시/검기/마력탄/폭발의주력으로비추천한다.
+
+22. Colorosse — Sandbox Hit Effects
+https://www.colorosse.com/assets/2d/vfx/sandbox-hit-effects
+이제품은CC0,12정적SVG+PNG1x/2x/4x다. 사이트기본라이선스CC BY와제품별CC0를구분한다.
+보셀UI용고정음영이있고애니메이션은직접만들어야한다. '12애니메이션VFX'로세면안된다. 작은피격/원형재료의예비후보다.
+
+추가 사이트의 결과와 제외 근거
+• Eric VFX Studio 무료목록 https://ericvfxstudio.com/free-unity-vfx-assets/ 에URPCollection10프리팹,MagicCircle4프리팹,RPGSpriteSheetStarter가있다. Unity조사담당자에게공유했으며여기서중복제품수로계산하지않았다.
+• BOOTH https://ericwang.booth.pm/items/7702523 의FloorAirflow는0JPY다운로드표시와private문구가같이있다. VRChat전용이고상업조건도미확인이라이번후보에서제외했다.
+• GameArt2D https://www.gameart2d.com/freebies.html 의무료캐릭터/타일/UI/기타목록을읽었지만목표스킬용독립전투VFX팩은찾지못했다. 사이트전체에전혀없다고단정하지않는다.
+• ArtStation https://www.artstation.com/marketplace/p/qVNRO/lightning-pack 의무료LightningPack은표준StockLicense상업1프로젝트/2000판매/20000뷰한도가표시된다. 이번무제한무료상업후보에서는제외했다.
+• GodotShaders https://godotshaders.com/shader/impact-vfx/ 는코드CC0이나참고이미지/영상/별도에셋은그라이선스범위가아니다. Unity포팅이필요하다.
+• OpenGameVFX도메인은접근과검색에서유효공식배포카탈로그를검증하지못했다. 확인된무료배포처로올리지않았다.
+• 다른게임의에셋목록에등장하는BrackeysVFXBundle/EpicToonFree등은제작자원문이확인되지않아추천근거로쓰지않았다.
+• ActionVFX/FXElements와같은실사영상합성소재는상업사용이라는문구만으로Unity게임의원본동봉조건과스타일이맞는다고판단하지않았다.
+
+실제 비교 순서 제안
+1) Store의URPFlipbookLite에서검기/타격/폭발대표한개씩을고른다.
+2) CombatVFX_v1과같은카메라·캐릭터·조명·크기에서좌우재생,밝은벽/어두운배경,적여럿가림을비교한다.
+3) 모양은좋고꼬리나먼지만부족하면Kenney와VefectsTrails/Wind중한개만보강한다.
+4) 폭발만부족하면CraftPix비픽셀Explosion을비교하고,무료프리팹으로원하는참격을못구하면EffekseerCC0샘플을베이크한다.
+5) 무료팩을다받아종류부터늘리기보다같은팔레트·피격크기·잔광길이의세트로완성한다.
+6) 최종프리팹계약은별도:재생시점/위치/방향/범위/수명/풀반납을스킬담당자에게넘긴다. 이미지프레임이나입자충돌이피해판정을결정하지않는다.
+
+본 조사에서는 게임 코드, 기존 프리팹, 샘플, 씬을 수정하지 않았다.
