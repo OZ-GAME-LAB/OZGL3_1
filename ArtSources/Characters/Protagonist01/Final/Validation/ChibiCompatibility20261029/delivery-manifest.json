@@ -1,0 +1,200 @@
+{
+  "baseCommit": "c55551a3c2a31d85a99f753c161892fb30374c5f",
+  "clips": [
+    {
+      "name": "Longsword_Attack_Chop",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Chop.anim",
+      "guid": "26d53dc20b212c544a440bd40488d5d3",
+      "sha256": "c5b6b75a9f325b0a1d8ea46b8d5efda40410da0090065aa5c2eaaba098b06116",
+      "seconds": 0.699999988079071,
+      "nativeRig": "Chibi24",
+      "loop": false,
+      "samples120Hz": 85,
+      "liveAnimatorPassed": true
+    },
+    {
+      "name": "Longsword_Attack_Slice",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Slice.anim",
+      "guid": "2475158dfd66c134caad346c54b3479f",
+      "sha256": "2c315def0cb8d1a616d235ece6d9d2c4230852f3c4c4e41485e009d9ee6938ec",
+      "seconds": 0.6000000238418579,
+      "nativeRig": "Chibi24",
+      "loop": false,
+      "samples120Hz": 73,
+      "liveAnimatorPassed": true
+    },
+    {
+      "name": "Longsword_Attack_Stab",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Stab.anim",
+      "guid": "fe921b04430f7974183fe6d1c6d006d6",
+      "sha256": "870719c91b4b54beeae70cf56ce952905bb493d0247a168c7c443973698d0306",
+      "seconds": 0.699999988079071,
+      "nativeRig": "Chibi24",
+      "loop": false,
+      "samples120Hz": 85,
+      "liveAnimatorPassed": true
+    },
+    {
+      "name": "Death_Fall",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Death_Fall.anim",
+      "guid": "ace752fee8612aa498e2e790bceae6a2",
+      "sha256": "8ede71335edc65b320ee4136543a63ac88db703d5d3931b066bcf41104a35942",
+      "seconds": 1.0,
+      "nativeRig": "Chibi24",
+      "loop": false,
+      "samples120Hz": 121,
+      "liveAnimatorPassed": true
+    },
+    {
+      "name": "Ladder_Climb_Loop",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Ladder_Climb_Loop.anim",
+      "guid": "dc45382fb7cf0074894051d820c1211a",
+      "sha256": "17b08e7b002c765f0927f2d746f4f988fd2e59bb15fb37fe130bbbbf93b48302",
+      "seconds": 0.8000000715255737,
+      "nativeRig": "Chibi24",
+      "loop": true,
+      "samples120Hz": 97,
+      "liveAnimatorPassed": true
+    }
+  ],
+  "prop": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Longsword_Chibi_SocketProp.prefab",
+  "oldSelectedClipsUnchanged": true,
+  "runtimeControllerAndPlayerUnchanged": true,
+  "protectedFiles": [
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Idle_Fists.anim",
+      "headSHA256": "b2acf2a351e4011a1d3611742b1c8b11cd5f154645e603dfa1599491cd8270f1",
+      "workingSHA256": "8eb67c8aafacbf706ddf2dd55d6adbbeb08780869955f22f0c90590062cd1dc4",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Walk_Fists.anim",
+      "headSHA256": "ff96b55f7212b1aa614e0d40cf4aac73438545614f1f85de0339548a137d253c",
+      "workingSHA256": "5abef4d7f9654f5280e97d60f754040c3b3b3de4039c28855e619ef36827e156",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Run_Fists.anim",
+      "headSHA256": "7dc2277627be4965100403f9ed77b37ae49ffe951481671408429723110b376a",
+      "workingSHA256": "fe4055276294b2dc4a88745cd84bb0634d9bff3bc1c4122c5335099453bbc103",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Full.anim",
+      "headSHA256": "17e881269c55f978ab9d598970a1b851f14a53bd4a2b465ccbcc454121274fda",
+      "workingSHA256": "e819f36a9af6c5552e0b77bbf3b3a498be58297b8c407e18833cec9e59d87ee6",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Dash_Forward.anim",
+      "headSHA256": "d10afab1ad9ec5f9d7faea17b7f5f6d1271bbea90bff2e950ac55a89e2925412",
+      "workingSHA256": "682e6db8fec7926e133dae61f00c687f9ec6c2e0bb89daab9ddffc9078ae2080",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Potion_Drink.anim",
+      "headSHA256": "8fd54becbb518c2ba67e42259cb6c8b292d355b1e20ed916e925be77dc7e7d20",
+      "workingSHA256": "77119754a7d98427a73248a62f7ffae28e78a8cbdacbd64bbcb38b84e6fd52a5",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Item_Throw_Overhand.anim",
+      "headSHA256": "b10050b322d0766e01a286eb072d930b3615cb60435a31cafd0f8820e03baf80",
+      "workingSHA256": "058b86ab7781113b617bfe5e81ff749313c23a6aff7634af913d8c534744c355",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Hit_Reaction.anim",
+      "headSHA256": "d61833b326ce13a88f887f04075d6e7efd660212e20d1c47dfca196d7a614939",
+      "workingSHA256": "2cbb087b5c81f2fd7c3cce68a836b7b2380116723e019b7ce99e37b40a40bcef",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Interact_Reach.anim",
+      "headSHA256": "3a6a1e95596766762b1d6db99f418a019aadc1e271c78b642f1a481640a6fdbb",
+      "workingSHA256": "75d5f7f8003d2d3440c6569ca73b5e782005910aa898a8e7e59f93134b85633e",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Pickup_Low.anim",
+      "headSHA256": "0e502f7648043c3f400082ce29645259b731af580e239f690e178e3bfe930314",
+      "workingSHA256": "5f930267000699e7236d1b71b06e3770df24a1e34cbac08fd37389151f0b6512",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Takeoff.anim",
+      "headSHA256": "10562fd3b68d96559161e60d675545ae88a6feebd76c4b41980ca8e2279ad88d",
+      "workingSHA256": "57a4dd77cb9cd604772247579e7c812d922786ef4c3a4c913fac46054e4326fa",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Rise_Loop.anim",
+      "headSHA256": "0bfb9c751f8e4c8d5551cad0c443f08b53133c8a5c647903281170eda6dbfbf3",
+      "workingSHA256": "15c13ec00df676b7acb1eac309241c018c6263dd9bf7868a49a1af86c888385c",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Apex_Loop.anim",
+      "headSHA256": "c876c7995be95bb49257f8dc76b8b6fd0a408e76cbdf3b5bb71c06abcb8ce252",
+      "workingSHA256": "f69665c014120ec8a1eccca6a1d4f5d80f4244dd1f9eb0d8d3c50168cfe3b612",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Fall_Loop.anim",
+      "headSHA256": "064f3adbda0497ba0f6b54c12636c1af40c237287b0b9d86387a921a3eb14f65",
+      "workingSHA256": "bf543b7e5098206b391cbb23df82b2975f3eeb23894e79f6d8f98a8bb865981b",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Jump_Land.anim",
+      "headSHA256": "228bc63cb7a150249338148f8d88562bfbbc79b16107b3cc41e39ea968a83ac9",
+      "workingSHA256": "4b71b8d8e362a0fafc0d371a61bad8178d5fdb19d632132c97eb72d851446eff",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "headSHA256": "90eecfb2593944306de65ee8807f012462e3da9e27f5126fe4e4286846dfea07",
+      "workingSHA256": "90eecfb2593944306de65ee8807f012462e3da9e27f5126fe4e4286846dfea07",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Anim/Player_Chibi.controller",
+      "headSHA256": "0b9560aa51acaf430777b6faa80e58a6a51652ad75d47d058e8a6abde2fe9677",
+      "workingSHA256": "29237406258554c33df28085cb3a8c7c726f358da3f081faf3c47a28a4a3c05a",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Anim/Clips/Climb.anim",
+      "headSHA256": "146d3e4764e2dd824c91fc988d138581130094c47d5fdc834a97745eec28a3d2",
+      "workingSHA256": "4d82b3490cbb84c6bb6e7f419c0ee79d5e053a22ce2d6cb662d65f9121fff080",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Anim/Clips/Climbing Ladder.fbx",
+      "headSHA256": "1c30ffeecd962206228a08aa613ea8e299c57e2d18ca823f0203e984d9443a3e",
+      "workingSHA256": "1c30ffeecd962206228a08aa613ea8e299c57e2d18ca823f0203e984d9443a3e",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+      "headSHA256": "1a53d1c84ab77b6cfa6839b22fabacbc1d1df99990b87fe0fa32fe11b1efce59",
+      "workingSHA256": "bd1b03f2b81a8ac840b008a2638b47be2c033c4058cfd8b451b013523fc79a4d",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+      "headSHA256": "41946ba732bb55ad38b683cc924f336735a0d018d63c4da0834b5f239af0d7d2",
+      "workingSHA256": "cf771df63b7612de5bde2cb3042fac6a98e0667d38dd0fc22af198e276930baa",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
+      "headSHA256": "7bec5cf2eea5c6e30028f0e6e96e753ae84a452b159b266900edd25eda8c94e8",
+      "workingSHA256": "97a4b1e0e890ed32cd0712eef9d722eae09c653e770cbf5dafc43af6a316d179",
+      "unchanged": true
+    }
+  ],
+  "runtimeDiff": [],
+  "gifStorage": "~/Desktop/OZGL3_ArtReview",
+  "scope": "Native clip assets and art-only Editor authoring/review tools; gameplay state/controller timing not integrated or changed."
+}

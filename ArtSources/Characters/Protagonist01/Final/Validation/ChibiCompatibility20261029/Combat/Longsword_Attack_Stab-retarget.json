@@ -1,0 +1,3745 @@
+{
+    "clip": "Longsword_Attack_Stab",
+    "frames": [
+        {
+            "time": 0.0,
+            "rightGripError": 1.2338530552824523e-7,
+            "leftGripError": 3.332000986233652e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8798008561134338,
+            "leftArmExtension": 0.7975687980651856,
+            "rightForearmCorrectionDegrees": 39.558197021484378,
+            "leftForearmCorrectionDegrees": 32.16139221191406,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.045943357050418857,
+                "y": 0.4830235242843628,
+                "z": 0.2008076310157776
+            },
+            "bladeAxis": {
+                "x": -0.761972963809967,
+                "y": 0.37385639548301699,
+                "z": 0.5287997722625732
+            },
+            "rightWrist": {
+                "x": -0.01376510038971901,
+                "y": 0.5120939612388611,
+                "z": 0.11899924278259278
+            },
+            "leftWrist": {
+                "x": 0.017463158816099168,
+                "y": 0.47515416145324709,
+                "z": 0.0949086844921112
+            },
+            "rightElbow": {
+                "x": 0.09872417151927948,
+                "y": 0.5049400329589844,
+                "z": 0.03962302207946777
+            },
+            "leftElbow": {
+                "x": -0.12357264757156372,
+                "y": 0.473095566034317,
+                "z": 0.05958101153373718
+            }
+        },
+        {
+            "time": 0.00833333283662796,
+            "rightGripError": 1.2450584563339363e-7,
+            "leftGripError": 5.2683560625155226e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8346767425537109,
+            "leftArmExtension": 0.7556883692741394,
+            "rightForearmCorrectionDegrees": 33.87070083618164,
+            "leftForearmCorrectionDegrees": 30.978248596191408,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.03484468162059784,
+                "y": 0.4784572720527649,
+                "z": 0.17943915724754334
+            },
+            "bladeAxis": {
+                "x": -0.7075287103652954,
+                "y": 0.347831130027771,
+                "z": 0.6151561737060547
+            },
+            "rightWrist": {
+                "x": -0.004618530161678791,
+                "y": 0.5083487629890442,
+                "z": 0.0940241813659668
+            },
+            "leftWrist": {
+                "x": 0.01730317994952202,
+                "y": 0.4726112484931946,
+                "z": 0.06350255012512207
+            },
+            "rightElbow": {
+                "x": 0.10793557018041611,
+                "y": 0.49932217597961428,
+                "z": 0.014931201934814453
+            },
+            "leftElbow": {
+                "x": -0.1248956248164177,
+                "y": 0.4595496654510498,
+                "z": 0.03607463836669922
+            }
+        },
+        {
+            "time": 0.01666666567325592,
+            "rightGripError": 8.698896891701225e-8,
+            "leftGripError": 6.989264278445262e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.7562255263328552,
+            "leftArmExtension": 0.7234838008880615,
+            "rightForearmCorrectionDegrees": 32.08661651611328,
+            "leftForearmCorrectionDegrees": 30.740550994873048,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.019199734553694726,
+                "y": 0.47505316138267519,
+                "z": 0.1475093960762024
+            },
+            "bladeAxis": {
+                "x": -0.6347406506538391,
+                "y": 0.3086444139480591,
+                "z": 0.7084089517593384
+            },
+            "rightWrist": {
+                "x": 0.007217589765787125,
+                "y": 0.508129358291626,
+                "z": 0.05954033136367798
+            },
+            "leftWrist": {
+                "x": 0.019377846270799638,
+                "y": 0.4724465012550354,
+                "z": 0.018795520067214967
+            },
+            "rightElbow": {
+                "x": 0.1216982752084732,
+                "y": 0.49539077281951907,
+                "z": -0.016206085681915284
+            },
+            "leftElbow": {
+                "x": -0.12450762093067169,
+                "y": 0.4525870084762573,
+                "z": 0.012015700340270996
+            }
+        },
+        {
+            "time": 0.02500000037252903,
+            "rightGripError": 8.786079774836253e-8,
+            "leftGripError": 5.528637103680012e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.6564834117889404,
+            "leftArmExtension": 0.7530768513679504,
+            "rightForearmCorrectionDegrees": 32.82422637939453,
+            "leftForearmCorrectionDegrees": 29.059818267822267,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.004050975665450096,
+                "y": 0.4712648093700409,
+                "z": 0.09748169779777527
+            },
+            "bladeAxis": {
+                "x": -0.4998500347137451,
+                "y": 0.2494032382965088,
+                "z": 0.8294264078140259
+            },
+            "rightWrist": {
+                "x": 0.020157359540462495,
+                "y": 0.5119220614433289,
+                "z": 0.009155452251434327
+            },
+            "leftWrist": {
+                "x": 0.020406123250722886,
+                "y": 0.47394564747810366,
+                "z": -0.05094042420387268
+            },
+            "rightElbow": {
+                "x": 0.13410070538520814,
+                "y": 0.5025034546852112,
+                "z": -0.0678756833076477
+            },
+            "leftElbow": {
+                "x": -0.11770258843898773,
+                "y": 0.4548168480396271,
+                "z": -0.009667396545410157
+            }
+        },
+        {
+            "time": 0.03333333134651184,
+            "rightGripError": 6.289013754212647e-8,
+            "leftGripError": 8.462232869987929e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.563136875629425,
+            "leftArmExtension": 0.8277599811553955,
+            "rightForearmCorrectionDegrees": 33.780967712402347,
+            "leftForearmCorrectionDegrees": 26.994709014892579,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.018387246876955034,
+                "y": 0.4696512222290039,
+                "z": 0.043132297694683078
+            },
+            "bladeAxis": {
+                "x": -0.34909892082214358,
+                "y": 0.16859528422355653,
+                "z": 0.9217947721481323
+            },
+            "rightWrist": {
+                "x": 0.024852406233549119,
+                "y": 0.5199530124664307,
+                "z": -0.04180043935775757
+            },
+            "leftWrist": {
+                "x": 0.013354800641536713,
+                "y": 0.48537248373031618,
+                "z": -0.12051326036453247
+            },
+            "rightElbow": {
+                "x": 0.1370091289281845,
+                "y": 0.5179601311683655,
+                "z": -0.1219409704208374
+            },
+            "leftElbow": {
+                "x": -0.10179659724235535,
+                "y": 0.46501368284225466,
+                "z": -0.03408944606781006
+            }
+        },
+        {
+            "time": 0.0416666641831398,
+            "rightGripError": 7.11715699708293e-8,
+            "leftGripError": 6.143906006172983e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.5156183242797852,
+            "leftArmExtension": 0.8935781121253967,
+            "rightForearmCorrectionDegrees": 33.42423629760742,
+            "leftForearmCorrectionDegrees": 23.486526489257814,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.028708547353744508,
+                "y": 0.47011661529541018,
+                "z": 0.01179225742816925
+            },
+            "bladeAxis": {
+                "x": -0.24151913821697236,
+                "y": 0.11528338491916657,
+                "z": 0.9635238647460938
+            },
+            "rightWrist": {
+                "x": 0.029451146721839906,
+                "y": 0.5263053178787231,
+                "z": -0.06969183683395386
+            },
+            "leftWrist": {
+                "x": 0.010256417095661164,
+                "y": 0.49701839685440066,
+                "z": -0.1587601900100708
+            },
+            "rightElbow": {
+                "x": 0.13713276386260987,
+                "y": 0.535585343837738,
+                "z": -0.15527307987213136
+            },
+            "leftElbow": {
+                "x": -0.08181220293045044,
+                "y": 0.47845208644866946,
+                "z": -0.047755420207977298
+            }
+        },
+        {
+            "time": 0.05000000074505806,
+            "rightGripError": 7.76077300201905e-8,
+            "leftGripError": 1.163817913152343e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.4976116120815277,
+            "leftArmExtension": 0.9448879361152649,
+            "rightForearmCorrectionDegrees": 31.960357666015626,
+            "leftForearmCorrectionDegrees": 17.60455322265625,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.036093294620513919,
+                "y": 0.47082293033599856,
+                "z": -0.01125653088092804
+            },
+            "bladeAxis": {
+                "x": -0.1641320437192917,
+                "y": 0.08426977694034577,
+                "z": 0.9828323125839233
+            },
+            "rightWrist": {
+                "x": 0.032842062413692477,
+                "y": 0.5304255485534668,
+                "z": -0.09004479646682739
+            },
+            "leftWrist": {
+                "x": 0.008220728486776352,
+                "y": 0.5044038891792297,
+                "z": -0.18567031621932984
+            },
+            "rightElbow": {
+                "x": 0.13364458084106446,
+                "y": 0.5530909895896912,
+                "z": -0.18131762742996217
+            },
+            "leftElbow": {
+                "x": -0.0687202736735344,
+                "y": 0.49502164125442507,
+                "z": -0.06264406442642212
+            }
+        },
+        {
+            "time": 0.05833333358168602,
+            "rightGripError": 9.490355523666949e-8,
+            "leftGripError": 4.485843518864385e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.49151739478111269,
+            "leftArmExtension": 0.9721190333366394,
+            "rightForearmCorrectionDegrees": 30.955530166625978,
+            "leftForearmCorrectionDegrees": 13.585676193237305,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.042051058262586597,
+                "y": 0.4707992672920227,
+                "z": -0.022264868021011354
+            },
+            "bladeAxis": {
+                "x": -0.11943509429693222,
+                "y": 0.06310365349054337,
+                "z": 0.9908345937728882
+            },
+            "rightWrist": {
+                "x": 0.03618403896689415,
+                "y": 0.5324419140815735,
+                "z": -0.09917539358139038
+            },
+            "leftWrist": {
+                "x": 0.008011694997549057,
+                "y": 0.5082914233207703,
+                "z": -0.19764739274978639
+            },
+            "rightElbow": {
+                "x": 0.1315319538116455,
+                "y": 0.5640162825584412,
+                "z": -0.19360750913619996
+            },
+            "leftElbow": {
+                "x": -0.06369459629058838,
+                "y": 0.5076825618743897,
+                "z": -0.07115137577056885
+            }
+        },
+        {
+            "time": 0.06666666269302368,
+            "rightGripError": 4.828527977451813e-8,
+            "leftGripError": 8.503133130943752e-8,
+            "weaponReachCorrection": 0.0009145725052803755,
+            "rightArmExtension": 0.4952790141105652,
+            "leftArmExtension": 0.9850002527236939,
+            "rightForearmCorrectionDegrees": 30.35552978515625,
+            "leftForearmCorrectionDegrees": 11.244990348815918,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.04629475995898247,
+                "y": 0.47079384326934817,
+                "z": -0.029100116342306138
+            },
+            "bladeAxis": {
+                "x": -0.09320354461669922,
+                "y": 0.05305017530918121,
+                "z": 0.9942327737808228
+            },
+            "rightWrist": {
+                "x": 0.03848886862397194,
+                "y": 0.5333908200263977,
+                "z": -0.10490679740905762
+            },
+            "leftWrist": {
+                "x": 0.008245434612035752,
+                "y": 0.5100247263908386,
+                "z": -0.20443475246429444
+            },
+            "rightElbow": {
+                "x": 0.12901470065116883,
+                "y": 0.571559488773346,
+                "z": -0.20162194967269898
+            },
+            "leftElbow": {
+                "x": -0.062033362686634067,
+                "y": 0.5159590840339661,
+                "z": -0.07727706432342529
+            }
+        },
+        {
+            "time": 0.07499999552965164,
+            "rightGripError": 6.052880507922964e-8,
+            "leftGripError": 7.450580596923828e-8,
+            "weaponReachCorrection": 0.005265919957309961,
+            "rightArmExtension": 0.5024825930595398,
+            "leftArmExtension": 0.9850001335144043,
+            "rightForearmCorrectionDegrees": 30.916168212890626,
+            "leftForearmCorrectionDegrees": 11.75719928741455,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.04858284071087837,
+                "y": 0.471493661403656,
+                "z": -0.03200432285666466
+            },
+            "bladeAxis": {
+                "x": -0.06705111265182495,
+                "y": 0.041631750762462619,
+                "z": 0.9968805909156799
+            },
+            "rightWrist": {
+                "x": 0.039073795080184939,
+                "y": 0.5351192951202393,
+                "z": -0.10664665699005127
+            },
+            "leftWrist": {
+                "x": 0.0066399946808815,
+                "y": 0.5126436948776245,
+                "z": -0.20741969347000123
+            },
+            "rightElbow": {
+                "x": 0.12634402513504029,
+                "y": 0.5773327946662903,
+                "z": -0.20466452836990357
+            },
+            "leftElbow": {
+                "x": -0.060945481061935428,
+                "y": 0.5166627168655396,
+                "z": -0.07873618602752686
+            }
+        },
+        {
+            "time": 0.0833333283662796,
+            "rightGripError": 7.48774056091861e-8,
+            "leftGripError": 3.332000986233652e-8,
+            "weaponReachCorrection": 0.00876227580010891,
+            "rightArmExtension": 0.5090299248695374,
+            "leftArmExtension": 0.9850000143051148,
+            "rightForearmCorrectionDegrees": 31.354063034057618,
+            "leftForearmCorrectionDegrees": 12.318113327026368,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.05034179612994194,
+                "y": 0.4720333516597748,
+                "z": -0.034837234765291217
+            },
+            "bladeAxis": {
+                "x": -0.04639565572142601,
+                "y": 0.03275398164987564,
+                "z": 0.998386025428772
+            },
+            "rightWrist": {
+                "x": 0.039465561509132388,
+                "y": 0.5364322066307068,
+                "z": -0.10854381322860718
+            },
+            "leftWrist": {
+                "x": 0.005269676446914673,
+                "y": 0.514620840549469,
+                "z": -0.21022087335586549
+            },
+            "rightElbow": {
+                "x": 0.12387338280677796,
+                "y": 0.5820905566215515,
+                "z": -0.20751965045928956
+            },
+            "leftElbow": {
+                "x": -0.06030290946364403,
+                "y": 0.5172184109687805,
+                "z": -0.08046382665634155
+            }
+        },
+        {
+            "time": 0.09166666865348816,
+            "rightGripError": 3.5925399544112227e-8,
+            "leftGripError": 1.2753339717619384e-7,
+            "weaponReachCorrection": 0.011480292305350304,
+            "rightArmExtension": 0.514409601688385,
+            "leftArmExtension": 0.9849995970726013,
+            "rightForearmCorrectionDegrees": 31.687885284423829,
+            "leftForearmCorrectionDegrees": 12.820145606994629,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.05200715363025665,
+                "y": 0.4725482165813446,
+                "z": -0.0365147590637207
+            },
+            "bladeAxis": {
+                "x": -0.030476033687591554,
+                "y": 0.02589910849928856,
+                "z": 0.9991999268531799
+            },
+            "rightWrist": {
+                "x": 0.04008790850639343,
+                "y": 0.5375269055366516,
+                "z": -0.1094939112663269
+            },
+            "leftWrist": {
+                "x": 0.004507504403591156,
+                "y": 0.5162153244018555,
+                "z": -0.21184462308883668
+            },
+            "rightElbow": {
+                "x": 0.12217452377080918,
+                "y": 0.5859161019325256,
+                "z": -0.20912253856658936
+            },
+            "leftElbow": {
+                "x": -0.059537991881370547,
+                "y": 0.517766535282135,
+                "z": -0.08131057024002075
+            }
+        },
+        {
+            "time": 0.10000000149011612,
+            "rightGripError": 7.78754980501617e-8,
+            "leftGripError": 3.3527612686157229e-8,
+            "weaponReachCorrection": 0.013508394360542298,
+            "rightArmExtension": 0.5186419486999512,
+            "leftArmExtension": 0.9850000143051148,
+            "rightForearmCorrectionDegrees": 31.93938636779785,
+            "leftForearmCorrectionDegrees": 13.251093864440918,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.0530913807451725,
+                "y": 0.4730185866355896,
+                "z": -0.0381823368370533
+            },
+            "bladeAxis": {
+                "x": -0.018705174326896669,
+                "y": 0.020844437181949617,
+                "z": 0.9996077418327332
+            },
+            "rightWrist": {
+                "x": 0.040397655218839648,
+                "y": 0.538412868976593,
+                "z": -0.1106230616569519
+            },
+            "leftWrist": {
+                "x": 0.003781501203775406,
+                "y": 0.5174618363380432,
+                "z": -0.2134479284286499
+            },
+            "rightElbow": {
+                "x": 0.12066935002803803,
+                "y": 0.5888928771018982,
+                "z": -0.21069210767745973
+            },
+            "leftElbow": {
+                "x": -0.05916551873087883,
+                "y": 0.5182645320892334,
+                "z": -0.08237379789352417
+            }
+        },
+        {
+            "time": 0.10833333432674408,
+            "rightGripError": 5.372690026206328e-8,
+            "leftGripError": 1.0242855097430948e-7,
+            "weaponReachCorrection": 0.014941959641873837,
+            "rightArmExtension": 0.5217298865318298,
+            "leftArmExtension": 0.9850002527236939,
+            "rightForearmCorrectionDegrees": 32.10757064819336,
+            "leftForearmCorrectionDegrees": 13.566317558288575,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.054061729460954669,
+                "y": 0.47312766313552859,
+                "z": -0.03899730369448662
+            },
+            "bladeAxis": {
+                "x": -0.01041592936962843,
+                "y": 0.01729591004550457,
+                "z": 0.9997961521148682
+            },
+            "rightWrist": {
+                "x": 0.04083004593849182,
+                "y": 0.5388100147247315,
+                "z": -0.11105895042419434
+            },
+            "leftWrist": {
+                "x": 0.0034754499793052675,
+                "y": 0.5181099772453308,
+                "z": -0.21421056985855103
+            },
+            "rightElbow": {
+                "x": 0.11976522207260132,
+                "y": 0.5907878279685974,
+                "z": -0.21142399311065675
+            },
+            "leftElbow": {
+                "x": -0.058704718947410586,
+                "y": 0.5183843374252319,
+                "z": -0.08276879787445069
+            }
+        },
+        {
+            "time": 0.11666666716337204,
+            "rightGripError": 6.548462749833561e-8,
+            "leftGripError": 1.0905624492352217e-7,
+            "weaponReachCorrection": 0.015838058665394784,
+            "rightArmExtension": 0.5238189697265625,
+            "leftArmExtension": 0.9849998354911804,
+            "rightForearmCorrectionDegrees": 32.20377731323242,
+            "leftForearmCorrectionDegrees": 13.775666236877442,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.05456462875008583,
+                "y": 0.47324347496032717,
+                "z": -0.03982432931661606
+            },
+            "bladeAxis": {
+                "x": -0.005064570810645819,
+                "y": 0.014994187280535698,
+                "z": 0.9998747706413269
+            },
+            "rightWrist": {
+                "x": 0.04099050536751747,
+                "y": 0.5391091704368591,
+                "z": -0.11164438724517822
+            },
+            "leftWrist": {
+                "x": 0.003150884062051773,
+                "y": 0.518574595451355,
+                "z": -0.21499145030975343
+            },
+            "rightElbow": {
+                "x": 0.11899435520172119,
+                "y": 0.592093288898468,
+                "z": -0.21221119165420533
+            },
+            "leftElbow": {
+                "x": -0.05853034928441048,
+                "y": 0.5184934139251709,
+                "z": -0.08331453800201416
+            }
+        },
+        {
+            "time": 0.125,
+            "rightGripError": 5.5380422026019008e-8,
+            "leftGripError": 1.4062662501146407e-7,
+            "weaponReachCorrection": 0.017003050073981286,
+            "rightArmExtension": 0.5251917839050293,
+            "leftArmExtension": 0.9849997162818909,
+            "rightForearmCorrectionDegrees": 32.272220611572269,
+            "leftForearmCorrectionDegrees": 13.98200798034668,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.05472768843173981,
+                "y": 0.47316110134124758,
+                "z": -0.04012860357761383
+            },
+            "bladeAxis": {
+                "x": -0.0024808216840028764,
+                "y": 0.01369483768939972,
+                "z": 0.99990314245224
+            },
+            "rightWrist": {
+                "x": 0.04121765121817589,
+                "y": 0.5390830039978027,
+                "z": -0.11201268434524536
+            },
+            "leftWrist": {
+                "x": 0.0030143968760967256,
+                "y": 0.5187203288078308,
+                "z": -0.2154192328453064
+            },
+            "rightElbow": {
+                "x": 0.1183239221572876,
+                "y": 0.5930007100105286,
+                "z": -0.2127753496170044
+            },
+            "leftElbow": {
+                "x": -0.058091092854738238,
+                "y": 0.5181617736816406,
+                "z": -0.08347529172897339
+            }
+        },
+        {
+            "time": 0.13333332538604737,
+            "rightGripError": 9.835048331297003e-8,
+            "leftGripError": 8.170199805590528e-8,
+            "weaponReachCorrection": 0.016344942152500154,
+            "rightArmExtension": 0.5258498787879944,
+            "leftArmExtension": 0.9850001335144043,
+            "rightForearmCorrectionDegrees": 32.171573638916019,
+            "leftForearmCorrectionDegrees": 13.8560791015625,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.055131230503320697,
+                "y": 0.4726022779941559,
+                "z": -0.04032880440354347
+            },
+            "bladeAxis": {
+                "x": -0.0010524308308959008,
+                "y": 0.013270281255245209,
+                "z": 0.999911367893219
+            },
+            "rightWrist": {
+                "x": 0.04133112356066704,
+                "y": 0.5386047959327698,
+                "z": -0.11197954416275025
+            },
+            "leftWrist": {
+                "x": 0.0030967257916927339,
+                "y": 0.5182189345359802,
+                "z": -0.2154110074043274
+            },
+            "rightElbow": {
+                "x": 0.11827133595943451,
+                "y": 0.5925258994102478,
+                "z": -0.21286720037460328
+            },
+            "leftElbow": {
+                "x": -0.058168962597846988,
+                "y": 0.517746090888977,
+                "z": -0.08354097604751587
+            }
+        },
+        {
+            "time": 0.14166666567325593,
+            "rightGripError": 1.147002279822118e-7,
+            "leftGripError": 6.537857899502342e-8,
+            "weaponReachCorrection": 0.012966597452759743,
+            "rightArmExtension": 0.5236555337905884,
+            "leftArmExtension": 0.9850002527236939,
+            "rightForearmCorrectionDegrees": 31.895143508911134,
+            "leftForearmCorrectionDegrees": 13.26564884185791,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.05728674679994583,
+                "y": 0.46873581409454348,
+                "z": -0.03558984771370888
+            },
+            "bladeAxis": {
+                "x": 0.005207034293562174,
+                "y": 0.013049297966063023,
+                "z": 0.999901294708252
+            },
+            "rightWrist": {
+                "x": 0.04271882772445679,
+                "y": 0.5350159406661987,
+                "z": -0.10643333196640015
+            },
+            "leftWrist": {
+                "x": 0.003958418965339661,
+                "y": 0.5144694447517395,
+                "z": -0.20975393056869508
+            },
+            "rightElbow": {
+                "x": 0.12022104114294052,
+                "y": 0.5874338746070862,
+                "z": -0.20768237113952638
+            },
+            "leftElbow": {
+                "x": -0.057366155087947848,
+                "y": 0.5144655704498291,
+                "z": -0.0779104232788086
+            }
+        },
+        {
+            "time": 0.14999999105930329,
+            "rightGripError": 1.37583796799845e-7,
+            "leftGripError": 1.5668378239297454e-7,
+            "weaponReachCorrection": 0.0038039986975491049,
+            "rightArmExtension": 0.5235433578491211,
+            "leftArmExtension": 0.9849998354911804,
+            "rightForearmCorrectionDegrees": 31.11707878112793,
+            "leftForearmCorrectionDegrees": 11.930710792541504,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.06301931291818619,
+                "y": 0.46373027563095095,
+                "z": -0.028164003044366838
+            },
+            "bladeAxis": {
+                "x": 0.004032111261039972,
+                "y": 0.014607785269618035,
+                "z": 0.9998851418495178
+            },
+            "rightWrist": {
+                "x": 0.0455763079226017,
+                "y": 0.5302432775497437,
+                "z": -0.0967874526977539
+            },
+            "leftWrist": {
+                "x": 0.00865788385272026,
+                "y": 0.5087983012199402,
+                "z": -0.20044207572937013
+            },
+            "rightElbow": {
+                "x": 0.12569381296634675,
+                "y": 0.5790463089942932,
+                "z": -0.19780749082565309
+            },
+            "leftElbow": {
+                "x": -0.05742502957582474,
+                "y": 0.511246383190155,
+                "z": -0.0709412693977356
+            }
+        },
+        {
+            "time": 0.15833333134651185,
+            "rightGripError": 3.0719530030864919e-8,
+            "leftGripError": 8.592428457632195e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.5569555759429932,
+            "leftArmExtension": 0.9128798842430115,
+            "rightForearmCorrectionDegrees": 34.404537200927737,
+            "leftForearmCorrectionDegrees": 21.95210075378418,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.07303733378648758,
+                "y": 0.46298301219940188,
+                "z": 0.026294656097888948
+            },
+            "bladeAxis": {
+                "x": -0.0027597229927778246,
+                "y": 0.020465625450015069,
+                "z": 0.9997867345809937
+            },
+            "rightWrist": {
+                "x": 0.04761200398206711,
+                "y": 0.5288048982620239,
+                "z": -0.03665876388549805
+            },
+            "leftWrist": {
+                "x": 0.01676592230796814,
+                "y": 0.5054669380187988,
+                "z": -0.14189136028289796
+            },
+            "rightElbow": {
+                "x": 0.1406962275505066,
+                "y": 0.5592295527458191,
+                "z": -0.13369107246398927
+            },
+            "leftElbow": {
+                "x": -0.05496542155742645,
+                "y": 0.48318246006965639,
+                "z": -0.017386704683303834
+            }
+        },
+        {
+            "time": 0.1666666567325592,
+            "rightGripError": 9.453727045638516e-8,
+            "leftGripError": 3.514431767825954e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.6232936978340149,
+            "leftArmExtension": 0.8161503672599793,
+            "rightForearmCorrectionDegrees": 36.18319320678711,
+            "leftForearmCorrectionDegrees": 28.644329071044923,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.07861479371786118,
+                "y": 0.46439599990844729,
+                "z": 0.09122739732265473
+            },
+            "bladeAxis": {
+                "x": -0.006206288002431393,
+                "y": 0.023620497435331346,
+                "z": 0.999701738357544
+            },
+            "rightWrist": {
+                "x": 0.044580958783626559,
+                "y": 0.5280795097351074,
+                "z": 0.0348629355430603
+            },
+            "leftWrist": {
+                "x": 0.020576968789100648,
+                "y": 0.5049777030944824,
+                "z": -0.07272624969482422
+            },
+            "rightElbow": {
+                "x": 0.14765623211860658,
+                "y": 0.541313886642456,
+                "z": -0.055723726749420169
+            },
+            "leftElbow": {
+                "x": -0.062059756368398669,
+                "y": 0.4678869843482971,
+                "z": 0.04102277755737305
+            }
+        },
+        {
+            "time": 0.17499999701976777,
+            "rightGripError": 1.0975390551948294e-7,
+            "leftGripError": 8.690791730714409e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.696256697177887,
+            "leftArmExtension": 0.7601696252822876,
+            "rightForearmCorrectionDegrees": 34.65400695800781,
+            "leftForearmCorrectionDegrees": 31.14103126525879,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.08926856517791748,
+                "y": 0.48283565044403078,
+                "z": 0.1630542129278183
+            },
+            "bladeAxis": {
+                "x": -0.013232425786554814,
+                "y": 0.019494106993079187,
+                "z": 0.999722421169281
+            },
+            "rightWrist": {
+                "x": 0.048504676669836047,
+                "y": 0.5436515808105469,
+                "z": 0.11205962300300598
+            },
+            "leftWrist": {
+                "x": 0.03157106414437294,
+                "y": 0.5235562920570374,
+                "z": 0.0007093548774719238
+            },
+            "rightElbow": {
+                "x": 0.15404431521892548,
+                "y": 0.551190197467804,
+                "z": 0.02368462085723877
+            },
+            "leftElbow": {
+                "x": -0.07126666605472565,
+                "y": 0.4821102023124695,
+                "z": 0.09478384256362915
+            }
+        },
+        {
+            "time": 0.18333333730697633,
+            "rightGripError": 7.185079908822445e-8,
+            "leftGripError": 9.714368331970036e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.7607043385505676,
+            "leftArmExtension": 0.7319348454475403,
+            "rightForearmCorrectionDegrees": 32.30339431762695,
+            "leftForearmCorrectionDegrees": 32.28873062133789,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.09766599535942078,
+                "y": 0.5011817216873169,
+                "z": 0.23071253299713136
+            },
+            "bladeAxis": {
+                "x": -0.004943291191011667,
+                "y": 0.012917079031467438,
+                "z": 0.9999043345451355
+            },
+            "rightWrist": {
+                "x": 0.052616819739341739,
+                "y": 0.5601118803024292,
+                "z": 0.18446558713912965
+            },
+            "leftWrist": {
+                "x": 0.03938095271587372,
+                "y": 0.5439603924751282,
+                "z": 0.06903937458992005
+            },
+            "rightElbow": {
+                "x": 0.15662257373332978,
+                "y": 0.564149796962738,
+                "z": 0.09406596422195435
+            },
+            "leftElbow": {
+                "x": -0.08013638108968735,
+                "y": 0.5007500052452087,
+                "z": 0.13969260454177857
+            }
+        },
+        {
+            "time": 0.19166666269302369,
+            "rightGripError": 1.37583796799845e-7,
+            "leftGripError": 2.686345013103164e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.7935707569122315,
+            "leftArmExtension": 0.7290557622909546,
+            "rightForearmCorrectionDegrees": 30.79222869873047,
+            "leftForearmCorrectionDegrees": 32.11677932739258,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10037141293287277,
+                "y": 0.5094807744026184,
+                "z": 0.25917011499404909
+            },
+            "bladeAxis": {
+                "x": 0.0004158308729529381,
+                "y": 0.010881628841161728,
+                "z": 0.9999406933784485
+            },
+            "rightWrist": {
+                "x": 0.05414808541536331,
+                "y": 0.5678973197937012,
+                "z": 0.21451616287231446
+            },
+            "leftWrist": {
+                "x": 0.041996993124485019,
+                "y": 0.553544282913208,
+                "z": 0.09769529104232788
+            },
+            "rightElbow": {
+                "x": 0.15539798140525819,
+                "y": 0.5710226893424988,
+                "z": 0.12100526690483093
+            },
+            "leftElbow": {
+                "x": -0.08518680930137634,
+                "y": 0.509120762348175,
+                "z": 0.15241479873657227
+            }
+        },
+        {
+            "time": 0.20000000298023225,
+            "rightGripError": 1.497548112183722e-7,
+            "leftGripError": 6.365778659755961e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8110108971595764,
+            "leftArmExtension": 0.7325736880302429,
+            "rightForearmCorrectionDegrees": 30.143442153930665,
+            "leftForearmCorrectionDegrees": 31.97972869873047,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.1038115918636322,
+                "y": 0.5180251002311707,
+                "z": 0.2799927592277527
+            },
+            "bladeAxis": {
+                "x": -0.0006210692226886749,
+                "y": 0.01301681436598301,
+                "z": 0.9999150633811951
+            },
+            "rightWrist": {
+                "x": 0.05749696493148804,
+                "y": 0.5762389302253723,
+                "z": 0.2351793646812439
+            },
+            "leftWrist": {
+                "x": 0.04604647308588028,
+                "y": 0.5623284578323364,
+                "z": 0.11846917867660523
+            },
+            "rightElbow": {
+                "x": 0.15643712878227235,
+                "y": 0.5791930556297302,
+                "z": 0.13922250270843507
+            },
+            "leftElbow": {
+                "x": -0.08460298180580139,
+                "y": 0.5158522725105286,
+                "z": 0.16221916675567628
+            }
+        },
+        {
+            "time": 0.2083333283662796,
+            "rightGripError": 8.330002287948446e-8,
+            "leftGripError": 3.725290298461914e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8214952349662781,
+            "leftArmExtension": 0.7317076921463013,
+            "rightForearmCorrectionDegrees": 29.681331634521486,
+            "leftForearmCorrectionDegrees": 31.953731536865236,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10387131571769715,
+                "y": 0.5170050859451294,
+                "z": 0.2872483730316162
+            },
+            "bladeAxis": {
+                "x": -0.000008696690201759338,
+                "y": 0.013029167428612709,
+                "z": 0.9999151229858398
+            },
+            "rightWrist": {
+                "x": 0.05752973258495331,
+                "y": 0.5752129554748535,
+                "z": 0.2423938810825348
+            },
+            "leftWrist": {
+                "x": 0.046296894550323489,
+                "y": 0.5617132782936096,
+                "z": 0.1259511113166809
+            },
+            "rightElbow": {
+                "x": 0.15513961017131806,
+                "y": 0.5777745842933655,
+                "z": 0.14507299661636353
+            },
+            "leftElbow": {
+                "x": -0.08566827327013016,
+                "y": 0.5136016011238098,
+                "z": 0.16355228424072267
+            }
+        },
+        {
+            "time": 0.21666666865348817,
+            "rightGripError": 6.705522537231445e-8,
+            "leftGripError": 7.028863535651908e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8271152377128601,
+            "leftArmExtension": 0.7299428582191467,
+            "rightForearmCorrectionDegrees": 29.457786560058595,
+            "leftForearmCorrectionDegrees": 31.96402931213379,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10398881882429123,
+                "y": 0.5154381394386292,
+                "z": 0.2918030023574829
+            },
+            "bladeAxis": {
+                "x": -0.0005890126340091229,
+                "y": 0.013045025989413262,
+                "z": 0.9999147653579712
+            },
+            "rightWrist": {
+                "x": 0.05774521827697754,
+                "y": 0.5736801028251648,
+                "z": 0.2466650903224945
+            },
+            "leftWrist": {
+                "x": 0.04665558040142059,
+                "y": 0.5603863596916199,
+                "z": 0.13072681427001954
+            },
+            "rightElbow": {
+                "x": 0.15459705889225007,
+                "y": 0.576049268245697,
+                "z": 0.1485850214958191
+            },
+            "leftElbow": {
+                "x": -0.085700124502182,
+                "y": 0.5107236504554749,
+                "z": 0.16477054357528687
+            }
+        },
+        {
+            "time": 0.22499999403953553,
+            "rightGripError": 1.077117914860537e-7,
+            "leftGripError": 1.2219861389439758e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8335088491439819,
+            "leftArmExtension": 0.7293998599052429,
+            "rightForearmCorrectionDegrees": 29.182918548583986,
+            "leftForearmCorrectionDegrees": 31.941198348999025,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10404812544584274,
+                "y": 0.5145342350006104,
+                "z": 0.29647767543792727
+            },
+            "bladeAxis": {
+                "x": -0.0005759270861744881,
+                "y": 0.013056629337370396,
+                "z": 0.9999145865440369
+            },
+            "rightWrist": {
+                "x": 0.057836562395095828,
+                "y": 0.5727895498275757,
+                "z": 0.25120463967323305
+            },
+            "leftWrist": {
+                "x": 0.046893808990716937,
+                "y": 0.5597437620162964,
+                "z": 0.13558366894721986
+            },
+            "rightElbow": {
+                "x": 0.15379315614700318,
+                "y": 0.5748942494392395,
+                "z": 0.1522424817085266
+            },
+            "leftElbow": {
+                "x": -0.08595437556505203,
+                "y": 0.5089293718338013,
+                "z": 0.165793776512146
+            }
+        },
+        {
+            "time": 0.23333333432674409,
+            "rightGripError": 1.431209852853499e-7,
+            "leftGripError": 6.006850128414954e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8388449549674988,
+            "leftArmExtension": 0.7292382717132568,
+            "rightForearmCorrectionDegrees": 28.949138641357423,
+            "leftForearmCorrectionDegrees": 31.90923309326172,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10422925651073456,
+                "y": 0.513474702835083,
+                "z": 0.30073028802871706
+            },
+            "bladeAxis": {
+                "x": -0.0005698502063751221,
+                "y": 0.013063698075711728,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.058045513927936557,
+                "y": 0.5717411637306213,
+                "z": 0.2553410530090332
+            },
+            "leftWrist": {
+                "x": 0.047232486307621,
+                "y": 0.55890953540802,
+                "z": 0.13998860120773316
+            },
+            "rightElbow": {
+                "x": 0.15322139859199525,
+                "y": 0.573614776134491,
+                "z": 0.15562325716018678
+            },
+            "leftElbow": {
+                "x": -0.0859537422657013,
+                "y": 0.5071938037872315,
+                "z": 0.16701281070709229
+            }
+        },
+        {
+            "time": 0.24166665971279145,
+            "rightGripError": 1.0133885552932043e-7,
+            "leftGripError": 6.828570064953965e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8430801033973694,
+            "leftArmExtension": 0.7293009161949158,
+            "rightForearmCorrectionDegrees": 28.76394271850586,
+            "leftForearmCorrectionDegrees": 31.879302978515626,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10432066023349762,
+                "y": 0.5134977698326111,
+                "z": 0.3039929270744324
+            },
+            "bladeAxis": {
+                "x": -0.0005693547427654266,
+                "y": 0.013064747676253319,
+                "z": 0.9999144673347473
+            },
+            "rightWrist": {
+                "x": 0.05815912038087845,
+                "y": 0.5717729926109314,
+                "z": 0.25850898027420046
+            },
+            "leftWrist": {
+                "x": 0.04745589196681976,
+                "y": 0.5591168403625488,
+                "z": 0.14336591958999635
+            },
+            "rightElbow": {
+                "x": 0.15269631147384644,
+                "y": 0.5734453797340393,
+                "z": 0.15818187594413758
+            },
+            "leftElbow": {
+                "x": -0.0859484001994133,
+                "y": 0.5067068338394165,
+                "z": 0.1678582727909088
+            }
+        },
+        {
+            "time": 0.25,
+            "rightGripError": 1.0745380052412657e-7,
+            "leftGripError": 5.819089565761715e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8464744091033936,
+            "leftArmExtension": 0.7295218110084534,
+            "rightForearmCorrectionDegrees": 28.61239242553711,
+            "leftForearmCorrectionDegrees": 31.84618377685547,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10450226068496704,
+                "y": 0.5133907794952393,
+                "z": 0.30690163373947146
+            },
+            "bladeAxis": {
+                "x": -0.0005736849270761013,
+                "y": 0.013060398399829865,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.058358509093523028,
+                "y": 0.5716726183891296,
+                "z": 0.2613399028778076
+            },
+            "leftWrist": {
+                "x": 0.0477495975792408,
+                "y": 0.5591632723808289,
+                "z": 0.14636319875717164
+            },
+            "rightElbow": {
+                "x": 0.1523677110671997,
+                "y": 0.5731792449951172,
+                "z": 0.1605152189731598
+            },
+            "leftElbow": {
+                "x": -0.08580265939235687,
+                "y": 0.5062264204025269,
+                "z": 0.1688326597213745
+            }
+        },
+        {
+            "time": 0.25833332538604739,
+            "rightGripError": 3.725290298461914e-8,
+            "leftGripError": 8.720680710894158e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8492289781570435,
+            "leftArmExtension": 0.7297571301460266,
+            "rightForearmCorrectionDegrees": 28.490406036376954,
+            "leftForearmCorrectionDegrees": 31.8192081451416,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.1045890524983406,
+                "y": 0.5135323405265808,
+                "z": 0.30911707878112795
+            },
+            "bladeAxis": {
+                "x": -0.0005729408003389835,
+                "y": 0.01306127943098545,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.05845991149544716,
+                "y": 0.571819543838501,
+                "z": 0.2634911835193634
+            },
+            "leftWrist": {
+                "x": 0.047928374260663989,
+                "y": 0.5594293475151062,
+                "z": 0.14864712953567506
+            },
+            "rightElbow": {
+                "x": 0.15203355252742768,
+                "y": 0.5731809139251709,
+                "z": 0.16226017475128175
+            },
+            "leftElbow": {
+                "x": -0.08572109788656235,
+                "y": 0.5060685276985169,
+                "z": 0.1694757342338562
+            }
+        },
+        {
+            "time": 0.2666666507720947,
+            "rightGripError": 6.828570064953965e-8,
+            "leftGripError": 7.634573506720699e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8514522314071655,
+            "leftArmExtension": 0.7299972772598267,
+            "rightForearmCorrectionDegrees": 28.39017105102539,
+            "leftForearmCorrectionDegrees": 31.793882369995118,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10472176969051361,
+                "y": 0.5135772228240967,
+                "z": 0.31107592582702639
+            },
+            "bladeAxis": {
+                "x": -0.0005725659430027008,
+                "y": 0.01306148711591959,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.05860516428947449,
+                "y": 0.5718692541122437,
+                "z": 0.2653971016407013
+            },
+            "leftWrist": {
+                "x": 0.048135966062545779,
+                "y": 0.5595747232437134,
+                "z": 0.15066087245941163
+            },
+            "rightElbow": {
+                "x": 0.15182019770145417,
+                "y": 0.5731142163276672,
+                "z": 0.1638343334197998
+            },
+            "leftElbow": {
+                "x": -0.08558090776205063,
+                "y": 0.5058881640434265,
+                "z": 0.1701783537864685
+            }
+        },
+        {
+            "time": 0.2750000059604645,
+            "rightGripError": 1.163817913152343e-7,
+            "leftGripError": 1.281846380152274e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8532688021659851,
+            "leftArmExtension": 0.7301687002182007,
+            "rightForearmCorrectionDegrees": 28.309953689575197,
+            "leftForearmCorrectionDegrees": 31.776222229003908,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10476190596818924,
+                "y": 0.5136674642562866,
+                "z": 0.3124857544898987
+            },
+            "bladeAxis": {
+                "x": -0.0005716118030250073,
+                "y": 0.01306240726262331,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.058657120913267139,
+                "y": 0.5719643235206604,
+                "z": 0.26676294207572939
+            },
+            "leftWrist": {
+                "x": 0.04823458939790726,
+                "y": 0.5597441792488098,
+                "z": 0.15211796760559083
+            },
+            "rightElbow": {
+                "x": 0.15157635509967805,
+                "y": 0.5731146931648254,
+                "z": 0.16492825746536256
+            },
+            "leftElbow": {
+                "x": -0.0855267196893692,
+                "y": 0.5057967305183411,
+                "z": 0.17058342695236207
+            }
+        },
+        {
+            "time": 0.28333333134651186,
+            "rightGripError": 6.664001972467304e-8,
+            "leftGripError": 2.686345013103164e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8548200130462647,
+            "leftArmExtension": 0.7302488684654236,
+            "rightForearmCorrectionDegrees": 28.24130630493164,
+            "leftForearmCorrectionDegrees": 31.763797760009767,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10480947047472,
+                "y": 0.5136837363243103,
+                "z": 0.3137167692184448
+            },
+            "bladeAxis": {
+                "x": -0.0005713165737688541,
+                "y": 0.01306261494755745,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.058717384934425357,
+                "y": 0.5719867944717407,
+                "z": 0.2679549753665924
+            },
+            "leftWrist": {
+                "x": 0.04832635074853897,
+                "y": 0.5598227977752686,
+                "z": 0.1533961296081543
+            },
+            "rightElbow": {
+                "x": 0.15138132870197297,
+                "y": 0.573066771030426,
+                "z": 0.16588729619979859
+            },
+            "leftElbow": {
+                "x": -0.08546705543994904,
+                "y": 0.505667507648468,
+                "z": 0.17100059986114503
+            }
+        },
+        {
+            "time": 0.2916666567325592,
+            "rightGripError": 1.49197759924391e-7,
+            "leftGripError": 1.1944189282075968e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8562399744987488,
+            "leftArmExtension": 0.7301915287971497,
+            "rightForearmCorrectionDegrees": 28.179841995239259,
+            "leftForearmCorrectionDegrees": 31.75957679748535,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10475821048021317,
+                "y": 0.5136303901672363,
+                "z": 0.31455716490745547
+            },
+            "bladeAxis": {
+                "x": -0.000570748932659626,
+                "y": 0.01306341215968132,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.05868149548768997,
+                "y": 0.5719420313835144,
+                "z": 0.26875853538513186
+            },
+            "leftWrist": {
+                "x": 0.04830610752105713,
+                "y": 0.559817373752594,
+                "z": 0.15429019927978517
+            },
+            "rightElbow": {
+                "x": 0.15111137926578523,
+                "y": 0.5729706883430481,
+                "z": 0.1664782166481018
+            },
+            "leftElbow": {
+                "x": -0.08551038801670075,
+                "y": 0.505484402179718,
+                "z": 0.1711564064025879
+            }
+        },
+        {
+            "time": 0.29999998211860659,
+            "rightGripError": 7.634573506720699e-8,
+            "leftGripError": 6.828570064953965e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8576750755310059,
+            "leftArmExtension": 0.7299659252166748,
+            "rightForearmCorrectionDegrees": 28.119598388671876,
+            "leftForearmCorrectionDegrees": 31.763822555541993,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.1046728566288948,
+                "y": 0.5135247707366943,
+                "z": 0.3152991235256195
+            },
+            "bladeAxis": {
+                "x": -0.0005704043433070183,
+                "y": 0.013063659891486168,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.058615997433662418,
+                "y": 0.5718480348587036,
+                "z": 0.26946189999580386
+            },
+            "leftWrist": {
+                "x": 0.04824034124612808,
+                "y": 0.5597491264343262,
+                "z": 0.1551000475883484
+            },
+            "rightElbow": {
+                "x": 0.150809183716774,
+                "y": 0.5728442072868347,
+                "z": 0.16696786880493165
+            },
+            "leftElbow": {
+                "x": -0.08559431880712509,
+                "y": 0.505253791809082,
+                "z": 0.17128434777259828
+            }
+        },
+        {
+            "time": 0.3083333373069763,
+            "rightGripError": 4.470348358154297e-8,
+            "leftGripError": 1.2036781527058339e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8592629432678223,
+            "leftArmExtension": 0.729548454284668,
+            "rightForearmCorrectionDegrees": 28.053733825683595,
+            "leftForearmCorrectionDegrees": 31.776575088500978,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10448096692562103,
+                "y": 0.5132677555084229,
+                "z": 0.3158099055290222
+            },
+            "bladeAxis": {
+                "x": -0.000569900032132864,
+                "y": 0.013063658028841019,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.05845057964324951,
+                "y": 0.5716074705123901,
+                "z": 0.26992908120155337
+            },
+            "leftWrist": {
+                "x": 0.04805770516395569,
+                "y": 0.5595219135284424,
+                "z": 0.1557002067565918
+            },
+            "rightElbow": {
+                "x": 0.15038102865219117,
+                "y": 0.5725876688957214,
+                "z": 0.16719919443130494
+            },
+            "leftElbow": {
+                "x": -0.08579303324222565,
+                "y": 0.5048648118972778,
+                "z": 0.1711910367012024
+            }
+        },
+        {
+            "time": 0.3166666626930237,
+            "rightGripError": 1.2489448408814497e-7,
+            "leftGripError": 6.705522537231445e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8611569404602051,
+            "leftArmExtension": 0.7288965582847595,
+            "rightForearmCorrectionDegrees": 27.977008819580079,
+            "leftForearmCorrectionDegrees": 31.800315856933595,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10421192646026612,
+                "y": 0.5129791498184204,
+                "z": 0.3163045048713684
+            },
+            "bladeAxis": {
+                "x": -0.0005694259889423847,
+                "y": 0.01306411623954773,
+                "z": 0.9999145269393921
+            },
+            "rightWrist": {
+                "x": 0.05821644514799118,
+                "y": 0.5713408589363098,
+                "z": 0.2703714966773987
+            },
+            "leftWrist": {
+                "x": 0.04778923839330673,
+                "y": 0.5592589974403381,
+                "z": 0.15631389617919923
+            },
+            "rightElbow": {
+                "x": 0.1498328149318695,
+                "y": 0.5723182559013367,
+                "z": 0.16736137866973878
+            },
+            "leftElbow": {
+                "x": -0.08607504516839981,
+                "y": 0.5044224262237549,
+                "z": 0.17103469371795655
+            }
+        },
+        {
+            "time": 0.32499998807907107,
+            "rightGripError": 8.429369557916289e-8,
+            "leftGripError": 4.0122603905956569e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8636624813079834,
+            "leftArmExtension": 0.7278926968574524,
+            "rightForearmCorrectionDegrees": 27.87238311767578,
+            "leftForearmCorrectionDegrees": 31.833581924438478,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.1038433313369751,
+                "y": 0.5124873518943787,
+                "z": 0.3167508840560913
+            },
+            "bladeAxis": {
+                "x": -0.0003085094504058361,
+                "y": 0.012951159849762917,
+                "z": 0.9999160766601563
+            },
+            "rightWrist": {
+                "x": 0.0578748881816864,
+                "y": 0.5708785653114319,
+                "z": 0.27077651023864748
+            },
+            "leftWrist": {
+                "x": 0.04736824333667755,
+                "y": 0.5588040351867676,
+                "z": 0.15693289041519166
+            },
+            "rightElbow": {
+                "x": 0.14906297624111176,
+                "y": 0.5718817114830017,
+                "z": 0.16738733649253846
+            },
+            "leftElbow": {
+                "x": -0.08650366961956024,
+                "y": 0.5037429332733154,
+                "z": 0.17071622610092164
+            }
+        },
+        {
+            "time": 0.3333333134651184,
+            "rightGripError": 7.028863535651908e-8,
+            "leftGripError": 7.028863535651908e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8664389252662659,
+            "leftArmExtension": 0.7268282771110535,
+            "rightForearmCorrectionDegrees": 27.76036834716797,
+            "leftForearmCorrectionDegrees": 31.876842498779298,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10332021862268448,
+                "y": 0.5119841694831848,
+                "z": 0.3172198534011841
+            },
+            "bladeAxis": {
+                "x": -0.0005701323971152306,
+                "y": 0.01306433230638504,
+                "z": 0.9999144673347473
+            },
+            "rightWrist": {
+                "x": 0.05742701143026352,
+                "y": 0.5704107880592346,
+                "z": 0.2711426913738251
+            },
+            "leftWrist": {
+                "x": 0.04687708243727684,
+                "y": 0.558313250541687,
+                "z": 0.157589852809906
+            },
+            "rightElbow": {
+                "x": 0.14815232157707215,
+                "y": 0.5714215636253357,
+                "z": 0.167347252368927
+            },
+            "leftElbow": {
+                "x": -0.08700916916131973,
+                "y": 0.5030224323272705,
+                "z": 0.17026984691619874
+            }
+        },
+        {
+            "time": 0.34166666865348818,
+            "rightGripError": 7.028863535651908e-8,
+            "leftGripError": 8.688795105626923e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8694232106208801,
+            "leftArmExtension": 0.7259003520011902,
+            "rightForearmCorrectionDegrees": 27.636558532714845,
+            "leftForearmCorrectionDegrees": 31.915470123291017,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10260628163814545,
+                "y": 0.5111915469169617,
+                "z": 0.31754860281944277
+            },
+            "bladeAxis": {
+                "x": -0.0017190133221447468,
+                "y": 0.0135637316852808,
+                "z": 0.9999065399169922
+            },
+            "rightWrist": {
+                "x": 0.056864626705646518,
+                "y": 0.5696592330932617,
+                "z": 0.2712703049182892
+            },
+            "leftWrist": {
+                "x": 0.04634527117013931,
+                "y": 0.5574949979782105,
+                "z": 0.15811192989349366
+            },
+            "rightElbow": {
+                "x": 0.1471090316772461,
+                "y": 0.570655107498169,
+                "z": 0.16705626249313355
+            },
+            "leftElbow": {
+                "x": -0.0875806212425232,
+                "y": 0.5020126700401306,
+                "z": 0.16946780681610108
+            }
+        },
+        {
+            "time": 0.3499999940395355,
+            "rightGripError": 1.4901161193847657e-8,
+            "leftGripError": 1.2377833513710358e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8720784187316895,
+            "leftArmExtension": 0.7254433631896973,
+            "rightForearmCorrectionDegrees": 27.536836624145509,
+            "leftForearmCorrectionDegrees": 31.958473205566408,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.10161545127630234,
+                "y": 0.5104007720947266,
+                "z": 0.3178485929965973
+            },
+            "bladeAxis": {
+                "x": -0.004738340619951487,
+                "y": 0.014853619039058686,
+                "z": 0.999878466129303
+            },
+            "rightWrist": {
+                "x": 0.056168533861637118,
+                "y": 0.5689095854759216,
+                "z": 0.2711877226829529
+            },
+            "leftWrist": {
+                "x": 0.0458536222577095,
+                "y": 0.556593120098114,
+                "z": 0.1585610806941986
+            },
+            "rightElbow": {
+                "x": 0.14604070782661439,
+                "y": 0.569806694984436,
+                "z": 0.1666516363620758
+            },
+            "leftElbow": {
+                "x": -0.08814239501953125,
+                "y": 0.5009974241256714,
+                "z": 0.16843962669372559
+            }
+        },
+        {
+            "time": 0.3583333194255829,
+            "rightGripError": 1.8863363493437647e-7,
+            "leftGripError": 1.125012971670003e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8737722635269165,
+            "leftArmExtension": 0.726038932800293,
+            "rightForearmCorrectionDegrees": 27.480072021484376,
+            "leftForearmCorrectionDegrees": 31.976354598999025,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.1002558171749115,
+                "y": 0.5092990398406982,
+                "z": 0.31764763593673708
+            },
+            "bladeAxis": {
+                "x": -0.010911950841546059,
+                "y": 0.017510436475276948,
+                "z": 0.9997871518135071
+            },
+            "rightWrist": {
+                "x": 0.05534053593873978,
+                "y": 0.567839503288269,
+                "z": 0.27030816674232485
+            },
+            "leftWrist": {
+                "x": 0.04553254693746567,
+                "y": 0.555230975151062,
+                "z": 0.15841257572174073
+            },
+            "rightElbow": {
+                "x": 0.14510086178779603,
+                "y": 0.5685216784477234,
+                "z": 0.16567441821098329
+            },
+            "leftElbow": {
+                "x": -0.08861647546291352,
+                "y": 0.49974381923675539,
+                "z": 0.166695237159729
+            }
+        },
+        {
+            "time": 0.36666667461395266,
+            "rightGripError": 8.462232869987929e-8,
+            "leftGripError": 1.0563021390908034e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8747963309288025,
+            "leftArmExtension": 0.7273468375205994,
+            "rightForearmCorrectionDegrees": 27.469343185424806,
+            "leftForearmCorrectionDegrees": 31.994253158569337,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.09857603162527085,
+                "y": 0.5082004070281982,
+                "z": 0.31737056374549868
+            },
+            "bladeAxis": {
+                "x": -0.019573818892240526,
+                "y": 0.02122996561229229,
+                "z": 0.9995830059051514
+            },
+            "rightWrist": {
+                "x": 0.0543825700879097,
+                "y": 0.56675785779953,
+                "z": 0.26912611722946169
+            },
+            "leftWrist": {
+                "x": 0.045312002301216128,
+                "y": 0.553752601146698,
+                "z": 0.15813010931015016
+            },
+            "rightElbow": {
+                "x": 0.1442236304283142,
+                "y": 0.5671201348304749,
+                "z": 0.16456007957458497
+            },
+            "leftElbow": {
+                "x": -0.08902990818023682,
+                "y": 0.4985054135322571,
+                "z": 0.16471847891807557
+            }
+        },
+        {
+            "time": 0.375,
+            "rightGripError": 7.450580596923828e-8,
+            "leftGripError": 4.5320113883917659e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8752385377883911,
+            "leftArmExtension": 0.7293407917022705,
+            "rightForearmCorrectionDegrees": 27.487459182739259,
+            "leftForearmCorrectionDegrees": 31.993558883666993,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.0966183990240097,
+                "y": 0.5069507956504822,
+                "z": 0.3166831135749817
+            },
+            "bladeAxis": {
+                "x": -0.030487926676869394,
+                "y": 0.025928571820259095,
+                "z": 0.9991987943649292
+            },
+            "rightWrist": {
+                "x": 0.05332303047180176,
+                "y": 0.5655016303062439,
+                "z": 0.2673354148864746
+            },
+            "leftWrist": {
+                "x": 0.045192793011665347,
+                "y": 0.5520099997520447,
+                "z": 0.15739816427230836
+            },
+            "rightElbow": {
+                "x": 0.1434125155210495,
+                "y": 0.565483808517456,
+                "z": 0.1629827320575714
+            },
+            "leftElbow": {
+                "x": -0.08939284831285477,
+                "y": 0.497174471616745,
+                "z": 0.16220992803573609
+            }
+        },
+        {
+            "time": 0.38333332538604739,
+            "rightGripError": 2.9802322387695315e-8,
+            "leftGripError": 6.828570064953965e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8751429319381714,
+            "leftArmExtension": 0.7319042682647705,
+            "rightForearmCorrectionDegrees": 27.549861907958986,
+            "leftForearmCorrectionDegrees": 31.993385314941408,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.09437128901481629,
+                "y": 0.5057052969932556,
+                "z": 0.3159199357032776
+            },
+            "bladeAxis": {
+                "x": -0.0435827299952507,
+                "y": 0.03157653659582138,
+                "z": 0.9985507130622864
+            },
+            "rightWrist": {
+                "x": 0.052150044590234759,
+                "y": 0.564217209815979,
+                "z": 0.26528504490852358
+            },
+            "leftWrist": {
+                "x": 0.0451483428478241,
+                "y": 0.5501575469970703,
+                "z": 0.156570702791214
+            },
+            "rightElbow": {
+                "x": 0.14264445006847382,
+                "y": 0.5637413859367371,
+                "z": 0.16128438711166383
+            },
+            "leftElbow": {
+                "x": -0.08970829844474793,
+                "y": 0.49585944414138796,
+                "z": 0.15953826904296876
+            }
+        },
+        {
+            "time": 0.3916666507720947,
+            "rightGripError": 9.541398782175747e-8,
+            "leftGripError": 9.685754776000977e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8745842576026917,
+            "leftArmExtension": 0.7350239753723145,
+            "rightForearmCorrectionDegrees": 27.64230728149414,
+            "leftForearmCorrectionDegrees": 31.97848892211914,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.09185419231653214,
+                "y": 0.5044029951095581,
+                "z": 0.3147789537906647
+            },
+            "bladeAxis": {
+                "x": -0.05874575302004814,
+                "y": 0.03813541308045387,
+                "z": 0.9975442886352539
+            },
+            "rightWrist": {
+                "x": 0.05088058486580849,
+                "y": 0.5628349184989929,
+                "z": 0.2626914381980896
+            },
+            "leftWrist": {
+                "x": 0.04517725855112076,
+                "y": 0.5481356382369995,
+                "z": 0.15536656975746156
+            },
+            "rightElbow": {
+                "x": 0.14191506803035737,
+                "y": 0.561857283115387,
+                "z": 0.15916669368743897
+            },
+            "leftElbow": {
+                "x": -0.08998758345842362,
+                "y": 0.4945376217365265,
+                "z": 0.15642577409744264
+            }
+        },
+        {
+            "time": 0.4000000059604645,
+            "rightGripError": 8.024520781191313e-8,
+            "leftGripError": 1.0133885552932043e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8736109137535095,
+            "leftArmExtension": 0.738572895526886,
+            "rightForearmCorrectionDegrees": 27.77724838256836,
+            "leftForearmCorrectionDegrees": 31.9650936126709,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.08906370401382446,
+                "y": 0.5031067132949829,
+                "z": 0.31355637311935427
+            },
+            "bladeAxis": {
+                "x": -0.07584789395332337,
+                "y": 0.04556351155042648,
+                "z": 0.996077835559845
+            },
+            "rightWrist": {
+                "x": 0.04950859770178795,
+                "y": 0.5614076852798462,
+                "z": 0.2598706781864166
+            },
+            "leftWrist": {
+                "x": 0.045251358300447467,
+                "y": 0.5460073351860046,
+                "z": 0.15410375595092774
+            },
+            "rightElbow": {
+                "x": 0.1412026584148407,
+                "y": 0.5598714351654053,
+                "z": 0.15693652629852296
+            },
+            "leftElbow": {
+                "x": -0.09023725241422653,
+                "y": 0.4932301938533783,
+                "z": 0.15321093797683717
+            }
+        },
+        {
+            "time": 0.40833333134651186,
+            "rightGripError": 7.028863535651908e-8,
+            "leftGripError": 1.2377833513710358e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8722913265228272,
+            "leftArmExtension": 0.742536187171936,
+            "rightForearmCorrectionDegrees": 27.942487716674806,
+            "leftForearmCorrectionDegrees": 31.941198348999025,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.0860179215669632,
+                "y": 0.5018179416656494,
+                "z": 0.31198370456695559
+            },
+            "bladeAxis": {
+                "x": -0.09478248655796051,
+                "y": 0.05381602793931961,
+                "z": 0.9940423369407654
+            },
+            "rightWrist": {
+                "x": 0.04805093631148338,
+                "y": 0.5599285960197449,
+                "z": 0.25657397508621218
+            },
+            "leftWrist": {
+                "x": 0.045369185507297519,
+                "y": 0.5437756180763245,
+                "z": 0.15253496170043946
+            },
+            "rightElbow": {
+                "x": 0.14050327241420747,
+                "y": 0.5578079223632813,
+                "z": 0.1543307602405548
+            },
+            "leftElbow": {
+                "x": -0.09046635031700134,
+                "y": 0.4919703006744385,
+                "z": 0.14965331554412843
+            }
+        },
+        {
+            "time": 0.4166666567325592,
+            "rightGripError": 1.2731557319511922e-7,
+            "leftGripError": 1.2013700256829908e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8706783056259155,
+            "leftArmExtension": 0.7467848658561707,
+            "rightForearmCorrectionDegrees": 28.146772384643556,
+            "leftForearmCorrectionDegrees": 31.920265197753908,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.08271589875221253,
+                "y": 0.5005372166633606,
+                "z": 0.3103190064430237
+            },
+            "bladeAxis": {
+                "x": -0.11539651453495026,
+                "y": 0.06285016238689423,
+                "z": 0.9913291335105896
+            },
+            "rightWrist": {
+                "x": 0.04650299251079559,
+                "y": 0.5583895444869995,
+                "z": 0.2530815899372101
+            },
+            "leftWrist": {
+                "x": 0.045500919222831729,
+                "y": 0.5414419770240784,
+                "z": 0.1509406566619873
+            },
+            "rightElbow": {
+                "x": 0.13979607820510865,
+                "y": 0.5556483268737793,
+                "z": 0.15161985158920289
+            },
+            "leftElbow": {
+                "x": -0.09068595618009567,
+                "y": 0.4907207489013672,
+                "z": 0.1460534930229187
+            }
+        },
+        {
+            "time": 0.42499998211860659,
+            "rightGripError": 3.725290298461914e-8,
+            "leftGripError": 5.57550414725938e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8688300251960754,
+            "leftArmExtension": 0.7513015270233154,
+            "rightForearmCorrectionDegrees": 28.378999710083009,
+            "leftForearmCorrectionDegrees": 31.89248275756836,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.0791763961315155,
+                "y": 0.49930626153945925,
+                "z": 0.3083273768424988
+            },
+            "bladeAxis": {
+                "x": -0.13757741451263429,
+                "y": 0.07261286675930023,
+                "z": 0.9878258109092712
+            },
+            "rightWrist": {
+                "x": 0.044882167130708697,
+                "y": 0.5568246245384216,
+                "z": 0.24917954206466676
+            },
+            "leftWrist": {
+                "x": 0.04564465209841728,
+                "y": 0.5390504002571106,
+                "z": 0.1491057574748993
+            },
+            "rightElbow": {
+                "x": 0.1390800178050995,
+                "y": 0.5534547567367554,
+                "z": 0.1485762596130371
+            },
+            "leftElbow": {
+                "x": -0.09090346097946167,
+                "y": 0.489548921585083,
+                "z": 0.14220651984214784
+            }
+        },
+        {
+            "time": 0.4333333373069763,
+            "rightGripError": 7.028863535651908e-8,
+            "leftGripError": 3.332000986233652e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8668020963668823,
+            "leftArmExtension": 0.7559604048728943,
+            "rightForearmCorrectionDegrees": 28.644189834594728,
+            "leftForearmCorrectionDegrees": 31.869375228881837,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.07540136575698853,
+                "y": 0.4980851113796234,
+                "z": 0.306229829788208
+            },
+            "bladeAxis": {
+                "x": -0.16115108132362367,
+                "y": 0.08305594325065613,
+                "z": 0.9834287166595459
+            },
+            "rightWrist": {
+                "x": 0.04318515583872795,
+                "y": 0.555187463760376,
+                "z": 0.24511244893074037
+            },
+            "leftWrist": {
+                "x": 0.045770518481731418,
+                "y": 0.536562979221344,
+                "z": 0.147271990776062
+            },
+            "rightElbow": {
+                "x": 0.13833622634410859,
+                "y": 0.5511730909347534,
+                "z": 0.14543417096138
+            },
+            "leftElbow": {
+                "x": -0.09113334864377976,
+                "y": 0.48838090896606448,
+                "z": 0.13837206363677979
+            }
+        },
+        {
+            "time": 0.4416666626930237,
+            "rightGripError": 2.0553342494622485e-7,
+            "leftGripError": 8.024520781191313e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8646451234817505,
+            "leftArmExtension": 0.7607384920120239,
+            "rightForearmCorrectionDegrees": 28.932817459106447,
+            "leftForearmCorrectionDegrees": 31.844316482543947,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.07141080498695374,
+                "y": 0.4969418942928314,
+                "z": 0.30382591485977175
+            },
+            "bladeAxis": {
+                "x": -0.18599353730678559,
+                "y": 0.09411680698394776,
+                "z": 0.9780329465866089
+            },
+            "rightWrist": {
+                "x": 0.04142890125513077,
+                "y": 0.5535407066345215,
+                "z": 0.24070197343826295
+            },
+            "leftWrist": {
+                "x": 0.045875705778598788,
+                "y": 0.5340520143508911,
+                "z": 0.145255446434021
+            },
+            "rightElbow": {
+                "x": 0.13756661117076875,
+                "y": 0.5488902926445007,
+                "z": 0.14200279116630555
+            },
+            "leftElbow": {
+                "x": -0.09138213098049164,
+                "y": 0.48730388283729555,
+                "z": 0.13437938690185548
+            }
+        },
+        {
+            "time": 0.44999998807907107,
+            "rightGripError": 6.365778659755961e-8,
+            "leftGripError": 8.940696716308594e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8624178171157837,
+            "leftArmExtension": 0.7655235528945923,
+            "rightForearmCorrectionDegrees": 29.245805740356447,
+            "leftForearmCorrectionDegrees": 31.825363159179689,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.0672115609049797,
+                "y": 0.4958091974258423,
+                "z": 0.3013014495372772
+            },
+            "bladeAxis": {
+                "x": -0.21191105246543885,
+                "y": 0.10573919117450714,
+                "z": 0.9715518355369568
+            },
+            "rightWrist": {
+                "x": 0.03961210325360298,
+                "y": 0.5518134236335754,
+                "z": 0.23615801334381104
+            },
+            "leftWrist": {
+                "x": 0.04593263193964958,
+                "y": 0.5314537882804871,
+                "z": 0.14325910806655885
+            },
+            "rightElbow": {
+                "x": 0.13675528764724732,
+                "y": 0.546530544757843,
+                "z": 0.13848048448562623
+            },
+            "leftElbow": {
+                "x": -0.09166596829891205,
+                "y": 0.4862230122089386,
+                "z": 0.13044559955596925
+            }
+        },
+        {
+            "time": 0.4583333134651184,
+            "rightGripError": 1.3978528556890525e-7,
+            "leftGripError": 1.2219861389439758e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8601535558700562,
+            "leftArmExtension": 0.7702780365943909,
+            "rightForearmCorrectionDegrees": 29.575654983520509,
+            "leftForearmCorrectionDegrees": 31.808467864990236,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.06282687187194824,
+                "y": 0.4947717785835266,
+                "z": 0.298488974571228
+            },
+            "bladeAxis": {
+                "x": -0.23874107003211976,
+                "y": 0.11784954369068146,
+                "z": 0.9639056921005249
+            },
+            "rightWrist": {
+                "x": 0.03775142878293991,
+                "y": 0.5500880479812622,
+                "z": 0.2313362956047058
+            },
+            "leftWrist": {
+                "x": 0.04593644291162491,
+                "y": 0.528859555721283,
+                "z": 0.14112812280654908
+            },
+            "rightElbow": {
+                "x": 0.1359090954065323,
+                "y": 0.5441944003105164,
+                "z": 0.13471364974975587
+            },
+            "leftElbow": {
+                "x": -0.09199108183383942,
+                "y": 0.4852329194545746,
+                "z": 0.12642738223075868
+            }
+        },
+        {
+            "time": 0.46666666865348818,
+            "rightGripError": 1.043081283569336e-7,
+            "leftGripError": 5.372690026206328e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.857947826385498,
+            "leftArmExtension": 0.774934709072113,
+            "rightForearmCorrectionDegrees": 29.91861915588379,
+            "leftForearmCorrectionDegrees": 31.7982234954834,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.058262988924980167,
+                "y": 0.49374422430992129,
+                "z": 0.29554831981658938
+            },
+            "bladeAxis": {
+                "x": -0.26634684205055239,
+                "y": 0.1303858906030655,
+                "z": 0.9550177454948425
+            },
+            "rightWrist": {
+                "x": 0.035842619836330417,
+                "y": 0.5482765436172485,
+                "z": 0.22641903162002564
+            },
+            "leftWrist": {
+                "x": 0.04586757719516754,
+                "y": 0.5261874198913574,
+                "z": 0.1390325427055359
+            },
+            "rightElbow": {
+                "x": 0.1350061297416687,
+                "y": 0.5417981147766113,
+                "z": 0.13086670637130738
+            },
+            "leftElbow": {
+                "x": -0.09237289428710938,
+                "y": 0.4842348098754883,
+                "z": 0.12251156568527222
+            }
+        },
+        {
+            "time": 0.4749999940395355,
+            "rightGripError": 2.190014498637538e-7,
+            "leftGripError": 1.666000493116826e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8558716177940369,
+            "leftArmExtension": 0.7794721722602844,
+            "rightForearmCorrectionDegrees": 30.26848602294922,
+            "leftForearmCorrectionDegrees": 31.794780731201173,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.053527139127254489,
+                "y": 0.4928365647792816,
+                "z": 0.29234766960144045
+            },
+            "bladeAxis": {
+                "x": -0.2946840822696686,
+                "y": 0.1432606726884842,
+                "z": 0.9447950720787048
+            },
+            "rightWrist": {
+                "x": 0.033885929733514789,
+                "y": 0.5464881062507629,
+                "z": 0.2212945818901062
+            },
+            "leftWrist": {
+                "x": 0.04572251811623573,
+                "y": 0.5235544443130493,
+                "z": 0.1368458867073059
+            },
+            "rightElbow": {
+                "x": 0.13403810560703278,
+                "y": 0.5394696593284607,
+                "z": 0.12681764364242555
+            },
+            "leftElbow": {
+                "x": -0.09282008558511734,
+                "y": 0.4833506941795349,
+                "z": 0.11859771609306336
+            }
+        },
+        {
+            "time": 0.4833333194255829,
+            "rightGripError": 7.450580596923828e-8,
+            "leftGripError": 3.4142850324769827e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8539581894874573,
+            "leftArmExtension": 0.7838046550750732,
+            "rightForearmCorrectionDegrees": 30.621196746826173,
+            "leftForearmCorrectionDegrees": 31.798646926879884,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.048656560480594638,
+                "y": 0.4919350743293762,
+                "z": 0.28900980949401858
+            },
+            "bladeAxis": {
+                "x": -0.32340168952941897,
+                "y": 0.15638592839241029,
+                "z": 0.9332496523857117
+            },
+            "rightWrist": {
+                "x": 0.03189660981297493,
+                "y": 0.5446147322654724,
+                "z": 0.21611163020133973
+            },
+            "leftWrist": {
+                "x": 0.045482758432626727,
+                "y": 0.5208591222763062,
+                "z": 0.13469833135604859
+            },
+            "rightElbow": {
+                "x": 0.13300956785678864,
+                "y": 0.5371007323265076,
+                "z": 0.1227022111415863
+            },
+            "leftElbow": {
+                "x": -0.09334341436624527,
+                "y": 0.4824526906013489,
+                "z": 0.11480787396430969
+            }
+        },
+        {
+            "time": 0.49166664481163027,
+            "rightGripError": 1.4600097131278745e-7,
+            "leftGripError": 2.2351741790771486e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8522012233734131,
+            "leftArmExtension": 0.7878444194793701,
+            "rightForearmCorrectionDegrees": 30.975614547729493,
+            "leftForearmCorrectionDegrees": 31.811384201049806,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.04368377476930618,
+                "y": 0.4911406934261322,
+                "z": 0.2854456901550293
+            },
+            "bladeAxis": {
+                "x": -0.35222768783569338,
+                "y": 0.1696617305278778,
+                "z": 0.9204078316688538
+            },
+            "rightWrist": {
+                "x": 0.02988605946302414,
+                "y": 0.542765200138092,
+                "z": 0.21080395579338075
+            },
+            "leftWrist": {
+                "x": 0.045136094093322757,
+                "y": 0.518214225769043,
+                "z": 0.13250035047531129
+            },
+            "rightElbow": {
+                "x": 0.13193340599536897,
+                "y": 0.5348005294799805,
+                "z": 0.1184539794921875
+            },
+            "leftElbow": {
+                "x": -0.09395184367895127,
+                "y": 0.48163220286369326,
+                "z": 0.1110597550868988
+            }
+        },
+        {
+            "time": 0.5,
+            "rightGripError": 8.88620377281768e-8,
+            "leftGripError": 6.188916756855179e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.850679337978363,
+            "leftArmExtension": 0.7915856838226318,
+            "rightForearmCorrectionDegrees": 31.323640823364259,
+            "leftForearmCorrectionDegrees": 31.829748153686525,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.03863181546330452,
+                "y": 0.4903491139411926,
+                "z": 0.2817423939704895
+            },
+            "bladeAxis": {
+                "x": -0.3809888958930969,
+                "y": 0.18301859498023988,
+                "z": 0.9062846302986145
+            },
+            "rightWrist": {
+                "x": 0.027859695255756379,
+                "y": 0.5408406853675842,
+                "z": 0.20547348260879517
+            },
+            "leftWrist": {
+                "x": 0.04467753320932388,
+                "y": 0.5155245661735535,
+                "z": 0.13033747673034669
+            },
+            "rightElbow": {
+                "x": 0.13080114126205445,
+                "y": 0.532480776309967,
+                "z": 0.11415660381317139
+            },
+            "leftElbow": {
+                "x": -0.09465154260396958,
+                "y": 0.4807926416397095,
+                "z": 0.10743546485900879
+            }
+        },
+        {
+            "time": 0.5083333253860474,
+            "rightGripError": 5.57550414725938e-8,
+            "leftGripError": 4.280032683823265e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8493840098381043,
+            "leftArmExtension": 0.7949545383453369,
+            "rightForearmCorrectionDegrees": 31.66911506652832,
+            "leftForearmCorrectionDegrees": 31.85907554626465,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.03351902961730957,
+                "y": 0.48966383934020998,
+                "z": 0.27785158157348635
+            },
+            "bladeAxis": {
+                "x": -0.4095190167427063,
+                "y": 0.1963658332824707,
+                "z": 0.890917956829071
+            },
+            "rightWrist": {
+                "x": 0.025816619396209718,
+                "y": 0.5389536023139954,
+                "z": 0.20008644461631776
+            },
+            "leftWrist": {
+                "x": 0.04409772902727127,
+                "y": 0.5129038691520691,
+                "z": 0.12815460562705995
+            },
+            "rightElbow": {
+                "x": 0.12961798906326295,
+                "y": 0.530247688293457,
+                "z": 0.10978090763092041
+            },
+            "leftElbow": {
+                "x": -0.09545084089040756,
+                "y": 0.4800257980823517,
+                "z": 0.103892982006073
+            }
+        },
+        {
+            "time": 0.5166666507720947,
+            "rightGripError": 1.6391277313232423e-7,
+            "leftGripError": 6.828570064953965e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8483937978744507,
+            "leftArmExtension": 0.7979810237884522,
+            "rightForearmCorrectionDegrees": 32.0015869140625,
+            "leftForearmCorrectionDegrees": 31.891088485717775,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.028378313407301904,
+                "y": 0.4889765977859497,
+                "z": 0.27383139729499819
+            },
+            "bladeAxis": {
+                "x": -0.4376256763935089,
+                "y": 0.20963165163993836,
+                "z": 0.8743789196014404
+            },
+            "rightWrist": {
+                "x": 0.02376754954457283,
+                "y": 0.5370044112205505,
+                "z": 0.19471198320388795
+            },
+            "leftWrist": {
+                "x": 0.043399881571531299,
+                "y": 0.5102546215057373,
+                "z": 0.1260022521018982
+            },
+            "rightElbow": {
+                "x": 0.12838006019592286,
+                "y": 0.5280164480209351,
+                "z": 0.10537531971931458
+            },
+            "leftElbow": {
+                "x": -0.09634916484355927,
+                "y": 0.47924259305000307,
+                "z": 0.10047072172164917
+            }
+        },
+        {
+            "time": 0.5249999761581421,
+            "rightGripError": 3.4142850324769827e-8,
+            "leftGripError": 9.185692562141412e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8476746678352356,
+            "leftArmExtension": 0.8005731105804443,
+            "rightForearmCorrectionDegrees": 32.33058547973633,
+            "leftForearmCorrectionDegrees": 31.934444427490236,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.023224594071507455,
+                "y": 0.4883922040462494,
+                "z": 0.26967108249664309
+            },
+            "bladeAxis": {
+                "x": -0.46515345573425295,
+                "y": 0.22272805869579316,
+                "z": 0.856752336025238
+            },
+            "rightWrist": {
+                "x": 0.021705497056245805,
+                "y": 0.5351101160049439,
+                "z": 0.18934792280197144
+            },
+            "leftWrist": {
+                "x": 0.042573049664497378,
+                "y": 0.5076930522918701,
+                "z": 0.12385743856430054
+            },
+            "rightElbow": {
+                "x": 0.12709176540374757,
+                "y": 0.5258884429931641,
+                "z": 0.10094940662384033
+            },
+            "leftElbow": {
+                "x": -0.09735545516014099,
+                "y": 0.4785279631614685,
+                "z": 0.09715884923934937
+            }
+        },
+        {
+            "time": 0.5333333015441895,
+            "rightGripError": 3.003425064207477e-8,
+            "leftGripError": 3.332000986233652e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8473089933395386,
+            "leftArmExtension": 0.8028069138526917,
+            "rightForearmCorrectionDegrees": 32.643089294433597,
+            "leftForearmCorrectionDegrees": 31.976032257080079,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.018094709143042566,
+                "y": 0.48779982328414919,
+                "z": 0.26540127396583559
+            },
+            "bladeAxis": {
+                "x": -0.4919367730617523,
+                "y": 0.2355886995792389,
+                "z": 0.8381505608558655
+            },
+            "rightWrist": {
+                "x": 0.01964430883526802,
+                "y": 0.5331709384918213,
+                "z": 0.18402963876724244
+            },
+            "leftWrist": {
+                "x": 0.04162975400686264,
+                "y": 0.5051188468933106,
+                "z": 0.12173756957054138
+            },
+            "rightElbow": {
+                "x": 0.12575125694274903,
+                "y": 0.5237838625907898,
+                "z": 0.09651505947113037
+            },
+            "leftElbow": {
+                "x": -0.09846160560846329,
+                "y": 0.47780418395996096,
+                "z": 0.0939578115940094
+            }
+        },
+        {
+            "time": 0.5416666865348816,
+            "rightGripError": 6.838723720647977e-8,
+            "leftGripError": 1.3075715799004684e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.84722900390625,
+            "leftArmExtension": 0.8045761585235596,
+            "rightForearmCorrectionDegrees": 32.9549446105957,
+            "leftForearmCorrectionDegrees": 32.028785705566409,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.013000484555959702,
+                "y": 0.48730719089508059,
+                "z": 0.2610468864440918
+            },
+            "bladeAxis": {
+                "x": -0.5178391933441162,
+                "y": 0.24813327193260194,
+                "z": 0.8187018632888794
+            },
+            "rightWrist": {
+                "x": 0.017572760581970216,
+                "y": 0.531308114528656,
+                "z": 0.1787843108177185
+            },
+            "leftWrist": {
+                "x": 0.04055969417095184,
+                "y": 0.5026511549949646,
+                "z": 0.11965084075927735
+            },
+            "rightElbow": {
+                "x": 0.12436409294605255,
+                "y": 0.5217982530593872,
+                "z": 0.09211963415145874
+            },
+            "leftElbow": {
+                "x": -0.09967559576034546,
+                "y": 0.4771493673324585,
+                "z": 0.09089106321334839
+            }
+        },
+        {
+            "time": 0.550000011920929,
+            "rightGripError": 6.664001972467304e-8,
+            "leftGripError": 1.4770201062219713e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8475290536880493,
+            "leftArmExtension": 0.8060007095336914,
+            "rightForearmCorrectionDegrees": 33.249881744384769,
+            "leftForearmCorrectionDegrees": 32.07415771484375,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.007981015369296074,
+                "y": 0.48680001497268679,
+                "z": 0.2566128373146057
+            },
+            "bladeAxis": {
+                "x": -0.5427294373512268,
+                "y": 0.26030439138412478,
+                "z": 0.7985528111457825
+            },
+            "rightWrist": {
+                "x": 0.0155072882771492,
+                "y": 0.5294207334518433,
+                "z": 0.17361551523208619
+            },
+            "leftWrist": {
+                "x": 0.03938305377960205,
+                "y": 0.5001866817474365,
+                "z": 0.1175844669342041
+            },
+            "rightElbow": {
+                "x": 0.1229282021522522,
+                "y": 0.5198566913604736,
+                "z": 0.08773833513259888
+            },
+            "leftElbow": {
+                "x": -0.10098212212324143,
+                "y": 0.4764966368675232,
+                "z": 0.08792310953140259
+            }
+        },
+        {
+            "time": 0.5583333373069763,
+            "rightGripError": 1.0848209086589122e-7,
+            "leftGripError": 7.920075972833729e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8481219410896301,
+            "leftArmExtension": 0.806972324848175,
+            "rightForearmCorrectionDegrees": 33.55055236816406,
+            "leftForearmCorrectionDegrees": 32.129249572753909,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": 0.0030457545071840288,
+                "y": 0.48638537526130679,
+                "z": 0.25216221809387209
+            },
+            "bladeAxis": {
+                "x": -0.566497802734375,
+                "y": 0.2720356583595276,
+                "z": 0.7778669595718384
+            },
+            "rightWrist": {
+                "x": 0.013432307168841362,
+                "y": 0.5276303887367249,
+                "z": 0.16858357191085816
+            },
+            "leftWrist": {
+                "x": 0.03809177130460739,
+                "y": 0.4978429079055786,
+                "z": 0.11558234691619873
+            },
+            "rightElbow": {
+                "x": 0.12144707143306732,
+                "y": 0.5180479288101196,
+                "z": 0.0834566056728363
+            },
+            "leftElbow": {
+                "x": -0.10238758474588394,
+                "y": 0.47591733932495119,
+                "z": 0.08511558175086975
+            }
+        },
+        {
+            "time": 0.5666666626930237,
+            "rightGripError": 7.798679746429116e-8,
+            "leftGripError": 8.024520781191313e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8490856289863586,
+            "leftArmExtension": 0.8076387643814087,
+            "rightForearmCorrectionDegrees": 33.837623596191409,
+            "leftForearmCorrectionDegrees": 32.171302795410159,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.001767466776072979,
+                "y": 0.48595112562179568,
+                "z": 0.24766729772090913
+            },
+            "bladeAxis": {
+                "x": -0.5890570282936096,
+                "y": 0.2832756042480469,
+                "z": 0.7568137049674988
+            },
+            "rightWrist": {
+                "x": 0.011369038373231888,
+                "y": 0.5258386135101318,
+                "z": 0.16365233063697816
+            },
+            "leftWrist": {
+                "x": 0.03671292960643768,
+                "y": 0.49551886320114138,
+                "z": 0.1135951578617096
+            },
+            "rightElbow": {
+                "x": 0.11992479115724564,
+                "y": 0.5163022875785828,
+                "z": 0.07921120524406433
+            },
+            "leftElbow": {
+                "x": -0.10386846959590912,
+                "y": 0.4753532409667969,
+                "z": 0.08239227533340454
+            }
+        },
+        {
+            "time": 0.574999988079071,
+            "rightGripError": 1.9028176723168145e-7,
+            "leftGripError": 6.322026990801533e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.850270688533783,
+            "leftArmExtension": 0.807867169380188,
+            "rightForearmCorrectionDegrees": 34.13859558105469,
+            "leftForearmCorrectionDegrees": 32.220916748046878,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.006457766517996788,
+                "y": 0.4856092929840088,
+                "z": 0.24321895837783814
+            },
+            "bladeAxis": {
+                "x": -0.6103468537330627,
+                "y": 0.2939980924129486,
+                "z": 0.7355557084083557
+            },
+            "rightWrist": {
+                "x": 0.009303337894380093,
+                "y": 0.5241686701774597,
+                "z": 0.15890270471572877
+            },
+            "leftWrist": {
+                "x": 0.03523834049701691,
+                "y": 0.49333229660987856,
+                "z": 0.1116940975189209
+            },
+            "rightElbow": {
+                "x": 0.11837324500083924,
+                "y": 0.5146953463554382,
+                "z": 0.07511958479881287
+            },
+            "leftElbow": {
+                "x": -0.10543115437030792,
+                "y": 0.4748639464378357,
+                "z": 0.07984423637390137
+            }
+        },
+        {
+            "time": 0.5833333134651184,
+            "rightGripError": 6.911894701033816e-8,
+            "leftGripError": 1.666000493116826e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8518048524856567,
+            "leftArmExtension": 0.8078581094741821,
+            "rightForearmCorrectionDegrees": 34.43032455444336,
+            "leftForearmCorrectionDegrees": 32.2521858215332,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.010970402508974076,
+                "y": 0.48524075746536257,
+                "z": 0.2387751042842865
+            },
+            "bladeAxis": {
+                "x": -0.630251407623291,
+                "y": 0.3041035234928131,
+                "z": 0.714356005191803
+            },
+            "rightWrist": {
+                "x": 0.007259625941514969,
+                "y": 0.5225220322608948,
+                "z": 0.15428388118743897
+            },
+            "leftWrist": {
+                "x": 0.03370802104473114,
+                "y": 0.4911845624446869,
+                "z": 0.10980495810508728
+            },
+            "rightElbow": {
+                "x": 0.11679131537675858,
+                "y": 0.5131720900535584,
+                "z": 0.07109138369560242
+            },
+            "leftElbow": {
+                "x": -0.10703913122415543,
+                "y": 0.4744042754173279,
+                "z": 0.0773695707321167
+            }
+        },
+        {
+            "time": 0.5916666388511658,
+            "rightGripError": 1.0576560782737943e-7,
+            "leftGripError": 1.0242855097430948e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8535505533218384,
+            "leftArmExtension": 0.8075035810470581,
+            "rightForearmCorrectionDegrees": 34.74436569213867,
+            "leftForearmCorrectionDegrees": 32.29005813598633,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.015277649275958538,
+                "y": 0.4849563241004944,
+                "z": 0.23450471460819245
+            },
+            "bladeAxis": {
+                "x": -0.6486523151397705,
+                "y": 0.31348147988319399,
+                "z": 0.6935270428657532
+            },
+            "rightWrist": {
+                "x": 0.0052279261872172359,
+                "y": 0.5210326313972473,
+                "z": 0.14995509386062623
+            },
+            "leftWrist": {
+                "x": 0.03213181719183922,
+                "y": 0.48920753598213198,
+                "z": 0.10805997252464295
+            },
+            "rightElbow": {
+                "x": 0.1151900365948677,
+                "y": 0.5118193626403809,
+                "z": 0.06731700897216797
+            },
+            "leftElbow": {
+                "x": -0.10868394374847412,
+                "y": 0.47403958439826968,
+                "z": 0.0751321017742157
+            }
+        },
+        {
+            "time": 0.5999999642372131,
+            "rightGripError": 1.0063564559459337e-7,
+            "leftGripError": 3.332000986233652e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8555886745452881,
+            "leftArmExtension": 0.807000994682312,
+            "rightForearmCorrectionDegrees": 35.05559158325195,
+            "leftForearmCorrectionDegrees": 32.30614471435547,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.019363660365343095,
+                "y": 0.48464295268058779,
+                "z": 0.23028843104839326
+            },
+            "bladeAxis": {
+                "x": -0.6656109690666199,
+                "y": 0.3221784830093384,
+                "z": 0.6731740236282349
+            },
+            "rightWrist": {
+                "x": 0.003231288865208626,
+                "y": 0.5195907354354858,
+                "z": 0.14577797055244447
+            },
+            "leftWrist": {
+                "x": 0.03053944557905197,
+                "y": 0.48728686571121218,
+                "z": 0.10632500052452088
+            },
+            "rightElbow": {
+                "x": 0.11357400566339493,
+                "y": 0.5105648040771484,
+                "z": 0.06362801790237427
+            },
+            "leftElbow": {
+                "x": -0.11033487319946289,
+                "y": 0.4737146496772766,
+                "z": 0.07295441627502442
+            }
+        },
+        {
+            "time": 0.6083333492279053,
+            "rightGripError": 9.585046711890755e-8,
+            "leftGripError": 1.365714012990793e-7,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8577063083648682,
+            "leftArmExtension": 0.8062137961387634,
+            "rightForearmCorrectionDegrees": 35.397945404052737,
+            "leftForearmCorrectionDegrees": 32.32670974731445,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.023233193904161454,
+                "y": 0.4844083786010742,
+                "z": 0.22629261016845704
+            },
+            "bladeAxis": {
+                "x": -0.6811325550079346,
+                "y": 0.3302421569824219,
+                "z": 0.6534515023231506
+            },
+            "rightWrist": {
+                "x": 0.0012626638635993004,
+                "y": 0.5183079242706299,
+                "z": 0.14190131425857545
+            },
+            "leftWrist": {
+                "x": 0.028928853571414949,
+                "y": 0.48552799224853518,
+                "z": 0.10474890470504761
+            },
+            "rightElbow": {
+                "x": 0.11196523159742356,
+                "y": 0.5094565153121948,
+                "z": 0.06021788716316223
+            },
+            "leftElbow": {
+                "x": -0.11199434101581574,
+                "y": 0.47346505522727969,
+                "z": 0.07100692391395569
+            }
+        },
+        {
+            "time": 0.6166666746139526,
+            "rightGripError": 1.4716241025780619e-7,
+            "leftGripError": 8.940696716308594e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8600338697433472,
+            "leftArmExtension": 0.8053551316261292,
+            "rightForearmCorrectionDegrees": 35.744354248046878,
+            "leftForearmCorrectionDegrees": 32.32472229003906,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.026853688061237336,
+                "y": 0.48414894938468935,
+                "z": 0.2223910540342331
+            },
+            "bladeAxis": {
+                "x": -0.6952318549156189,
+                "y": 0.3376327157020569,
+                "z": 0.634552538394928
+            },
+            "rightWrist": {
+                "x": -0.0006566951051354408,
+                "y": 0.5170918107032776,
+                "z": 0.13818511366844178
+            },
+            "leftWrist": {
+                "x": 0.027339104562997819,
+                "y": 0.483839750289917,
+                "z": 0.10317900776863098
+            },
+            "rightElbow": {
+                "x": 0.11036104708909989,
+                "y": 0.5084519982337952,
+                "z": 0.0569077730178833
+            },
+            "leftElbow": {
+                "x": -0.11362223327159882,
+                "y": 0.47325563430786135,
+                "z": 0.06910181045532227
+            }
+        },
+        {
+            "time": 0.625,
+            "rightGripError": 1.265991329546523e-7,
+            "leftGripError": 6.705522537231445e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8623831868171692,
+            "leftArmExtension": 0.8043165802955627,
+            "rightForearmCorrectionDegrees": 36.128013610839847,
+            "leftForearmCorrectionDegrees": 32.32786178588867,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.030216718092560769,
+                "y": 0.48395979404449465,
+                "z": 0.21879896521568299
+            },
+            "bladeAxis": {
+                "x": -0.707904577255249,
+                "y": 0.3443538248538971,
+                "z": 0.6166781187057495
+            },
+            "rightWrist": {
+                "x": -0.0025299224071204664,
+                "y": 0.5160459876060486,
+                "z": 0.13483011722564698
+            },
+            "leftWrist": {
+                "x": 0.025780554860830308,
+                "y": 0.4823223352432251,
+                "z": 0.10180535912513733
+            },
+            "rightElbow": {
+                "x": 0.10878151655197144,
+                "y": 0.5075955390930176,
+                "z": 0.053935348987579349
+            },
+            "leftElbow": {
+                "x": -0.11521191895008087,
+                "y": 0.4731166660785675,
+                "z": 0.0674576461315155
+            }
+        },
+        {
+            "time": 0.6333333253860474,
+            "rightGripError": 1.0973118236279334e-7,
+            "leftGripError": 6.322026990801533e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8648642897605896,
+            "leftArmExtension": 0.803292989730835,
+            "rightForearmCorrectionDegrees": 36.51945877075195,
+            "leftForearmCorrectionDegrees": 32.30972671508789,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.03329738974571228,
+                "y": 0.4837488830089569,
+                "z": 0.21534743905067445
+            },
+            "bladeAxis": {
+                "x": -0.7191942930221558,
+                "y": 0.350386381149292,
+                "z": 0.5999913215637207
+            },
+            "rightWrist": {
+                "x": -0.00433366559445858,
+                "y": 0.5150845050811768,
+                "z": 0.13165253400802613
+            },
+            "leftWrist": {
+                "x": 0.024289505556225778,
+                "y": 0.48089316487312319,
+                "z": 0.10043555498123169
+            },
+            "rightElbow": {
+                "x": 0.1072290763258934,
+                "y": 0.5068499445915222,
+                "z": 0.05108237266540527
+            },
+            "leftElbow": {
+                "x": -0.11672421544790268,
+                "y": 0.4730144739151001,
+                "z": 0.06584590673446655
+            }
+        },
+        {
+            "time": 0.6416666507720947,
+            "rightGripError": 1.6624107956886292e-7,
+            "leftGripError": 4.0122603905956569e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8672986030578613,
+            "leftArmExtension": 0.802193284034729,
+            "rightForearmCorrectionDegrees": 36.94890213012695,
+            "leftForearmCorrectionDegrees": 32.29759979248047,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.03608548268675804,
+                "y": 0.48360031843185427,
+                "z": 0.21229210495948792
+            },
+            "bladeAxis": {
+                "x": -0.7291035652160645,
+                "y": 0.35574591159820559,
+                "z": 0.5846823453903198
+            },
+            "rightWrist": {
+                "x": -0.00606658635661006,
+                "y": 0.5142959952354431,
+                "z": 0.12889444828033448
+            },
+            "leftWrist": {
+                "x": 0.022879965603351594,
+                "y": 0.4796406924724579,
+                "z": 0.09930065274238587
+            },
+            "rightElbow": {
+                "x": 0.10572486370801926,
+                "y": 0.5062480568885803,
+                "z": 0.048623085021972659
+            },
+            "leftElbow": {
+                "x": -0.11814979463815689,
+                "y": 0.4729686975479126,
+                "z": 0.06452310085296631
+            }
+        },
+        {
+            "time": 0.6499999761581421,
+            "rightGripError": 6.638573069039922e-8,
+            "leftGripError": 7.48774056091861e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8697640895843506,
+            "leftArmExtension": 0.8011759519577026,
+            "rightForearmCorrectionDegrees": 37.384986877441409,
+            "leftForearmCorrectionDegrees": 32.2701530456543,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.038559690117836,
+                "y": 0.48343750834465029,
+                "z": 0.20941853523254395
+            },
+            "bladeAxis": {
+                "x": -0.7376856803894043,
+                "y": 0.360410213470459,
+                "z": 0.570898175239563
+            },
+            "rightWrist": {
+                "x": -0.007701067253947258,
+                "y": 0.5136058926582336,
+                "z": 0.12632781267166139
+            },
+            "leftWrist": {
+                "x": 0.02158646285533905,
+                "y": 0.4784981310367584,
+                "z": 0.0981641411781311
+            },
+            "rightElbow": {
+                "x": 0.1042802482843399,
+                "y": 0.5057578086853027,
+                "z": 0.04630166292190552
+            },
+            "leftElbow": {
+                "x": -0.11945142596960068,
+                "y": 0.4729481339454651,
+                "z": 0.063222736120224
+            }
+        },
+        {
+            "time": 0.6583333015441895,
+            "rightGripError": 1.289537152615594e-7,
+            "leftGripError": 9.245927401480003e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8721213340759277,
+            "leftArmExtension": 0.8001983761787415,
+            "rightForearmCorrectionDegrees": 37.847190856933597,
+            "leftForearmCorrectionDegrees": 32.24736404418945,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.040706515312194827,
+                "y": 0.4833258092403412,
+                "z": 0.20703066885471345
+            },
+            "bladeAxis": {
+                "x": -0.7449408769607544,
+                "y": 0.3644034266471863,
+                "z": 0.5588146448135376
+            },
+            "rightWrist": {
+                "x": -0.009229217655956746,
+                "y": 0.5130808353424072,
+                "z": 0.1242445707321167
+            },
+            "leftWrist": {
+                "x": 0.020426902920007707,
+                "y": 0.47753432393074038,
+                "z": 0.09730562567710877
+            },
+            "rightElbow": {
+                "x": 0.10291437804698944,
+                "y": 0.5054023265838623,
+                "z": 0.0444294810295105
+            },
+            "leftElbow": {
+                "x": -0.12061520665884018,
+                "y": 0.4729642868041992,
+                "z": 0.06223946809768677
+            }
+        },
+        {
+            "time": 0.6666666269302368,
+            "rightGripError": 9.367087017153608e-8,
+            "leftGripError": 4.7706993910878739e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8743516802787781,
+            "leftArmExtension": 0.7993342876434326,
+            "rightForearmCorrectionDegrees": 38.302772521972659,
+            "leftForearmCorrectionDegrees": 32.22039794921875,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.042508888989686969,
+                "y": 0.4832139313220978,
+                "z": 0.2048569768667221
+            },
+            "bladeAxis": {
+                "x": -0.7509171962738037,
+                "y": 0.3676939606666565,
+                "z": 0.5485667586326599
+            },
+            "rightWrist": {
+                "x": -0.010610377416014672,
+                "y": 0.5126635432243347,
+                "z": 0.12235897779464722
+            },
+            "leftWrist": {
+                "x": 0.019429689273238183,
+                "y": 0.4767085313796997,
+                "z": 0.0964338481426239
+            },
+            "rightElbow": {
+                "x": 0.10166370868682862,
+                "y": 0.5051484107971191,
+                "z": 0.042711883783340457
+            },
+            "leftElbow": {
+                "x": -0.12161287665367127,
+                "y": 0.4729882776737213,
+                "z": 0.0612693727016449
+            }
+        },
+        {
+            "time": 0.675000011920929,
+            "rightGripError": 9.065936268370933e-8,
+            "leftGripError": 7.300048565639372e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8764354586601257,
+            "leftArmExtension": 0.7986641526222229,
+            "rightForearmCorrectionDegrees": 38.74656677246094,
+            "leftForearmCorrectionDegrees": 32.1920051574707,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.0439479723572731,
+                "y": 0.48313021659851076,
+                "z": 0.20326991379261018
+            },
+            "bladeAxis": {
+                "x": -0.7556038498878479,
+                "y": 0.37030619382858279,
+                "z": 0.5403115153312683
+            },
+            "rightWrist": {
+                "x": -0.011828968301415444,
+                "y": 0.5123803019523621,
+                "z": 0.12103408575057984
+            },
+            "leftWrist": {
+                "x": 0.018616631627082826,
+                "y": 0.47605177760124209,
+                "z": 0.09589871764183045
+            },
+            "rightElbow": {
+                "x": 0.10053368657827378,
+                "y": 0.5050132870674133,
+                "z": 0.041498154401779178
+            },
+            "leftElbow": {
+                "x": -0.12242202460765839,
+                "y": 0.47303062677383425,
+                "z": 0.06065148115158081
+            }
+        },
+        {
+            "time": 0.6833333373069763,
+            "rightGripError": 5.3085386753082278e-8,
+            "leftGripError": 4.3443975528134618e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.878084123134613,
+            "leftArmExtension": 0.7980603575706482,
+            "rightForearmCorrectionDegrees": 39.1416130065918,
+            "leftForearmCorrectionDegrees": 32.17879867553711,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.0450146310031414,
+                "y": 0.48307478427886965,
+                "z": 0.2019108682870865
+            },
+            "bladeAxis": {
+                "x": -0.7590236067771912,
+                "y": 0.3722061514854431,
+                "z": 0.5341779589653015
+            },
+            "rightWrist": {
+                "x": -0.012807969003915787,
+                "y": 0.5122082233428955,
+                "z": 0.11988919973373413
+            },
+            "leftWrist": {
+                "x": 0.018003052100539209,
+                "y": 0.47557443380355837,
+                "z": 0.09532353281974793
+            },
+            "rightElbow": {
+                "x": 0.09963015466928482,
+                "y": 0.5049440860748291,
+                "z": 0.04045051336288452
+            },
+            "leftElbow": {
+                "x": -0.12303568422794342,
+                "y": 0.47305941581726076,
+                "z": 0.06003689765930176
+            }
+        },
+        {
+            "time": 0.6916666626930237,
+            "rightGripError": 5.1087095442881039e-8,
+            "leftGripError": 4.3443975528134618e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8790851831436157,
+            "leftArmExtension": 0.7978033423423767,
+            "rightForearmCorrectionDegrees": 39.37222671508789,
+            "leftForearmCorrectionDegrees": 32.165164947509769,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.04557456448674202,
+                "y": 0.48303842544555666,
+                "z": 0.20129644870758058
+            },
+            "bladeAxis": {
+                "x": -0.7608241438865662,
+                "y": 0.37319669127464297,
+                "z": 0.5309159159660339
+            },
+            "rightWrist": {
+                "x": -0.013360509648919106,
+                "y": 0.512125551700592,
+                "z": 0.11939853429794312
+            },
+            "leftWrist": {
+                "x": 0.017681404948234559,
+                "y": 0.4753163456916809,
+                "z": 0.09512633085250855
+            },
+            "rightElbow": {
+                "x": 0.09910603612661362,
+                "y": 0.5049321055412293,
+                "z": 0.039993613958358768
+            },
+            "leftElbow": {
+                "x": -0.12335421144962311,
+                "y": 0.47308385372161868,
+                "z": 0.05980837345123291
+            }
+        },
+        {
+            "time": 0.699999988079071,
+            "rightGripError": 1.2338530552824523e-7,
+            "leftGripError": 3.332000986233652e-8,
+            "weaponReachCorrection": 0.0,
+            "rightArmExtension": 0.8798008561134338,
+            "leftArmExtension": 0.7975687980651856,
+            "rightForearmCorrectionDegrees": 39.558197021484378,
+            "leftForearmCorrectionDegrees": 32.16139221191406,
+            "rightUpperDirectionError": 0.0,
+            "leftUpperDirectionError": 0.0,
+            "rightForearmDirectionError": 0.0,
+            "leftForearmDirectionError": 0.0,
+            "weaponPosition": {
+                "x": -0.045943357050418857,
+                "y": 0.4830235242843628,
+                "z": 0.2008076310157776
+            },
+            "bladeAxis": {
+                "x": -0.761972963809967,
+                "y": 0.37385639548301699,
+                "z": 0.5287997722625732
+            },
+            "rightWrist": {
+                "x": -0.01376510038971901,
+                "y": 0.5120939612388611,
+                "z": 0.11899924278259278
+            },
+            "leftWrist": {
+                "x": 0.017463158816099168,
+                "y": 0.47515416145324709,
+                "z": 0.0949086844921112
+            },
+            "rightElbow": {
+                "x": 0.09872417151927948,
+                "y": 0.5049400329589844,
+                "z": 0.03962302207946777
+            },
+            "leftElbow": {
+                "x": -0.12357264757156372,
+                "y": 0.473095566034317,
+                "z": 0.05958101153373718
+            }
+        }
+    ]
+}

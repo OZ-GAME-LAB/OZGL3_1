@@ -1,0 +1,74 @@
+{
+  "sourceManifest": "C:\\Users\\me\\Desktop\\OZGameLab3\\OZGL3_1\\ArtSources\\Characters\\Protagonist01\\Final\\Validation\\ChibiCompatibility20261029\\Jump\\sequence-render.json",
+  "sourceManifestSHA256": "e162c7042aa1e557dd8a60fd5e0c80aa124d876500e43b68cf1cbf4e8aed5bdb",
+  "externalDirectory": "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Compatibility20261029",
+  "gameplayRecording": false,
+  "clipsModifiedByComposition": false,
+  "scope": "Unchanged saved clips on real Player_Chibi prefab. Offline transitions with authored clip timing; parent jump height and airtime compressed for review. Saved_ApexOnly reproduces only the saved Air clip choice, not the entire live Animator or physics.",
+  "heightMetres": 0.66,
+  "airDurationSeconds": 1.2,
+  "gifFiles": [
+    {
+      "file": "Characters/Protagonist01/Final/Review/Compatibility20261029/Intended_Idle_Jump_Land_Side.gif",
+      "sha256": "2b49284ca54a0087885bc4f71f64b0990e68e297c7e17f3b9e042f1011762c86",
+      "frames": 93,
+      "fps": 30,
+      "durationMilliseconds": 3100,
+      "width": 560,
+      "height": 672,
+      "bytes": 1961688
+    },
+    {
+      "file": "Characters/Protagonist01/Final/Review/Compatibility20261029/Intended_Idle_Jump_Land_Front.gif",
+      "sha256": "673c2fc6ce3fa8817ba970483525d81b75b26016ad6ca156f6dd8ca23bf1bd29",
+      "frames": 93,
+      "fps": 30,
+      "durationMilliseconds": 3100,
+      "width": 560,
+      "height": 672,
+      "bytes": 2259901
+    },
+    {
+      "file": "Characters/Protagonist01/Final/Review/Compatibility20261029/Saved_ApexOnly_Idle_Jump_Land_Side.gif",
+      "sha256": "50678a82771681dca21bfdc54e5c2c42b8180fa9ea01058416f446b6979ac708",
+      "frames": 93,
+      "fps": 30,
+      "durationMilliseconds": 3100,
+      "width": 560,
+      "height": 672,
+      "bytes": 1981774
+    },
+    {
+      "file": "Characters/Protagonist01/Final/Review/Compatibility20261029/Saved_ApexOnly_Idle_Jump_Land_Front.gif",
+      "sha256": "59ea20d8ef0999a222e9a4e768d12a55c183ed08edccb7e3d394d9877bcd9b15",
+      "frames": 93,
+      "fps": 30,
+      "durationMilliseconds": 3100,
+      "width": 560,
+      "height": 672,
+      "bytes": 2329372
+    },
+    {
+      "file": "Characters/Protagonist01/Final/Review/Compatibility20261029/Current_vs_Intended_Jump_Side.gif",
+      "sha256": "6e09a6dcf2a3a0bfad4638f28103b3f073df344821e2c4c88fde6b1b34c6196e",
+      "frames": 93,
+      "fps": 30,
+      "durationMilliseconds": 3100,
+      "width": 1120,
+      "height": 672,
+      "bytes": 3528353
+    }
+  ],
+  "phaseContactSheets": [
+    "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Compatibility20261029\\Contacts\\Intended_Idle_Jump_Land_Side.jpg",
+    "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Compatibility20261029\\Contacts\\Intended_Idle_Jump_Land_Front.jpg",
+    "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Compatibility20261029\\Contacts\\Saved_ApexOnly_Idle_Jump_Land_Side.jpg",
+    "C:\\Users\\me\\Desktop\\OZGL3_ArtReview\\Characters\\Protagonist01\\Final\\Review\\Compatibility20261029\\Contacts\\Saved_ApexOnly_Idle_Jump_Land_Front.jpg"
+  ],
+  "allFrameCountsAndDurationsVerified": true,
+  "gifFilesInsideProject": 0,
+  "rawRenderMinimumUniqueColors": 5175,
+  "blankRenderGuardPassed": true,
+  "visualReview": "PASS for presentation: directly inspected 12 phase samples for each of4 Side/Front sequences and labeled comparison GIF first frame. Character is visible throughout checked phases, captions readable, whole body fits frame, no obvious mesh collapse. Current small Rise/Fall pose differences remain intentionally unchanged for diagnosis.",
+  "priorRejectedPass": "Initial source PNGs were floor-only because gameplay prefab root was inactive. Root corrected disposable clone activation and rerendered; all5 failed GIFs were overwritten. New all-frame blank-render guard minimum unique colors5175."
+}

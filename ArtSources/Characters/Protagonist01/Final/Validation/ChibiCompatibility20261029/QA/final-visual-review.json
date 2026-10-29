@@ -1,0 +1,68 @@
+{
+  "pass": 10,
+  "reviewer": "chibi_jump_diagnosis",
+  "sourceAuditSHA256": "57766ad97a4d034f1be3d95fa53bd0b08a267dce5d055d1c0ba617d81d89b4c2",
+  "verdict": "Presentation and sampled full-mesh pose review accepted within the stated scope; no new blocking visual defect identified.",
+  "directlyInspectedCurrentRender": {
+    "Ladder_Climb_Loop": {
+      "Side": 25,
+      "Front": 13,
+      "Opposite": 13,
+      "ThreeQuarter": 13
+    },
+    "Longsword_Attack_Chop": {
+      "Side": 22,
+      "Front": 13,
+      "Opposite": 13,
+      "ThreeQuarter": 13
+    },
+    "Longsword_Attack_Slice": {
+      "Side": 19,
+      "Front": 13,
+      "Opposite": 13,
+      "ThreeQuarter": 13
+    },
+    "Longsword_Attack_Stab": {
+      "Side": 22,
+      "Front": 13,
+      "Opposite": 13,
+      "ThreeQuarter": 13
+    }
+  },
+  "currentPoseCount": 244,
+  "earlierIndependentReview": "pass3-visual-observations.json retains the Death_Fall review:31 Side frames plus13 phases in each of Front, Opposite and ThreeQuarter,70 poses total.",
+  "findings": [
+    {
+      "clip": "Ladder_Climb_Loop",
+      "finding": "The old reversed-facing render is resolved. The arms alternate around the outside of the face and the legs alternate beneath the body. In all displayed phases the hands remain visible outside the facial silhouette rather than disappearing into the face or cap. The initial and endpoint poses visually match. No gross arm stretching, detached mesh or abrupt limb reversal is visible in the complete 30Hz Side sequence and 13-phase alternate views."
+    },
+    {
+      "clips": [
+        "Longsword_Attack_Chop",
+        "Longsword_Attack_Slice",
+        "Longsword_Attack_Stab"
+      ],
+      "finding": "The final review weapon remains attached through the inspected poses. Chop has an upward preparation and downward strike; Slice has torso rotation and a transverse sweep; Stab has a forward extension. Full character and blade endpoints remain in frame in all four review views. No gross limb or torso mesh detachment is visible."
+    },
+    {
+      "topic": "Side-view blade readability",
+      "finding": "A thin edge-on blade or body occlusion reduces blade visibility in some preparation/recovery poses, particularly Chop. The complementary views show the blade still present. This observation is not a geometric collision test."
+    }
+  ],
+  "technicalPresentationChecks": {
+    "nativeClipSamplingHz": 30,
+    "gifTiming": "30/40ms centisecond quantization, verified encoded frame counts and total durations",
+    "ladderPreview": "Two cycles, endpoint duplicate removed, no additional holds",
+    "deathPreview": "Non-looping clip with a final held pose; only the review GIF repeats",
+    "allGIFsOutsideProject": true,
+    "galleryIncludesUnmodifiedIntendedJumpAndApexComparison": true,
+    "retainedFiveGIFsUseReviewedFrames": true
+  },
+  "scopeLimits": [
+    "This review inspects actual rendered Player_Chibi mesh poses, not only skeleton lines.",
+    "Static contact-sheet review and GIF container checks do not prove continuous-time smoothness or collision freedom between samples.",
+    "The parent's independent saved-clip binding, 120Hz contact, wrist and bone-length audits provide separate numerical evidence.",
+    "No live gameplay, Animator transition, ladder collider, skill effect or combat hitbox behavior was tested by this composer."
+  ],
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}

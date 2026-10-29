@@ -1,0 +1,53 @@
+Player_Chibi 점프 상태 읽기 전용 진단 2026-10-29
+
+대상 커밋: c55551a3 (상세 SHA는 saved-state-diagnosis.json)
+이 검사는 저장된 파일을 분석했다. Unity Animator나 게임을 직접 실행해 관찰한 결과는 아니다.
+
+1. 현재 저장된 연결의 차이
+Assets/Anim/Player_Chibi.controller:1202 Air 상태의 m_Motion은 Jump_Apex_Loop.anim 단일 클립이다.
+해당 GUID: 8a37659a065df9b4a9ff9083a74bb038.
+이 controller의 BlendTree는 Walk Run 한 개뿐이며 VelocityY를 사용하는 BlendTree는 저장되어 있지 않다.
+Rise/Fall 클립은 이 controller에서 참조하지 않는다. 팀원 로컬 또는 미저장 변경과 이 체크아웃의 차이일 수 있다.
+따라서 현재 저장본에서는 상승 중에도 낙하 중에도 동일한 Apex 자세가 출력되는 것이 예상된다.
+
+2. 클립 자체의 차이도 작은 편
+Rise/Fall은 이전 요청의 작고 절제된 공중 자세에 맞춰 제작된 클립이다.
+첫 프레임 직렬화 곡선으로 계산한 측면(Y/Z 평면) 관절 위치 차이:
+골반 0mm, 머리 약2.6mm, 손 약23~28mm, 왼발 약65mm, 오른발 약20mm.
+손의 좌우 벌림 차이 약20mm는 정측면에서 깊이 방향이므로 실루엣 구분 기여가 작다.
+이는 실제 변형 메시/카메라 가시성의 검증을 대체하지 않으며 원인 후보를 수치로 보조한다.
+순서: 먼저 현재 연결을 확인한 의도 미리보기를 제공하고, 그 미리보기에서도 부족하면
+상승 앞무릎/발의 접힘과 낙하 다리의 내려 뻗음, 팔꿈치 높이 차이를 조금 키우는 것이 타당하다.
+머리/허리 기울임이나 큰 팔 휘두름을 추가할 필요는 없다.
+
+3. 현재 게임 시간과 기존 GIF 시간이 다름
+Player_Chibi.prefab의 jumpForce는 y속도 12를 대입하고 중력은 -9.81, 선형 감쇠는0이다.
+충돌·지면 판정 오차·고저차·대시 없이 같은 높이로 돌아오는 이상 궤적은
+정점까지1.223초, 최대 높이7.339m, 체공2.446초이다.
+PlayerStates.cs의 Air.UpdateState에서 실제 Rigidbody.y속도를 VelocityY에 전달한다.
+이는 파라미터 갱신이 없는 문제가 아니라 저장 controller에 소비하는 트리가 없는 문제다.
+Jump state speed2: Takeoff0.1667초 클립이0.0833초에 재생되며85%시점부터 Air로0.04초 전환한다.
+Land state speed2: Land0.4333초 클립의 재생 길이는0.2167초이다.
+게임 상태의 LandDuration0.1초와 Animator상 착지 길이는 서로 다르지만 입력 중단 허용 때문에
+그 자체를 오류로 단정하지 않는다. 게임 녹화 또는 Animator평가로 실제 순서를 확인해야 한다.
+
+4. 기존 GIF를 그대로 현재 게임 재현이라고 제시하면 안 됨
+Assets/Art/Characters/Protagonist01/Editor/ChibiAirborneMotion.cs:199 CaptureAirSequence는
+Takeoff0.1667초, 착지시점1.02초, 부모 높이최대0.42m인 오프라인 연출용 시퀀스이다.
+기존 함수는 시작Idle·Apex상·마무리Idle을 명시적으로 포함하지 않으며 게임 물리를 재현하지 않는다.
+현재 사용자 요청 GIF에는 Idle → Takeoff → Rise → Apex → Fall → Land → Idle을 모두 명시하고,
+기존 클립 자체는 수정하지 않은 상태에서 새 검수 시퀀스를 구성해야 한다.
+실제 저장 controller와 의도된3상 미리보기는 캡션으로 구분한다.
+
+5. 재사용 가능한 렌더 도구
+ChibiAirborneMotion.cs의 ReviewAirborneOnly 및 ChibiMotionCapture/ChibiMotionUtility의
+Stage, CpuSkin, ReadPose/Mix/ApplyPose가 저장된 native Chibi24 클립을 샘플링한다.
+측면 카메라 오프셋(1.05,2,-10), actor Y90도 회전으로 작은 입체감을 유지한다.
+기존 .86~1m 직교 카메라 범위는 7.339m 점프를 고정 카메라로 담을 수 없으므로
+같은 물리시간으로 제작할 경우 카메라 추적과 지면 높이 표시를 사용하거나
+시각 확인용 고도 압축을 명시해야 한다. GIF 타이밍까지 몰래 줄여서는 안 된다.
+GIF 저장 위치는 프로젝트 외부 OZGL3_ArtReview를 유지한다.
+
+수정 범위
+이 진단은 게임 코드, prefab, controller, AnimationClip 또는 모델을 수정하지 않았다.
+inspect_jump.py는 자료 재추출용이며 수치/참조/클립 해시는 saved-state-diagnosis.json에 있다.

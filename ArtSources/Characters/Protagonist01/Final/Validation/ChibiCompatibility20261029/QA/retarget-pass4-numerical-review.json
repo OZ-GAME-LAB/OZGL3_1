@@ -1,0 +1,33 @@
+{
+  "revision": "Pass4: separate weapon/body scale, source bend-plane poles retained",
+  "weaponScale": 1.0,
+  "approvedBladeBaseToTipM": 0.555,
+  "approvedGripSeparationM": 0.110,
+  "maximumGripErrorM": 0.00000022709,
+  "maximumHiltReachCorrectionsM": {
+    "Chop": 0.00280609215,
+    "Slice": 0.0,
+    "Stab": 0.01700305007
+  },
+  "largestSourceAndTargetLocalKeyStepDegrees60Hz": {
+    "Chop": {"source": 63.58, "target": 71.99},
+    "Slice": {"source": 41.53, "target": 40.99},
+    "Stab": {"source": 46.08, "target": 51.36}
+  },
+  "additionalScrutiny": {
+    "clip": "Longsword_Attack_Stab",
+    "targetBone": "LeftForeArm",
+    "intervalSeconds": [0.15, 0.1666667],
+    "sourceLocalRotationStepDegrees": 18.64564,
+    "targetLocalRotationStepDegrees": 51.35967,
+    "cause": "During the fast original thrust, the shared hilt and left wrist travel forward while the shorter target arm leaves its 98.5 percent extension reach limit and folds. The elbow world positions progress continuously and no bend-plane sign flip is present.",
+    "worldElbowPositionsAt120Hz": [
+      {"time": 0.15, "position": [-0.05742503, 0.51124638, -0.07094127]},
+      {"time": 0.1583333, "position": [-0.05496542, 0.48318246, -0.01738670]},
+      {"time": 0.1666667, "position": [-0.06205976, 0.46788698, 0.04102278]}
+    ],
+    "visualInspection": "Inspected side rendered frames 0004, 0005, 0006 and front frame 0003. The whole elbow/arm follows the thrust, the silhouette remains compact, and these sampled views show no dislocated elbow or reversed wrist. Parent owns final full-sequence review."
+  },
+  "savedClipAudit": {"missingBindings": 0, "nonFiniteVertices": 0},
+  "notes": "Local per-bone quaternion step is not a direct visual limb-angle metric. The source attacks already have rapid compressed timing. Parent must assess the complete skinned motion, including interpolation, not accept numerical grip contact alone."
+}

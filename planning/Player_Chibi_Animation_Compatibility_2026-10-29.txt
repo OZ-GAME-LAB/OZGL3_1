@@ -1,0 +1,89 @@
+Player_Chibi 애니메이션 호환성 인계 — 2026-10-29 작성 / 2026-10-30 캐스팅 제외 갱신
+
+작업 범위
+승인된 검 공격3종을 실제 Player_Chibi 리그에 변환하고, 사망·사다리 클립을 추가했다.
+최종 선택은 새 네이티브5종과 기존 비공격15종을 합친20종이다. 폐기된 캐스팅은 이번 납품에서 제외한다.
+기존 v007 비공격15종, 게임 코드, Player_Chibi.prefab, Player_Chibi.controller와 VFX는 수정하지 않았다.
+게임 상태 연결·무기 장착·공격 판정·BlendTree는 팀원 담당이며, 이번 결과는 연결 가능한 네이티브 클립 자산이다.
+
+1. 공격이 상태에만 진입하고 재생되지 않은 원인
+기존 Combat/Clips의3종은 Protagonist_KayKit_v018/Hero_KayKit_Rig/... 경로의 KayKit23 Generic 클립이다.
+실제 Player_Chibi는 Visual/Armature/Hips/... 계층의 Chibi24를 사용하며 Animator Avatar는 없다.
+이름이 같아도 Generic 곡선의 Transform 경로가 다르면 적용할 뼈를 찾지 못한다.
+따라서 실제 치비 메시의 바인드 자세와 뼈 계층을 읽어 네이티브 곡선을 다시 생성했다.
+Spine02→Spine01→Spine이 실제 아래에서 위 순서이며 이름 숫자만으로 순서를 가정하지 않았다.
+
+사용할 새 공격 파일
+Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Chop.anim
+Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Slice.anim
+Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Stab.anim
+순서대로 내려베기0.7초, 가로베기0.6초, 찌르기0.7초. 모두 비반복이다.
+Combat/Clips의 동명 원본과 혼동하지 말고 위 경로의 파일을 사용해야 한다.
+기존 ProtagonistAnimationDriver는 _punchClip/_skillClip 길이로 AttackSpeed/SkillSpeed를 계산한다. 상태 Motion 교체 시 해당 참조와 타격 타이밍도 담당자가 확인해야 한다. 원본처럼 새 공격 클립에도 AnimationEvent를 임의로 추가하지 않았다.
+
+검 프리팹
+Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Longsword_Chibi_SocketProp.prefab
+Player_Chibi의 RightHand/WeaponSocket 자식에 local position0 / rotation identity / scale1로 배치한다.
+새 클립은 기존 소켓을 구동하며 별도 런타임 리그나 Humanoid Avatar 추가가 필요하지 않다.
+검의 원래 날 길이0.555m·양손 간격0.110m를 유지했다. 몸 비율과 별도로 짧은 팔의 이동량만 조정했다.
+비공격 상태의 검 표시·소켓 복귀는 기존 장착 시스템 규칙을 따른다. 이번에 장착 코드를 추가하지 않았다.
+
+2. 추가 클립
+같은 ChibiMotion_v007/Clips 폴더에 다음 파일이 있다.
+Death_Fall.anim: 1.0초, 비반복, 마지막0.2초 유지.
+Ladder_Climb_Loop.anim: 0.8초, 반복, 제자리 오르기. 실제 상하 이동은 게임의 기존 이동 처리에서 수행한다.
+손가락 개별 리그/세부 애니메이션을 추가하지 않았으며 기존 치비 주먹 표현을 사용한다.
+
+출처
+공격: 기존 Combat 폴더에 승인·보존한 KayKit 공격3종. 원본 타이밍을 유지하고 치비 비율 및 파지를 보정했다.
+사망: Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx의 Death_A.
+사다리: Assets/Anim/Clips/Climbing Ladder.fbx와 Climb.anim. 기존 Mixamo Avatar에서 원본 관절을 평가한 뒤 치비 Generic 곡선으로 베이크했다.
+새 다운로드나 유료 생성은 사용하지 않았다. 기존 원본·라이선스·메시·재질은 보존했다.
+
+3. 상승/정점/낙하 진단
+진단 기준은2026-10-29 커밋c55551a3의 저장본이다. 이 기준의 Assets/Anim/Player_Chibi.controller에서 Air의 Motion은 Jump_Apex_Loop 하나였다.
+해당 저장본에는 VelocityY로 Rise/Apex/Fall을 섞는 트리가 없었고, 코드에서는 VelocityY를 갱신했다.
+최신develop이나 팀원의 로컬/미저장 상태는 달라질 수 있다. 이 기록을 최신 연결 상태로 단정하지 말고 담당자가 현재 controller를 확인해야 한다.
+또한 Rise/Fall 자체도 실루엣 차이가 작다. 첫 자세의 측면 관절 차이는 손 약23~28mm, 발 약20~65mm, 머리 약2.6mm다.
+따라서 연결이 맞더라도 측면에서 구분이 약할 수 있다. 이번 요청에서는 점프 원본을 바꾸지 않고 원인만 진단했다.
+후속 수정 시 상승의 무릎 접힘과 낙하의 다리 내려 뻗음, 팔꿈치 높이를 조금 더 구분하는 것이 적절하다.
+큰 허리 기울임이나 손목 꺾기로 구분을 만드는 방식은 권장하지 않는다.
+
+점프 GIF
+기존 저장 클립으로 Idle→Takeoff→Rise→Apex→Fall→Land→Idle 순서를 만들었다.
+높이0.66m, 체공1.2초의 오프라인 자세 검수이며 실제 게임 녹화/물리 재현 영상이 아니다.
+진단 기준본의 Air 연결과 비교하는 Apex-only GIF도 같은 카메라·타이밍으로 제공한다.
+게임의 현재 점프 속도·중력으로 단순 계산한 이상 궤적과 이 보기 편한 검수 궤적을 혼동하면 안 된다.
+자세한 상태 속도·전환·수치: Final/Validation/ChibiCompatibility20261029/Jump/DIAGNOSIS.txt.
+
+검수 방법 및 범위
+- 실제 Player_Chibi의 모든 새 곡선 경로 존재 여부 확인.
+- 저장 후 다시 읽은 납품5클립의 전체 변형 메시를120Hz로 검사, 측면 전프레임30Hz 및 정면·반대측면·사선13위상씩 확인.
+- Avatar 없는 실제 Player_Chibi Animator를 사용하는 별도 복제본에서 AnimationClipPlayable로 각5위상 재생.
+- 직접 샘플링 결과와 실제 Animator의 모든7101개 변형 정점을 비교. 실제 게임 컨트롤러 상태 전환 전체를 실행한 검사는 아니다.
+- 검수 과정에서 발견한 IK 굽힘 방향 반전, 사다리 자동 Avatar의 후경사, 검 크기 축소를 각각 수정했다.
+- 파지·연속성 수치, 원본 대비 빠른 찌르기 구간, 다시점 판정과 최종 파일 해시는 날짜별 Validation 폴더에 보관한다.
+빠른 공격의 짧은 옷/팔 겹침이 전혀 없다는 의미는 아니다. 원본 스타일과 동작 타이밍을 유지하면서 눈에 띄는 관절 반전·메시 파손을 검사했다.
+
+저장 위치
+새 자산 목록과 GUID/해시: ArtSources/Characters/Protagonist01/Final/Validation/ChibiCompatibility20261029/delivery-manifest.json
+선택20종 목록: ArtSources/Characters/Protagonist01/Final/selection.json
+전체 안내: ArtSources/Characters/Protagonist01/Final/README.txt
+GIF·프레임·갤러리: C:/Users/me/Desktop/OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029/
+GIF는 Unity 프로젝트/Git 안에 넣지 않았다.
+
+최종 확인
+납품5종 모두 실제 Player_Chibi Animator에서 Avatar 없이 재생됨을 확인했다. 검수 기준본에서 기존 비공격15종과 게임 프리팹/컨트롤러를 포함한 보호 파일22개는 변경하지 않았다.
+사다리의 원본 몸통·다리와 손 높이 교대는 유지했다. 어깨를 기준으로 바깥10cm·앞18cm의 일정한 목표에 양팔 IK를 적용해 큰 머리와 손 사이를 확보했다.
+손목 로컬 회전 변경0°, 뼈 길이 변경0, 최대 팔 도달거리79.48%. 원본 대비 실제 몸통/머리 위치 변화는 부동소수점 오차 범위다.
+저장 사다리98시점(초당120회 이상)에서 실제 손/머리 표면 접촉0. 서로 다른 두 방식의25시점 독립 삼각형 검사도 모두 교차0이다.
+사다리와 공격의244포즈를 네 방향에서 추가 시각 검수했다. 사망은 측면31프레임과 다른3방향13위상씩의70포즈를 앞선 검수에서 확인했다.
+최종 독립 시각 검수: QA/final-visual-review.json. GIF 생성/시간 검증: QA/actions-gif-receipt.json.
+수치 검수는 실제 게임의 상태 전환/전투 타이밍 전체 테스트를 대체하지 않는다. 게임 연결은 기존 팀원 작업에 맡겼다.
+
+캐스팅 폐기 결정 (2026-10-30)
+Skill_Cast_Forward는 손 파지와 동작 품질 문제에 대한 사용자 피드백으로 폐기했다. 최종20종 목록과 이번 납품에 캐스팅은 없다.
+이전의 수치 검사·정지 프레임 검수 결과는 스태프를 쥔 손의 형태와 동작 품질을 충분히 보장하지 못했다. 해당 결과를 승인된 캐스팅의 근거로 사용하지 않는다.
+게임의 스킬 상태에 폐기된 클립을 연결하지 않는다. 기존 모델/리그/무기 원본과1스테이지 몬스터의 원본 애니메이션은 보존한다.
+사용자 요청 순서는 캐스팅 제외 변경사항의 커밋·푸시·develop 머지, 그다음 스켈레톤 마법사 원본 적용 및 대안 조사다.
+후속 캐스팅은 별도 후보와 검수 결과로 기록하며, 이번 납품의 재생 가능5클립이나 최종 선택20종에 섞지 않는다.

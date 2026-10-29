@@ -1,0 +1,454 @@
+{
+  "method": "Actual world triangle AABB broadphase and per-pair 17-axis triangle SAT, including coplanar axes. Independent of fixed 26-direction convex support scoring.",
+  "coordinateSpace": "World positions from Skin.BakeMesh then skin.transform.TransformPoint; triangle lists flattened, every 3 entries form one triangle.",
+  "toleranceMeters": 1e-07,
+  "groupingLimitation": "Vertices selected by dominant bone weight; only triangles with all vertices in the same Head/LeftHand/RightHand group are exported. Open group boundaries require separate containment interpretation; surface crossings are still conclusive.",
+  "frames": [
+    {
+      "frame": "0000",
+      "time": 0.0,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0001",
+      "time": 0.03333333507180214,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0002",
+      "time": 0.06666667014360428,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0003",
+      "time": 0.10000000894069672,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0004",
+      "time": 0.13333334028720856,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0005",
+      "time": 0.1666666865348816,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0006",
+      "time": 0.20000001788139343,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0007",
+      "time": 0.23333334922790527,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0008",
+      "time": 0.2666666805744171,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0009",
+      "time": 0.30000001192092896,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0010",
+      "time": 0.3333333730697632,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0011",
+      "time": 0.366666704416275,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0012",
+      "time": 0.40000003576278687,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0013",
+      "time": 0.4333333671092987,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0014",
+      "time": 0.46666669845581055,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0015",
+      "time": 0.5000000596046448,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0016",
+      "time": 0.5333333611488342,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0017",
+      "time": 0.5666667222976685,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0018",
+      "time": 0.6000000238418579,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0019",
+      "time": 0.6333333849906921,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0020",
+      "time": 0.6666667461395264,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0021",
+      "time": 0.7000000476837158,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0022",
+      "time": 0.73333340883255,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0023",
+      "time": 0.7666667103767395,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    },
+    {
+      "frame": "0024",
+      "time": 0.8000000715255737,
+      "left": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      },
+      "right": {
+        "intersectingTrianglePairs": 0,
+        "involvedHeadTriangles": 0,
+        "involvedFistTriangles": 0,
+        "examples": []
+      }
+    }
+  ],
+  "topology": {
+    "head": {
+      "triangles": 2835,
+      "uniqueVerticesAt1um": 1551,
+      "boundaryEdges": 251,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "componentVertexCounts": [
+        647,
+        540,
+        141,
+        49,
+        42,
+        42,
+        32,
+        29,
+        29
+      ],
+      "closedManifoldAt1um": false
+    },
+    "leftFist": {
+      "triangles": 494,
+      "uniqueVerticesAt1um": 262,
+      "boundaryEdges": 28,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "componentVertexCounts": [
+        243,
+        19
+      ],
+      "closedManifoldAt1um": false
+    },
+    "rightFist": {
+      "triangles": 448,
+      "uniqueVerticesAt1um": 234,
+      "boundaryEdges": 18,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "componentVertexCounts": [
+        234
+      ],
+      "closedManifoldAt1um": false
+    }
+  },
+  "framesWithSurfaceIntersections": 0,
+  "totalIntersectingTrianglePairsAcrossSamples": 0
+}

@@ -1,0 +1,21 @@
+{
+  "sourceBodyMesh": "Assets/Art/Characters/Protagonist01/Combat/Meshes/Protagonist_Combat_ElbowWeights.asset",
+  "targetBodyMesh": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Meshes/Protagonist_Chibi_CylinderGrip.asset",
+  "sourceBodyRestHeight": 1.20000028,
+  "targetBodyRestHeight": 1.2,
+  "sourceBodyHeightAxis": "local Z, converted to world Y by the source FBX geometry transform",
+  "targetBodyHeightAxis": "local Y",
+  "sourceArmChainLeft": 0.3351498,
+  "sourceArmChainRight": 0.33817626,
+  "targetArmChainLeft": 0.26894076,
+  "targetArmChainRight": 0.27127028,
+  "bakedWeaponSocketScale": 0.802302,
+  "sourceBladeBaseToTip": 0.555,
+  "bakedBladeBaseToTip": 0.44527761,
+  "sourceGripSeparation": 0.110000015,
+  "bakedGripSeparation": 0.088253232,
+  "diagnosis": "The body meshes have effectively identical rest height, but the native Chibi arm bones have shorter shoulder-to-wrist chains. Using the arm-chain ratio to scale the entire sword unintentionally shortens the approved sword by 19.77 percent, despite no body-size change.",
+  "recommendation": "Separate rigid weapon scale from arm travel scale. Preserve source weapon-to-body ratio (weapon scale approximately 1.0 here). Keep arm scale for chest-relative hilt trajectory mapping. Use weapon scale for both rigid geometry and Grip_R/Grip_L offsets; solve both hands to that shared rigid hilt with existing reach projection. Revalidate grip and source bend planes after rebuilding.",
+  "measurementRevision": "Pass2/3 output before separate weapon scale correction.",
+  "implementation": "Canonical helper now exposes Options.weaponScale with default 1.0 and validates positive finite input. Rigid socket scale, both source grip offsets and grip error metrics all use WeaponScale. Arm ratio remains only in the chest-relative hilt trajectory. Parent will bake pass4 and inspect grip, elbow continuity and actual prop rendering."
+}

@@ -1,0 +1,503 @@
+{
+    "clip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Ladder_Climb_Loop.anim",
+    "method": "In-memory candidate Generic clip sampled at least120Hz. Actual deformed head/fist triangle edge crossings in both directions after AABB pruning plus solid-angle containment. Pass requires zero actual contacts. Separation field is ONLY the old conservative support-plane diagnostic; negative values do not imply penetration. No pose/asset edits during this test.",
+    "sampleRate": 120,
+    "samples": 98,
+    "minimumSupportPlaneGapDiagnostic": -0.006514489650726318,
+    "requiredActualContactCount": 0.0,
+    "worstTime": 0.33814436197280886,
+    "actualContactSamples": 0,
+    "passed": true,
+    "frames": [
+        {
+            "time": 0.0,
+            "separation": 0.05306480824947357,
+            "actualContact": false
+        },
+        {
+            "time": 0.008247422985732556,
+            "separation": 0.0527946799993515,
+            "actualContact": false
+        },
+        {
+            "time": 0.01649484597146511,
+            "separation": 0.05257488787174225,
+            "actualContact": false
+        },
+        {
+            "time": 0.02474226988852024,
+            "separation": 0.052668824791908267,
+            "actualContact": false
+        },
+        {
+            "time": 0.03298969194293022,
+            "separation": 0.05257473886013031,
+            "actualContact": false
+        },
+        {
+            "time": 0.04123711585998535,
+            "separation": 0.052529022097587588,
+            "actualContact": false
+        },
+        {
+            "time": 0.04948453977704048,
+            "separation": 0.052685707807540897,
+            "actualContact": false
+        },
+        {
+            "time": 0.05773196369409561,
+            "separation": 0.052879735827445987,
+            "actualContact": false
+        },
+        {
+            "time": 0.06597938388586045,
+            "separation": 0.053650811314582828,
+            "actualContact": false
+        },
+        {
+            "time": 0.07422681152820587,
+            "separation": 0.05600307881832123,
+            "actualContact": false
+        },
+        {
+            "time": 0.0824742317199707,
+            "separation": 0.058977946639060977,
+            "actualContact": false
+        },
+        {
+            "time": 0.09072165936231613,
+            "separation": 0.061316028237342837,
+            "actualContact": false
+        },
+        {
+            "time": 0.09896907955408097,
+            "separation": 0.06390391290187836,
+            "actualContact": false
+        },
+        {
+            "time": 0.10721650719642639,
+            "separation": 0.06788310408592224,
+            "actualContact": false
+        },
+        {
+            "time": 0.11546392738819123,
+            "separation": 0.07248902320861817,
+            "actualContact": false
+        },
+        {
+            "time": 0.12371134757995606,
+            "separation": 0.07657180726528168,
+            "actualContact": false
+        },
+        {
+            "time": 0.1319587677717209,
+            "separation": 0.07890795171260834,
+            "actualContact": false
+        },
+        {
+            "time": 0.1402062028646469,
+            "separation": 0.08128637075424195,
+            "actualContact": false
+        },
+        {
+            "time": 0.14845362305641175,
+            "separation": 0.08371959626674652,
+            "actualContact": false
+        },
+        {
+            "time": 0.15670104324817658,
+            "separation": 0.08608470857143402,
+            "actualContact": false
+        },
+        {
+            "time": 0.1649484634399414,
+            "separation": 0.08839085698127747,
+            "actualContact": false
+        },
+        {
+            "time": 0.17319589853286744,
+            "separation": 0.09191080927848816,
+            "actualContact": false
+        },
+        {
+            "time": 0.18144331872463227,
+            "separation": 0.09523381292819977,
+            "actualContact": false
+        },
+        {
+            "time": 0.1896907389163971,
+            "separation": 0.07899275422096253,
+            "actualContact": false
+        },
+        {
+            "time": 0.19793815910816194,
+            "separation": 0.06676407158374787,
+            "actualContact": false
+        },
+        {
+            "time": 0.20618557929992677,
+            "separation": 0.05815795063972473,
+            "actualContact": false
+        },
+        {
+            "time": 0.21443301439285279,
+            "separation": 0.053941354155540469,
+            "actualContact": false
+        },
+        {
+            "time": 0.22268043458461762,
+            "separation": 0.05116686224937439,
+            "actualContact": false
+        },
+        {
+            "time": 0.23092785477638246,
+            "separation": 0.038294777274131778,
+            "actualContact": false
+        },
+        {
+            "time": 0.23917527496814729,
+            "separation": 0.03075002133846283,
+            "actualContact": false
+        },
+        {
+            "time": 0.2474226951599121,
+            "separation": 0.02497798204421997,
+            "actualContact": false
+        },
+        {
+            "time": 0.25567013025283816,
+            "separation": 0.018844544887542726,
+            "actualContact": false
+        },
+        {
+            "time": 0.2639175355434418,
+            "separation": 0.012407362461090088,
+            "actualContact": false
+        },
+        {
+            "time": 0.2721649706363678,
+            "separation": 0.008090898394584656,
+            "actualContact": false
+        },
+        {
+            "time": 0.2804124057292938,
+            "separation": 0.0052024126052856449,
+            "actualContact": false
+        },
+        {
+            "time": 0.28865981101989748,
+            "separation": 0.001437857747077942,
+            "actualContact": false
+        },
+        {
+            "time": 0.2969072461128235,
+            "separation": -0.0019591301679611208,
+            "actualContact": false
+        },
+        {
+            "time": 0.3051546812057495,
+            "separation": -0.0036173462867736818,
+            "actualContact": false
+        },
+        {
+            "time": 0.31340208649635317,
+            "separation": -0.003879725933074951,
+            "actualContact": false
+        },
+        {
+            "time": 0.3216495215892792,
+            "separation": -0.004867121577262878,
+            "actualContact": false
+        },
+        {
+            "time": 0.3298969268798828,
+            "separation": -0.006282702088356018,
+            "actualContact": false
+        },
+        {
+            "time": 0.33814436197280886,
+            "separation": -0.006514489650726318,
+            "actualContact": false
+        },
+        {
+            "time": 0.34639179706573489,
+            "separation": -0.005780547857284546,
+            "actualContact": false
+        },
+        {
+            "time": 0.3546392023563385,
+            "separation": -0.0054521262645721439,
+            "actualContact": false
+        },
+        {
+            "time": 0.3628866374492645,
+            "separation": -0.005347102880477905,
+            "actualContact": false
+        },
+        {
+            "time": 0.37113404273986819,
+            "separation": -0.002688884735107422,
+            "actualContact": false
+        },
+        {
+            "time": 0.3793814778327942,
+            "separation": 0.0011600852012634278,
+            "actualContact": false
+        },
+        {
+            "time": 0.3876289129257202,
+            "separation": 0.0038928091526031496,
+            "actualContact": false
+        },
+        {
+            "time": 0.39587631821632388,
+            "separation": 0.006120532751083374,
+            "actualContact": false
+        },
+        {
+            "time": 0.4041237533092499,
+            "separation": 0.009659871459007264,
+            "actualContact": false
+        },
+        {
+            "time": 0.4123711585998535,
+            "separation": 0.01444379985332489,
+            "actualContact": false
+        },
+        {
+            "time": 0.42061859369277956,
+            "separation": 0.019885897636413575,
+            "actualContact": false
+        },
+        {
+            "time": 0.42886602878570559,
+            "separation": 0.02576763927936554,
+            "actualContact": false
+        },
+        {
+            "time": 0.4371134340763092,
+            "separation": 0.0301952064037323,
+            "actualContact": false
+        },
+        {
+            "time": 0.44536086916923525,
+            "separation": 0.03308077156543732,
+            "actualContact": false
+        },
+        {
+            "time": 0.45360827445983889,
+            "separation": 0.036463379859924319,
+            "actualContact": false
+        },
+        {
+            "time": 0.4618557095527649,
+            "separation": 0.0402904748916626,
+            "actualContact": false
+        },
+        {
+            "time": 0.4701031446456909,
+            "separation": 0.043931081891059878,
+            "actualContact": false
+        },
+        {
+            "time": 0.47835054993629458,
+            "separation": 0.04746595025062561,
+            "actualContact": false
+        },
+        {
+            "time": 0.4865979850292206,
+            "separation": 0.05801759660243988,
+            "actualContact": false
+        },
+        {
+            "time": 0.4948453903198242,
+            "separation": 0.06038293242454529,
+            "actualContact": false
+        },
+        {
+            "time": 0.5030928254127502,
+            "separation": 0.06289409101009369,
+            "actualContact": false
+        },
+        {
+            "time": 0.5113402605056763,
+            "separation": 0.06558652222156525,
+            "actualContact": false
+        },
+        {
+            "time": 0.5195876955986023,
+            "separation": 0.06864255666732788,
+            "actualContact": false
+        },
+        {
+            "time": 0.5278350710868836,
+            "separation": 0.07243238389492035,
+            "actualContact": false
+        },
+        {
+            "time": 0.5360825061798096,
+            "separation": 0.07636024057865143,
+            "actualContact": false
+        },
+        {
+            "time": 0.5443299412727356,
+            "separation": 0.07262961566448212,
+            "actualContact": false
+        },
+        {
+            "time": 0.5525773763656616,
+            "separation": 0.06472368538379669,
+            "actualContact": false
+        },
+        {
+            "time": 0.5608248114585877,
+            "separation": 0.057056546211242679,
+            "actualContact": false
+        },
+        {
+            "time": 0.5690721869468689,
+            "separation": 0.050324469804763797,
+            "actualContact": false
+        },
+        {
+            "time": 0.5773196220397949,
+            "separation": 0.04500412940979004,
+            "actualContact": false
+        },
+        {
+            "time": 0.585567057132721,
+            "separation": 0.03894290328025818,
+            "actualContact": false
+        },
+        {
+            "time": 0.593814492225647,
+            "separation": 0.032707154750823978,
+            "actualContact": false
+        },
+        {
+            "time": 0.602061927318573,
+            "separation": 0.02707734704017639,
+            "actualContact": false
+        },
+        {
+            "time": 0.610309362411499,
+            "separation": 0.02520531415939331,
+            "actualContact": false
+        },
+        {
+            "time": 0.6185567378997803,
+            "separation": 0.022981181740760804,
+            "actualContact": false
+        },
+        {
+            "time": 0.6268041729927063,
+            "separation": 0.020483091473579408,
+            "actualContact": false
+        },
+        {
+            "time": 0.6350516080856323,
+            "separation": 0.018635481595993043,
+            "actualContact": false
+        },
+        {
+            "time": 0.6432990431785584,
+            "separation": 0.01750226318836212,
+            "actualContact": false
+        },
+        {
+            "time": 0.6515464782714844,
+            "separation": 0.016357436776161195,
+            "actualContact": false
+        },
+        {
+            "time": 0.6597938537597656,
+            "separation": 0.01461152732372284,
+            "actualContact": false
+        },
+        {
+            "time": 0.6680412888526917,
+            "separation": 0.014168709516525269,
+            "actualContact": false
+        },
+        {
+            "time": 0.6762887239456177,
+            "separation": 0.016459450125694276,
+            "actualContact": false
+        },
+        {
+            "time": 0.6845361590385437,
+            "separation": 0.019367367029190065,
+            "actualContact": false
+        },
+        {
+            "time": 0.6927835941314697,
+            "separation": 0.021533697843551637,
+            "actualContact": false
+        },
+        {
+            "time": 0.701030969619751,
+            "separation": 0.02470940351486206,
+            "actualContact": false
+        },
+        {
+            "time": 0.709278404712677,
+            "separation": 0.030183017253875734,
+            "actualContact": false
+        },
+        {
+            "time": 0.717525839805603,
+            "separation": 0.03515869379043579,
+            "actualContact": false
+        },
+        {
+            "time": 0.725773274898529,
+            "separation": 0.040118977427482608,
+            "actualContact": false
+        },
+        {
+            "time": 0.7340207099914551,
+            "separation": 0.044622763991355899,
+            "actualContact": false
+        },
+        {
+            "time": 0.7422680854797363,
+            "separation": 0.047308549284935,
+            "actualContact": false
+        },
+        {
+            "time": 0.7505155205726624,
+            "separation": 0.049485474824905398,
+            "actualContact": false
+        },
+        {
+            "time": 0.7587629556655884,
+            "separation": 0.05155603587627411,
+            "actualContact": false
+        },
+        {
+            "time": 0.7670103907585144,
+            "separation": 0.053041473031044009,
+            "actualContact": false
+        },
+        {
+            "time": 0.7752578258514404,
+            "separation": 0.05323329567909241,
+            "actualContact": false
+        },
+        {
+            "time": 0.7835052013397217,
+            "separation": 0.053035855293273929,
+            "actualContact": false
+        },
+        {
+            "time": 0.7917526364326477,
+            "separation": 0.05308680236339569,
+            "actualContact": false
+        },
+        {
+            "time": 0.8000000715255737,
+            "separation": 0.05306480824947357,
+            "actualContact": false
+        }
+    ]
+}

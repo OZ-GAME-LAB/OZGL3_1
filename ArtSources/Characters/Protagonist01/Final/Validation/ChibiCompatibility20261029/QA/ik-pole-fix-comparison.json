@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "scope": "Independent read-only comparison of the generated Generic rotation keys and source-derived contact metrics after pass2",
+  "fixedCause": "A chest-relative elbow hint crossed the target shoulder-wrist axis after proportion changes. The utility now transports the source anatomical bend plane onto the target reach axis.",
+  "identifiedWindow": {
+    "clip": "Longsword_Attack_Chop",
+    "targetBone": "LeftForeArm",
+    "startSeconds": 0.2833333,
+    "endSeconds": 0.3,
+    "sourceLocalRotationStepDegrees": 36.0101,
+    "pass1TargetLocalRotationStepDegrees": 82.65,
+    "pass2TargetLocalRotationStepDegrees": 36.9231
+  },
+  "maximumAdjacent60HzKeySteps": [
+    {"clip": "Chop", "sourceDegrees": 63.58, "targetDegrees": 67.98},
+    {"clip": "Slice", "sourceDegrees": 41.53, "targetDegrees": 43.11},
+    {"clip": "Stab", "sourceDegrees": 46.08, "targetDegrees": 53.28}
+  ],
+  "stabInitialHandWindow": {
+    "startSeconds": 0.0166667,
+    "endSeconds": 0.0333333,
+    "sourceHandLeftDegrees": 46.08,
+    "targetHandLeftDegrees": 53.28,
+    "interpretation": "Most of the rapid early hand rotation already exists in the approved source's compressed windup. Retarget contact adaptation adds approximately7.2degrees. This is not the introduced elbow-pole crossing found in pass1."
+  },
+  "maximumSharedGripErrorMetres": 0.000204967,
+  "maximumWeaponReachCorrectionMetres": 0.00878234,
+  "importantMetricDistinction": "Adjacent-key angular steps above are at60Hz and cannot be directly equated to root's120Hz reloaded-clip maxBoneStep metric. ForearmCorrectionDegrees reports pose deviation from the direct unconstrained retarget, not per-frame motion speed.",
+  "remainingVerification": "Root owns full-model multi-view visual review and actual Animator playback. The numerical result alone does not establish aesthetic quality or prove all surface contact correct.",
+  "detailedEvidence": "retarget-key-step-pass2.json"
+}

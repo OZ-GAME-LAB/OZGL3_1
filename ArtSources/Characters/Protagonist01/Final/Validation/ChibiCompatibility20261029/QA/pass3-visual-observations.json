@@ -1,0 +1,22 @@
+{
+  "pass": 3,
+  "sourceAuditSHA256": "0875f7cf79907fd62037d75802f90ce930b5c8ef25fc44c1c9e8f38a7ad7fdda",
+  "reviewer": "chibi_jump_diagnosis",
+  "method": "Retained historical Death_Fall inspection: all31 Side frames and all13 phases in Front, Opposite and ThreeQuarter,70 rendered poses. The intermediate ladder observation is preserved separately below.",
+  "presentationGenerated": "Intermediate contact-sheet review. Final GIFs were not updated at this pass because ladder correction was pending.",
+  "observations": [
+    {
+      "clip": "Death_Fall",
+      "status": "Pass2 border cropping resolved in all four views.",
+      "finding": "All 31 Side frames retain the hat, feet, hands and full falling silhouette inside the frame, including the held final pose. Front/Opposite/ThreeQuarter 13-phase sheets likewise retain the complete mesh. The body falls backward and settles into a stable supine pose; no gross mesh detachment or sudden limb reversal is visible in these sampled poses.",
+      "limitation": "The review plane is only a presentation reference. No collision/ragdoll or runtime death-state transition is exercised."
+    },
+    {
+      "clip": "Ladder_Climb_Loop",
+      "status": "Not accepted; parent and additional reviewer are correcting retained back lean. No final presentation acceptance in pass3."
+    }
+  ],
+  "overallStatus": "Historical partial review; final retained-clip review awaited ladder correction and regenerated GIFs.",
+  "reportedToParent": true,
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}

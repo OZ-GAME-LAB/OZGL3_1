@@ -1,0 +1,163 @@
+{
+  "sampleCount": 25,
+  "sampleRateHz": 30,
+  "baselineLimitation": "Native export has bone positions but no quaternions; comparison uses actual world arm-segment directions. Final quaternion steps are reported separately.",
+  "segmentComparison": {
+    "LeftUpperArm": {
+      "native": {
+        "maxStepDegrees": 8.38354364968657,
+        "fromTime": 0.5666667222976685,
+        "toTime": 0.6000000238418579,
+        "minLengthM": 0.12353304519106707,
+        "maxLengthM": 0.1235331356136507
+      },
+      "final": {
+        "maxStepDegrees": 6.865164585578263,
+        "fromTime": 0.03333333507180214,
+        "toTime": 0.06666667014360428,
+        "minLengthM": 0.12353305101148286,
+        "maxLengthM": 0.12353313921368003
+      }
+    },
+    "LeftForearm": {
+      "native": {
+        "maxStepDegrees": 9.578448950548065,
+        "fromTime": 0.46666669845581055,
+        "toTime": 0.5000000596046448,
+        "minLengthM": 0.14540755679732406,
+        "maxLengthM": 0.1454077505129651
+      },
+      "final": {
+        "maxStepDegrees": 5.695208215465281,
+        "fromTime": 0.7000000476837158,
+        "toTime": 0.73333340883255,
+        "minLengthM": 0.14540758820088737,
+        "maxLengthM": 0.1454077359441719
+      }
+    },
+    "RightUpperArm": {
+      "native": {
+        "maxStepDegrees": 11.546895500331331,
+        "fromTime": 0.2666666805744171,
+        "toTime": 0.30000001192092896,
+        "minLengthM": 0.13340954535306562,
+        "maxLengthM": 0.13340967974459828
+      },
+      "final": {
+        "maxStepDegrees": 8.94508061206309,
+        "fromTime": 0.30000001192092896,
+        "toTime": 0.3333333730697632,
+        "minLengthM": 0.13340954372549388,
+        "maxLengthM": 0.1334096769134955
+      }
+    },
+    "RightForearm": {
+      "native": {
+        "maxStepDegrees": 12.17962294552031,
+        "fromTime": 0.13333334028720856,
+        "toTime": 0.1666666865348816,
+        "minLengthM": 0.13786065742390557,
+        "maxLengthM": 0.13786085856102825
+      },
+      "final": {
+        "maxStepDegrees": 9.321567364536369,
+        "fromTime": 0.13333334028720856,
+        "toTime": 0.1666666865348816,
+        "minLengthM": 0.13786065530166813,
+        "maxLengthM": 0.13786087976310724
+      }
+    }
+  },
+  "finalWorldQuaternionSteps": {
+    "Hips": {
+      "maxStepDegrees": 3.0230910147572922,
+      "fromTime": 0.20000001788139343,
+      "toTime": 0.23333334922790527,
+      "loopSeamDegrees": 0.0
+    },
+    "Spine02": {
+      "maxStepDegrees": 1.7314275365622662,
+      "fromTime": 0.03333333507180214,
+      "toTime": 0.06666667014360428,
+      "loopSeamDegrees": 0.0
+    },
+    "Spine": {
+      "maxStepDegrees": 4.174166414615843,
+      "fromTime": 0.5666667222976685,
+      "toTime": 0.6000000238418579,
+      "loopSeamDegrees": 0.0
+    },
+    "Head": {
+      "maxStepDegrees": 2.448988069419826,
+      "fromTime": 0.5333333611488342,
+      "toTime": 0.5666667222976685,
+      "loopSeamDegrees": 2.4148365394514667e-06
+    },
+    "LeftArm": {
+      "maxStepDegrees": 6.8722350500295555,
+      "fromTime": 0.03333333507180214,
+      "toTime": 0.06666667014360428,
+      "loopSeamDegrees": 0.0
+    },
+    "LeftForeArm": {
+      "maxStepDegrees": 13.72684416521328,
+      "fromTime": 0.46666669845581055,
+      "toTime": 0.5000000596046448,
+      "loopSeamDegrees": 2.4148365394514667e-06
+    },
+    "LeftHand": {
+      "maxStepDegrees": 22.97872481391157,
+      "fromTime": 0.46666669845581055,
+      "toTime": 0.5000000596046448,
+      "loopSeamDegrees": 0.0
+    },
+    "RightArm": {
+      "maxStepDegrees": 9.057820958419022,
+      "fromTime": 0.30000001192092896,
+      "toTime": 0.3333333730697632,
+      "loopSeamDegrees": 0.0
+    },
+    "RightForeArm": {
+      "maxStepDegrees": 10.633133265716232,
+      "fromTime": 0.13333334028720856,
+      "toTime": 0.1666666865348816,
+      "loopSeamDegrees": 0.0
+    },
+    "RightHand": {
+      "maxStepDegrees": 18.353667026904876,
+      "fromTime": 0.1666666865348816,
+      "toTime": 0.20000001788139343,
+      "loopSeamDegrees": 0.0
+    }
+  },
+  "elbowInteriorAngles": {
+    "Left_native": {
+      "minDegrees": 94.56524668522695,
+      "maxDegrees": 121.03227372301316,
+      "maxAdjacentChangeDegrees": 9.366814299530489
+    },
+    "Left_final": {
+      "minDegrees": 99.61091515202692,
+      "maxDegrees": 103.99414383077475,
+      "maxAdjacentChangeDegrees": 2.306104901875486
+    },
+    "Right_native": {
+      "minDegrees": 70.12189388962454,
+      "maxDegrees": 114.96483068931757,
+      "maxAdjacentChangeDegrees": 10.861679259531485
+    },
+    "Right_final": {
+      "minDegrees": 98.75125898515859,
+      "maxDegrees": 105.26649991338938,
+      "maxAdjacentChangeDegrees": 3.8843687943398635
+    }
+  },
+  "bodyPositionMaxDifferenceM": {
+    "Hips": 0.0,
+    "Spine02": 0.0,
+    "Spine": 9.313225746154785e-10,
+    "Head": 3.725290298461914e-09,
+    "LeftArm": 0.0,
+    "RightArm": 1.1920928955078125e-07
+  }
+}
