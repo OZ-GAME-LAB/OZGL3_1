@@ -11,7 +11,9 @@ using UnityEngine.SceneManagement;
 ///   이 컴포넌트는 플레이어의 IHealthSource.HealthChanged를 듣고 아래만 처리한다:
 ///     · 체력 감소 → 플레이어 머리 위 빨간 피해 숫자 (HealthChange.IsDamage / Delta)
 ///     · 체력 증가 → 초록 회복 숫자 (부활·재도전 복구는 숫자 없음)
-///     · 체력 0   → deathScreenDelay(기본 1초, 사망 모션이 보이게) 뒤 사망 화면. 그 사이 되살아나면 취소
+///     · 체력 0   → 플레이어 Animator의 사망 상태("Dead")가 끝날 때까지 기다린 뒤 사망 화면 (v1.4)
+///                  모션 길이가 바뀌어도(Dead.anim 3.5초 → Death_Fall 1초 등) 자동으로 맞음.
+///                  Animator·사망 상태를 못 찾으면 deathScreenDelay(1초) 고정. 그 사이 되살아나면 취소
 ///   피격·회복·무적·사망 처리(PlayerController.Die)·재도전 복구(ResetHealth)는 전부 PlayerHealth 쪽.
 ///
 /// 씬에 PlayerController가 있으면 Play 시 자동으로 생긴다 (씬·프리팹 수정 없음).
@@ -31,8 +33,19 @@ public class PlayerHealthBridge : MonoBehaviour
     [SerializeField] Vector3 numberOffset = new Vector3(0f, 2f, 0f);
 
     [Header("사망")]
-    [Tooltip("체력 0 → 사망 화면까지 기다리는 시간(초). 사망 모션이 보이게")]
+    [Tooltip("켜면 사망 모션이 끝날 때까지 기다린 뒤 사망 화면 (플레이어 Animator의 사망 상태 길이에 맞춤)")]
+    [SerializeField] bool waitForDeathAnimation = true;
+    [Tooltip("기다릴 Animator 상태 이름 (PlayerState_Dead가 SetTrigger(\"Dead\")로 들어가는 상태)")]
+    [SerializeField] string deathStateName = "Dead";
+    [Tooltip("사망 모션이 끝난 뒤 사망 화면까지 조금 더 보여 주는 시간(초)")]
+    [SerializeField, Min(0f)] float holdAfterAnimation = 0.3f;
+    [Tooltip("모션이 길거나 멈춰도 이 시간(초)이 지나면 무조건 사망 화면")]
+    [SerializeField, Min(0.1f)] float maxWait = 5f;
+    [Tooltip("Animator나 사망 상태를 못 찾을 때 쓰는 고정 대기 시간(초)")]
     [SerializeField, Min(0f)] float deathScreenDelay = 1.0f;
+
+    // 사망 상태로 넘어가기까지(트리거 → 전환) 기다리는 최대 시간. 넘기면 모션이 없다고 보고 고정 대기로
+    const float EnterTimeout = 0.5f;
 
     IHealthSource _health;
     bool _dead;
@@ -136,9 +149,71 @@ public class PlayerHealthBridge : MonoBehaviour
 
     IEnumerator ShowDeathAfterDelay()
     {
-        if (deathScreenDelay > 0f) yield return new WaitForSecondsRealtime(deathScreenDelay);
+        float waited = 0f;
+        bool played = false; // 사망 상태에 실제로 들어갔는지
+        Animator anim = waitForDeathAnimation ? FindPlayerAnimator() : null;
+
+        if (anim != null)
+        {
+            int hash = Animator.StringToHash(deathStateName);
+            int layer = -1;
+            while (waited < maxWait)
+            {
+                if (anim == null || !anim.isActiveAndEnabled) break; // 플레이어가 꺼짐 → 바로 사망 화면
+
+                bool entering = false;
+                if (layer < 0) layer = FindLayerInState(anim, hash, out entering);
+                if (layer >= 0)
+                {
+                    played = true;
+                    var st = anim.GetCurrentAnimatorStateInfo(layer);
+                    if (st.shortNameHash != hash) break;                                 // 모션 끝나고 다른 상태로 넘어감
+                    if (!anim.IsInTransition(layer) && st.normalizedTime >= 1f) break;   // 모션 끝까지 재생됨
+                }
+                else if (!entering && waited >= EnterTimeout) break;                    // 사망 상태가 없음
+
+                waited += Time.unscaledDeltaTime;
+                yield return null;
+            }
+        }
+
+        if (played)
+        {
+            if (holdAfterAnimation > 0f) yield return new WaitForSecondsRealtime(holdAfterAnimation);
+            Debug.Log($"[OZ UI] 사망 화면: 사망 모션 '{deathStateName}' {waited:0.00}초 + {holdAfterAnimation:0.##}초 뒤 표시", this);
+        }
+        else
+        {
+            // Animator·사망 상태를 못 찾음 → 예전처럼 고정 대기 (이미 기다린 시간은 빼고)
+            float rest = deathScreenDelay - waited;
+            if (rest > 0f) yield return new WaitForSecondsRealtime(rest);
+        }
+
         _deathRoutine = null;
         if (_dead && !GameUI.Screens.IsOpen(ScreenId.Death)) GameUI.Screens.ShowDeath();
+    }
+
+    /// <summary>플레이어의 Animator (루트 우선, 없으면 자식 중 컨트롤러가 있는 것)</summary>
+    Animator FindPlayerAnimator()
+    {
+        if (player == null) return null;
+        var a = player.GetComponent<Animator>();
+        if (a != null && a.runtimeAnimatorController != null) return a;
+        foreach (var c in player.GetComponentsInChildren<Animator>())
+            if (c.runtimeAnimatorController != null) return c;
+        return null;
+    }
+
+    /// <summary>지금 사망 상태에 있는 레이어 번호. 없으면 -1 (entering = 그쪽으로 넘어가는 중)</summary>
+    static int FindLayerInState(Animator anim, int hash, out bool entering)
+    {
+        entering = false;
+        for (int i = 0; i < anim.layerCount; i++)
+        {
+            if (anim.GetCurrentAnimatorStateInfo(i).shortNameHash == hash) return i;
+            if (anim.IsInTransition(i) && anim.GetNextAnimatorStateInfo(i).shortNameHash == hash) entering = true;
+        }
+        return -1;
     }
 
     void StopDeathRoutine()
