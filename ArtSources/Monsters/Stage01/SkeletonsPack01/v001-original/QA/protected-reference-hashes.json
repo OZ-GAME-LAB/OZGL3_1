@@ -1,0 +1,90 @@
+[
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Hit.anim",
+    "sha256": "fe8a8ec13332004e143b9fa8e1983551a5aae08297d86a759f4447301f757d52"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Attack.anim",
+    "sha256": "df89c0dbefc633ff51eedfc54bce36e633397f596ddc0b6fccc81a0ffd86cf74"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Move.anim",
+    "sha256": "df5e0705f54b2baf7b8ac88f410de5b83e2d80113df7175b497851680e6d2426"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Idle.anim",
+    "sha256": "0af8ce1ed0eb742dbb275ab021ebc8e2cb1225a58aebd85c942f02e0e93e1b82"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab",
+    "sha256": "abb92fad691bbc31a34c618eaa2b44cb91ceee7e4f164ddef1e21fd5935ac9bf"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/FBX/Stage01_Melee01.fbx",
+    "sha256": "3e44e72dc22bde6e46898141ec971950e1e99b98ca1fa36fa149ba91bcde4cd0"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Materials/skeleton.mat",
+    "sha256": "d211eb2e6ac9b00a4307903f7a5fd40419139c6b43664825badc1dceb6073278"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Textures/skeleton_texture.png",
+    "sha256": "9f34445acb114964d809f9a882a95425ad3d98de5d58d21bb69b327c9da46fac"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Shaders/MonsterAtlas.shader",
+    "sha256": "138875e449ddcf792b9164e063371dcd571849b0365d74c78926b6ab2233fe6c"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Materials/Melee01_UrbanTeal.mat",
+    "sha256": "312b13dc0a3987edc964c11e577afbacef79b2e1094ea69ef6a72ca056458322"
+  },
+  {
+    "path": "Assets/Art/Monsters/Stage01/Melee01/v001/Materials/Glow.mat",
+    "sha256": "6fd4ca8225bee9a127d529ab7bdff7c032a66ed620ce302523f41b6026b3e483"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+    "sha256": "bd1b03f2b81a8ac840b008a2638b47be2c033c4058cfd8b451b013523fc79a4d"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+    "sha256": "bc3f927db7deb21aa8ecdc837bb6883245708c20c9aed99e0b79ddd9ae2aa4f8"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Meshes/Protagonist_Combat_ElbowWeights.asset",
+    "sha256": "46a0f8b4f20f8608b9fcb34b86781751b05cfc88752e8e4bc7a6786f23ee1347"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/Material_0.mat",
+    "sha256": "0baba3e05e929d9431cc195e33b85cfac126a6e2143238fa9470c9beda4b609e"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Textures/Image_0.jpg",
+    "sha256": "e0a64f1e182b5aa52feefe66e76b527d146778d7175b85e0b5b2cd9c884719c4"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/FBX/Protagonist_KayKit_v018.fbx",
+    "sha256": "f8fcf5108512d20a2c55871cce7ebdd45637f38b295405154d7d7f6cbc31b98c"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_SimpleSkin.mat",
+    "sha256": "f4f8092dfaf63152e19fd14c82928dc01c6b8658ff63542c9272bef0c60ff716"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Edge.mat",
+    "sha256": "35b76ec1bc4646cb151ad82ca4e022935f839dbf6ce0d7765bb5036d64893af7"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Guard.mat",
+    "sha256": "989efa07955c26100dbc00d69e66f43a7cffbdf8c0c68907f7b32050ddd4feb1"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_NavyGrip.mat",
+    "sha256": "ac2595a62db94760eaaabe0d14b3d97e110c49c745ef7b581a62a782c9f8c16e"
+  },
+  {
+    "path": "Assets/Art/Characters/Protagonist01/Combat/Materials/LS_Steel.mat",
+    "sha256": "cfbd22342db5d23893b378feb6edcbd14f78d3b31f71ad8fe6ac1e839359fb2c"
+  }
+]

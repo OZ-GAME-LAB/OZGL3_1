@@ -1,0 +1,579 @@
+{
+  "date": "2026-10-29",
+  "project": "Project M / OZGL3_1",
+  "environment": "Unity6000.3.21f1, URP17.3.0, 3D URP의2.5D횡스크롤카메라",
+  "method": "공식Unity AssetStore제품페이지의가격·호환표·본문·기술세부·릴리스노트확인.일부본문은HTML공개제품JSON으로읽음.서드파티가격사이트는URL발견외평가근거로쓰지않음.다운로드/에셋임포트/Unity런타임검수는수행하지않음.미리보기이미지만3개내부검수용조회.",
+  "recommendation": "CFX Remaster Free를공통타격·폭발의1차기준,FreeSlashVFX를검기·회전·연속참격,TrailsURP를대시·마력탄꼬리.마력탄코어/마력장경계는작은공용메시로직접보완.후보팩을모두혼합하지말고원형1~2팩+부족재료만선택.",
+  "licensing_note": "무료는공공영역이라는뜻이아님.확인17개모두UIStandardEULA/ExtensionAsset.특히ParticlePack은본문UnityCompanionLicense이므로정확첨부조건대조필요.팀원별획득/좌석조건과원본재배포범위는root의공식라이선스조사와함께판단.",
+  "entries": [
+    {
+      "id": "U01",
+      "title": "Cartoon FX Remaster Free",
+      "publisher": "Jean Moreno",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565",
+      "priority": "A1: 공통 타격·폭발 기본팩",
+      "contents": "상용 Cartoon FX Remaster 1~4에서 뽑은 무료 샘플. 2D/3D, 셰이더의 디졸브/UV왜곡, 카메라 흔들림·빛 지원. 무료 정확 프리팹 수는 단정하지 않음.",
+      "compatibility": {
+        "builtin": true,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2020.3.12f1",
+          "2021.3.0f1"
+        ],
+        "unity6": "추가 호환 문구에 Unity 6 최신 URP 지원; R1.5.1 릴리스는 Unity6.2 obsolete API 수정"
+      },
+      "latest_version": "R1.5.1",
+      "latest_release": "2025-12-18",
+      "size": "12.8 MB",
+      "visual_review": "공식 6칸 screenshot 직접 확인: 굵은 별·링·파편, 강한 bloom, BOOM 텍스트. 정지 프리뷰만 확인.",
+      "style_fit": "치비의 명료한 실루엣·색 블록에 적합. 코믹 텍스트, 과한 bloom·동적 광원·내장 화면흔들림은 제거/축소.",
+      "adaptation_cost": "낮음~중간. 효과별 컬러/크기/수명 통일, 기존 CombatFeedback 흔들림 중복 방지.",
+      "risk": "실제 6000.3.21f1/URP17.3 재생·풀링 검증은 아직 없음.",
+      "preview_url": "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/dff6e556-3eee-40ee-b700-eb1c48d45cb8_scaled.jpg",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U02",
+      "title": "Free Slash VFX",
+      "publisher": "MaykerStudio",
+      "url": "https://assetstore.unity.com/packages/vfx/shaders/free-slash-vfx-309498",
+      "priority": "A1: 검기·연속참격·회전베기 원형",
+      "contents": "스타일화 참격 프리팹·커스텀 셰이더·왜곡. 색·속도·형상 커스터마이즈. 무료 상업 사용 문구도 본문 존재. 무료 정확 프리팹 수 미기재.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2021.3.45f1",
+          "6000.0.34f1"
+        ],
+        "unity6": "Unity6.0 URP 호환 표기;6.3은 미실측"
+      },
+      "latest_version": "1.0",
+      "latest_release": "2025-05-05",
+      "size": "13.1 MB",
+      "visual_review": "공식 키이미지 직접 확인: 4색 초승달 참격+스파크와 긴 세로 광선. 영상/Unity재생 확인 안 함.",
+      "style_fit": "측면 2.5D 검기에 읽히는 초승달. 아이보리·옅은 노랑으로 물리계열 통일, 세로광선/bloom 축소.",
+      "adaptation_cost": "낮음~중간. XY 공격면 정렬, 좌우 방향, 이동형 검기와 칼 휘두름 분리. 왜곡 기본 끄기.",
+      "risk": "HDRP/Built-in도 ShaderGraph Target 변경으로 가능하다는 본문은 별도 작업 조건; 우리 URP판 선택.",
+      "preview_url": "https://assetstorev1-prd-cdn.unity3d.com/key-image/34a947e1-8297-430f-a1fe-b9fad8411881.jpg",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U03",
+      "title": "Trails VFX - URP",
+      "publisher": "Vefects",
+      "url": "https://assetstore.unity.com/packages/vfx/trails-vfx-urp-242574",
+      "priority": "A1: 대시·마력탄 꼬리 보완",
+      "contents": "10개 Elemental Trail(Cosmos, Dark, Earth, Electric, Fire, Ice, Nature, Sound, Void, Water). SFX 포함, 텍스처 최대1024, ShaderGraph 커스텀 셰이더20개 이상.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2021.3.0f1",
+          "2022.3.0f1",
+          "2023.1.0f1",
+          "6000.0.23f1"
+        ],
+        "unity6": "Unity6.0URP 호환 표기"
+      },
+      "latest_version": "1.0.20252",
+      "latest_release": "2025-12-21",
+      "size": "28.6 MB",
+      "visual_review": "제품 본문·기술정보 확인; 이미지/영상 미검수.",
+      "style_fit": "청록/보라 한 종류만 채택하면 마력탄·대시의 공통 꼬리로 유용. 모든 원소를 도입하면 통일감 저하.",
+      "adaptation_cost": "중간. 실제 이동에 따라 생성되는 trail인지 확인, teleport/풀 재대여 시 잔상 Clear, 소리 중복 제거.",
+      "risk": "본문2D안내 문장이 다소 혼란스러움. 우리 프로젝트는 3D URP의 측면 카메라여서 별도2D Renderer 지원에 의존하지 않음. 선별셰이더만 사용.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U04",
+      "title": "Magic Effects FREE",
+      "publisher": "Hovl Studio",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933",
+      "priority": "A2: 하나의 무료팩으로 6스킬을 넓게 충당하는 대안",
+      "contents": "마법진4, 캐릭터오라7, 히트7, 포털4, AoE11, 폭발3, 스파크18, 참격6, 실드3, 연기9, 환경4: 설명상 합계86개 항목.",
+      "compatibility": {
+        "builtin": true,
+        "urp": true,
+        "hdrp": true,
+        "unity_versions": [
+          "2021.3.15f1",
+          "2022.3.12f1"
+        ],
+        "unity6": "Unity6명시 없음. URP/HDRP 지원은 standard upgrade/Render Pipeline Converter 안내와 함께 표기"
+      },
+      "latest_version": "1.6",
+      "latest_release": "2025-06-04",
+      "size": "36.4 MB",
+      "visual_review": "공식 본문/표 확인; 실제 이미지/영상 미검수.",
+      "style_fit": "검기부터 마력장·폭발까지 일관된 공급처로 묶을 수 있음. 고채도/발광 수위는 캐릭터 크기에 맞춰 낮춰야 함.",
+      "adaptation_cost": "중간. 재질 업그레이드부터 확인, 86항목 전체 임포트 사용 대신 필요한 6~10종 선별.",
+      "risk": "자동변환 도구 안내가 Unity6의 모든 커스텀 셰이더 동작을 보증하지 않음.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U05",
+      "title": "Free Quick Effects Vol. 1",
+      "publisher": "Gabriel Aguiar Prod",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/free-quick-effects-vol-1-304424",
+      "priority": "A2: 마력탄·폭발·회복·충격파 보완",
+      "contents": "30개 Quick Effects. 폭발3/투사체2/회복2/전기·번개/실드/충격파/연기/스파크 등. 텍스처와 데모씬 포함.",
+      "compatibility": {
+        "builtin": true,
+        "urp": true,
+        "hdrp": true,
+        "unity_versions": [
+          "2022.3.43"
+        ],
+        "unity6": "본문3RP지원;Unity6직접명시 없음"
+      },
+      "latest_version": "1.0",
+      "latest_release": "2024-12-06",
+      "size": "19.9 MB",
+      "visual_review": "공식 본문 확인; 실제 이미지/영상 미검수.",
+      "style_fit": "짧고 단순한 모듈을 재활용할 수 있어 하이브리드 제작에 적합. '60초 제작 챌린지' 무료 모음이므로 완성도는 효과별 평가.",
+      "adaptation_cost": "낮음~중간. 폭발/투사체2개 우선 선택, 크기와 색·수명 통일.",
+      "risk": "Works on any platform은 판매자 설명이며 실제 성능/Unity6 검증 아님.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U06",
+      "title": "Free Stylized Impacts and Explosions URP",
+      "publisher": "Captivest Games",
+      "url": "https://assetstore.unity.com/packages/vfx/free-stylized-impacts-and-explosions-urp-385882",
+      "priority": "A2: 최신엔진 폭발 A/B 후보",
+      "contents": "타격·폭발3VFX. 기술정보: 텍스처4~5개, 효과별 커스텀셰이더1개와 재질3개.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "6000.3.18f1"
+        ],
+        "unity6": "프로젝트6000.3.21과 근접한6.3호환 명시"
+      },
+      "latest_version": "1.0",
+      "latest_release": "2026-07-13",
+      "size": "16.8 MB",
+      "visual_review": "공식 본문/기술정보 확인; 첫미디어영상이라 픽셀/영상은 미검수.",
+      "style_fit": "스타일화 타격/폭발이라는 범위는 적합. 비주얼 확정은 실제 카메라 A/B 전까지 보류.",
+      "adaptation_cost": "낮음 예상이나 미확정. 효과3종 중 작은/큰폭발로 적합한 것 선별.",
+      "risk": "신규팩·평가 부족.6.3버전이 가깝다고 품질·성능 확인된 것은 아님.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U07",
+      "title": "Simple FX - Cartoon Particles",
+      "publisher": "Synty Studios",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/simple-fx-cartoon-particles-67834",
+      "priority": "A2: 로우폴리 먼지·잔해·폭발",
+      "contents": "피/흙 비산, 먼지, 잔해폭발, 불/불꽃놀이/화염방사, 연기/스팀/타이어연기, 물/하수비산. 본문URP지원과 Synty가이드 링크.",
+      "compatibility": {
+        "builtin": "미기재",
+        "urp": "본문지원+가이드",
+        "hdrp": "미기재",
+        "unity_versions": [
+          "2021.3.17"
+        ],
+        "unity6": "Unity6직접호환 표 없음"
+      },
+      "latest_version": "1.2.0",
+      "latest_release": "2023-09-24",
+      "size": "235.4 KB",
+      "visual_review": "공식 키이미지 직접 확인: 각진 노란 폭발·갈색 돌·회색 연기.",
+      "style_fit": "우리 로우폴리 도시와 형태상 가장 직접적으로 어울림. 대시 발먼지/연쇄폭발 잔해 보조에 특히 적합.",
+      "adaptation_cost": "낮음~중간. 공식URP가이드에 따른 변환 후 일부Legacy재질 재확인.",
+      "risk": "마법탄·검기·장판은 별도 필요. 가볍다는 파일크기로 런타임 성능을 단정하지 않음.",
+      "preview_url": "https://assetstorev1-prd-cdn.unity3d.com/key-image/6159e4d3-0dc3-4e8a-a0ee-558c7a1bb39d.jpg",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U08",
+      "title": "Stylized Slash VFX",
+      "publisher": "HungNguyenVFX",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/stylized-slash-vfx-200233",
+      "priority": "B: 검기 대안",
+      "contents": "프리팹6개 중 참격5+배경1. VFX프로필5, 3D모델1, 재질6, 셰이더1.2D/3D용.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2020.2.4f1"
+        ],
+        "unity6": "명시없음"
+      },
+      "latest_version": "1.0",
+      "latest_release": "2021-08-21",
+      "size": "2.6 MB",
+      "visual_review": "본문/표만 확인.",
+      "style_fit": "stylized/lowpoly/hack&slash를 표방하는 소형 참격 후보. Mayker보다 구형이므로 후순위.",
+      "adaptation_cost": "중간. 구형셰이더·VFX프로필의Unity6의존성 확인, 형태/색 통일.",
+      "risk": "5개참격을 '6개전투효과'로 세면 배경까지 포함하는 오류.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U09",
+      "title": "Simple Stylized Slash Pack 2",
+      "publisher": "Namu",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/simple-stylized-slash-pack-2-248665",
+      "priority": "B: 참격 12프리팹 대안",
+      "contents": "입자프리팹12, 재질21, 메시5, 데모씬1, 텍스처23, ShaderGraph3/SubGraph2.",
+      "compatibility": {
+        "builtin": true,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2021.3.19f1"
+        ],
+        "unity6": "명시없음"
+      },
+      "latest_version": "1.0.0",
+      "latest_release": "2023-05-11",
+      "size": "4.0 MB",
+      "visual_review": "본문/표만 확인.",
+      "style_fit": "참격 변주가 필요하면 비교할 후보. 아직 정지이미지 직접검수 없어서 확정 시각평가 유보.",
+      "adaptation_cost": "중간.21재질 선별/병합, ShaderGraph업그레이드 검수.",
+      "risk": "본문에 과거 '$13로 인하' 문구가 남아 있지만 현재 가격UI FREE/원가0 근거로 무료 분류. 다운로드당일 재확인.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U10",
+      "title": "Free Game VFX - Magic Circle(URP)",
+      "publisher": "Eric VFX Studio",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/free-game-vfx-magic-circle-urp-344984",
+      "priority": "B: 마력장 예비",
+      "contents": "ParticleSystem 마법진4프리팹, PNG/TGA256x256. 크기·회전 조절. 제작자무료목록도4개 확인.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2022.3.45f1"
+        ],
+        "unity6": "명시없음"
+      },
+      "latest_version": "1.01",
+      "latest_release": "2026-01-08",
+      "size": "992.4 KB",
+      "visual_review": "본문/표만 확인.",
+      "style_fit": "마력장 경계/시전 마법진에 유용. 복잡한 문양은 측면 카메라에서 사라질 수 있어 단순외곽 띠와 조합.",
+      "adaptation_cost": "낮음~중간. 바닥정렬/양끝 가독성/실제판정범위 연동.",
+      "risk": "4개무료 샘플이며Full Magic Circle Pack과 구분.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U11",
+      "title": "Free Game VFX Collection(URP)",
+      "publisher": "Eric VFX Studio",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/free-game-vfx-collection-urp-345212",
+      "priority": "B: 마법 여러유형 비교",
+      "contents": "UnityParticleSystem마법효과10프리팹. PNG/TGA1024x1024. 확대/축소/회전가능. 제작자무료목록 교차확인.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2022.3.45f1"
+        ],
+        "unity6": "명시없음"
+      },
+      "latest_version": "미기록",
+      "latest_release": "미기록",
+      "size": "미기록",
+      "visual_review": "본문/표만 확인.",
+      "style_fit": "마법계열 보조후보. 정확한10종이 본문에 열거되지 않아 마력탄 포함이라고 단정하지 않음.",
+      "adaptation_cost": "중간 예상. 샘플10개 실제내용을 임포트후 확인.",
+      "risk": "무료10개와유료Mega/RPGCollection혼동주의.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U12",
+      "title": "Free RPG VFX Sprite Sheet Starter Pack",
+      "publisher": "Eric VFX Studio",
+      "url": "https://assetstore.unity.com/packages/vfx/free-rpg-vfx-sprite-sheet-starter-pack-393438",
+      "priority": "B: 플립북 기반 공통언어 대안",
+      "contents": "무료5효과:참격1/타격1/폭발2/마법진1. SpriteSheet+ParticleSystem프리팹+데모씬.",
+      "compatibility": {
+        "builtin": true,
+        "urp": true,
+        "hdrp": true,
+        "unity_versions": [
+          "2022.3.45f1"
+        ],
+        "unity6": "명시없음;예제재질은URP이며이미지는다른RP에도사용가능이라는설명"
+      },
+      "latest_version": "1.0",
+      "latest_release": "2026-07-15",
+      "size": "9.3 MB",
+      "visual_review": "본문/표만 확인.",
+      "style_fit": "얇은2D효과를3D옆면전투에쓸수있어스킬통일이간편. 마력탄본체/대시는직접보완.",
+      "adaptation_cost": "낮음~중간.알파필터/프레임속도/카메라빌보드/좌우반전.",
+      "risk": "무료5개;유료전체50개를무료로계산하지않음.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U13",
+      "title": "Free Stylized Smoke Effects Pack",
+      "publisher": "Maiami Studio",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/fire-explosions/free-stylized-smoke-effects-pack-226406",
+      "priority": "B: 대시·착지·폭발 잔재",
+      "contents": "ParticleSystem스타일화연기. Legacy셰이더로다른RP사용가능하다는제작자설명.정확프리팹수미기재.",
+      "compatibility": {
+        "builtin": true,
+        "urp": true,
+        "hdrp": true,
+        "unity_versions": [
+          "2020.3.36f1"
+        ],
+        "unity6": "명시없음"
+      },
+      "latest_version": "1.0.1",
+      "latest_release": "2022-07-18",
+      "size": "120.5 KB",
+      "visual_review": "본문/표만확인.",
+      "style_fit": "작은각진먼지/연기를고르면로우폴리전투에적합할가능성.현재미리보기직접검수없음.",
+      "adaptation_cost": "낮음~중간. 연기체류시간·입자수줄이고화면덮임방지.",
+      "risk": "대시먼지와폭발후연기에한정;공격핵심네종완성팩아님.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U14",
+      "title": "Polygonal's Low-Poly Particle Pack",
+      "publisher": "Polygonal Stuff",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/polygonal-s-low-poly-particle-pack-118355",
+      "priority": "B: 면기반 잔해/먼지 재료",
+      "contents": "30여효과의일반/HighPerformance/Mobile변형총90프리팹.메시입자,연기/폭발/불/물/타격/환경.보너스로우폴리모델.",
+      "compatibility": {
+        "builtin": "미기재",
+        "urp": "명시없음",
+        "hdrp": "명시없음",
+        "unity_versions": [
+          "2018.1.0"
+        ],
+        "unity6": "명시없음"
+      },
+      "latest_version": "1.0",
+      "latest_release": "2019-02-27",
+      "size": "1016 KB",
+      "visual_review": "본문만확인.",
+      "style_fit": "면기반파편은적합하나2018제작이라셰이더변환비용을감수할때만후순위검토.",
+      "adaptation_cost": "중간~높음. Legacy/Mobile셰이더를URP파티클재질로옮겨텍스처·색·메시를재사용.",
+      "risk": "90개를90개독립효과로해석하면안됨.30개효과의변형포함.오래된'정기업데이트'약속을현재지원보증으로쓰지않음.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U15",
+      "title": "Particle Pack | Starter Assets",
+      "publisher": "Unity Technologies",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/particle-pack-starter-assets-127325",
+      "priority": "B: 직접제작 학습·기술기준/얼음·디졸브",
+      "contents": "UnityParticleSystem모듈예제.불/폭발/얼음/디졸브및추가예제.프로젝트에서재가공허용안내.",
+      "compatibility": {
+        "builtin": "2021.3옛판만호환",
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2021.3.0f1(BIRP)",
+          "2022.3.0f1(URP)",
+          "6000.0.0f1(URP)",
+          "6000.3.0f1(URP)"
+        ],
+        "unity6": "v3.3 릴리스는6000.3수정, 3.2는6000.3업데이트"
+      },
+      "latest_version": "3.3",
+      "latest_release": "2026-10-08",
+      "size": "160.2 MB",
+      "visual_review": "본문/호환표/릴리스노트확인.실제이미지미검수.",
+      "style_fit": "예제를공부하거나개별재료를뽑기좋음.스타일화치비에그대로적합한지는효과별별도.",
+      "adaptation_cost": "중간.별도빈프로젝트에먼저읽고필요효과만이전.",
+      "risk": "가져오기에서프로젝트설정임포트요구가능.그대로설정덮어쓰기하지않음.게임메인아트팩보다학습/재료용.",
+      "license_override": "스토어UI는Standard Unity Asset Store EULA/Extension Asset이지만제품설명및릴리스노트가Unity Companion License를명시.첨부LICENSE확인필요;CC0로분류금지.",
+      "license_url": "https://unity3d.com/legal/licenses/Unity_Companion_License",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "스토어UI는Standard Unity Asset Store EULA/Extension Asset이지만제품설명및릴리스노트가Unity Companion License를명시.첨부LICENSE확인필요;CC0로분류금지.",
+      "runtime_tested": false
+    },
+    {
+      "id": "U16",
+      "title": "War FX",
+      "publisher": "Jean Moreno",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/war-fx-5669",
+      "priority": "C: 무료지만 우리 전투 기본팩에서는 제외",
+      "contents": "사실적전쟁효과40여개.폭발/불/총구섬광/재질별탄착/연기.프리로드·재활용CFXSpawnSystem포함.",
+      "compatibility": {
+        "builtin": "미기재",
+        "urp": "명시없음",
+        "hdrp": "명시없음",
+        "unity_versions": [
+          "5.6.7"
+        ],
+        "unity6": "명시없음.2026릴리스날짜만으로Unity6호환이라판단불가"
+      },
+      "latest_version": "1.8.1",
+      "latest_release": "2026-06-30",
+      "size": "8.0 MB",
+      "visual_review": "본문/가격/버전만확인.",
+      "style_fit": "사실적연기·총기·전쟁지향으로치비로우폴리검/마법스타일과거리.도시배경의한정된환경화재에만고려.",
+      "adaptation_cost": "중간~높음.구형코드/셰이더검토,사실적텍스처를과감하게줄여야함.",
+      "risk": "무료유명팩이라고기본추천하지않음.기존CFX풀링을우리VFX풀에무검증중복도입금지.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    },
+    {
+      "id": "U17",
+      "title": "Free - URP Flipbook VFX Bundle Lite",
+      "publisher": "Vefects",
+      "url": "https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420",
+      "priority": "B: 플립북 스타일 비교용,색상통일제약",
+      "contents": "Flipbook/CombatFlipbook/PixelCraft세계열의Lite샘플.유료Full500+수량은무료수량아님.무료정확효과수본문미확정.",
+      "compatibility": {
+        "builtin": false,
+        "urp": true,
+        "hdrp": false,
+        "unity_versions": [
+          "2023.1.0f1",
+          "6000.0.23f1"
+        ],
+        "unity6": "Unity6지원과Upgraded Unity6+Shaders릴리스표기"
+      },
+      "latest_version": "1.0.1",
+      "latest_release": "2026-07-28",
+      "size": "101.4 MB",
+      "visual_review": "공식본문/표/릴리스노트확인.실제미디어미검수.",
+      "style_fit": "2D/2.5D/스타일3D전투방향은맞으나픽셀계열은우리3D아트와같은화면에서판단필요.",
+      "adaptation_cost": "중간~높음. Lite에custom color selector/RGBA mask color/masked emission/2DRenderer셰이더/모든VFX·SFX/4K텍스처가없음.",
+      "risk": "Built-in무료395530과URP395420구분.우리palette에맞추기쉽다고단정금지.선명한플립북원본하나를원한다면Eric무료5종이더단순.",
+      "price_checked_on": "2026-10-29",
+      "price": "FREE",
+      "free_evidence": "공식제품가격UI FREE 확인. 제품명을보고추정하지않음.",
+      "license": "Standard Unity Asset Store EULA; UI License type: Extension Asset",
+      "runtime_tested": false
+    }
+  ],
+  "paid_exclusion": [
+    {
+      "title": "Flame Magic Stylized Slash VFX",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/flame-magic-stylized-slash-vfx-201825",
+      "publisher": "HungNguyenVFX",
+      "price": "$4.99",
+      "reason": "공식가격이유료.같은제작자의무료StylizedSlashVFX와다름.",
+      "checked": "2026-10-29"
+    },
+    {
+      "title": "Cartoon FX Remaster /2/3/4 및Bundle",
+      "url": "https://assetstore.unity.com/packages/slug/4010",
+      "price": "유료;공식관련목록에CartoonFXRemaster $24.90(정가$30)/Bundle$96 표시",
+      "reason": "무료109565샘플과상용전체팩구분.전체팩효과수를무료수량으로계산하지않음.",
+      "checked": "2026-10-29"
+    },
+    {
+      "title": "Epic Toon FX",
+      "publisher": "Archanor VFX",
+      "checked": "2026-10-29",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/epic-toon-fx-57772",
+      "reason": "공식 제품 가격이 유료. 1323프리팹/390고유효과 전체를 무료라고 소개하면 안 됨.",
+      "price": "$40"
+    },
+    {
+      "title": "Magic Arsenal",
+      "publisher": "Archanor VFX",
+      "checked": "2026-10-29",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/spells/magic-arsenal-20869",
+      "reason": "공식 제품 가격이 유료.",
+      "price": "$30"
+    },
+    {
+      "title": "Projectile Factory for Magic Arsenal by Archanor VFX",
+      "publisher": "Magic Pig Games / Infinity PBR",
+      "checked": "2026-10-29",
+      "url": "https://assetstore.unity.com/packages/vfx/particles/spells/projectile-factory-for-magic-arsenal-by-archanor-vfx-282087",
+      "reason": "Package dependencies에 Projectile Factory($22.50 sale/$45 regular)+Magic Arsenal($30) 명시. 무료 독립 VFX 아님.",
+      "price": "FREE wrapper with paid dependencies"
+    }
+  ],
+  "preview_inspection": [
+    {
+      "id": "U01",
+      "file": "UnityPreviewQA/CartoonFX.jpg"
+    },
+    {
+      "id": "U02",
+      "file": "UnityPreviewQA/FreeSlash.jpg"
+    },
+    {
+      "id": "U07",
+      "file": "UnityPreviewQA/SimpleFX.jpg"
+    }
+  ],
+  "source_support": [
+    {
+      "url": "https://ericvfxstudio.com/free-unity-vfx-assets/",
+      "support": "Eric무료Circle4/Collection10/RPGSprite5패키지링크와URP설명교차확인"
+    }
+  ]
+}

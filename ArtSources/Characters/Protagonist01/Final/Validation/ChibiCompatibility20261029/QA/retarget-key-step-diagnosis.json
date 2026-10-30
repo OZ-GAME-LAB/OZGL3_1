@@ -1,0 +1,1572 @@
+{
+  "topSteps": {
+    "Chop": {
+      "source": [
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 63.5848478538187
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 61.71781370299805
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 46.59312179188348
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 46.01598420965247
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 43.55041848185875
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 42.96521702584882
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r/WeaponRoot",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 42.96196192872659
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r/handslot.r",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 40.85340839825285
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r/WeaponRoot",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 40.53192570348835
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 37.42481788318491
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.28333333,
+          "to": 0.3,
+          "angle": 36.01007744396234
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 31.916513597954435
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 30.324969328899915
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.31666666,
+          "to": 0.33333334,
+          "angle": 27.009629210134417
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.28333333,
+          "to": 0.3,
+          "angle": 26.355786539443066
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.31666666,
+          "to": 0.33333334,
+          "angle": 23.850581734530653
+        }
+      ],
+      "target": [
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 67.98446512094473
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 58.41421978393475
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 53.98679415327311
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 51.03012444631152
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 47.72629198652878
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 44.701078344937194
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand/WeaponSocket",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 42.96199335179123
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 42.623401200910116
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 42.24636557996889
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand/WeaponSocket",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 40.531960252468856
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 39.349197570472626
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.2833333,
+          "to": 0.29999998,
+          "angle": 36.92314868036421
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.31666666,
+          "to": 0.3333333,
+          "angle": 31.951003806523204
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 30.366652163287387
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.31666666,
+          "to": 0.3333333,
+          "angle": 27.620075796076783
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.2833333,
+          "to": 0.29999998,
+          "angle": 23.03452966118204
+        }
+      ]
+    },
+    "Slice": {
+      "source": [
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 41.53463023925336
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 37.8268466951724
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 36.22617274087146
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 32.765188007688174
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 32.233253042971896
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 27.434003922952932
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 27.39113910472396
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 26.593644901525252
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.21666667,
+          "to": 0.23333333,
+          "angle": 26.45166897867224
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/head",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 25.948820212431556
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.21666667,
+          "to": 0.23333333,
+          "angle": 22.844376224606965
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 22.837110969623115
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 22.011502607012897
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r",
+          "from": 0.21666667,
+          "to": 0.23333333,
+          "angle": 21.566998469744668
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 21.374307209753034
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 20.875145717674243
+        }
+      ],
+      "target": [
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 43.114185982927744
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 32.93543770719638
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 32.490664803493324
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "angle": 30.853903008686633
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 30.348749513306263
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "angle": 30.11930607052645
+        },
+        {
+          "path": "Visual/Armature/Hips/RightUpLeg",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 27.433998807033856
+        },
+        {
+          "path": "Visual/Armature/Hips",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 27.391135967043002
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.18333334,
+          "to": 0.20000002,
+          "angle": 27.091411686665342
+        },
+        {
+          "path": "Visual/Armature/Hips/LeftUpLeg",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 26.59363692557571
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/neck/Head",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 25.94882830050566
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.18333334,
+          "to": 0.20000002,
+          "angle": 25.375822473084646
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 25.333745260277333
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "angle": 23.795752333319836
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "angle": 23.629763251970388
+        },
+        {
+          "path": "Visual/Armature/Hips/RightUpLeg",
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "angle": 21.56702858065327
+        }
+      ]
+    },
+    "Stab": {
+      "source": [
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 46.0819870369829
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.0,
+          "to": 0.016666668,
+          "angle": 44.98174216933048
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 43.11897680837999
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.033333335,
+          "to": 0.05,
+          "angle": 37.8432380777826
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 32.41655405914633
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+          "from": 0.15,
+          "to": 0.16666667,
+          "angle": 30.308461361283015
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.16666667,
+          "to": 0.18333334,
+          "angle": 29.50345737963434
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.033333335,
+          "to": 0.05,
+          "angle": 28.071641480595627
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.0,
+          "to": 0.016666668,
+          "angle": 27.688597743532018
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 26.344530685453993
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 25.51536127197565
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.0,
+          "to": 0.016666668,
+          "angle": 24.41680850921721
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.033333335,
+          "to": 0.05,
+          "angle": 24.18045895711251
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine",
+          "from": 0.16666667,
+          "to": 0.18333334,
+          "angle": 23.815025589480243
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l/foot.l",
+          "from": 0.15,
+          "to": 0.16666667,
+          "angle": 22.040278243727112
+        },
+        {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.15,
+          "to": 0.16666667,
+          "angle": 21.797189118576828
+        }
+      ],
+      "target": [
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 53.283984647442765
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 46.07632559854872
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.03333333,
+          "to": 0.049999997,
+          "angle": 44.533635172789374
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "angle": 34.859878710343466
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 34.83472051621635
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 33.509484832146796
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.03333333,
+          "to": 0.049999997,
+          "angle": 33.23519604364185
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 31.259859938119963
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.03333333,
+          "to": 0.049999997,
+          "angle": 27.703575405290987
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 27.199729118448413
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.0,
+          "to": 0.016666666,
+          "angle": 26.60185812156279
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 24.84494179400825
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 24.275428455881855
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.0,
+          "to": 0.016666666,
+          "angle": 23.88825259284293
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "angle": 23.86397024838007
+        },
+        {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 23.8357609311288
+        }
+      ]
+    }
+  },
+  "perBoneComparisons": {
+    "Chop": [
+      {
+        "targetBone": "LeftArm",
+        "sourceBone": "upperarm.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.35,
+          "to": 0.36666667,
+          "angle": 43.55041848185875
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 47.72629198652878
+        },
+        "largestAddedStep": {
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "source": 30.324969328899915,
+          "target": 42.24636557996889,
+          "added": 11.921396251068973
+        }
+      },
+      {
+        "targetBone": "RightArm",
+        "sourceBone": "upperarm.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 46.59312179188348
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "angle": 51.03012444631152
+        },
+        "largestAddedStep": {
+          "from": 0.36666664,
+          "to": 0.38333333,
+          "source": 12.817090354085487,
+          "target": 18.070239427265978,
+          "added": 5.2531490731804915
+        }
+      },
+      {
+        "targetBone": "LeftForeArm",
+        "sourceBone": "lowerarm.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 61.71781370299805
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 58.41421978393475
+        },
+        "largestAddedStep": {
+          "from": 0.36666664,
+          "to": 0.38333333,
+          "source": 10.556788600869435,
+          "target": 14.788435885443436,
+          "added": 4.2316472845740005
+        }
+      },
+      {
+        "targetBone": "RightForeArm",
+        "sourceBone": "lowerarm.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 63.5848478538187
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 67.98446512094473
+        },
+        "largestAddedStep": {
+          "from": 0.34999996,
+          "to": 0.36666664,
+          "source": 31.916513597954435,
+          "target": 42.623401200910116,
+          "added": 10.706887602955682
+        }
+      },
+      {
+        "targetBone": "LeftHand",
+        "sourceBone": "hand.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 42.96521702584882
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 53.98679415327311
+        },
+        "largestAddedStep": {
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "source": 42.96521702584882,
+          "target": 53.98679415327311,
+          "added": 11.021577127424287
+        }
+      },
+      {
+        "targetBone": "RightHand",
+        "sourceBone": "hand.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 22.493135561219308
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 30.366652163287387
+        },
+        "largestAddedStep": {
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "source": 22.493135561219308,
+          "target": 30.366652163287387,
+          "added": 7.873516602068079
+        }
+      },
+      {
+        "targetBone": "LeftUpLeg",
+        "sourceBone": "upperleg.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l",
+          "from": 0.28333333,
+          "to": 0.3,
+          "angle": 13.381689735649532
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg",
+          "from": 0.2833333,
+          "to": 0.29999998,
+          "angle": 13.381668164728774
+        },
+        "largestAddedStep": {
+          "from": 0.23333332,
+          "to": 0.24999999,
+          "source": 0.2531075348021959,
+          "target": 0.2531334657226421,
+          "added": 2.593092044622658e-05
+        }
+      },
+      {
+        "targetBone": "RightUpLeg",
+        "sourceBone": "upperleg.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 9.77502397130468
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 9.775018682549186
+        },
+        "largestAddedStep": {
+          "from": 0.29999998,
+          "to": 0.31666666,
+          "source": 4.419738367221102,
+          "target": 4.419772051108175,
+          "added": 3.36838870724776e-05
+        }
+      },
+      {
+        "targetBone": "LeftLeg",
+        "sourceBone": "lowerleg.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l",
+          "from": 0.26666668,
+          "to": 0.28333333,
+          "angle": 18.335816478984913
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+          "from": 0.26666665,
+          "to": 0.2833333,
+          "angle": 18.33582150524365
+        },
+        "largestAddedStep": {
+          "from": 0.19999999,
+          "to": 0.21666665,
+          "source": 1.6971503802264467,
+          "target": 1.6971935778071339,
+          "added": 4.319758068715984e-05
+        }
+      },
+      {
+        "targetBone": "RightLeg",
+        "sourceBone": "lowerleg.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r/lowerleg.r",
+          "from": 0.33333334,
+          "to": 0.35,
+          "angle": 20.842668887253183
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "angle": 20.842678292551042
+        },
+        "largestAddedStep": {
+          "from": 0.5333333,
+          "to": 0.54999995,
+          "source": 6.331176356994939,
+          "target": 6.331216876610127,
+          "added": 4.051961518847236e-05
+        }
+      },
+      {
+        "targetBone": "LeftFoot",
+        "sourceBone": "foot.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l/foot.l",
+          "from": 0.28333333,
+          "to": 0.3,
+          "angle": 13.394862972251328
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg/LeftFoot",
+          "from": 0.2833333,
+          "to": 0.29999998,
+          "angle": 13.394881064329796
+        },
+        "largestAddedStep": {
+          "from": 0.23333332,
+          "to": 0.24999999,
+          "source": 0.36760234237632344,
+          "target": 0.36765581521046486,
+          "added": 5.3472834141421455e-05
+        }
+      },
+      {
+        "targetBone": "RightFoot",
+        "sourceBone": "foot.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r/lowerleg.r/foot.r",
+          "from": 0.28333333,
+          "to": 0.3,
+          "angle": 11.27610775189636
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg/RightFoot",
+          "from": 0.2833333,
+          "to": 0.29999998,
+          "angle": 11.276089534950547
+        },
+        "largestAddedStep": {
+          "from": 0.5833333,
+          "to": 0.59999996,
+          "source": 0.4780137521357832,
+          "target": 0.4780716748789753,
+          "added": 5.7922743192106996e-05
+        }
+      },
+      {
+        "targetBone": "Hips",
+        "sourceBone": "hips",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips",
+          "from": 0.3,
+          "to": 0.31666666,
+          "angle": 6.8470969178132846
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips",
+          "from": 0.29999998,
+          "to": 0.31666666,
+          "angle": 6.8471009932686036
+        },
+        "largestAddedStep": {
+          "from": 0.3333333,
+          "to": 0.34999996,
+          "source": 5.648857670778166,
+          "target": 5.648878927919531,
+          "added": 2.125714136536061e-05
+        }
+      },
+      {
+        "targetBone": "Head",
+        "sourceBone": "head",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/head",
+          "from": 0.3,
+          "to": 0.31666666,
+          "angle": 9.337788014967304
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/neck/Head",
+          "from": 0.29999998,
+          "to": 0.31666666,
+          "angle": 9.337806874185965
+        },
+        "largestAddedStep": {
+          "from": 0.36666664,
+          "to": 0.38333333,
+          "source": 1.8375830275152083,
+          "target": 1.8376072253641405,
+          "added": 2.419784893215038e-05
+        }
+      }
+    ],
+    "Slice": [
+      {
+        "targetBone": "LeftArm",
+        "sourceBone": "upperarm.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 22.837110969623115
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.18333334,
+          "to": 0.20000002,
+          "angle": 27.091411686665342
+        },
+        "largestAddedStep": {
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "source": 18.19388431973254,
+          "target": 23.795752333319836,
+          "added": 5.601868013587296
+        }
+      },
+      {
+        "targetBone": "RightArm",
+        "sourceBone": "upperarm.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 32.765188007688174
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 30.348749513306263
+        },
+        "largestAddedStep": {
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "source": 22.844376224606965,
+          "target": 30.11930607052645,
+          "added": 7.274929845919484
+        }
+      },
+      {
+        "targetBone": "LeftForeArm",
+        "sourceBone": "lowerarm.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 16.607142180930147
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.18333334,
+          "to": 0.20000002,
+          "angle": 15.85555088562056
+        },
+        "largestAddedStep": {
+          "from": 0.10000001,
+          "to": 0.116666675,
+          "source": 2.7926350933088697,
+          "target": 3.466308105955927,
+          "added": 0.6736730126470571
+        }
+      },
+      {
+        "targetBone": "RightForeArm",
+        "sourceBone": "lowerarm.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 37.8268466951724
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 32.93543770719638
+        },
+        "largestAddedStep": {
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "source": 13.594832017065,
+          "target": 17.235316048567046,
+          "added": 3.640484031502046
+        }
+      },
+      {
+        "targetBone": "LeftHand",
+        "sourceBone": "hand.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 41.53463023925336
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 43.114185982927744
+        },
+        "largestAddedStep": {
+          "from": 0.18333334,
+          "to": 0.20000002,
+          "source": 18.60107113144668,
+          "target": 25.375822473084646,
+          "added": 6.774751341637966
+        }
+      },
+      {
+        "targetBone": "RightHand",
+        "sourceBone": "hand.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 32.233253042971896
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 32.490664803493324
+        },
+        "largestAddedStep": {
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "source": 20.105584040690513,
+          "target": 23.629763251970388,
+          "added": 3.5241792112798755
+        }
+      },
+      {
+        "targetBone": "LeftUpLeg",
+        "sourceBone": "upperleg.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 26.593644901525252
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 26.59363692557571
+        },
+        "largestAddedStep": {
+          "from": 0.5,
+          "to": 0.5166667,
+          "source": 7.200661893405188,
+          "target": 7.200692994631458,
+          "added": 3.1101226269925064e-05
+        }
+      },
+      {
+        "targetBone": "RightUpLeg",
+        "sourceBone": "upperleg.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 27.434003922952932
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 27.433998807033856
+        },
+        "largestAddedStep": {
+          "from": 0.21666668,
+          "to": 0.23333335,
+          "source": 21.566998469744668,
+          "target": 21.56702858065327,
+          "added": 3.011090860383092e-05
+        }
+      },
+      {
+        "targetBone": "LeftLeg",
+        "sourceBone": "lowerleg.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l",
+          "from": 0.18333334,
+          "to": 0.2,
+          "angle": 13.938109886432215
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+          "from": 0.18333334,
+          "to": 0.20000002,
+          "angle": 13.938099249343066
+        },
+        "largestAddedStep": {
+          "from": 0.050000004,
+          "to": 0.06666667,
+          "source": 0.7871537509895181,
+          "target": 0.7871941365774713,
+          "added": 4.038558795316227e-05
+        }
+      },
+      {
+        "targetBone": "RightLeg",
+        "sourceBone": "lowerleg.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r/lowerleg.r",
+          "from": 0.11666667,
+          "to": 0.13333334,
+          "angle": 11.810622855290648
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+          "from": 0.116666675,
+          "to": 0.13333334,
+          "angle": 11.810634024103825
+        },
+        "largestAddedStep": {
+          "from": 0.53333336,
+          "to": 0.55,
+          "source": 0.45377131080415084,
+          "target": 0.45380385269977236,
+          "added": 3.2541895621518435e-05
+        }
+      },
+      {
+        "targetBone": "LeftFoot",
+        "sourceBone": "foot.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l/foot.l",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 10.213693426118033
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg/LeftFoot",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 10.213697025606473
+        },
+        "largestAddedStep": {
+          "from": 0.25,
+          "to": 0.26666668,
+          "source": 1.667597710013846,
+          "target": 1.6676285839619527,
+          "added": 3.0873948106746596e-05
+        }
+      },
+      {
+        "targetBone": "RightFoot",
+        "sourceBone": "foot.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r/lowerleg.r/foot.r",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 9.896681494458047
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg/RightFoot",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 9.896703796362695
+        },
+        "largestAddedStep": {
+          "from": 0.033333335,
+          "to": 0.050000004,
+          "source": 1.3000818424399225,
+          "target": 1.3001158347542037,
+          "added": 3.399231428113936e-05
+        }
+      },
+      {
+        "targetBone": "Hips",
+        "sourceBone": "hips",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 27.39113910472396
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 27.391135967043002
+        },
+        "largestAddedStep": {
+          "from": 0.5,
+          "to": 0.5166667,
+          "source": 7.6454400753176,
+          "target": 7.645472368274577,
+          "added": 3.2292956976931464e-05
+        }
+      },
+      {
+        "targetBone": "Head",
+        "sourceBone": "head",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/head",
+          "from": 0.2,
+          "to": 0.21666667,
+          "angle": 25.948820212431556
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/neck/Head",
+          "from": 0.20000002,
+          "to": 0.21666668,
+          "angle": 25.94882830050566
+        },
+        "largestAddedStep": {
+          "from": 0.25,
+          "to": 0.26666668,
+          "source": 2.6453208906905703e-05,
+          "target": 4.802429328061781e-05,
+          "added": 2.1571084373712106e-05
+        }
+      }
+    ],
+    "Stab": [
+      {
+        "targetBone": "LeftArm",
+        "sourceBone": "upperarm.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 43.11897680837999
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 46.07632559854872
+        },
+        "largestAddedStep": {
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "source": 12.899266632726725,
+          "target": 21.301382972920102,
+          "added": 8.402116340193377
+        }
+      },
+      {
+        "targetBone": "RightArm",
+        "sourceBone": "upperarm.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 25.51536127197565
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 27.199729118448413
+        },
+        "largestAddedStep": {
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "source": 20.96493919974397,
+          "target": 27.199729118448413,
+          "added": 6.234789918704443
+        }
+      },
+      {
+        "targetBone": "LeftForeArm",
+        "sourceBone": "lowerarm.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l",
+          "from": 0.0,
+          "to": 0.016666668,
+          "angle": 27.688597743532018
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 33.509484832146796
+        },
+        "largestAddedStep": {
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "source": 18.64564129007488,
+          "target": 33.509484832146796,
+          "added": 14.863843542071915
+        }
+      },
+      {
+        "targetBone": "RightForeArm",
+        "sourceBone": "lowerarm.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r",
+          "from": 0.0,
+          "to": 0.016666668,
+          "angle": 44.98174216933048
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 31.259859938119963
+        },
+        "largestAddedStep": {
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "source": 7.680289933566792,
+          "target": 23.86397024838007,
+          "added": 16.18368031481328
+        }
+      },
+      {
+        "targetBone": "LeftHand",
+        "sourceBone": "hand.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 46.0819870369829
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/LeftShoulder/LeftArm/LeftForeArm/LeftHand",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 53.283984647442765
+        },
+        "largestAddedStep": {
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "source": 46.0819870369829,
+          "target": 53.283984647442765,
+          "added": 7.201997610459863
+        }
+      },
+      {
+        "targetBone": "RightHand",
+        "sourceBone": "hand.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r",
+          "from": 0.15,
+          "to": 0.16666667,
+          "angle": 30.308461361283015
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 34.83472051621635
+        },
+        "largestAddedStep": {
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "source": 30.308461361283015,
+          "target": 34.83472051621635,
+          "added": 4.526259154933335
+        }
+      },
+      {
+        "targetBone": "LeftUpLeg",
+        "sourceBone": "upperleg.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 16.475137866328478
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 16.47512780864653
+        },
+        "largestAddedStep": {
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "source": 14.396040152159559,
+          "target": 14.396062026939815,
+          "added": 2.1874780255615178e-05
+        }
+      },
+      {
+        "targetBone": "RightUpLeg",
+        "sourceBone": "upperleg.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r",
+          "from": 0.16666667,
+          "to": 0.18333334,
+          "angle": 14.554088120282398
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg",
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "angle": 14.554104935039097
+        },
+        "largestAddedStep": {
+          "from": 0.23333332,
+          "to": 0.24999999,
+          "source": 1.167443376189505,
+          "target": 1.1674699498002195,
+          "added": 2.6573610714342166e-05
+        }
+      },
+      {
+        "targetBone": "LeftLeg",
+        "sourceBone": "lowerleg.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l",
+          "from": 0.15,
+          "to": 0.16666667,
+          "angle": 15.020409138030837
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 15.020408744406915
+        },
+        "largestAddedStep": {
+          "from": 0.46666664,
+          "to": 0.4833333,
+          "source": 0.8343287680528912,
+          "target": 0.8343721003280945,
+          "added": 4.333227520325611e-05
+        }
+      },
+      {
+        "targetBone": "RightLeg",
+        "sourceBone": "lowerleg.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r/lowerleg.r",
+          "from": 0.16666667,
+          "to": 0.18333334,
+          "angle": 18.942980730238336
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg",
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "angle": 18.94297377017319
+        },
+        "largestAddedStep": {
+          "from": 0.23333332,
+          "to": 0.24999999,
+          "source": 1.880655260512521,
+          "target": 1.8806894993747387,
+          "added": 3.423886221765038e-05
+        }
+      },
+      {
+        "targetBone": "LeftFoot",
+        "sourceBone": "foot.l",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.l/lowerleg.l/foot.l",
+          "from": 0.15,
+          "to": 0.16666667,
+          "angle": 22.040278243727112
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/LeftUpLeg/LeftLeg/LeftFoot",
+          "from": 0.14999999,
+          "to": 0.16666666,
+          "angle": 22.040281072621465
+        },
+        "largestAddedStep": {
+          "from": 0.65,
+          "to": 0.6666666,
+          "source": 0.5693525963399254,
+          "target": 0.5693938151075552,
+          "added": 4.121876762974708e-05
+        }
+      },
+      {
+        "targetBone": "RightFoot",
+        "sourceBone": "foot.r",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/upperleg.r/lowerleg.r/foot.r",
+          "from": 0.16666667,
+          "to": 0.18333334,
+          "angle": 9.025580906357371
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/RightUpLeg/RightLeg/RightFoot",
+          "from": 0.16666666,
+          "to": 0.18333332,
+          "angle": 9.025572994806375
+        },
+        "largestAddedStep": {
+          "from": 0.049999997,
+          "to": 0.06666666,
+          "source": 2.105486331876435,
+          "target": 2.1055118660920518,
+          "added": 2.5534215616573874e-05
+        }
+      },
+      {
+        "targetBone": "Hips",
+        "sourceBone": "hips",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 12.058479028835226
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 12.058475095529102
+        },
+        "largestAddedStep": {
+          "from": 0.29999998,
+          "to": 0.31666666,
+          "source": 0.10929090734751956,
+          "target": 0.1093037175356235,
+          "added": 1.2810188103937192e-05
+        }
+      },
+      {
+        "targetBone": "Head",
+        "sourceBone": "head",
+        "sourcePeak": {
+          "path": "Protagonist_KayKit_v018/Hero_KayKit_Rig/root/hips/spine/chest/head",
+          "from": 0.016666668,
+          "to": 0.033333335,
+          "angle": 14.70801687643961
+        },
+        "targetPeak": {
+          "path": "Visual/Armature/Hips/Spine02/Spine01/Spine/neck/Head",
+          "from": 0.016666666,
+          "to": 0.03333333,
+          "angle": 14.708027854730574
+        },
+        "largestAddedStep": {
+          "from": 0.19999999,
+          "to": 0.21666665,
+          "source": 1.1489923141556686,
+          "target": 1.1490086718239374,
+          "added": 1.6357668268796033e-05
+        }
+      }
+    ]
+  }
+}

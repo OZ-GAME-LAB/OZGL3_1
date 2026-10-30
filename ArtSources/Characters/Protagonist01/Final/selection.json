@@ -1,6 +1,6 @@
 {
-  "userSelection": "3 latest sword attacks +15v007 nonattack clips; Rise/Fall loops revised2026-10-27, other16selected clips preserved",
-  "count": 18,
+  "userSelection": "3 approved sword attacks retargeted to Chibi24 +15 unchanged v007 nonattack clips +2 new Chibi24 utility clips; rejected casting excluded, 2026-10-30",
+  "count": 20,
   "runtimeIntegrationChangedThisTask": false,
   "existingGameClipReferences": [
     "Hit_Reaction",
@@ -21,31 +21,56 @@
     "trackedMedia": false,
     "relativeBase": "Characters/Protagonist01/Final/Review"
   },
-  "rigCompatibility": "Two native Generic rigs. No direct common Animator compatibility; future retargeting is required for a single rig.",
+  "rigCompatibility": "All selected clips now use native Chibi24 Generic paths. Original KayKit23 Combat clips remain retarget source material. Assign the new ChibiMotion_v007 clips to the gameplay controller; no controller asset was edited.",
   "clips": [
     {
       "name": "Longsword_Attack_Chop",
       "group": "attack",
-      "unityClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
-      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
-      "rig": "KayKit23",
-      "gif": "Combat/Longsword_Attack_Chop_Side.gif"
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Chop.anim",
+      "compatiblePrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "rig": "Chibi24",
+      "equippedPropPrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Longsword_Chibi_SocketProp.prefab",
+      "socket": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand/WeaponSocket",
+      "sourceClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+      "gif": "Compatibility20261029/Longsword_Attack_Chop_Side.gif"
     },
     {
       "name": "Longsword_Attack_Slice",
       "group": "attack",
-      "unityClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
-      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
-      "rig": "KayKit23",
-      "gif": "Combat/Longsword_Attack_Slice_Side.gif"
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Slice.anim",
+      "compatiblePrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "rig": "Chibi24",
+      "equippedPropPrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Longsword_Chibi_SocketProp.prefab",
+      "socket": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand/WeaponSocket",
+      "sourceClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Slice.anim",
+      "gif": "Compatibility20261029/Longsword_Attack_Slice_Side.gif"
     },
     {
       "name": "Longsword_Attack_Stab",
       "group": "attack",
-      "unityClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
-      "compatiblePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
-      "rig": "KayKit23",
-      "gif": "Combat/Longsword_Attack_Stab_Side.gif"
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Stab.anim",
+      "compatiblePrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "rig": "Chibi24",
+      "equippedPropPrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Longsword_Chibi_SocketProp.prefab",
+      "socket": "Visual/Armature/Hips/Spine02/Spine01/Spine/RightShoulder/RightArm/RightForeArm/RightHand/WeaponSocket",
+      "sourceClip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Stab.anim",
+      "gif": "Compatibility20261029/Longsword_Attack_Stab_Side.gif"
+    },
+    {
+      "name": "Death_Fall",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Death_Fall.anim",
+      "compatiblePrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "rig": "Chibi24",
+      "gif": "Compatibility20261029/Death_Fall_Side.gif"
+    },
+    {
+      "name": "Ladder_Climb_Loop",
+      "group": "utility",
+      "unityClip": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Ladder_Climb_Loop.anim",
+      "compatiblePrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "rig": "Chibi24",
+      "gif": "Compatibility20261029/Ladder_Climb_Loop_Side.gif"
     },
     {
       "name": "Idle_Fists",

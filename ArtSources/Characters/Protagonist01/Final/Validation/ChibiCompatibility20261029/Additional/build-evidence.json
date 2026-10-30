@@ -1,0 +1,72 @@
+{
+  "targetPrefab": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab",
+  "scope": "Two new Chibi24 Generic utility clips retained: death and ladder; no runtime code, controller, model, rig, or VFX asset changes.",
+  "clips": [
+    {
+      "name": "Death_Fall",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Death_Fall.anim",
+      "source": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx",
+      "sourceTake": "Death_A",
+      "method": "Bind-frame retarget of KayKit Death_A; actual deformed-mesh floor correction, non-looping final0.20s hold.",
+      "seconds": 1.0,
+      "sourceSeconds": 0.800000011920929,
+      "sourceLoopEndpointMaxDegrees": 0.0,
+      "savedLoopEndpointMaxDegrees": 0.0,
+      "maximumGroundCorrection": 0.09939368069171906,
+      "finalMeshMinimumY": -2.0861622829215776E-07,
+      "maximumLocalBoneLengthDeviation": 0.0,
+      "ladderInitialPelvisOffset": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ladderCyclePelvisDisplacement": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "maximumAnatomicalDirectionError": 0.0,
+      "minimumHeadHandSupportPlaneGapDiagnostic": 0.0,
+      "maximumShoulderClearanceCorrection": 0.0,
+      "samples": 61,
+      "genericBindings": 292,
+      "loop": false,
+      "targetAvatarValid": false,
+      "humanoidCurvesRemaining": false
+    },
+    {
+      "name": "Ladder_Climb_Loop",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Ladder_Climb_Loop.anim",
+      "source": "Assets/Anim/Clips/Climbing Ladder.fbx",
+      "sourceTake": "Assets/Anim/Clips/Climb.anim",
+      "method": "Existing Mixamo Humanoid clip cloned without looping and evaluated on its original Avatar. Native torso frames and limb directions transferred onto Chibi bind pose; native axial twist retained and local lengths fixed. Target has no Humanoid Avatar. Source pelvis balance scaled/in-place. Constant chest-relative rung targets adapt arm reach with two-bone IK, preserving native elbow bend planes, fixed lengths and wrist LOCAL pose; maximumAnatomicalDirectionError is measured BEFORE this proportional arm adaptation. Generic endpoint closes over30Hz interval. Saved clip clearance is separately tested at120Hz. No source/importer changes.",
+      "seconds": 0.8000000715255737,
+      "sourceSeconds": 0.7666667103767395,
+      "sourceLoopEndpointMaxDegrees": 0.0,
+      "savedLoopEndpointMaxDegrees": 0.0,
+      "maximumGroundCorrection": 0.0,
+      "finalMeshMinimumY": 0.0,
+      "maximumLocalBoneLengthDeviation": 0.0,
+      "ladderInitialPelvisOffset": {
+        "x": -0.024052515625953674,
+        "y": 1.8058738708496094,
+        "z": -0.061860453337430954
+      },
+      "ladderCyclePelvisDisplacement": {
+        "x": -3.0897557735443115E-05,
+        "y": -2.384185791015625E-07,
+        "z": -3.397837281227112E-05
+      },
+      "maximumAnatomicalDirectionError": 0.02797645516693592,
+      "minimumHeadHandSupportPlaneGapDiagnostic": -0.006577581167221069,
+      "maximumShoulderClearanceCorrection": 54.00740051269531,
+      "samples": 49,
+      "genericBindings": 292,
+      "loop": true,
+      "targetAvatarValid": false,
+      "humanoidCurvesRemaining": false
+    }
+  ],
+  "independentVisualReviewReport": "QA/final-visual-review.json",
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}

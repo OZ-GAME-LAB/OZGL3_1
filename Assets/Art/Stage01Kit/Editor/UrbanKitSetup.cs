@@ -94,7 +94,7 @@ public static class UrbanKitSetup
                     Place(block,"Modules","Exterior_Stairs_Rise3m",new Vector3(11,0,0));
                     Place(block,"Modules","Rooftop_Bridge_6m",new Vector3(26,4,0));
                     Place(block,"Modules","Building_ShopLow",new Vector3(33,0,0));
-                    Place(block,"Props","GatePylon",new Vector3(35,4,1.7f));
+                    Place(block,"Props","SatelliteDish",new Vector3(35,4,1.7f));
                     Place(block,"Modules","Ladder_4m",new Vector3(20,0,-2.15f));
                     Place(block,"Modules","Utility_Box",new Vector3(31,4,1.1f));
                     Marker(block,"PlayerSpawn",new Vector3(2,.04f,0));Marker(block,"TutorialMonsterAnchor",new Vector3(8,.05f,0));
@@ -118,9 +118,9 @@ public static class UrbanKitSetup
                     for(int i=0;i<3;i++)
                     {
                         float x=new[]{24,40,56}[i],y=new[]{8,12,8}[i];
-                        Place(block,"Props","GatePylon",new Vector3(x,y,1.65f));Marker(block,"NormalGate_"+(i+1),new Vector3(x,y,0));
+                        Place(block,"Props","SatelliteDish",new Vector3(x,y,1.65f));Marker(block,"NormalGate_"+(i+1),new Vector3(x,y,0));
                     }
-                    Place(block,"Props","GatePylon",new Vector3(79,4,1.8f));
+                    Place(block,"Props","SatelliteDish",new Vector3(79,4,1.8f));
                     Marker(block,"BossGateAnchor",new Vector3(79,4,0));Marker(block,"BossArenaAnchor",new Vector3(72,4,0));
                     Marker(block,"PlayerSpawn",new Vector3(2,.04f,0));
                 }
@@ -255,7 +255,7 @@ public static class UrbanKitSetup
     {
         bool asyncCompilation=ShaderUtil.allowAsyncCompilation;
         ShaderUtil.allowAsyncCompilation=false;
-        var names=new[]{"Sword","Staff","StreetLamp","StreetTree","VendingMachine","Bench","TrashBin","ACUnit","GatePylon","Building_ShopLow","Building_OfficeMid","Building_ApartmentTall"};
+        var names=new[]{"Sword","Staff","StreetLamp","StreetTree","VendingMachine","Bench","TrashBin","ACUnit","SatelliteDish","Building_ShopLow","Building_OfficeMid","Building_ApartmentTall"};
         const int w=480,h=480;
         var sheet=new Texture2D(w*4,h*3,TextureFormat.RGB24,false);var target=new RenderTexture(w,h,24);
         var camera=new GameObject("Art Capture",typeof(Camera)).GetComponent<Camera>();camera.targetTexture=target;

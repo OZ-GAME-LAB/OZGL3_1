@@ -1,0 +1,702 @@
+{
+  "schema_version": 1,
+  "researched_on": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "language": "ko",
+  "scope": "Unity Asset Store 외 무료 VFX/재료/편집가능샘플 조사",
+  "assumptions": {
+    "engine": "Unity6000.3.21f1",
+    "pipeline": "URP17.3.0(3D)",
+    "style": "치비 로우폴리 3D 현대도시 배경+2.5D 횡스크롤 전투",
+    "palette": "물리 아이보리/옅은노랑,마법청록/보라,폭발아이보리→노랑→주황",
+    "priority": "캐릭터실루엣·판정타이밍·좁은화면가독성"
+  },
+  "verification_limits": [
+    "공식제품/제작자배포문서현재조회",
+    "바이너리다운로드·아카이브내용검사·Unity임포트·실제플레이·성능검증안함",
+    "웹설명상호환과프로젝트검증은별개",
+    "평점은편집판단이고벤치마크아님",
+    "타사이트중복본은같은에셋으로세어22개제품군"
+  ],
+  "entries": [
+    {
+      "id": "E01",
+      "name": "Particle Pack",
+      "creator": "Kenney",
+      "site": "Kenney / 제작자 OpenGameArt",
+      "url": "https://kenney.nl/assets/particle-pack",
+      "evidence_urls": [
+        "https://opengameart.org/content/particle-pack-80-sprites"
+      ],
+      "free": "무료(기부 선택)",
+      "license": "CC0",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0 범위 허용",
+      "format": "80 PNG(512×512), tilesheet, vector; OGA판 Unity 파티클 샘플 포함",
+      "contents": "기본 입자·불·연기·마법·하트·불꽃·전기",
+      "compatibility": "텍스처는 엔진 독립. 구형 Unity 샘플의 Unity6/URP17.3 호환 미보장",
+      "work": "URP/Particles/Unlit 재질로 필요한 마스크만 사용. 입자 방출·크기·수명·트레일은 직접 구성",
+      "style_fit": "상(기초 재료)",
+      "fit_reason": "색을 입힐 수 있는 단순 마스크를 쓰면 치비/로우폴리의 큰 형태와 맞추기 쉽다",
+      "skill_use": [
+        "대시 먼지",
+        "마력탄 코어/꼬리",
+        "작은 피격",
+        "폭발 파편"
+      ],
+      "recommendation": "우선 확보할 기초 라이브러리. 완성 프리팹 대체품은 아님",
+      "verification": "공식 검색결과+제작자 OGA 페이지 직접 읽음; 공식 도메인 본문 fetch 제한; 다운로드·임포트 안함"
+    },
+    {
+      "id": "E02",
+      "name": "Smoke Particles",
+      "creator": "Kenney",
+      "site": "Kenney / 제작자 OpenGameArt",
+      "url": "https://kenney.nl/assets/smoke-particles",
+      "evidence_urls": [
+        "https://opengameart.org/content/smoke-particle-assets"
+      ],
+      "free": "무료(기부 선택)",
+      "license": "CC0",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0 범위 허용",
+      "format": "PNG. 현 Kenney페이지 70파일, 구 OGA 배포 설명77파일(서로 버전/배포본 다를 수 있음)",
+      "contents": "연기·폭발·섬광·흰 퍼프",
+      "compatibility": "엔진 독립 이미지; URP 프리팹 아님",
+      "work": "알파 재질, 색보정, 짧은 수명/낮은 밀도. 프레임 시퀀스 여부는 아카이브 검사 필요",
+      "style_fit": "중상(희박한 먼지/연기)",
+      "fit_reason": "소량의 먼지와 폭발 잔재에 적합. 부드러운 대형 연기는 로우폴리 실루엣을 가릴 수 있음",
+      "skill_use": [
+        "대시 발먼지",
+        "착지",
+        "폭발 잔연기"
+      ],
+      "recommendation": "E01 보조. 두 팩을 같은 완성 VFX 개수로 중복 계산하지 않음",
+      "verification": "공식 검색결과와 제작자 OGA 직접 읽음; 다운로드·임포트 안함"
+    },
+    {
+      "id": "E03",
+      "name": "Hit Animation | Frame by frame",
+      "creator": "Sinestesia",
+      "site": "OpenGameArt",
+      "url": "https://opengameart.org/content/hit-animation-frame-by-frame",
+      "evidence_urls": [],
+      "free": "무료",
+      "license": "CC0",
+      "commercial": "가능",
+      "credit": "의무 없음(출처 주장 금지·자발적 표기 요청)",
+      "redistribution": "CC0 범위 허용",
+      "format": "RGBA PNG4×4,총4096×4096,프레임1024×1024,16프레임",
+      "contents": "노란 타격1종",
+      "compatibility": "엔진 독립,URP Particle Texture Sheet Animation 또는 카메라향 Quad",
+      "work": "텍스처 축소,배경/명도 시험,16프레임 재생속도·크기 조절",
+      "style_fit": "중상(작은 보조 타격)",
+      "fit_reason": "큰 단일 타격 실루엣을 짧게 써서 3D 전투에도 적용 가능. 근접 기본 피격에 지나치게 크면 과장됨",
+      "skill_use": [
+        "검기 적중",
+        "연속참격 마지막 타격",
+        "마력탄 적중"
+      ],
+      "recommendation": "피격 전용 비교군",
+      "verification": "제작자 배포페이지 직접 읽음; 미임포트"
+    },
+    {
+      "id": "E04",
+      "name": "Pure Projectile - Magic Effect",
+      "creator": "Cethiel",
+      "site": "OpenGameArt",
+      "url": "https://opengameart.org/content/pure-projectile-magic-effect",
+      "evidence_urls": [],
+      "free": "무료 배포본;고해상도 Patreon판 별도",
+      "license": "CC0(OGA 배포본)",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0 범위 허용",
+      "format": "ZIP500.8KB,2D effect 이미지. 페이지에 정확한 시트 해상도/프레임수 미기재",
+      "contents": "발광 마법 투사체/주문 효과",
+      "compatibility": "Unity 프리팹 아님",
+      "work": "이미지 형식·알파·프레임수 검사 후 URP 재질/시트 애니메이션 구성",
+      "style_fit": "중",
+      "fit_reason": "발광을 낮추고 마력 팔레트로 재색칠하면 보조 가능. 형태·동세는 인게임 비교 필요",
+      "skill_use": [
+        "마력탄",
+        "마력장 틱의 작은 빛"
+      ],
+      "recommendation": "마력탄 재료 대안;후원 고해상도판을 무료내용으로 포함하지 않음",
+      "verification": "제작자 OGA 직접 읽음;미다운로드"
+    },
+    {
+      "id": "E05",
+      "name": "Explosion effects and more",
+      "creator": "Soluna Software",
+      "site": "OpenGameArt",
+      "url": "https://opengameart.org/content/explosion-effects-and-more",
+      "evidence_urls": [],
+      "free": "무료",
+      "license": "페이지 CC-BY3.0+CC0 병기. 제작자 2015-12-28 댓글에서 CC0로 변경했다고 확인",
+      "commercial": "가능",
+      "credit": "CC0 선택 시 의무 없음",
+      "redistribution": "CC0 범위 허용",
+      "format": "PNG 시트5개(Explosion03,Explosion21,Effect95,Effect47,Aura38)",
+      "contents": "폭발2종·보조효과2종·오라1종",
+      "compatibility": "엔진 독립 이미지",
+      "work": "시트 슬라이싱/타이밍/알파 재질 구성. 전후 오라 층은 별도 제공 안됨",
+      "style_fit": "중하",
+      "fit_reason": "구형 RPG의 부드러운 발광과 오라가 큰 로우폴리 면과 이질적일 수 있어 전체가 아닌 작은 섬광만",
+      "skill_use": [
+        "연쇄폭발 보조 섬광",
+        "마력장 장식"
+      ],
+      "recommendation": "후순위 재료/레퍼런스",
+      "verification": "배포페이지와 제작자 라이선스 수정 댓글 확인;미임포트"
+    },
+    {
+      "id": "E06",
+      "name": "Free VFX Asset Pack",
+      "creator": "CodeManu",
+      "site": "OpenGameArt / itch.io",
+      "url": "https://opengameart.org/content/free-vfx-asset-pack",
+      "evidence_urls": [
+        "https://codemanu.itch.io/vfx-free-pack"
+      ],
+      "free": "Name your own price / 무료",
+      "license": "OGA판 CC0+본문 public domain 일치. itch본문 public domain지만 metadata CC BY4.0와 충돌",
+      "commercial": "가능(OGA CC0판 권장)",
+      "credit": "OGA CC0판 의무 없음",
+      "redistribution": "OGA CC0 범위 허용",
+      "format": "22효과,30/60fps,PNG sheets·단일frames·GIF·SpriteMancer project",
+      "contents": "히트·폭발·불·전기실드·소용돌이 등",
+      "compatibility": "엔진 독립 이미지;SpriteMancer 유료앱 없어도 PNG 사용 가능",
+      "work": "픽셀 밀도 통일,크기/색/프레임 속도 조정. 부드럽게 필터링만 해서 비픽셀로 전환되지는 않음",
+      "style_fit": "중하(픽셀)",
+      "fit_reason": "현재 3D 캐릭터와 픽셀 VFX의 해상도 차이가 눈에 띌 가능성.작은 별/피격 정도로 제한",
+      "skill_use": [
+        "작은 피격",
+        "폭발 비교",
+        "실드/상태 보조"
+      ],
+      "recommendation": "OGA판 보조 라이브러리;주력 아트 방향으로 채택하지 않음",
+      "verification": "두 제작자 페이지 직접 읽고 상충 기록;미임포트"
+    },
+    {
+      "id": "E07",
+      "name": "Free Animated Explosion Sprite Pack",
+      "creator": "CraftPix",
+      "site": "CraftPix",
+      "url": "https://craftpix.net/freebies/free-animated-explosion-sprite-pack/",
+      "evidence_urls": [
+        "https://craftpix.net/file-licenses/"
+      ],
+      "free": "무료 다운로드(계정 로그인 경로)",
+      "license": "CraftPix Freebie Products(현 약관2절)",
+      "commercial": "무제한 개인/상업 프로젝트 가능",
+      "credit": "의무 없음",
+      "redistribution": "원본·수정 아트 자체의 재판매/추출 가능한 재배포 금지",
+      "format": "AI(벡터 원본)+PNG",
+      "contents": "11효과:불폭발·연소/연기·전기방전·독 분사 등",
+      "compatibility": "엔진 독립 PNG;Unity 프리팹 없음",
+      "work": "선택 효과 슬라이싱,색·크기·방향·시트 재생 구성. AI원본 편집 가능 툴 필요(사용할 때만)",
+      "style_fit": "중상(비픽셀 만화 폭발)",
+      "fit_reason": "벡터 기반 큼직한 형태가 픽셀팩보다 프로젝트 스타일에 가까울 가능성.검은 외곽선/기존채색은 조정",
+      "skill_use": [
+        "폭발",
+        "연쇄폭발",
+        "마력탄 착탄",
+        "도시 물체 파괴"
+      ],
+      "recommendation": "외부 PNG 폭발 후보 중 우선 비교",
+      "verification": "제품+무료 라이선스2절 직접 읽음;미다운로드"
+    },
+    {
+      "id": "E08",
+      "name": "Free Pixel Magic Sprite Effects Pack",
+      "creator": "CraftPix",
+      "site": "CraftPix",
+      "url": "https://craftpix.net/freebies/free-pixel-magic-sprite-effects-pack/",
+      "evidence_urls": [
+        "https://craftpix.net/file-licenses/"
+      ],
+      "free": "무료",
+      "license": "CraftPix Freebie Products",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "원본/수정 아트 자체 재배포 금지",
+      "format": "PNG+PSD,10아이콘·15시트,32×32아이콘",
+      "contents": "회복·점멸·뿌리·피해오라·레이저·스파크·매혹·별비·석화·투명",
+      "compatibility": "엔진 독립 이미지",
+      "work": "시트 재생/상태 시작·종료 제어;픽셀 밀도 조정",
+      "style_fit": "하(월드 주력)/중(UI 보조)",
+      "fit_reason": "픽셀 UI와는 연결 가능하지만 3D 월드 VFX를 픽셀로 전환할 이유는 아님",
+      "skill_use": [
+        "상태 아이콘/보조 표현",
+        "UI 주변 반짝임"
+      ],
+      "recommendation": "주력 전투 VFX에서 제외,보조만",
+      "verification": "제품+라이선스 직접 읽음;미다운로드"
+    },
+    {
+      "id": "E09",
+      "name": "Effekseer 공식/기여 CC0 샘플",
+      "creator": "Effekseer 및 기여자",
+      "site": "Effekseer 공식 GitHub Pages",
+      "url": "https://effekseer.github.io/en/contribute.html",
+      "evidence_urls": [
+        "https://effekseer.github.io/en/index.html",
+        "https://effekseer.github.io/Helps/15x/Tool/en/overview.html"
+      ],
+      "free": "무료",
+      "license": "Sample Effects CC0 구역만. Sample Effects(Old)는 별도 구라이선스",
+      "commercial": "CC0 구역 가능",
+      "credit": "의무 없음(제작자 표기 권장)",
+      "redistribution": "CC0 구역 허용",
+      "format": "Effekseer 편집 프로젝트;툴에서2D애니메이션/3D효과 출력 가능",
+      "contents": "CC0구역10묶음의 표시 수 합계295효과(13+20+11+12+103+3+15+71+43+4)",
+      "compatibility": "Unity 런타임은 존재하지만 Unity6.3/URP17.3 미검증. PNG로 녹화하면 엔진 종속성 축소",
+      "work": "기존 효과 고르기→색/노드 조정→고정 측면카메라 PNG 시트 출력→Unity에서 재생.3D런타임 사용 시 플러그인·빌드 검증 추가",
+      "style_fit": "중상~하(팩별 편차 큼)",
+      "fit_reason": "마법/참격의 선택 폭은 넓지만 과한 발광·장시간 연출을 크게 줄여야 함",
+      "skill_use": [
+        "검기/참격 베이크",
+        "마력탄",
+        "폭발",
+        "마력장"
+      ],
+      "recommendation": "외부 무료중 가장 폭넓은 편집 가능한 대안.완성셋 일괄 채택보다 필요한 블록 선택",
+      "verification": "공식 샘플/툴 페이지 직접 확인;Old34효과와 구분;미다운로드"
+    },
+    {
+      "id": "E10",
+      "name": "Linty's Textures",
+      "creator": "Linty / GreatFriend129",
+      "site": "GitHub",
+      "url": "https://github.com/GreatFriend129/LintyTextures",
+      "evidence_urls": [],
+      "free": "무료 공개",
+      "license": "README 자체허가:누구나 모든 목적 사용,표기불필요,본인제작 주장금지.표준 CC0라 명명하지 않음",
+      "commercial": "가능(모든 목적 명시)",
+      "credit": "의무 없음",
+      "redistribution": "본문 all purpose 허가이나 세부 계약 없음;게임내 사용 중심으로 권장",
+      "format": "VFX 텍스처 저장소,PMA접미사는 premultiplied alpha",
+      "contents": "노이즈/입자용 텍스처;일부 Kenney Particle Pack의 큰 수정본",
+      "compatibility": "재질/셰이더는 직접 구성",
+      "work": "필요한 소수 마스크만 선별,알파·PMA블렌딩 점검,URP재질 적용",
+      "style_fit": "중상(재료)",
+      "fit_reason": "원하는 단순 형태·색으로 통일하기 좋은 재료.완성 타이밍은 없음",
+      "skill_use": [
+        "검기 디졸브",
+        "마력탄 마스크",
+        "불/연기 노이즈"
+      ],
+      "recommendation": "Kenney로 부족할 때 확장 재료",
+      "verification": "제작자 README 직접 읽음;미다운로드"
+    },
+    {
+      "id": "E11",
+      "name": "Cooked FX - 40 Free Game Effects (5 Themes)",
+      "creator": "The Cooked Works",
+      "site": "itch.io",
+      "url": "https://the-cooked-works.itch.io/cooked-fx",
+      "evidence_urls": [],
+      "free": "Name your own price($0 가능)",
+      "license": "자체허가:무제한 상업/비상업,원본효과 재판매/재배포금지",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "원본 효과 자체 금지",
+      "format": "테마별PNG+JSON;비픽셀128/256px·24fps,픽셀32px·12fps;측면/탑다운 총63애니메이션/테마",
+      "contents": "40종,hit/slash/crossslash/explosion/fireball/dash/landdust/shield/portal 등;5테마는 별도 다운로드",
+      "compatibility": "itch는PNG원본. Unity/Fab판은별도 sliced+player+demo 설명",
+      "work": "Soft Glass/Cozy Chunky/Flat Night 중 게임에 가까운 테마 하나로 제한.알파재질·시트재생·풀링을 우리 구조에 맞춤",
+      "style_fit": "중(측면 즉시비교)/하~중(독자 UI 테마)",
+      "fit_reason": "측면판이 있고 비픽셀 옵션이 강점.기성UI 토큰의 외곽선/그림자가 우리3D아트와 일치하는지는 미검증",
+      "skill_use": [
+        "대시",
+        "검기/슬래시",
+        "폭발",
+        "마력탄"
+      ],
+      "recommendation": "전술 비교군.2026-10 신작·AI작성 드로잉코드 공개,실사용 검증 전 주력 확정 금지",
+      "verification": "제작자 제품/라이선스/AI공개 직접 확인;미임포트"
+    },
+    {
+      "id": "E12",
+      "name": "Free Game Fx Vol.04",
+      "creator": "ashishlko11",
+      "site": "GameDev Market",
+      "url": "https://www.gamedevmarket.net/asset/free-game-fx-vol-04",
+      "evidence_urls": [],
+      "free": "FREE!",
+      "license": "GameDev Market Pro Licence(제품페이지 요약)",
+      "commercial": "무제한 프로젝트 가능",
+      "credit": "페이지에 별도의 필수표기 미기재;전체 라이선스 확인 권장",
+      "redistribution": "Media Product 밖 원본/파생물 공유·판매·재배포 금지",
+      "format": "PNG,9.18MB,비벡터·비레이어;2019-09-06 업데이트",
+      "contents": "제품 설명은 Free game effects로만 표시,효과별수량/프레임 미기재",
+      "compatibility": "엔진독립PNG",
+      "work": "아카이브 조사로 알파/효과종류/프레임수 먼저 파악하고URP재생 구성",
+      "style_fit": "보류",
+      "fit_reason": "무료상업조건은 명확하지만 제품 설명만으로 게임 적합을 확정할 수 없음",
+      "skill_use": [
+        "폭발/피격 비교 후보"
+      ],
+      "recommendation": "예비후보;상세목록 없는 팩을 상위 추천으로 올리지 않음",
+      "verification": "제품 기술/라이선스 직접 읽음;아카이브 미확인"
+    },
+    {
+      "id": "E13",
+      "name": "12 Free VFX Textures - Noise, Masks & Flipbooks",
+      "creator": "Pixel Dreamer Studio",
+      "site": "itch.io",
+      "url": "https://pixeldreamerstudio.itch.io/12-free-vfx-textures",
+      "evidence_urls": [
+        "https://pixeldreamerstudio.itch.io/12-free-vfx-textures/devlog/1731041/15-more-free-asset-packs-all-cc-by-40"
+      ],
+      "free": "Name your own price($0 가능)",
+      "license": "상품본문 자체허가:상업가능,as-is재배포/재판매금지.다른팩 devlog CC BY4.0를 이팩에자동적용 안함",
+      "commercial": "가능",
+      "credit": "본상품 본문에필수표기미기재",
+      "redistribution": "as-is금지",
+      "format": "4×2048px노이즈+6×1024px마스크+2×4096px(8×8/64프레임)플립북,ZIP4.4MB",
+      "contents": "Perlin/cracks/smoke/electric,glow/ring/star/spark/slash/magiccircle,sparkburst/magicswirl",
+      "compatibility": "Unity Texture Sheet Animation8×8 안내;프리팹 아님",
+      "work": "해상도 축소,시트재생·색보정·마스크조합.4K를그대로사용할필요없음",
+      "style_fit": "상(단순 마스크 재료)",
+      "fit_reason": "검기/별/원형을같은흰색마스크에서통일가능.신작과라이선스문구편차때문에기초Kenney다음",
+      "skill_use": [
+        "검기",
+        "마력장",
+        "마력탄 코어",
+        "피격"
+      ],
+      "recommendation": "자체구성 재료 예비후보,2026-10 신작·AI작성코드공개",
+      "verification": "제품/동일제작자devlog직접읽고라이선스범위구분;미다운로드"
+    },
+    {
+      "id": "E14",
+      "name": "PVFX Foundry — Free Pixel VFX Pack",
+      "creator": "nerijs",
+      "site": "itch.io",
+      "url": "https://nerijs.itch.io/pvfx-foundry",
+      "evidence_urls": [],
+      "free": "Name your own price",
+      "license": "CC0",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0범위허용",
+      "format": "96×96,20fps,투명프레임,엔진독립;현재본문v0.10·44효과",
+      "contents": "전투/원소/방어/상태/포탈/빔/물/환경",
+      "compatibility": "엔진독립이미지,Pixel VFX Studio없이사용가능",
+      "work": "PNG/메타구조확인,픽셀밀도통일,빌보드재생",
+      "style_fit": "하(픽셀월드)/중(작은보조)",
+      "fit_reason": "광범위하나현재치비로우폴리3D의주력효과로는해상도차이.공식검색캐시35와본문44가달라본문기준",
+      "skill_use": [
+        "상태보조",
+        "피격참고"
+      ],
+      "recommendation": "수량보다스타일우선하여후순위",
+      "verification": "현재상품본문직접읽음;캐시보다본문우선;미다운로드"
+    },
+    {
+      "id": "E15",
+      "name": "Pixel VFX — Free Sampler (4 Effects)",
+      "creator": "hinoko-fx",
+      "site": "itch.io",
+      "url": "https://hinoko-fx.itch.io/pixel-vfx-free-sampler",
+      "evidence_urls": [],
+      "free": "무료",
+      "license": "자체허가:상업/비상업게임·수정허용,팩재배포금지",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "에셋팩으로 재배포 금지",
+      "format": "PNG strips+single frames+GIF,12fps,ZIP77KB",
+      "contents": "폭발·타격스파크·반짝임루프·불꽃루프4종.향후59시트는무료현행내용아님",
+      "compatibility": "엔진독립",
+      "work": "시트슬라이스/Point필터/재생구성",
+      "style_fit": "하",
+      "fit_reason": "픽셀전용작은샘플.현재월드스타일과맞지않고제작자AI운영실험공개",
+      "skill_use": [
+        "작은피격 비교"
+      ],
+      "recommendation": "무료범위검증용기록;주력후보제외",
+      "verification": "제품본문직접읽음;미다운로드"
+    },
+    {
+      "id": "E16",
+      "name": "Magic Projectiles VFX - Godot 3D",
+      "creator": "Binbun",
+      "site": "itch.io",
+      "url": "https://binbun3d.itch.io/magic-projectiles-vfx",
+      "evidence_urls": [],
+      "free": "본체무료(Name your own price).GreenExtra는0.50USD이상유료로제외",
+      "license": "CC0",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0범위허용",
+      "format": "Godot3D프로젝트/텍스처/재질/툴스크립트,본체ZIP113KB",
+      "contents": "Basic4+Wavy4+SharpJavelin4=12기본효과",
+      "compatibility": "Godot전용. Unity즉시임포트불가,셰이더·에미터·제어포팅필요",
+      "work": "Godot효과를PNG로베이크하거나URP Shader Graph/Particle로재작성.단순포맷변환이아님",
+      "style_fit": "중상(형태)/하(도입비용)",
+      "fit_reason": "단순날카로운마법실루엣은맞을수있으나무료Unity후보보다공수가큼",
+      "skill_use": [
+        "마력탄디자인참고/포팅예비"
+      ],
+      "recommendation": "현재일정에서는비추천;스타일특별히선택시만",
+      "verification": "무료본체와유료보너스구분,직접페이지확인;미다운로드"
+    },
+    {
+      "id": "E17",
+      "name": "Free VDB Volumes Created With EmberGen",
+      "creator": "JangaFX",
+      "site": "JangaFX",
+      "url": "https://jangafx.com/software/embergen/download/free-vdb-animations",
+      "evidence_urls": [],
+      "free": "VDB무료(유료EmberGen앱과별도)",
+      "license": "CC0",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0범위허용",
+      "format": "VDB볼륨시퀀스.예:SmallCampFire59MB,GroundExplosion661MB,AerialExplosion6.6GB",
+      "contents": "폭발·연기·불·먼지충격파·토네이도·구름",
+      "compatibility": "UnityURP용완성실시간프리팹아님. Blender등에서렌더/플립북베이크필요",
+      "work": "대형원본다운로드→볼륨재질·카메라·조명→시트렌더→양식화·축소→Unity재생",
+      "style_fit": "하",
+      "fit_reason": "실사볼륨과긴연기는치비/로우폴리아트·전투가독성에불리.베이크공수도큼",
+      "skill_use": [
+        "향후배경연기나큰보스폭발참고"
+      ],
+      "recommendation": "상업무료맞지만현재주력에서는제외",
+      "verification": "공식페이지라이선스/크기직접확인;미다운로드"
+    },
+    {
+      "id": "E18",
+      "name": "Sandbox Hit Effects",
+      "creator": "Colorosse / Oğuzhan Girgin",
+      "site": "Colorosse",
+      "url": "https://www.colorosse.com/assets/2d/vfx/sandbox-hit-effects",
+      "evidence_urls": [],
+      "free": "무료직접다운로드",
+      "license": "이제품CC0(사이트기본CC BY4와구분)",
+      "commercial": "가능",
+      "credit": "의무 없음",
+      "redistribution": "CC0범위허용",
+      "format": "12정적SVG+transparentPNG1x/2x/4x,ZIP42KB",
+      "contents": "hit/critical/ring/shockwave/slash/glow/sparkle/heal/shield/dust/lightning/embers",
+      "compatibility": "정적스프라이트,애니메이션프리팹없음",
+      "work": "크기·투명도·회전애니메이션직접구성,보셀이소메트릭음영을게임색에맞춤",
+      "style_fit": "중하",
+      "fit_reason": "단순각진형태는맞을수있으나보셀UI용고정음영으로현재3D면과완전일치하지않음",
+      "skill_use": [
+        "작은피격/원형마스크참고"
+      ],
+      "recommendation": "구성재료예비.완성VFX팩으로세지않음",
+      "verification": "제품별CC0와정적형식직접확인;미다운로드"
+    },
+    {
+      "id": "E19",
+      "name": "Free - URP Flipbook VFX Bundle Lite",
+      "creator": "Vefects",
+      "site": "Unity Asset Store / itch.io(중복 제품군)",
+      "url": "https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420",
+      "evidence_urls": [
+        "https://vefects.itch.io/free-urp-flipbook-vfx-bundle-lite",
+        "https://assetstore.unity.com/packages/vfx/free-urp-flipbook-vfx-bundle-lite-395420"
+      ],
+      "free": "Unity Store FREE / itch Name your own price",
+      "license": "스토어판 Standard Unity Asset Store EULA, Extension Asset. itch ZIP의 계약을 자동 동일시하지 않음",
+      "commercial": "스토어판 표준 EULA 조건으로 가능",
+      "credit": "스토어 표준 EULA상 일반적 의무 없음; 추가 통지 검사",
+      "redistribution": "표준 EULA 범위의 팀 사용/완성 게임 포함. 원본 에셋팩 외부 재배포 금지",
+      "format": "스토어101.4MB,v1.0.1(2026-07-27);itch Unitypackage98MB. 바이너리 동일성 미검증",
+      "contents": "stylized combat/elemental/anime flipbooks.효과개수/목록미기재",
+      "compatibility": "스토어 호환표 6000.0.23f1/2023.1.0f1 URP Compatible, BiRP/HDRP Not compatible. 프로젝트6000.3/URP17.3 실측 아님",
+      "work": "희망3종샘플선별,색/스케일/수명/재질패스최소화,카메라면정렬",
+      "style_fit": "상(우선시각검토)",
+      "fit_reason": "우리게임에맞는비실사전투스타일,Unity6URP가가장직접적.정확한무료포함효과와라이선스는추가조건",
+      "skill_use": [
+        "검기/피격",
+        "마력탄착탄",
+        "폭발"
+      ],
+      "recommendation": "우선 A/B 검토할 상위 후보. 상업 라이선스가 명확한 Unity Store판 취득 권장",
+      "verification": "Unity Store 공식 제품과 제작자 itch 페이지 직접 확인. 무료 포함 효과 목록/임포트/성능 미검증"
+    },
+    {
+      "id": "E20",
+      "name": "Trails VFX - Unity URP",
+      "creator": "Vefects",
+      "site": "itch.io",
+      "url": "https://vefects.itch.io/trails-vfx-unity-urp",
+      "evidence_urls": [],
+      "free": "Name your own price($0가능)",
+      "license": "itch공개본문정식상업조건미기재",
+      "commercial": "미확인",
+      "credit": "미확인",
+      "redistribution": "미확인",
+      "format": "Unitypackage9.1MB;10트레일,20+ShaderGraph,최대1024텍스처,SFX포함",
+      "contents": "Cosmos/Dark/Earth/Electric/Fire/Ice/Nature/Sound/Void/Water",
+      "compatibility": "URP전용;3D파이프라인+Orthographic2D배치지원명시,2D Renderer기능지원안함",
+      "work": "마력탄꼬리하나만선별,폭/수명/발광/색감축소.20+shader일괄추가필요없음",
+      "style_fit": "상(짧은꼬리)",
+      "fit_reason": "2.5D구조와잘맞으나화려한Cosmos/전기전부사용하면스타일과복잡도증가",
+      "skill_use": [
+        "대시잔광",
+        "마력탄꼬리",
+        "검기잔상"
+      ],
+      "recommendation": "유력조건부보조후보",
+      "verification": "제작자본문직접읽음;Unity6/URP17.3는별도검증"
+    },
+    {
+      "id": "E21",
+      "name": "Easy Shockwaves VFX - Unity URP",
+      "creator": "Vefects",
+      "site": "itch.io",
+      "url": "https://vefects.itch.io/easy-shockwaves-vfx-unity-urp",
+      "evidence_urls": [],
+      "free": "무료/Name your own price",
+      "license": "itch공개본문정식상업조건미기재",
+      "commercial": "미확인",
+      "credit": "미확인",
+      "redistribution": "미확인",
+      "format": "Unitypackage34MB,파일명6000_0_23,SFX포함",
+      "contents": "스타일화충격파,색/타이밍/강도수정",
+      "compatibility": "URP명시.파일명Unity6지만본문은정확한버전보장미기재",
+      "work": "폭발링한층만선택,화면왜곡/깊이기능의존여부검사,PC/Mobile렌더프로파일비교",
+      "style_fit": "상(작은한층)",
+      "fit_reason": "폭발외곽읽힘보강에좋음.왜곡/화면가림이강하면축소또는제외",
+      "skill_use": [
+        "폭발",
+        "회전베기",
+        "마력장시작"
+      ],
+      "recommendation": "조건부보조,단독으로완성폭발아님",
+      "verification": "제작자페이지직접읽음;라이선스/임포트미검증"
+    },
+    {
+      "id": "E22",
+      "name": "Wind VFX – Unity URP",
+      "creator": "Vefects",
+      "site": "itch.io",
+      "url": "https://vefects.itch.io/wind-vfx-unity-urp",
+      "evidence_urls": [],
+      "free": "무료/Name your own price",
+      "license": "itch공개본문정식상업조건미기재",
+      "commercial": "미확인",
+      "credit": "미확인",
+      "redistribution": "미확인",
+      "format": "Unitypackage52MB,파일명6000_URP",
+      "contents": "환경·마법·이동용스타일화바람",
+      "compatibility": "Unity6·URP호환명시",
+      "work": "대시뒤짧은선/고리만추출,방향정렬/폭/색감축소",
+      "style_fit": "상(대시보조)",
+      "fit_reason": "실사먼지보다방향성이뚜렷한스타일화바람이2.5D대시와잘맞음",
+      "skill_use": [
+        "대시",
+        "회전베기",
+        "검기속도선"
+      ],
+      "recommendation": "조건부대시보조후보",
+      "verification": "제작자페이지직접읽음;정식상업조건미확인"
+    }
+  ],
+  "sites_surveyed": [
+    {
+      "name": "Kenney",
+      "url": "https://kenney.nl/assets/particle-pack",
+      "result": "CC0기초마스크·연기우선추천;공식페이지검색본문과제작자OGA교차검증"
+    },
+    {
+      "name": "OpenGameArt",
+      "url": "https://opengameart.org/",
+      "result": "개별업로더/라이선스검증;모음페이지의cc0제목만으로판단안함"
+    },
+    {
+      "name": "itch.io",
+      "url": "https://itch.io/game-assets/free/tag-effects/tag-unity/tag-vfx",
+      "result": "0달러선택/무료본문+상업조건개별확인;무료보너스/유료확장구분"
+    },
+    {
+      "name": "CraftPix",
+      "url": "https://craftpix.net/categorys/sprite-effects/",
+      "result": "무료폭발벡터/픽셀마법확인;freebies계약2절확인"
+    },
+    {
+      "name": "GameDev Market",
+      "url": "https://www.gamedevmarket.net/asset/free-game-fx-vol-04",
+      "result": "무료PNG+ProLicense확인,상세효과목록빈약"
+    },
+    {
+      "name": "Effekseer",
+      "url": "https://effekseer.github.io/en/contribute.html",
+      "result": "현재CC0구역295효과와Old구역34효과구분"
+    },
+    {
+      "name": "GitHub(개별제작자)",
+      "url": "https://github.com/GreatFriend129/LintyTextures",
+      "result": "README자체허가확인,표준CC0로오표기하지않음"
+    },
+    {
+      "name": "JangaFX",
+      "url": "https://jangafx.com/software/embergen/download/free-vdb-animations",
+      "result": "CC0이지만대형실사VDB로게임주력부적합"
+    },
+    {
+      "name": "Colorosse",
+      "url": "https://www.colorosse.com/assets/2d/vfx/sandbox-hit-effects",
+      "result": "정적SVG/PNGCC0제품확인,애니메이션팩아님"
+    },
+    {
+      "name": "Vefects(제작자직접사이트/itch)",
+      "url": "https://vefects.itch.io/",
+      "result": "Unity6URP무료4팩조건부후보.직접웹스토어Trails명칭유료상품도있어itch무료판과혼동금지"
+    },
+    {
+      "name": "Eric VFX Studio",
+      "url": "https://ericvfxstudio.com/free-unity-vfx-assets/",
+      "result": "Unity스토어무료3팩을형제조사담당자에게전달.여기서중복세지않음"
+    },
+    {
+      "name": "BOOTH",
+      "url": "https://ericwang.booth.pm/items/7702523",
+      "result": "FloorAirflow는0JPY/다운로드표시에도private문구함께표시. VRChat전용·상업조건미확인으로제외"
+    },
+    {
+      "name": "GameArt2D",
+      "url": "https://www.gameart2d.com/freebies.html",
+      "result": "무료캐릭터/타일/UI/기타목록검토,목표스킬용독립전투VFX팩미발견"
+    },
+    {
+      "name": "ArtStation Marketplace",
+      "url": "https://www.artstation.com/marketplace/p/qVNRO/lightning-pack",
+      "result": "LightningPack무료이나기본StockStandard상업1프로젝트2000판매/20000뷰한도표시,우리무제한무료후보제외"
+    },
+    {
+      "name": "Godot Shaders",
+      "url": "https://godotshaders.com/shader/impact-vfx/",
+      "result": "코드는CC0지만시각샘플이미지/영상자동포함안됨,Unity셰이더포팅필요하여직접사용추천제외"
+    },
+    {
+      "name": "OpenGameVFX",
+      "url": "https://opengamevfx.com/",
+      "result": "접속/검색으로검증되는배포카탈로그미확인.공식무료후보로포함안함"
+    }
+  ],
+  "shortlist": [
+    "E01:스타일통일용기초마스크",
+    "E07:비픽셀폭발PNG비교",
+    "E03:짧은타격보조",
+    "E09:CC0편집샘플/베이크대안",
+    "E19:Unity6 URP 스토어판 무료/Standard EULA 확인, 가장 우선 A/B 비교. E20/E21/E22는 itch 상업조건 확인 필요"
+  ],
+  "additional_exclusions": [
+    "OpenGameArt의컬렉션제목cc0특수효과만보고모든원본을CC0라분류하지않음",
+    "CodeManu itchmetadata CC BY4와본문public domain충돌은OGA제작자판CC0증거로구분",
+    "ArtStation 기본무료StockLicense는완전무제한상업무료아님",
+    "Godot전용무료셰이더/프로젝트는UnityURP호환프리팹아님",
+    "Patreon고해상도판,GreenExtra,향후출시팩,유료번들내용은무료후보포함안함",
+    "실사영상컴포지팅용ActionVFX/FXElements는상업허가와게임원본배포조건/스타일이별도여서주력후보로선정안함",
+    "GitHub다른게임README/자산리스트에서발견한Brackeys VFX Bundle과EpicToonFree는공식동일제품미확인상태로채택안함"
+  ]
+}

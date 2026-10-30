@@ -1,0 +1,357 @@
+{
+    "unity": "6000.3.21f1",
+    "method": "Direct original FBX Generic import, all95 embedded takes retained, no animation or mesh compression, hierarchy/file units preserved. Selected clips retain native names and exactly identical imported curve keys/tangents/weights. Only clip loop metadata, shared original atlas material, external prefab scale and static accessory-parent wrappers are set.",
+    "attachmentScope": "Static accessory wrappers: Crossbow at right handslot Y=-90; Axe at right handslot identity; Staff at left handslot Z=+90 to leave the casting hand free. Native accessory geometry/root TRS retained. Warrior uses original one-handed clips suitable for the original short axe. Rogue idle/hit crossbow ground intersection and Mage staff/hat proximity remain under unedited source motions. See visual QA; structural fidelity is not animation-quality approval.",
+    "root": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001",
+    "wrapperScale": 0.5852892398834229,
+    "success": true,
+    "geometryEdited": false,
+    "rigEdited": false,
+    "animationKeysEdited": false,
+    "gameControllerCreated": false,
+    "visualApproval": false,
+    "roles": [
+        {
+            "role": "Rogue",
+            "source": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Rogue.fbx",
+            "sourceSHA256": "2961f9cb6640f4627db4b9213b7b349270dc737a4c9b5f7aa5f078203887f78d",
+            "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Rogue.prefab",
+            "accessory": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Crossbow.fbx",
+            "accessorySHA256": "51f4262edab36a36a854f63d96ed7085de818cc606e91e5b48c4a5028eae0491",
+            "socketPath": "Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r/handslot.r",
+            "embeddedClipCount": 95,
+            "nativeNodes": 53,
+            "nativeSkinRenderers": 8,
+            "uniqueSkinBones": 41,
+            "sourceBytesUnchanged": true,
+            "avatarPresent": true,
+            "socketLocalPosition": {
+                "x": 8.418723496106395e-10,
+                "y": 0.09612524509429932,
+                "z": -0.05749988555908203
+            },
+            "accessoryImportedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "accessoryImportedEuler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "accessoryImportedScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "attachmentEuler": {
+                "x": 0.0,
+                "y": -90.0,
+                "z": 0.0
+            },
+            "socketLocalRotation": {
+                "x": -1.1979000014150643e-8,
+                "y": 1.5198468261701238e-8,
+                "z": -0.7071068286895752,
+                "w": 0.7071067094802856
+            },
+            "clips": [
+                {
+                    "name": "Idle_Combat",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Idle_Combat.anim",
+                    "sourceTakeName": "Idle_Combat",
+                    "sourceCurveSHA256": "3efe4b00d9c7bfc836d6720edb17d85dd7115b0d2365e1dcc280a5fcdfc4c5ee",
+                    "savedCurveSHA256": "3efe4b00d9c7bfc836d6720edb17d85dd7115b0d2365e1dcc280a5fcdfc4c5ee",
+                    "seconds": 4.266666889190674,
+                    "frameRate": 30.0,
+                    "bindings": 396,
+                    "loop": true,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Running_A",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Running_A.anim",
+                    "sourceTakeName": "Running_A",
+                    "sourceCurveSHA256": "6ddf186befd674388defbb28d189213470e7ad2e360ebf47c13060970cf7bb10",
+                    "savedCurveSHA256": "6ddf186befd674388defbb28d189213470e7ad2e360ebf47c13060970cf7bb10",
+                    "seconds": 0.800000011920929,
+                    "frameRate": 30.0,
+                    "bindings": 396,
+                    "loop": true,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "2H_Ranged_Aiming",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Aiming.anim",
+                    "sourceTakeName": "2H_Ranged_Aiming",
+                    "sourceCurveSHA256": "2db674772b5d2a2b60f35c6f4efc83d25b19702421187ef72cbd1ad095fae2f5",
+                    "savedCurveSHA256": "2db674772b5d2a2b60f35c6f4efc83d25b19702421187ef72cbd1ad095fae2f5",
+                    "seconds": 1.600000023841858,
+                    "frameRate": 30.0,
+                    "bindings": 396,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "2H_Ranged_Shoot",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Shoot.anim",
+                    "sourceTakeName": "2H_Ranged_Shoot",
+                    "sourceCurveSHA256": "0a64a3ba920885e2d49e1c59d4b7c29de58f785496e50d73793e36f77214a3cb",
+                    "savedCurveSHA256": "0a64a3ba920885e2d49e1c59d4b7c29de58f785496e50d73793e36f77214a3cb",
+                    "seconds": 1.0666667222976685,
+                    "frameRate": 30.0,
+                    "bindings": 396,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "2H_Ranged_Reload",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Reload.anim",
+                    "sourceTakeName": "2H_Ranged_Reload",
+                    "sourceCurveSHA256": "095bd47054cf65298979672b361faa0b6411f75ddd28c44db03c4c9ebf1343cc",
+                    "savedCurveSHA256": "095bd47054cf65298979672b361faa0b6411f75ddd28c44db03c4c9ebf1343cc",
+                    "seconds": 1.600000023841858,
+                    "frameRate": 30.0,
+                    "bindings": 396,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Hit_A",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Hit_A.anim",
+                    "sourceTakeName": "Hit_A",
+                    "sourceCurveSHA256": "a822ed37fabe868219ef1e2bcd39bd87c81f2491016eba7281e8adecc913de1e",
+                    "savedCurveSHA256": "a822ed37fabe868219ef1e2bcd39bd87c81f2491016eba7281e8adecc913de1e",
+                    "seconds": 0.6666666865348816,
+                    "frameRate": 30.0,
+                    "bindings": 396,
+                    "loop": false,
+                    "curvesIdentical": true
+                }
+            ]
+        },
+        {
+            "role": "Warrior",
+            "source": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Warrior.fbx",
+            "sourceSHA256": "783d88baface5b5aec4be3a1bdfe360e12e091dae753b3968161e7a69bd0c279",
+            "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Warrior.prefab",
+            "accessory": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Axe.fbx",
+            "accessorySHA256": "b921180f7cc55306c4907e51676d3f7b6cecf0ab2f90095e269ba807e023f55c",
+            "socketPath": "Rig/root/hips/spine/chest/upperarm.r/lowerarm.r/wrist.r/hand.r/handslot.r",
+            "embeddedClipCount": 95,
+            "nativeNodes": 53,
+            "nativeSkinRenderers": 9,
+            "uniqueSkinBones": 41,
+            "sourceBytesUnchanged": true,
+            "avatarPresent": true,
+            "socketLocalPosition": {
+                "x": 8.418723496106395e-10,
+                "y": 0.09612524509429932,
+                "z": -0.05749988555908203
+            },
+            "accessoryImportedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "accessoryImportedEuler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "accessoryImportedScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "attachmentEuler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "socketLocalRotation": {
+                "x": -1.1979000014150643e-8,
+                "y": 1.5198468261701238e-8,
+                "z": -0.7071068286895752,
+                "w": 0.7071067094802856
+            },
+            "clips": [
+                {
+                    "name": "Idle_Combat",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Idle_Combat.anim",
+                    "sourceTakeName": "Idle_Combat",
+                    "sourceCurveSHA256": "37c4435ccc9ed4af831a3435eb83e860a4e2a600a96e7cf95248ce35f6b5e1bf",
+                    "savedCurveSHA256": "37c4435ccc9ed4af831a3435eb83e860a4e2a600a96e7cf95248ce35f6b5e1bf",
+                    "seconds": 4.266666889190674,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": true,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Walking_B",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Walking_B.anim",
+                    "sourceTakeName": "Walking_B",
+                    "sourceCurveSHA256": "4eb58a1c3bcfaa224c6caa47782cbf55e53e9da1e0146b79de7eca370d3692c4",
+                    "savedCurveSHA256": "4eb58a1c3bcfaa224c6caa47782cbf55e53e9da1e0146b79de7eca370d3692c4",
+                    "seconds": 1.0666667222976685,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": true,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "1H_Melee_Attack_Chop",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Chop.anim",
+                    "sourceTakeName": "1H_Melee_Attack_Chop",
+                    "sourceCurveSHA256": "a677f7a23f3771986714b66532a281deed5eeea6e67c9bdce9adf18b2990a0ce",
+                    "savedCurveSHA256": "a677f7a23f3771986714b66532a281deed5eeea6e67c9bdce9adf18b2990a0ce",
+                    "seconds": 1.0666667222976685,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "1H_Melee_Attack_Slice_Diagonal",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Slice_Diagonal.anim",
+                    "sourceTakeName": "1H_Melee_Attack_Slice_Diagonal",
+                    "sourceCurveSHA256": "f9a7b194680ab7aa89c547366fcb1b5c4cd12673bc329ab5d8f24d1f3f1530d1",
+                    "savedCurveSHA256": "f9a7b194680ab7aa89c547366fcb1b5c4cd12673bc329ab5d8f24d1f3f1530d1",
+                    "seconds": 1.0,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Hit_A",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Hit_A.anim",
+                    "sourceTakeName": "Hit_A",
+                    "sourceCurveSHA256": "dc9159c4b0f2d5c8f2e37a0cb1a2d83e3db24c57e11968214bfef7cda631497a",
+                    "savedCurveSHA256": "dc9159c4b0f2d5c8f2e37a0cb1a2d83e3db24c57e11968214bfef7cda631497a",
+                    "seconds": 0.6666666865348816,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": false,
+                    "curvesIdentical": true
+                }
+            ]
+        },
+        {
+            "role": "Mage",
+            "source": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx",
+            "sourceSHA256": "a5b6a9e9c690b2c23f52aa7a18aef411b56e9c660229c7e2d0f217f78752573c",
+            "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Mage.prefab",
+            "accessory": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Accessories/Skeleton_Staff.fbx",
+            "accessorySHA256": "7b9fa1ec537d6c5d609e83c2e3d13e247ca252716cab36a6fa83a63100145457",
+            "socketPath": "Rig/root/hips/spine/chest/upperarm.l/lowerarm.l/wrist.l/hand.l/handslot.l",
+            "embeddedClipCount": 95,
+            "nativeNodes": 52,
+            "nativeSkinRenderers": 8,
+            "uniqueSkinBones": 41,
+            "sourceBytesUnchanged": true,
+            "avatarPresent": true,
+            "socketLocalPosition": {
+                "x": -8.419291930295003e-10,
+                "y": 0.09612524509429932,
+                "z": -0.05749988555908203
+            },
+            "accessoryImportedPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "accessoryImportedEuler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "accessoryImportedScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "attachmentEuler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 90.0
+            },
+            "socketLocalRotation": {
+                "x": -1.1978980474225409e-8,
+                "y": -1.519848780162647e-8,
+                "z": 0.7071068286895752,
+                "w": 0.7071067094802856
+            },
+            "clips": [
+                {
+                    "name": "Idle_Combat",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Idle_Combat.anim",
+                    "sourceTakeName": "Idle_Combat",
+                    "sourceCurveSHA256": "d587892bcba7096c1c6e673f4888db33253f5be5a54b658e2051a7fb3ff14e11",
+                    "savedCurveSHA256": "d587892bcba7096c1c6e673f4888db33253f5be5a54b658e2051a7fb3ff14e11",
+                    "seconds": 4.266666889190674,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": true,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Walking_D_Skeletons",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Walking_D_Skeletons.anim",
+                    "sourceTakeName": "Walking_D_Skeletons",
+                    "sourceCurveSHA256": "d701e445622ebe13e50b491118019cb53a57e1d6d0e3668395fe4bbec9f4e9ce",
+                    "savedCurveSHA256": "d701e445622ebe13e50b491118019cb53a57e1d6d0e3668395fe4bbec9f4e9ce",
+                    "seconds": 1.600000023841858,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": true,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Spellcast_Shoot",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Shoot.anim",
+                    "sourceTakeName": "Spellcast_Shoot",
+                    "sourceCurveSHA256": "de8c1a77cb4314d1971876089ea8386fa59af80e01f3b1f7f5a456f0d7d5e958",
+                    "savedCurveSHA256": "de8c1a77cb4314d1971876089ea8386fa59af80e01f3b1f7f5a456f0d7d5e958",
+                    "seconds": 0.9333333373069763,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Spellcast_Raise",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Raise.anim",
+                    "sourceTakeName": "Spellcast_Raise",
+                    "sourceCurveSHA256": "07450e7efa5b0a52a8cc32104d6ce4142f6d68510eaad365465889f9d3b361d1",
+                    "savedCurveSHA256": "07450e7efa5b0a52a8cc32104d6ce4142f6d68510eaad365465889f9d3b361d1",
+                    "seconds": 2.0999999046325685,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": false,
+                    "curvesIdentical": true
+                },
+                {
+                    "name": "Hit_A",
+                    "path": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Hit_A.anim",
+                    "sourceTakeName": "Hit_A",
+                    "sourceCurveSHA256": "ded28dfd7e4295876e72bf7d0f5e0ac37b9c78cad1ec12a5815837f274e2db06",
+                    "savedCurveSHA256": "ded28dfd7e4295876e72bf7d0f5e0ac37b9c78cad1ec12a5815837f274e2db06",
+                    "seconds": 0.6666666865348816,
+                    "frameRate": 30.0,
+                    "bindings": 387,
+                    "loop": false,
+                    "curvesIdentical": true
+                }
+            ]
+        }
+    ],
+    "glowColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 0.18575207889080048,
+        "a": 1.0
+    }
+}

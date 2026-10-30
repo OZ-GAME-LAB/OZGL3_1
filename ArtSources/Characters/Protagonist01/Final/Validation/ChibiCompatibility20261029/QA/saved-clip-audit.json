@@ -1,0 +1,157 @@
+{
+  "prefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+  "method": "Saved native24 clips reloaded on actual gameplay prefab. Full mesh evaluation120Hz; every side frame30Hz and13 phases in3 other views. Runtime scripts removed only on disposable preview clones.",
+  "clips": [
+    {
+      "name": "Longsword_Attack_Chop",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Chop.anim",
+      "maxBoneName": "RightForeArm",
+      "duration": 0.699999988079071,
+      "minVertexY": -0.0013799790758639574,
+      "maxVertexStep": 0.09804537892341614,
+      "maxBoneStep": 39.82423400878906,
+      "maxBoneTime": 0.3499999940395355,
+      "loopSeam": 0.0,
+      "samples": 85,
+      "missingBindings": 0,
+      "nonFiniteVertices": 0,
+      "firstBounds": {
+        "x": -0.014314651489257812,
+        "y": 0.5756009817123413,
+        "z": 0.060211122035980225
+      },
+      "lastBounds": {
+        "x": 0.8255525827407837,
+        "y": 1.1539618968963623,
+        "z": 1.2153534889221191
+      },
+      "frameDirectories": [
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Chop\\Side",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Chop\\Front",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Chop\\Opposite",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Chop\\ThreeQuarter"
+      ]
+    },
+    {
+      "name": "Longsword_Attack_Slice",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Slice.anim",
+      "maxBoneName": "LeftHand",
+      "duration": 0.6000000238418579,
+      "minVertexY": -0.0005711371777579188,
+      "maxVertexStep": 0.09315535426139832,
+      "maxBoneStep": 21.108861923217773,
+      "maxBoneTime": 0.21666666865348816,
+      "loopSeam": 0.0,
+      "samples": 73,
+      "missingBindings": 0,
+      "nonFiniteVertices": 0,
+      "firstBounds": {
+        "x": -0.046304941177368164,
+        "y": 0.5796473622322083,
+        "z": 0.09961697459220886
+      },
+      "lastBounds": {
+        "x": 0.8662381172180176,
+        "y": 1.160436987876892,
+        "z": 0.9216010570526123
+      },
+      "frameDirectories": [
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Slice\\Side",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Slice\\Front",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Slice\\Opposite",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Slice\\ThreeQuarter"
+      ]
+    },
+    {
+      "name": "Longsword_Attack_Stab",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Longsword_Attack_Stab.anim",
+      "maxBoneName": "LeftForeArm",
+      "duration": 0.699999988079071,
+      "minVertexY": -0.0016319130081683397,
+      "maxVertexStep": 0.09667056798934937,
+      "maxBoneStep": 26.62982749938965,
+      "maxBoneTime": 0.1666666567325592,
+      "loopSeam": 0.0,
+      "samples": 85,
+      "missingBindings": 0,
+      "nonFiniteVertices": 0,
+      "firstBounds": {
+        "x": -0.02867242693901062,
+        "y": 0.5661402344703674,
+        "z": 0.09258195757865906
+      },
+      "lastBounds": {
+        "x": 0.8487629890441895,
+        "y": 1.1355443000793457,
+        "z": 0.9058824777603149
+      },
+      "frameDirectories": [
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Stab\\Side",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Stab\\Front",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Stab\\Opposite",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Longsword_Attack_Stab\\ThreeQuarter"
+      ]
+    },
+    {
+      "name": "Death_Fall",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Death_Fall.anim",
+      "maxBoneName": "RightForeArm",
+      "duration": 1.0,
+      "minVertexY": -0.0016476786695420742,
+      "maxVertexStep": 0.07271111756563187,
+      "maxBoneStep": 15.893952369689941,
+      "maxBoneTime": 0.09166666865348816,
+      "loopSeam": 1.463828444480896,
+      "samples": 121,
+      "missingBindings": 0,
+      "nonFiniteVertices": 0,
+      "firstBounds": {
+        "x": -0.0001888573169708252,
+        "y": 0.6623613238334656,
+        "z": -0.3979724645614624
+      },
+      "lastBounds": {
+        "x": 0.9462012648582458,
+        "y": 1.3280179500579834,
+        "z": 1.5014300346374512
+      },
+      "frameDirectories": [
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Death_Fall\\Side",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Death_Fall\\Front",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Death_Fall\\Opposite",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Death_Fall\\ThreeQuarter"
+      ]
+    },
+    {
+      "name": "Ladder_Climb_Loop",
+      "path": "Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips/Ladder_Climb_Loop.anim",
+      "maxBoneName": "RightHand",
+      "duration": 0.8000000715255737,
+      "minVertexY": -0.030715659260749817,
+      "maxVertexStep": 0.02259698696434498,
+      "maxBoneStep": 4.745792865753174,
+      "maxBoneTime": 0.42500004172325134,
+      "loopSeam": 0.0,
+      "samples": 97,
+      "missingBindings": 0,
+      "nonFiniteVertices": 0,
+      "firstBounds": {
+        "x": 0.02015438675880432,
+        "y": 0.5944202542304993,
+        "z": -0.02020201086997986
+      },
+      "lastBounds": {
+        "x": 0.7037023901939392,
+        "y": 1.2502717971801758,
+        "z": 0.8537395596504211
+      },
+      "frameDirectories": [
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Ladder_Climb_Loop\\Side",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Ladder_Climb_Loop\\Front",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Ladder_Climb_Loop\\Opposite",
+        "C:\\Users\\me\\Desktop\\OZGL3_ArtReview/Characters/Protagonist01/Final/Review/Compatibility20261029\\Frames\\Ladder_Climb_Loop\\ThreeQuarter"
+      ]
+    }
+  ],
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}

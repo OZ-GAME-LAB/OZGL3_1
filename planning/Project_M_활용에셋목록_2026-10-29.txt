@@ -1,0 +1,266 @@
+﻿Project M 활용 에셋 목록
+기준일 2026-10-29 / Asia/Seoul
+
+이 파일은 현재 프로젝트에서 제작·도입·보존한 주요 아트 에셋의 출처, 가공 여부, 라이선스 근거, 사용 상태를 한곳에 기록한다. 승인된 정본, 게임에 이미 연결된 이전 자료, 독립 검수용 샘플, 추가 제작 중 자료를 구분한다. 폴더에 존재한다는 사실만으로 모든 에셋이 게임에 연결되었거나 품질 검수를 통과했다는 뜻은 아니다.
+
+프로젝트 기준 경로 P = C:/Users/me/Desktop/OZGameLab3/OZGL3_1
+아래 P/는 이 절대 경로를 뜻한다. 외부 검수 미디어는 프로젝트 밖 C:/Users/me/Desktop/OZGL3_ArtReview에 저장한다.
+
+확인 근거는 실제 파일, 보존된 생성 영수증·라이선스·해시 기록과 공식 배포 페이지다. planning/Art_Assets_Provenance_and_QA_2026-10-27.md 및 같은 이름의 .docx를 대조했다. 이 목록은 그 보고서를 변경하지 않으며, 외부 패키지·플러그인·전체 게임의 법적 또는 성능 감사를 완료했다는 보고서가 아니다.
+
+1 주인공 모델과 콘셉트
+
+정본: P/ArtSources/Characters/Protagonist01/Final/
+생성 모델: P/ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ChibiCap_Rig.glb
+생성 기록: P/ArtSources/Characters/Protagonist01/Final/Model/Provenance/generation.json
+선택 목록: P/ArtSources/Characters/Protagonist01/Final/selection.json
+
+2026-10-21 image_gen으로 제작한 모자 쓴 약 3등신 콘셉트를 Meshy image-to-3D에 사용했다. Meshy T2.5 Smart Topology, 목표 8,000면, T-pose, 2K 컬러 텍스처·비PBR 설정이며 보존 기록상 결과는 8,079삼각형이다. 이어 높이 1.2m 기준 24본 리깅을 수행했다.
+모델 작업 ID: 01a15d2b-ee91-7588-8dd9-041192a87f0b
+리깅 작업 ID: 01a15d31-2ce9-7463-a3d7-392b1ba82785
+기록된 모델15 + 리깅5 = 20 Meshy크레딧은 이 작업 범위의 과거 사용량이며 프로젝트 총비용 또는 현재 서비스 가격이 아니다.
+
+후속 Unity 제작에서 주먹 형태·손 스킨·Grip_R/Grip_L 블렌드셰이프를 가공했다. 따라서 원본 GLB를 다시 임포트한 모습과 승인된 Unity 프리팹이 완전히 같다는 뜻은 아니다. 생성 모델·이미지에 KayKit CC0를 적용하지 않는다. Meshy 권리 조건은 8절에 기재한다.
+
+아트 참고 링크: https://www.youtube.com/shorts/ujVLoPdd1Pg / https://x.com/cartridge102
+이 링크는 비율·실루엣·로우폴리 스타일 참고다. 해당 작가의 모델·동작을 다운로드해 사용했다는 근거가 없으며 링크 자체를 에셋 사용허락으로 취급하지 않는다.
+
+2 주인공 동작과 별도 롱소드
+
+현재 Final 선택은 기존 동작 15 + 최신 롱소드 공격 3 = 18클립이다. 기존 Chibi24와 공격 KayKit23은 서로 다른 Generic 리그이므로 한 Animator에 이름만 맞춰 혼용할 수 없다.
+
+기존 15클립:
+Idle_Fists, Walk_Fists, Run_Fists, Jump_Full, Dash_Forward,
+Potion_Drink, Item_Throw_Overhand, Hit_Reaction, Interact_Reach, Pickup_Low,
+Jump_Takeoff, Jump_Rise_Loop, Jump_Apex_Loop, Jump_Fall_Loop, Jump_Land.
+
+위 동작은 보존된 SourceGait 입력과 Unity Editor 제작 도구의 자세·손 모양·타이밍·IK·시간 곡선 가공을 포함한다. 오래된 AI 보행 입력의 제공자별 작업 ID는 현재 보존 자료만으로 완전히 역추적하지 못한다. 15개 전체를 KayKit 원본 동작 또는 모션캡처라고 부르지 않는다. Rise/Fall은 10/27 직접 저작한 작은 균형 움직임 루프로 보완했으며 Mixamo 동작을 내려받아 직접 리타게팅한 클립이 아니다.
+Unity 경로: P/Assets/Art/Characters/Protagonist01/ChibiMotion_v007/
+원본·기록: P/ArtSources/Characters/Protagonist01/Final/LegacyMotions/
+
+롱소드 공격 3클립:
+Longsword_Attack_Chop <= KayKit Melee_2H_Attack_Chop
+Longsword_Attack_Slice <= KayKit Melee_2H_Attack_Slice
+Longsword_Attack_Stab <= KayKit Melee_2H_Attack_Stab
+
+출처는 Kay Lousberg / KayKit Character Animations 1.1, Rig_Medium의 실제 뼈 애니메이션이다. 23본 계층과 가중치를 주인공 체형에 맞추고 재생 속도·양손 파지·짧은 팔 접촉을 보정했다. Chop/Slice에는 승인된 칼날 방향 수정이 있다. 10/27 검수에서는 팔꿈치 주변 스킨 가중치를 제한적으로 보완했다. 따라서 원본 그대로의 모션·리그·스킨으로 표기하지 않는다.
+편집 원본: P/ArtSources/Characters/Protagonist01/Final/Combat/Protagonist_Combat.blend
+Unity 경로: P/Assets/Art/Characters/Protagonist01/Combat/
+프리팹: P/Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab
+무기 프리팹: P/Assets/Art/Characters/Protagonist01/Combat/Prefabs/Longsword_KayKitSocket.prefab
+출처·라이선스: Final/Combat/Provenance/source-provenance.json 및 Final/Combat/Licenses/
+
+이 롱소드의 메시·재질은 현재 편집 가능한 로컬 제작 자료이며 Stage01Kit의 원래 Meshy Sword와 별개다. 롱소드 메시 자체를 KayKit 제공 검이라고 표시하지 않는다. 원래 제작 중간 스크립트 전체를 정본에 보존한 것은 아니다.
+
+Final은 아트 선택 정본이다. 현재 실제 Player 프리팹은 이전 Runtime·v006·v007 자료도 참조한다. 그 이전 Runtime 비주얼의 정확한 최초 생성 ID는 미확인이므로 Final의 Meshy 작업 ID를 대신 붙이지 않는다. 두 새 공중 루프를 게임 Controller에 연결한 작업도 아니다.
+현재 의존성 근거: P/ArtSources/Characters/Protagonist01/Final/Validation/StorageCleanup20261027/asset-dependencies.json
+
+3 기존 Stage01Kit 환경 소품 무기 포션의 활용 이력
+
+Unity 경로: P/Assets/Art/Stage01Kit/
+제작·출처 기록: P/ArtSources/Stage01Kit/
+생성 영수증: P/ArtSources/Stage01Kit/meshy-generation.json
+10/27 개별 해시·참조 조사: P/ArtSources/Stage01Kit/Validation/Review20261027/nonhero-source-inventory.json
+
+10/27 당시 보존된31프리팹의 구성은 로컬 도시 모듈16, 환경 소품7, 포션4, 원래 무기2, 조립 블록2였다. 이 수량은 과거 도입 이력이며 현재 활성 구성은 4절의 최신 환경 기록을 따른다. LOD나 블록 내부 인스턴스를 별개의 신규 에셋으로 중복 계산하지 않는다.
+
+Meshy T2.5 생성 환경 소품 7:
+StreetLamp, StreetTree, VendingMachine, Bench, TrashBin, ACUnit, GatePylon.
+Meshy T2.5 생성 원래 무기 2: Sword, Staff.
+당시 FBX는 P/Assets/Art/Stage01Kit/Models/에 도입했으며 각 작업ID·프롬프트·기록 사용량은 meshy-generation.json에 있다. 이후 GatePylon은 활성 모델에서 제외하고 원본을 P/ArtSources/Stage01Kit/LegacyMeshySources/GatePylon_original.fbx로 보존했다. 원래 생성 출처와 현재 활성 메시를 구분한다. 9종 각 5, 총 45크레딧은 해당 과거 모델 작업 사용량이다. 같은 기록의 옛 애니메이션 배치와 프로젝트 총비용을 혼동하지 않는다.
+
+생성 메시를 그대로 배치한 것만이 아니라 로컬 공유 팔레트·색상 정리·피벗·LOD·프리팹 가공을 적용했다. Staff는 원래 수정 머리를 작은 반투명 수정구로 교체했다. 현재 수정구는 로컬 제작80삼각형·지름약0.19m의 별도 메시다.
+
+로컬 Unity 제작 모듈 16:
+Building_ApartmentTall, Building_OfficeMid, Building_RooftopArena, Building_ShopLow,
+Exterior_Stairs_Rise3m, Guardrail_4m, Ladder_4m, Planter_Shrubs,
+Road_Barrier, Road_Straight_12m, Rooftop_Billboard, Rooftop_Bridge_6m,
+Rooftop_Hut, Rooftop_WaterTank, Sidewalk_Straight_8m, Utility_Box.
+로컬 포션 4: Potion_Health, Potion_Attack, Potion_Defense, Potion_Speed.
+조립 예시2: Tutorial_Block, Stage01_Block.
+제작 도구: UrbanModuleBuilder, UrbanPropBuilder, UrbanWeaponBuilder, UrbanConsumableBuilder, ChibiStaffOrbBuilder.
+도구 위치: P/Assets/Art/Stage01Kit/Editor/
+
+위 로컬 저작 메시를 별도 외부 에셋팩 또는 자동으로 CC0인 자료로 표기하지 않는다. Meshy 원형의 서비스 조건은 생성 시점별로 구분한다. 조립 블록 존재가 실제 이동 동선·충돌·게이트 진행을 게임 플레이로 인증했다는 뜻은 아니다.
+
+4 2026-10-29 Stage01Kit 확장 및 별도 환경 수정 이력
+
+기록: P/ArtSources/Stage01Kit/Expansion20261029/catalog.json
+검수 기록: 같은 폴더 audit.json, 사용안내.txt, 전체모델링목록.txt, index.html.
+새 개별 프리팹: P/Assets/Art/Stage01Kit/Prefabs/Expansion/
+새 개별 메시: P/Assets/Art/Stage01Kit/Meshes/Expansion/
+제작 도구: P/Assets/Art/Stage01Kit/Editor/의 Stage01ExpansionBuild/Buildings/Props/Details/Geometry.cs 및 Stage01SimplifiedProps.cs.
+
+10/29 최초 확장 기록은 기존31 + 신규 환경24 + 신규 조립2 = 57항목이었다. 이후 별도 환경 작업에서 사용자 피드백을 반영해 S1-042 Rooftop_Antenna, S1-052 Gate_Platform_Normal, S1-053 Gate_Platform_Boss를 삭제했다. 삭제 ID를 다른 모델의 신규 번호로 재사용하지 않는다고 최신 catalog가 기록한다.
+
+이 목록 최종 대조 시점의 활성 catalog는54항목이다. 기존 환경23 + 기존 물약·무기6 + 기존 조립2 + 신규 환경21 + 신규 조립2이며, 실제54개 프리팹 경로가 모두 존재함을 읽기 전용으로 재확인했다. Prefabs/Expansion의 개별 프리팹21개와 Meshes/Expansion의 메시27개가 있다. 최초57개나 개별24개를 현재 수량으로 표시하지 않는다.
+
+S1-023은 원래 GatePylon에서 SatelliteDish로 교체됐다. 현재 가로등·가로수·자판기·실외기·위성접시의 활성 메시는 Stage01SimplifiedProps.cs에서 직접 저작한 단순한 면의 로컬 메시다. 이5개를 현재도 원래 Meshy 메시 그대로 사용하는 소품으로 기록하지 않는다. 원래 Meshy 생성 이력·비용·FBX는 과거 출처 자료로 보존한다. GatePylon 활성 FBX/프리팹/메시 경로가 사라지고 원래 FBX가 LegacyMeshySources에 남은 것을 확인했다. SatelliteDish 프리팹·메시는 기존 GUID를 유지해 이름·기하를 바꾼 기록이다.
+
+신규 활성 확장은 상가·카페·주거·주차·상점 내부 단면, 외부 철골 계단·옥상 랜딩·공조·덕트, 정류장·신호등·전신주·볼라드, 화물·쓰레기·바리케이드·잔해·균열 도로·횡단보도·골목 통로와 조립 예시 등이다. 실제 브랜드·외부 이미지·텍스처 없이 기하와 기존 어두운 도시 팔레트로 로컬 저작했다고 기록한다. 새 외부 모델팩·Meshy 요청·유료 생성 비용은 없다.
+
+audit.json의 최신 total은54이며 실제 Unity 프리팹 렌더, 메시·LOD·치수·앵커와 정적 연결 검사 기록이 있다. 기록상 issues는 비어 있다. 이 목록 작성자는 새 환경 렌더 전체를 직접 시각 검수하지 않았으며 실제 플레이 이동·게이트 진행·성능 검증을 완료했다는 뜻도 아니다. 10/27의 기존 검수 결과를 새 확장과 재저작 소품 전체에 자동 승계하지 않는다.
+
+이 환경 변경은 이번 스켈레톤 원본 도입 작업에서 수행한 것이 아니다. 동시 진행된 별도 환경 작업의 최신 자료를 읽어 활용 이력과 현행 상태를 구분한 기록이다. 이후 변경은 이 목록의 고정 수량보다 최신 catalog/audit/사용안내를 우선한다.
+
+5 기존 스켈레톤 Minion v001
+
+모델·리그·원본 모션: Kay Lousberg / KayKit Character Pack Skeletons 1.0.
+공식 저장소: https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0
+고정 커밋: 15b62b9bad122f72926c10fb14d622c73819fa54
+라이선스: CC0-1.0, 무료 개인·상업 사용, 의무 출처 표시 없음.
+편집 원본: P/ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Stage01_Melee01.blend
+보존 원본: 같은 버전의 SourceAssets/Skeleton_Minion.glb 및 Skeleton_Blade.fbx.
+Unity 프리팹: P/Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab
+제작 내역: P/ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Tools/build_monster.py
+해시·출처: 같은 버전의 Research/source-provenance.json 및 QA/build-manifest.json.
+
+네이티브 같은 모델·리그의 모션을 사용했고 다른 체형 리타게팅이나 AI 관절 궤적 생성은 하지 않았다. 그러나 '아무 수정 없는 원본'은 아니다. 확인된 가공은 다음과 같다.
+- 원본 95액션 중4개를 선택·영어명으로 변경: Idle<=Idle_Combat, Move<=Running_A, Attack<=1H_Melee_Attack_Chop, Hit<=Hit_A.
+- 균일 리그 배율0.5852892239763324. 원본 Idle_Combat 높이약1.96484m를 샘플높이1.15m에 맞췄다. Idle 기준 최저점에 맞춰 리그 위치도 조정했다.
+- 망토를 Melee01_UrbanTeal RGB(0.055,0.12,0.135)로 교체, 눈 Glow를 주황RGB(0.95,0.24,0.035)·발광0.35로 변경, skeleton재질 roughness0.88.
+- Move의 기존root상향채널에 일정한 +0.03226359188556671m, Attack에 +0.005913735833019018m의 바닥 높이 보정. Idle/Hit은 이 일정 보정0. 동작 전체 궤적을 새로 합성한 것은 아니지만 원본 키 값과 완전히 같지는 않다.
+- 원래 검을 장착할 때 GLB리그·FBX무기의 혼합 좌표계에 맞춰 localX -90도 축 정렬과 슬롯길이 위치 보정. 이 값이 모든 네이티브 FBX무기의 공통 규약이라는 뜻은 아니다.
+
+기획상 근접형 HP90/피해10의 대표 샘플이며 이 프리팹 하나로 원거리·돌진·강타·보스까지 완성한 것은 아니다. 편집 .blend는 가져온 스킨·뼈·베이크 키를 편집 가능하게 저장한 파일이며, 제작자가 판매하는 원래 Blender 제어 리그 SOURCE파일을 구매했다는 뜻은 아니다.
+
+6 추가 스켈레톤 Rogue Warrior Mage 원본 및 게임용 임포트
+
+사용자 선택: Skeleton_Rogue, Skeleton_Warrior, Skeleton_Mage의 원본 1.0 세 종 추가. 종족·아트 테마는 스켈레톤을 유지한다. 기획 역할과 무기 패턴의 최종 연결은 이 파일만으로 확정하지 않는다.
+버전·제작자·라이선스·고정커밋은 5절과 같다. 최신 판매페이지의 Skeletons1.1을 이번1.0원본 출처와 혼동하지 않는다. 추가 유료 에셋 구매·새 Meshy 생성은 이 도입 작업에 포함하지 않는다.
+
+원본·편집용 가져오기·도구·검수 텍스트 경로:
+P/ArtSources/Monsters/Stage01/SkeletonsPack01/v001-original/
+원본 FBX+GLB: 위 SourceAssets/Characters/fbx 및 Characters/gltf.
+원래 장비 5종: Skeleton_Crossbow, Skeleton_Axe, Skeleton_Staff, Skeleton_Quiver, Skeleton_Arrow. FBX와 파이프라인에 추가한 일치 glTF 자료를 SourceAssets/Accessories 아래에 함께 보존한다. 정확한 파일 목록·해시는 최신 QA/source-provenance.json을 따른다.
+원래 공유 atlas: SourceAssets/Textures/skeleton_texture.png.
+원문 라이선스: SourceAssets/LICENSE.txt.
+공식 커밋대조·해시: QA/source-provenance.json, QA/official-commit-tree.json.
+
+첫 원본 도입 때 출처표의 보존 14개 파일을 다시 해시 계산해 기록 SHA256과 일치함을 확인했다. 이후 추가된 액세서리 glTF 등은 최신 출처표의 개별 해시를 따르며, 최초 14개만을 현재 전체 파일 수로 세지 않는다. 이는 파일동일성 확인이며 시각적 동작품질 통과 증거를 대신하지 않는다. 세 캐릭터 원본 각각의 내장 95액션 전체는 원본 FBX/GLB에 보존한다. 95에는 정적pose·추가동작도 있으므로95개 모두를 게임 필수클립으로 사용한다는 뜻은 아니다.
+
+원본 모델·색·스킨·리그·애니메이션 키는 수정하지 않는다. 사용자가 게임용 임포트 최적화를 허용한 범위에서 원본과 게임 전달본을 구분한다. 공유 atlas/재질, 별도 프리팹 wrapper의 같은 균일 배율 0.585289224, 게임용 영어 클립 추출과 loop metadata 선택을 적용하는 전달 작업이다. 최종 임포트·보존 검증 상태와 남은 품질 제약은 아래 마감 기록을 따른다. 원본 정점·뼈·키·타이밍·바닥 높이를 보정하거나 v001의 주황눈·청록망토·root상수보정을 세 종 원본에 이식하지 않는다. 가져오기·좌표계표현·wrapper의 단위 변환과 원본 바이트 수정은 구분한다.
+
+게임용 전달 경로: P/Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/
+GIF/미디어 경로: C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original/
+모델·도구·검수텍스트는 프로젝트 안에, 새 GIF미디어는 위 프로젝트 밖 경로에 저장한다.
+
+[NEW_SKELETONS_DELIVERY_STATUS_BEGIN]
+선택 게임용·검수 클립 총 20개: 기존 Minion 4 + 신규 Rogue 6 + Warrior 5 + Mage 5.
+Minion 4: Idle, Move, Attack, Hit. 원본 매핑은 5절과 같다.
+Rogue 6: Idle_Combat, Running_A, 2H_Ranged_Aiming, 2H_Ranged_Shoot, 2H_Ranged_Reload, Hit_A.
+Warrior 5: Idle_Combat, Walking_B, 1H_Melee_Attack_Chop, 1H_Melee_Attack_Slice_Diagonal, Hit_A.
+Mage 5: Idle_Combat, Walking_D_Skeletons, Spellcast_Shoot, Spellcast_Raise, Hit_A.
+
+신규 세 종의 원본 내장 95액션은 모두 보존하며, 위 16개는 원본 키를 바꾸지 않은 별도 복제 클립이다. loop metadata만 선택했다. 같은 이름의 Hit_A 등이 각 리그 폴더에 있어도 중복 오류가 아니다. Warrior는 원래 짧은 한손 Axe에 맞춰 양손 공격 대신 원본 한손 공격을 선택했다. Rogue의 2H_Ranged_Aiming은 팔 내림에서 조준으로 끝나므로 loop=false인 단발 동작이다.
+최종 장착: Rogue 오른손 Crossbow local Y -90도, Warrior 오른손 Axe identity, Mage 왼손 Staff local Z +90도. Mage 오른손은 시전용으로 비운다. 정적 부착 프레임으로 원래 좌표계를 맞추며 몸체·무기 정점과 비율·리그·동작 키는 변경하지 않았다.
+
+메인 Unity 프로젝트 검증 완료
+근거: P/ArtSources/Monsters/Stage01/SkeletonsPack01/v001-original/QA/main-project-import-validation.json
+실제 프로젝트 Unity 6000.3.21f1 / Direct3D12에서 저장된 자산을 읽어 확인했다. 보고서 success=true, errors=[], sharedShaderSupported=true, visualApproval=false다.
+- 각 신규 모델에 원본 95액션·41본 유지. 원본 노드의 rest TRS와 비교한 위치·회전·배율 차이0.
+- 원래 임포트된 FBX 메시·bind-pose 참조 및 스킨 bone/root 매핑 유지. 교체 메시나 수리한 스킨 버퍼로 대체하지 않음.
+- 신규 선택 16클립 모두 원래 곡선 바인딩·키·접선·가중치·시간과 저장본의 곡선 해시가 일치.
+- 원본 FBX·장비·atlas 바이트 동일. 공유 atlas 해시 일치, 공통 셰이더 지원, 프리팹 재질·원본 Avatar·소켓 연결 확인.
+- wrapper의 실제 저장 float 배율은 (0.5852892398834229, 0.5852892398834229, 0.5852892398834229)이며 입력값 0.585289224의 float 표현이다. 원래 모델 내부 rest TRS를 바꾼 것이 아님.
+- 이번 작업 시작 시 보호한 기존 Minion·주인공 등 22파일의 SHA256이 기준값과 일치. 이번 작업에서 기존 Minion v001과 원본 주인공 자산을 다시 수정하지 않음.
+- 최종 SourceAssets 출처표 25파일을 이 목록 작성자가 다시 SHA256 계산해 모두 기록값과 일치함을 확인. 최초 도입14파일 집계보다 늘어난 액세서리 glTF 등을 포함한 현재 원본 파일 수다.
+이 검증은 원본 보존·구조·저장 지속성 확인이며 시각적 동작 품질 승인 또는 인게임 AI·Animator 연결 검증은 아니다.
+
+검수 미디어 생성 완료
+외부 경로: C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original/
+index.html, unity-review-report.json, review-media-manifest.json.
+선택20클립 × 1배속/0.5배속 = 40개 GIF, 검수용 연결27개 × 두 속도 = 54개 GIF, 총94개다. 누락된 연결 목록은 비어 있다. 실제 Unity PNG는 수정·삭제하지 않고 보존했고, 전체 프레임·보조 시점 시트도 제공한다.
+GIF 시간은 실제30fps를 GIF의10ms단위로 분산한다. 단발 동작 반복 사이에는 전체0.5초 정지를 두고, 원본 끝PNG는 삭제하지 않는다. 연결은 검수용 Playables 혼합이며 기존 인게임 Animator 전환 로직을 수정한 결과가 아니다.
+주인공은 격리된 Built-in 검수 장면의 복제본에 원래 URP albedo 텍스처·기본색을 사용하는 렌더용 재질을 지정했다. 원본 주인공 에셋은 변경하지 않았다.
+
+시각 검수에서 남은 원본 동작·장비 조합의 제약
+- Rogue Idle_Combat/Hit_A: 석궁의 바닥 침투가 남는다. 원본 Idle, Idle_B, Idle_Combat 및 Hit_A/Hit_B 후보를 대조했지만 기본 대기·피격과 이 석궁 조합의 지면 간섭을 없애지는 못했다.
+- Mage 왼손 Staff: 일부 프레임에 모자와 실제 관통·간섭이 있고 스태프 끝의 바닥 접촉/낮은 위치가 남는다. 오른손을 시전용으로 비운 부착 선택이 이 간섭까지 해결한 것은 아니다.
+- Warrior 1H_Melee_Attack_Slice_Diagonal: 회수 구간에서 도끼 끝이 기준선 아래로 내려가는 일부 프레임이 남는다.
+- 새 3종 이동의 일부 발끝·뒤꿈치도 Y=0 기준선을 소폭 통과한다. 실제 이미지 근거는 Rogue Running_A f5, Warrior Walking_B f8, Mage Walking_D_Skeletons f7이며 무기 최저점 수치를 발 침투 깊이로 사용하지 않았다.
+- 기존 Minion의 대기·이동·공격·피격 비교 검수에서는 새 큰 스킨 변형 문제는 보고되지 않았다. 다만 제자리 클립을 실제 게임 이동 속도에 연결한 검증은 아니므로 런타임 발 미끄러짐 검증은 제외한다.
+
+위 잔여 제약을 수정 완료·무조건 게임 최종 승인으로 표시하지 않는다. 원본 몸체·리그·키와 무기 비율을 보존한 상태의 조합 한계이며, 원본 맨손 모델이나 보존된95액션 전체가 사용 불가라는 뜻은 아니다. 최저 Y 수치는 무기를 포함한 전체 모델의 최저점이므로 발 접지만의 수치로 해석하지 않는다. 수치·원본 키 보존 검사 통과와 실제 시각적 완성도는 별개다.
+품질 결론: 원본 도입·게임용 임포트·보존 검증과 미디어 전달은 완료. 위 장비 간섭 및 게임 이동·AI·Animator 연계의 최종 품질 승인은 완료하지 않음.
+최종 시각 기록: P/ArtSources/Monsters/Stage01/SkeletonsPack01/v001-original/QA/final-visual-review.txt 및 .json. 선택20클립 측면 전 프레임, 필요한 공격8클립의 보조3시점 전 프레임, 검수용27연결을 확인했다. 순차 프레임과 GIF 인코딩 시간으로 확인했으며 실시간 재생 감각을 직접 관찰했다고 주장하지 않는다.
+[NEW_SKELETONS_DELIVERY_STATUS_END]
+
+원본 캐릭터 6파일 SHA256
+SourceAssets/Characters/fbx/Skeleton_Rogue.fbx
+SHA256 2961f9cb6640f4627db4b9213b7b349270dc737a4c9b5f7aa5f078203887f78d
+SourceAssets/Characters/gltf/Skeleton_Rogue.glb
+SHA256 4003f2b77891bb56f7e0de7d555abcb497aebbcaee35b614211f16275f9ccae3
+SourceAssets/Characters/fbx/Skeleton_Warrior.fbx
+SHA256 783d88baface5b5aec4be3a1bdfe360e12e091dae753b3968161e7a69bd0c279
+SourceAssets/Characters/gltf/Skeleton_Warrior.glb
+SHA256 178b6fda810b814c250d8a2010c24dfd9b458b9006dd323353e620b7ff118bbe
+SourceAssets/Characters/fbx/Skeleton_Mage.fbx
+SHA256 a5b6a9e9c690b2c23f52aa7a18aef411b56e9c660229c7e2d0f217f78752573c
+SourceAssets/Characters/gltf/Skeleton_Mage.glb
+SHA256 e05b0f5cfa395271c9f75fd07c0a0613c56f401ece4ab644e080001a79971075
+공유 atlas SHA256: 15741a25c53e04fa9bf3beac3bc0de442359404b1ff9be863b892cb551ad3657
+나머지 원래 장비·LICENSE·README의 SHA256과 고정다운로드URL은 QA/source-provenance.json에 보존한다.
+
+7 VFX 및 UI 폰트 오디오
+
+전투 VFX 4종
+P/Assets/Art/CombatVFX_v1/Prefabs/의 DashBurst, SlashWave, MagicMissile, Explosion.
+Unity 로컬 메시·ParticleSystem·리본 시연이다. 외부 텍스처·VFX Graph·전체 화면 왜곡·추가 Meshy 비용을 사용하지 않는다고 README/BuildReport가 기록한다. 현재 보류된 독립 샘플이며 새 몬스터에 자동 연결하지 않는다. 렌더러 수·입자 상한은 실제 드로콜·기기 성능 보장 수치가 아니다.
+근거: P/Assets/Art/CombatVFX_v1/Samples/README_ko.txt 및 BuildReport.json.
+
+UI 도입 근거
+P/Assets/02.parkhansol_/README.md 및 Docs/UI_Design.md.
+아래는 주요 도입 현황이며 UI 전체·플러그인 전체의 라이선스 감사를 완료했다는 뜻은 아니다.
+
+가 Galmuri 한글 폰트
+제작자 Lee Minseo / quiple. Galmuri9, Galmuri11, Galmuri14, Galmuri11-Bold.ttf가 있고 이를 TMP로 변환한 Galmuri* Pixel.asset 4개가 UI/Fonts에 있다. 원본 글리프를 새로 그렸다는 근거는 없다. SIL Open Font License 1.1이며 저작권·라이선스를 보존한 게임 포함 사용이 가능하다. 폰트 자체만 따로 판매하는 조건과 게임에 포함하는 사용은 구분한다.
+원본 경로: P/Assets/02.parkhansol_/ThirdParty/Fonts/Galmuri/
+라이선스: 같은 폴더 OFL.md. Copyright 2019–2025 Lee Minseo.
+공식 출처: https://quiple.dev/font/galmuri
+공식 원문: https://github.com/quiple/galmuri/blob/main/ofl.md
+
+나 Dead Revolver Pixel UI & HUD 및 폰트
+P/Assets/02.parkhansol_/ThirdParty/PixelUIHUD/에 이식된 스프라이트·프리팹·애니메이션·폰트가 있다. README는 Pixel UI & HUD Unity Demo에서 이식했다고 기록한다. 공식 UI 페이지는 수정·개인/상업 사용·출처 표시 불필요를 명시한다. 정확한 도입 버전·구매 영수증은 이번 기록에서 확인하지 못했다. 이를 무료 미구매 에셋이라고 표시하지 않는다.
+공식 출처: https://deadrevolver.itch.io/pixel-ui-hud-pack
+
+폰트 5파일의 name 테이블을 직접 읽어 DeadRevolverArcade, Display, Game, GameCompact를 확인했다. DefaultFont.otf의 내부 family도 Dead Revolver Game이다. 공식 별도 Pixel Font Pack 페이지에는 CC0 표시와 수정·상업 사용·표시 불필요 조건이 있다. 프로젝트의 구체적인 구매/번들 경로와 정확한 버전은 미확인이다.
+폰트 출처: https://deadrevolver.itch.io/pixel-font-pack
+
+다 Pixel Art Sci-Fi UI
+원작자 Barely Apes / 현재 공식 계정 Barely_Games.
+P/Assets/02.parkhansol_/ThirdParty/SciFiPixelUI/README.md는 Blue/Hud 체력바 계열만 가져왔다고 기록한다. 파일명 공백을 밑줄로 변경하고, Unity Point 필터·비압축 설정, Hud_Bar 원형에서 채움 이미지를 생성한 가공이 있다. 나머지 UI는 Pixel UI & HUD를 사용한다고 기록되어 있다.
+공식 출처: https://barely-games.itch.io/pixel-art-sci-fi-ui
+현행 EULA: https://barely-games.itch.io/end-user-license-agreement-eula
+현행 약관은 수정·상업 게임 완성품 포함을 허용하고, 원본·수정 에셋 자체의 공유·재판매·재배포를 금지한다. 원저작권은 Barely Apes에 남는다. AI 훈련·데이터셋·생성 AI 시스템 관련 사용 등에 별도 제한이 있다. 구매 영수증과 도입 당시 약관 전문은 이번 로컬 기록에서 미확인이다. KayKit CC0가 이 UI에 적용되는 것은 아니다.
+
+라 Kenney UI 효과음 및 자체 합성 심장박동
+P/Assets/02.parkhansol_/UI/Audio/KenneyInterface/에 Interface Sounds 1.0 및 UI SFX Set CC0 문구 파일 2개를 보존한다. CC0·개인/상업 사용 가능·출처 표시 의무 없음이다.
+공식 출처: https://kenney.nl/assets/interface-sounds / https://kenney.nl/assets/ui-audio
+문서상 활용은 Interface Sounds 28종과 자체 합성 심장박동이다. 현재 해당 폴더의 보관 WAV는 37개다. 37개 전부가 실제 UI에 연결되어 있다는 확인은 이번 범위에서 하지 않았다. 보관 파일 수·문서의 활용 수·현재 실제 참조 수를 구분한다.
+
+마 TMP 기본 폰트 및 기타 외부 리소스
+P/Assets/02.parkhansol_/ThirdParty/TextMesh Pro/Fonts/LiberationSans.ttf와 LiberationSans - OFL.txt에 SIL OFL 1.1 원문이 있다. TMP 스프라이트의 EmojiOne Attribution.txt도 있으나 실제 사용 여부와 전체 라이선스 조건은 별도 미확인이다.
+DOTween 등 코드 패키지와 Assets/3.ThirdParty/Kevin Iglesias/Human Animations의 Human Basic Motions 2.4 FREE 자료도 존재한다. 현재 선택 주인공 18클립이나 신규 스켈레톤의 출처로 이 팩을 연결할 근거는 이번 조사에서 확인하지 못했다. 포함된 모든 패키지·샘플·플러그인의 실제 참조와 계약을 감사한 것은 아니다.
+
+8 라이선스 적용과 확인 한계
+
+KayKit Character Animations 1.1 및 Skeletons 1.0은 CC0다. 원작자 이름·출처와 원문은 추적을 위해 보존한다. CC0를 주인공 생성 모델·별도 롱소드·Meshy 소품·UI·폰트 전체에 자동 확장하지 않는다. 원작자의 미수정 복제 판매·자작 주장 자제 요청도 존중한다.
+공식 페이지: https://kaylousberg.itch.io/kaykit-character-animations
+공식 페이지: https://kaylousberg.itch.io/kaykit-skeletons
+CC0 원문: https://creativecommons.org/publicdomain/zero/1.0/
+
+Meshy 공식 현재 조건은 생성 당시 플랜을 구분한다. 유료 플랜 생성물은 입력 권리와 비공개 등 조건하에 사용자에게 결과물 권리가 귀속되며 Meshy 표시 의무가 없다. 무료 플랜 생성물은 CC BY 4.0로 상업 사용 가능하나 Meshy 크레딧·라이선스 링크·수정 여부 표시 등이 필요하다. Community에 공개한 출력물에는 별도 CC0 조건이 있다. 생성 ID·크레딧 영수증만으로 당시 플랜·Community 공개 여부를 확정할 수 없다. 따라서 이 프로젝트의 Meshy 출력물을 일괄 CC0 또는 독점 소유라고 표기하지 않는다. 출시 표시 조건은 해당 계정의 생성 시점 자료와 대조해야 한다.
+Meshy 약관: https://www.meshy.ai/terms-of-use (확인 시 표시 최종 개정 2026-09-19)
+공식 상업 사용 안내: https://help.meshy.ai/en/articles/16102098-can-i-use-meshy-assets-commercially
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+로컬 제작 기하·재질·애니메이션 가공·VFX는 프로젝트의 제작 산출물로 기록한다. 별도 외부 팩 라이선스를 임의로 부여하거나 생성 AI 산출물의 법적 보호·비침해를 이 목록만으로 보장하지 않는다.
+
+9 현행 사용과 분리할 과거 실험 및 조사 후보
+
+삭제·폐기한 고블린 v002/v003과 그 무기 변형은 현행 스켈레톤 게임용 자산으로 집계하지 않는다. 과거 생성 실험·비용 기록이 있다는 사실과 현재 게임에서 사용한다는 사실은 구분한다. 이 목록의 작성 시점 Melee01 아트 버전은 v001-native-motion, Unity 버전은 v001만 확인했다.
+
+Quaternius, Mixamo, ActorCore, Infinity PBR 상용 팩, KayKit 유료 EXTRA의 Skeleton Golem/Necromancer 및 유료 SOURCE 등은 비교 조사·구매 후보다. 이번 스켈레톤 3종 원본 도입에 구매·적용한 에셋으로 집계하지 않는다. Character Animations 1.1은 주인공 최신 공격의 실제 출처인 반면, 세 추가 몬스터의 출처는 각 모델에 내장된 Skeletons 1.0 원래 동작이다.
+
+신규 스켈레톤의 원본 보존·임포트·미디어 생성 확인은 6절에 마감했다. 남은 장비 간섭과 실제 게임 이동·AI·Animator 연계는 최종 품질 승인 범위에서 제외한다. 해시 동일성·수치 검사를 실제 스킨의 시각적 완성도·게임 플레이 검증으로 대체하지 않는다.

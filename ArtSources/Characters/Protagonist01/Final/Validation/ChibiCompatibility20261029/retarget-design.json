@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-29",
+  "sourcePrefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+  "targetPrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+  "sourceClipExample": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+  "sourceRig": "KayKit23 Generic",
+  "targetRig": "Chibi24 Generic with null Avatar",
+  "sourceDistinctCurvePaths": 36,
+  "targetIdleDistinctCurvePaths": 27,
+  "commonCurvePaths": 0,
+  "failureCause": "State entry does not map Generic curves to differently named bone hierarchies. Old combat bindings address Protagonist_KayKit_v018/Hero_KayKit_Rig and separate combat meshes; Player_Chibi requires Visual/Armature paths. No Humanoid Avatar is configured to provide retargeting.",
+  "method": "Reconstruct each real skin bind frame from renderer localToWorldMatrix * inverse bindpose, align anatomical reference bases, transfer global rotation deltas, distribute the two source spine frames over three target spine joints, preserve target bone lengths and perform source-derived endpoint IK. Two-handed sword option transfers the original rigid weapon frame and shared grip contacts, correcting hilt reach rather than stretching bones.",
+  "sourceTimingPreserved": true,
+  "sourceAndTargetAssetsModifiedByUtility": false,
+  "controllerModifiedByUtility": false,
+  "targetPaths": "Calculated against the exact target instance root passed by the caller.",
+  "weaponMount": "For a transient review, clone the source WeaponRoot subtree under target WeaponSocket with identity local position/rotation/scale. The generated clip keys WeaponSocket in source blade-frame convention; source rigid mesh geometry and edge roll are preserved. This differs from the older one-handed staff/sword mount convention and requires the matching separate longsword prop.",
+  "weaponScale": "Separate Options.weaponScale defaults to 1.0 because the approved source and target body meshes both have 1.2 m rest height. The .802302 arm-chain ratio scales hilt travel only; it must not shrink the .555 m approved blade or .110 m two-hand grip spacing. See QA/weapon-scale-diagnosis.json.",
+  "validationStatus": "Parent compiled and baked native clips, verified live Generic Animator playback on actual Player_Chibi without an Avatar, and inspected full skinned renders. Attack pass4 preserves original rigid weapon size; maximum measured grip error is 0.00000022709 m. Source compressed attack timing remains, including brief rapid-pose overlap; this is not a claim of zero self-collisions. See QA/retarget-pass4-numerical-review.json and parent's saved-clip/live-Animator audits.",
+  "references": [
+    "https://docs.unity3d.com/Manual/Retargeting.html",
+    "https://docs.unity3d.com/ScriptReference/Mesh-bindposes.html"
+  ],
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}

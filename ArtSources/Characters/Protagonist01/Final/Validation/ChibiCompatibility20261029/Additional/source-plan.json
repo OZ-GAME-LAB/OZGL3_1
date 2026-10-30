@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-29",
+  "targetRig": "Existing Chibi24 Generic hierarchy under Visual/Armature/Hips",
+  "runtimeChangesByThisSourceResearch": false,
+  "paidGenerationUsed": false,
+  "sourceUtility": "AdditionalMotionBuilder.cs",
+  "utilityDependency": "../Tools/CombatRetargetUtility.cs",
+  "targetHumanSpineMapping": {
+    "verifiedHierarchy": "Hips -> Spine02 -> Spine01 -> Spine -> neck -> Head",
+    "HumanSpine": "Spine02",
+    "HumanChest": "Spine01",
+    "HumanUpperChest": "Spine",
+    "validation": "Prefab YAML verified. A temporary HumanAvatar initially failed on reversed numeric suffixes; corrected hierarchy built, but visual retargeting remained leaned backward. Final conversion does not use a target Avatar and uses the verified anatomical order directly."
+  },
+  "sourceCompilation": {
+    "engine": "Unity 6000.3.21f1 managed reference assemblies",
+    "compiler": "Bundled Unity Roslyn through bundled .NET runtime; no Unity application launched",
+    "result": "passed",
+    "responseFile": "Logs/ChibiCompatibility20261029/AdditionalSourceCheck/compile.rsp",
+    "scope": "Source compile/API validation passed. Runtime Animator and ladder mesh-contact validation are recorded separately below; gameplay controller state timing is outside this offline utility."
+  },
+  "motions": [
+    {
+      "outputName": "Death_Fall",
+      "sourceAsset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx",
+      "sourceTake": "Death_A",
+      "sourceSeconds": 0.80000001,
+      "outputHoldSeconds": 0.2,
+      "sourceRig": "KayKit native Generic skeleton",
+      "license": "CC0-1.0",
+      "loop": false,
+      "method": "Same full-body retarget, actual deformed-mesh ground clearance correction, final held pose. Excludes skeleton-specific Death_C_Skeletons bone-disassembly action.",
+      "visualChecksRequired": [
+        "Whole mesh floor contact",
+        "No floating final pose",
+        "Cap and hands do not tunnel through floor",
+        "Non-looping endpoint persists"
+      ]
+    },
+    {
+      "outputName": "Ladder_Climb_Loop",
+      "sourceAsset": "Assets/Anim/Clips/Climbing Ladder.fbx",
+      "sourceClip": "Assets/Anim/Clips/Climb.anim",
+      "sourceTake": "mixamo.com",
+      "sourceSeconds": 0.7666667,
+      "sourceFrames": "0 through 23 at 30fps",
+      "plannedOutputSeconds": 0.8,
+      "sourceRig": "Mixamo Humanoid",
+      "license": "Existing project Mixamo source; Adobe permits use in video games. This is not a CC0 asset.",
+      "loop": true,
+      "method": "Evaluate the original Mixamo Humanoid clip through its own Avatar with looping disabled in a temporary clone. Transfer native anatomical torso frames and limb directions to Chibi bind pose, preserving bone lengths and source axial twist. Scale pelvis balance and remove absolute/cycle travel. Adapt the oversized-head/short-arm proportions using constant chest-relative rung targets: outward and forward reach with source vertical alternation retained/scaled. Two-bone IK transports the native elbow bend plane, preserves hand LOCAL rotation, and rejects any target above98.5percent chain reach instead of per-frame reach clamps. Candidate and saved Generic curves are checked at least120Hz against actual deformed head/fist triangle crossings and containment. Support-plane gaps are diagnostic only and do not gate acceptance.",
+      "retargetRevision": "Rejected both manual HumanPose rest alignment and automatically built target HumanAvatar results after source stick render confirmed only3.44–8.95degree backward lean while target remained roughly25degrees. Replaced target Humanoid conversion with native-source anatomical frame/direction transfer. New render validation required. Actual triangle audits independently confirmed native right fist crossing at0.20–0.40s and left at0.5667–0.70s. Conservative26-plane scores were not reliable collision verdicts and their margin-based shoulder searches were rejected. Final proportional rung IK uses actual surface checks; final saved clip passed dense contact validation and two independent exported-triangle audits.",
+      "visualChecksRequired": [
+        "Valid temporary avatar",
+        "Alternating hand and opposite-foot phase",
+        "Stable wrist and elbow shape",
+        "Grip/reach within chibi proportions",
+        "No visible loop seam",
+        "In-place playback and reverse playback",
+        "ClimbSpeed zero freezes a valid hanging pose"
+      ],
+      "bakeGuards": [
+        "Original source Avatar must be valid; target does not use Humanoid Avatar",
+        "All target local bone lengths retained",
+        "Constant whole-cycle rung target parameters avoid phase-dependent clamps",
+        "Target reach must remain below98.5percent chain length at every sampled phase",
+        "Hand local rotation is not rewritten by IK; deviation recorded",
+        "Actual head/fist triangle crossings and strong winding containment gate acceptance at least120Hz; negative support-plane score alone does not",
+        "Candidate validated before replacing final asset; invalid candidate kept only in external diagnostic folder",
+        "Saved Generic clip validated independently after save",
+        "Final independent triangle SAT audit and visual review required"
+      ]
+    }
+  ],
+  "localSourceHashes": {
+    "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/FBX/Skeleton_Mage.fbx": "a5b6a9e9c690b2c23f52aa7a18aef411b56e9c660229c7e2d0f217f78752573c",
+    "Assets/Anim/Clips/Climbing Ladder.fbx": "1c30ffeecd962206228a08aa613ea8e299c57e2d18ca823f0203e984d9443a3e",
+    "Assets/Anim/Clips/Climb.anim": "4d82b3490cbb84c6bb6e7f419c0ee79d5e053a22ce2d6cb662d65f9121fff080"
+  },
+  "references": [
+    {
+      "url": "https://kaylousberg.itch.io/kaykit-character-animations",
+      "relevance": "Official creator describes humanoid retargeting, CC0 usage, and climbing among planned advanced movements. Local Skeletons source includes death but no climbing action."
+    },
+    {
+      "url": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/tree/15b62b9bad122f72926c10fb14d622c73819fa54",
+      "relevance": "Pinned original source already downloaded and recorded by existing source-provenance.json; immutable FBX/GLB and CC0 license retained."
+    },
+    {
+      "url": "https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html",
+      "relevance": "Official Adobe FAQ permits characters and animations in video games. Existing Mixamo ladder files are reused, not redownloaded or represented as CC0."
+    },
+    {
+      "url": "https://docs.unity3d.com/ScriptReference/Animations.AnimationClipPlayable.html",
+      "relevance": "Evaluate the native Humanoid animation directly through Unity on a temporary target Avatar, then bake resulting transforms as Generic curves."
+    },
+    {
+      "url": "https://docs.unity3d.com/Manual/Retargeting.html",
+      "relevance": "Unity Humanoid retargeting requires configured Avatars; the target auto-Avatar results failed visual inspection here, so the original source Avatar is evaluated natively and its resulting anatomical joint motion is converted offline to Generic target curves."
+    }
+  ],
+  "gameplayObservations": {
+    "existingLadderCode": "Assets/1.Script/Player/PlayerStates.cs PlayerState_Ladder",
+    "verticalMovement": "Rigidbody linearVelocity.y = inputY * ClimbSpeed",
+    "animationParameter": "ClimbSpeed receives signed inputY and Climb bool controls state",
+    "integrationImplication": "New animation should be in-place, smoothly loop and support reverse/zero speed. Any controller connection is owned by root; no runtime code edits by this source utility."
+  },
+  "runtimeCompatibilityValidation": {
+    "source": "AnimatorCompatibilityValidator.cs",
+    "report": "animator-compatibility.json",
+    "actualPrefab": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+    "method": "Disposable inactive-prefab clones stripped of runtime behaviours; actual Animator with null Avatar and null controller evaluates AnimationClipPlayable. The retained five clips each have five sampled phases comparing deformed mesh vertices and bone transforms against direct SampleAnimation. Saved player/controller hashes are recorded in animator-compatibility.json.",
+    "scope": "Numerical Generic binding/Animator compatibility; does not claim gameplay controller timing or visual motion approval."
+  },
+  "verifiedResults": {
+    "buildReport": "build-evidence.json",
+    "liveAnimatorReport": "animator-compatibility.json",
+    "liveAnimator": "Retained evidence covers five Generic clips and25 sampled phases on actual Player_Chibi clones without Avatar/controller; see the current animator-compatibility.json for the latest validation run.",
+    "ladder": {
+      "finalSource": "Existing project Mixamo Climb.anim, native original Avatar evaluation then Chibi Generic bake",
+      "outwardReachMeters": 0.1,
+      "forwardReachMeters": 0.18,
+      "verticalExcursionScale": 1.0,
+      "maximumReachFraction": 0.79482937,
+      "maximumWristLocalDeviationDegrees": 0,
+      "maximumLocalBoneLengthDeviationMeters": 0,
+      "savedBakedSamples": 98,
+      "savedActualContactSamples": 0,
+      "finalDenseReport": "ladder-baked-clearance.json",
+      "independentEdgeTriangleReport": "ladder-final-triangle-contact-audit.json",
+      "independentSATReport": "../QA/ladder-final-triangle-sat-independent.json",
+      "independentContinuityReport": "../QA/ladder-final-bone-continuity-independent.json",
+      "independentExportedFrames": 25,
+      "finalSurfaceIntersectionPairs": 0,
+      "finalCorroboratedInsideVertexInstances": 0,
+      "nativeRejectedSurfaceIntersectionPairs": 1553,
+      "nativeRejectedInsideVertexInstances": 855,
+      "bodyHeadShoulderPositionDifferenceFromNativeMeters": 1.2E-07,
+      "observations": "Side projection may overlap the cheek silhouette; front and actual geometry show fists outside head. No wrist-local correction was used. No added per-phase clamp or support-normal switching."
+    },
+    "limitation": "Offline animation/mesh validation does not test gameplay ladder collider placement or animation state transitions."
+  },
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}

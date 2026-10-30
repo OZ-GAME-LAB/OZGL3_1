@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-29",
+  "status": "static_attachment_study_only_second_study_updated",
+  "final_visual_approval": false,
+  "basis": "Actual Unity skinned meshes: seven pure orthogonal attachment-frame candidates, each in Side and Front. Review sheets are outside the Unity project. No source mesh, rest bone, animation key, or material color was edited by this reviewer.",
+  "study_folder": "C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original/AttachmentStudy",
+  "contact_sheets": [
+    "C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original/Independent/AttachmentStudy_Rogue.jpg",
+    "C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original/Independent/AttachmentStudy_Warrior.jpg",
+    "C:/Users/me/Desktop/OZGL3_ArtReview/Monsters/Stage01/SkeletonsPack01/v001-original/Independent/AttachmentStudy_Mage.jpg"
+  ],
+  "observations": [
+    {
+      "role": "Rogue",
+      "candidate_frame_euler_degrees": [0, -90, 0],
+      "pose": "2H_Ranged_Aiming at 0.8 seconds",
+      "finding": "Crossbow faces forward in the side view and spans correctly across the front view. Identity attachment points the weapon sideways. This is an accessory coordinate-frame correction, not a character-bone correction.",
+      "remaining": "Review the entire native shoot/reload sequence and two-hand contact. Aiming is a lowered-to-raised transition and must not be tagged as a seamless loop."
+    },
+    {
+      "role": "Warrior",
+      "candidate_frame_euler_degrees": [0, 0, 0],
+      "pose": "Updated study: 1H_Melee_Attack_Chop at frame 8",
+      "finding": "Identity attachment keeps the shaft continuing upward from the gripping hand, with the axe head above/in front of the face. The earlier +90 X recommendation was specific to the discarded two-handed idle study and must not be applied to this final one-handed selection. In the old two-handed study the native short handle did not reach the off hand.",
+      "recommendation": "Select compatible existing one-handed actions Idle_Combat, 1H_Melee_Attack_Chop and 1H_Melee_Attack_Slice_Diagonal. Do not extend the original axe or alter the native arm keys to force a two-handed grip.",
+      "remaining": "Review the final one-handed action selection, grip and full swing before approval."
+    },
+    {
+      "role": "Mage",
+      "candidate_frame_euler_degrees": [0, 0, 90],
+      "candidate_socket": "handslot.l",
+      "pose": "Updated left-hand study: Idle_Combat at 0 seconds",
+      "finding": "For the left-hand socket, +90 Z puts the staff ornament above the hand; -90 Z inverts it. The left-hand choice keeps the right hand available for native casting. Opposite view shows the staff shaft crossing hat-brim height and the skull ornament overlapping the side of the hat. The lower end also extends below the foot baseline. Moving to the left socket does not resolve hat/floor interference.",
+      "previous_right_hand_study": "Right socket -90 Z held the staff upright, but also overlapped the hat and floor.",
+      "remaining": "Inspect final full spellcast sequences and record native-proportion accessory clearance limitations without altering mesh or animation. This study does not approve clearance."
+    }
+  ],
+  "interpretation": "The original accessory files do not specify a final assembly rotation. A static transform on a separate attachment frame may align their native coordinate systems while leaving all original source assets and animation curves intact. Source fidelity is not proof of grip quality or seamless state transitions."
+}

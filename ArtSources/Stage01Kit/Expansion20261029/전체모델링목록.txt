@@ -1,0 +1,505 @@
+﻿1스테이지 환경 모델링 전체 목록
+기준일: 2026-10-29
+
+전체 54항목 · 개별 모델 50종 · 조립 4종 · 신규 환경 21종
+기존 31항목 / 신규 23항목 (조립 예시 포함)
+환경 44개 / 아이템 6개 / 조립 예시 4개
+
+피드백은 고정 번호와 함께 남겨 주세요. 예: S1-032 지붕을 조금 낮춰 주세요.
+크기 순서: X 폭 × Y 높이 × Z 깊이. 단위 m. 조립 예시는 개별 모델과 별도입니다.
+
+Stage01Kit 전체: 기존 환경 23종, 기존 물약·무기 6종, 신규 환경 21종, 조립 블록 4종. 캐릭터·몬스터·VFX는 별도 자산군. 번호는 고정하며 삭제 번호도 재사용하지 않는다.
+
+삭제된 번호: S1-042 · S1-052 · S1-053 (재사용하지 않음)
+
+01. [S1-001] 낮은 상가
+    기존 · 환경 · Building_ShopLow
+    용도: 4m 낮은 옥상과 길거리 상가
+    배치: 초입·저층 옥상
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Building_ShopLow.prefab
+    크기: 8.18 × 4.30 × 4.83 m
+    삼각형 (LOD0): 588
+    Collider: 1 / LODGroup: 1
+
+02. [S1-002] 중층 사무실
+    기존 · 환경 · Building_OfficeMid
+    용도: 8m 중층 옥상
+    배치: 중간 상층 구역
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Building_OfficeMid.prefab
+    크기: 8.18 × 8.30 × 5.50 m
+    삼각형 (LOD0): 1,668
+    Collider: 1 / LODGroup: 1
+
+03. [S1-003] 높은 주거 건물
+    기존 · 환경 · Building_ApartmentTall
+    용도: 12m 고층 옥상
+    배치: 상층 목표·배경
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Building_ApartmentTall.prefab
+    크기: 10.40 × 12.30 × 6.90 m
+    삼각형 (LOD0): 3,720
+    Collider: 1 / LODGroup: 1
+
+04. [S1-004] 옥상 전투 건물
+    기존 · 환경 · Building_RooftopArena
+    용도: 넓은 옥상 전투면
+    배치: 별도 보스 구역
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Building_RooftopArena.prefab
+    크기: 18.18 × 4.30 × 6.37 m
+    삼각형 (LOD0): 648
+    Collider: 1 / LODGroup: 1
+
+05. [S1-005] 도로 직선 12m
+    기존 · 환경 · Road_Straight_12m
+    용도: 지상 주동선
+    배치: 길거리 바닥
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Road_Straight_12m.prefab
+    크기: 12.00 × 0.24 × 6.00 m
+    삼각형 (LOD0): 248
+    Collider: 1 / LODGroup: 0
+
+06. [S1-006] 보도 직선 8m
+    기존 · 환경 · Sidewalk_Straight_8m
+    용도: 연석·점자블록 보행로
+    배치: 상가 앞
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Sidewalk_Straight_8m.prefab
+    크기: 8.00 × 0.32 × 2.40 m
+    삼각형 (LOD0): 780
+    Collider: 1 / LODGroup: 0
+
+07. [S1-007] 옥상 연결 다리 6m
+    기존 · 환경 · Rooftop_Bridge_6m
+    용도: 수평 옥상 연결
+    배치: 동일 높이 건물 사이
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Bridge_6m.prefab
+    크기: 6.10 × 1.48 × 1.82 m
+    삼각형 (LOD0): 456
+    Collider: 1 / LODGroup: 0
+
+08. [S1-008] 외부 계단 3m 상승
+    기존 · 환경 · Exterior_Stairs_Rise3m
+    용도: 3m 높이 연결·캐릭터를 가리지 않도록 카메라 앞 난간 제거
+    배치: 중간층 연결
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Exterior_Stairs_Rise3m.prefab
+    크기: 4.24 × 4.25 × 1.83 m
+    삼각형 (LOD0): 384
+    Collider: 12 / LODGroup: 0
+
+09. [S1-009] 사다리 4m
+    기존 · 환경 · Ladder_4m
+    용도: 수직 이동용 외형과 앵커
+    배치: 건물 측면·복귀 동선
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Ladder_4m.prefab
+    크기: 0.82 × 4.28 × 0.36 m
+    삼각형 (LOD0): 276
+    Collider: 0 / LODGroup: 0
+
+10. [S1-010] 난간 4m
+    기존 · 환경 · Guardrail_4m
+    용도: 옥상 후면 경계
+    배치: 플레이 레인 뒤
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Guardrail_4m.prefab
+    크기: 4.10 × 1.14 × 0.23 m
+    삼각형 (LOD0): 144
+    Collider: 0 / LODGroup: 0
+
+11. [S1-011] 옥탑 구조물
+    기존 · 환경 · Rooftop_Hut
+    용도: 출입문이 있는 옥상 실루엣
+    배치: 옥상 뒤쪽
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Hut.prefab
+    크기: 2.70 × 2.64 × 2.25 m
+    삼각형 (LOD0): 156
+    Collider: 1 / LODGroup: 0
+
+12. [S1-012] 옥상 물탱크
+    기존 · 환경 · Rooftop_WaterTank
+    용도: 급수 설비 랜드마크
+    배치: 주거 건물 옥상
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_WaterTank.prefab
+    크기: 1.87 × 2.47 × 1.64 m
+    삼각형 (LOD0): 276
+    Collider: 0 / LODGroup: 0
+
+13. [S1-013] 옥상 간판
+    기존 · 환경 · Rooftop_Billboard
+    용도: 추상 광고판
+    배치: 상가 옥상 뒤
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Rooftop_Billboard.prefab
+    크기: 3.40 × 2.80 × 0.93 m
+    삼각형 (LOD0): 240
+    Collider: 0 / LODGroup: 0
+
+14. [S1-014] 설비함
+    기존 · 환경 · Utility_Box
+    용도: 전기·통신 설비 소품
+    배치: 골목·옥상
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Utility_Box.prefab
+    크기: 1.04 × 1.30 × 0.60 m
+    삼각형 (LOD0): 132
+    Collider: 0 / LODGroup: 0
+
+15. [S1-015] 관목 화단
+    기존 · 환경 · Planter_Shrubs
+    용도: 낮은 식생 장식
+    배치: 보도·옥상 가장자리
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Planter_Shrubs.prefab
+    크기: 1.88 × 1.14 × 0.82 m
+    삼각형 (LOD0): 72
+    Collider: 0 / LODGroup: 0
+
+16. [S1-016] 도로 차단물
+    기존 · 환경 · Road_Barrier
+    용도: 콘크리트 차단물
+    배치: 거리 경계
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Modules/Road_Barrier.prefab
+    크기: 1.80 × 0.92 × 0.62 m
+    삼각형 (LOD0): 120
+    Collider: 0 / LODGroup: 0
+
+17. [S1-017] 가로등
+    기존 · 환경 · StreetLamp
+    용도: 곧은 기둥과 간결한 등기구의 거리 조명 외형
+    배치: 보도 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/StreetLamp.prefab
+    크기: 0.64 × 4.30 × 0.64 m
+    삼각형 (LOD0): 182
+    Collider: 0 / LODGroup: 0
+
+18. [S1-018] 가로수
+    기존 · 환경 · StreetTree
+    용도: 단순한 큰 각면 수관과 줄기의 도심 식생
+    배치: 보도 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/StreetTree.prefab
+    크기: 2.71 × 4.50 × 1.69 m
+    삼각형 (LOD0): 200
+    Collider: 0 / LODGroup: 0
+
+19. [S1-019] 자판기
+    기존 · 환경 · VendingMachine
+    용도: 단순 본체·큰 진열창 중심의 길거리 자판기
+    배치: 상가·골목
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/VendingMachine.prefab
+    크기: 1.02 × 1.85 × 0.90 m
+    삼각형 (LOD0): 284
+    Collider: 1 / LODGroup: 0
+
+20. [S1-020] 벤치
+    기존 · 환경 · Bench
+    용도: 거리 휴식 소품
+    배치: 보도 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/Bench.prefab
+    크기: 1.50 × 0.85 × 0.76 m
+    삼각형 (LOD0): 616
+    Collider: 0 / LODGroup: 0
+
+21. [S1-021] 쓰레기통
+    기존 · 환경 · TrashBin
+    용도: 생활 흔적
+    배치: 거리·상가 옆
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/TrashBin.prefab
+    크기: 0.54 × 0.90 × 0.56 m
+    삼각형 (LOD0): 394
+    Collider: 1 / LODGroup: 0
+
+22. [S1-022] 실외기
+    기존 · 환경 · ACUnit
+    용도: 단순한 본체와 큰 팬으로 읽히는 소형 공조 설비
+    배치: 벽면·옥상
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/ACUnit.prefab
+    크기: 1.40 × 0.90 × 0.69 m
+    삼각형 (LOD0): 196
+    Collider: 0 / LODGroup: 0
+
+23. [S1-023] 위성접시
+    기존 · 환경 · SatelliteDish
+    용도: 단순한 접시와 지지대의 일반 옥상 위성 수신 설비
+    배치: 옥상 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/SatelliteDish.prefab
+    크기: 1.50 × 1.60 × 1.36 m
+    삼각형 (LOD0): 212
+    Collider: 0 / LODGroup: 0
+
+24. [S1-024] 회복 물약
+    기존 · 아이템 · Potion_Health
+    용도: 회복 소모품 외형
+    배치: 주동선 파밍
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/Potion_Health.prefab
+    크기: 0.12 × 0.24 × 0.13 m
+    삼각형 (LOD0): 196
+    Collider: 0 / LODGroup: 0
+
+25. [S1-025] 공격 강화 물약
+    기존 · 아이템 · Potion_Attack
+    용도: 공격 강화 소모품 외형
+    배치: 선택 탐색 구간
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/Potion_Attack.prefab
+    크기: 0.12 × 0.24 × 0.13 m
+    삼각형 (LOD0): 184
+    Collider: 0 / LODGroup: 0
+
+26. [S1-026] 방어 강화 물약
+    기존 · 아이템 · Potion_Defense
+    용도: 방어 강화 소모품 외형
+    배치: 선택 탐색 구간
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/Potion_Defense.prefab
+    크기: 0.12 × 0.24 × 0.13 m
+    삼각형 (LOD0): 184
+    Collider: 0 / LODGroup: 0
+
+27. [S1-027] 신속 물약
+    기존 · 아이템 · Potion_Speed
+    용도: 신속 소모품 외형
+    배치: 선택 탐색 구간
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Props/Potion_Speed.prefab
+    크기: 0.12 × 0.24 × 0.13 m
+    삼각형 (LOD0): 184
+    Collider: 0 / LODGroup: 0
+
+28. [S1-028] 검
+    기존 · 아이템 · Sword
+    용도: 기존 장비 소품
+    배치: 손 소켓 장착
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Weapons/Sword.prefab
+    크기: 0.17 × 0.95 × 0.05 m
+    삼각형 (LOD0): 718
+    Collider: 0 / LODGroup: 0
+
+29. [S1-029] 지팡이
+    기존 · 아이템 · Staff
+    용도: 기존 장비 소품
+    배치: 손 소켓 장착
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Weapons/Staff.prefab
+    크기: 0.19 × 1.26 × 0.19 m
+    삼각형 (LOD0): 915
+    Collider: 0 / LODGroup: 0
+
+30. [S1-030] 기존 튜토리얼 조립 블록
+    기존 · 조립 예시 · Tutorial_Block
+    용도: 기존 배치 시안
+    배치: 튜토리얼 검토
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Blocks/Tutorial_Block.prefab
+    크기: 48.00 × 5.86 × 8.20 m
+    삼각형 (LOD0): 11,698
+    Collider: 27 / LODGroup: 2
+
+31. [S1-031] 기존 1스테이지 조립 블록
+    기존 · 조립 예시 · Stage01_Block
+    용도: 기존 환경 조립 시안
+    배치: 이전 배치 검토
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_Block.prefab
+    크기: 96.00 × 14.90 × 8.45 m
+    삼각형 (LOD0): 27,922
+    Collider: 31 / LODGroup: 5
+
+32. [S1-032] 편의점 건물
+    신규 · 환경 · Building_ConvenienceStore
+    용도: 4m 저층 옥상·진열 전면·띠간판
+    배치: 첫 상층 진입 지점
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Building_ConvenienceStore.prefab
+    크기: 8.25 × 4.47 × 6.05 m
+    삼각형 (LOD0): 1,140
+    Collider: 1 / LODGroup: 1
+
+33. [S1-033] 코너 카페 건물
+    신규 · 환경 · Building_CornerCafe
+    용도: 8m 옥상·차양·발코니
+    배치: 중층 거리 랜드마크
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Building_CornerCafe.prefab
+    크기: 8.18 × 8.55 × 6.34 m
+    삼각형 (LOD0): 1,348
+    Collider: 1 / LODGroup: 1
+
+34. [S1-034] 좁은 복합상가
+    신규 · 환경 · Building_MixedUseNarrow
+    용도: 12m 높은 옥상·세로 간판
+    배치: 상층 게이트·목표 발견
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Building_MixedUseNarrow.prefab
+    크기: 6.27 × 13.64 × 5.65 m
+    삼각형 (LOD0): 2,004
+    Collider: 1 / LODGroup: 1
+
+35. [S1-035] 다세대주택
+    신규 · 환경 · Building_Rowhouse
+    용도: 8m 옥상·발코니·생활 흔적
+    배치: 주거 골목·배경
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Building_Rowhouse.prefab
+    크기: 8.27 × 9.26 × 5.97 m
+    삼각형 (LOD0): 1,572
+    Collider: 1 / LODGroup: 1
+
+36. [S1-036] 주차 건물
+    신규 · 환경 · Building_ParkingDeck
+    용도: 8m 옥상·슬래브·주차 베이 외관
+    배치: 넓은 중층 구간; 내부 진입용 아님
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Building_ParkingDeck.prefab
+    크기: 12.15 × 8.40 × 6.38 m
+    삼각형 (LOD0): 936
+    Collider: 1 / LODGroup: 1
+
+37. [S1-037] 개방형 상가 내부 단면
+    신규 · 환경 · Shop_InteriorSlice_8m
+    용도: 카메라 쪽 개방·진열대·계산대·선택 파밍
+    배치: 지상 곁길; 부분 천장 뒤쪽 Z1.75
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Shop_InteriorSlice_8m.prefab
+    크기: 8.00 × 4.24 × 5.00 m
+    삼각형 (LOD0): 1,380
+    Collider: 5 / LODGroup: 1
+
+38. [S1-038] 외부 철제 계단 4m 상승
+    신규 · 환경 · Exterior_Stairs_Rise4m
+    용도: 16단·8m 수평 길이·4m 높이 연결
+    배치: 0→4→8→12m 상층 연결
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Exterior_Stairs_Rise4m.prefab
+    크기: 8.08 × 5.22 × 2.00 m
+    삼각형 (LOD0): 732
+    Collider: 16 / LODGroup: 0
+
+39. [S1-039] 옥상 연결 발판 4m
+    신규 · 환경 · Rooftop_Landing_4m
+    용도: 계단참·수평 재합류·복귀 발판
+    배치: 옥상 가장자리
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Rooftop_Landing_4m.prefab
+    크기: 4.06 × 2.04 × 2.40 m
+    삼각형 (LOD0): 216
+    Collider: 1 / LODGroup: 0
+
+40. [S1-040] 옥상 대형 공조기
+    신규 · 환경 · Rooftop_HVAC
+    용도: 쌍팬·루버·정비 패널
+    배치: 옥상 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Rooftop_HVAC.prefab
+    크기: 3.05 × 1.65 × 1.95 m
+    삼각형 (LOD0): 592
+    Collider: 0 / LODGroup: 0
+
+41. [S1-041] 굽은 환기 덕트
+    신규 · 환경 · Rooftop_DuctElbow
+    용도: 단순한 L자 덕트와 큰 배출구
+    배치: 옥상 설비 조합
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Rooftop_DuctElbow.prefab
+    크기: 2.55 × 1.75 × 1.22 m
+    삼각형 (LOD0): 124
+    Collider: 0 / LODGroup: 0
+
+43. [S1-043] 버스 정류장 쉼터
+    신규 · 환경 · Street_BusShelter
+    용도: 지붕·벤치·노선 안내판
+    배치: 초입 보도 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Street_BusShelter.prefab
+    크기: 4.08 × 2.82 × 1.78 m
+    삼각형 (LOD0): 420
+    Collider: 0 / LODGroup: 0
+
+44. [S1-044] 교통 신호등
+    신규 · 환경 · Street_TrafficSignal
+    용도: 3색 신호·차광 후드·버튼
+    배치: 횡단보도 가장자리
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Street_TrafficSignal.prefab
+    크기: 3.18 × 4.53 × 0.63 m
+    삼각형 (LOD0): 260
+    Collider: 0 / LODGroup: 0
+
+45. [S1-045] 도심 전신주
+    신규 · 환경 · Street_UtilityPole
+    용도: 변압함·완금·애자·전선 연결 앵커
+    배치: 골목 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Street_UtilityPole.prefab
+    크기: 2.18 × 5.38 × 0.73 m
+    삼각형 (LOD0): 888
+    Collider: 0 / LODGroup: 0
+
+46. [S1-046] 보행 볼라드
+    신규 · 환경 · Street_Bollard
+    용도: 각진 차단 기둥·반사 띠
+    배치: 보도 입구
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Street_Bollard.prefab
+    크기: 0.40 × 0.90 × 0.40 m
+    삼각형 (LOD0): 256
+    Collider: 0 / LODGroup: 0
+
+47. [S1-047] 적재 상자 팔레트
+    신규 · 환경 · Prop_CargoPallet
+    용도: 목재 팔레트·묶인 상자·아이템 앵커
+    배치: 상가 뒤·파밍 곁길
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Prop_CargoPallet.prefab
+    크기: 1.60 × 1.29 × 1.20 m
+    삼각형 (LOD0): 540
+    Collider: 0 / LODGroup: 0
+
+48. [S1-048] 쓰레기봉투 무더기
+    신규 · 환경 · Prop_WasteBags
+    용도: 묶인 봉투·폐상자
+    배치: 골목 생활 흔적
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Prop_WasteBags.prefab
+    크기: 1.70 × 0.78 × 1.17 m
+    삼각형 (LOD0): 576
+    Collider: 0 / LODGroup: 0
+
+49. [S1-049] 비상 통제 바리케이드
+    신규 · 환경 · Prop_EmergencyBarricade
+    용도: 경고 줄무늬·접이 다리·경광등 외형
+    배치: 게이트 사고 현장
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Prop_EmergencyBarricade.prefab
+    크기: 2.40 × 1.18 × 0.80 m
+    삼각형 (LOD0): 320
+    Collider: 0 / LODGroup: 0
+
+50. [S1-050] 콘크리트 잔해 무더기
+    신규 · 환경 · Damage_RubbleCluster
+    용도: 파편·노출 철근
+    배치: 게이트 주변 후면
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Damage_RubbleCluster.prefab
+    크기: 3.10 × 0.82 × 1.49 m
+    삼각형 (LOD0): 156
+    Collider: 0 / LODGroup: 0
+
+51. [S1-051] 균열 도로 조각 6m
+    신규 · 환경 · Damage_CrackedRoad_6m
+    용도: 갈라진 패널·어긋난 작은 파편·연속 바닥 충돌
+    배치: 사고 현장 지상
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Damage_CrackedRoad_6m.prefab
+    크기: 6.00 × 0.30 × 4.00 m
+    삼각형 (LOD0): 144
+    Collider: 1 / LODGroup: 0
+
+54. [S1-054] 횡단보도 도로 6m
+    신규 · 환경 · Road_Crosswalk_6m
+    용도: 넓은 횡단보도 줄·배수구
+    배치: 서울 거리 진입부
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Road_Crosswalk_6m.prefab
+    크기: 6.00 × 0.25 × 6.00 m
+    삼각형 (LOD0): 360
+    Collider: 1 / LODGroup: 0
+
+55. [S1-055] 상가 후면 골목 6m
+    신규 · 환경 · Alley_Passage_6m
+    용도: 열린 양끝·후면 벽·배관·방향 표식
+    배치: 파밍 후 주동선 재합류
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Expansion/Alley_Passage_6m.prefab
+    크기: 6.06 × 3.60 × 2.56 m
+    삼각형 (LOD0): 396
+    Collider: 2 / LODGroup: 0
+
+56. [S1-056] 확장 거리·옥상 조립 블록
+    신규 · 조립 예시 · Stage01_ExpandedStreet_Block
+    용도: 3개 일반 게이트 앵커와 높이별 배치 시안
+    배치: 일반 필드 아트 검토; 기능 연결 별도
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_ExpandedStreet_Block.prefab
+    크기: 90.39 × 13.88 × 13.77 m
+    삼각형 (LOD0): 20,210
+    Collider: 73 / LODGroup: 6
+
+57. [S1-057] 확장 보스 옥상 조립 블록
+    신규 · 조립 예시 · Stage01_ExpandedBoss_Block
+    용도: 분리된 보스 게이트·넓은 옥상 전투면
+    배치: 별도 보스 지도 노드 아트 시안
+    프리팹: Assets/Art/Stage01Kit/Prefabs/Blocks/Stage01_ExpandedBoss_Block.prefab
+    크기: 18.18 × 5.75 × 6.72 m
+    삼각형 (LOD0): 2,308
+    Collider: 1 / LODGroup: 1
+
+삭제 이력 — 아래 번호는 재사용하지 않습니다.
+
+[S1-042] 옥상 안테나 세트 / 사용자 요청 삭제 / 2026-10-29
+[S1-052] 일반 게이트 받침 / 사용자 요청 삭제 / 2026-10-29
+[S1-053] 보스 게이트 받침 / 사용자 요청 삭제 / 2026-10-29

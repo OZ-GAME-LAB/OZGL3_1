@@ -35,7 +35,7 @@ public static class UrbanPropBuilder
         Create("Bench", .85f, reports);
         Create("TrashBin", .9f, reports);
         Create("ACUnit", .9f, reports);
-        Create("GatePylon", 2.2f, reports);
+        Create("SatelliteDish", 1.6f, reports);
         Potion("Potion_Health", Red, reports);
         Potion("Potion_Attack", Ochre, reports);
         Potion("Potion_Defense", Teal, reports);
@@ -49,6 +49,19 @@ public static class UrbanPropBuilder
 
     static void Create(string key, float targetHeight, List<PropReport> reports)
     {
+        if (Stage01SimplifiedProps.IsRevised(key))
+        {
+            Stage01SimplifiedProps.BuildOne(key);
+            string revisedKey = key == "GatePylon" ? "SatelliteDish" : key;
+            var revisedPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabFolder + "/" + revisedKey + ".prefab");
+            var revisedMesh = revisedPrefab.GetComponent<MeshFilter>().sharedMesh;
+            reports.Add(new PropReport { key = revisedKey, source = "Original authored low-poly revision 2026-10-29",
+                prefab = PrefabFolder + "/" + revisedKey + ".prefab", dimensions_m = revisedMesh.bounds.size,
+                center_m = revisedMesh.bounds.center, source_triangles = 0, final_triangles = revisedMesh.triangles.Length / 3,
+                front = "-Z", pivot = "Base Y=0", materials = 1,
+                collision = revisedKey == "VendingMachine" ? "single body box" : "none; decorative" });
+            return;
+        }
         string sourcePath = Root + "/Models/" + key + ".fbx";
         var importer = AssetImporter.GetAtPath(sourcePath) as ModelImporter;
         if (importer == null) throw new FileNotFoundException("Missing source prop FBX: " + sourcePath);

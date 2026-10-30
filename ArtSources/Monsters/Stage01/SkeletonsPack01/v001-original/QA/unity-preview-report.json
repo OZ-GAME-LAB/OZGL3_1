@@ -1,0 +1,473 @@
+{
+    "success": true,
+    "visualApproval": false,
+    "gameplayIntegrated": false,
+    "unity": "6000.3.21f1",
+    "method": "Saved prefab/clip reload; actual Unity skinned meshes and rigid costume/gear. Fixed orthographic side view and common world units with unchanged current hero reference. Full 30fps side sequences plus action auxiliary views. Preview-only Playables 0.12s blends; no gameplay transition edits. Raw clip endpoints and ground minima are diagnostics, not visual approval.",
+    "orthographicSize": 1.100000023841858,
+    "width": 960,
+    "height": 540,
+    "fps": 30,
+    "actors": [
+        {
+            "role": "Minion",
+            "prefab": "Assets/Art/Monsters/Stage01/Melee01/v001/Prefabs/Stage01_Melee01.prefab",
+            "renderers": 10,
+            "skins": 9,
+            "bones": 41,
+            "clips": [
+                {
+                    "name": "Idle",
+                    "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Idle.anim",
+                    "seconds": 4.266666889190674,
+                    "minimumY": -0.0000331665578414686,
+                    "endpointDifference": 3.0538294026882797e-7,
+                    "maximumFrameDisplacement": 0.012312415987253189,
+                    "loop": true,
+                    "frames": 129,
+                    "curveCount": 378,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Move",
+                    "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Move.anim",
+                    "seconds": 0.800000011920929,
+                    "minimumY": -4.965841071680188e-8,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.1537570208311081,
+                    "loop": true,
+                    "frames": 25,
+                    "curveCount": 378,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Attack",
+                    "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Attack.anim",
+                    "seconds": 1.0666667222976685,
+                    "minimumY": 0.005237171892076731,
+                    "endpointDifference": 3.816559512870299e-7,
+                    "maximumFrameDisplacement": 0.7656573057174683,
+                    "loop": false,
+                    "frames": 33,
+                    "curveCount": 378,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Hit",
+                    "asset": "Assets/Art/Monsters/Stage01/Melee01/v001/Clips/Hit.anim",
+                    "seconds": 0.6666666865348816,
+                    "minimumY": -0.00043617311166599393,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.1271466463804245,
+                    "loop": false,
+                    "frames": 21,
+                    "curveCount": 378,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ],
+            "connections": []
+        },
+        {
+            "role": "Rogue",
+            "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Rogue.prefab",
+            "renderers": 11,
+            "skins": 8,
+            "bones": 41,
+            "clips": [
+                {
+                    "name": "Idle_Combat",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Idle_Combat.anim",
+                    "seconds": 4.266666889190674,
+                    "minimumY": -0.3291208744049072,
+                    "endpointDifference": 2.980232238769531e-7,
+                    "maximumFrameDisplacement": 0.01520497351884842,
+                    "loop": true,
+                    "frames": 129,
+                    "curveCount": 396,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Running_A",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Running_A.anim",
+                    "seconds": 0.800000011920929,
+                    "minimumY": -0.09473603218793869,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.1714240312576294,
+                    "loop": true,
+                    "frames": 25,
+                    "curveCount": 396,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "2H_Ranged_Aiming",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Aiming.anim",
+                    "seconds": 1.600000023841858,
+                    "minimumY": -0.002399607328698039,
+                    "endpointDifference": 0.7060447931289673,
+                    "maximumFrameDisplacement": 0.17614036798477174,
+                    "loop": false,
+                    "frames": 49,
+                    "curveCount": 396,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "2H_Ranged_Shoot",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Shoot.anim",
+                    "seconds": 1.0666667222976685,
+                    "minimumY": -0.002031677635386586,
+                    "endpointDifference": 0.6677600741386414,
+                    "maximumFrameDisplacement": 0.17404808104038239,
+                    "loop": false,
+                    "frames": 33,
+                    "curveCount": 396,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "2H_Ranged_Reload",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/2H_Ranged_Reload.anim",
+                    "seconds": 1.600000023841858,
+                    "minimumY": -0.008216846734285355,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.06762558221817017,
+                    "loop": false,
+                    "frames": 49,
+                    "curveCount": 396,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Hit_A",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Rogue/Hit_A.anim",
+                    "seconds": 0.6666666865348816,
+                    "minimumY": -0.29351806640625,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.17262595891952516,
+                    "loop": false,
+                    "frames": 21,
+                    "curveCount": 396,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ],
+            "connections": []
+        },
+        {
+            "role": "Warrior",
+            "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Warrior.prefab",
+            "renderers": 11,
+            "skins": 9,
+            "bones": 41,
+            "clips": [
+                {
+                    "name": "Idle_Combat",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Idle_Combat.anim",
+                    "seconds": 4.266666889190674,
+                    "minimumY": -0.0012960989261046053,
+                    "endpointDifference": 2.980232238769531e-7,
+                    "maximumFrameDisplacement": 0.009193147532641888,
+                    "loop": true,
+                    "frames": 129,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Walking_B",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Walking_B.anim",
+                    "seconds": 1.0666667222976685,
+                    "minimumY": -0.062384799122810367,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.06440145522356034,
+                    "loop": true,
+                    "frames": 33,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "1H_Melee_Attack_Chop",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Chop.anim",
+                    "seconds": 1.0666667222976685,
+                    "minimumY": -0.0007607806473970413,
+                    "endpointDifference": 1.9992005206859177e-7,
+                    "maximumFrameDisplacement": 0.5738440752029419,
+                    "loop": false,
+                    "frames": 33,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "1H_Melee_Attack_Slice_Diagonal",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/1H_Melee_Attack_Slice_Diagonal.anim",
+                    "seconds": 1.0,
+                    "minimumY": -0.0010632521007210017,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.666248619556427,
+                    "loop": false,
+                    "frames": 31,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Hit_A",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Warrior/Hit_A.anim",
+                    "seconds": 0.6666666865348816,
+                    "minimumY": -0.0007767462520860136,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.13851827383041383,
+                    "loop": false,
+                    "frames": 21,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ],
+            "connections": []
+        },
+        {
+            "role": "Mage",
+            "prefab": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Prefabs/Skeleton_Mage.prefab",
+            "renderers": 10,
+            "skins": 8,
+            "bones": 41,
+            "clips": [
+                {
+                    "name": "Idle_Combat",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Idle_Combat.anim",
+                    "seconds": 4.266666889190674,
+                    "minimumY": -0.13888733088970185,
+                    "endpointDifference": 2.9802905032738638e-7,
+                    "maximumFrameDisplacement": 0.012174931354820729,
+                    "loop": true,
+                    "frames": 129,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Walking_D_Skeletons",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Walking_D_Skeletons.anim",
+                    "seconds": 1.600000023841858,
+                    "minimumY": -0.03251510113477707,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.03538445755839348,
+                    "loop": true,
+                    "frames": 49,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Spellcast_Shoot",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Shoot.anim",
+                    "seconds": 0.9333333373069763,
+                    "minimumY": -0.12012611329555512,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.21626588702201844,
+                    "loop": false,
+                    "frames": 29,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Spellcast_Raise",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Spellcast_Raise.anim",
+                    "seconds": 2.0999999046325685,
+                    "minimumY": -0.11433295160531998,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.18000547587871552,
+                    "loop": false,
+                    "frames": 64,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "name": "Hit_A",
+                    "asset": "Assets/Art/Monsters/Stage01/SkeletonsPack01/v001/Clips/Mage/Hit_A.anim",
+                    "seconds": 0.6666666865348816,
+                    "minimumY": -0.12092592567205429,
+                    "endpointDifference": 0.0,
+                    "maximumFrameDisplacement": 0.1452811360359192,
+                    "loop": false,
+                    "frames": 21,
+                    "curveCount": 387,
+                    "firstRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "lastRoot": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ],
+            "connections": []
+        }
+    ]
+}

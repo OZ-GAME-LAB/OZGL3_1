@@ -1,0 +1,261 @@
+{
+  "repository": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0",
+  "pinned_commit": "15b62b9bad122f72926c10fb14d622c73819fa54",
+  "api_tree_url": "https://api.github.com/repos/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/git/trees/15b62b9bad122f72926c10fb14d622c73819fa54?recursive=1",
+  "retrieved_at_utc": "2026-10-29T04:26:51.752961+00:00",
+  "license": "CC0-1.0",
+  "source_files_modified": false,
+  "scope": "Three original characters in FBX and GLB, five original FBX accessories, original atlas and license/readme. No edited source geometry, rig, animation, scale, colors or ground offsets.",
+  "files": [
+    {
+      "local_path": "SourceAssets/Characters/fbx/Skeleton_Rogue.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Characters/fbx/Skeleton_Rogue.fbx",
+      "bytes": 22790796,
+      "sha256": "2961f9cb6640f4627db4b9213b7b349270dc737a4c9b5f7aa5f078203887f78d",
+      "git_blob_sha1": "894756a1f8368ea3de4cc1f7fd4eb472567ffb0e",
+      "expected_git_blob_sha1": "894756a1f8368ea3de4cc1f7fd4eb472567ffb0e",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/fbx/Skeleton_Rogue.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Characters/gltf/Skeleton_Rogue.glb",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Rogue.glb",
+      "bytes": 4827024,
+      "sha256": "4003f2b77891bb56f7e0de7d555abcb497aebbcaee35b614211f16275f9ccae3",
+      "git_blob_sha1": "182403932e4d4e00aa4182f2ac882ac27326dd19",
+      "expected_git_blob_sha1": "182403932e4d4e00aa4182f2ac882ac27326dd19",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Rogue.glb"
+    },
+    {
+      "local_path": "SourceAssets/Characters/fbx/Skeleton_Warrior.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Characters/fbx/Skeleton_Warrior.fbx",
+      "bytes": 22402076,
+      "sha256": "783d88baface5b5aec4be3a1bdfe360e12e091dae753b3968161e7a69bd0c279",
+      "git_blob_sha1": "50d4da8df0aa0e468ddb2ab6e57b4d92e33db1cc",
+      "expected_git_blob_sha1": "50d4da8df0aa0e468ddb2ab6e57b4d92e33db1cc",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/fbx/Skeleton_Warrior.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Characters/gltf/Skeleton_Warrior.glb",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Warrior.glb",
+      "bytes": 4863620,
+      "sha256": "178b6fda810b814c250d8a2010c24dfd9b458b9006dd323353e620b7ff118bbe",
+      "git_blob_sha1": "769e85c9e4cee8d1bd0952ddb3e9d26293144581",
+      "expected_git_blob_sha1": "769e85c9e4cee8d1bd0952ddb3e9d26293144581",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Warrior.glb"
+    },
+    {
+      "local_path": "SourceAssets/Characters/fbx/Skeleton_Mage.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Characters/fbx/Skeleton_Mage.fbx",
+      "bytes": 22295116,
+      "sha256": "a5b6a9e9c690b2c23f52aa7a18aef411b56e9c660229c7e2d0f217f78752573c",
+      "git_blob_sha1": "6a22509ce0375b24c0e757c06b46fc339ee656a1",
+      "expected_git_blob_sha1": "6a22509ce0375b24c0e757c06b46fc339ee656a1",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/fbx/Skeleton_Mage.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Characters/gltf/Skeleton_Mage.glb",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Mage.glb",
+      "bytes": 4761048,
+      "sha256": "e05b0f5cfa395271c9f75fd07c0a0613c56f401ece4ab644e080001a79971075",
+      "git_blob_sha1": "5f85aea26b4f33b88080d6eb57d25d1ae5d84d14",
+      "expected_git_blob_sha1": "5f85aea26b4f33b88080d6eb57d25d1ae5d84d14",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Mage.glb"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/fbx/Skeleton_Crossbow.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Crossbow.fbx",
+      "bytes": 39548,
+      "sha256": "51f4262edab36a36a854f63d96ed7085de818cc606e91e5b48c4a5028eae0491",
+      "git_blob_sha1": "47fa57d235196c679e50837c608f6418cf0fc72f",
+      "expected_git_blob_sha1": "47fa57d235196c679e50837c608f6418cf0fc72f",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Crossbow.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Crossbow.gltf",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Crossbow.gltf",
+      "bytes": 3052,
+      "sha256": "8b7b8adbc33d2b9921637735d3f319b86a98b8bab9dbbce022541cc732e415ce",
+      "git_blob_sha1": "11b414738856ae5611437373fcb4369ae6b90dca",
+      "expected_git_blob_sha1": "11b414738856ae5611437373fcb4369ae6b90dca",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Crossbow.gltf"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Crossbow.bin",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Crossbow.bin",
+      "bytes": 28624,
+      "sha256": "dfe637f4d112fcfa515a6f8c921034bb017c68896751cceb8119675c157fa1f8",
+      "git_blob_sha1": "6820e64878016c9564cee6962db4e35277cd7c2a",
+      "expected_git_blob_sha1": "6820e64878016c9564cee6962db4e35277cd7c2a",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Crossbow.bin"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/fbx/Skeleton_Axe.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Axe.fbx",
+      "bytes": 37324,
+      "sha256": "b921180f7cc55306c4907e51676d3f7b6cecf0ab2f90095e269ba807e023f55c",
+      "git_blob_sha1": "cd8d467bfb30ce68d59a5b7cdeabe5e313aa836a",
+      "expected_git_blob_sha1": "cd8d467bfb30ce68d59a5b7cdeabe5e313aa836a",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Axe.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Axe.gltf",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Axe.gltf",
+      "bytes": 3045,
+      "sha256": "44c8b65942cbb573c99dc14c2a188fad8c47e29ad9764d27b47e6f57bb7e4ebd",
+      "git_blob_sha1": "79d77edd260b727980571b4b2836f942e0b31d3d",
+      "expected_git_blob_sha1": "79d77edd260b727980571b4b2836f942e0b31d3d",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Axe.gltf"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Axe.bin",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Axe.bin",
+      "bytes": 25348,
+      "sha256": "f994f9e1b3297961a2b27120adb81ccc61ef7a901586b584fa53fdba8b962cc7",
+      "git_blob_sha1": "609e545071b90bfff0472719ae5229e0d206be68",
+      "expected_git_blob_sha1": "609e545071b90bfff0472719ae5229e0d206be68",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Axe.bin"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/fbx/Skeleton_Staff.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Staff.fbx",
+      "bytes": 77836,
+      "sha256": "7b9fa1ec537d6c5d609e83c2e3d13e247ca252716cab36a6fa83a63100145457",
+      "git_blob_sha1": "6c7f74650a79073a9065e36e817b5c67abfb870f",
+      "expected_git_blob_sha1": "6c7f74650a79073a9065e36e817b5c67abfb870f",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Staff.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Staff.gltf",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Staff.gltf",
+      "bytes": 3057,
+      "sha256": "6bb554fef0889dc9e1a69a71ddae793a772fc18eea059ded61be4f8157fd2f04",
+      "git_blob_sha1": "d0cff560383244e2ebbc4a593c0afb890082a514",
+      "expected_git_blob_sha1": "d0cff560383244e2ebbc4a593c0afb890082a514",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Staff.gltf"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Staff.bin",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Staff.bin",
+      "bytes": 69244,
+      "sha256": "2b91a59316cea919b2a8b3d94ab85e3b5faa9fdb607a9ab633a6bb6d1e6bbf2f",
+      "git_blob_sha1": "5fc8906eb543a7e056e712993326a678456d4397",
+      "expected_git_blob_sha1": "5fc8906eb543a7e056e712993326a678456d4397",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Staff.bin"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/fbx/Skeleton_Quiver.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Quiver.fbx",
+      "bytes": 31292,
+      "sha256": "24504fb64f0064da9f1b016763ed88046ebd49cf4597accd5c0b8849433ec4ba",
+      "git_blob_sha1": "1ff4d688e19153025cf96b0aeebce2d1d1470e5d",
+      "expected_git_blob_sha1": "1ff4d688e19153025cf96b0aeebce2d1d1470e5d",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Quiver.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Quiver.gltf",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Quiver.gltf",
+      "bytes": 3051,
+      "sha256": "9178941924de968f6182e02cafbfc6b8bf63f021fb374c9d71ebaa1b61960e90",
+      "git_blob_sha1": "55069d42cbab011c0950a38a22a8e468960d0fed",
+      "expected_git_blob_sha1": "55069d42cbab011c0950a38a22a8e468960d0fed",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Quiver.gltf"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Quiver.bin",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Quiver.bin",
+      "bytes": 18620,
+      "sha256": "6842e8ca16f74d37d99e5ebed5d6b76e52a4582dbc643ba4c066ca726b4a8b89",
+      "git_blob_sha1": "b2783a64cf699fa6f51fd622e1ee5a875ae554fc",
+      "expected_git_blob_sha1": "b2783a64cf699fa6f51fd622e1ee5a875ae554fc",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Quiver.bin"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/fbx/Skeleton_Arrow.fbx",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Arrow.fbx",
+      "bytes": 20524,
+      "sha256": "594e7cb4df07076c94991c148803b3235ddf313ed03600dbab38c0b3910787c4",
+      "git_blob_sha1": "049c50766213890ea955c3168083bc30b9a5cc79",
+      "expected_git_blob_sha1": "049c50766213890ea955c3168083bc30b9a5cc79",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/fbx/Skeleton_Arrow.fbx"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Arrow.gltf",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Arrow.gltf",
+      "bytes": 3043,
+      "sha256": "1eb2987d92641ebc4f72965a04ab71bad0b738fa4a42c246f42d2dca5c7bbc47",
+      "git_blob_sha1": "715b688872ed0ca7273fde0b933f19d5a8b58d3d",
+      "expected_git_blob_sha1": "715b688872ed0ca7273fde0b933f19d5a8b58d3d",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Arrow.gltf"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/Skeleton_Arrow.bin",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Arrow.bin",
+      "bytes": 2648,
+      "sha256": "53c7e3820b4ff34985b0a0752260651a7e0b6ce1c15494d52a967a95113e0fe7",
+      "git_blob_sha1": "8471c29b58ec3b21241d6edb0f20240501fd7914",
+      "expected_git_blob_sha1": "8471c29b58ec3b21241d6edb0f20240501fd7914",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Arrow.bin"
+    },
+    {
+      "local_path": "SourceAssets/Textures/skeleton_texture.png",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Textures/skeleton_texture.png",
+      "bytes": 17037,
+      "sha256": "15741a25c53e04fa9bf3beac3bc0de442359404b1ff9be863b892cb551ad3657",
+      "git_blob_sha1": "00bf24bd5fd17937e08fd90f819a7bc69de432b8",
+      "expected_git_blob_sha1": "00bf24bd5fd17937e08fd90f819a7bc69de432b8",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Textures/skeleton_texture.png"
+    },
+    {
+      "local_path": "SourceAssets/Accessories/gltf/skeleton_texture.png",
+      "upstream_path": "addons/kaykit_character_pack_skeletons/Textures/skeleton_texture.png",
+      "bytes": 17037,
+      "sha256": "15741a25c53e04fa9bf3beac3bc0de442359404b1ff9be863b892cb551ad3657",
+      "git_blob_sha1": "00bf24bd5fd17937e08fd90f819a7bc69de432b8",
+      "expected_git_blob_sha1": "00bf24bd5fd17937e08fd90f819a7bc69de432b8",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Textures/skeleton_texture.png"
+    },
+    {
+      "local_path": "SourceAssets/LICENSE.txt",
+      "upstream_path": "LICENSE.txt",
+      "bytes": 914,
+      "sha256": "5d822abca4e08c5a91d329e5372b3dc605cba8d994f752cb0f7dfdb7a0a79954",
+      "git_blob_sha1": "5de5a1e35003680bd6b97b4c247eed71d51a9fb7",
+      "expected_git_blob_sha1": "5de5a1e35003680bd6b97b4c247eed71d51a9fb7",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/LICENSE.txt"
+    },
+    {
+      "local_path": "SourceAssets/README.md",
+      "upstream_path": "README.md",
+      "bytes": 2502,
+      "sha256": "8fb189cd40590e1ada08e16583fc49357341d301572a3ce2a8b181462565365b",
+      "git_blob_sha1": "080866cea35306cd9c8680e60a38c50ac0baa782",
+      "expected_git_blob_sha1": "080866cea35306cd9c8680e60a38c50ac0baa782",
+      "matches_commit_tree": true,
+      "pinned_download_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/README.md"
+    }
+  ]
+}

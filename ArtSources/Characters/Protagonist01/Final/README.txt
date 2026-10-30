@@ -1,44 +1,64 @@
-주인공 최종 사용 자산
+주인공 최종 사용 자산 — 2026-10-30
 
-확정 선택: 최신 검 공격 3종 + 기존 v007 비공격 모션 15종.
-2026-10-27 후속 요청: Jump_Rise_Loop(0.8초), Jump_Fall_Loop(1.0초)를 작은 균형 움직임이 있는 공중 루프로 교체했습니다.
-기존 점프 시전·착지·정점·Jump_Full 및 다른 선택 클립 16개는 그대로 유지했습니다.
-최신 공중 동작과 연결 미리보기: Review/Airborne/index.html의 외부 갤러리 링크. 기존 Jump_Full에는 새 두 루프가 삽입되지 않았습니다.
-GIF의 기본 저장소는 프로젝트 밖의 ~/Desktop/OZGL3_ArtReview입니다. OZGL3_ART_REVIEW_DIR로 다른 외부 위치를 지정할 수 있습니다.
-현재 GIF60개를 외부에 보존하고 해시를 재검증했습니다. 승인 요청 모드에서 프로젝트 GIF117개와 나머지 폐기 파일659개의 삭제를 완료했습니다. 현재 갤러리에서는 외부본을 사용합니다.
-2026-10-27 전체 검수에서 공격 모델의 팔꿈치 주변 스킨 가중치만 제한적으로 보정했습니다. 애니메이션 곡선, 관절, 검과 손의 움직임은 유지했습니다.
+현재 선택: 치비용 검 공격3종 + 기존 v007 비공격15종 + 사망·사다리2종 = 20종.
+선택된 모든 클립은 Chibi24 Generic 뼈 경로를 사용합니다. selection.json이 파일 목록입니다.
+기존 이동·대기·점프 클립과 게임 코드·컨트롤러·플레이어 프리팹은 이번 작업에서 수정하지 않았습니다.
 
-사용 파일
-- 기존 모션: Assets/Art/Characters/Protagonist01/ChibiMotion_v007
-- 검 공격: Assets/Art/Characters/Protagonist01/Combat
-- 검 공격 프리팹: Combat/Prefabs/Protagonist_Combat.prefab
-- 전체 선택 목록: selection.json
-- 최종 GIF 갤러리: Review/index.html
+사용할 Unity 클립 폴더
+Assets/Art/Characters/Protagonist01/ChibiMotion_v007/Clips
 
-원본
-- Model: 텍스처와 24본 리그가 내장된 기존 chibi 모델 GLB, 콘셉트와 생성 출처.
-- LegacyMotions: 승인된 15종의 선택 목록, 모션 길이와 Unity 파일 해시, 필요한 제작 기록. 현재 GIF는 외부 저장소의 같은 상대 경로에 있습니다.
-- Combat: 승인된 공격 3종만 담은 편집 가능한 Blender 파일, 텍스처, CC0 라이선스와 검증 기록.
-- Combat/SkinWeights: 팔꿈치 보정 전후 영향도와 Unity 메시 갱신에 사용하는 확정 데이터.
+이번 추가 파일
+- Longsword_Attack_Chop.anim: 내려베기, 0.7초, 비반복
+- Longsword_Attack_Slice.anim: 가로베기, 0.6초, 비반복
+- Longsword_Attack_Stab.anim: 찌르기, 0.7초, 비반복
+- Death_Fall.anim: 사망, 1.0초, 비반복, 마지막0.2초 자세 유지
+- Ladder_Climb_Loop.anim: 제자리 사다리 오르기, 0.8초, 반복
 
-리그 호환성
-기존 15종은 Chibi24, 공격 3종은 KayKit23 전용 Generic 클립입니다.
-두 세트는 뼈 이름·계층·스킨과 손 표현이 달라 같은 Animator에 바로 혼용할 수 없습니다.
-각 클립의 compatiblePrefab을 selection.json에 기록했습니다.
-이번 정리는 최종 사용 원본을 보존하는 작업이며, 한 리그로의 재변환이나 게임 연결을 수행한 것은 아닙니다.
+캐스팅 제외
+Skill_Cast_Forward는 손 파지와 동작 품질 문제로2026-10-30 사용자 요청에 따라 폐기했다.
+현재 최종 선택과 납품 목록에 캐스팅은 없다. 기존 캐스팅 클립을 게임에 연결하지 않는다.
+스켈레톤 마법사 원본을 이용할 후속 캐스팅 후보는 이번20종과 별도로 검토한다.
 
-보존한 의존성
-ChibiCap_v006의 리그 FBX/리그 프리팹/손 morph 메시/재질/텍스처는 기존 모션 제작에 필요한 원본입니다.
-ChibiMotion_v007/SourceGait는 해당 모션 제작 코드의 입력입니다.
-Runtime 및 루트의 기존 베이스 컬러는 현재 플레이어 프리팹과 씬에서 참조하므로 유지했습니다.
-게임 코드·컨트롤러·씬·VFX·환경·몬스터 모션과 모델 자체는 변경하지 않았습니다.
-몬스터 비교 검수 도구의 주인공 참조 경로 한 곳만 Final/Model/Protagonist_ComparisonReference.blend로 갱신했습니다. 이 파일은 기존 비교용 모습을 유지하는 정지 모델이며 애니메이션이 없습니다.
+공격 연결 시 주의
+Combat/Clips에 있는 동명의 원본은 KayKit23 전용이며 Player_Chibi에 직접 재생되지 않습니다.
+이번에 만든 ChibiMotion_v007/Clips 파일을 Attack 상태의 Motion으로 사용해야 합니다.
+새 클립은 Visual/Armature/Hips/... 실제 Player_Chibi 경로로 베이크했으므로 Humanoid Avatar를 추가할 필요가 없습니다.
+게임 컨트롤러의 공격 선택·전환·속도·히트 판정 로직은 담당자가 기존 규칙대로 연결합니다.
 
-정리 기록
-Validation/cleanup-result.json: 실제 삭제한 대상과 파일 수/용량.
-Validation/preservation-result.json: 선택 자산과 기존 필수 파일 보존 검사.
-Validation/guid-validation-current.json: 정리 후 Unity 참조 검사.
-Validation/Review20261027: 이후 실시한 전체 프레임·다시점 검수와 팔꿈치 보정 기록. 앞의 정리 시점 해시 증거와 구분해서 사용해야 합니다.
-Validation/Airborne20261027: 후속 상승·낙하 루프 수정과 검수 기록. 앞의 전체 검수는 이번 두 클립 수정 전의 역사적 기록입니다.
-Validation/StorageCleanup20261027: 머지 후 사용 의존성, 외부GIF복사검증, 실제 삭제776개와 최종 보존·참조 검증 기록.
-현재 팀원 작업에서 Player_Chibi.controller는 기존 v007모션8개를 참조합니다. 이번 Rise/Fall2개는 게임 컨트롤러에 연결하지 않았습니다.
+검 소품
+ChibiMotion_v007/Prefabs/Longsword_Chibi_SocketProp.prefab
+이 프리팹을 Player_Chibi의 RightHand/WeaponSocket 자식으로 두고 local position=0, rotation=identity, scale=1로 사용합니다.
+해당 소켓은 실제 Player_Chibi에 이미 존재하며 새 공격 클립이 양손 파지에 필요한 소켓 위치·회전·크기를 재생합니다.
+원본 Combat 검의 메시·재질을 재사용했습니다. 예전 +Y 축 검을 혼용하면 방향이 달라질 수 있습니다.
+비공격 상태의 장착 여부·소켓 복귀·표시 정책은 게임 측에서 처리하며 이 작업은 런타임 장착 코드를 추가하지 않았습니다.
+
+기존 클립과 점프 진단
+기존 비공격15종은 그대로 유지했습니다. Rise/Fall은2026-10-27 버전이며 이번에는 수정하지 않았습니다.
+2026-10-29 진단 기준 커밋c55551a3의 Player_Chibi.controller Air에는 Jump_Apex_Loop 하나만 연결되어 있었습니다.
+해당 기준본에는 VelocityY를 이용하는 Rise/Apex/Fall BlendTree가 없었습니다. 최신develop 및 팀원 작업본은 담당자가 다시 확인해야 합니다.
+클립 자체도 측면에서 자세 차이가 작습니다. 진단 수치와 상태 연결은 Validation/ChibiCompatibility20261029/Jump에 있습니다.
+이번 GIF는 기존 클립의 Idle → Takeoff → Rise → Apex → Fall → Land → Idle 의도 순서를 보여줍니다.
+높이0.66m·체공1.2초로 압축한 오프라인 자세 검수이며 실제 게임 물리/컨트롤러 재현 영상이 아닙니다.
+
+GIF와 검수
+모든 GIF/렌더 프레임은 프로젝트 밖 ~/Desktop/OZGL3_ArtReview에 저장합니다.
+최신 갤러리: Characters/Protagonist01/Final/Review/Compatibility20261029/index.html
+전체 선택 갤러리: Characters/Protagonist01/Final/Review/index.html
+프로젝트의 Review/index.html은 외부 갤러리 안내용 파일입니다.
+Validation/ChibiCompatibility20261029에 변환 소스, 파지 수치, 전체 메시 검수, 실제 Animator 재생 비교 및 인계 기록을 보관합니다.
+검수용 임시 복제본에서만 런타임 스크립트/물리를 제거합니다. 실제 Player_Chibi와 Player_Chibi.controller는 변경하지 않습니다.
+
+출처와 재현
+- 검 공격: Combat 폴더에 보존한 승인된 KayKit23 공격3종 → 치비24본으로 재변환.
+- 사망: 프로젝트의 KayKit Skeleton_Mage.fbx 내 Death_A.
+- 사다리: 프로젝트에 이미 있는 Mixamo Climbing Ladder.fbx / Climb.anim. 원래 Mixamo Avatar에서 실제 관절 방향을 평가한 뒤 치비 Generic 곡선으로 베이크.
+- Editor/CombatRetargetUtility.cs: 서로 다른 비율·기준 자세와 팔꿈치 굽힘 방향을 처리하는 오프라인 변환 도구.
+- Editor/AdditionalMotionBuilder.cs: 사망·사다리 클립 생성.
+- Editor/ChibiCompatibilityReview.cs 및 AnimatorCompatibilityValidator.cs: 실제 Player_Chibi 복제본의 저장 클립 검수.
+라이선스와 원본 출처는 기존 Combat/Model 문서와 planning/Art_Assets_Provenance_and_QA_2026-10-27 보고서에도 기록되어 있습니다.
+
+원본과 의존성 보존
+Model의24본 GLB, LegacyMotions의 기존15종 목록, Combat의23본 Blender/클립/메시/재질을 재현용으로 보존합니다.
+Combat 원본은 더 이상 최종 사용 클립 선택 목록에 포함하지 않습니다.
+ChibiCap_v006 리그/손 morph/재질/텍스처, ChibiMotion_v007/SourceGait와 게임에서 사용하는 Runtime 자산은 유지합니다.
+이전 정리·검수 기록은 Validation 아래 날짜별 폴더에 보존하며 현재 검수 증거와 혼동하지 않아야 합니다.

@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-29",
+  "status": "pre-render_read-only_review",
+  "scope": "Rogue, Warrior and Mage from the same KayKit Skeletons 1.0 source revision. Native source model, rig, animation keys, colors and floor behavior must be preserved. Existing game assets must not be edited. The latest parent instruction allows a separate outer prefab display wrapper scale of 0.585289224; this must not be described as unchanged source world size.",
+  "hero_reference_recommendation": {
+    "prefab": "Assets/Art/Characters/Protagonist01/Combat/Prefabs/Protagonist_Combat.prefab",
+    "clip": "Assets/Art/Characters/Protagonist01/Combat/Clips/Longsword_Attack_Chop.anim",
+    "sample_time_seconds": 0,
+    "sample_on_review_clone_only": true,
+    "keep_root_scale": [1, 1, 1],
+    "reason": "Final/selection.json identifies this as the compatible prefab for the latest three approved sword attacks. Its source is Final/Combat/Protagonist_Combat.blend. Sampling the approved attack at zero also applies the weapon activation state; the saved default WeaponRoot is inactive.",
+    "alternative": "ChibiMotion_v007/Prefabs/Protagonist_Chibi_MotionReview.prefab with matching Idle_Fists at zero for the preserved movement set.",
+    "do_not_use_as_current_final": "Runtime/Protagonist01_Visual.prefab is explicitly described as an older visual in planning/Art_Assets_Provenance_and_QA_2026-10-27.md.",
+    "binding_limit": "Combat KayKit23 and movement Chibi24 are distinct native rigs. Do not interchange their clips or rename internal hierarchy bindings.",
+    "path_note": "The Final directory is under ArtSources/Characters/Protagonist01, not Assets/Art/Characters/Protagonist01."
+  },
+  "v001_melee_modifications_not_to_inherit": [
+    "Uniform rig scale 0.5852892239763324: original Idle_Combat height 1.964840548724169m was reduced to delivery height 1.15m.",
+    "Rig world Z was adjusted to the Idle_Combat lowest point.",
+    "Cloak atlas material was replaced with flat Melee01_UrbanTeal RGB (0.055,0.12,0.135).",
+    "Glow eyes were changed to orange RGB (0.95,0.24,0.035), emission strength 0.35; skeleton material roughness became 0.88.",
+    "The 95 embedded actions were reduced to four and renamed Idle, Move, Attack, Hit.",
+    "Running_A root up curve received a constant +0.03226359188556671m and 1H_Melee_Attack_Chop +0.005913735833019018m. Native floor penetration was therefore corrected in that old sample.",
+    "Imported blade was renamed and attached with a local X -90-degree accessory-axis conversion, compensating for the old mixed GLB-rig/FBX-weapon coordinate axes. This transform is not a universal native weapon rule."
+  ],
+  "verified_evidence": [
+    "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Tools/build_monster.py",
+    "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/QA/build-manifest.json",
+    "ArtSources/Monsters/Stage01/Melee01/v001-native-motion/Research/source-provenance.json",
+    "ArtSources/Characters/Protagonist01/Final/selection.json",
+    "Assets/Art/Characters/Protagonist01/Combat/README.txt",
+    "planning/Art_Assets_Provenance_and_QA_2026-10-27.md"
+  ],
+  "review_rules": [
+    "Use one camera and the explicitly authorized outer prefab display wrapper scale of 0.585289224 consistently for the skeletons; keep the hero at its existing scale. Record source scale separately from display scale. Do not modify meshes, rest bones, limb proportions or animation values to achieve the display size.",
+    "Inspect actual skinned meshes, not only bones. Check weapon grip/aim, melee weight transfer and native spellcasting silhouettes from side and necessary auxiliary views.",
+    "Record original floor penetration, floating, loop discontinuity or weapon contact limitations without changing native model, rig, keys or colors.",
+    "A source-fidelity pass is separate from production animation quality. Do not call unchanged native defects corrected.",
+    "Unity import, saved/reloaded file and encoded timing checks still need the final delivered files and rendered frames."
+  ],
+  "visual_approval": false
+}

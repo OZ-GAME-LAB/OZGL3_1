@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "audited_on": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "type": "read-only local source and saved-image audit",
+  "limitations": [
+    "Unity Play/새 렌더/컴파일/성능 측정을 실행하지 않음",
+    "문서의 초기값과 코드/직렬화 프리팹 값을 구분",
+    "실제 출시 플랫폼과 최소 사양은 현 파일만으로 확정하지 않음",
+    "기존 CombatVFX GIF 경로는 외부 보존 목록에서 찾지 못함; 코드와 프리팹 구성을 확인한 감사"
+  ],
+  "context": {
+    "unity": "6000.3.21f1",
+    "urp": "17.3.0",
+    "vfx_graph_in_manifest": false,
+    "gameplay_plane": "XY, rigidbody Z locked, cursor unprojected on constant-Z plane",
+    "camera": {
+      "scene": "Assets/Scenes/MainScene.unity",
+      "orthographic": true,
+      "size": 8,
+      "position": [
+        0,
+        4,
+        -25
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "visual_style": "약 3등신의 모자 쓴 로우폴리 3D 주인공, 각진 KayKit 스켈레톤, 저채도 서울 도시/옥상; UI의 픽셀 스타일이 월드 전체의 픽셀아트 사용을 뜻하지 않음",
+    "recommended_vfx_style": "짧고 단순한 셀/툰 실루엣; 아이보리 코어+청록 잔광, 제한된 노랑/주황 폭발; 굵은 형태와 절제된 불티. 실사 연기/긴 고채도 네온/화면 왜곡은 우선순위 낮음",
+    "base_environment_palette": {
+      "asphalt": "#3B4652",
+      "navy": "#293D50",
+      "teal": "#498F8C",
+      "ivory": "#F1E9D4",
+      "warm_window": "#E7C781"
+    },
+    "pipeline_profiles": {
+      "pc": {
+        "depth": true,
+        "opaque": true,
+        "srp_batcher": true
+      },
+      "mobile": {
+        "depth": false,
+        "opaque": false,
+        "srp_batcher": true
+      }
+    },
+    "viewed_images": [
+      "ArtSources/Stage01Kit/Expansion20261029/Revisions/20261029-01/난간캐릭터검수.png",
+      "ArtSources/Stage01Kit/Expansion20261029/ContactSheets/NEW_01.png",
+      "ArtSources/Stage01Kit/SideviewReview/Environment/04_Tutorial_Gameplay.png"
+    ]
+  },
+  "stale_document_corrections": [
+    {
+      "old_source": "ArtSources/Stage01Kit/vfx-plan.txt, vfx-research.json (2026-10-19)",
+      "old_claim": "6개 스킬 실제 판정 없음/TestLogSkill",
+      "current": "6개 스킬과 SkillProjectile/SkillField/SkillExplosion 존재; Player와 Player_Chibi에 연결됨"
+    },
+    {
+      "old_source": "same",
+      "old_claim": "PoolManager는 monsterPrefabs 전용이며 Rent는 즉시 활성화",
+      "current": "범용 PoolRequest/PreparePool, Rent activate=false 지원; SkillSpawner는 여전히 UsePool=false"
+    },
+    {
+      "old_source": "ArtSources/Stage01Kit/environment-plan.json",
+      "old_claim": "characters_reference_height_m=1.65",
+      "current": "최신 활용 에셋 목록은 Final 주인공 1.2m 기준으로 기록; VFX 크기는 실제 플레이 프리팹 측정으로 확정"
+    }
+  ],
+  "existing_samples": {
+    "path": "Assets/Art/CombatVFX_v1",
+    "namespace": "ProjectM.CombatVfxPreview",
+    "status": "작동하는 C# 메쉬/네이티브 ParticleSystem 독립 샘플 구조; 게임에 자동 연결되지 않은 preview 전용. 런타임 품질 검증 완료를 의미하지 않음",
+    "forward": "+Z",
+    "activate": "enabled/active로 재생하지 않음; CombatVfxSample.Play 명시 호출",
+    "end": "Completed event, auto destroy/pool 없음",
+    "moving_visual": "Visual_Travel 내부를 _travelSpeed * min(t,_travelDuration)만큼 이동; gameplay projectile root와 함께 움직이면 이중 이동",
+    "extra_vertical_offset": "생성기의 Visual_Travel 초기 Y는 Dash .95 / Slash1.05 / Missile1.1 / Explosion.82; 이미 어깨/충돌 높이에 spawn하는 스킬 아래 넣으면 이중 높이 오프셋",
+    "sampling": "SetPreviewTime은 고정 60Hz 수동 ParticleSystem.Simulate, deterministic seeds; native game loop로 전환 시 중복 시뮬레이션 피할 것",
+    "shader": "URP custom transparent; ZTest LEqual, ZWrite Off, Cull Off, mesh vertex color+_Tint; external texture/distortion/light/collision 없음",
+    "effects": [
+      {
+        "name": "DashBurst",
+        "duration": 0.6,
+        "speed": 14,
+        "travel_duration": 0.22,
+        "particle_systems": 1,
+        "max_particles": 14,
+        "mesh_renderers": 5,
+        "mesh_triangles": 132
+      },
+      {
+        "name": "SlashWave",
+        "duration": 0.95,
+        "speed": 7.5,
+        "travel_duration": 0.58,
+        "particle_systems": 1,
+        "max_particles": 12,
+        "mesh_renderers": 6,
+        "mesh_triangles": 180
+      },
+      {
+        "name": "MagicMissile",
+        "duration": 1.05,
+        "speed": 8.5,
+        "travel_duration": 0.68,
+        "particle_systems": 1,
+        "max_particles": 16,
+        "mesh_renderers": 5,
+        "mesh_triangles": 136
+      },
+      {
+        "name": "Explosion",
+        "duration": 1.55,
+        "speed": 0,
+        "travel_duration": 0,
+        "particle_systems": 3,
+        "max_particles": 61,
+        "mesh_renderers": 4,
+        "mesh_triangles": 152
+      }
+    ],
+    "integration_risks": [
+      "SkillAutoRelease.lifeTime default .3 and SkillExplosion.lingerTime .3 truncate longer sample",
+      "SkillExplosion only SetActive(_blastVisual); preview sample will still require Play",
+      "VFX sample root is not SkillProjectile or SkillAutoRelease; typed Spawn/GetComponent expects root component",
+      "physical/magic shared teal needs shape/color role adjustment, generic asset pack must similarly standardize",
+      "maxParticles/renderers/triangles are composition counts, not GPU/CPU measured performance"
+    ]
+  },
+  "current_skills": [
+    {
+      "id": "sword_wave",
+      "script": "SwordWaveSkill",
+      "coefficient": 1.8,
+      "cooldown": 4,
+      "cast": 0.4,
+      "visual_socket": "SkillProjectile child",
+      "prefab": "Assets/2.Prefab/Skills/SwordWave.prefab",
+      "current": {
+        "speed": 15,
+        "max_distance": 5,
+        "hit_radius": 0.5,
+        "pierce": true,
+        "explosion_radius": 0,
+        "visual": "Cube placeholder"
+      }
+    },
+    {
+      "id": "spin_slash",
+      "script": "SpinSlashSkill",
+      "coefficient": 2.1,
+      "cooldown": 7,
+      "cast": 0.4,
+      "visual_socket": "_slashVfx SkillAutoRelease (null)",
+      "current": {
+        "hit_box": [
+          3.5,
+          2,
+          2
+        ],
+        "height": 0.65,
+        "damage": "Execute 호출 시 즉시 1회",
+        "rotation": "Quaternion.identity"
+      }
+    },
+    {
+      "id": "flurry_slash",
+      "script": "FlurrySlashSkill",
+      "coefficient": 3.75,
+      "cooldown": 12,
+      "cast": 0.4,
+      "visual_socket": "_slashVfx SkillAutoRelease (null)",
+      "current": {
+        "count": 5,
+        "interval": 0.08,
+        "last_hit": 0.32,
+        "hit_box": [
+          1.8,
+          1.6,
+          2
+        ],
+        "forward": 1,
+        "height": 0.65,
+        "rotation": "+Z -> FacingX",
+        "cancel": "PlayerState.Skill에서 벗어나면 남은 타격 중단"
+      }
+    },
+    {
+      "id": "magic_bolt",
+      "script": "MagicBoltSkill",
+      "coefficient": 1.65,
+      "cooldown": 5,
+      "cast": 0.4,
+      "visual_socket": "projectile child and SkillProjectile._explosionVfx SkillAutoRelease (null)",
+      "prefab": "Assets/2.Prefab/Skills/MagicBolt.prefab",
+      "current": {
+        "speed": 12,
+        "max_distance": 8,
+        "hit_radius": 0.4,
+        "pierce": true,
+        "explosion_radius": 1.5,
+        "explode_at_end": false,
+        "visual": "Sphere placeholder"
+      },
+      "uncertainty": "script notes design instant target-point AoE versus current flying projectile; design decision remains"
+    },
+    {
+      "id": "mana_field",
+      "script": "ManaFieldSkill",
+      "coefficient": 4,
+      "cooldown": 9,
+      "cast": 0.4,
+      "visual_socket": "SkillField child",
+      "prefab": "Assets/2.Prefab/Skills/ManaField.prefab",
+      "current": {
+        "range": 7,
+        "hit_box": [
+          4,
+          1.5,
+          2
+        ],
+        "ticks": 5,
+        "interval": 0.5,
+        "first_tick": "immediate",
+        "last_tick_nominal": 2,
+        "visual": "Cube placeholder",
+        "root_scale": [
+          4,
+          0.1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "chain_blast",
+      "script": "ChainBlastSkill",
+      "coefficient": 3.45,
+      "cooldown": 13,
+      "cast": 0.4,
+      "visual_socket": "SkillExplosion._warningVisual/null and _blastVisual/Sphere",
+      "prefab": "Assets/2.Prefab/Skills/ChainBlast_Explosion.prefab",
+      "current": {
+        "count": 5,
+        "spacing": 1.5,
+        "first_distance": 1.5,
+        "interval": 0.12,
+        "last_blast": 0.48,
+        "radius": 1.5,
+        "linger": 0.3,
+        "root_scale": [
+          1.5,
+          1.5,
+          1.5
+        ]
+      }
+    }
+  ],
+  "pool": {
+    "skill_spawner_use_pool": false,
+    "current": "Spawn Instantiate, Release Destroy",
+    "pool_capability": "Generic PoolRequest/PreparePool, Rent activate=false, IsRented/Return supported",
+    "proposal": "Register VFX prefabs, rent inactive, assign transform/tint/radius, clear particles/trails, enable+Play, return once every child tail ended. Retain generation token/cancel outstanding callbacks.",
+    "source": "Assets/1.Script/Skill/SkillSpawner.cs:10, Assets/1.Script/CoreSystem/PoolManager.cs:75/128"
+  },
+  "handoff_contract": {
+    "root": "unit scale (1,1,1), pivot at gameplay hit/ground origin; Visual child owns asset remapping",
+    "orientation": "local +Z forward -> Quaternion.LookRotation(XY direction); billboard blast on camera plane; floor shape on XZ with vertical edge cue",
+    "movement": "gameplay SkillProjectile owns root translation; VFX no collision/no damage/no extra travel",
+    "events": [
+      "Spawn/Configure(position,direction,scale,tint,seed)",
+      "Play/Start",
+      "OnImpact(hitPoint)",
+      "Tick(optional small pulse)",
+      "Stop(emit off but allow tail)",
+      "ResetAndRelease(clear all state)"
+    ],
+    "lifetimes": "projectile until actual end/impact, field from Init until active data ends, blast after Detonate. Residual smoke detached or lifetime-aware release so parent cannot cut tail.",
+    "damage": "VFX never applies damage; current totalDamage split by count is gameplay's responsibility",
+    "deliverables": [
+      "VFX_Dash",
+      "VFX_SlashProjectile",
+      "VFX_Spin",
+      "VFX_FlurryHit",
+      "VFX_MagicProjectile",
+      "VFX_MagicImpact",
+      "VFX_MagicField",
+      "VFX_ChainWarning",
+      "VFX_Explosion",
+      "one configuration sheet for duration/radius/tint/tail/material/dependencies"
+    ]
+  },
+  "production_options": [
+    {
+      "name": "기존 샘플을 런타임용으로 정리",
+      "suitability": "색/면 스타일 일관성 최고, 완전 새 제작보다 작업 적음",
+      "work": [
+        "preview driver와 gameplay 이동 분리",
+        "단위 pivot/height/scale normalize",
+        "Play/Stop/tail/Release adapter",
+        "Spin/Field/Warning 추가",
+        "same real camera A/B"
+      ],
+      "estimate": "기본 런타임 adapter+8~9종 초안 2~4 person-days, polish/QA 추가 2~3일; 견적 추정"
+    },
+    {
+      "name": "무료 완성 prefab 주력 + 제한적 가공",
+      "suitability": "가장 현실적인 우선안",
+      "work": [
+        "주력팩 1개 + 보조 텍스처/참격팩 1개",
+        "URP/material 호환 검사",
+        "팔레트/입자/크기/타이밍 조절",
+        "공통 lifecycle wrapper",
+        "all skill integration"
+      ],
+      "estimate": "주력 2개 후보 도입/A-B 0.5~1일, 스타일/스킬 통합 1~2일, QA .5~1일; 견적 추정"
+    },
+    {
+      "name": "2D flipbook + ParticleSystem + mesh/trail 직접 조합",
+      "suitability": "생성형 3D 결과 대신 엔진 네이티브 조합; 가벼운 수작업 대안",
+      "work": [
+        "ring/crescent/spark/dust masks",
+        "8~16-frame impact/explosion",
+        "URP/Particles/Unlit",
+        "short TrailRenderer",
+        "reuse one master graph only if necessary"
+      ],
+      "estimate": "초안 3~5일, 초보/툴학습이면 1~2주; 견적 추정"
+    },
+    {
+      "name": "VFX Graph",
+      "suitability": "현재 manifest에 없고 규모가 작아 우선순위 낮음",
+      "work": [
+        "GPU 수천~수만 입자 환경 연출 필요 시 별도 성능/플랫폼 검증"
+      ],
+      "estimate": "도입/학습 포함 추가 비용, 보편적인 더 빠른 방식으로 가정하지 않음"
+    },
+    {
+      "name": "AI 이미지/3D 생성",
+      "suitability": "콘셉트/단일 마스크 초안에 제한; 주력 animated VFX 직접 생성은 낮은 우선순위",
+      "work": [
+        "텍스처 alpha/경계/프레임 continuity 수작업 QA",
+        "3D mesh generator는 timed emission/event/URP material/pooling을 생성하지 않음",
+        "Blender low-poly shards/rings authored then engine timing better"
+      ],
+      "estimate": "생성 크레딧 0일 보장 불가; 무료 조건도 별도 확인"
+    }
+  ],
+  "acceptance": [
+    "실제 정면 orthographic camera 크기로 좌우/공중/계단/앞뒤 가림 비교",
+    "Hit 프레임과 소리/숫자/flash 일치; repeated hits reduce brightness; DOT no full blast every tick",
+    "모든 프리팹 URP17.3 pink/missing shader 및 depth/opaque dependency 검사",
+    "1/5/10 simultaneous explosions + repeated field + camera move, pause/resume, cancel/death",
+    "Reuse clears particles/trails, no stale delayed callbacks; repeated rent/return GC and CPU/GPU record",
+    "잔광/연기 전체 종료까지 남기되 gameplay radius/active time과 오인하지 않음",
+    "GameUI.Damage.Show existing sparks avoid double dominant impacts"
+  ],
+  "references": [
+    {
+      "path": "Packages/manifest.json",
+      "line": 10,
+      "finding": "URP17.3; VFX Graph absent"
+    },
+    {
+      "path": "ProjectSettings/ProjectVersion.txt",
+      "line": 1,
+      "finding": "Unity6000.3.21f1"
+    },
+    {
+      "path": "Assets/Scenes/MainScene.unity",
+      "line": 236,
+      "finding": "orthographic size8"
+    },
+    {
+      "path": "Assets/1.Script/Player/PlayerController.cs",
+      "line": 162,
+      "finding": "freeze Z"
+    },
+    {
+      "path": "Assets/1.Script/Player/InputManager.cs",
+      "line": 114,
+      "finding": "constant-Z aim point"
+    },
+    {
+      "path": "Assets/Art/CombatVFX_v1/Samples/CombatVfxSample.cs",
+      "line": 54,
+      "finding": "explicit Play"
+    },
+    {
+      "path": "Assets/Art/CombatVFX_v1/Samples/CombatVfxSample.cs",
+      "line": 119,
+      "finding": "internal travel"
+    },
+    {
+      "path": "Assets/Art/CombatVFX_v1/Editor/CombatVfxBuilder.cs",
+      "line": 151,
+      "finding": "Visual_Travel and baked Y offset"
+    },
+    {
+      "path": "Assets/Art/CombatVFX_v1/Editor/CombatVfxBuilder.cs",
+      "line": 170,
+      "finding": "ParticleSystem playOnAwake=false/loop=false"
+    },
+    {
+      "path": "Assets/1.Script/Skill/SkillSpawner.cs",
+      "line": 10,
+      "finding": "UsePool=false"
+    },
+    {
+      "path": "Assets/1.Script/CoreSystem/PoolManager.cs",
+      "line": 128,
+      "finding": "Rent activate argument"
+    },
+    {
+      "path": "Assets/1.Script/Skill/SkillExplosion.cs",
+      "line": 60,
+      "finding": "linger time and actual damage"
+    },
+    {
+      "path": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "line": 236,
+      "finding": "Spin _slashVfx null"
+    },
+    {
+      "path": "Assets/2.Prefab/Player/Player_Chibi.prefab",
+      "line": 258,
+      "finding": "Flurry _slashVfx null"
+    },
+    {
+      "path": "Assets/2.Prefab/Skills/MagicBolt.prefab",
+      "line": 48,
+      "finding": "serialized speed12/range8"
+    },
+    {
+      "path": "Assets/02.parkhansol_/Docs/CombatFeedback.md",
+      "line": 3,
+      "finding": "same frame feedback"
+    },
+    {
+      "path": "planning/Project_M_활용에셋목록_2026-10-29.txt",
+      "line": 207,
+      "finding": "VFX isolated samples on hold"
+    }
+  ]
+}

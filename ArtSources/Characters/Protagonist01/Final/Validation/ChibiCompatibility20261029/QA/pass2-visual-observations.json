@@ -1,0 +1,28 @@
+{
+  "pass": 2,
+  "method": "Direct inspection of 240px-per-frame contact sheets composed from actual saved-clip Unity renders on Player_Chibi, not rig-only inspection.",
+  "reviewer": "chibi_jump_diagnosis",
+  "scope": "Presentation/pose observations; these do not supersede binding, quaternion or mesh-vertex audits.",
+  "status": "Changes recommended; not final visual acceptance.",
+  "observations": [
+    {
+      "clip": "Death_Fall",
+      "view": "Side",
+      "file": "Contacts/Death_Fall_Side_01.jpg",
+      "finding": "Late falling pose reaches the left render border; hat is clipped at that edge.",
+      "recommendation": "Shift death-specific camera target or widen orthographic framing; preserve motion."
+    },
+    {
+      "clip": "Ladder_Climb_Loop",
+      "views": [
+        "Side",
+        "Front"
+      ],
+      "finding": "Side shows substantial backward body inclination throughout and hands clustered near the face with low reach. The Front view shows the character back, unlike the other reviewed clips.",
+      "recommendation": "Verify intended ladder-facing axis, upright trunk, and alternating hand reaches against a temporary ladder reference; label any deliberate facing difference."
+    }
+  ],
+  "reportedToParent": true,
+  "gifTechnicalChecks": "The retained five GIF records have verified frame counts and total durations at30Hz sampling with GIF-centisecond quantization.",
+  "scopeNote": "Filtered on2026-10-30 to exclude the user-rejected casting work. Retained non-casting numerical and asset-hash records are unchanged historical evidence; no new build or validation is claimed by this filtering step. Existing sourceAuditSHA256 values identify the original pre-filter reports."
+}
