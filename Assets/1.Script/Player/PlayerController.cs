@@ -77,6 +77,11 @@ public class PlayerController : MonoBehaviour
 
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
+    // 무기 장착 시 평타 교체 (PlayerWeapon에서 호출)
+    public void SetAttack(IPlayerAttack attack)
+    {
+        _attack = attack;
+    }
     public PlayerSkill Skills { get { return _skills; } } //PlayerState_Skill이 장착 스킬·쿨다운을 읽기 위해
     public PlayerState CurrentStateType { get { return _currentStateType; } }
     public Ladder CurrentLadder { get { return _currentLadder; } }
