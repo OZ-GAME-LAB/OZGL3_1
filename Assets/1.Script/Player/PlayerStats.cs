@@ -37,7 +37,9 @@ public class PlayerStats : MonoBehaviour, IStatSource
     [SerializeField] private StatConfig _magic = new StatConfig(20f, 3f, 5);       // 마법 공격력 20, +3, 최대 5
 
     [Header("Apply Target")]
-    [SerializeField] private PunchAttack _punchAttack; // 비우면 같은 오브젝트에서 찾음
+    // 주먹, 검(나중엔 스태프)까지 힘, 민첩을 받는 평타 전부
+    // 맨손일 때도 검 공격력이 미리 맞춰져 있어야 장착 순간 바로 맞는 값으로 때림
+    private IAttackStatReceiver[] _attackReceivers;
 
     private PlayerController _player;
     private PlayerHealth _health;
@@ -103,9 +105,9 @@ public class PlayerStats : MonoBehaviour, IStatSource
         {
             _health = GetComponent<PlayerHealth>();
         }
-        if (_punchAttack == null)
+        if (_attackReceivers == null)
         {
-            _punchAttack = GetComponent<PunchAttack>();
+            _attackReceivers = GetComponents<IAttackStatReceiver>();
         }
     }
 
@@ -236,10 +238,7 @@ public class PlayerStats : MonoBehaviour, IStatSource
         switch (type)
         {
             case StatType.Strength:
-                if (_punchAttack != null)
-                {
-                    _punchAttack.SetAttackPower(PhysicalAttack);
-                }
+                ApplyAttackPower(SkillDamageType.Physical, PhysicalAttack); // 주먹·검
                 break;
 
             case StatType.Vitality:
@@ -247,16 +246,30 @@ public class PlayerStats : MonoBehaviour, IStatSource
                 break;
 
             case StatType.Agility:
-                if (_punchAttack != null)
+                foreach (IAttackStatReceiver receiver in _attackReceivers)
                 {
-                    _punchAttack.SetSpeedBonus(AgilityBonus);
+                    receiver.SetSpeedBonus(AgilityBonus);
                 }
                 _player.SetMoveSpeedBonus(AgilityBonus);
                 break;
 
             case StatType.Magic:
                 // 마법 스킬이 사용 시점에 MagicAttack을 읽어 감
+                ApplyAttackPower(SkillDamageType.Magic, MagicAttack); // 스태프 같은 마법 평타용
                 break;
+        }
+    }
+
+    // 평타 중 해당 피해 유형만 골라서 공격력을 넣음
+    // 힘을 올렸는데 스태프 평타 피해가 오르거나, 마력을 올렸는데 검이 세지면 안 되므로
+    private void ApplyAttackPower(SkillDamageType type, float attackPower)
+    {
+        foreach (IAttackStatReceiver receiver in _attackReceivers)
+        {
+            if (receiver.DamageType == type)
+            {
+                receiver.SetAttackPower(attackPower);
+            }
         }
     }
 }

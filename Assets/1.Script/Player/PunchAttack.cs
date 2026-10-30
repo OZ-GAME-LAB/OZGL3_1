@@ -6,7 +6,7 @@ using UnityEngine;
 
 // 기본 공격: 주먹 (물리). 기획 v0.5 - 최초 피해 물리 20, 민첩 구매 1회당 공격 속도 +3%.
 // 피해/속도 값은 나중에 PlayerStat(추가예정) 에서 추가해준다
-public class PunchAttack : MonoBehaviour, IPlayerAttack
+public class PunchAttack : MonoBehaviour, IPlayerAttack, IAttackStatReceiver
 {
     [Header("Base")]
     [SerializeField] private float _baseDuration = 0.3f; // 민첩 보너스 0일 때 공격 상태 유지 시간
@@ -28,6 +28,8 @@ public class PunchAttack : MonoBehaviour, IPlayerAttack
 
     public float Duration { get { return _baseDuration / (1f + _speedBonus); } }
     public float Damage { get { return Mathf.Round(_attackPower * _damageCoefficient); } }
+    // 주먹은 물리 -> 힘을 받음
+    public SkillDamageType DamageType { get { return SkillDamageType.Physical; } }
 
     private void Awake()
     {
