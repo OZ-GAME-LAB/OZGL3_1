@@ -303,54 +303,110 @@ public class PlayerState_Dash : PlayerState_Base
 }
 
 // 공격 흐름(방향, 정지, 종료 타이밍)만 담당. 실제 판정은 IPlayerAttack에 맡김.
+// 콤보 공격(IComboAttack)이면 공격 중 입력을 기억해 뒀다가 다음 타로 이어 줌
 public class PlayerState_Attack : PlayerState_Base
 {
     private float _duration;
     private IPlayerAttack _pendingAttack;
+    private IComboAttack _combo;   // 주먹이면 null -> 기존과 완전히 같은 흐름
+    private ProtagonistAnimationDriver _visual;
     private Vector3 _aimPoint;
     private float _contactAt;
     private bool _committed;
-    
+    private bool _nextQueued;      // 이번 타 도중 클릭했는지
+    private float _stepStartTime;  // 타마다 시간을 새로 재야 해서 ElapsedTime 대신 사용
+
     public override void EnterState(PlayerController player)
     {
         base.EnterState(player);
-    
-        Vector3 aimPoint = player.Input.GetAimPoint(player.transform.position);
-        player.LookAtImmediately(aimPoint.x - player.transform.position.x); // 커서 방향 바라보기
-    
+
+        // 상태 진입 시점의 공격을 붙잡아 둠 -> 도중에 무기가 바뀌어도 이번 공격은 끝까지 같은 걸로
+        _pendingAttack = player.Attack;
+        _combo = _pendingAttack as IComboAttack;
+        _visual = player.GetComponent<ProtagonistAnimationDriver>();
+
+        if (_combo != null)
+        {
+            _combo.BeginCombo(); // 공격을 새로 시작하면 항상 1타부터
+        }
+
+        _animator.SetBool("Attacking", true);
+        StartStep(player);
+    }
+
+    // 한 타 시작 (주먹은 한 번, 검은 최대 세 번 불림)
+    private void StartStep(PlayerController player)
+    {
+        // 타마다 커서 방향을 다시 봄 -> 콤보 중에 뒤돌아 베기 가능
+        _aimPoint = player.Input.GetAimPoint(player.transform.position);
+        player.LookAtImmediately(_aimPoint.x - player.transform.position.x);
+
         if (player.IsGrounded)
         {
             player.Stop();
         }
-    
-        _animator.SetTrigger("Attack");
-        _animator.SetBool("Attacking", true);
 
-        IPlayerAttack attack = player.Attack;
-        _pendingAttack = attack;
-        _aimPoint = aimPoint;
         _committed = false;
-        if (attack != null)
+        _nextQueued = false;
+        _stepStartTime = Time.time;
+        _duration = _pendingAttack != null ? _pendingAttack.Duration : player.AttackDuration;
+
+        // 검은 매 타마다 칼이 닿는 순간이 달라서 콤보 쪽 값을 씀. 주먹은 기존 값 그대로
+        float contactNormalized;
+        if (_combo != null)
         {
-            _duration = attack.Duration;
+            contactNormalized = _combo.ContactNormalized;
+            _animator.SetInteger("ComboIndex", _combo.CurrentStep); // 트리거보다 먼저 -> 맞는 상태로 전환
+
+            // 클립을 이번 타 시간에 맞춰 재생
+            // AttackSpeed는 ProtagonistAnimationDriver가 매 프레임 주먹 기준으로 덮어씀 -> 서로 안 부딪히게
+            AnimationClip clip = _combo.CurrentClip;
+            if (clip != null)
+            {
+                _animator.SetFloat("ComboSpeed", clip.length / Mathf.Max(0.01f, _duration));
+            }
         }
         else
         {
-            _duration = player.AttackDuration;
+            contactNormalized = _visual != null ? _visual.AttackContactNormalized : 0f;
         }
-        var visual = player.GetComponent<ProtagonistAnimationDriver>();
-        _contactAt = visual != null ? _duration * visual.AttackContactNormalized : 0f;
-        if (_contactAt <= 0f) CommitAttack(player);
+        _contactAt = _duration * contactNormalized;
+
+        _animator.ResetTrigger("Attack"); // 이전 타 트리거가 남아 두 번 전환되는 것 방지
+        _animator.SetTrigger("Attack");
+
+        if (_contactAt <= 0f)
+        {
+            CommitAttack(player);
+        }
     }
-    
+
     public override void UpdateState(PlayerController player)
     {
-        if (!_committed && ElapsedTime >= _contactAt) CommitAttack(player);
-        if (ElapsedTime >= _duration)
+        float elapsed = Time.time - _stepStartTime;
+
+        // 입력은 한 프레임만 살아 있음(ClearRequests) -> 눌린 순간 기억해 둬야 타 끝날 때 이어 줄 수 있음
+        if (_combo != null && player.IsAttackRequested)
         {
+            _nextQueued = true;
+        }
+
+        if (!_committed && elapsed >= _contactAt)
+        {
+            CommitAttack(player);
+        }
+
+        if (elapsed >= _duration)
+        {
+            if (_nextQueued && _combo.TryAdvance())
+            {
+                StartStep(player);
+                return;
+            }
             player.ChangeToDefaultState();
         }
     }
+
     private void CommitAttack(PlayerController player)
     {
         if (_committed) return;
