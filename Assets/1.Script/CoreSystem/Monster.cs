@@ -52,14 +52,16 @@ public class Monster : MonoBehaviour, IDamageable
         float skillDamage = data is MonsterData normal ? normal.SkillDamage : 0f;
         if (!(data.HP > 0f) || float.IsInfinity(data.HP) ||
             !(data.MeleeDamage >= 0f) || float.IsInfinity(data.MeleeDamage) ||
+            !(data.MoveSpeed >= 0f) || float.IsInfinity(data.MoveSpeed) ||
             !(skillDamage >= 0f) || float.IsInfinity(skillDamage))
-            throw new ArgumentException($"몬스터 '{data.Id}'의 HP와 데미지를 확인하세요.");
+            throw new ArgumentException($"몬스터 '{data.Id}'의 HP, 데미지, 이동속도를 확인하세요.");
 
         DataId = data.Id;
         MonsterName = data.Name;
         MonsterType = data.MonsterType;
         maxHP = data.HP;
         attackDamage = data.MeleeDamage;
+        moveSpeed = data.MoveSpeed;
         SkillDamage = skillDamage;
         hp = maxHP;
         IsDead = false;

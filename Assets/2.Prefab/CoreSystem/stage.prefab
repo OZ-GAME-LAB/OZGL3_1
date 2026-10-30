@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 972621739436678181}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 8.4, y: 5.49, z: 0}
+  m_LocalPosition: {x: 8.4, y: 6.36, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7492196313949831594}
   - component: {fileID: 8710531662424785877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2984367231159694652}
   - component: {fileID: 3441855805075283109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stage
   gates: []
   bossGate: {fileID: 3701701769077240389}
+  state: 0
 --- !u!1 &7441219851636034096
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ MonoBehaviour:
   - {fileID: 7771979947780745656}
   - {fileID: 3440775068186877950}
   bossGate: {fileID: 3701701769077240389}
+  state: 0
 --- !u!1 &8969040139729596635
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stage
   gates: []
   bossGate: {fileID: 3701701769077240389}
+  state: 0
 --- !u!1 &9081118732564039065
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 4000509884964087676}
 --- !u!1001 &2062367791239146939
 PrefabInstance:
@@ -611,7 +613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000509884964087676, guid: 49d46d7657eee7441aa44154d1993091, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.11
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 4000509884964087676, guid: 49d46d7657eee7441aa44154d1993091, type: 3}
       propertyPath: m_LocalPosition.z
@@ -684,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000509884964087676, guid: 49d46d7657eee7441aa44154d1993091, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.99
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 4000509884964087676, guid: 49d46d7657eee7441aa44154d1993091, type: 3}
       propertyPath: m_LocalPosition.z

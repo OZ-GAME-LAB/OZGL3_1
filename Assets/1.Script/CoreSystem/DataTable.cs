@@ -25,6 +25,7 @@ public class BaseMonsterData : BaseData
     public MonsterType MonsterType;
     public float HP;
     public float MeleeDamage;
+    public float MoveSpeed;
 }
 [Serializable, Preserve]
 public class MonsterData : BaseMonsterData

@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c53f8d10684ac19e7d30f41a625980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterBehaviour
-  detectionRange: 10
+  detectionRange: 7

@@ -6,6 +6,7 @@
     "MonsterType": "0",
     "HP": 90,
     "MeleeDamage": 10,
+    "MoveSpeed": 1.3,
     "SkillDamage": 10
   },
   {
@@ -15,6 +16,7 @@
     "MonsterType": "1",
     "HP": 80,
     "MeleeDamage": 20,
+    "MoveSpeed": 1.1,
     "SkillDamage": 10
   },
   {
@@ -24,6 +26,7 @@
     "MonsterType": "2",
     "HP": 100,
     "MeleeDamage": 30,
+    "MoveSpeed": 1,
     "SkillDamage": 10
   },
   {
@@ -33,6 +36,7 @@
     "MonsterType": "0",
     "HP": 90,
     "MeleeDamage": 10,
+    "MoveSpeed": 1.4,
     "SkillDamage": 10
   },
   {
@@ -42,6 +46,7 @@
     "MonsterType": "1",
     "HP": 80,
     "MeleeDamage": 20,
+    "MoveSpeed": 1.2,
     "SkillDamage": 10
   },
   {
@@ -51,6 +56,7 @@
     "MonsterType": "2",
     "HP": 100,
     "MeleeDamage": 30,
+    "MoveSpeed": 1.1,
     "SkillDamage": 10
   }
 ]
