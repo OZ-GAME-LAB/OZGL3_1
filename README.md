@@ -28,3 +28,12 @@ enabled for version control.
 
 Unity recreates `Library`, `Temp`, `Logs`, and other generated files locally.
 These folders, personal settings, and generated IDE project files are ignored.
+
+For a character test, use `Assets/2.Prefab/Player/Player_Chibi.prefab`. The
+staff animation example is `Player_Chibi_StaffTipBolt.prefab` under
+`Assets/Art/Characters/Protagonist01/AnimationStudies/StaffTipBolt20261102/`.
+In Play Mode it loops the armed idle. Select the instance and trigger
+`Cast` in the Animator window to play the shot and return to idle.
+
+Keep capture frames, GIFs, personal reports and prompts outside the Unity
+project. `ArtSources/` holds editable art and its source licenses.

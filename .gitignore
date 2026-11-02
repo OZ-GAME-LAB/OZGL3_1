@@ -127,3 +127,22 @@ GEMINI.md
 .vscode/mcp.json
 /Docs/
 /.local-validation/
+
+# Local art review output and one-off production notes
+__pycache__/
+*.py[cod]
+/ArtReview/
+/ArtReports/
+/ArtSources/**/QA/
+/ArtSources/**/Validation/
+/ArtSources/**/Review/
+/ArtSources/**/Research/
+/ArtSources/Stage01Kit/ResearchVFX*/
+/ArtSources/Stage01Kit/SideviewReview/
+/ArtSources/Stage01Kit/Expansion*/Renders/
+/ArtSources/**/concept-prompt.txt
+/ArtSources/**/generation.json
+/planning/*_QA_*
+/planning/*_Study_and_Research_*
+/planning/*_조사와적용계획_*
+/planning/*_전체조사_*

@@ -1,13 +1,8 @@
-ChibiCap v006 — 기존 v007 제작 의존성
+주인공 ChibiCap 모델 (Generic 24본)
 
-최종 비공격 모션은 ../ChibiMotion_v007에 있습니다.
-이 폴더에는 해당 제작 코드에서 사용하는 다음 원본만 남깁니다.
-- Rig/Protagonist_ChibiCap_Rig.fbx
-- Prefabs/Protagonist_ChibiCap_Rig.prefab
-- Meshes/Protagonist_ChibiCap_Fists.asset
-- Materials/Protagonist_ChibiCap_Unlit.mat
-- Textures/Protagonist_ChibiCap_BaseColor.png
+Prefabs/Protagonist_ChibiCap_Rig.prefab을 씬에 배치하면 기본 모델을 볼 수 있습니다.
+Rig/Protagonist_ChibiCap_Rig.fbx에 뼈와 스킨이 있으며, Meshes/Protagonist_ChibiCap_Fists.asset은 주먹 형상을 포함한 메시입니다.
+재질은 Materials/Protagonist_ChibiCap_Unlit.mat, 텍스처는 Textures/Protagonist_ChibiCap_BaseColor.png입니다.
+편집용 모델: ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ChibiCap_Rig.glb
 
-초기 정적 모델 프리뷰와 Punch_Elastic_Preview는 최종 선택에서 제외하여 삭제했습니다.
-보존된 모델링 정본: ArtSources/Characters/Protagonist01/Final/Model/Protagonist_ChibiCap_Rig.glb
-최종 사용 목록·GIF: ArtSources/Characters/Protagonist01/Final/Review/index.html
+같은 24본을 사용하는 이동·전투·소품 동작과 호환 프리팹은 ../ChibiMotion_v007에 있습니다.
