@@ -148,9 +148,10 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
 
-        if (_inputManager == null)
+        // 인스펙터에 안 넣어도 동작하게 -> 칸을 깜빡 비워도 씬의 InputManager를 찾아 씀
+        if (!TryFindInputManager())
         {
-            Debug.LogError("[Player:Awake] InputManager가 연결되지 않았습니다.");
+            Debug.LogError("[Player:Awake] InputManager를 찾을 수 없습니다. 씬에 InputManager가 있는지 확인하세요.");
             return;
         }
 
@@ -172,7 +173,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputManager.OnJumpAction += OnJump;
+        // Awake에서 못 찾고 빠져나왔으면 상태 목록도 없음 -> 여기서 Null이 연달아 나는 것 방지
+        if (_inputManager == null || _playerStates == null)
+        {
+            return;
+        }
+
+            _inputManager.OnJumpAction += OnJump;
         _inputManager.OnDashAction += OnDash;
         _inputManager.OnAttackAction += OnAttack;
         _inputManager.OnSkillAction += OnSkill;
@@ -212,6 +219,12 @@ public class PlayerController : MonoBehaviour
     {
         ClearRequests();
         EndDropThrough(); // 통과 중에 꺼지면 충돌이 꺼진 채로 남지 않게
+
+        // 못 찾은 상태로 꺼질 때 구독 해제에서 에러 나지 않게
+        if (_inputManager == null)
+        {
+            return;
+        }
         _inputManager.OnJumpAction -= OnJump;
         _inputManager.OnDashAction -= OnDash;
         _inputManager.OnAttackAction -= OnAttack;
@@ -240,6 +253,33 @@ public class PlayerController : MonoBehaviour
             {PlayerState.Hit, new PlayerState_Hit() },
             {PlayerState.Dead, new PlayerState_Dead() }
         };
+    }
+
+    // 인스펙터 -> 씬 순서로 찾음. 찾았으면 true
+    // 입력은 씬의 InputManager 하나가 담당 (SceneGameLink가 그걸 켜고 끄므로 같은 걸 써야 함)
+    private bool TryFindInputManager()
+    {
+        // 직접 넣어 둔 게 있으면 그걸 우선
+        if (_inputManager != null)
+        {
+            return true;
+        }
+
+        // SceneGameLink가 입력을 꺼 둔 상태(비활성)여도 찾을 수 있게
+        InputManager[] found = FindObjectsByType<InputManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        if (found.Length == 0)
+        {
+            return false;
+        }
+
+        // 두 개 이상이면 같은 Input Action을 서로 껐다 켰다 해서 입력이 가끔 안 먹을 수 있음 -> 바로 알 수 있게 경고
+        if (found.Length > 1)
+        {
+            Debug.LogWarning($"[Player:TryFindInputManager] 씬에 InputManager가 {found.Length}개 있습니다. 하나만 두세요.");
+        }
+
+        _inputManager = found[0];
+        return true;
     }
 
     private void ClearRequests()
