@@ -750,7 +750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3122150555835479282
 Transform:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd91014dd54c7f845beb58ef0d7defc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProtagonistAnimationDriver
-  _punchClip: {fileID: -4145285778657592248, guid: e35ac131c75af224793d16098902e7b7, type: 3}
+  _punchClip: {fileID: 7400000, guid: 95b6d5a658feaef46ba100973b4b758a, type: 2}
   _skillClip: {fileID: 0}
   _attackContactNormalized: 0.82
   _allowControlKeyWalk: 1
