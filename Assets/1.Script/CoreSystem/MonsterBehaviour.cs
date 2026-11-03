@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public enum MonsterState
@@ -19,18 +20,29 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField, Min(0.01f)] private float groundProbeDepth = 0.5f;
     [SerializeField, Min(0.01f)] private float terrainPadding = 0.05f;
     private Collider bodyCollider;
+    private Collider targetCollider;
     private int groundMask;
     private float moveDirection;
     private float checkedDirection;
     private float nextTerrainCheckTime;
     private bool pathIsSafe;
-    private const float BaseAttackRange = 1f;
+    private Coroutine attackRoutine;
     private const float AttackRangeVariation = 0.1f;
 
     protected Monster Owner { get; private set; }
     public MonsterState State { get; private set; } = MonsterState.Idle;
     public Transform Target { get; private set; }
-    public float AttackRange { get; private set; }
+    public float AttackRangeX { get; private set; }
+    public float AttackRangeY { get; private set; }
+    public bool IsAttacking { get; private set; }
+    protected virtual float AttackDelay => 0.5f;
+    protected float SkillDamage => Owner.SkillDamage;
+    protected Vector3 BodyCenter => bodyCollider != null ? bodyCollider.bounds.center : transform.position;
+    protected Vector3 TargetCenter => targetCollider != null ? targetCollider.bounds.center : Target.position;
+    protected int GroundMask => groundMask;
+    protected float GroundProbeHeight => groundProbeHeight;
+    protected float GroundProbeDepth => groundProbeDepth;
+    protected float TerrainPadding => terrainPadding;
 
     protected virtual void Awake()
     {
@@ -44,19 +56,25 @@ public class MonsterBehaviour : MonoBehaviour
     {
         // Monster.OnEnable의 실행 순서에 의존하지 않고 재사용 상태를 초기화합니다.
         State = MonsterState.Idle;
+        IsAttacking = false;
+        attackRoutine = null;
         moveDirection = Mathf.Abs(transform.forward.x) > 0.01f ? Mathf.Sign(transform.forward.x) : 1f;
         checkedDirection = 0f;
         nextTerrainCheckTime = 0f;
         pathIsSafe = false;
         Target = Owner.Target;
-        AttackRange = Random.Range(BaseAttackRange - AttackRangeVariation, BaseAttackRange + AttackRangeVariation);
+        targetCollider = Target != null ? Target.GetComponent<Collider>() : null;
+        AttackRangeX = Mathf.Max(0.01f, Owner.AttackRangeX + Random.Range(-AttackRangeVariation, AttackRangeVariation));
+        AttackRangeY = Owner.AttackRangeY;
         Owner.Died += OnMonsterDied;
     }
 
     protected virtual void OnDisable()
     {
+        StopAttack();
         Owner.Died -= OnMonsterDied;
         Target = null;
+        targetCollider = null;
     }
 
     protected virtual void Update()
@@ -66,8 +84,14 @@ public class MonsterBehaviour : MonoBehaviour
             ChangeState(MonsterState.Dead);
             return;
         }
+        // 선딜레이와 패턴 실행 중에는 거리 판단 및 일반 이동을 중단합니다.
+        if (IsAttacking) return;
 
-        Target = Owner.Target;
+        if (Target != Owner.Target)
+        {
+            Target = Owner.Target;
+            targetCollider = Target != null ? Target.GetComponent<Collider>() : null;
+        }
         if (Target == null || !Target.gameObject.activeInHierarchy)
         {
             ChangeState(MonsterState.Idle);
@@ -75,10 +99,10 @@ public class MonsterBehaviour : MonoBehaviour
             return;
         }
 
-        Vector2 offset = Target.position - transform.position;
+        Vector2 offset = TargetCenter - BodyCenter;
         if (offset.sqrMagnitude > detectionRange * detectionRange)
             ChangeState(MonsterState.Idle);
-        else if (Mathf.Abs(offset.x) <= AttackRange && Mathf.Abs(offset.y) <= AttackRange)
+        else if (Mathf.Abs(offset.x) <= AttackRangeX && Mathf.Abs(offset.y) <= AttackRangeY)
             ChangeState(MonsterState.Attack);
         else
             ChangeState(MonsterState.Chase);
@@ -96,10 +120,15 @@ public class MonsterBehaviour : MonoBehaviour
         // 사망 판정은 Monster만 담당하며, 행동 상태가 이를 따릅니다.
         if (Owner.IsDead) next = MonsterState.Dead;
         else if (next == MonsterState.Dead) return;
+        if (IsAttacking && next != MonsterState.Dead) return;
         if (State == next) return;
 
         State = next;
-        if (State == MonsterState.Dead) HandleDead();
+        if (State == MonsterState.Dead)
+        {
+            StopAttack();
+            HandleDead();
+        }
     }
 
     private void OnMonsterDied(Monster monster)
@@ -120,9 +149,9 @@ public class MonsterBehaviour : MonoBehaviour
     }
     protected virtual void UpdateChase()
     {
-        float deltaX = Target.position.x - transform.position.x;
+        float deltaX = TargetCenter.x - BodyCenter.x;
         // X축이 사거리 안이면 Y축이 맞을 때까지 현재 자리에서 기다립니다.
-        if (Mathf.Abs(deltaX) <= AttackRange) return;
+        if (Mathf.Abs(deltaX) <= AttackRangeX) return;
 
         moveDirection = Mathf.Sign(deltaX);
         FaceDirection(moveDirection);
@@ -130,11 +159,54 @@ public class MonsterBehaviour : MonoBehaviour
         if (!CanMove(moveDirection)) return;
 
         Vector3 position = transform.position;
-        float destinationX = Target.position.x - Mathf.Sign(deltaX) * AttackRange;
+        float destinationX = position.x + deltaX - Mathf.Sign(deltaX) * AttackRangeX;
         position.x = Mathf.MoveTowards(position.x, destinationX, Owner.MoveSpeed * Time.deltaTime);
         transform.position = position;
     }
-    protected virtual void UpdateAttack() { }
+    protected virtual void UpdateAttack()
+    {
+        if (IsAttacking) return;
+        // 선딜레이 시작 시 공격 방향을 정하고 패턴이 끝날 때까지 유지합니다.
+        if (Target != null)
+        {
+            float deltaX = TargetCenter.x - BodyCenter.x;
+            if (Mathf.Abs(deltaX) > 0.01f) FaceDirection(Mathf.Sign(deltaX));
+        }
+        IsAttacking = true;
+        attackRoutine = StartCoroutine(RunAttack());
+    }
+
+    private IEnumerator RunAttack()
+    {
+        try
+        {
+            yield return new WaitForSeconds(Mathf.Max(0f, AttackDelay));
+            if (Owner.IsDead || !isActiveAndEnabled) yield break;
+            yield return ExecuteAttack();
+        }
+        finally
+        {
+            IsAttacking = false;
+            attackRoutine = null;
+        }
+    }
+
+    // 자식은 선딜레이 이후의 공격 내용만 구현합니다.
+    protected virtual IEnumerator ExecuteAttack()
+    {
+        yield break;
+    }
+
+    private void StopAttack()
+    {
+        if (!IsAttacking) return;
+        if (attackRoutine != null) StopCoroutine(attackRoutine);
+        attackRoutine = null;
+        IsAttacking = false;
+        OnAttackInterrupted();
+    }
+
+    protected virtual void OnAttackInterrupted() { }
     protected virtual void HandleDead() { }
 
     private void FaceDirection(float direction)
@@ -172,10 +244,28 @@ public class MonsterBehaviour : MonoBehaviour
             groundMask, QueryTriggerInteraction.Ignore);
     }
 
-    private Bounds GetBodyBounds()
+    protected Bounds GetBodyBounds()
     {
         return bodyCollider != null ? bodyCollider.bounds :
             new Bounds(transform.position + Vector3.up * 0.5f, new Vector3(0.5f, 1f, 0.5f));
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        float rangeX = Application.isPlaying ? AttackRangeX : 1f;
+        float rangeY = Application.isPlaying ? AttackRangeY : 1f;
+        Matrix4x4 previousMatrix = Gizmos.matrix;
+        Color previousColor = Gizmos.color;
+        Gizmos.matrix = Matrix4x4.identity;
+        Gizmos.color = Color.yellow;
+        // 상태 판정과 같은 월드 X/Y 범위입니다. Z축은 판정하지 않습니다.
+        Collider ownCollider = bodyCollider != null ? bodyCollider : GetComponent<Collider>();
+        Vector3 center = ownCollider != null ? ownCollider.bounds.center : transform.position;
+        Gizmos.DrawWireCube(center, new Vector3(rangeX * 2f, rangeY * 2f, 0f));
+        if (Application.isPlaying && Target != null)
+            Gizmos.DrawWireSphere(TargetCenter, 0.08f);
+        Gizmos.matrix = previousMatrix;
+        Gizmos.color = previousColor;
     }
 
     private void OnCollisionStay(Collision collision)
@@ -194,6 +284,11 @@ public class MonsterBehaviour : MonoBehaviour
         PlayerHealth player = other.GetComponentInParent<PlayerHealth>();
         if (player == null || !player.isActiveAndEnabled || player.IsDead) return;
 
+        HandleContactAttack(player);
+    }
+
+    protected virtual void HandleContactAttack(PlayerHealth player)
+    {
         Owner.Attack(player);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7626642809234045601}
   - component: {fileID: 2409131921605657330}
   - component: {fileID: 2873690002261162043}
-  - component: {fileID: -6384070351022331156}
+  - component: {fileID: 1367826792242664663}
   m_Layer: 7
   m_Name: Monster 1
   m_TagString: Untagged
@@ -132,7 +132,7 @@ MonoBehaviour:
   maxHP: 5
   damageNumberOffset: {x: 0, y: 2, z: 0}
   attackDamage: 10
---- !u!114 &-6384070351022331156
+--- !u!114 &1367826792242664663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2230925935269110599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c53f8d10684ac19e7d30f41a625980, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e94a8b172b64b2ac1ef9d36071285a3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonsterBehaviour
+  m_EditorClassIdentifier: Assembly-CSharp::RangedMonsterBehaviour
   detectionRange: 7
+  checkTravelDistance: 0.1
+  groundProbeHeight: 0.2
+  groundProbeDepth: 0.5
+  terrainPadding: 0.05
+  projectilePrefab: {fileID: 4102279399796610155, guid: f2e4941ee6ef6894cb1ac970ac393a2b, type: 3}
+  firePoint: {fileID: 6468396233934946656}
+  spawnOffset: 0.6

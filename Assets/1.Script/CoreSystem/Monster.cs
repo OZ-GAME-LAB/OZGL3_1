@@ -34,6 +34,8 @@ public class Monster : MonoBehaviour, IDamageable
     public float MeleeDamage => attackDamage;
     public float MoveSpeed => Mathf.Max(0f, moveSpeed);
     public float SkillDamage { get; private set; }
+    public float AttackRangeX { get; private set; }
+    public float AttackRangeY { get; private set; }
 
     public void SetTarget(Transform target)
     {
@@ -49,6 +51,9 @@ public class Monster : MonoBehaviour, IDamageable
     public virtual void InitializeStats(BaseMonsterData data)
     {
         if (data == null) throw new ArgumentNullException(nameof(data));
+        if (!(data.AttackRangeX > 0f) || float.IsInfinity(data.AttackRangeX) ||
+            !(data.AttackRangeY > 0f) || float.IsInfinity(data.AttackRangeY))
+            throw new ArgumentException($"몬스터 '{data.Id}'의 AttackRangeX와 AttackRangeY는 유한한 양수여야 합니다.");
         float skillDamage = data is MonsterData normal ? normal.SkillDamage : 0f;
         if (!(data.HP > 0f) || float.IsInfinity(data.HP) ||
             !(data.MeleeDamage >= 0f) || float.IsInfinity(data.MeleeDamage) ||
@@ -62,6 +67,8 @@ public class Monster : MonoBehaviour, IDamageable
         maxHP = data.HP;
         attackDamage = data.MeleeDamage;
         moveSpeed = data.MoveSpeed;
+        AttackRangeX = data.AttackRangeX;
+        AttackRangeY = data.AttackRangeY;
         SkillDamage = skillDamage;
         hp = maxHP;
         IsDead = false;
