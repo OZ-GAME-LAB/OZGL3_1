@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6401847028435810169}
   - component: {fileID: 6505185398839466161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 8840102287991999270}
 --- !u!1 &731771022817212010
 GameObject:
@@ -271,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 8431218532494981631}
 --- !u!1 &843519332510527060
 GameObject:
@@ -302,7 +300,7 @@ Transform:
   m_GameObject: {fileID: 843519332510527060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.15, y: 5.44, z: -0}
+  m_LocalPosition: {x: -3.15, y: 6.05, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -402,7 +400,6 @@ MonoBehaviour:
   gateRenderer: {fileID: 6107130399942578429}
   gateMaterial: {fileID: 0}
   spawner: {fileID: 0}
-  monsterPrefab: {fileID: 2873690002261162043, guid: eae14ad38e0af6646baaa88d9f335130, type: 3}
   spawnPoint: {fileID: 5959469816147478608}
   spawnInterval: 3
 --- !u!1 &1782760200106670885
@@ -415,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4420262507812031903}
   - component: {fileID: 2720947586968366628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +484,7 @@ Transform:
   m_GameObject: {fileID: 5656801678528480323}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 8.67, y: 5.27, z: -0}
+  m_LocalPosition: {x: 8.67, y: 6.04, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -587,7 +584,6 @@ MonoBehaviour:
   gateRenderer: {fileID: 6998889315643921242}
   gateMaterial: {fileID: 0}
   spawner: {fileID: 0}
-  monsterPrefab: {fileID: 2873690002261162043, guid: eae14ad38e0af6646baaa88d9f335130, type: 3}
   spawnPoint: {fileID: 8431218532494981631}
   spawnInterval: 3
 --- !u!1 &5686401221408721354
@@ -619,7 +615,7 @@ Transform:
   m_GameObject: {fileID: 5686401221408721354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 9.42, y: 1.51, z: 0}
+  m_LocalPosition: {x: 9.42, y: 1.87, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -894,7 +890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 1824156355027068956}
 --- !u!1 &7486374002259309548
 GameObject:
@@ -940,7 +935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad50b4d1e2e44d2a383c2185657223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  monsterPrefabIndex: 0
   spawnPoint: {fileID: 5959469816147478608}
 --- !u!1 &8449087120282988859
 GameObject:
@@ -971,7 +965,7 @@ Transform:
   m_GameObject: {fileID: 8449087120282988859}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.37, y: 0.99, z: 0}
+  m_LocalPosition: {x: -9.37, y: 1.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1071,7 +1065,6 @@ MonoBehaviour:
   gateRenderer: {fileID: 8763179147988467238}
   gateMaterial: {fileID: 0}
   spawner: {fileID: 0}
-  monsterPrefab: {fileID: 2873690002261162043, guid: eae14ad38e0af6646baaa88d9f335130, type: 3}
   spawnPoint: {fileID: 1824156355027068956}
   spawnInterval: 3
 --- !u!1 &8933158922703630053

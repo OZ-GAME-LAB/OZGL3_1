@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour, IDamageable
     public bool IsDead { get; private set; }
     public Transform Target { get; private set; }
     public event Action<Monster> Died;
+    public event Action<Monster> Damaged;
 
 
     public void Die()
@@ -34,6 +35,8 @@ public class Monster : MonoBehaviour, IDamageable
     public float MeleeDamage => attackDamage;
     public float MoveSpeed => Mathf.Max(0f, moveSpeed);
     public float SkillDamage { get; private set; }
+    public float AttackRangeX { get; private set; }
+    public float AttackRangeY { get; private set; }
 
     public void SetTarget(Transform target)
     {
@@ -49,17 +52,24 @@ public class Monster : MonoBehaviour, IDamageable
     public virtual void InitializeStats(BaseMonsterData data)
     {
         if (data == null) throw new ArgumentNullException(nameof(data));
+        if (!(data.AttackRangeX > 0f) || float.IsInfinity(data.AttackRangeX) ||
+            !(data.AttackRangeY > 0f) || float.IsInfinity(data.AttackRangeY))
+            throw new ArgumentException($"몬스터 '{data.Id}'의 AttackRangeX와 AttackRangeY는 유한한 양수여야 합니다.");
         float skillDamage = data is MonsterData normal ? normal.SkillDamage : 0f;
         if (!(data.HP > 0f) || float.IsInfinity(data.HP) ||
             !(data.MeleeDamage >= 0f) || float.IsInfinity(data.MeleeDamage) ||
+            !(data.MoveSpeed >= 0f) || float.IsInfinity(data.MoveSpeed) ||
             !(skillDamage >= 0f) || float.IsInfinity(skillDamage))
-            throw new ArgumentException($"몬스터 '{data.Id}'의 HP와 데미지를 확인하세요.");
+            throw new ArgumentException($"몬스터 '{data.Id}'의 HP, 데미지, 이동속도를 확인하세요.");
 
         DataId = data.Id;
         MonsterName = data.Name;
         MonsterType = data.MonsterType;
         maxHP = data.HP;
         attackDamage = data.MeleeDamage;
+        moveSpeed = data.MoveSpeed;
+        AttackRangeX = data.AttackRangeX;
+        AttackRangeY = data.AttackRangeY;
         SkillDamage = skillDamage;
         hp = maxHP;
         IsDead = false;
@@ -87,6 +97,10 @@ public class Monster : MonoBehaviour, IDamageable
         if (killed)
         {
             Die();
+        }
+        else
+        {
+            Damaged?.Invoke(this);
         }
     }
 

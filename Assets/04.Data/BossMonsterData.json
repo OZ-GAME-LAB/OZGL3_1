@@ -6,6 +6,9 @@
     "MonsterType": "4",
     "HP": 1800,
     "MeleeDamage": 20,
+    "MoveSpeed": 0.2,
+    "AttackRangeX": 1.6,
+    "AttackRangeY": 1.2,
     "PatternTriggerHpRatio": 0.5
   },
   {
@@ -15,6 +18,9 @@
     "MonsterType": "4",
     "HP": 2900,
     "MeleeDamage": 20,
+    "MoveSpeed": 0.3,
+    "AttackRangeX": 1.6,
+    "AttackRangeY": 1.2,
     "PatternTriggerHpRatio": 0.5
   }
 ]

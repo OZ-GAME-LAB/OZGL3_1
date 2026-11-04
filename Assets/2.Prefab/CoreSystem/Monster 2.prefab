@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7626642809234045601}
   - component: {fileID: 2409131921605657330}
   - component: {fileID: 2873690002261162043}
-  - component: {fileID: 5874973771093959497}
+  - component: {fileID: -2232108592326615154}
   m_Layer: 7
   m_Name: Monster 2
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -132,7 +132,7 @@ MonoBehaviour:
   maxHP: 5
   damageNumberOffset: {x: 0, y: 2, z: 0}
   attackDamage: 10
---- !u!114 &5874973771093959497
+--- !u!114 &-2232108592326615154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2230925935269110599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c53f8d10684ac19e7d30f41a625980, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fa5b9c283c74c3bd2f0ae47182396b4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonsterBehaviour
-  detectionRange: 10
+  m_EditorClassIdentifier: Assembly-CSharp::ChargeMonsterBehaviour
+  detectionRange: 7
+  checkTravelDistance: 0.1
+  groundProbeHeight: 0.2
+  groundProbeDepth: 0.5
+  terrainPadding: 0.05
+  chargeSpeed: 8
+  chargeDistance: 5
+  recoveryTime: 1.5
+  groundSampleStep: 0.1
