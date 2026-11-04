@@ -380,6 +380,7 @@ namespace OZ.UI.EditorTools
             var bottom = UIB.Rect("BottomLeft", hudRt).Place(0, 0, 8, 8, 116, 62);
             var skillBar = bottom.gameObject.AddComponent<SkillBarView>();
             for (int i = 0; i < 3; i++) skillBar.slots[i] = SkillSlot(bottom, (SkillSlot)i, i * 40f);
+            hud.weapon = WeaponSlot(bottom, 126f); // v1.4 평타 무기 칸 (R 오른쪽)
 
             var bottomRight = UIB.Rect("BottomRight", hudRt).Place(1, 0, -8, 8, 153, 62);
             var itemsRt = UIB.Rect("Items", bottomRight).Place(0, 0, 0, 0, 153, 62);
@@ -766,6 +767,36 @@ namespace OZ.UI.EditorTools
             view.rankText = rank;
             view.shakeTarget = frame.rectTransform;
             view.tintTarget = frame;
+            return view;
+        }
+
+        // v1.4 평타(마우스 왼쪽) 무기 칸: 맨손·검·스태프 아이콘 + 피해 유형 색 + 콤보 점 3개
+        static WeaponSlotView WeaponSlot(Transform parent, float x)
+        {
+            var frame = UIB.Panel("Weapon_Basic", parent, "Panels/Blue/Panel");
+            frame.raycastTarget = false;
+            frame.rectTransform.Place(0, 0, x, 20, 36, 36);
+            var view = frame.gameObject.AddComponent<WeaponSlotView>();
+            view.frame = frame;
+            var icon = UIB.Img("Icon", frame.transform, null);
+            icon.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
+            view.icon = icon;
+            var letter = UIB.Title15("Letter", frame.transform, "", TextAlignmentOptions.Center, Color.white);
+            letter.rectTransform.Place(0.5f, 0.5f, 0, 0, 32, 32);
+            view.letter = letter;
+            var key = UIB.Body12("Key", frame.transform, "평타", TextAlignmentOptions.Center, UIB.Accent);
+            key.rectTransform.Place(0.5f, 1, 0, 13, 36, 12);
+            view.keyLabel = key;
+            view.comboPips = new Image[3];
+            for (int i = 0; i < 3; i++)
+            {
+                var pip = UIB.Solid("ComboPip" + i, frame.transform, view.pipOff);
+                pip.raycastTarget = false;
+                pip.rectTransform.Place(0.5f, 0, (i - 1) * 9f, -5, 6, 3);
+                view.comboPips[i] = pip;
+            }
+            view.swordIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Art/Icons/Skill_SwordQ.png");
+            view.staffIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Art/Icons/Skill_MagicQ.png");
             return view;
         }
 
