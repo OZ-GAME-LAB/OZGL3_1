@@ -46,6 +46,12 @@ public class PlayerWeapon : MonoBehaviour
     private bool _hasWeaponParam;
     private RuntimeAnimatorController _baseController; // 맨손, Override 없는 무기일 때 쓸 원래 컨트롤러
 
+    // 불러오기가 Start보다 먼저 오면 Start의 ApplyWeapon(_startWeapon)이 맨손으로 덮어씀
+    // -> Start 전이면 받아만 두고 Start에서 적용
+    private bool _started;
+    private bool _hasPendingWeapon;
+    private WeaponType _pendingWeapon;
+
     public WeaponType Current { get; private set; }
     public event Action<WeaponType> WeaponChanged; // 나중에 UI(장비 표시)나 저장에서 구독
 
@@ -79,7 +85,10 @@ public class PlayerWeapon : MonoBehaviour
     // 검/주먹 중 아무거나 먼저 잡을 수 있음 -> 모든 Awake가 끝난 뒤 여기서 확정
     private void Start()
     {
-        ApplyWeapon(_startWeapon);
+        // 불러온 무기가 있으면 그걸로, 없으면 시작 무기로
+        _started = true;
+        ApplyWeapon(_hasPendingWeapon ? _pendingWeapon : _startWeapon);
+        _hasPendingWeapon = false;
     }
 
     private void Update()
@@ -132,6 +141,39 @@ public class PlayerWeapon : MonoBehaviour
     public void Unequip()
     {
         Equip(WeaponType.None);
+    }
+
+    // 저장용. Start 전에 불러온 값이 있으면 아직 Current에 반영 전이라 그 값을 돌려줌
+    public WeaponType GetSaveData()
+    {
+        return _hasPendingWeapon ? _pendingWeapon : Current;
+    }
+
+    // 불러오기용. Equip과 달리 공격 중 체크를 하지 않음
+    // 불러오기는 입력이 아니라 "저장된 상태로 맞추는" 것이라 막히면 안 됨
+    public void LoadSaveData(WeaponType type)
+    {
+        // 등록 안 된 무기(원본 Player 프리팹에서 스태프 등)면 평타가 null이 됨 -> 맨손으로
+        if (type != WeaponType.None && FindAttack(type) == null)
+        {
+            Debug.LogWarning($"[PlayerWeapon:LoadSaveData] {type} 공격이 등록되지 않아 맨손으로 불러옵니다.");
+            type = WeaponType.None;
+        }
+
+        if (!_started)
+        {
+            _pendingWeapon = type;
+            _hasPendingWeapon = true;
+            return;
+        }
+
+        ApplyWeapon(type);
+    }
+
+    // 새 게임. 시작 무기로 되돌림 (이전 판에서 고른 무기가 남지 않게)
+    public void ResetAll()
+    {
+        LoadSaveData(_startWeapon);
     }
 
     private void ApplyWeapon(WeaponType type)

@@ -6,5 +6,8 @@
 public class PlayerSaveData
 {
     public int[] statLevels; // StatType 순서 (힘·체력·민첩·마력)
-    public PlayerSkillSaveData skills = new PlayerSkillSaveData(); 
+    public PlayerSkillSaveData skills = new PlayerSkillSaveData();
+
+    // 무기는 한 번 고르면 끝까지 가는 선택이라 이어하기 때 반드시 복원해야 함
+    public WeaponType weapon = WeaponType.None;
 }

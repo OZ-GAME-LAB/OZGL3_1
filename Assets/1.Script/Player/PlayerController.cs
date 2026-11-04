@@ -423,6 +423,10 @@ public class PlayerController : MonoBehaviour
         if (_buffs != null) _buffs.ClearAll();
         if (_skills != null) _skills.ResetAll();
         if (_stats != null) _stats.ResetAll(); // 최대 HP도 100으로 돌아감
+
+        // 저장/불러오기와 같은 방식으로 그때 가져옴
+        PlayerWeapon weapon = GetComponent<PlayerWeapon>();
+        if (weapon != null) weapon.ResetAll();
     }
 
     // 저장, 불러오기
@@ -432,10 +436,12 @@ public class PlayerController : MonoBehaviour
         // Player가 꺼진 채로 시작하면 Awake가 안 불려서 _stats/_skills가 null일 수 있음
         PlayerStats stats = GetComponent<PlayerStats>();
         PlayerSkill skills = GetComponent<PlayerSkill>();
+        PlayerWeapon weapon = GetComponent<PlayerWeapon>();
 
         PlayerSaveData data = new PlayerSaveData();
         data.statLevels = stats != null ? stats.GetLevels() : null;
         data.skills = skills != null ? skills.GetSaveData() : new PlayerSkillSaveData();
+        data.weapon = weapon != null ? weapon.GetSaveData() : WeaponType.None;
         return data;
     }
 
@@ -450,6 +456,7 @@ public class PlayerController : MonoBehaviour
         PlayerStats stats = GetComponent<PlayerStats>();
         PlayerSkill skills = GetComponent<PlayerSkill>();
         PlayerBuffs buffs = GetComponent<PlayerBuffs>();
+        PlayerWeapon weapon = GetComponent<PlayerWeapon>();
 
         // 이전 판 버프가 남은 채로 불러오면 저장 시점과 상태가 달라짐
         if (buffs != null) buffs.ClearAll();
@@ -457,6 +464,8 @@ public class PlayerController : MonoBehaviour
         // 체력 스탯이 최대 HP를 바꾸므로, 이후 코어의 ResetHealth가 늘어난 최대치로 채우게
         if (stats != null && data.statLevels != null) stats.SetLevels(data.statLevels);
         if (skills != null) skills.LoadSaveData(data.skills);
+        // 평타, 무기 모델, 애니메이터까지 같이 바뀜(PlayerWeapon.ApplyWeapon)
+        if (weapon != null) weapon.LoadSaveData(data.weapon);
     }
 
     public void SetInvincible(float duration)
