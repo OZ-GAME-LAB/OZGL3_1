@@ -85,7 +85,7 @@ UI 화면 13종 + 계열별 스킬 트리 + 게임 흐름(로딩·페이드·스
 
 ## 5. 플레이어 체력 연결 (v0.7~v0.8)
 - `GameBridge/PlayerHealthBridge` (팀원 코드 수정 없이 Play 시 자동 부착)
-  - **플레이어 체력 모드** (플레이어에 IHealthSource 컴포넌트 있을 때): 체력 기준 = 정명진 님 `PlayerHealth`. 피격·회복은 그쪽 `TakeDamage/Heal`로 넘김. 0 → `deathScreenDelay`(1초) 뒤 사망 화면, 재도전 → `ResetHealth()`
+  - **플레이어 체력 모드** (플레이어에 IHealthSource 컴포넌트 있을 때): 체력 기준 = 정명진 님 `PlayerHealth`. 피격·회복은 그쪽 `TakeDamage/Heal`로 넘김. 0 → 플레이어 Animator의 `Dead` 상태 모션이 끝난 뒤 +0.3초에 사망 화면 (10/30: 모션 길이 자동 맞춤, 최대 5초. Animator·상태 없으면 `deathScreenDelay` 1초 고정), 재도전 → `ResetHealth()`
   - **임시 모드** (체력 컴포넌트 없음): 브리지가 체력 관리, `Monster` 접촉 10 피해
 - 남은 연결: `Monster`가 `IDamageable` 미구현 → 몬스터 체력 생기면 `EnemyUILink`(`Init`·`Hit`)로 적 체력바·피해 숫자 연결
 

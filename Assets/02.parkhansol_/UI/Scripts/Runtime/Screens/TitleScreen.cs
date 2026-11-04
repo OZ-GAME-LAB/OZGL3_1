@@ -1,4 +1,4 @@
-using OZ.UI.Contracts;
+﻿using OZ.UI.Contracts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +24,7 @@ namespace OZ.UI
 
         protected override void OnSetup(object args)
         {
-            bool canContinue = args is TitleArgs t && t.CanContinue;
+            bool canContinue = (args is TitleArgs t && t.CanContinue) || UIContinue.Available; // 저장 파일 유무는 UIContinue.HasSave
             if (continueButton != null) continueButton.interactable = canContinue;
         }
     }

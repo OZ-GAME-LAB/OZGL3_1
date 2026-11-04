@@ -77,6 +77,11 @@ public class PlayerController : MonoBehaviour
 
     public InputManager Input { get { return _inputManager; } }
     public IPlayerAttack Attack { get { return _attack; } }
+    // 무기 장착 시 평타 교체 (PlayerWeapon에서 호출)
+    public void SetAttack(IPlayerAttack attack)
+    {
+        _attack = attack;
+    }
     public PlayerSkill Skills { get { return _skills; } } //PlayerState_Skill이 장착 스킬·쿨다운을 읽기 위해
     public PlayerState CurrentStateType { get { return _currentStateType; } }
     public Ladder CurrentLadder { get { return _currentLadder; } }
@@ -143,9 +148,10 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
 
-        if (_inputManager == null)
+        // 인스펙터에 안 넣어도 동작하게 -> 칸을 깜빡 비워도 씬의 InputManager를 찾아 씀
+        if (!TryFindInputManager())
         {
-            Debug.LogError("[Player:Awake] InputManager가 연결되지 않았습니다.");
+            Debug.LogError("[Player:Awake] InputManager를 찾을 수 없습니다. 씬에 InputManager가 있는지 확인하세요.");
             return;
         }
 
@@ -167,7 +173,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputManager.OnJumpAction += OnJump;
+        // Awake에서 못 찾고 빠져나왔으면 상태 목록도 없음 -> 여기서 Null이 연달아 나는 것 방지
+        if (_inputManager == null || _playerStates == null)
+        {
+            return;
+        }
+
+            _inputManager.OnJumpAction += OnJump;
         _inputManager.OnDashAction += OnDash;
         _inputManager.OnAttackAction += OnAttack;
         _inputManager.OnSkillAction += OnSkill;
@@ -207,6 +219,12 @@ public class PlayerController : MonoBehaviour
     {
         ClearRequests();
         EndDropThrough(); // 통과 중에 꺼지면 충돌이 꺼진 채로 남지 않게
+
+        // 못 찾은 상태로 꺼질 때 구독 해제에서 에러 나지 않게
+        if (_inputManager == null)
+        {
+            return;
+        }
         _inputManager.OnJumpAction -= OnJump;
         _inputManager.OnDashAction -= OnDash;
         _inputManager.OnAttackAction -= OnAttack;
@@ -235,6 +253,33 @@ public class PlayerController : MonoBehaviour
             {PlayerState.Hit, new PlayerState_Hit() },
             {PlayerState.Dead, new PlayerState_Dead() }
         };
+    }
+
+    // 인스펙터 -> 씬 순서로 찾음. 찾았으면 true
+    // 입력은 씬의 InputManager 하나가 담당 (SceneGameLink가 그걸 켜고 끄므로 같은 걸 써야 함)
+    private bool TryFindInputManager()
+    {
+        // 직접 넣어 둔 게 있으면 그걸 우선
+        if (_inputManager != null)
+        {
+            return true;
+        }
+
+        // SceneGameLink가 입력을 꺼 둔 상태(비활성)여도 찾을 수 있게
+        InputManager[] found = FindObjectsByType<InputManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        if (found.Length == 0)
+        {
+            return false;
+        }
+
+        // 두 개 이상이면 같은 Input Action을 서로 껐다 켰다 해서 입력이 가끔 안 먹을 수 있음 -> 바로 알 수 있게 경고
+        if (found.Length > 1)
+        {
+            Debug.LogWarning($"[Player:TryFindInputManager] 씬에 InputManager가 {found.Length}개 있습니다. 하나만 두세요.");
+        }
+
+        _inputManager = found[0];
+        return true;
     }
 
     private void ClearRequests()
@@ -378,6 +423,10 @@ public class PlayerController : MonoBehaviour
         if (_buffs != null) _buffs.ClearAll();
         if (_skills != null) _skills.ResetAll();
         if (_stats != null) _stats.ResetAll(); // 최대 HP도 100으로 돌아감
+
+        // 저장/불러오기와 같은 방식으로 그때 가져옴
+        PlayerWeapon weapon = GetComponent<PlayerWeapon>();
+        if (weapon != null) weapon.ResetAll();
     }
 
     // 저장, 불러오기
@@ -387,10 +436,12 @@ public class PlayerController : MonoBehaviour
         // Player가 꺼진 채로 시작하면 Awake가 안 불려서 _stats/_skills가 null일 수 있음
         PlayerStats stats = GetComponent<PlayerStats>();
         PlayerSkill skills = GetComponent<PlayerSkill>();
+        PlayerWeapon weapon = GetComponent<PlayerWeapon>();
 
         PlayerSaveData data = new PlayerSaveData();
         data.statLevels = stats != null ? stats.GetLevels() : null;
         data.skills = skills != null ? skills.GetSaveData() : new PlayerSkillSaveData();
+        data.weapon = weapon != null ? weapon.GetSaveData() : WeaponType.None;
         return data;
     }
 
@@ -405,6 +456,7 @@ public class PlayerController : MonoBehaviour
         PlayerStats stats = GetComponent<PlayerStats>();
         PlayerSkill skills = GetComponent<PlayerSkill>();
         PlayerBuffs buffs = GetComponent<PlayerBuffs>();
+        PlayerWeapon weapon = GetComponent<PlayerWeapon>();
 
         // 이전 판 버프가 남은 채로 불러오면 저장 시점과 상태가 달라짐
         if (buffs != null) buffs.ClearAll();
@@ -412,30 +464,8 @@ public class PlayerController : MonoBehaviour
         // 체력 스탯이 최대 HP를 바꾸므로, 이후 코어의 ResetHealth가 늘어난 최대치로 채우게
         if (stats != null && data.statLevels != null) stats.SetLevels(data.statLevels);
         if (skills != null) skills.LoadSaveData(data.skills);
-    }
-
-    // 테스트용 (저장 담당이 생기기 전) 
-    // 새 게임으로 상태를 지운 뒤에도 저장한 JSON이 남아 있어야 불러오기를 확인할 수 있음
-    private static string _testSaveJson;
-
-    [ContextMenu("Test/저장 (JSON)")]
-    private void TestSave()
-    {
-        // 직렬화가 되는지까지 확인
-        _testSaveJson = JsonUtility.ToJson(GetSaveData());
-        Debug.Log($"[Player] 저장: {_testSaveJson}");
-    }
-
-    [ContextMenu("Test/불러오기 (JSON)")]
-    private void TestLoad()
-    {
-        if (string.IsNullOrEmpty(_testSaveJson))
-        {
-            Debug.LogWarning("[Player] 먼저 Test/저장을 실행하세요.");
-            return;
-        }
-        LoadSaveData(JsonUtility.FromJson<PlayerSaveData>(_testSaveJson));
-        Debug.Log("[Player] 불러오기 완료");
+        // 평타, 무기 모델, 애니메이터까지 같이 바뀜(PlayerWeapon.ApplyWeapon)
+        if (weapon != null) weapon.LoadSaveData(data.weapon);
     }
 
     public void SetInvincible(float duration)

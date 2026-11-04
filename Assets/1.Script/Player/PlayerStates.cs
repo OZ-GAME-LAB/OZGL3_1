@@ -263,6 +263,16 @@ public class PlayerState_Land : PlayerState_Base
 // 회피 대시. 입력 방향(없으면 바라보는 방향)으로 일정 시간 직선 이동, 앞부분 무적.
 public class PlayerState_Dash : PlayerState_Base
 {
+
+    // 기본 컨트롤러(Player_Chibi)의 Dash 상태에 들어있는 원본 클립 이름
+    private const string DashClipName = "Dash_Forward";
+    private static readonly int DashSpeedHash = Animator.StringToHash("DashSpeed");
+
+    // 대시마다 클립을 다시 찾지 않게, 컨트롤러가 바뀔 때(= 무기 교체)만 다시 계산
+    private RuntimeAnimatorController _cachedController;
+    private float _cachedClipLength;
+    private bool _hasDashSpeedParam;
+
     private float _dirX;
 
     public override void EnterState(PlayerController player)
@@ -278,7 +288,64 @@ public class PlayerState_Dash : PlayerState_Base
         velocity.y = 0f;
         _rigidbody.linearVelocity = velocity;
 
+        ApplyDashAnimSpeed(player);
         _animator.SetBool("IsDashing", true);
+    }
+
+    // 대시 모션이 무기와 상관없이 DashDuration에 딱 끝나도록 재생 속도 계산
+    // 왜 필요하나 -> 맨손 클립 0.67초, 무기 클립 0.4초라 상태 Speed 하나로는 둘 다 못 맞춤
+    private void ApplyDashAnimSpeed(PlayerController player)
+    {
+        RuntimeAnimatorController controller = _animator.runtimeAnimatorController;
+
+        if (controller != _cachedController)
+        {
+            _cachedController = controller;
+            _cachedClipLength = FindDashClipLength(controller);
+
+            _hasDashSpeedParam = false;
+            foreach (AnimatorControllerParameter p in _animator.parameters)
+            {
+                if (p.nameHash == DashSpeedHash && p.type == AnimatorControllerParameterType.Float)
+                {
+                    _hasDashSpeedParam = true;
+                }
+            }
+        }
+
+        // 클립을 못 찾았거나 파라미터가 없으면 애니메이터 기본값(3.7) 그대로 사용
+        if (!_hasDashSpeedParam || _cachedClipLength <= 0f || player.DashDuration <= 0f)
+        {
+            return;
+        }
+
+        _animator.SetFloat(DashSpeedHash, _cachedClipLength / player.DashDuration);
+    }
+
+    private float FindDashClipLength(RuntimeAnimatorController controller)
+    {
+        if (controller == null)
+        {
+            return 0f;
+        }
+
+        // 원본 이름으로 바꿔 끼운 클립을 바로 찾음
+        // 비워둔 칸이면 원본 클립이 돌아옴
+        if (controller is AnimatorOverrideController overrideController)
+        {
+            AnimationClip clip = overrideController[DashClipName];
+            return clip != null ? clip.length : 0f;
+        }
+
+        // 들어있는 클립 중 이름으로 찾음
+        foreach (AnimationClip clip in controller.animationClips)
+        {
+            if (clip.name == DashClipName)
+            {
+                return clip.length;
+            }
+        }
+        return 0f;
     }
 
     public override void UpdateState(PlayerController player)
@@ -303,54 +370,110 @@ public class PlayerState_Dash : PlayerState_Base
 }
 
 // 공격 흐름(방향, 정지, 종료 타이밍)만 담당. 실제 판정은 IPlayerAttack에 맡김.
+// 콤보 공격(IComboAttack)이면 공격 중 입력을 기억해 뒀다가 다음 타로 이어 줌
 public class PlayerState_Attack : PlayerState_Base
 {
     private float _duration;
     private IPlayerAttack _pendingAttack;
+    private IComboAttack _combo;   // 주먹이면 null -> 기존과 완전히 같은 흐름
+    private ProtagonistAnimationDriver _visual;
     private Vector3 _aimPoint;
     private float _contactAt;
     private bool _committed;
-    
+    private bool _nextQueued;      // 이번 타 도중 클릭했는지
+    private float _stepStartTime;  // 타마다 시간을 새로 재야 해서 ElapsedTime 대신 사용
+
     public override void EnterState(PlayerController player)
     {
         base.EnterState(player);
-    
-        Vector3 aimPoint = player.Input.GetAimPoint(player.transform.position);
-        player.LookAtImmediately(aimPoint.x - player.transform.position.x); // 커서 방향 바라보기
-    
+
+        // 상태 진입 시점의 공격을 붙잡아 둠 -> 도중에 무기가 바뀌어도 이번 공격은 끝까지 같은 걸로
+        _pendingAttack = player.Attack;
+        _combo = _pendingAttack as IComboAttack;
+        _visual = player.GetComponent<ProtagonistAnimationDriver>();
+
+        if (_combo != null)
+        {
+            _combo.BeginCombo(); // 공격을 새로 시작하면 항상 1타부터
+        }
+
+        _animator.SetBool("Attacking", true);
+        StartStep(player);
+    }
+
+    // 한 타 시작 (주먹은 한 번, 검은 최대 세 번 불림)
+    private void StartStep(PlayerController player)
+    {
+        // 타마다 커서 방향을 다시 봄 -> 콤보 중에 뒤돌아 베기 가능
+        _aimPoint = player.Input.GetAimPoint(player.transform.position);
+        player.LookAtImmediately(_aimPoint.x - player.transform.position.x);
+
         if (player.IsGrounded)
         {
             player.Stop();
         }
-    
-        _animator.SetTrigger("Attack");
-        _animator.SetBool("Attacking", true);
 
-        IPlayerAttack attack = player.Attack;
-        _pendingAttack = attack;
-        _aimPoint = aimPoint;
         _committed = false;
-        if (attack != null)
+        _nextQueued = false;
+        _stepStartTime = Time.time;
+        _duration = _pendingAttack != null ? _pendingAttack.Duration : player.AttackDuration;
+
+        // 검은 매 타마다 칼이 닿는 순간이 달라서 콤보 쪽 값을 씀. 주먹은 기존 값 그대로
+        float contactNormalized;
+        if (_combo != null)
         {
-            _duration = attack.Duration;
+            contactNormalized = _combo.ContactNormalized;
+            _animator.SetInteger("ComboIndex", _combo.CurrentStep); // 트리거보다 먼저 -> 맞는 상태로 전환
+
+            // 클립을 이번 타 시간에 맞춰 재생
+            // AttackSpeed는 ProtagonistAnimationDriver가 매 프레임 주먹 기준으로 덮어씀 -> 서로 안 부딪히게
+            AnimationClip clip = _combo.CurrentClip;
+            if (clip != null)
+            {
+                _animator.SetFloat("ComboSpeed", clip.length / Mathf.Max(0.01f, _duration));
+            }
         }
         else
         {
-            _duration = player.AttackDuration;
+            contactNormalized = _visual != null ? _visual.AttackContactNormalized : 0f;
         }
-        var visual = player.GetComponent<ProtagonistAnimationDriver>();
-        _contactAt = visual != null ? _duration * visual.AttackContactNormalized : 0f;
-        if (_contactAt <= 0f) CommitAttack(player);
+        _contactAt = _duration * contactNormalized;
+
+        _animator.ResetTrigger("Attack"); // 이전 타 트리거가 남아 두 번 전환되는 것 방지
+        _animator.SetTrigger("Attack");
+
+        if (_contactAt <= 0f)
+        {
+            CommitAttack(player);
+        }
     }
-    
+
     public override void UpdateState(PlayerController player)
     {
-        if (!_committed && ElapsedTime >= _contactAt) CommitAttack(player);
-        if (ElapsedTime >= _duration)
+        float elapsed = Time.time - _stepStartTime;
+
+        // 입력은 한 프레임만 살아 있음(ClearRequests) -> 눌린 순간 기억해 둬야 타 끝날 때 이어 줄 수 있음
+        if (_combo != null && player.IsAttackRequested)
         {
+            _nextQueued = true;
+        }
+
+        if (!_committed && elapsed >= _contactAt)
+        {
+            CommitAttack(player);
+        }
+
+        if (elapsed >= _duration)
+        {
+            if (_nextQueued && _combo.TryAdvance())
+            {
+                StartStep(player);
+                return;
+            }
             player.ChangeToDefaultState();
         }
     }
+
     private void CommitAttack(PlayerController player)
     {
         if (_committed) return;

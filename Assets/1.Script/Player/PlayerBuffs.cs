@@ -113,15 +113,4 @@ public class PlayerBuffs : MonoBehaviour
     {
         return Time.time < endTime;
     }
-
-    // 아이템이 없어도 확인할 수 있게
-    [ContextMenu("Test/공격 강화 (+20%, 10초)")] private void TestAttack() { Apply(ItemEffectType.AttackBuff, 20f, 10f); LogTest(); }
-    [ContextMenu("Test/방어 강화 (-25%, 10초)")] private void TestDefense() { Apply(ItemEffectType.DefenseBuff, 25f, 10f); LogTest(); }
-    [ContextMenu("Test/신속 (+20%, 10초)")] private void TestSpeed() { Apply(ItemEffectType.SpeedBuff, 20f, 10f); LogTest(); }
-    [ContextMenu("Test/전부 해제")] private void TestClear() { ClearAll(); LogTest(); }
-
-    private void LogTest()
-    {
-        Debug.Log($"[PlayerBuffs] 공격 x{AttackMultiplier} / 받는 피해 x{DamageTakenMultiplier} / 이동 x{MoveSpeedMultiplier}");
-    }
 }

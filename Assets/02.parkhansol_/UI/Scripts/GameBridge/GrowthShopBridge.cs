@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using OZ.UI.Contracts;
 using UnityEngine;
@@ -96,6 +96,27 @@ public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource
         _quest = GameUI.Quest;
         if (_quest != null) _quest.Changed += PayQuestRewards;
         UIRequests.NewGame += ResetForNewGame;
+    }
+
+    // ───────────── 저장 / 불러오기 (저장 담당이 부름 — GameSave) ─────────────
+
+    [Serializable]
+    public class SaveData
+    {
+        public int points;
+        public List<string> paidQuests = new List<string>();
+    }
+
+    public SaveData GetSaveData() => new SaveData { points = _points, paidQuests = new List<string>(_paidQuests) };
+
+    public void LoadSaveData(SaveData d)
+    {
+        if (d == null) return;
+        _paidQuests.Clear();
+        if (d.paidQuests != null) foreach (var id in d.paidQuests) if (!string.IsNullOrEmpty(id)) _paidQuests.Add(id);
+        int before = _points;
+        _points = Mathf.Max(0, d.points);
+        PointsChanged?.Invoke(_points, _points - before);
     }
 
     // 타이틀 '새 게임': 성장 포인트를 시작값으로 (스탯·스킬은 플레이어 쪽 ResetAll이 비움)

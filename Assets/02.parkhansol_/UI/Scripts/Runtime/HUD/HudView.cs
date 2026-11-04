@@ -23,6 +23,8 @@ namespace OZ.UI
         [SerializeField] internal QuestListView quests;
         [SerializeField] internal SystemAlarmView systemAlarm;
         [SerializeField] internal SkillBarView skills;
+        [Tooltip("v1.4 평타 무기 칸 (Q/E/R 오른쪽). 비우면 실행 중 R 칸을 복사해 만든다")]
+        [SerializeField] internal WeaponSlotView weapon;
         [SerializeField] internal ItemBarView items;
         [SerializeField] internal BuffTrayView buffs;
         [SerializeField] internal HudBannerView banner;
@@ -83,6 +85,8 @@ namespace OZ.UI
             if (gate != null) gate.Bind(UISources.Gate);
             if (quests != null) quests.BindGate(UISources.Gate);
             if (skills != null) { skills.Bind(UISources.Skills); skills.BindLoadout(UISources.Loadout); }
+            EnsureWeaponSlot();
+            if (weapon != null) weapon.Bind(UISources.Weapon);
             if (items != null) items.Bind(UISources.Items);
             if (buffs != null) buffs.Bind(UISources.Items);
             if (banner != null) banner.Bind(UISources.Gate);
@@ -92,6 +96,17 @@ namespace OZ.UI
         }
 
         // 메뉴가 열리면 HUD를 살짝 흐리게
+        // v1.4: UIRoot 프리팹을 다시 만들기 전에도 평타 칸이 보이도록 R 칸을 복사해 만든다 (한 번만)
+        bool _weaponTried;
+        void EnsureWeaponSlot()
+        {
+            if (weapon != null || _weaponTried || skills == null) return;
+            _weaponTried = true;
+            SkillSlotView r = null;
+            foreach (var s in skills.slots) if (s != null && s.Slot == SkillSlot.R) r = s;
+            weapon = WeaponSlotView.CreateFrom(r);
+        }
+
         void OnBlockedChanged(bool blocked)
         {
             if (group == null || !_visible) return;
