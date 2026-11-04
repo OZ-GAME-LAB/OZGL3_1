@@ -263,6 +263,16 @@ public class PlayerState_Land : PlayerState_Base
 // 회피 대시. 입력 방향(없으면 바라보는 방향)으로 일정 시간 직선 이동, 앞부분 무적.
 public class PlayerState_Dash : PlayerState_Base
 {
+
+    // 기본 컨트롤러(Player_Chibi)의 Dash 상태에 들어있는 원본 클립 이름
+    private const string DashClipName = "Dash_Forward";
+    private static readonly int DashSpeedHash = Animator.StringToHash("DashSpeed");
+
+    // 대시마다 클립을 다시 찾지 않게, 컨트롤러가 바뀔 때(= 무기 교체)만 다시 계산
+    private RuntimeAnimatorController _cachedController;
+    private float _cachedClipLength;
+    private bool _hasDashSpeedParam;
+
     private float _dirX;
 
     public override void EnterState(PlayerController player)
@@ -278,7 +288,64 @@ public class PlayerState_Dash : PlayerState_Base
         velocity.y = 0f;
         _rigidbody.linearVelocity = velocity;
 
+        ApplyDashAnimSpeed(player);
         _animator.SetBool("IsDashing", true);
+    }
+
+    // 대시 모션이 무기와 상관없이 DashDuration에 딱 끝나도록 재생 속도 계산
+    // 왜 필요하나 -> 맨손 클립 0.67초, 무기 클립 0.4초라 상태 Speed 하나로는 둘 다 못 맞춤
+    private void ApplyDashAnimSpeed(PlayerController player)
+    {
+        RuntimeAnimatorController controller = _animator.runtimeAnimatorController;
+
+        if (controller != _cachedController)
+        {
+            _cachedController = controller;
+            _cachedClipLength = FindDashClipLength(controller);
+
+            _hasDashSpeedParam = false;
+            foreach (AnimatorControllerParameter p in _animator.parameters)
+            {
+                if (p.nameHash == DashSpeedHash && p.type == AnimatorControllerParameterType.Float)
+                {
+                    _hasDashSpeedParam = true;
+                }
+            }
+        }
+
+        // 클립을 못 찾았거나 파라미터가 없으면 애니메이터 기본값(3.7) 그대로 사용
+        if (!_hasDashSpeedParam || _cachedClipLength <= 0f || player.DashDuration <= 0f)
+        {
+            return;
+        }
+
+        _animator.SetFloat(DashSpeedHash, _cachedClipLength / player.DashDuration);
+    }
+
+    private float FindDashClipLength(RuntimeAnimatorController controller)
+    {
+        if (controller == null)
+        {
+            return 0f;
+        }
+
+        // 원본 이름으로 바꿔 끼운 클립을 바로 찾음
+        // 비워둔 칸이면 원본 클립이 돌아옴
+        if (controller is AnimatorOverrideController overrideController)
+        {
+            AnimationClip clip = overrideController[DashClipName];
+            return clip != null ? clip.length : 0f;
+        }
+
+        // 들어있는 클립 중 이름으로 찾음
+        foreach (AnimationClip clip in controller.animationClips)
+        {
+            if (clip.name == DashClipName)
+            {
+                return clip.length;
+            }
+        }
+        return 0f;
     }
 
     public override void UpdateState(PlayerController player)
