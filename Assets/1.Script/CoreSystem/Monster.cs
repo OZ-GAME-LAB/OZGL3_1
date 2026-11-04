@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour, IDamageable
     public bool IsDead { get; private set; }
     public Transform Target { get; private set; }
     public event Action<Monster> Died;
+    public event Action<Monster> Damaged;
 
 
     public void Die()
@@ -96,6 +97,10 @@ public class Monster : MonoBehaviour, IDamageable
         if (killed)
         {
             Die();
+        }
+        else
+        {
+            Damaged?.Invoke(this);
         }
     }
 

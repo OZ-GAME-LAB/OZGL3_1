@@ -48,7 +48,7 @@ public class ChargeMonsterBehaviour : MonsterBehaviour
                         Quaternion.identity, step, LayerMask.GetMask("Player"), QueryTriggerInteraction.Collide))
                         TryChargeDamage(hit.collider.GetComponentInParent<PlayerHealth>());
                     if (!IsCharging || !isActiveAndEnabled || Owner.IsDead) yield break;
-                    transform.position += movement * step;
+                    Move(movement * step);
                     travelled += step;
                 }
 
@@ -58,6 +58,7 @@ public class ChargeMonsterBehaviour : MonsterBehaviour
         }
         finally
         {
+            StopMove();
             IsCharging = false;
             hitPlayers.Clear();
         }

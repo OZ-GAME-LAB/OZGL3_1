@@ -14,6 +14,7 @@ public enum MonsterState
 public class MonsterBehaviour : MonoBehaviour
 {
     [SerializeField, Min(1.1f)] private float detectionRange = 7f;
+    [SerializeField] private EnemyAnimController animController;
     [Header("지형 검사 (Ground 레이어)")]
     [SerializeField, Min(0.01f)] private float checkTravelDistance = 0.1f;
     [SerializeField, Min(0.01f)] private float groundProbeHeight = 0.2f;
@@ -30,6 +31,7 @@ public class MonsterBehaviour : MonoBehaviour
     private const float AttackRangeVariation = 0.1f;
 
     protected Monster Owner { get; private set; }
+    protected EnemyAnimController AnimController => animController;
     public MonsterState State { get; private set; } = MonsterState.Idle;
     public Transform Target { get; private set; }
     public float AttackRangeX { get; private set; }
@@ -47,6 +49,7 @@ public class MonsterBehaviour : MonoBehaviour
     protected virtual void Awake()
     {
         Owner = GetComponent<Monster>();
+        if (animController == null) animController = GetComponentInChildren<EnemyAnimController>(true);
         bodyCollider = GetComponent<Collider>();
         groundMask = LayerMask.GetMask("Ground");
         if (groundMask == 0) Debug.LogError("지형 검사에 필요한 Ground 레이어가 없습니다.", this);
@@ -67,12 +70,16 @@ public class MonsterBehaviour : MonoBehaviour
         AttackRangeX = Mathf.Max(0.01f, Owner.AttackRangeX + Random.Range(-AttackRangeVariation, AttackRangeVariation));
         AttackRangeY = Owner.AttackRangeY;
         Owner.Died += OnMonsterDied;
+        Owner.Damaged += OnMonsterDamaged;
+        StopMove();
     }
 
     protected virtual void OnDisable()
     {
         StopAttack();
+        StopMove();
         Owner.Died -= OnMonsterDied;
+        Owner.Damaged -= OnMonsterDamaged;
         Target = null;
         targetCollider = null;
     }
@@ -127,6 +134,7 @@ public class MonsterBehaviour : MonoBehaviour
         if (State == MonsterState.Dead)
         {
             StopAttack();
+            StopMove();
             HandleDead();
         }
     }
@@ -136,36 +144,85 @@ public class MonsterBehaviour : MonoBehaviour
         ChangeState(MonsterState.Dead);
     }
 
+    private void OnMonsterDamaged(Monster monster)
+    {
+        if (!isActiveAndEnabled || Owner.IsDead) return;
+        HandleDamaged();
+    }
+
+    protected virtual void HandleDamaged()
+    {
+        PlayAnimation(EnemyAnimState.Damaged);
+    }
+
+    protected void PlayAnimation(EnemyAnimState state)
+    {
+        if (animController != null) animController.ChangeAnimState(state);
+    }
+
     protected virtual void UpdateIdle()
     {
-        if (Owner.MoveSpeed <= 0f) return;
+        if (Owner.MoveSpeed <= 0f)
+        {
+            StopMove();
+            return;
+        }
         if (!CanMove(moveDirection))
         {
             moveDirection = -moveDirection;
-            if (!CanMove(moveDirection)) return;
+            if (!CanMove(moveDirection))
+            {
+                StopMove();
+                return;
+            }
         }
         FaceDirection(moveDirection);
-        transform.position += Vector3.right * moveDirection * Owner.MoveSpeed * Time.deltaTime;
+        Move(Vector3.right * moveDirection * Owner.MoveSpeed * Time.deltaTime);
     }
     protected virtual void UpdateChase()
     {
         float deltaX = TargetCenter.x - BodyCenter.x;
         // X축이 사거리 안이면 Y축이 맞을 때까지 현재 자리에서 기다립니다.
-        if (Mathf.Abs(deltaX) <= AttackRangeX) return;
+        if (Mathf.Abs(deltaX) <= AttackRangeX)
+        {
+            StopMove();
+            return;
+        }
 
         moveDirection = Mathf.Sign(deltaX);
         FaceDirection(moveDirection);
         // 추격 중에는 위험 지점에서 방향을 바꾸지 않고 대기합니다.
-        if (!CanMove(moveDirection)) return;
+        if (!CanMove(moveDirection))
+        {
+            StopMove();
+            return;
+        }
 
         Vector3 position = transform.position;
         float destinationX = position.x + deltaX - Mathf.Sign(deltaX) * AttackRangeX;
         position.x = Mathf.MoveTowards(position.x, destinationX, Owner.MoveSpeed * Time.deltaTime);
-        transform.position = position;
+        Move(position - transform.position);
     }
+
+    // displacement는 이번 프레임의 이동량입니다. 속도나 deltaTime을 다시 곱하지 않습니다.
+    protected void Move(Vector3 displacement)
+    {
+        if (!isActiveAndEnabled || Owner == null || Owner.IsDead) displacement = Vector3.zero;
+        Vector3 previousPosition = transform.position;
+        transform.position += displacement;
+        bool moved = (transform.position - previousPosition).sqrMagnitude > Mathf.Epsilon;
+        PlayAnimation(moved ? EnemyAnimState.Move : EnemyAnimState.Idle);
+    }
+
+    protected void StopMove()
+    {
+        Move(Vector3.zero);
+    }
+
     protected virtual void UpdateAttack()
     {
         if (IsAttacking) return;
+        StopMove();
         // 선딜레이 시작 시 공격 방향을 정하고 패턴이 끝날 때까지 유지합니다.
         if (Target != null)
         {
@@ -186,6 +243,7 @@ public class MonsterBehaviour : MonoBehaviour
         }
         finally
         {
+            StopMove();
             IsAttacking = false;
             attackRoutine = null;
         }
