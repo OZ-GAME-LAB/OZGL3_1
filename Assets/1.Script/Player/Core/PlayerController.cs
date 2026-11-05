@@ -414,6 +414,11 @@ public class PlayerController : MonoBehaviour
         _airDashUsed = false;
         EndDropThrough(); // 통과 중 사망 -> 재시작 위치에서 발판을 뚫고 떨어지지 않게
         ClearRequests();
+        // 애니메이터를 바로 Idle로 -> Keep Animator State On Disable이 켜져 있어서 Dead 상태가 남아 있음
+        if (_animator != null && _animator.isActiveAndEnabled)
+        {
+            _animator.Play("Idle", 0, 0f);
+        }
         ChangeState(PlayerState.Idle);
     }
 
