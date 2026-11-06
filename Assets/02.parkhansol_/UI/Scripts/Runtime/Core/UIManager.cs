@@ -20,6 +20,14 @@ namespace OZ.UI
     {
         public static UIManager Instance { get; private set; }
 
+        // v1.4: 플레이 종료(에디터 Play 해제·앱 종료) 중에는 다른 오브젝트가 먼저 파괴됐을 수 있어
+        // 입력 잠금·일시정지 해제 알림을 보내지 않는다 (팀 SceneGameLink가 파괴된 플레이어를 건드리던 예외 방지).
+        // UIState는 다음 플레이 시작 때 ResetStatics로 초기화된다.
+        static bool s_quitting;
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ResetQuitFlag() { s_quitting = false; Application.quitting -= OnAppQuitting; Application.quitting += OnAppQuitting; }
+        static void OnAppQuitting() => s_quitting = true;
+
         [SerializeField] internal bool dontDestroyOnLoad = true;
         [Tooltip("PausesGame 창이 열리면 Time.timeScale = 0 (끄면 UIState.IsPausedByUI만 알림)")]
         [SerializeField] internal bool controlTimeScale = true;
@@ -69,8 +77,11 @@ namespace OZ.UI
         {
             if (Instance != this) return;
             GameUI.Unregister(this);
-            ApplyPause(false);
-            UIState.SetInputBlocked(false);
+            if (!s_quitting)
+            {
+                ApplyPause(false);
+                UIState.SetInputBlocked(false);
+            }
             Instance = null;
         }
 
