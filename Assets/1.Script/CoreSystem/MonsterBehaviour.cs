@@ -255,7 +255,7 @@ public class MonsterBehaviour : MonoBehaviour
         yield break;
     }
 
-    private void StopAttack()
+    protected void StopAttack()
     {
         if (!IsAttacking) return;
         if (attackRoutine != null) StopCoroutine(attackRoutine);
@@ -265,7 +265,11 @@ public class MonsterBehaviour : MonoBehaviour
     }
 
     protected virtual void OnAttackInterrupted() { }
-    protected virtual void HandleDead() { }
+    protected virtual void HandleDead()
+    {
+        if (AnimController != null) AnimController.ResumeAnimation();
+        PlayAnimation(EnemyAnimState.Damaged);
+    }
 
     private void FaceDirection(float direction)
     {

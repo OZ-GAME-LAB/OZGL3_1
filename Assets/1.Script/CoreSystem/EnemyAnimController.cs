@@ -13,6 +13,7 @@ public class EnemyAnimController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     public event System.Action AttackHit;
+    private bool canPauseAnimation;
 
     private static readonly int IsIdle = Animator.StringToHash("IsIdle");
     private static readonly int IsMove = Animator.StringToHash("IsMove");
@@ -31,6 +32,11 @@ public class EnemyAnimController : MonoBehaviour
         ResetAnimState();
     }
 
+    private void OnDisable()
+    {
+        ResumeAnimation();
+    }
+
     public void ChangeAnimState(EnemyAnimState state)
     {
         if (animator == null || animator.runtimeAnimatorController == null) return;
@@ -47,6 +53,7 @@ public class EnemyAnimController : MonoBehaviour
                 animator.SetTrigger(IsAttack);
                 break;
             case EnemyAnimState.Damaged:
+                ResumeAnimation();
                 animator.SetTrigger(IsDamaged);
                 break;
         }
@@ -60,11 +67,31 @@ public class EnemyAnimController : MonoBehaviour
 
     public void ResetAnimState()
     {
+        ResumeAnimation();
         if (animator == null || animator.runtimeAnimatorController == null) return;
 
         animator.ResetTrigger(IsAttack);
         animator.ResetTrigger(IsDamaged);
         SetMovementState(true, false);
+    }
+
+    public void BeginAttackPause()
+    {
+        ResumeAnimation();
+        canPauseAnimation = true;
+    }
+
+    // 칼을 들어 올린 프레임에 지정하는 Animation Event입니다.
+    public void PauseAnimation()
+    {
+        if (canPauseAnimation && isActiveAndEnabled && animator != null)
+            animator.speed = 0f;
+    }
+
+    public void ResumeAnimation()
+    {
+        canPauseAnimation = false;
+        if (animator != null) animator.speed = 1f;
     }
 
     private void SetMovementState(bool idle, bool move)

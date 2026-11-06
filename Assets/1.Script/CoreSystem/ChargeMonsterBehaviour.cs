@@ -13,8 +13,19 @@ public class ChargeMonsterBehaviour : MonsterBehaviour
     public bool IsCharging { get; private set; }
     protected override float AttackDelay => 1.2f;
 
+    protected override void UpdateAttack()
+    {
+        if (IsAttacking) return;
+        base.UpdateAttack();
+        if (!IsAttacking) return;
+        if (AnimController != null) AnimController.BeginAttackPause();
+        PlayAnimation(EnemyAnimState.Attack);
+    }
+
     protected override IEnumerator ExecuteAttack()
     {
+        // 이 시점 이후 들어오는 정지 이벤트는 무시하고 내리찍기를 재개합니다.
+        if (AnimController != null) AnimController.ResumeAnimation();
         // 부모가 선딜레이 시작 시 고정한 방향을 그대로 사용합니다.
         float direction = transform.forward.x >= 0f ? 1f : -1f;
         float distance = GetChargeDistance(direction);
@@ -86,9 +97,16 @@ public class ChargeMonsterBehaviour : MonsterBehaviour
 
     protected override void OnAttackInterrupted()
     {
+        if (AnimController != null) AnimController.ResumeAnimation();
         IsCharging = false;
         hitPlayers.Clear();
         base.OnAttackInterrupted();
+    }
+
+    protected override void HandleDamaged()
+    {
+        StopAttack();
+        base.HandleDamaged();
     }
 
     private float GetChargeDistance(float direction)

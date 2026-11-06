@@ -18,6 +18,7 @@ public class RangedMonsterBehaviour : MonsterBehaviour
         }
 
         if (Target == null || !Target.gameObject.activeInHierarchy) yield break;
+        PlayAnimation(EnemyAnimState.Attack);
 
         // 발사 시점의 플레이어 중심을 조준하고, 발사 후에는 방향을 바꾸지 않습니다.
         Vector3 aim = TargetCenter - BodyCenter;
