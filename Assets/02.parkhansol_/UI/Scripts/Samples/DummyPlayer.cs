@@ -176,6 +176,9 @@ namespace OZ.UI.Samples
                 _cooldownEnd[i] = 0f; _cooldownDur[i] = 0f;
             }
             for (int i = 0; i < 4; i++) _itemCdEnd[i] = 0f;
+            // v1.4: 재도전 = 장착 기술 쿨다운도 초기화 (팀 코드 PlayerSkill.ClearCooldowns와 같은 동작)
+            _cdEnd.Clear();
+            for (int i = 0; i < 3; i++) CooldownReset?.Invoke((SkillSlot)i);
 
             _inv = new ItemStack[Mathf.Max(4, inventoryCapacity)];
             int slot = 0;

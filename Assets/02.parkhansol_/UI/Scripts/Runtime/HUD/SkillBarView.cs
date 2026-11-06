@@ -26,6 +26,7 @@ namespace OZ.UI
                 _loadout.SlotChanged -= OnSkillChanged;
                 _loadout.SkillUseFailed -= OnUseFailed;
                 _loadout.SkillOwned -= OnOwned;
+                _loadout.CooldownReset -= OnCooldownReset;
             }
             _loadout = loadout;
             if (_loadout != null)
@@ -34,6 +35,7 @@ namespace OZ.UI
                 _loadout.SlotChanged += OnSkillChanged;
                 _loadout.SkillUseFailed += OnUseFailed;
                 _loadout.SkillOwned += OnOwned;
+                _loadout.CooldownReset += OnCooldownReset; // v1.4 재도전 등 쿨다운 초기화
             }
             ResubscribeSource(); // 같은 오브젝트가 둘 다 구현하면 쿨다운·실패 이벤트를 한 번만 받게
             RefreshAll();
@@ -95,6 +97,7 @@ namespace OZ.UI
         }
 
         void OnCooldownStarted(SkillSlot slot, float duration) => Find(slot)?.OnCooldownStarted(duration);
+        void OnCooldownReset(SkillSlot slot) => Find(slot)?.OnCooldownReset();
         void OnSkillChanged(SkillSlot slot) { var s = Find(slot); if (s != null) Refresh(s); }
 
         void Refresh(SkillSlotView s)
