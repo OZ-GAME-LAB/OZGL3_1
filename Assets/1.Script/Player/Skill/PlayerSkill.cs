@@ -28,7 +28,7 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
     public event Action<SkillSlot> SlotChanged;                        // HUD 슬롯 아이콘 갱신
     public event Action<SkillSlot, float> CooldownStarted;             // UI에 알림 -> HUD 쿨다운 게이지
     public event Action<SkillSlot, SkillUseFailReason> SkillUseFailed; // UI에 알림 -> HUD 아이콘 흔들기
-    public event Action<SkillSlot> CooldownReset; // UI에 알림 -> HUD 쿨다운 게이지 초기화(ISkillLoadoutSource에 추가 필요)
+    public event Action<SkillSlot> CooldownReset; // UI에 알림 -> HUD 쿨다운 게이지 초기화
 
     public IEnumerable<PlayerSkillBase> AllSkills { get { return _skillList; } }
     public int SkillCount { get { return _skillList.Count; } } // UI 전용
@@ -185,12 +185,6 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
         {
            // HUD가 구독하면 이걸로 게이지를 지움
            CooldownReset?.Invoke((SkillSlot)i);
-
-            // 지금 HUD는 CooldownReset을 모르니까 SlotChanged로 다시 읽게 함
-            // HUD 게이지는 CooldownStarted로 받은 시간을 혼자 돌려서, 값만 지우면 계속 돎
-            // SlotChanged를 받으면 HUD가 GetCooldownRemaining()을 다시 읽음 -> 0초 -> 게이지 지움
-            // HUD에 CooldownReset 반영되면 이 줄 삭제
-            SlotChanged?.Invoke((SkillSlot)i);
         }
     }
 
