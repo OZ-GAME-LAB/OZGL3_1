@@ -1,6 +1,6 @@
 주인공 Chibi 모션 (Generic 24본)
 
-이 폴더의 Clips/에는 Visual/Armature/Hips 계층에 맞춘 클립 20개가 있습니다. 맨손은 Prefabs/Protagonist_Chibi_MotionReview.prefab, 검과 지팡이는 각각 Prefabs/Protagonist_Chibi_SwordGrip.prefab과 Prefabs/Protagonist_Chibi_StaffGrip.prefab을 사용합니다. 세 프리팹의 뼈는 같고 손 메시만 다릅니다.
+이 폴더의 Clips/에는 Visual/Armature/Hips 계층에 맞춘 클립 21개가 있습니다. 맨손은 Prefabs/Protagonist_Chibi_MotionReview.prefab, 검과 지팡이는 각각 Prefabs/Protagonist_Chibi_SwordGrip.prefab과 Prefabs/Protagonist_Chibi_StaffGrip.prefab을 사용합니다. 세 프리팹의 뼈는 같고 손 메시만 다릅니다.
 
 모션 확인
 프리팹을 빈 씬에 배치하고 인스턴스의 루트 Animator를 활성화합니다. Animator Controller에 이 폴더의 클립을 기본 상태로 연결해 Play하면 됩니다. 기본 프리팹에는 Controller나 Avatar가 지정되어 있지 않습니다. 런타임 입력, 판정과 이동은 호출자가 연결합니다.
@@ -10,8 +10,10 @@
 클립 목록 (Clips/)
 • 이동: Idle_Fists, Walk_Fists, Run_Fists, Dash_Forward, Ladder_Climb_Loop
 • 점프: Jump_Full, Jump_Takeoff, Jump_Rise_Loop, Jump_Apex_Loop, Jump_Fall_Loop, Jump_Land
-• 전투·피격: Longsword_Attack_Chop, Longsword_Attack_Slice, Longsword_Attack_Stab, Hit_Reaction, Death_Fall
+• 전투·피격: Punch_Right_Jab, Longsword_Attack_Chop, Longsword_Attack_Slice, Longsword_Attack_Stab, Hit_Reaction, Death_Fall
 • 소품·상호작용: Potion_Drink, Item_Throw_Overhand, Interact_Reach, Pickup_Low
+
+주먹 공격 원본은 Clips/Punch_Right_Jab.anim(약 0.533초)과 ../ChibiCap_v006/Clips/Punch_Elastic_Preview.anim(1.2초)입니다. 두 클립 모두 맨손 프리팹의 Animator 상태에 연결해 확인할 수 있습니다. 게임의 공격 상태에 사용할 클립과 판정 시점은 호출자가 연결합니다.
 
 Walk, Run, Dash는 제자리 클립입니다. Jump_Full은 골반에 수직 궤적을 포함합니다. 물리 컨트롤러가 높이를 정하는 경우에는 Takeoff → Rise → Apex → Fall → Land를 조합해 높이를 두 번 적용하지 마세요. Rise와 Fall은 공중 대기 루프입니다.
 
