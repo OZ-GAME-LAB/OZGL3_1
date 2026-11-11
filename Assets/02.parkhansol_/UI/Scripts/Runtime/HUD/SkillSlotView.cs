@@ -93,6 +93,12 @@ namespace OZ.UI
             if (cooldown != null) cooldown.Play(duration, duration);
         }
 
+        /// <summary>v1.4: 쿨다운 초기화 (재도전 등) — 게이지·남은 초를 바로 지움 (완료 연출·소리 없음)</summary>
+        internal void OnCooldownReset()
+        {
+            if (cooldown != null) cooldown.Clear();
+        }
+
         internal void OnUseFailed(SkillUseFailReason reason)
         {
             if (shakeTarget != null) shakeTarget.Shake(2f, 0.18f);

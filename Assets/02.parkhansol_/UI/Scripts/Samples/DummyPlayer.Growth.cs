@@ -73,6 +73,7 @@ namespace OZ.UI.Samples
         public event Action<StatKind> StatChanged;
         public event Action<string> SkillOwned;
         public event Action<SkillSlot> SlotChanged;
+        public event Action<SkillSlot> CooldownReset; // v1.4 재도전(ResetAll) 때 HUD 게이지 지움
         public event Action NodesChanged;
 
         static SkillOffer[] DefaultSkills() => new[]

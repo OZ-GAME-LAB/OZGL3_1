@@ -412,12 +412,24 @@ public class PlayerController : MonoBehaviour
         _invincibleEndTime = 0f;
         _nextDashTime = 0f;
         _airDashUsed = false;
+        // 스킬 쿨다운 초기화
+        // 대시 쿨다운(_nextDashTime)은 여기서 초기화하는데 스킬 쿨다운만 남아 있었음
+        // 재도전 = 새로 시작이라 죽기 직전에 쓴 스킬 쿨이 이어지면 안 됨
+        if (_skills != null)
+        {
+            _skills.ClearCooldowns();
+        }
         EndDropThrough(); // 통과 중 사망 -> 재시작 위치에서 발판을 뚫고 떨어지지 않게
         ClearRequests();
+        // 애니메이터를 바로 Idle로 -> Keep Animator State On Disable이 켜져 있어서 Dead 상태가 남아 있음
+        if (_animator != null && _animator.isActiveAndEnabled)
+        {
+            _animator.Play("Idle", 0, 0f);
+        }
         ChangeState(PlayerState.Idle);
     }
 
-    // 타이틀 '새 게임' 때 이전 판 성장(버프·스킬·스탯)을 지움
+    // 타이틀 '새 게임' 때 이전 판 성장(버프, 스킬, 스탯)을 지움
     private void ResetForNewGame()
     {
         if (_buffs != null) _buffs.ClearAll();
@@ -490,7 +502,7 @@ public class PlayerController : MonoBehaviour
         _airDashUsed = false;
     }
 
-    // AddForce 대신 속도 대입 → 중복 호출돼도 점프력이 누적되지 않음
+    // AddForce 대신 속도 대입 -> 중복 호출돼도 점프력이 누적되지 않음
     public void Jump()
     {
         IsJumpRequested = false;

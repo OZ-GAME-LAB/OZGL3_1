@@ -138,6 +138,8 @@ namespace OZ.UI.Contracts
         event Action<SkillSlot> SlotChanged;
         event Action<SkillSlot, float> CooldownStarted;
         event Action<SkillSlot, SkillUseFailReason> SkillUseFailed;
+        /// <summary>[v1.4] 쿨다운 초기화 (재도전 등) → HUD 게이지를 바로 지운다. PlayerSkill.ClearCooldowns가 칸마다 보냄</summary>
+        event Action<SkillSlot> CooldownReset;
     }
 
     /// <summary>캐릭터 탭 [+]: 스탯·기술 투자 (가격 확인 → 성장 포인트 차감 → 단계 추가)</summary>

@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
 // 기본 공격: 주먹 (물리). 기획 v0.5 - 최초 피해 물리 20, 민첩 구매 1회당 공격 속도 +3%.
-// 피해/속도 값은 나중에 PlayerStat(추가예정) 에서 추가해준다
+// 공격력은 PlayerStats가 SetAttackPower로 넣어줌 (힘 구매 시 갱신)
 public class PunchAttack : MonoBehaviour, IPlayerAttack, IAttackStatReceiver
 {
     [Header("Base")]

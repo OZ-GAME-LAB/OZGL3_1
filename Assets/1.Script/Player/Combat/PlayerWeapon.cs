@@ -13,7 +13,8 @@ public enum WeaponType
 
 // 현재 무기 상태만 관리. 무기가 바뀌면 평타, 무기 모델, 애니메이터를 한 번에 맞춤.
 // 왜 따로 뺐나 -> 검을 "어떻게 얻는지"(상점/드롭 등)는 아직 미정
-// -> 나중에 획득 쪽 코드는 Equip(WeaponType.Sword)만 부르면 되게
+// -> 획득 쪽 코드는 CanAcquire로 확인하고 TryAcquire만 부르면 되게
+// (Equip은 "무기 하나만" 규칙을 검사하지 않아서 private -> 내부·디버그용)
 [RequireComponent(typeof(PlayerController))]
 public class PlayerWeapon : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class PlayerWeapon : MonoBehaviour
         public MonoBehaviour attack; // IPlayerAttack 구현 컴포넌트 (예: SwordComboAttack)
         public GameObject prop;      // 무기 모델. 장착 중에만 켬 (검 = WeaponSocket 아래, 스태프 = 왼손 뼈 아래)
 
-        // 무기별 모션(Idle, 공격 등)을 바꿔 끼우는 컨트롤러.비우면 기본 컨트롤러 사용
+        // 무기별 모션(Idle, 공격 등)을 바꿔 끼우는 컨트롤러. 비우면 기본 컨트롤러 사용
         // 무기는 한 번 고르면 끝까지 가므로, 상태를 무기마다 만들지 않고 클립만 교체
         // -> 이동·점프·사다리 같은 공통 상태는 기본 컨트롤러 하나만 고치면 모든 무기에 반영됨
         public AnimatorOverrideController animatorOverride;
@@ -53,7 +54,12 @@ public class PlayerWeapon : MonoBehaviour
     private WeaponType _pendingWeapon;
 
     public WeaponType Current { get; private set; }
-    public event Action<WeaponType> WeaponChanged; // 나중에 UI(장비 표시)나 저장에서 구독
+    public event Action<WeaponType> WeaponChanged; // UI(PlayerWeaponBridge → HUD 평타 칸)가 구독
+
+    // 무기를 이미 골랐는지
+    //     Start 전에 불러오기(LoadSaveData)가 오면 아직 Current에 반영 전
+    //     -> 그 사이에 물어봐도 불러온 무기 기준으로 답하게
+    public bool HasWeapon { get { return GetSaveData() != WeaponType.None; } }
 
     private void Awake()
     {
@@ -114,8 +120,9 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    // 획득, 장착 쪽에서 호출. 바꿨으면 true
-    public bool Equip(WeaponType type)
+    // 무기 교체 (내부·디버그용). 바꿨으면 true
+    // 획득은 TryAcquire를 쓸 것 -> Equip은 "무기 하나만" 규칙을 검사하지 않음
+    private bool Equip(WeaponType type)
     {
         // 휘두르는 도중에 바꾸면 검 모델이 사라지거나 콤보가 꼬임 -> 공격 중엔 막음
         if (_player.CurrentStateType == PlayerState.Attack)
@@ -138,9 +145,41 @@ public class PlayerWeapon : MonoBehaviour
         return true;
     }
 
-    public void Unequip()
+    // 무기 획득 (상점 구매 / 필드 습득 / 보상 공용)
+    // 획득 방식은 아직 미정이지만 결국 "무기 하나를 얻는다"는 건 같음
+    //     -> 얻게 해주는 쪽(상점, 아이템)이 CanAcquire로 확인하고 TryAcquire만 부르면 끝
+    //     -> "무기는 하나만" 규칙이 여기 한 곳에 있어서, 어디서 불러도 똑같이 지켜짐
+    public bool CanAcquire(WeaponType type) // 얻을 수 있는지 (UI 상점 버튼 잠금용)
     {
-        Equip(WeaponType.None);
+        // 맨손은 얻는 대상이 아님
+        if (type == WeaponType.None)
+        {
+            return false;
+        }
+
+        // 이미 무기를 골랐으면 다른 무기든 같은 무기든 거절
+        if (HasWeapon)
+        {
+            return false;
+        }
+
+        // 프리팹에 등록 안 된 무기(원본 Player 프리팹의 스태프 등)는 장착해도 평타가 없음
+        return FindAttack(type) != null;
+    }
+
+    // 획득. 성공하면 true
+    // 실패했을 때 상점은 포인트를 깎지 않고, 필드 아이템은 사라지지 않아야 함
+    // -> 호출한 쪽이 결과를 보고 처리할 수 있게
+    public bool TryAcquire(WeaponType type)
+    {
+        if (!CanAcquire(type))
+        {
+            return false;
+        }
+
+        // Equip은 공격 중이면 false (휘두르는 도중 무기가 바뀌면 콤보·모델이 꼬임)
+        // -> 공격 중 줍기는 실패 처리, 다시 닿으면 획득됨
+        return Equip(type);
     }
 
     // 저장용. Start 전에 불러온 값이 있으면 아직 Current에 반영 전이라 그 값을 돌려줌
@@ -234,5 +273,19 @@ public class PlayerWeapon : MonoBehaviour
             }
         }
         return null;
+    }
+
+    // 테스트용: 플레이 중 인스펙터 PlayerWeapon 컴포넌트 ⋮ 메뉴에서 실행
+    // 획득 방식(상점/습득)이 연결되기 전 확인용 -> 연결되면 삭제
+    [ContextMenu("Test/Acquire Sword")]
+    private void TestAcquireSword()
+    {
+        Debug.Log($"[PlayerWeapon] 검 획득: {TryAcquire(WeaponType.Sword)} (현재 {Current})");
+    }
+
+    [ContextMenu("Test/Acquire Staff")]
+    private void TestAcquireStaff()
+    {
+        Debug.Log($"[PlayerWeapon] 스태프 획득: {TryAcquire(WeaponType.Staff)} (현재 {Current})");
     }
 }

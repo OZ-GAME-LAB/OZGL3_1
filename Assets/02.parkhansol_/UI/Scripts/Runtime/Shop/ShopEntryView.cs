@@ -66,6 +66,7 @@ namespace OZ.UI
             if (effectText != null) effectText.text = UIText.ItemEffect(item);
 
             bool maxed = entry != null && ShopRules.RoomLeft(entry, owned) <= 0;
+            bool locked = !maxed && WeaponShopRules.IsLocked(item); // v1.5 다른 무기를 이미 고름
             bool afford = entry != null && entry.price <= currency;
             int limit = entry != null ? entry.maxOwned : 0;
 
@@ -88,12 +89,12 @@ namespace OZ.UI
             bool oneTime = limit == 1; // 장비 등 1회 구매
             if (priceText != null)
             {
-                priceText.text = maxed ? (oneTime ? "보유" : "최대") : price;
-                priceText.color = maxed ? maxedColor : afford ? priceOkColor : priceBadColor;
+                priceText.text = maxed ? (oneTime ? "보유" : "최대") : locked ? "잠김" : price;
+                priceText.color = maxed || locked ? maxedColor : afford ? priceOkColor : priceBadColor;
             }
-            if (buyLabel != null) buyLabel.text = maxed ? (oneTime ? "구매 완료" : "최대 보유") : price;
+            if (buyLabel != null) buyLabel.text = maxed ? (oneTime ? "구매 완료" : "최대 보유") : locked ? "무기 보유 중" : price;
             if (buyButton != null && buyButton.targetGraphic != null)
-                buyButton.targetGraphic.color = !maxed && afford ? Color.white : buyDisabledColor;
+                buyButton.targetGraphic.color = !maxed && !locked && afford ? Color.white : buyDisabledColor;
 
             if (background != null) background.color = selected ? selectedColor : normalColor;
             if (selectedMark != null) selectedMark.enabled = selected;

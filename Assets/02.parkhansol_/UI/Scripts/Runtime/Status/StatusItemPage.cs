@@ -149,7 +149,8 @@ namespace OZ.UI
             bool equip = e.item.IsEquipment || e.maxOwned == 1;
             var result = src.TryBuy(e, 1);
             string limit = equip ? "이미 가지고 있다" : $"더 가질 수 없다 (최대 {e.maxOwned}개)";
-            if (Owner.Report(result, equip ? $"{e.item.displayName} 구매 — 영구 보유" : $"{e.item.displayName} ×1 구매", CurrencyName, limit))
+            string ok = e.item.GrantsWeapon ? $"{e.item.displayName} 획득 — 평타가 바뀐다" : equip ? $"{e.item.displayName} 구매 — 영구 보유" : $"{e.item.displayName} ×1 구매";
+            if (Owner.Report(result, ok, CurrencyName, limit))
             {
                 if (_selected < _cards.Count) ((RectTransform)_cards[_selected].transform).Punch(0.12f);
                 if (_selected < _owned.Count) ((RectTransform)_owned[_selected].transform).Punch(0.2f);
@@ -194,7 +195,9 @@ namespace OZ.UI
                 bool equip = item != null && (item.IsEquipment || cur.maxOwned == 1);
                 int room = ShopRules.RoomLeft(cur, owned);
                 detailNext.text = cur == null ? "" :
-                    equip ? (owned > 0 ? "보유 중 — 영구 효과" : $"{cur.price:N0}P · 1회 구매, 영구 보유") :
+                    equip ? (owned > 0 ? (item.GrantsWeapon ? "장착 중인 무기" : "보유 중 — 영구 효과") :
+                             WeaponShopRules.IsLocked(item) ? "무기는 하나만 — 이미 다른 무기를 가지고 있다" :
+                             $"{cur.price:N0}P · 1회 구매, 영구 보유") :
                     room <= 0 ? $"최대 보유 ({owned}/{cur.maxOwned})" :
                     $"{cur.price:N0}P · 구매하면 {owned + 1}개" + (cur.maxOwned > 0 ? $" (최대 {cur.maxOwned})" : "");
             }

@@ -307,6 +307,10 @@ namespace OZ.UI
                     UISfx.Play(UISound.Error);
                     ShowMessage(limitText ?? "더 올릴 수 없다 (최대 단계)", false);
                     return false;
+                case ShopBuyResult.WeaponTaken: // v1.5
+                    UISfx.Play(UISound.Error);
+                    ShowMessage("무기는 하나만 가질 수 있다", false);
+                    return false;
                 default:
                     UISfx.Play(UISound.Error);
                     ShowMessage("지금은 살 수 없다", false);
