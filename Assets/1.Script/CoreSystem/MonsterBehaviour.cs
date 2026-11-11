@@ -38,7 +38,7 @@ public class MonsterBehaviour : MonoBehaviour
     public float AttackRangeY { get; private set; }
     public bool IsAttacking { get; private set; }
     protected virtual float AttackDelay => 0.5f;
-    protected float SkillDamage => Owner.SkillDamage;
+    protected virtual float SkillDamage => Owner.SkillDamage;
     protected Vector3 BodyCenter => bodyCollider != null ? bodyCollider.bounds.center : transform.position;
     protected Vector3 TargetCenter => targetCollider != null ? targetCollider.bounds.center : Target.position;
     protected int GroundMask => groundMask;
@@ -107,12 +107,7 @@ public class MonsterBehaviour : MonoBehaviour
         }
 
         Vector2 offset = TargetCenter - BodyCenter;
-        if (offset.sqrMagnitude > detectionRange * detectionRange)
-            ChangeState(MonsterState.Idle);
-        else if (Mathf.Abs(offset.x) <= AttackRangeX && Mathf.Abs(offset.y) <= AttackRangeY)
-            ChangeState(MonsterState.Attack);
-        else
-            ChangeState(MonsterState.Chase);
+        ChangeState(EvaluateState(offset));
 
         switch (State)
         {
@@ -120,6 +115,14 @@ public class MonsterBehaviour : MonoBehaviour
             case MonsterState.Chase: UpdateChase(); break;
             case MonsterState.Attack: UpdateAttack(); break;
         }
+    }
+
+    protected virtual MonsterState EvaluateState(Vector2 offset)
+    {
+        if (offset.sqrMagnitude > detectionRange * detectionRange) return MonsterState.Idle;
+        if (Mathf.Abs(offset.x) <= AttackRangeX && Mathf.Abs(offset.y) <= AttackRangeY)
+            return MonsterState.Attack;
+        return MonsterState.Chase;
     }
 
     public void ChangeState(MonsterState next)

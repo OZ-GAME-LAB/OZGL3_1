@@ -12,12 +12,13 @@ public class ChargeMonsterBehaviour : MonsterBehaviour
 
     public bool IsCharging { get; private set; }
     protected override float AttackDelay => 1.2f;
+    protected virtual bool UseChargePreparation => true;
 
     protected override void UpdateAttack()
     {
         if (IsAttacking) return;
         base.UpdateAttack();
-        if (!IsAttacking) return;
+        if (!IsAttacking || !UseChargePreparation) return;
         if (AnimController != null) AnimController.BeginAttackPause();
         PlayAnimation(EnemyAnimState.Attack);
     }

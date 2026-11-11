@@ -19,6 +19,7 @@ public class EnemyAnimController : MonoBehaviour
     private static readonly int IsMove = Animator.StringToHash("IsMove");
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
     private static readonly int IsDamaged = Animator.StringToHash("IsDamaged");
+    private static readonly int AttackType = Animator.StringToHash("AttackType");
 
     private void Awake()
     {
@@ -56,6 +57,18 @@ public class EnemyAnimController : MonoBehaviour
                 ResumeAnimation();
                 animator.SetTrigger(IsDamaged);
                 break;
+        }
+    }
+
+    // 보스용 Animator에서만 AttackType(Int)을 추가하면 공격별 전환을 사용할 수 있습니다.
+    public void SetAttackType(int type)
+    {
+        if (animator == null || animator.runtimeAnimatorController == null) return;
+        foreach (AnimatorControllerParameter parameter in animator.parameters)
+        {
+            if (parameter.nameHash != AttackType || parameter.type != AnimatorControllerParameterType.Int) continue;
+            animator.SetInteger(AttackType, type);
+            return;
         }
     }
 

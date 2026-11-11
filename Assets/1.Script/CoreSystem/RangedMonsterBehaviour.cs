@@ -7,7 +7,7 @@ public class RangedMonsterBehaviour : MonsterBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField, Min(0f)] private float spawnOffset = 0.6f;
 
-    protected override float AttackDelay => 0.8f;
+    protected override float AttackDelay => 1.5f;
 
     protected override IEnumerator ExecuteAttack()
     {
