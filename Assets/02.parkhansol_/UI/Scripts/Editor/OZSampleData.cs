@@ -174,7 +174,7 @@ namespace OZ.UI.EditorTools
         /// </summary>
         static List<ShopEntry> EnsureEquipment()
         {
-            var sword = Make<ItemData>("Item_Sword", i => { i.id = "equip_sword"; i.displayName = "칼"; i.description = "[임시] 공격 강화 장비 — 효과 기획 미정"; i.icon = Icon("Item_Sword"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.fxColor = new Color(0.85f, 0.87f, 0.92f); });
+            var sword = Make<ItemData>("Item_Sword", i => { i.id = "equip_sword"; i.displayName = "칼"; i.description = "[임시] 검을 얻는다 — 평타가 검 공격으로 바뀐다.\n무기는 하나만 가질 수 있다."; i.icon = Icon("Item_Sword"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.grantsWeapon = UIWeapon.Sword; i.fxColor = new Color(0.85f, 0.87f, 0.92f); });
             var shield = Make<ItemData>("Item_Shield", i => { i.id = "equip_shield"; i.displayName = "방패"; i.description = "[임시] 방어 강화 장비 — 효과 기획 미정"; i.icon = Icon("Item_Shield"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.fxColor = new Color(0.79f, 0.64f, 0.36f); });
             return new List<ShopEntry>
             {

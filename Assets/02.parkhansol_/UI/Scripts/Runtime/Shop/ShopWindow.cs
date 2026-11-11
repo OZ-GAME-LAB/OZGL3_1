@@ -285,6 +285,9 @@ namespace OZ.UI
                 case ShopBuyResult.InventoryFull:
                     Fail("가방에 자리가 없다");
                     break;
+                case ShopBuyResult.WeaponTaken: // v1.5
+                    Fail("무기는 하나만 가질 수 있다");
+                    break;
                 default:
                     Fail("지금은 살 수 없다");
                     break;

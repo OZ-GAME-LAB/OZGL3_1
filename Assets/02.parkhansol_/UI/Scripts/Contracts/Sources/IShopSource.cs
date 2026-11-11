@@ -15,6 +15,8 @@ namespace OZ.UI.Contracts
         InventoryFull = 3,
         /// <summary>데이터 없음·지금은 못 삼 (전투 중 등)</summary>
         Unavailable = 4,
+        /// <summary>[v1.5] 무기는 하나만 — 이미 다른 무기를 가지고 있음</summary>
+        WeaponTaken = 5,
     }
 
     /// <summary>

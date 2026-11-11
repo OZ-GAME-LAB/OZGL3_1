@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// [박한솔 UI · v1.4] 정명진 님 PlayerWeapon(맨손·검·스태프) → HUD 평타 칸. 팀원 코드 수정 없이 동작한다.
-///   PlayerWeapon.WeaponChanged(주석: "나중에 UI(장비 표시)에서 구독")를 구독해 IWeaponSource로 바꿔 GameUI에 등록.
+///   PlayerWeapon.WeaponChanged를 구독해 IWeaponSource로 바꿔 GameUI에 등록.
+///   [v1.5] 상점 무기 구매: IWeaponAcquireSource → PlayerWeapon.CanAcquire / TryAcquire ("무기는 하나만" 규칙은 플레이어 쪽).
 ///   콤보 점: 지금 무기의 평타 컴포넌트가 IComboAttack이고 플레이어가 Attack 상태일 때 CurrentStep.
 /// Play 시 PlayerWeapon이 있는 오브젝트에 자동으로 붙는다 (씬·프리팹 수정 없음).
 /// 플레이어 쪽이 IWeaponSource를 직접 구현하면 이 파일은 지워도 된다.
 /// </summary>
 [DisallowMultipleComponent]
 [AddComponentMenu("OZ/UI/Links/Player Weapon Bridge")]
-public class PlayerWeaponBridge : MonoBehaviour, IWeaponSource
+public class PlayerWeaponBridge : MonoBehaviour, IWeaponSource, IWeaponAcquireSource
 {
     [Tooltip("검 콤보 타 수 (HUD 점 개수). 콤보가 아닌 무기는 0")]
     [SerializeField, Min(0)] int swordComboLength = 3;
@@ -77,6 +78,10 @@ public class PlayerWeaponBridge : MonoBehaviour, IWeaponSource
     }
 
     void OnWeaponChanged(WeaponType _) => WeaponChanged?.Invoke();
+
+    // ── v1.5 무기 획득 (상점) → 정명진 님 PlayerWeapon (UIWeapon과 WeaponType 순서 같음) ──
+    public bool CanAcquire(UIWeapon weapon) => _weapon != null && _weapon.CanAcquire((WeaponType)(int)weapon);
+    public bool TryAcquire(UIWeapon weapon) => _weapon != null && _weapon.TryAcquire((WeaponType)(int)weapon);
 
     // 무기 종류 이름이 들어간 평타 컴포넌트 (SwordComboAttack / StaffAttack / PunchAttack)
     T CurrentAttack<T>(T[] list) where T : class

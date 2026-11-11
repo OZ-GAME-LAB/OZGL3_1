@@ -13,6 +13,8 @@ using UnityEngine.SceneManagement;
 ///   다른 쪽이 이미 상점 소스를 등록했으면(UI 샌드박스의 DummyPlayer, 나중에 코어의 실제 구현) 스스로 사라진다.
 /// 효과: 회복은 PlayerHealth.Heal (체력이 가득이면 소비 안 함 — 기획데이터 9장).
 ///   공격·방어·신속은 HUD 버프 표시까지만 (실제 능력치 반영은 플레이어 담당 PlayerStats 연결 후).
+///   [v1.5] 무기 장비(ItemData.grantsWeapon): PlayerWeapon.TryAcquire가 성공해야 포인트를 깎는다 (무기는 하나만).
+///          보유 여부는 플레이어가 실제로 든 무기 기준 (필드에서 주워도 상점에 '보유'로 보임).
 /// 포인트·아이템 저장은 하지 않는다 (씬을 다시 열면 초기화). 코어의 포인트 시스템이 생기면 이 파일은 지워도 된다.
 /// </summary>
 [DisallowMultipleComponent]
@@ -233,6 +235,7 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     public int GetOwned(ItemData item)
     {
         if (item == null) return 0;
+        if (item.GrantsWeapon && UISources.Weapon != null) return WeaponShopRules.IsHolding(item) ? 1 : 0; // v1.5 무기는 플레이어 기준
         for (int i = 0; i < 4; i++) if (quickItems[i] == item) return _counts[i];
         return _others.TryGetValue(item, out int n) ? n : 0;
     }
@@ -241,6 +244,17 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     {
         var check = ShopRules.Check(entry, amount, GetOwned(entry?.item), _points);
         if (check != ShopBuyResult.Success) return check;
+        if (entry.item.GrantsWeapon)
+        {
+            // v1.5 무기: 정명진 님 PlayerWeapon이 실제로 줘야 포인트를 깎는다 ("무기는 하나만" 규칙은 플레이어 쪽)
+            var acq = WeaponShopRules.Acquirer;
+            if (acq == null) return ShopBuyResult.Unavailable;                                  // 씬에 플레이어 무기가 없음
+            if (!acq.CanAcquire(entry.item.grantsWeapon)) return ShopBuyResult.WeaponTaken;      // 이미 다른 무기
+            if (!acq.TryAcquire(entry.item.grantsWeapon)) return ShopBuyResult.Unavailable;      // 공격 중 등 → 포인트 그대로
+            _points -= entry.price * amount;
+            ShopChanged?.Invoke();
+            return ShopBuyResult.Success;
+        }
         int slot = entry.item.slotIndex;
         if (slot < 0 || slot > 3)
         {

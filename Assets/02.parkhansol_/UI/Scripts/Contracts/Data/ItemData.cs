@@ -28,8 +28,12 @@ namespace OZ.UI.Contracts
         [Tooltip("사용 연출 색 (회복=초록, 공격=빨강 등)")]
         public Color fxColor = Color.white;
 
+        [Tooltip("[v1.5] 이 장비를 사면 얻는 평타 무기 (None = 무기 아님). 무기는 하나만 — 플레이어 PlayerWeapon이 판단")]
+        public UIWeapon grantsWeapon = UIWeapon.None;
+
         public bool IsBuff => buffDuration > 0f;
         public bool IsUsable => effectType != ItemEffectType.KeyItem && effectType != ItemEffectType.Equipment;
         public bool IsEquipment => effectType == ItemEffectType.Equipment;
+        public bool GrantsWeapon => grantsWeapon != UIWeapon.None;
     }
 }
