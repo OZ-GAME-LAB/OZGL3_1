@@ -400,7 +400,6 @@ MonoBehaviour:
   gateRenderer: {fileID: 6107130399942578429}
   gateMaterial: {fileID: 0}
   spawner: {fileID: 0}
-  spawnPoint: {fileID: 5959469816147478608}
   spawnInterval: 3
 --- !u!1 &1782760200106670885
 GameObject:
@@ -584,7 +583,6 @@ MonoBehaviour:
   gateRenderer: {fileID: 6998889315643921242}
   gateMaterial: {fileID: 0}
   spawner: {fileID: 0}
-  spawnPoint: {fileID: 8431218532494981631}
   spawnInterval: 3
 --- !u!1 &5686401221408721354
 GameObject:
@@ -716,7 +714,6 @@ MonoBehaviour:
   gateMaterial: {fileID: 0}
   durability: 30
   bossPrefab: {fileID: 2873690002261162043, guid: ae2fd175855b4597b985f092ee1c9834, type: 3}
-  bossSpawnPoint: {fileID: 8840102287991999270}
   spawner: {fileID: 5225655727218553630}
 --- !u!1 &6468146911276168277
 GameObject:
@@ -1065,7 +1062,6 @@ MonoBehaviour:
   gateRenderer: {fileID: 8763179147988467238}
   gateMaterial: {fileID: 0}
   spawner: {fileID: 0}
-  spawnPoint: {fileID: 1824156355027068956}
   spawnInterval: 3
 --- !u!1 &8933158922703630053
 GameObject:
