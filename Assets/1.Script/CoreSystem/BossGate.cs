@@ -7,7 +7,6 @@ public class BossGate : StageGate, IDamageable
 {
     [SerializeField, Min(1f)] private float durability = 30f;
     [SerializeField] private BossMonster bossPrefab;
-    [SerializeField] private Transform bossSpawnPoint;
     [SerializeField] private MonsterSpawner spawner;
     private const float SummonDelay = 5f;
     private float remainingDurability;
@@ -34,7 +33,7 @@ public class BossGate : StageGate, IDamageable
         spawner.Initialize(poolManager, playerTarget);
         if (bossPrefab != null)
             poolManager.PreparePool(bossPrefab.gameObject);
-        spawner.Configure(bossPrefab, bossSpawnPoint != null ? bossSpawnPoint : transform, bossData);
+        spawner.Configure(bossPrefab, bossData);
         spawner.AllMonstersDefeated -= OnBossDefeated;
         spawner.AllMonstersDefeated += OnBossDefeated;
         if (bossPrefab == null)

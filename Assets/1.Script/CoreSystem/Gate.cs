@@ -4,8 +4,6 @@ using UnityEngine;
 public class Gate : StageGate
 {
     [SerializeField] private MonsterSpawner spawner;
-    // 기존 프리팹의 소환 위치를 보존합니다.
-    [SerializeField, HideInInspector] private Transform spawnPoint;
     [SerializeField, Min(0.1f)] private float spawnInterval = 3f;
     private Coroutine spawnRoutine;
     // 랭크별 데이터가 마련되면 GetMaxSpawnCount()에서 조회하도록 교체합니다.
@@ -20,7 +18,6 @@ public class Gate : StageGate
         if (spawner == null)
             spawner = gameObject.AddComponent<MonsterSpawner>();
         spawner.Initialize(manager, playerTarget);
-        spawner.Configure(null, spawnPoint);
         spawner.AllMonstersDefeated -= OnAllMonstersDefeated;
         spawner.AllMonstersDefeated += OnAllMonstersDefeated;
     }
