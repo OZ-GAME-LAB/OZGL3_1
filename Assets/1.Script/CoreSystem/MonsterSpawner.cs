@@ -27,11 +27,10 @@ public class MonsterSpawner : MonoBehaviour
         fixedData = null;
     }
 
-    public void Configure(Monster prefab, Transform point, BaseMonsterData data = null)
+    public void Configure(Monster prefab, BaseMonsterData data = null)
     {
         fixedPrefab = prefab;
         fixedData = data;
-        if (point != null) spawnPoint = point;
     }
 
     public void ConfigureMonsters(IEnumerable<MonsterData> settings)

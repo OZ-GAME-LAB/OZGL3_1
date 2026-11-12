@@ -14,6 +14,7 @@ public abstract class StageGate : MonoBehaviour
 
     [SerializeField] private Renderer gateRenderer;
     [SerializeField] private Material gateMaterial;
+    [SerializeField] private GateAnimController animController;
     private MaterialPropertyBlock colorProperties;
 
     public GateState State { get; private set; }
@@ -59,6 +60,8 @@ public abstract class StageGate : MonoBehaviour
     private void SetState(GateState state)
     {
         State = state;
+        if (animController == null) animController = GetComponentInChildren<GateAnimController>(true);
+        if (animController != null) animController.SetActive(state == GateState.Active);
         if (gateRenderer == null) return;
         Color color = state == GateState.Active ? Color.green
             : state == GateState.Closed ? Color.red : Color.blue;

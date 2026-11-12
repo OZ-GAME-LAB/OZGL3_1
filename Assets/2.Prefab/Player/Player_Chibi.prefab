@@ -993,8 +993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd91014dd54c7f845beb58ef0d7defc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProtagonistAnimationDriver
-  _punchClip: {fileID: 7400000, guid: 95b6d5a658feaef46ba100973b4b758a, type: 2}
-  _skillClip: {fileID: 0}
+  _punchClip: {fileID: 7400000, guid: c5cc3ada2f045844687c33596198a2aa, type: 2}
+  _skillClip: {fileID: 7400000, guid: 2475158dfd66c134caad346c54b3479f, type: 2}
   _attackContactNormalized: 0.82
   _allowControlKeyWalk: 1
   _slowWalkMultiplier: 0.44
