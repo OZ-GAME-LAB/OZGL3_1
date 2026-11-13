@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 9012031589930947668}
   - component: {fileID: 5084641526898161869}
   - component: {fileID: 19213253809334898}
+  - component: {fileID: 3145553414567117246}
   m_Layer: 9
   m_Name: Player_Chibi
   m_TagString: Untagged
@@ -1070,6 +1071,76 @@ CapsuleCollider:
   m_Height: 1.295057
   m_Direction: 1
   m_Center: {x: -0, y: 0.6475285, z: 0}
+--- !u!114 &3145553414567117246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171845526766070672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3102be758f4e1ba44368729eaba339, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::SwordAttackVfx
+  _animator: {fileID: 9012031589930947668}
+  _spaceRoot: {fileID: 3122150555835479282}
+  _bladeBase: {fileID: 6773967161959536618}
+  _bladeTip: {fileID: 2734388037225083537}
+  _swordProp: {fileID: 1257076202876064094}
+  _animatorLayer: 0
+  _manualSampling: 0
+  _ribbonMaterial: {fileID: 2100000, guid: 836ff321745420b4790df313a5ac3197, type: 2}
+  _historyCapacity: 48
+  _baseInset: 0.06
+  _ribbonWidth: 0.018
+  _tipOverreach: 0.055
+  _baseOpacity: 0.09
+  _tailFadePower: 1.5
+  _minimumSampleDistance: 0.002
+  _turnBreakDegrees: 60
+  _teleportBreakDistance: 1.5
+  _bladeJumpBreakDistance: 1.2
+  _steps:
+  - start: 0.3
+    peak: 0.45
+    end: 0.65
+    tail: 0.09
+    referenceDuration: 0.7
+    color: {r: 0.8, g: 0.94, b: 1, a: 1}
+    burstPrefab: {fileID: 6918498591381742983, guid: 4d24ce70b3e116d4a9e99ca9b7583156, type: 3}
+    burstBladeFraction: 0.7
+    burstOffset: {x: 0, y: 0, z: 0}
+    burstEuler: {x: 0, y: 0, z: 90}
+    burstScale: {x: 0.416, y: 0.416, z: 0.416}
+    followBlade: 1
+    burstLifetime: 0.24
+  - start: 0.18
+    peak: 0.29
+    end: 0.55
+    tail: 0.085
+    referenceDuration: 0.6
+    color: {r: 0.8, g: 0.94, b: 1, a: 1}
+    burstPrefab: {fileID: 6918498591381742983, guid: 4d24ce70b3e116d4a9e99ca9b7583156, type: 3}
+    burstBladeFraction: 0.7
+    burstOffset: {x: 0, y: 0, z: 0}
+    burstEuler: {x: 0, y: 0, z: 90}
+    burstScale: {x: 0.416, y: 0.416, z: 0.416}
+    followBlade: 1
+    burstLifetime: 0.24
+  - start: 0.12
+    peak: 0.22
+    end: 0.42
+    tail: 0.06
+    referenceDuration: 0.7
+    color: {r: 0.8, g: 0.94, b: 1, a: 1}
+    burstPrefab: {fileID: 9194657726840776729, guid: f39a00f4847dc2e418f206ced79ef624, type: 3}
+    burstBladeFraction: 1
+    burstOffset: {x: 0, y: 0, z: 0}
+    burstEuler: {x: 0, y: 0, z: 0}
+    burstScale: {x: 0.195, y: 0.195, z: 0.195}
+    followBlade: 1
+    burstLifetime: 0.24
 --- !u!1 &4922623111276217172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1742,16 @@ GameObject:
 --- !u!4 &2123109394480634747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5199287055177731254, guid: 109b77b14a9468443adcfd77766abc0b, type: 3}
+  m_PrefabInstance: {fileID: 6147792519078336461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2734388037225083537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8116374761859655004, guid: 109b77b14a9468443adcfd77766abc0b, type: 3}
+  m_PrefabInstance: {fileID: 6147792519078336461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6773967161959536618 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 815344527659597863, guid: 109b77b14a9468443adcfd77766abc0b, type: 3}
   m_PrefabInstance: {fileID: 6147792519078336461}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6726882605903285353
