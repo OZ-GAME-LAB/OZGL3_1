@@ -233,7 +233,7 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  _slashVfx: {fileID: 0}
+  _slashVfx: {fileID: 2788866611834767653, guid: 303ac876d8d7e0c43a5a1b9556a4750a, type: 3}
 --- !u!114 &3107015227771096455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  _slashVfx: {fileID: 0}
+  _slashVfx: {fileID: 4401920166820198870, guid: ad3cba67d9e448b4ba9ad22c06b717e0, type: 3}
 --- !u!114 &7346613832737697576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d3102be758f4e1ba44368729eaba339, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwordAttackVfx
   _animator: {fileID: 9012031589930947668}
   _spaceRoot: {fileID: 3122150555835479282}
