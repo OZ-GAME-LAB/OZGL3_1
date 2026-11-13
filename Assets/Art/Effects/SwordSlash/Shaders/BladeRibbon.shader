@@ -58,7 +58,7 @@ Shader "OZGL3/Effects/Blade Ribbon"
                 half mask = lerp(1.0h, max(detail.r,max(detail.g,detail.b)) * detail.a, _DetailStrength);
                 // The leading blade edge stays crisp; only the old sweep is soft.
                 half edge = 1.0h - smoothstep(0.0h, _CoreWidth, uv.x);
-                half radial = smoothstep(0.0h, 0.17h, uv.y) * (1.0h - smoothstep(0.96h,1.0h,uv.y));
+                half radial = smoothstep(0.38h, 0.88h, uv.y) * (1.0h - smoothstep(0.96h,1.0h,uv.y));
                 half3 hue = _Tint.rgb * input.color.rgb;
                 half3 light = lerp(hue, half3(1.0h, 0.97h, 0.9h), edge * 0.72h) * _Intensity;
                 half opacity = saturate(input.color.a * _Tint.a * radial * mask);
