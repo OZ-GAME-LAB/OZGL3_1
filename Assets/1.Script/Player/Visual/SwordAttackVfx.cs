@@ -28,6 +28,8 @@ public sealed class SwordAttackVfx : MonoBehaviour
         public Vector3 burstOffset;
         public Vector3 burstEuler;
         public Vector3 burstScale = Vector3.one;
+        [Tooltip("Follow the current blade during the active swing, then let the short tail fade in place.")]
+        public bool followBlade = true;
         [Min(0.01f)] public float burstLifetime = 0.22f;
     }
 
@@ -261,6 +263,8 @@ public sealed class SwordAttackVfx : MonoBehaviour
             _burstTriggered = true;
             PlayBurst(step, settings, normalizedTime, baseLocal, tipLocal, sweep, normal);
         }
+        if (settings.followBlade && normalizedTime <= settings.end && _bursts[step] != null && _bursts[step].active)
+            PoseBurst(_bursts[step], settings, baseLocal, tipLocal, sweep, normal);
 
         BuildRibbon(settings);
         _previousBase = baseLocal;
@@ -326,12 +330,13 @@ public sealed class SwordAttackVfx : MonoBehaviour
 
         int capacity = Mathf.Clamp(_historyCapacity, 8, 128);
         _history = new BladeSample[capacity];
-        _vertices = new Vector3[capacity * 4];
-        _normals = new Vector3[capacity * 4];
-        _uv = new Vector2[capacity * 4];
-        _colors = new Color[capacity * 4];
-        _indices = new int[(capacity - 1) * 24];
-        for (int i = 0; i < capacity - 1; i++)
+        int renderCapacity = (capacity - 1) * 4 + 1;
+        _vertices = new Vector3[renderCapacity * 4];
+        _normals = new Vector3[renderCapacity * 4];
+        _uv = new Vector2[renderCapacity * 4];
+        _colors = new Color[renderCapacity * 4];
+        _indices = new int[(renderCapacity - 1) * 24];
+        for (int i = 0; i < renderCapacity - 1; i++)
         {
             int v = i * 4;
             int index = i * 24;
@@ -408,9 +413,24 @@ public sealed class SwordAttackVfx : MonoBehaviour
         if (_count < 2 || _ribbonMaterial == null) { _renderer.enabled = false; return; }
         float tail = Mathf.Max(0.01f, settings.tail);
         Bounds bounds = new Bounds(_history[_head].bladeBase, Vector3.zero);
-        for (int i = 0; i < _count; i++)
+        int renderCount = (_count - 1) * 4 + 1;
+        for (int i = 0; i < renderCount; i++)
         {
-            BladeSample sample = _history[(_head + i) % _history.Length];
+            int index = i / 4;
+            BladeSample sample = _history[(_head + index) % _history.Length];
+            if (index + 1 < _count && i % 4 != 0)
+            {
+                // Interpolate rotation, not the straight chord between blade tips.
+                // This keeps fast swings rounded even at lower render frame rates.
+                BladeSample next = _history[(_head + index + 1) % _history.Length];
+                float t = (i % 4) * .25f;
+                Vector3 direction = Vector3.Slerp(sample.bladeTip - sample.bladeBase, next.bladeTip - next.bladeBase, t);
+                sample.bladeBase = Vector3.Lerp(sample.bladeBase, next.bladeBase, t);
+                sample.bladeTip = sample.bladeBase + direction;
+                sample.normal = Vector3.Slerp(sample.normal, next.normal, t).normalized;
+                sample.born = Mathf.Lerp(sample.born, next.born, t);
+                sample.strength = Mathf.Lerp(sample.strength, next.strength, t);
+            }
             Vector3 blade = sample.bladeTip - sample.bladeBase;
             Vector3 from = sample.bladeBase + blade * _baseInset;
             Vector3 to = sample.bladeTip + blade.normalized * _tipOverreach;
@@ -440,7 +460,7 @@ public sealed class SwordAttackVfx : MonoBehaviour
         _mesh.SetNormals(_normals);
         _mesh.SetUVs(0, _uv);
         _mesh.SetColors(_colors);
-        _mesh.SetIndices(_indices, 0, (_count - 1) * 24, MeshTopology.Triangles, 0, false);
+        _mesh.SetIndices(_indices, 0, (renderCount - 1) * 24, MeshTopology.Triangles, 0, false);
         _mesh.bounds = bounds;
         if (_renderer.sharedMaterial != _ribbonMaterial) _renderer.sharedMaterial = _ribbonMaterial;
         _renderer.enabled = true;
@@ -487,14 +507,7 @@ public sealed class SwordAttackVfx : MonoBehaviour
     {
         Burst burst = _bursts[step];
         if (burst == null || burst.instance == null || burst.source != settings.burstPrefab) return;
-        Vector3 forward = (bladeTip - bladeBase).normalized;
-        Vector3 up = Vector3.ProjectOnPlane(sweep, forward);
-        if (up.sqrMagnitude < 0.000001f) up = Vector3.Cross(normal, forward);
-        Quaternion frame = Quaternion.LookRotation(forward, up.normalized);
-        Transform pose = burst.instance.transform;
-        pose.localPosition = Vector3.Lerp(bladeBase, bladeTip, settings.burstBladeFraction) + frame * settings.burstOffset;
-        pose.localRotation = frame * Quaternion.Euler(settings.burstEuler);
-        pose.localScale = Vector3.Scale(burst.sourceScale, settings.burstScale);
+        PoseBurst(burst, settings, bladeBase, bladeTip, sweep, normal);
         burst.instance.SetActive(true);
         // Include the fraction of this frame after the peak, so a skipped exact
         // peak sample does not delay the original effect by another whole frame.
@@ -505,6 +518,18 @@ public sealed class SwordAttackVfx : MonoBehaviour
             burst.roots[i].Simulate(burst.age, true, true, false);
             burst.roots[i].Pause(true);
         }
+    }
+
+    private static void PoseBurst(Burst burst, StepSettings settings, Vector3 bladeBase, Vector3 bladeTip, Vector3 sweep, Vector3 normal)
+    {
+        Vector3 forward = (bladeTip - bladeBase).normalized;
+        Vector3 up = Vector3.ProjectOnPlane(sweep, forward);
+        if (up.sqrMagnitude < 0.000001f) up = Vector3.Cross(normal, forward);
+        Quaternion frame = Quaternion.LookRotation(forward, up.normalized);
+        Transform pose = burst.instance.transform;
+        pose.localPosition = Vector3.Lerp(bladeBase, bladeTip, settings.burstBladeFraction) + frame * settings.burstOffset;
+        pose.localRotation = frame * Quaternion.Euler(settings.burstEuler);
+        pose.localScale = Vector3.Scale(burst.sourceScale, settings.burstScale);
     }
 
     private void TickBursts(float effectDelta)
