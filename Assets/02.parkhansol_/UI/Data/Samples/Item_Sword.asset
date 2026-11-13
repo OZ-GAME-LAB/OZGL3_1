@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: OZ.UI.Contracts::OZ.UI.Contracts.ItemData
   id: equip_sword
   displayName: "\uCE7C"
-  description: "[\uC784\uC2DC] \uAC80\uC744 \uC5BB\uB294\uB2E4 \u2014 \uD3C9\uD0C0\uAC00 \uAC80 \uACF5\uACA9\uC73C\uB85C \uBC14\uB010\uB2E4.\n\uBB34\uAE30\uB294 \uD558\uB098\uB9CC \uAC00\uC9C8 \uC218 \uC788\uB2E4."
-  icon: {fileID: 0}
+  description: "[\uC784\uC2DC] \uAC80\uC744 \uC5BB\uB294\uB2E4 \u2014 \uD3C9\uD0C0\uAC00
+    \uAC80 \uACF5\uACA9\uC73C\uB85C \uBC14\uB010\uB2E4.\n\uBB34\uAE30\uB294 \uD558\uB098\uB9CC
+    \uAC00\uC9C8 \uC218 \uC788\uB2E4."
+  icon: {fileID: 21300000, guid: 026f3e55eb23404a8c532e56d0e4eecd, type: 3}
   slotIndex: -1
   maxStack: 1
   effectType: 5

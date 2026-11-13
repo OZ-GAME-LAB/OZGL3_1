@@ -19,6 +19,8 @@ namespace OZ.UI
         [SerializeField] internal Color bossColor = new Color(1f, 0.45f, 0.45f);
         [SerializeField] internal Color fieldColor = new Color(0.55f, 0.85f, 1f);
         [SerializeField] internal Color clearedColor = new Color(0.55f, 1f, 0.65f);
+        [Tooltip("v1.5 지도 정보가 없을 때 플레이어에게 보이는 문구")]
+        [SerializeField] internal string emptyMessage = "아직 확인된 지역 정보가 없다";
 
         CardPool _pool;
         int _selected;
@@ -51,7 +53,18 @@ namespace OZ.UI
             int n = map != null ? map.NodeCount : 0;
             Pool.Columns = Mathf.Max(1, n);
             Pool.Ensure(n);
-            if (emptyText != null) emptyText.gameObject.SetActive(n == 0);
+            if (emptyText != null)
+            {
+                emptyText.gameObject.SetActive(n == 0);
+                if (n == 0) emptyText.text = emptyMessage; // 예전 프리팹의 개발용 문구("…IStageMapSource")를 덮어씀
+            }
+            // v1.5: 노드 사이 ▶ 화살표 — 노드가 없거나 마지막 노드 뒤에서는 숨김 (빈 화면에서 글자 위에 겹쳐 보였음)
+            for (int k = 0; k < transform.childCount; k++)
+            {
+                var ch = transform.GetChild(k);
+                if (!ch.name.StartsWith("Arrow_") || !int.TryParse(ch.name.Substring(6), out int idx)) continue;
+                ch.gameObject.SetActive(idx < n);
+            }
             for (int i = 0; i < n; i++)
             {
                 var node = map.GetNode(i);

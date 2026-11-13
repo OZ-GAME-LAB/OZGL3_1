@@ -28,7 +28,8 @@ namespace OZ.UI
         {
             Data = data;
             if (nameText != null) nameText.text = data != null ? data.displayName : "";
-            if (descriptionText != null) descriptionText.text = data != null ? data.description : "";
+            // v1.5: 한글이 글자 단위로 끊겨 "집중한 / 다." 처럼 한두 글자만 다음 줄로 가던 것 → 띄어쓰기에서만 줄바꿈
+            if (descriptionText != null) descriptionText.text = data != null ? UIText.KeepWords(data.description) : "";
             if (icon != null) { icon.sprite = data != null ? data.icon : null; icon.enabled = icon.sprite != null; }
             if (skillsText != null)
             {

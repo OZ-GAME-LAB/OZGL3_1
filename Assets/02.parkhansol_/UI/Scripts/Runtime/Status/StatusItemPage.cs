@@ -34,6 +34,7 @@ namespace OZ.UI
         readonly List<ShopEntryView> _cards = new List<ShopEntryView>();
         readonly List<OwnedItemRow> _owned = new List<OwnedItemRow>();
         int _selected;
+        bool _warnedNoSource;
         InputAction _left, _right, _up, _down;
 
         internal override string Hint => "[방향키] 고르기   [Enter] 1개 구매";
@@ -167,7 +168,9 @@ namespace OZ.UI
             if (emptyText != null)
             {
                 emptyText.gameObject.SetActive(count == 0 || src == null);
-                emptyText.text = count == 0 ? "판매 목록이 비어 있습니다 (ShopData)" : "아이템 소스가 연결되지 않았습니다 (IShopSource)";
+                // v1.5: 플레이어에게 보이는 문구 (연결 문제는 콘솔 경고로)
+                emptyText.text = count == 0 ? "지금은 판매하는 물건이 없다" : "지금은 상점을 이용할 수 없다";
+                if (count > 0 && src == null && !_warnedNoSource) { _warnedNoSource = true; Debug.LogWarning("[OZ UI] 상점 탭: IShopSource가 등록되지 않았습니다."); }
             }
             int money = src != null ? src.Currency : 0;
             _selected = Mathf.Clamp(_selected, 0, Mathf.Max(0, count - 1));

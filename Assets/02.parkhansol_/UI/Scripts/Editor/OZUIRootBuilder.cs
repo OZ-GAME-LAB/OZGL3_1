@@ -819,9 +819,9 @@ namespace OZ.UI.EditorTools
             view.cooldown.label.fontSize = 12; view.cooldown.label.font = UIB.Body;
             view.cooldown.completeSound = UISound.SkillReady;
             var countSh = UIB.Small10("CountShadow", frame.transform, "", TextAlignmentOptions.BottomRight, new Color(0, 0, 0, 0.9f));
-            countSh.rectTransform.Place(1, 0, -2, 1, 30, 10);
+            countSh.rectTransform.Place(1, 0, -3, 3, 30, 10); // v1.5 테두리에 걸리지 않게 1px 위로
             var count = UIB.Small10("Count", frame.transform, "0", TextAlignmentOptions.BottomRight, Color.white);
-            count.rectTransform.Place(1, 0, -3, 2, 30, 10);
+            count.rectTransform.Place(1, 0, -4, 4, 30, 10);
             view.countText = count;
             view.countShadow = countSh;
             var key = UIB.Body12("Key", frame.transform, (index + 1).ToString(), TextAlignmentOptions.Center, UIB.Accent);
@@ -936,7 +936,7 @@ namespace OZ.UI.EditorTools
             var w = Window<TitleScreen>("Title", layer, ScreenId.Title, UILayer.Fullscreen, false, true, false, WindowTransition.Fade, FullBg);
             var t = UIB.Text("Logo", w.transform, "PROJECT M", UIB.Title, 30, TextAlignmentOptions.Center, UIB.Accent);
             t.rectTransform.Place(0.5f, 0.5f, 0, 80, 400, 40);
-            var sub = UIB.Body12("Sub", w.transform, "게이트 헌터 · UI 샌드박스", TextAlignmentOptions.Center, UIB.Dim);
+            var sub = UIB.Body12("Sub", w.transform, "게이트 헌터", TextAlignmentOptions.Center, UIB.Dim);
             sub.rectTransform.Place(0.5f, 0.5f, 0, 50, 400, 14);
             w.newGameButton = MenuButton(w.transform, "새 게임", 0);
             w.continueButton = MenuButton(w.transform, "이어하기", -26);
@@ -1891,7 +1891,7 @@ namespace OZ.UI.EditorTools
                 arrow.rectTransform.Place(0, 1, (i + 1) * NodeW + i * Gap, -74, Gap, 14);
             }
             p.nodeTemplate = GrowthCard(row, "NodeTemplate", new Vector2(NodeW, 116), 0, vertical: true);
-            p.emptyText = StatusEmpty(p.transform, "지도 소스가 연결되지 않았습니다 (IStageMapSource)", -70);
+            p.emptyText = StatusEmpty(p.transform, "아직 확인된 지역 정보가 없다", -70);
             return p;
         }
 

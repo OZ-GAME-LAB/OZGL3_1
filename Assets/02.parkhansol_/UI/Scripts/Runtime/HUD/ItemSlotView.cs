@@ -24,6 +24,19 @@ namespace OZ.UI
         internal int SlotIndex => slotIndex;
         /// <summary>사용 불가 아이콘 색 (쿨타임 어둡게와 같은 톤)</summary>
         internal static readonly Color UnusableColor = new Color(0.32f, 0.34f, 0.42f, 1f);
+        internal static readonly Color EmptyCountColor = new Color(0.6f, 0.64f, 0.74f, 1f);
+
+        void Awake()
+        {
+            // v1.5: 예전 프리팹은 수량 글자가 칸 아래 테두리에 걸림 → 2px 올림 (빌더로 새로 만든 프리팹은 이미 올라가 있어 그대로)
+            Lift(countText); Lift(countShadow);
+            static void Lift(TMP_Text t)
+            {
+                if (t == null) return;
+                var rt = t.rectTransform;
+                if (rt.anchoredPosition.y < 3f) rt.anchoredPosition += new Vector2(-1f, 2f);
+            }
+        }
 
         internal void Refresh(IItemSource src)
         {
@@ -42,7 +55,8 @@ namespace OZ.UI
             if (countText != null)
             {
                 countText.text = src == null ? "" : count.ToString();
-                countText.color = count > 0 ? Color.white : new Color(1f, 0.45f, 0.45f);
+                // v1.5: 0개는 빨강(경고처럼 보임) 대신 흐린 회색 — 아이콘도 이미 어둡게 바뀜
+                countText.color = count > 0 ? Color.white : EmptyCountColor;
             }
             if (countShadow != null) countShadow.text = countText != null ? countText.text : "";
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using OZ.UI.Contracts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,13 @@ namespace OZ.UI
         [SerializeField] internal Color currentColor = new Color(1f, 0.95f, 0.6f, 1f);
         [SerializeField] internal Color linkColor = new Color(0.55f, 0.75f, 1f, 0.6f);
 
+        [Header("v1.5 지도 없음 표시")]
+        [Tooltip("지도 데이터가 없을 때 칸 가운데에 띄울 흐린 문구 (비우면 표시 안 함)")]
+        [SerializeField] internal string emptyMessage = "지도 정보 없음";
+        [Tooltip("문구 글자 (비우면 실행 중에 만든다)")]
+        [SerializeField] internal TMP_Text emptyLabel;
+        [SerializeField] internal Color emptyColor = new Color(0.55f, 0.62f, 0.78f, 0.75f);
+
         [Tooltip("MapRoomIcon 순서대로 (None, Start, Gate, Boss, Save, Item)")]
         [SerializeField] internal Sprite[] iconSprites = new Sprite[6];
         [SerializeField] internal Color[] iconColors =
@@ -39,6 +47,10 @@ namespace OZ.UI
         readonly Dictionary<string, Image> _rooms = new Dictionary<string, Image>();
         readonly List<GameObject> _spawned = new List<GameObject>();
         Vector2 _center;
+        bool _hasMap;
+
+        /// <summary>지금 그린 지도가 있는지 (없으면 '지도 정보 없음' 표시 중)</summary>
+        internal bool HasMap => _hasMap;
 
         void Awake()
         {
@@ -48,10 +60,15 @@ namespace OZ.UI
             if (playerMarker != null) playerMarker.gameObject.SetActive(false);
         }
 
+        // 아무도 SetMap을 안 부른 씬(지도 데이터 없음)에서도 빈 검은 칸 대신 안내가 보이도록
+        void Start() { if (!_hasMap) ShowEmpty(true); }
+
         public void Rebuild(MapState state)
         {
             Clear();
             var map = state?.Map;
+            _hasMap = map != null && map.rooms != null && map.rooms.Count > 0;
+            ShowEmpty(!_hasMap);
             if (map == null || roomTemplate == null || content == null) return;
 
             RectInt b = map.GetBounds();
@@ -141,6 +158,35 @@ namespace OZ.UI
             {
                 content.anchoredPosition = Vector2.zero;
             }
+        }
+
+        void ShowEmpty(bool show)
+        {
+            if (string.IsNullOrEmpty(emptyMessage)) show = false;
+            if (show && emptyLabel == null) emptyLabel = CreateEmptyLabel();
+            if (emptyLabel == null) return;
+            emptyLabel.text = emptyMessage;
+            emptyLabel.gameObject.SetActive(show);
+        }
+
+        // 프리팹을 다시 만들지 않아도 되게 실행 중에 만든다. 글꼴은 같은 화면의 다른 글자에서 빌림
+        TMP_Text CreateEmptyLabel()
+        {
+            var go = new GameObject("EmptyLabel", typeof(RectTransform));
+            var rt = (RectTransform)go.transform;
+            rt.SetParent(transform, false);
+            rt.anchorMin = Vector2.zero; rt.anchorMax = Vector2.one;
+            rt.offsetMin = rt.offsetMax = Vector2.zero;
+            var t = go.AddComponent<TextMeshProUGUI>();
+            var canvas = GetComponentInParent<Canvas>();
+            var donor = canvas != null ? canvas.GetComponentInChildren<TMP_Text>(true) : null;
+            if (donor != null) { t.font = donor.font; t.fontSharedMaterial = donor.fontSharedMaterial; }
+            t.fontSize = 9f;
+            t.alignment = TextAlignmentOptions.Center;
+            t.color = emptyColor;
+            t.raycastTarget = false;
+            t.textWrappingMode = TextWrappingModes.NoWrap;
+            return t;
         }
 
         Vector2 RoomCenter(MapRoom r)

@@ -36,6 +36,44 @@ namespace OZ.UI
             }
         }
 
+        /// <summary>v1.5: 좁은 칸(상점 카드)용 짧은 효과. 지속시간 등 자세한 내용은 ItemEffect</summary>
+        public static string ItemEffectShort(ItemData item)
+        {
+            if (item == null) return "";
+            switch (item.effectType)
+            {
+                case ItemEffectType.Heal: return $"체력 {item.effectPercent:0}% 회복";
+                case ItemEffectType.AttackBuff: return $"공격 +{item.effectPercent:0}%";
+                case ItemEffectType.DefenseBuff: return $"피해 -{item.effectPercent:0}%";
+                case ItemEffectType.SpeedBuff: return $"이동 +{item.effectPercent:0}%";
+                case ItemEffectType.Equipment: return item.GrantsWeapon ? "평타 변경" : "영구 장비";
+                default: return "";
+            }
+        }
+
+        /// <summary>
+        /// v1.5: 한글 줄바꿈을 띄어쓰기에서만 (TMP는 한글을 글자 단위로 끊어서 마지막 한두 글자만 다음 줄로 가기 쉬움).
+        /// 단어마다 &lt;nobr&gt;로 감싼다. 이미 태그가 있는 문장은 그대로 둔다.
+        /// </summary>
+        public static string KeepWords(string text)
+        {
+            if (string.IsNullOrEmpty(text) || text.IndexOf('<') >= 0) return text;
+            var lines = text.Split('\n');
+            var sb = new System.Text.StringBuilder(text.Length * 2);
+            for (int l = 0; l < lines.Length; l++)
+            {
+                if (l > 0) sb.Append('\n');
+                var words = lines[l].Split(' ');
+                for (int w = 0; w < words.Length; w++)
+                {
+                    if (w > 0) sb.Append(' ');
+                    if (words[w].Length == 0) continue;
+                    sb.Append("<nobr>").Append(words[w]).Append("</nobr>");
+                }
+            }
+            return sb.ToString();
+        }
+
         public static string ClassName(PlayerClass c) => c == PlayerClass.Sword ? "검술" : "마법";
     }
 }

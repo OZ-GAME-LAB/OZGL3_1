@@ -1,3 +1,4 @@
+using System.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -129,7 +130,7 @@ namespace OZ.UI.EditorTools
             Log("");
             Log("■ " + name);
             try { await body(); }
-            catch (Exception e) { Fail(name + " 예외", e.GetType().Name + ": " + e.Message); }
+            catch (Exception e) { Fail(name + " 예외", e.GetType().Name + ": " + e.Message + "\n      @ " + string.Join("\n      @ ", (e.StackTrace ?? "").Split('\n').Take(4)).Trim()); }
         }
 
         static Task Wait(float sec) => Task.Delay(Mathf.RoundToInt(sec * 1000));
