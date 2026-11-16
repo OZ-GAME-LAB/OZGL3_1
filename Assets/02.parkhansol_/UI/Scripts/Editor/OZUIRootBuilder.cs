@@ -277,8 +277,7 @@ namespace OZ.UI.EditorTools
             // v0.4: 밝은 배경(역 간판·조명)이 뒤로 지나가도 읽히게 반투명 바탕 (오른쪽으로 갈수록 옅게 보이도록 2단)
             var tlBack = UIB.Solid("Backdrop", tl, new Color(0.02f, 0.03f, 0.07f, 0.45f));
             tlBack.rectTransform.Place(0, 1, -4, 4, 196, 58);
-            var tlBackFade = UIB.Solid("BackdropFade", tl, new Color(0.02f, 0.03f, 0.07f, 0.2f));
-            tlBackFade.rectTransform.Place(0, 1, 192, 4, 16, 58);
+            // v1.5: 오른쪽 옅은 꼬리(BackdropFade) 없앰 — 아래 퀘스트 판과 같은 직선 끝
 
             var pFrameSprite = UIB.HudArt("PortraitFrame");
             var pFrame = UIB.Img("PortraitFrame", tl, pFrameSprite ?? UIB.Fallback, pFrameSprite != null ? Color.white : new Color(0f, 0.14f, 0.17f));
@@ -659,12 +658,12 @@ namespace OZ.UI.EditorTools
 
         static QuestListView BuildQuestList(Transform hudRt)
         {
-            var root = UIB.Rect("Quests", hudRt).Place(0, 1, 4, -66, 170, 80);
+            var root = UIB.Rect("Quests", hudRt).Place(0, 1, 4, -66, 200, 80); // v1.5 폭을 체력 판(196)에 맞춤
             var view = root.gameObject.AddComponent<QuestListView>();
             view.group = UIB.Group(root.gameObject);
             view.group.blocksRaycasts = false;
             var back = UIB.Solid("Backdrop", root, HudBack);
-            back.rectTransform.Place(0, 1, 0, 0, 166, 50);
+            back.rectTransform.Place(0, 1, 0, 0, 196, 50);
             view.backdrop = back;
             var accent = UIB.Accent;
             var bar = UIB.Solid("HeaderMark", root, accent);
@@ -678,7 +677,7 @@ namespace OZ.UI.EditorTools
             view.rowHeight = 17f;
 
             // 줄 템플릿
-            var row = UIB.Rect("RowTemplate", root).Place(0, 1, 4, -14, 158, 17);
+            var row = UIB.Rect("RowTemplate", root).Place(0, 1, 4, -14, 188, 17);
             var rv = row.gameObject.AddComponent<QuestRowView>();
             rv.group = UIB.Group(row.gameObject);
             var box = UIB.Solid("Box", row, new Color(0.32f, 0.86f, 1f));
@@ -699,7 +698,7 @@ namespace OZ.UI.EditorTools
             right.textWrappingMode = TextWrappingModes.NoWrap;
             rv.right = right;
             var barBack = UIB.Solid("Bar", row, new Color(1f, 1f, 1f, 0.1f));
-            barBack.rectTransform.Place(0, 1, 12, -14, 146, 2);
+            barBack.rectTransform.Place(0, 1, 12, -14, 176, 2);
             var fill = UIB.Solid("Fill", barBack.transform, new Color(0.32f, 0.86f, 1f)).Filled(Image.FillMethod.Horizontal);
             fill.rectTransform.Stretch();
             fill.fillAmount = 0f;
@@ -795,8 +794,10 @@ namespace OZ.UI.EditorTools
                 pip.rectTransform.Place(0.5f, 0, (i - 1) * 9f, -5, 6, 3);
                 view.comboPips[i] = pip;
             }
-            view.swordIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Art/Icons/Skill_SwordQ.png");
-            view.staffIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Art/Icons/Skill_MagicQ.png");
+            // v1.5 무기 전용 아이콘 (Resources/OZUI — 실행 중 만든 칸도 같은 그림을 씀)
+            view.fistIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Resources/OZUI/Weapon_Fist.png");
+            view.swordIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Resources/OZUI/Weapon_Sword.png");
+            view.staffIcon = AssetDatabase.LoadAssetAtPath<Sprite>(OZPaths.UI + "/Resources/OZUI/Weapon_Staff.png");
             return view;
         }
 

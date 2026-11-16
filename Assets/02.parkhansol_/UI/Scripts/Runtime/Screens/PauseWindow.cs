@@ -1,4 +1,5 @@
 using OZ.UI.Contracts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ namespace OZ.UI
         [SerializeField] internal Button mapButton;
         [SerializeField] internal Button optionsButton;
         [SerializeField] internal Button titleButton;
+        [Tooltip("v1.5 상태창이 있을 때 '스킬' 버튼 이름")]
+        [SerializeField] internal string statusLabel = "상태창";
 
         protected override void Awake()
         {
@@ -30,6 +33,15 @@ namespace OZ.UI
                 UIManager.Instance?.CloseAll();
                 UIRequests.RaiseReturnToTitle();
             });
+        }
+
+        // v1.5: 상태창이 있으면 '스킬' 버튼은 상태창(캐릭터 탭)을 여니 이름도 맞춤 (열 때마다 확인)
+        protected override void OnSetup(object args)
+        {
+            if (skillButton == null || UIManager.Instance == null) return;
+            if (!(UIManager.Instance.GetWindow(ScreenId.Status) is StatusWindow)) return;
+            var label = skillButton.GetComponentInChildren<TMP_Text>(true);
+            if (label != null) label.text = statusLabel;
         }
 
         void SwitchToStatus(StatusTab tab, ScreenId fallback)

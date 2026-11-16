@@ -30,6 +30,8 @@ namespace OZ.UI
         {
             // v1.5: 예전 프리팹은 수량 글자가 칸 아래 테두리에 걸림 → 2px 올림 (빌더로 새로 만든 프리팹은 이미 올라가 있어 그대로)
             Lift(countText); Lift(countShadow);
+            // v1.5: 수량 숫자가 포션 그림 위에 바로 겹쳐(빨간 포션 위 흰 "1") 묻히던 것 → 숫자 뒤에 작은 어두운 판
+            TextPlate.Attach(countText, new Color(0.02f, 0.03f, 0.07f, 0.72f), new Vector2(1f, 0f), countShadow != null ? countShadow.transform : null);
             static void Lift(TMP_Text t)
             {
                 if (t == null) return;
