@@ -44,6 +44,7 @@ namespace OZ.UI
         protected override void Awake()
         {
             base.Awake();
+            PanelBacking.Ensure(box); // v1.5: 대화 글자 뒤로 HUD(스킬·아이템 칸)가 비치던 것
             _advance = new InputAction("UI_DialogueNext", InputActionType.Button);
             _advance.AddBinding("<Keyboard>/space");
             _advance.AddBinding("<Keyboard>/enter");

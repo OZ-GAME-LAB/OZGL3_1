@@ -38,7 +38,8 @@ namespace OZ.UI
 
         public bool IsShowing => _seq != null && _seq.IsActive();
 
-        void Awake() => Cache();
+        // v1.5: 부제("1 / 2")가 띠 아래 밝은 배경 위에 떠서 안 읽히던 것 → 글자 뒤에 어두운 판
+        void Awake() { Cache(); TextPlate.Attach(subtitleText); }
 
         void Cache()
         {

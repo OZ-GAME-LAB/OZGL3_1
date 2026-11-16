@@ -61,6 +61,7 @@ namespace OZ.UI
         protected override void Awake()
         {
             base.Awake();
+            PanelBacking.Ensure(content, PanelBacking.Opaque); // v1.5: 일시정지 위에 뜰 때 뒤 창 글자가 비치던 것 → 완전히 가림
             for (int i = 0; i < tabButtons.Length; i++)
             {
                 int idx = i;

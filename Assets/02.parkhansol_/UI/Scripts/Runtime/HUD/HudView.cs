@@ -67,6 +67,7 @@ namespace OZ.UI
             UISources.Changed += Rebind;
             UIState.GameplayInputBlockedChanged += OnBlockedChanged;
             Rebind();
+            AlignLeftColumn();
             if (guideGroup != null) guideGroup.alpha = 0f;
             if (flashOverlay != null) { flashOverlay.gameObject.SetActive(false); }
         }
@@ -93,6 +94,53 @@ namespace OZ.UI
             if (lowHealth != null) lowHealth.Bind(UISources.Health);
             if (healFlash != null) healFlash.Bind(UISources.Health);
             if (buffEdges != null) buffEdges.Bind(UISources.Items);
+        }
+
+        // v1.5: 왼쪽 위 두 판(체력 판·퀘스트 판)의 폭이 달라(196 vs 166) 오른쪽 끝이 들쭉날쭉 → 퀘스트 판을 체력 판 폭에 맞춤.
+        //       체력 판 오른쪽의 옅은 꼬리(BackdropFade)도 숨겨 두 판이 같은 직선 끝을 갖게 한다. (한 번만, 프리팹 수정 없이)
+        bool _columnAligned;
+        void AlignLeftColumn()
+        {
+            if (_columnAligned || quests == null || quests.backdrop == null) return;
+            RectTransform tl = null;
+            foreach (var r in GetComponentsInChildren<RectTransform>(true)) if (r.name == "TopLeft") { tl = r; break; }
+            var back = tl != null ? tl.Find("Backdrop") as RectTransform : null;
+            if (back == null) return;
+            _columnAligned = true;
+
+            var qb = quests.backdrop.rectTransform;
+            float topRight = WorldRight(back), questRight = WorldRight(qb);
+            float scale = qb.lossyScale.x > 0f ? qb.lossyScale.x : 1f;
+            float delta = Mathf.Round((topRight - questRight) / scale);
+            var fade = tl.Find("BackdropFade");
+            if (fade != null) fade.gameObject.SetActive(false);
+            if (Mathf.Abs(delta) < 1f) return;
+
+            Widen(qb, delta);
+            Widen(quests.transform as RectTransform, delta);
+            if (quests.rowTemplate != null) WidenRow(quests.rowTemplate, delta);
+            foreach (var row in quests.Rows) if (row != null) WidenRow(row, delta);
+        }
+
+        static float WorldRight(RectTransform rt)
+        {
+            var c = new Vector3[4];
+            rt.GetWorldCorners(c);
+            return c[2].x;
+        }
+
+        static void Widen(RectTransform rt, float dx)
+        {
+            if (rt == null) return;
+            rt.sizeDelta += new Vector2(dx, 0f);
+            // 왼쪽 끝을 고정 (피벗이 가운데·오른쪽이어도)
+            rt.anchoredPosition += new Vector2(dx * rt.pivot.x, 0f);
+        }
+
+        static void WidenRow(QuestRowView row, float dx)
+        {
+            Widen(row.transform as RectTransform, dx);
+            if (row.barBack != null) Widen(row.barBack.rectTransform, dx);
         }
 
         // 메뉴가 열리면 HUD를 살짝 흐리게
