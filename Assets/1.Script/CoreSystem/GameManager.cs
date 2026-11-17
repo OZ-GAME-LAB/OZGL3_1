@@ -20,6 +20,7 @@ public class GameManager : BaseManager
     public event System.Action InitializationCompleted;
     public event System.Action StageChanging;
     public event System.Action StageStarted;
+    public event System.Action StageCleared;
     public event System.Action GameCompleted;
     private bool gameCompleted;
     public StageManager StageManager => stageManager;
@@ -175,6 +176,8 @@ public class GameManager : BaseManager
             throw new System.InvalidOperationException("StageManager, GateManager, PoolManager를 모두 연결하세요.");
 
         stageManager.EndStage();
+        stageManager.StageCleared -= OnStageCleared;
+        stageManager.StageCleared += OnStageCleared;
         if (resourceManager == null)
             throw new System.InvalidOperationException("ResourceManager를 연결하세요.");
         await resourceManager.InitializeAsync();
@@ -192,6 +195,8 @@ public class GameManager : BaseManager
         await stageManager.InitializeAsync(gateManager, dataManager, resourceManager);
         //await ResourceManager.InitializeAsync();    
     }
+    private void OnStageCleared() => StageCleared?.Invoke();
+
     private async UniTask InitializePoolsAsync()
     {
         var requests = new System.Collections.Generic.List<PoolManager.PoolRequest>();
