@@ -343,55 +343,5 @@ public class PlayerSkill : MonoBehaviour, ISkillLoadoutSource
         }
         return Mathf.RoundToInt(GetDamage(skill));
     }
-
-
-    // 상점이 생기기 전 테스트용: 전체 보유 + 앞에서부터 Q/E/R 장착
-    [ContextMenu("Test/전체 보유 + 장착")]
-    private void TestOwnAll()
-    {
-        int slot = 0;
-        foreach (PlayerSkillBase skill in _skillList)
-        {
-            TryAddOwned(skill.Data.Id);
-            if (slot < SlotCount)
-            {
-                TryEquip((SkillSlot)slot, skill.Data.Id);
-                Debug.Log($"[PlayerSkill] {(SkillSlot)slot} ← {skill.Data.DisplayName}");
-                slot++;
-            }
-        }
-    }
     
-    [ContextMenu("Test/물리 보유 + 장착")]
-    private void TestEquipPhysical()
-    {
-        TestEquipByType(SkillDamageType.Physical);
-    }
-
-    [ContextMenu("Test/마법 보유 + 장착")]
-    private void TestEquipMagic()
-    {
-        TestEquipByType(SkillDamageType.Magic);
-    }
-
-    private void TestEquipByType(SkillDamageType type)
-    {
-        int slot = 0;
-        foreach (PlayerSkillBase skill in _skillList)
-        {
-            if (skill.Data.DamageType != type)
-            {
-                continue;
-            }
-
-            TryAddOwned(skill.Data.Id);
-
-            if (slot < SlotCount)
-            {
-                TryEquip((SkillSlot)slot, skill.Data.Id);
-                Debug.Log($"[PlayerSkill] {(SkillSlot)slot} ← {skill.Data.DisplayName}");
-                slot++;
-            }
-        }
-    }
 }

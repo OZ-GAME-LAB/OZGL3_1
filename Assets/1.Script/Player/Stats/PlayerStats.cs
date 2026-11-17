@@ -2,11 +2,6 @@
 using System;
 using UnityEngine;
 
-
-
-
-
-
 // 스탯 1개의 밸런스 값. 최종값 = baseValue + perLevel x 레벨
 [Serializable]
 public struct StatConfig
@@ -196,18 +191,6 @@ public class PlayerStats : MonoBehaviour, IStatSource
     {
         StatChanged?.Invoke(type);
         _uiStatChanged?.Invoke(ToKind(type));
-    }
-
-    // 상점이 생기기 전 테스트용: 플레이 중 인스펙터의 컴포넌트 ⋮ 메뉴에서 실행
-    [ContextMenu("Test/힘 +1")] private void TestStrength() { LogTest(StatType.Strength); }
-    [ContextMenu("Test/체력 +1")] private void TestVitality() { LogTest(StatType.Vitality); }
-    [ContextMenu("Test/민첩 +1")] private void TestAgility() { LogTest(StatType.Agility); }
-    [ContextMenu("Test/마력 +1")] private void TestMagic() { LogTest(StatType.Magic); }
-
-    private void LogTest(StatType type)
-    {
-        bool added = TryAddLevel(type);
-        Debug.Log($"[PlayerStats] {type} Lv.{GetLevel(type)}/{GetMaxLevel(type)} 값 {GetValue(type)} {(added ? "" : "(상한)")}");
     }
 
     private StatConfig GetConfig(StatType type)
