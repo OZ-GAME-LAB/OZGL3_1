@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: sword_wave
   _displayName: "\uAC80\uAE30"
   _description: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 920b37f48afdc5040bf861bb675072fc, type: 3}
   _damageType: 0
   _price: 500
   _damageCoefficient: 1.8

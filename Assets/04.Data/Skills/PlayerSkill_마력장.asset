@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: mana_field
   _displayName: "\uB9C8\uB825\uC7A5"
   _description: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 70d7827eff96c1d42b7eb3101b5b85cb, type: 3}
   _damageType: 1
   _price: 600
   _damageCoefficient: 4

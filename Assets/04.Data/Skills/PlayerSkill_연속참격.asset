@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: flurry_slash
   _displayName: "\uC5F0\uC18D \uCC38\uACA9"
   _description: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: a0a567433bfcef64ebc7df3c63d36611, type: 3}
   _damageType: 0
   _price: 800
   _damageCoefficient: 3.75
