@@ -195,7 +195,7 @@ public class GameManager : BaseManager
     private async UniTask InitializePoolsAsync()
     {
         var requests = new System.Collections.Generic.List<PoolManager.PoolRequest>();
-        var keys = new System.Collections.Generic.HashSet<string>(System.StringComparer.Ordinal);
+        var counts = new System.Collections.Generic.Dictionary<string, int>(System.StringComparer.Ordinal);
         if (dataManager.TryGetDataTable<PoolData>(out var table))
         {
             foreach (PoolData data in table.Values)
@@ -222,11 +222,13 @@ public class GameManager : BaseManager
 
                 if (string.IsNullOrWhiteSpace(prefabKey))
                     throw new System.InvalidOperationException($"풀 '{data.Id}'의 참조 데이터 '{data.DataId}'에 프리팹 주소가 없습니다.");
-                if (!keys.Add(prefabKey))
-                    throw new System.InvalidOperationException($"동일 프리팹 주소의 풀 설정이 중복되었습니다: '{prefabKey}'");
-                requests.Add(new PoolManager.PoolRequest(prefabKey, data.InitialCount));
+                // 스탯이 다른 데이터도 같은 프리팹 풀을 공유합니다. 초기 수량은 최댓값을 사용합니다.
+                counts.TryGetValue(prefabKey, out int count);
+                counts[prefabKey] = Mathf.Max(count, data.InitialCount);
             }
         }
+        foreach (var entry in counts)
+            requests.Add(new PoolManager.PoolRequest(entry.Key, entry.Value));
         await poolManager.InitializeAsync(resourceManager, requests);
     }
 
