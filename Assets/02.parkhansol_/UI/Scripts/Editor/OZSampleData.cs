@@ -176,11 +176,21 @@ namespace OZ.UI.EditorTools
         {
             var sword = Make<ItemData>("Item_Sword", i => { i.id = "equip_sword"; i.displayName = "칼"; i.description = "[임시] 검을 얻는다 — 평타가 검 공격으로 바뀐다.\n무기는 하나만 가질 수 있다."; i.icon = Icon("Item_Sword"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.grantsWeapon = UIWeapon.Sword; i.fxColor = new Color(0.85f, 0.87f, 0.92f); });
             var shield = Make<ItemData>("Item_Shield", i => { i.id = "equip_shield"; i.displayName = "방패"; i.description = "[임시] 방어 강화 장비 — 효과 기획 미정"; i.icon = Icon("Item_Shield"); i.slotIndex = -1; i.maxStack = 1; i.effectType = ItemEffectType.Equipment; i.fxColor = new Color(0.79f, 0.64f, 0.36f); });
+            // v1.5: 아이콘 그림(Item_Sword·Item_Shield.png)이 나중에 생김 → 예전에 만든 에셋도 비어 있으면 채움
+            foreach (var (it, name) in new[] { (sword, "Item_Sword"), (shield, "Item_Shield") })
+                if (it.icon == null && Icon(name) != null) { it.icon = Icon(name); EditorUtility.SetDirty(it); }
             return new List<ShopEntry>
             {
                 new ShopEntry { item = sword, price = 300, maxOwned = 1 },
                 new ShopEntry { item = shield, price = 250, maxOwned = 1 },
             };
+        }
+
+        /// <summary>v1.5: 임시 장비(칼·방패) 아이콘만 채운다 (데이터 전체를 다시 만들지 않음)</summary>
+        public static void RefreshEquipmentIcons()
+        {
+            EnsureEquipment();
+            AssetDatabase.SaveAssets();
         }
 
         public static ShopData EnsureShop()

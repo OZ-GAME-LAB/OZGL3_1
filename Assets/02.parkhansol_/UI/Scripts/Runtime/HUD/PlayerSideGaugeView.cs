@@ -458,6 +458,8 @@ namespace OZ.UI
             var go = new GameObject("PlayerSideGauge (auto, UI)", typeof(RectTransform));
             go.layer = hud.gameObject.layer;
             go.transform.SetParent(hud.transform, false);
+            // v1.5: HUD 레이어 맨 아래에 — 맨 뒤에 붙으면 '게이트 파괴' 띠·알림 같은 HUD 위로 그려졌음
+            go.transform.SetAsFirstSibling();
             go.AddComponent<PlayerSideGaugeView>();
         }
     }

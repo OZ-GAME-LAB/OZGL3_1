@@ -22,6 +22,9 @@ namespace OZ.UI
         [SerializeField] internal RectTransform shakeTarget;
         [SerializeField] internal Graphic tintTarget;
         [SerializeField] internal Color failColor = new Color(1f, 0.35f, 0.35f);
+        [Tooltip("v1.5 장착 안 한 빈 칸 표시 (비우면 표시 안 함)")]
+        [SerializeField] internal string emptyGlyph = "+";
+        [SerializeField] internal Color emptyGlyphColor = new Color(0.75f, 0.82f, 1f, 1f); // 잠금 막(검정 55%) 아래에 깔려 흐리게 보임
 
         internal SkillSlot Slot => slot;
 
@@ -75,8 +78,10 @@ namespace OZ.UI
             if (iconLetter != null)
             {
                 bool letterOn = equipped && offer.icon == null && !string.IsNullOrEmpty(offer.displayName);
-                iconLetter.text = letterOn ? offer.displayName.Substring(0, 1) : "";
-                iconLetter.color = offer.damageKind == SkillDamageKind.Magic ? new Color(0.55f, 0.72f, 1f) : new Color(1f, 0.62f, 0.3f);
+                // v1.5: 빈 칸은 흐린 "+" — 상태창에서 기술을 장착하는 칸이라는 걸 알 수 있게 (검은 칸만 있으면 고장처럼 보임)
+                iconLetter.text = letterOn ? offer.displayName.Substring(0, 1) : !equipped && lo != null ? emptyGlyph : "";
+                iconLetter.color = !equipped ? emptyGlyphColor :
+                    offer.damageKind == SkillDamageKind.Magic ? new Color(0.55f, 0.72f, 1f) : new Color(1f, 0.62f, 0.3f);
             }
 
             float remain = equipped ? lo.GetCooldownRemaining(slot) : 0f;

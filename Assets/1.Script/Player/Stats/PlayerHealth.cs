@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
 
     private PlayerController _player;
     private PlayerBuffs _buffs; // 없으면 방어 버프 없이 동작
+    private PlayerHitBlink _blink; // 없으면 깜빡임 없이 동작
     private float _hp;
     private float _bonusMaxHP; // 체력 스탯으로 늘어난 최대 HP (PlayerStats가 설정)
 
@@ -26,6 +27,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     {
         _player = GetComponent<PlayerController>();
         _buffs = GetComponent<PlayerBuffs>();
+        _blink = GetComponentInChildren<PlayerHitBlink>();
         _hp = MaxHP;
     }
 
@@ -69,6 +71,11 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
 
         //맞은 직후 잠깐 무적 → 몬스터 여러 마리에게 같은 프레임에 연속으로 맞아 죽는것을 방지
         _player.SetInvincible(_hitInvincibleTime);
+        // 피격 무적에만 깜빡임 -> 대시 무적(0.15초)까지 깜빡이면 회피할 때마다 번쩍거려서 산만함
+        if (_blink != null)
+        {
+            _blink.Play(_hitInvincibleTime);
+        }
         _player.OnHit();
     }
 
@@ -87,6 +94,11 @@ public class PlayerHealth : MonoBehaviour, IHealthSource, IDamageable
     {
         _hp = MaxHP;
         HealthChanged?.Invoke(new HealthChange(0f, _hp, MaxHP));
+        // 재도전 시 이전 판 깜빡임이 남아 있으면 바로 정리
+        if (_blink != null)
+        {
+            _blink.Stop();
+        }
         _player.Revive();
         _player.SetInvincible(_respawnInvincibleTime); // Revive가 무적을 초기화하므로 그 뒤에 설정
     }

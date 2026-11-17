@@ -16,10 +16,11 @@ MonoBehaviour:
   displayName: "\uBC29\uD328"
   description: "[\uC784\uC2DC] \uBC29\uC5B4 \uAC15\uD654 \uC7A5\uBE44 \u2014 \uD6A8\uACFC
     \uAE30\uD68D \uBBF8\uC815"
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9790875a88e848a28bc26e56d37307c5, type: 3}
   slotIndex: -1
   maxStack: 1
   effectType: 5
   effectPercent: 0
   buffDuration: 0
   fxColor: {r: 0.79, g: 0.64, b: 0.36, a: 1}
+  grantsWeapon: 0

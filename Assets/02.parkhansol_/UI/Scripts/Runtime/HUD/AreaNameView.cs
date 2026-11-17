@@ -41,7 +41,8 @@ namespace OZ.UI
         public string Current => _current;
         public bool IsShowing => _seq != null && _seq.IsActive();
 
-        void Awake() => Cache();
+        // v1.5: 부제("폐쇄 구역")가 이름판 밖 하늘 위에 떠서 안 읽히던 것 → 글자 뒤에 어두운 판
+        void Awake() { Cache(); TextPlate.Attach(subtitleText); }
         void OnEnable() => GameUI.Register((IAreaApi)this);
         void OnDisable() => GameUI.Unregister(this);
         void OnDestroy() => _seq?.Kill();

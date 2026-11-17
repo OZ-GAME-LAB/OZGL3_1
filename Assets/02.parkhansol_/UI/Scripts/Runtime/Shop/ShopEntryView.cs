@@ -40,6 +40,8 @@ namespace OZ.UI
         [SerializeField] internal Color maxedColor = new Color(0.55f, 0.6f, 0.72f);
         [SerializeField] internal Color pipEmptyColor = new Color(1f, 1f, 1f, 0.12f);
         [SerializeField] internal Color buyDisabledColor = new Color(0.55f, 0.58f, 0.68f, 1f);
+        [Tooltip("v1.5 번호가 아이콘 칸 안에 있는 작은 카드(상태창 상점)에서도 번호를 보일지 — 기본은 숨김 (테두리와 겹침)")]
+        [SerializeField] internal bool keyInsideIcon = false;
 
         internal int Index { get; set; }
         internal event Action<ShopEntryView> Picked;
@@ -60,10 +62,13 @@ namespace OZ.UI
                 icon.enabled = icon.sprite != null;
             }
             if (accent != null) accent.color = c;
-            if (keyText != null) keyText.text = item != null && item.slotIndex >= 0 ? UIText.ItemKey(item.slotIndex) : "";
+            // v1.5: 상태창 상점의 작은 카드는 번호가 아이콘 칸 안 모서리에 있어 테두리와 겹침 → 숨김
+            //       (번호는 오른쪽 '내 아이템' 목록에 있음. NPC 상점 카드처럼 카드 위에 바로 있으면 그대로 표시)
+            bool keyCramped = keyText != null && keyText.transform.parent != transform && !keyInsideIcon;
+            if (keyText != null) keyText.text = item != null && item.slotIndex >= 0 && !keyCramped ? UIText.ItemKey(item.slotIndex) : "";
             if (nameText != null) { nameText.text = item != null ? item.displayName : "-"; nameText.color = c; }
             if (typeText != null) typeText.text = item != null ? UIText.ItemType(item.effectType) : "";
-            if (effectText != null) effectText.text = UIText.ItemEffect(item);
+            if (effectText != null) effectText.text = FitEffect(item);
 
             bool maxed = entry != null && ShopRules.RoomLeft(entry, owned) <= 0;
             bool locked = !maxed && WeaponShopRules.IsLocked(item); // v1.5 다른 무기를 이미 고름
@@ -98,6 +103,18 @@ namespace OZ.UI
 
             if (background != null) background.color = selected ? selectedColor : normalColor;
             if (selectedMark != null) selectedMark.enabled = selected;
+        }
+
+        // v1.5: 칸이 좁아 "…"로 잘리면 짧은 문구로 (자세한 설명은 오른쪽 설명 칸)
+        string FitEffect(ItemData item)
+        {
+            string full = UIText.ItemEffect(item);
+            if (effectText == null || string.IsNullOrEmpty(full)) return full;
+            var r = effectText.rectTransform.rect;
+            if (r.width <= 0f) return full;
+            Vector2 need = effectText.GetPreferredValues(full, r.width, 0f); // 줄바꿈 켠 칸이면 칸 폭 기준 높이
+            bool fits = need.x <= r.width + 0.5f && need.y <= r.height + 0.5f;
+            return fits ? full : UIText.ItemEffectShort(item);
         }
 
         public void OnPointerClick(PointerEventData e)

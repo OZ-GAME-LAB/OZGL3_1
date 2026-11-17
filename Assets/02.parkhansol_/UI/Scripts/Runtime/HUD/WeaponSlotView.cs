@@ -59,6 +59,7 @@ namespace OZ.UI
             bool changed = w != _shown;
             _shown = w;
 
+            EnsureDefaultIcons();
             Sprite sp = w == UIWeapon.Sword ? swordIcon : w == UIWeapon.Staff ? staffIcon : fistIcon;
             if (icon != null) { icon.sprite = sp; icon.enabled = sp != null; icon.color = Color.white; }
             if (letter != null)
@@ -86,6 +87,18 @@ namespace OZ.UI
                 if (icon != null) { icon.rectTransform.DOKill(true); icon.rectTransform.localScale = new Vector3(0f, 1f, 1f); icon.rectTransform.DOScaleX(1f, 0.15f).SetUpdate(true); }
                 UISfx.Play(UISound.ItemPlace, 0.8f);
             }
+        }
+
+        // v1.5: 실행 중에 R 칸을 복사해 만든 칸은 아이콘이 비어 "손/검/봉" 글자로만 나왔음 →
+        //       비어 있으면 Resources/OZUI/Weapon_*.png 기본 아이콘을 씀 (옆 아이템 칸과 같은 16×16 그림)
+        bool _iconsTried;
+        void EnsureDefaultIcons()
+        {
+            if (_iconsTried) return;
+            _iconsTried = true;
+            if (fistIcon == null) fistIcon = Resources.Load<Sprite>("OZUI/Weapon_Fist");
+            if (swordIcon == null) swordIcon = Resources.Load<Sprite>("OZUI/Weapon_Sword");
+            if (staffIcon == null) staffIcon = Resources.Load<Sprite>("OZUI/Weapon_Staff");
         }
 
         internal static string Letter(UIWeapon w) => w == UIWeapon.Sword ? "검" : w == UIWeapon.Staff ? "봉" : "손";

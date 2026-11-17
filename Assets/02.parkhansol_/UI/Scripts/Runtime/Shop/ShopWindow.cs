@@ -118,6 +118,8 @@ namespace OZ.UI
             _selected = 0;
             _qty = 1;
             BuildRows();
+            _firstVisible = 0;
+            UpdateScroll(true);
             if (IsOpen) { Refresh(); FocusRow(_selected); } // 열린 채로 다른 상점을 열면 바로 갱신
         }
 
@@ -323,8 +325,89 @@ namespace OZ.UI
 
         // ───────────── 그리기 ─────────────
 
+        // ───────────── v1.5 가로 목록 넘침 → 넘기기 ─────────────
+        // 카드가 창 폭보다 많으면(예: 포션 4 + 장비 2 = 6장) 양옆이 잘려 보이던 것 →
+        // 보이는 칸 수만큼만 보이고, 고른 카드가 보이도록 목록을 옆으로 밀며, 가려진 쪽에 ◀ ▶ 표시
+        int _firstVisible;
+        int _scrolledFor = -1;
+
+        void UpdateScroll(bool force)
+        {
+            if (!horizontalList || list == null) return;
+            if (!force && _scrolledFor == _selected) return; // 고른 카드가 바뀔 때만 (매 갱신마다 하지 않음)
+            _scrolledFor = _selected;
+            var grid = list.GetComponent<GridLayoutGroup>();
+            if (grid == null) return;
+            int count = _shop != null ? _shop.Count : 0;
+            float step = grid.cellSize.x + grid.spacing.x;
+            float width = list.rect.width;
+            int visible = Mathf.Max(1, Mathf.FloorToInt((width + grid.spacing.x) / Mathf.Max(1f, step)));
+            bool overflow = count > visible;
+
+            if (overflow)
+            {
+                var mask = list.GetComponent<RectMask2D>();
+                if (mask == null) mask = list.gameObject.AddComponent<RectMask2D>();
+                mask.padding = new Vector4(-4f, -6f, -4f, -6f); // 카드 테두리·고른 카드 빛이 잘리지 않게 조금 넉넉히
+            }
+            grid.childAlignment = overflow ? TextAnchor.UpperLeft : TextAnchor.UpperCenter;
+
+            if (!overflow) _firstVisible = 0;
+            else
+            {
+                if (_selected < _firstVisible) _firstVisible = _selected;
+                else if (_selected >= _firstVisible + visible) _firstVisible = _selected - visible + 1;
+                _firstVisible = Mathf.Clamp(_firstVisible, 0, count - visible);
+            }
+            float used = visible * step - grid.spacing.x;
+            int left = overflow ? Mathf.RoundToInt(Mathf.Floor((width - used) * 0.5f) - _firstVisible * step) : 0;
+            if (grid.padding.left != left)
+            {
+                grid.padding.left = left; // 픽셀 단위 (글자 번짐 방지)
+                LayoutRebuilder.ForceRebuildLayoutImmediate(list);
+            }
+
+            EnsureMoreHints();
+            if (_moreLeft != null) _moreLeft.gameObject.SetActive(overflow && _firstVisible > 0);
+            if (_moreRight != null) _moreRight.gameObject.SetActive(overflow && _firstVisible + visible < count);
+        }
+
+        TMP_Text _moreLeft, _moreRight;
+
+        void EnsureMoreHints()
+        {
+            if (_moreLeft != null || list == null || list.parent == null) return;
+            _moreLeft = MakeHint("MoreLeft", "◀", 0f);
+            _moreRight = MakeHint("MoreRight", "▶", 1f);
+        }
+
+        TMP_Text MakeHint(string name, string glyph, float side)
+        {
+            var go = new GameObject(name, typeof(RectTransform));
+            var rt = (RectTransform)go.transform;
+            rt.SetParent(list.parent, false);
+            rt.anchorMin = rt.anchorMax = list.anchorMin; // 목록과 같은 기준점
+            rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.sizeDelta = new Vector2(10f, 16f);
+            var lp = list.anchoredPosition; var ls = list.rect.size; var lpv = list.pivot;
+            float x = lp.x + (side - lpv.x) * ls.x + (side < 0.5f ? -6f : 6f);
+            float y = lp.y + (0.5f - lpv.y) * ls.y;
+            rt.anchoredPosition = new Vector2(Mathf.Round(x), Mathf.Round(y));
+            var t = go.AddComponent<TextMeshProUGUI>();
+            var donor = titleText != null ? titleText : GetComponentInChildren<TMP_Text>(true);
+            if (donor != null) { t.font = donor.font; t.fontSharedMaterial = donor.fontSharedMaterial; }
+            t.fontSize = 10f;
+            t.alignment = TextAlignmentOptions.Center;
+            t.color = priceColor;
+            t.raycastTarget = false;
+            t.text = glyph;
+            go.SetActive(false);
+            return t;
+        }
+
         void Refresh()
         {
+            UpdateScroll(false);
             int money = Currency;
             if (currencyText != null)
                 currencyText.text = _source != null ? $"{money:N0} {(_shop != null ? _shop.currencyName : "")}" : "-";

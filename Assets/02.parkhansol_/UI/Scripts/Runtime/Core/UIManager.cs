@@ -215,10 +215,11 @@ namespace OZ.UI
 
         public void ShowTitle(bool canContinue) => Open(ScreenId.Title, new TitleArgs(canContinue));
         public void ShowClassSelect(IReadOnlyList<ClassData> classes) => Open(ScreenId.ClassSelect, new ClassSelectArgs(classes));
-        public void ShowDeath() => Open(ScreenId.Death);
+        // v1.5: 상점·상태창 등을 연 채 쓰러지면 사망 화면이 그 위에 겹쳐 보였음 → 열린 창을 먼저 닫고 띄움
+        public void ShowDeath() { CloseAll(); Open(ScreenId.Death); }
         public void ShowStageClear(int stageNumber, HunterRank newRank) =>
             GameUI.HUD.ShowBanner("게이트 파괴", $"STAGE {stageNumber} 클리어  ·  헌터 랭크 {newRank.ToDisplay()}", 2.5f, UIRequests.RaiseNextStage);
-        public void ShowDemoEnd() => Open(ScreenId.DemoEnd);
+        public void ShowDemoEnd() { CloseAll(); Open(ScreenId.DemoEnd); }
 
         // ───────────── 상태 ─────────────
 

@@ -67,6 +67,8 @@ namespace OZ.UI
 
         void Awake()
         {
+            // v1.5: 스테이지 띠 부제가 띠 바로 아래 밝은 배경 위에 떠서 거의 안 보이던 것 → 글자 뒤에 어두운 판 + 글자 밝게
+            if (introSubtitle != null) { TextPlate.Attach(introSubtitle, padding: new Vector2(6f, 2f)); introSubtitle.color = new Color(0.86f, 0.9f, 1f); }
             if (fadeGroup != null) SetGroup(fadeGroup, 0f);
             if (loadingGroup != null) SetGroup(loadingGroup, 0f);
             if (introGroup != null) { introGroup.alpha = 0f; introGroup.blocksRaycasts = false; introGroup.interactable = false; }

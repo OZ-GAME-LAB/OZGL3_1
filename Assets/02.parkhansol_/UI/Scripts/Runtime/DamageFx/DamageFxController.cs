@@ -33,6 +33,10 @@ namespace OZ.UI
         [Tooltip("이 시간·거리 안에 또 뜨면 한 줄 위로 쌓음")]
         [SerializeField] internal float stackWindow = 0.35f;
         [SerializeField] internal float stackRadius = 24f;
+        [Tooltip("v1.5 치명타 계열(큰 숫자)은 글자가 넓어서, 옆 적의 숫자와 가로로 겹치지 않게 이 배수만큼 가로로 넓게 보고 쌓는다")]
+        [SerializeField] internal float critStackWidthMul = 2.2f;
+        [Tooltip("v1.5 치명타 계열은 글자 높이(24~30px)가 일반(12px)의 두 배라, 쌓는 간격도 이 배수만큼")]
+        [SerializeField] internal float critStackStepMul = 2.2f;
         [SerializeField] internal float stackStep = 11f;
         [SerializeField] internal int maxNumbers = 40;
 
@@ -180,7 +184,12 @@ namespace OZ.UI
                 {
                     if (!o.active || o == n) continue;
                     Vector2 op = ToLocal(o.worldPos, out _);
-                    if ((op - basePos).sqrMagnitude > stackRadius * stackRadius) continue;
+                    Vector2 d = op - basePos;
+                    // 큰 숫자끼리는 가로로 넓게 (범위 공격으로 붙어 선 적 여럿을 칠 때 48·77·130이 옆으로 겹쳐 보였음)
+                    bool near = style.IsCritLane && o.critLane
+                        ? Mathf.Abs(d.x) <= stackRadius * critStackWidthMul && Mathf.Abs(d.y) <= stackRadius
+                        : d.sqrMagnitude <= stackRadius * stackRadius;
+                    if (!near) continue;
                     if (style.IsCritLane && !o.critLane) aboveNormals = Mathf.Max(aboveNormals, o.offset.y);
                     if (o.critLane == style.IsCritLane && now - o.spawnTime <= stackWindow) stack++;
                 }
@@ -189,7 +198,8 @@ namespace OZ.UI
             _alternate = !_alternate;
             float side = style.jitterX <= 0f ? 0f : (_alternate ? 1f : -1f) * Mathf.Round(Random.Range(style.jitterX * 0.5f, style.jitterX));
             int sizeMul = UISettings.DamageNumberSize;
-            var start = new Vector2(side, numberLift + style.lane * sizeMul + stack * stackStep * sizeMul);
+            float laneStep = style.IsCritLane ? stackStep * critStackStepMul : stackStep;
+            var start = new Vector2(side, numberLift + style.lane * sizeMul + stack * laneStep * sizeMul);
             if (style.IsCritLane && aboveNormals > float.MinValue)
                 start.y = Mathf.Max(start.y, Mathf.Round(aboveNormals) + stackStep * sizeMul);
 
