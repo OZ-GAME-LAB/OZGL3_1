@@ -42,6 +42,9 @@ public class MonsterBehaviour : MonoBehaviour
     protected Vector3 BodyCenter => bodyCollider != null ? bodyCollider.bounds.center : transform.position;
     protected Vector3 TargetCenter => targetCollider != null ? targetCollider.bounds.center : Target.position;
     protected int GroundMask => groundMask;
+    // Invisible perimeter/encounter walls use Default so they cannot count as
+    // a player's landing surface. They still stop horizontal enemy movement.
+    protected int ObstacleMask => groundMask | (1 << 0);
     protected float GroundProbeHeight => groundProbeHeight;
     protected float GroundProbeDepth => groundProbeDepth;
     protected float TerrainPadding => terrainPadding;
@@ -296,7 +299,7 @@ public class MonsterBehaviour : MonoBehaviour
     {
         Bounds bounds = GetBodyBounds();
         return Physics.Raycast(bounds.center, Vector3.right * direction,
-            bounds.extents.x + lookAhead, groundMask, QueryTriggerInteraction.Ignore);
+            bounds.extents.x + lookAhead, ObstacleMask, QueryTriggerInteraction.Ignore);
     }
 
     protected bool CheckGroundAhead(float direction, float lookAhead)

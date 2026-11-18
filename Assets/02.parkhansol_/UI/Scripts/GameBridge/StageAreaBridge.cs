@@ -52,6 +52,14 @@ public class StageAreaBridge : MonoBehaviour
 
     void Update()
     {
+        if (_gameManager != null && _gameManager.StageManager != null &&
+            _gameManager.StageManager.CurrentStage != null &&
+            _gameManager.StageManager.CurrentStage.GetComponent<StageLayout>() != null)
+        {
+            // 구역 트리거가 있는 스테이지는 작성된 구역명을 직접 표시한다.
+            _showAt = -1f;
+            return;
+        }
         if (_showAt >= 0f && Time.unscaledTime >= _showAt)
         {
             _showAt = -1f;

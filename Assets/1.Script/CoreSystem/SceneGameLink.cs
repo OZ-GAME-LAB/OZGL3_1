@@ -103,10 +103,16 @@ public class SceneGameLink : MonoBehaviour
         player.gameObject.SetActive(true);
         playerHealth.ResetHealth(); // 체력 가득 + Dead 상태 해제.
         var body = player.GetComponent<Rigidbody>();
-        body.position = spawnPosition;
-        body.rotation = spawnRotation;
+        var stage = gameManager.StageManager.CurrentStage;
+        var layout = stage != null ? stage.GetComponent<StageLayout>() : null;
+        var stageSpawn = layout != null ? layout.PlayerSpawn : null;
+        body.position = stageSpawn != null ? stageSpawn.position : spawnPosition;
+        body.rotation = stageSpawn != null ? stageSpawn.rotation : spawnRotation;
+        player.transform.SetPositionAndRotation(body.position, body.rotation);
         body.linearVelocity = Vector3.zero;
         body.angularVelocity = Vector3.zero;
+        if (layout != null) layout.Begin(player.transform);
+        else GameUI.Map.SetMap(null);
         SetInputBlocked(UIState.IsGameplayInputBlocked);
 
         gateUI.BeginStage(gameManager.StageNumber, gameManager.GateCount);

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// [박한솔 UI · v0.7] 활성 게이트를 화면 밖 화살표(GameUI.Indicators)로 표시. 팀원 코드(GateManager 등) 수정 없이 동작한다.
 ///   GameManager.Instance.GateManager.Gates를 0.25초마다 읽어서
-///   게이트가 활성(AreGatesActive)이면 추적, 스테이지가 끝나거나 게이트가 사라지면 해제.
+///   현재 활성 게이트만 추적하고, 일반 게이트 봉쇄 뒤에는 해금된 보스 게이트를 안내한다.
 /// 씬에 GameManager가 있으면 Play 시 자동으로 생긴다 (씬 파일 수정 불필요).
 /// 나중에 게이트 봉쇄가 생기면: 봉쇄된 게이트는 GameUI.Indicators.Untrack(gate.transform) 한 줄이면 화살표가 사라짐
 ///   (또는 게이트 오브젝트를 끄면 자동으로 숨김).
@@ -36,11 +36,20 @@ public class GateIndicatorBridge : MonoBehaviour
     {
         var gm = GameManager.Instance;
         var gates = gm != null ? gm.GateManager : null;
-        if (gates == null || !gates.AreGatesActive || !GameUI.IsReady) { UntrackAll(); return; }
+        if (gates == null || !GameUI.IsReady) { UntrackAll(); return; }
 
         _scratch.Clear();
         foreach (var g in gates.Gates)
-            if (g != null) _scratch.Add(g.transform);
+            if (g != null && g.State == StageGate.GateState.Active) _scratch.Add(g.transform);
+
+        Transform bossTarget = null;
+        var current = gm.StageManager != null ? gm.StageManager.CurrentStage : null;
+        var stage = current != null ? current.GetComponent<Stage>() : null;
+        if (stage != null && stage.State == StageState.BossGateUnlocked && stage.BossGate != null)
+        {
+            bossTarget = stage.BossGate.transform;
+            _scratch.Add(bossTarget);
+        }
 
         // 사라진 게이트 해제
         var stale = new List<Transform>();
@@ -51,7 +60,8 @@ public class GateIndicatorBridge : MonoBehaviour
         foreach (var t in _scratch)
         {
             if (_tracked.Contains(t)) continue;
-            GameUI.Indicators.Track(t, IndicatorKind.Gate, label);
+            GameUI.Indicators.Track(t, t == bossTarget ? IndicatorKind.Boss : IndicatorKind.Gate,
+                t == bossTarget ? "보스 게이트" : label);
             _tracked.Add(t);
         }
     }

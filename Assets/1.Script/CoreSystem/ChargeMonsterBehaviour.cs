@@ -45,7 +45,7 @@ public class ChargeMonsterBehaviour : MonsterBehaviour
 
                 // 바닥과 달리 벽은 중간에 있어도 통과하지 않습니다.
                 if (Physics.BoxCast(bounds.center, halfSize, movement, out var wall,
-                    Quaternion.identity, requestedStep + TerrainPadding, GroundMask, QueryTriggerInteraction.Ignore))
+                    Quaternion.identity, requestedStep + TerrainPadding, ObstacleMask, QueryTriggerInteraction.Ignore))
                     step = Mathf.Min(step, Mathf.Max(0f, wall.distance - TerrainPadding));
 
                 // 현재 겹친 대상과 이번 프레임에 지나갈 대상을 함께 검사합니다.
