@@ -22,6 +22,8 @@ public class GameManager : BaseManager
     public event System.Action StageStarted;
     public event System.Action GameCompleted;
     private bool gameCompleted;
+    private uint runId;
+    public uint RunId => runId;
     public StageManager StageManager => stageManager;
     public GateManager GateManager => gateManager;
     public PoolManager PoolManager => poolManager;
@@ -87,9 +89,20 @@ public class GameManager : BaseManager
 
     public bool NewGame()
     {
-        bool started = SetStage(1);
-        if (started) gameCompleted = false;
-        return started;
+        uint previousRun = runId;
+        unchecked { runId++; }
+        try
+        {
+            bool started = SetStage(1);
+            if (started) gameCompleted = false;
+            else runId = previousRun;
+            return started;
+        }
+        catch
+        {
+            runId = previousRun;
+            throw;
+        }
     }
 
     public bool RestartStage() => SetStage(StageNumber);

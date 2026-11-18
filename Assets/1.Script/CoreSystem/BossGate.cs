@@ -8,7 +8,7 @@ public class BossGate : StageGate, IDamageable
     [SerializeField, Min(1f)] private float durability = 30f;
     [SerializeField] private BossMonster bossPrefab;
     [SerializeField] private MonsterSpawner spawner;
-    private const float SummonDelay = 5f;
+    [SerializeField, Min(0.1f)] private float summonDelay = 5f;
     private float remainingDurability;
     private Coroutine summonRoutine;
     private BossMonsterData bossData;
@@ -52,7 +52,8 @@ public class BossGate : StageGate, IDamageable
         if (IsOpened || spawner == null || bossPrefab == null) return;
         CanTakeDamage = false;
         IsOpened = true;
-        GameUI.HUD.ShowBanner("보스 게이트 개방", "5초 후 보스가 출현합니다", SummonDelay);
+        float delay = Mathf.Max(0.1f, summonDelay);
+        GameUI.HUD.ShowBanner("보스 게이트 개방", $"{delay:0.#}초 후 보스가 출현합니다", delay);
         summonRoutine = StartCoroutine(SummonBoss());
     }
 
@@ -67,7 +68,7 @@ public class BossGate : StageGate, IDamageable
 
     private IEnumerator SummonBoss()
     {
-        yield return new WaitForSeconds(SummonDelay);
+        yield return new WaitForSeconds(Mathf.Max(0.1f, summonDelay));
         summonRoutine = null;
         if (spawner.Spawn() != null)
         {

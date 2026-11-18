@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
 
     // 통과 중인 발판은 바닥으로 치지 않음 -> 내려가는 도중 바로 Land로 돌아가지 않게
     public bool IsGrounded { get { return CheckGround(out _); } }
+    public bool IsDroppingThrough(OneWayPlatform platform) => platform != null && _droppingPlatform == platform;
     public bool IsJumpRequested { get; private set; }
     public bool IsDashRequested { get; private set; }
     public bool IsAttackRequested { get; private set; }
@@ -603,7 +604,11 @@ public class PlayerController : MonoBehaviour
         {
             OneWayPlatform platform = _groundHits[i].GetComponentInParent<OneWayPlatform>();
 
-            if (platform != null && platform == _droppingPlatform)
+            // IgnoreCollision은 OverlapSphere 검사에는 적용되지 않는다.
+            // 상승 중이거나 발이 윗면보다 아래면 발판 밑면을 착지로 판정하지 않는다.
+            if (platform != null && (IsDroppingThrough(platform) ||
+                _rigidbody.linearVelocity.y > 0.01f ||
+                !platform.CanSupportPlayer(_groundHits[i])))
             {
                 continue;
             }

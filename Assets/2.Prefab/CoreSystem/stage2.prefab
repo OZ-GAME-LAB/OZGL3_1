@@ -226,6 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
   spawnPoint: {fileID: 8840102287991999270}
+  spawnPoints: []
+  shuffleMonsterTypes: 0
+  alignFeetToSpawnPoint: 0
 --- !u!1 &731771022817212010
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
   spawnPoint: {fileID: 8431218532494981631}
+  spawnPoints: []
+  shuffleMonsterTypes: 0
+  alignFeetToSpawnPoint: 0
 --- !u!1 &843519332510527060
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,8 +405,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gate
   gateRenderer: {fileID: 6107130399942578429}
   gateMaterial: {fileID: 0}
+  animController: {fileID: 0}
   spawner: {fileID: 0}
   spawnInterval: 3
+  maxSpawnCount: 5
+  activationDistance: 0
+  activationHeight: 3
+  allowedMonsterIds: []
 --- !u!1 &1782760200106670885
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,8 +593,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gate
   gateRenderer: {fileID: 6998889315643921242}
   gateMaterial: {fileID: 0}
+  animController: {fileID: 0}
   spawner: {fileID: 0}
   spawnInterval: 3
+  maxSpawnCount: 5
+  activationDistance: 0
+  activationHeight: 3
+  allowedMonsterIds: []
 --- !u!1 &5686401221408721354
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,9 +728,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossGate
   gateRenderer: {fileID: 2224208418712123779}
   gateMaterial: {fileID: 0}
+  animController: {fileID: 0}
   durability: 30
   bossPrefab: {fileID: 2873690002261162043, guid: ae2fd175855b4597b985f092ee1c9834, type: 3}
   spawner: {fileID: 5225655727218553630}
+  summonDelay: 5
 --- !u!1 &6468146911276168277
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +906,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
   spawnPoint: {fileID: 1824156355027068956}
+  spawnPoints: []
+  shuffleMonsterTypes: 0
+  alignFeetToSpawnPoint: 0
 --- !u!1 &7486374002259309548
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +954,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
   spawnPoint: {fileID: 5959469816147478608}
+  spawnPoints: []
+  shuffleMonsterTypes: 0
+  alignFeetToSpawnPoint: 0
 --- !u!1 &8449087120282988859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,8 +1085,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gate
   gateRenderer: {fileID: 8763179147988467238}
   gateMaterial: {fileID: 0}
+  animController: {fileID: 0}
   spawner: {fileID: 0}
   spawnInterval: 3
+  maxSpawnCount: 5
+  activationDistance: 0
+  activationHeight: 3
+  allowedMonsterIds: []
 --- !u!1 &8933158922703630053
 GameObject:
   m_ObjectHideFlags: 0

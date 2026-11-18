@@ -25,6 +25,14 @@ public class StageAreaBridge : MonoBehaviour
     {
         var gm = GameManager.Instance;
         bool running = gm != null && gm.StageManager != null && gm.StageManager.IsStageRunning;
+        if (running && gm.StageManager.CurrentStage != null &&
+            gm.StageManager.CurrentStage.GetComponent<StageLayout>() != null)
+        {
+            // 구역 트리거가 있는 스테이지는 작성된 구역명을 직접 표시한다.
+            _showAt = -1f;
+            _wasRunning = false;
+            return;
+        }
         if (running && !_wasRunning) _showAt = Time.unscaledTime + delay;
         _wasRunning = running;
         if (_showAt > 0f && Time.unscaledTime >= _showAt)

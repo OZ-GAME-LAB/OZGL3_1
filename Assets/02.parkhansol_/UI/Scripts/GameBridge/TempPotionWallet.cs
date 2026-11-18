@@ -179,6 +179,22 @@ public class TempPotionWallet : MonoBehaviour, IShopSource, IItemSource
     public ItemData GetItem(int slotIndex) => slotIndex >= 0 && slotIndex < 4 ? quickItems[slotIndex] : null;
     public int GetCount(int slotIndex) => slotIndex >= 0 && slotIndex < 4 ? _counts[slotIndex] : 0;
 
+    /// <summary>필드 보급품을 받습니다. 전량을 보관할 수 없으면 수량과 포인트를 그대로 둡니다.</summary>
+    public bool AddFieldItem(ItemData item, int amount = 1)
+    {
+        if (item == null || !item.IsUsable || item.GrantsWeapon || amount <= 0) return false;
+        int slot = item.slotIndex;
+        if (slot < 0 || slot >= _counts.Length || quickItems == null || slot >= quickItems.Length) return false;
+        if (quickItems[slot] != null && quickItems[slot] != item) return false;
+        int capacity = Mathf.Clamp(item.maxStack, 1, 5);
+        if (amount > capacity - _counts[slot]) return false;
+
+        quickItems[slot] = item;
+        _counts[slot] += amount;
+        Changed(slot);
+        return true;
+    }
+
     public void UseItem(int slotIndex)
     {
         var item = GetItem(slotIndex);
