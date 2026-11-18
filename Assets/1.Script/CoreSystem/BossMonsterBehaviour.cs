@@ -17,7 +17,6 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
     [SerializeField] private Vector3 attackBoxSize = new Vector3(1.2f, 2f, 1.6f);
     [SerializeField, Min(0f)] private float attackForwardOffset = 0.8f;
     [Header("원거리 공격")]
-    [SerializeField] private MonsterProjectile projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField, Min(0f)] private float spawnOffset = 0.6f;
 
@@ -165,9 +164,9 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
 
     private void FireProjectile()
     {
-        if (projectilePrefab == null)
+        if (Owner.PoolManager == null || string.IsNullOrWhiteSpace(Owner.ProjectileId))
         {
-            Debug.LogError("BossMonsterBehaviour에 원거리 투사체 프리팹을 연결하세요.", this);
+            Debug.LogError("보스의 ProjectileId와 투사체 풀을 설정하세요.", this);
             return;
         }
         if (Target == null || !Target.gameObject.activeInHierarchy) return;
@@ -177,8 +176,10 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
         Vector3 offset = TargetCenter - position;
         Vector3 direction = offset.sqrMagnitude > 0.0001f ? offset.normalized : initialDirection;
         Vector3 up = Mathf.Abs(Vector3.Dot(direction, Vector3.up)) > 0.99f ? Vector3.forward : Vector3.up;
-        MonsterProjectile projectile = Instantiate(projectilePrefab, position, Quaternion.LookRotation(direction, up));
-        projectile.Launch(direction, SkillDamage);
+        MonsterProjectile projectile = Owner.PoolManager.Get<MonsterProjectile>(Owner.ProjectileId,
+            position, Quaternion.LookRotation(direction, up), false);
+        if (projectile == null) { Debug.LogError($"투사체 풀 '{Owner.ProjectileId}'가 없습니다.", this); return; }
+        projectile.Launch(direction, SkillDamage, Owner.PoolManager);
         projectile.gameObject.SetActive(true);
     }
 

@@ -11,12 +11,14 @@ public class MonsterProjectile : MonoBehaviour
     private float remainingTime;
     private int playerMask;
     private bool launched;
+    private PoolManager poolManager;
 
-    public void Launch(Vector3 launchDirection, float attackDamage)
+    public void Launch(Vector3 launchDirection, float attackDamage, PoolManager manager)
     {
         if (launchDirection.sqrMagnitude < 0.0001f)
             throw new System.ArgumentException("투사체의 발사 방향이 필요합니다.", nameof(launchDirection));
         direction = launchDirection.normalized;
+        poolManager = manager;
         damage = Mathf.Max(0f, attackDamage);
         remainingTime = Mathf.Max(0.01f, lifetime);
         playerMask = LayerMask.GetMask("Player");
@@ -55,12 +57,14 @@ public class MonsterProjectile : MonoBehaviour
     private void Finish()
     {
         launched = false;
-        Destroy(gameObject);
+        if (poolManager != null) poolManager.Return(gameObject);
+        else gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
         launched = false;
+        poolManager = null;
     }
 
     private void OnDrawGizmosSelected()

@@ -102,7 +102,6 @@ MonoBehaviour:
   chargeAttackDelay: 1.2
   attackBoxSize: {x: 1.2, y: 2, z: 1.6}
   attackForwardOffset: 0.8
-  projectilePrefab: {fileID: 4102279399796610155, guid: 2b50d7615acf4224bb06e8ab0c2ca02a, type: 3}
   firePoint: {fileID: 6468396233934946656}
   spawnOffset: 0.6
 --- !u!1 &8588260724619569421

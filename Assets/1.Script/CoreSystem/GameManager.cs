@@ -8,8 +8,8 @@ public class GameManager : BaseManager
     [SerializeField] private PoolManager poolManager;
     [SerializeField] private ResourceManager resourceManager;
     [SerializeField] private DataManager dataManager;
-    [Tooltip("선택 사항: PreloadData JSON 주소. 비어 있으면 해당 테이블을 등록하지 않습니다.")]
-    [SerializeField] private string preloadDataKey;
+    [Tooltip("PreloadData JSON이 Addressables에 등록된 경우에만 켜세요.")]
+    [SerializeField] private bool loadPreloadData;
     private bool isReady;
     private bool isLoading;
     private Transform playerTarget;
@@ -183,7 +183,7 @@ public class GameManager : BaseManager
         await resourceManager.InitializeAsync();
         if (dataManager == null)
             throw new System.InvalidOperationException("DataManager를 연결하세요.");
-        await dataManager.InitializeAsync(resourceManager, preloadDataKey);
+        await dataManager.InitializeAsync(resourceManager, loadPreloadData);
         if (dataManager.TryGetDataTable<PreloadData>(out var preloadTable))
         {
             var requests = new System.Collections.Generic.List<ResourceManager.PreloadRequest>();
@@ -221,6 +221,11 @@ public class GameManager : BaseManager
                             throw new System.InvalidOperationException($"풀 '{data.Id}'가 참조하는 BossMonsterData '{data.DataId}'가 없습니다.");
                         prefabKey = boss.PrefabKey;
                         break;
+                    case PoolType.Projectile:
+                        if (!dataManager.TryGetData<ProjectileData>(data.DataId, out var projectile))
+                            throw new System.InvalidOperationException($"ProjectileData '{data.DataId}'가 없습니다.");
+                        prefabKey = projectile.PrefabKey;
+                        break;
                     default:
                         throw new System.InvalidOperationException($"풀 '{data.Id}'의 PoolType '{data.PoolType}'은 지원하지 않습니다.");
                 }
@@ -235,6 +240,13 @@ public class GameManager : BaseManager
         foreach (var entry in counts)
             requests.Add(new PoolManager.PoolRequest(entry.Key, entry.Value));
         await poolManager.InitializeAsync(resourceManager, requests);
+        if (dataManager.TryGetDataTable<ProjectileData>(out var projectiles))
+            foreach (var projectile in projectiles.Values)
+            {
+                if (!poolManager.TryGetPrefab<MonsterProjectile>(projectile.PrefabKey, out _))
+                    throw new System.InvalidOperationException($"투사체 '{projectile.Id}'의 풀 등록과 루트 MonsterProjectile을 확인하세요.");
+                poolManager.RegisterAlias(projectile.Id, projectile.PrefabKey);
+            }
     }
 
     private static ResourceManager.PreloadRequest CreatePreloadRequest(PreloadData data)

@@ -9,15 +9,8 @@ using Newtonsoft.Json;
 public class DataManager : BaseManager
 {
     private readonly Dictionary<Type, object> dataTables = new Dictionary<Type, object>();
-    [SerializeField] private string monsterDataKey;
-    [Tooltip("BossMonsterData JSON 주소. 일반 몬스터 테이블과 별도로 로드합니다.")]
-    [SerializeField] private string bossMonsterDataKey;
-    [Tooltip("PoolData JSON 주소. 비어 있으면 데이터 기반 풀을 준비하지 않습니다.")]
-    [SerializeField] private string poolDataKey;
-    [Tooltip("StageMonsterData JSON 주소. ID는 Stage_01 형식을 사용합니다.")]
-    [SerializeField] private string stageMonsterDataKey;
     private ResourceManager resourceManager;
-    private string preloadDataKey;
+    private bool loadPreloadData;
     private bool isInitializing;
     private bool destroyed;
 
@@ -25,17 +18,17 @@ public class DataManager : BaseManager
     public int TableCount => dataTables.Count;
     public Exception InitializationError { get; private set; }
 
-    public UniTask InitializeAsync(ResourceManager manager, string preloadKey = null)
+    public UniTask InitializeAsync(ResourceManager manager, bool includePreloadData = false)
     {
         RequireMainThread();
         if (manager == null) throw new ArgumentNullException(nameof(manager));
         if (resourceManager != null && resourceManager != manager)
             throw new InvalidOperationException("DataManager의 ResourceManager는 교체할 수 없습니다.");
         if (isInitializing) throw new InvalidOperationException("데이터 초기화가 이미 진행 중입니다.");
-        if (IsReady && preloadDataKey != preloadKey)
+        if (IsReady && loadPreloadData != includePreloadData)
             throw new InvalidOperationException("초기화된 테이블 주소는 변경할 수 없습니다.");
         resourceManager = manager;
-        preloadDataKey = preloadKey;
+        loadPreloadData = includePreloadData;
         return InitializeAsync();
     }
 
@@ -51,18 +44,15 @@ public class DataManager : BaseManager
         InitializationError = null;
         try
         {
-            // 주소가 설정된 테이블은 모두 성공해야 조회할 수 있습니다.
+            // 필수 테이블은 모두 성공해야 조회할 수 있습니다.
             // 새로운 데이터 종류는 이곳에 로드 호출을 추가합니다.
-            if (!string.IsNullOrWhiteSpace(monsterDataKey))
-                await LoadDataTableAsync<MonsterData>(monsterDataKey);
-            if (!string.IsNullOrWhiteSpace(bossMonsterDataKey))
-                await LoadDataTableAsync<BossMonsterData>(bossMonsterDataKey);
-            if (!string.IsNullOrWhiteSpace(preloadDataKey))
-                await LoadDataTableAsync<PreloadData>(preloadDataKey);
-            if (!string.IsNullOrWhiteSpace(poolDataKey))
-                await LoadDataTableAsync<PoolData>(poolDataKey);
-            if (!string.IsNullOrWhiteSpace(stageMonsterDataKey))
-                await LoadDataTableAsync<StageMonsterData>(stageMonsterDataKey);
+            await LoadDataTableAsync<MonsterData>(DataTableKey.MonsterData);
+            await LoadDataTableAsync<BossMonsterData>(DataTableKey.BossMonsterData);
+            await LoadDataTableAsync<ProjectileData>(DataTableKey.ProjectileData);
+            if (loadPreloadData)
+                await LoadDataTableAsync<PreloadData>(DataTableKey.PreloadData);
+            await LoadDataTableAsync<PoolData>(DataTableKey.PoolData);
+            await LoadDataTableAsync<StageMonsterData>(DataTableKey.StageMonsterData);
 
             if (destroyed) throw new ObjectDisposedException(nameof(DataManager));
             IsReady = true;
@@ -81,8 +71,9 @@ public class DataManager : BaseManager
         }
     }
 
-    private async UniTask LoadDataTableAsync<T>(string key) where T : BaseData
+    private async UniTask LoadDataTableAsync<T>(DataTableKey tableKey) where T : BaseData
     {
+        string key = tableKey.ToString();
         try
         {
             if (dataTables.ContainsKey(typeof(T)))

@@ -54,7 +54,7 @@ MonoBehaviour:
   poolManager: {fileID: 0}
   resourceManager: {fileID: 0}
   dataManager: {fileID: 0}
-  preloadDataKey: 
+  loadPreloadData: 0
 --- !u!114 &1303900462087809273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e54cc54e61d91e4aa183b2b6154e76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataManager
-  monsterDataKey: Data/MonsterData
-  bossMonsterDataKey: Data/BossMonsterData
-  poolDataKey: Data/PoolData
-  stageMonsterDataKey: Data/StageMonsterData
 --- !u!114 &3030510770451797220
 MonoBehaviour:
   m_ObjectHideFlags: 0
