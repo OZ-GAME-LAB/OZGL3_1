@@ -3,8 +3,9 @@
     "Id": "BossMonster_1",
     "Name": "Boss1",
     "PrefabKey": "BossMonster/01",
+    "ProjectileId": "Projectile_Boss",
     "MonsterType": "4",
-    "HP": 1800,
+    "HP": 500,
     "MeleeDamage": 20,
     "MoveSpeed": 0.2,
     "AttackRangeX": 1.6,
@@ -14,13 +15,14 @@
   {
     "Id": "BossMonster_2",
     "Name": "Boss2",
-    "PrefabKey": "BossMonster/02",
+    "PrefabKey": "BossMonster/01",
+    "ProjectileId": "Projectile_Boss",
     "MonsterType": "4",
-    "HP": 2900,
-    "MeleeDamage": 20,
+    "HP": 800,
+    "MeleeDamage": 25,
     "MoveSpeed": 0.3,
     "AttackRangeX": 1.6,
     "AttackRangeY": 1.2,
-    "PatternTriggerHpRatio": 0.5
+    "PatternTriggerHpRatio": 0.7
   }
 ]

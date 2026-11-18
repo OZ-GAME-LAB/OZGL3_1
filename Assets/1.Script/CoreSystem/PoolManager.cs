@@ -88,6 +88,22 @@ public class PoolManager : BaseManager
             prefabs.TryGetValue(key, out var prefab) && prefab != null && prefab.TryGetComponent<T>(out component);
     }
 
+    // 데이터 종류를 알 필요 없이 상위에서 지정한 별칭으로도 같은 풀을 조회합니다.
+    public void RegisterAlias(string alias, string key)
+    {
+        if (string.IsNullOrWhiteSpace(alias) || !prefabs.TryGetValue(key, out var prefab))
+            throw new ArgumentException("풀 별칭과 등록된 키를 확인하세요.");
+        if (prefabs.TryGetValue(alias, out var existing) && existing != prefab)
+            throw new ArgumentException($"풀 별칭 '{alias}'가 다른 프리팹에 사용 중입니다.");
+        prefabs[alias] = prefab;
+    }
+
+    public void ReturnAll<T>() where T : Component
+    {
+        foreach (var instance in new List<GameObject>(rented))
+            if (instance != null && instance.TryGetComponent<T>(out _)) Return(instance);
+    }
+
     private void CreatePool(GameObject prefab, int count)
     {
         if (pools.ContainsKey(prefab)) return;

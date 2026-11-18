@@ -7,6 +7,17 @@ public abstract class BaseData
     public string Id;
 }
 
+// 이름이 JSON TextAsset의 Addressables 주소와 일치해야 합니다.
+public enum DataTableKey
+{
+    MonsterData,
+    BossMonsterData,
+    PoolData,
+    StageMonsterData,
+    ProjectileData,
+    PreloadData
+}
+
 // JSON 키는 아래 필드 이름에 맞춥니다. 원본 데이터는 조회용으로 사용합니다.
 public enum MonsterType
 {
@@ -22,6 +33,7 @@ public class BaseMonsterData : BaseData
 {
     public string Name;
     public string PrefabKey;
+    public string ProjectileId;
     public MonsterType MonsterType;
     public float HP;
     public float MeleeDamage;
@@ -49,7 +61,13 @@ public class PreloadData : BaseData
     public PreloadAssetKind AssetType;
 }
 
-public enum PoolType { Monster = 0, BossMonster = 1 }
+public enum PoolType { Monster = 0, BossMonster = 1, Projectile = 2 }
+
+[Serializable, Preserve]
+public class ProjectileData : BaseData
+{
+    public string PrefabKey;
+}
 
 [Serializable, Preserve]
 public class PoolData : BaseData

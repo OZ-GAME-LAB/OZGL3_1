@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "Projectile_Normal",
+    "PrefabKey": "Projectile/Normal"
+  },
+  {
+    "Id": "Projectile_Boss",
+    "PrefabKey": "Projectile/Boss"
+  }
+]

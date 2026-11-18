@@ -101,6 +101,7 @@ public class MonsterSpawner : MonoBehaviour
         try
         {
             monster.InitializeStats(data);
+            monster.SetPoolManager(poolManager);
             monster.SetTarget(playerTarget);
             if (alignFeetToSpawnPoint) AlignFeet(monster, point.position.y);
             spawned.Add(monster);

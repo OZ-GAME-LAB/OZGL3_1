@@ -1,6 +1,45 @@
 ﻿public class BossMonster : Monster
 {
+    [UnityEngine.SerializeField] private OZ.UI.Contracts.BossUILink bossUI;
+    private bool isUIShowing;
     public float PatternTriggerHpRatio { get; private set; }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        if (bossUI == null) bossUI = GetComponentInChildren<OZ.UI.Contracts.BossUILink>(true);
+        if (bossUI == null) bossUI = gameObject.AddComponent<OZ.UI.Contracts.BossUILink>();
+        Died += OnDied;
+        Damaged += OnDamaged;
+        isUIShowing = true;
+        bossUI.Begin(MaxHP);
+    }
+
+    private void OnDamaged(Monster monster)
+    {
+        if (isUIShowing) bossUI.SetHP(CurrentHP);
+    }
+
+    private void OnDied(Monster monster)
+    {
+        if (!isUIShowing) return;
+        isUIShowing = false;
+        bossUI.Defeat();
+    }
+
+    protected override void OnDisable()
+    {
+        Died -= OnDied;
+        Damaged -= OnDamaged;
+        // 스포너가 사망 이벤트를 먼저 받아 풀로 반환하는 경우도 처리합니다.
+        if (IsDead) OnDied(this);
+        else if (isUIShowing)
+        {
+            isUIShowing = false;
+            bossUI.Hide();
+        }
+        base.OnDisable();
+    }
 
     public override void InitializeStats(BaseMonsterData data)
     {

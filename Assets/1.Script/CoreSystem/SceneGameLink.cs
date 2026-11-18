@@ -9,6 +9,7 @@ public class SceneGameLink : MonoBehaviour
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerUILink playerUI;
     [SerializeField] private GateUILink gateUI;
+    [SerializeField, Min(0)] private int bossQuestReward = 800;
 
     private Vector3 spawnPosition;
     private Quaternion spawnRotation;
@@ -31,6 +32,7 @@ public class SceneGameLink : MonoBehaviour
         gameManager.InitializationCompleted += Initialize;
         gameManager.StageChanging += SuspendPlayer;
         gameManager.StageStarted += RestorePlayer;
+        gameManager.StageCleared += CompleteBossQuest;
         gameManager.GameCompleted += ShowDemoEnd;
         if (gameManager.IsReady) Initialize();
         if (initialized) SetInputBlocked(UIState.IsGameplayInputBlocked);
@@ -44,6 +46,7 @@ public class SceneGameLink : MonoBehaviour
             gameManager.InitializationCompleted -= Initialize;
             gameManager.StageChanging -= SuspendPlayer;
             gameManager.StageStarted -= RestorePlayer;
+            gameManager.StageCleared -= CompleteBossQuest;
             gameManager.GameCompleted -= ShowDemoEnd;
         }
         if (input != null) input.enabled = false;
@@ -113,8 +116,15 @@ public class SceneGameLink : MonoBehaviour
         SetInputBlocked(UIState.IsGameplayInputBlocked);
 
         gateUI.BeginStage(gameManager.StageNumber, gameManager.GateCount);
+        GameUI.Quest.SetReward("boss", bossQuestReward);
         if (gameManager.AreGatesActive) gateUI.GateOpened();
         // 봉쇄가 확정되는 곳에서 gateUI.GateSealed()를 호출합니다.
+    }
+
+    private void CompleteBossQuest()
+    {
+        // 자동 퀘스트가 숨겨졌거나 제거된 경우에도 완료 행을 만들어 보상을 통지합니다.
+        GameUI.Quest.Set("boss", "보스 처치", state: QuestState.Done, order: -10);
     }
 
     private void ShowDemoEnd()

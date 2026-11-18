@@ -46,5 +46,17 @@
     "PoolType": "1",
     "DataId": "BossMonster_2",
     "InitialCount": 1
+  },
+  {
+    "Id": "Pool_Projectile_Normal",
+    "PoolType": "2",
+    "DataId": "Projectile_Normal",
+    "InitialCount": 10
+  },
+  {
+    "Id": "Pool_Projectile_Boss",
+    "PoolType": "2",
+    "DataId": "Projectile_Boss",
+    "InitialCount": 10
   }
 ]

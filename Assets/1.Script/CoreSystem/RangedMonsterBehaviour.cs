@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RangedMonsterBehaviour : MonsterBehaviour
 {
-    [SerializeField] private MonsterProjectile projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField, Min(0f)] private float spawnOffset = 0.6f;
 
@@ -11,9 +10,9 @@ public class RangedMonsterBehaviour : MonsterBehaviour
 
     protected override IEnumerator ExecuteAttack()
     {
-        if (projectilePrefab == null)
+        if (Owner.PoolManager == null || string.IsNullOrWhiteSpace(Owner.ProjectileId))
         {
-            Debug.LogError("RangedMonsterBehaviour에 투사체 프리팹을 연결하세요.", this);
+            Debug.LogError("몬스터의 ProjectileId와 투사체 풀을 설정하세요.", this);
             yield break;
         }
 
@@ -27,8 +26,10 @@ public class RangedMonsterBehaviour : MonsterBehaviour
         Vector3 offset = TargetCenter - position;
         Vector3 direction = offset.sqrMagnitude > 0.0001f ? offset.normalized : initialDirection;
         Vector3 up = Mathf.Abs(Vector3.Dot(direction, Vector3.up)) > 0.99f ? Vector3.forward : Vector3.up;
-        MonsterProjectile projectile = Instantiate(projectilePrefab, position, Quaternion.LookRotation(direction, up));
-        projectile.Launch(direction, SkillDamage);
+        MonsterProjectile projectile = Owner.PoolManager.Get<MonsterProjectile>(Owner.ProjectileId,
+            position, Quaternion.LookRotation(direction, up), false);
+        if (projectile == null) { Debug.LogError($"투사체 풀 '{Owner.ProjectileId}'가 없습니다.", this); yield break; }
+        projectile.Launch(direction, SkillDamage, Owner.PoolManager);
         projectile.gameObject.SetActive(true);
         yield break;
     }
