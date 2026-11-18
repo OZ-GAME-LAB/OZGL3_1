@@ -192,28 +192,6 @@ public class SaveManager : MonoBehaviour
         }, SwitchFade);
     }
 
-    //  테스트용 : 저장 전부 삭제
-    [ContextMenu("테스트/저장 전부 삭제")]
-    private void TestDeleteAll()
-    {
-        GameSave.Delete();
-
-        try
-        {
-            if (File.Exists(ProgressPath)) File.Delete(ProgressPath); // oz_progress.json
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogException(e);
-        }
-
-        // 지운 직후 Play를 멈추면 종료 저장(OnApplicationQuit)이 파일을 다시 만들어서
-        // "이번 실행에선 게임 안 함" 상태로 돌려 저장이 안 되게 막음
-        _resumeStage = 0;
-
-        Debug.Log("[SaveManager] 저장 전부 삭제 : " + Application.persistentDataPath);
-    }
-
     //  자동 설치
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)] // 첫 씬 로드 직후 Unity가 자동 호출
     private static void AutoInstall()

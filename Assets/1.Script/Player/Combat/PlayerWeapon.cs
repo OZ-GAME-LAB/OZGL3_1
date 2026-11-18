@@ -1,7 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 
 // 스태프는 StaffAttack(IComboAttack 1타)으로 구현해 목록에 추가 (2026-11-03)
 public enum WeaponType
@@ -12,9 +10,8 @@ public enum WeaponType
 }
 
 // 현재 무기 상태만 관리. 무기가 바뀌면 평타, 무기 모델, 애니메이터를 한 번에 맞춤.
-// 왜 따로 뺐나 -> 검을 "어떻게 얻는지"(상점/드롭 등)는 아직 미정
-// -> 획득 쪽 코드는 CanAcquire로 확인하고 TryAcquire만 부르면 되게
-// (Equip은 "무기 하나만" 규칙을 검사하지 않아서 private -> 내부·디버그용)
+// 획득 쪽 코드는 CanAcquire로 확인하고 TryAcquire만 부르면 되게
+// (Equip은 "무기 하나만" 규칙을 검사하지 않아서 private -> 내부용)
 [RequireComponent(typeof(PlayerController))]
 public class PlayerWeapon : MonoBehaviour
 {
@@ -35,10 +32,6 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private MonoBehaviour _unarmedAttack; // 맨손 평타 (PunchAttack)
     [SerializeField] private WeaponEntry[] _weapons;
     [SerializeField] private WeaponType _startWeapon = WeaponType.None;
-
-    [Header("Debug (검 획득 방법이 정해지기 전 임시)")]
-    [SerializeField] private bool _useDebugKey = true;
-    [SerializeField] private Key _debugToggleKey = Key.T; // 맨손 -> 검 -> 스태프 순환
 
     private static readonly int WeaponHash = Animator.StringToHash("Weapon");
 
@@ -97,30 +90,7 @@ public class PlayerWeapon : MonoBehaviour
         _hasPendingWeapon = false;
     }
 
-    private void Update()
-    {
-        if (!_useDebugKey || Keyboard.current == null)
-        {
-            return;
-        }
-
-        if(Keyboard.current[_debugToggleKey].wasPressedThisFrame)
-        {
-            WeaponType next = Current == WeaponType.None ? WeaponType.Sword
-                            : Current == WeaponType.Sword ? WeaponType.Staff
-                            : WeaponType.None;
-
-            // 실패 시 맨손 -> 스태프가 등록 안 된 프리팹(원본 Player 등)에서
-            // 검 다음 칸이 막혀 검에서 영영 못 빠져나오는 것 방지
-            // (공격 중이라 실패한 경우는 맨손 장착도 똑같이 막혀서 아무 변화 없음)
-            if (!Equip(next))
-            {
-                Equip(WeaponType.None);
-            }
-        }
-    }
-
-    // 무기 교체 (내부·디버그용). 바꿨으면 true
+    // 무기 교체 (내부용). 바꿨으면 true
     // 획득은 TryAcquire를 쓸 것 -> Equip은 "무기 하나만" 규칙을 검사하지 않음
     private bool Equip(WeaponType type)
     {
@@ -146,7 +116,7 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     // 무기 획득 (상점 구매 / 필드 습득 / 보상 공용)
-    // 획득 방식은 아직 미정이지만 결국 "무기 하나를 얻는다"는 건 같음
+    // 얻는 방식이 달라도 결국 "무기 하나를 얻는다"는 건 같음
     //     -> 얻게 해주는 쪽(상점, 아이템)이 CanAcquire로 확인하고 TryAcquire만 부르면 끝
     //     -> "무기는 하나만" 규칙이 여기 한 곳에 있어서, 어디서 불러도 똑같이 지켜짐
     public bool CanAcquire(WeaponType type) // 얻을 수 있는지 (UI 상점 버튼 잠금용)
@@ -273,19 +243,5 @@ public class PlayerWeapon : MonoBehaviour
             }
         }
         return null;
-    }
-
-    // 테스트용: 플레이 중 인스펙터 PlayerWeapon 컴포넌트 ⋮ 메뉴에서 실행
-    // 획득 방식(상점/습득)이 연결되기 전 확인용 -> 연결되면 삭제
-    [ContextMenu("Test/Acquire Sword")]
-    private void TestAcquireSword()
-    {
-        Debug.Log($"[PlayerWeapon] 검 획득: {TryAcquire(WeaponType.Sword)} (현재 {Current})");
-    }
-
-    [ContextMenu("Test/Acquire Staff")]
-    private void TestAcquireStaff()
-    {
-        Debug.Log($"[PlayerWeapon] 스태프 획득: {TryAcquire(WeaponType.Staff)} (현재 {Current})");
     }
 }
