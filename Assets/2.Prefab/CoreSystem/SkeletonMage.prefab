@@ -631,7 +631,6 @@ MonoBehaviour:
   groundProbeHeight: 0.2
   groundProbeDepth: 0.5
   terrainPadding: 0.05
-  projectilePrefab: {fileID: 4102279399796610155, guid: f2e4941ee6ef6894cb1ac970ac393a2b, type: 3}
   firePoint: {fileID: 6468396233934946656}
   spawnOffset: 0.6
 --- !u!1 &2246239763166573925

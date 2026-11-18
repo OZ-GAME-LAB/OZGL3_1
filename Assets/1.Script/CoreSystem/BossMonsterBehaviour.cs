@@ -10,18 +10,19 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
     [Header("보스 공격 선택")]
     [SerializeField, Min(0.1f)] private float rangedAttackRange = 6f;
     [SerializeField, Min(0.01f)] private float meleeAttackDuration = 1.1f;
-    [SerializeField, Min(0f)] private float rangedAttackDelay = 0.8f;
+    [Tooltip("원거리 공격 상태 유지 시간입니다. 클립의 발사 이벤트보다 길게 설정하세요.")]
+    [SerializeField, Min(0f)] private float rangedAttackDelay = 1.2f;
     [SerializeField, Min(0f)] private float chargeAttackDelay = 1.2f;
     [Header("일반 공격")]
     [SerializeField] private Vector3 attackBoxSize = new Vector3(1.2f, 2f, 1.6f);
     [SerializeField, Min(0f)] private float attackForwardOffset = 0.8f;
     [Header("원거리 공격")]
-    [SerializeField] private MonsterProjectile projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField, Min(0f)] private float spawnOffset = 0.6f;
 
     private BossMonster boss;
     private bool meleeHitProcessed;
+    private bool rangedShotProcessed;
     private readonly HashSet<PlayerHealth> hitPlayers = new HashSet<PlayerHealth>();
     public BossAttackPattern CurrentPattern { get; private set; }
     // 보스 데이터에는 SkillDamage가 없으므로 공통 공격력으로 세 패턴을 실행합니다.
@@ -49,12 +50,13 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
 #endif
         CurrentPattern = BossAttackPattern.Melee;
         meleeHitProcessed = false;
-        if (AnimController != null) AnimController.AttackHit += ApplyMeleeHit;
+        rangedShotProcessed = false;
+        if (AnimController != null) AnimController.AttackHit += HandleAttackHit;
     }
 
     protected override void OnDisable()
     {
-        if (AnimController != null) AnimController.AttackHit -= ApplyMeleeHit;
+        if (AnimController != null) AnimController.AttackHit -= HandleAttackHit;
         base.OnDisable();
     }
 
@@ -79,11 +81,12 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
     private void StartPattern()
     {
         meleeHitProcessed = false;
+        rangedShotProcessed = false;
         if (AnimController != null) AnimController.SetAttackType((int)CurrentPattern);
 
         // 선택한 패턴과 공격력은 이번 공격 동안 유지합니다.
         base.UpdateAttack();
-        if (IsAttacking && CurrentPattern == BossAttackPattern.Melee)
+        if (IsAttacking && (CurrentPattern == BossAttackPattern.Melee || CurrentPattern == BossAttackPattern.Ranged))
             PlayAnimation(EnemyAnimState.Attack);
     }
 
@@ -124,11 +127,22 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
                 // 실제 타격은 클립의 OnAttackHit 이벤트에서 처리합니다.
                 yield break;
             case BossAttackPattern.Ranged:
-                FireProjectile();
+                // 발사는 클립의 OnAttackHit 이벤트에서만 처리합니다.
                 yield break;
             case BossAttackPattern.Charge:
                 yield return base.ExecuteAttack();
                 break;
+        }
+    }
+
+    private void HandleAttackHit()
+    {
+        if (CurrentPattern == BossAttackPattern.Melee) ApplyMeleeHit();
+        else if (CurrentPattern == BossAttackPattern.Ranged)
+        {
+            if (!isActiveAndEnabled || Owner.IsDead || !IsAttacking || rangedShotProcessed) return;
+            rangedShotProcessed = true;
+            FireProjectile();
         }
     }
 
@@ -150,27 +164,29 @@ public class BossMonsterBehaviour : ChargeMonsterBehaviour
 
     private void FireProjectile()
     {
-        if (projectilePrefab == null)
+        if (Owner.PoolManager == null || string.IsNullOrWhiteSpace(Owner.ProjectileId))
         {
-            Debug.LogError("BossMonsterBehaviour에 원거리 투사체 프리팹을 연결하세요.", this);
+            Debug.LogError("보스의 ProjectileId와 투사체 풀을 설정하세요.", this);
             return;
         }
         if (Target == null || !Target.gameObject.activeInHierarchy) return;
-        PlayAnimation(EnemyAnimState.Attack);
         Vector3 aim = TargetCenter - BodyCenter;
         Vector3 initialDirection = aim.sqrMagnitude > 0.0001f ? aim.normalized : transform.forward;
         Vector3 position = firePoint != null ? firePoint.position : BodyCenter + initialDirection * spawnOffset;
         Vector3 offset = TargetCenter - position;
         Vector3 direction = offset.sqrMagnitude > 0.0001f ? offset.normalized : initialDirection;
         Vector3 up = Mathf.Abs(Vector3.Dot(direction, Vector3.up)) > 0.99f ? Vector3.forward : Vector3.up;
-        MonsterProjectile projectile = Instantiate(projectilePrefab, position, Quaternion.LookRotation(direction, up));
-        projectile.Launch(direction, SkillDamage);
+        MonsterProjectile projectile = Owner.PoolManager.Get<MonsterProjectile>(Owner.ProjectileId,
+            position, Quaternion.LookRotation(direction, up), false);
+        if (projectile == null) { Debug.LogError($"투사체 풀 '{Owner.ProjectileId}'가 없습니다.", this); return; }
+        projectile.Launch(direction, SkillDamage, Owner.PoolManager);
         projectile.gameObject.SetActive(true);
     }
 
     protected override void OnAttackInterrupted()
     {
         meleeHitProcessed = true;
+        rangedShotProcessed = true;
         hitPlayers.Clear();
         base.OnAttackInterrupted();
     }

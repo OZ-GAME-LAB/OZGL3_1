@@ -29,6 +29,8 @@ public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource
     [Header("포인트 (기획데이터 1장)")]
     [Tooltip("시작 성장 포인트 (각성 1000)")]
     [SerializeField] int startPoints = 1000;
+    [Tooltip("보스 퀘스트 최초 완료 시 함께 지급할 상점 포인트")]
+    [SerializeField, Min(0)] int bossShopReward = 500;
 
     [Header("스탯 가격 = 기본 + 레벨 × 증가 (기획데이터 4장: 200/250/300/350/400)")]
     [SerializeField] int statBasePrice = 200;
@@ -149,11 +151,28 @@ public class GrowthShopBridge : MonoBehaviour, IPointsSource, IGrowthShopSource
         for (int i = 0; i < q.Count; i++)
         {
             var info = q.GetAt(i);
-            if (info.State != QuestState.Done || _paidQuests.Contains(info.Id)) continue;
+            // 자동 보스 퀘스트의 표시 ID는 같지만 보상은 스테이지별로 한 번씩 지급합니다.
+            string rewardId = info.Id == "boss" && GameManager.Instance != null
+                ? $"Stage_{GameManager.Instance.StageNumber:D2}_boss" : info.Id;
+            if (info.State != QuestState.Done || _paidQuests.Contains(rewardId)) continue;
             if (!q.TryGetReward(info.Id, out int reward, out _) || reward <= 0) continue;
-            _paidQuests.Add(info.Id);
+            TempPotionWallet wallet = null;
+            int shopReward = info.Id == "boss" ? Mathf.Max(0, bossShopReward) : 0;
+            if (shopReward > 0)
+            {
+                wallet = UISources.Shop as TempPotionWallet;
+                if (wallet == null)
+                {
+                    Debug.LogWarning("보스 퀘스트 보상을 지급할 TempPotionWallet이 연결되지 않았습니다.", this);
+                    continue;
+                }
+            }
+            _paidQuests.Add(rewardId);
             AddPoints(reward);
-            GameUI.Notify.System("상태창", info.Title + " 완료", $"+{reward:N0} 성장 포인트", "reward_" + info.Id);
+            if (wallet != null) wallet.AddPoints(shopReward);
+            string message = $"+{reward:N0} 성장 포인트";
+            if (shopReward > 0) message += $" / +{shopReward:N0} 상점 포인트";
+            GameUI.Notify.System("상태창", info.Title + " 완료", message, "reward_" + info.Id);
         }
     }
 

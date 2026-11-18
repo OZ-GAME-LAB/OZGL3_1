@@ -59,9 +59,11 @@ public class BossHudBridge : MonoBehaviour
     void LateUpdate()
     {
         if (_boss == null) return;
-        if (!_boss.isActiveAndEnabled) // 죽기 전에 사라짐 (스테이지 종료·리소스 정리)
+        if (!_boss.isActiveAndEnabled)
         {
-            if (!_boss.IsDead) _link.Hide();
+            // 사망 직후 풀로 반환되면 활성 상태의 HP 갱신 분기에 도달하지 않습니다.
+            if (_boss.IsDead) _link.Defeat();
+            else _link.Hide();
             _boss = null;
             return;
         }

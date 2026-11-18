@@ -28,6 +28,10 @@ public class Monster : MonoBehaviour, IDamageable
     private float hp;
 
     public string DataId { get; private set; }
+    public string ProjectileId { get; private set; }
+    public PoolManager PoolManager { get; private set; }
+
+    public void SetPoolManager(PoolManager manager) => PoolManager = manager;
     public string MonsterName { get; private set; }
     public MonsterType MonsterType { get; private set; }
     public float MaxHP => maxHP;
@@ -46,6 +50,7 @@ public class Monster : MonoBehaviour, IDamageable
     protected virtual void OnDisable()
     {
         Target = null;
+        PoolManager = null;
     }
 
     // 풀에서 비활성 상태로 꺼낸 뒤, 활성화 전에 호출합니다.
@@ -63,6 +68,7 @@ public class Monster : MonoBehaviour, IDamageable
             throw new ArgumentException($"몬스터 '{data.Id}'의 HP, 데미지, 이동속도를 확인하세요.");
 
         DataId = data.Id;
+        ProjectileId = data.ProjectileId;
         MonsterName = data.Name;
         MonsterType = data.MonsterType;
         maxHP = data.HP;

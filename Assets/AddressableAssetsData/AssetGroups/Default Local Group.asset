@@ -15,6 +15,21 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: f987dc0e6584e3f40bd20935175bbbee
   m_SerializeEntries:
+  - m_GUID: 40d9c74289f84fca88df827f0366817b
+    m_Address: ProjectileData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2e4941ee6ef6894cb1ac970ac393a2b
+    m_Address: Projectile/Normal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b50d7615acf4224bb06e8ab0c2ca02a
+    m_Address: Projectile/Boss
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 143890b12342949438cbdbf547b8c8d3
     m_Address: Monster/Ranged2
     m_ReadOnly: 0
@@ -31,7 +46,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fcf63eaf847db14fb3b83974be67bc9
-    m_Address: Data/BossMonsterData
+    m_Address: BossMonsterData
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -51,7 +66,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cc7e32495e2756f4ea8a6e40b00da4bb
-    m_Address: Data/StageMonsterData
+    m_Address: StageMonsterData
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -66,12 +81,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f994a81fef5d0424a99efedbc2a914f8
-    m_Address: Data/MonsterData
+    m_Address: MonsterData
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff3728c12293d6c41a1357a7081b92c0
-    m_Address: Data/PoolData
+    m_Address: PoolData
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

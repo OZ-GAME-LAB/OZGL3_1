@@ -194,6 +194,8 @@ public class StageManager : BaseManager
             stage.EndStage();
         }
         if (gateManager != null) gateManager.ClearGates();
+        if (gateManager != null && gateManager.PoolManager != null)
+            gateManager.PoolManager.ReturnAll<MonsterProjectile>();
         currentStage = null;
         if (stage != null)
         {
